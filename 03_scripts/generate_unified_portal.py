@@ -848,9 +848,7 @@ def generate():
         const btnCodex = document.getElementById('master-btn-codex');
         const btnIndex = document.getElementById('master-btn-index');
 
-        const subnavAtlas = document.getElementById('subnav-atlas');
-        const subnavCodex = document.getElementById('subnav-codex');
-
+                
         const wingAtlas = document.getElementById('wing-atlas');
         const wingCodex = document.getElementById('wing-codex');
         const wingIndex = document.getElementById('tab-master-index');
