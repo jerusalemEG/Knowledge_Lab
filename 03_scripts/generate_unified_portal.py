@@ -1,20 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-Grand Unified Portal Builder for Knowledge Lab.
+Grand Unified Portal Builder for Knowledge Lab (Idempotent & Clean).
 Merges:
-1. Quranic Cosmic Atlas & Vis.js Knowledge Graph (8 Modules)
+1. Quranic Cosmic Atlas & Vis.js Knowledge Graph (8 Modules) from graph_builder output
 2. Grand Occult Cosmology & Esoteric Codex (9 Modules)
 3. Master Wing Switcher & Full 17-Module Directory Grid
 4. Unified PIN Authentication ('1234')
+5. Syncs to website/index.html, root index.html, and knowledge_graph_viewer.html
 """
 
 import os
 import re
+import shutil
 
-WEBSITE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "website")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+WEBSITE_DIR = os.path.join(ROOT_DIR, "website")
 INDEX_PATH = os.path.join(WEBSITE_DIR, "index.html")
 CODEX_PATH = os.path.join(WEBSITE_DIR, "Grand_Occult_Cosmology_Codex.html")
-OUTPUT_PATH = os.path.join(WEBSITE_DIR, "index.html")
+ROOT_INDEX = os.path.join(ROOT_DIR, "index.html")
+ROOT_VIEWER = os.path.join(ROOT_DIR, "knowledge_graph_viewer.html")
 
 def generate():
     with open(INDEX_PATH, 'r', encoding='utf-8') as f:
@@ -23,9 +27,18 @@ def generate():
     with open(CODEX_PATH, 'r', encoding='utf-8') as f:
         cdx_content = f.read()
 
+    # If idx_content already has master-header-container, strip out previous injections
+    # Or start from a clean base
+    # Check if previously injected
+    if 'class="master-header-container"' in idx_content:
+        print("Detected previously merged index.html. Rebuilding clean base via graph_builder first...")
+        import subprocess
+        subprocess.run(["python", os.path.join(ROOT_DIR, "03_scripts", "graph_builder.py")], check=True)
+        with open(INDEX_PATH, 'r', encoding='utf-8') as f:
+            idx_content = f.read()
+
     # --- 1. EXTRACT CODEX STYLES ---
     cdx_style = re.search(r'<style>(.*?)</style>', cdx_content, re.DOTALL).group(1)
-    # Filter out body tag from codex to preserve index body styling
     cdx_style_cleaned = re.sub(r'body\s*\{[^}]*\}', '', cdx_style)
     cdx_style_cleaned = re.sub(r'header\s*\{[^}]*\}', '', cdx_style_cleaned)
 
@@ -39,11 +52,9 @@ def generate():
     # Change onclicks in codex main
     cdx_main_adapted = re.sub(r'switchTab\(', 'switchCodexTab(', cdx_main)
 
-    # --- 3. CREATE MASTER WING SWITCHER AND UNIFIED NAV ---
+    # --- 3. UNIFIED STYLES ---
     unified_styles = """
-    /* ========================================================
-       MASTER UNIFIED PORTAL STYLING & WING SWITCHER
-       ======================================================== */
+    /* MASTER UNIFIED PORTAL STYLING & WING SWITCHER */
     :root {
         --wing-active-glow: rgba(255, 209, 102, 0.35);
         --wing-codex-accent: #9d4edd;
@@ -108,7 +119,6 @@ def generate():
         display: block;
     }
 
-    /* Master Wing Buttons */
     .master-wings-nav {
         display: flex;
         align-items: center;
@@ -169,7 +179,6 @@ def generate():
         font-weight: 600;
     }
 
-    /* Sub-nav scrollers */
     .master-subnav-bar {
         display: flex;
         align-items: center;
@@ -190,7 +199,6 @@ def generate():
         border-radius: 4px;
     }
 
-    /* Codex nav tabs styling matching portal */
     .codex-tab-btn {
         display: inline-flex;
         align-items: center;
@@ -220,7 +228,6 @@ def generate():
         box-shadow: 0 0 14px rgba(192, 132, 252, 0.3);
     }
 
-    /* Master 17-Module Directory Grid */
     #tab-master-index {
         padding: 30px 24px;
         max-width: 1400px;
@@ -364,7 +371,7 @@ def generate():
     }
     """
 
-    # --- 4. CREATE NEW MASTER HEADER HTML ---
+    # --- 4. NEW MASTER HEADER HTML ---
     new_header_html = """
     <!-- MASTER UNIFIED PORTAL HEADER -->
     <header class="master-header-container">
@@ -423,7 +430,7 @@ def generate():
     </header>
     """
 
-    # --- 5. CREATE MASTER INDEX SECTION HTML ---
+    # --- 5. MASTER INDEX SECTION HTML ---
     master_index_html = """
     <!-- TAB: MASTER INDEX (17 MODULES DIRECTORY) -->
     <section id="tab-master-index" class="wing-container hidden-wing">
@@ -581,26 +588,21 @@ def generate():
     """
 
     # --- 6. ASSEMBLE HTML ---
-    # Add FontAwesome CDN in head if not already there
     if "font-awesome" not in idx_content:
         idx_content = idx_content.replace('</head>', '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\n</head>')
 
-    # Add Unified Styles into <style>
     style_end_pos = idx_content.rfind('</style>')
     if style_end_pos != -1:
         combined_css = "\n" + cdx_style_cleaned + "\n" + unified_styles + "\n"
         idx_content = idx_content[:style_end_pos] + combined_css + idx_content[style_end_pos:]
 
-    # Replace old <header>...</header> with new master header
     header_regex = r'<header>.*?</header>'
     idx_content = re.sub(header_regex, new_header_html, idx_content, flags=re.DOTALL)
 
-    # Wrap the original atlas <main> in <div id="wing-atlas" class="wing-container">...</div>
     main_start = idx_content.find('<main>')
     main_end = idx_content.find('</main>')
     if main_start != -1 and main_end != -1:
         atlas_body = idx_content[main_start:main_end+7]
-        # Replace main with wrapped wing-atlas, plus wing-codex, plus master-index
         wrapped_wings = f"""
         <div id="wing-atlas" class="wing-container">
             {atlas_body}
@@ -616,7 +618,6 @@ def generate():
         """
         idx_content = idx_content[:main_start] + wrapped_wings + idx_content[main_end+7:]
 
-    # Append Codex JS & Unified Switcher JS before </body>
     master_switcher_js = """
     // ========================================================
     // MASTER UNIFIED PORTAL CONTROLLER (WINGS & TABS)
@@ -636,12 +637,10 @@ def generate():
         const wingCodex = document.getElementById('wing-codex');
         const wingIndex = document.getElementById('tab-master-index');
 
-        // Reset button states
         btnAtlas.className = 'master-wing-btn';
         btnCodex.className = 'master-wing-btn';
         btnIndex.className = 'master-wing-btn';
 
-        // Hide all wings
         wingAtlas.classList.add('hidden-wing');
         wingCodex.classList.add('hidden-wing');
         wingIndex.classList.add('hidden-wing');
@@ -677,7 +676,6 @@ def generate():
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Adapt Codex tab buttons inside master header
     function switchCodexTab(tabId) {
         document.querySelectorAll('#wing-codex .content-section').forEach(sec => {
             sec.classList.remove('active');
@@ -700,7 +698,6 @@ def generate():
         window.location.hash = '#' + tabId;
     }
 
-    // Auto-detect hash on load
     window.addEventListener('load', () => {
         const hash = window.location.hash.replace('#', '');
         if (hash) {
@@ -715,7 +712,6 @@ def generate():
     });
     """
 
-    # Inject scripts before </body>
     body_end_pos = idx_content.rfind('</body>')
     if body_end_pos != -1:
         full_extra_script = f"""
@@ -726,12 +722,18 @@ def generate():
         """
         idx_content = idx_content[:body_end_pos] + full_extra_script + idx_content[body_end_pos:]
 
-    # Write out output
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+    # Write output to website/index.html
+    with open(INDEX_PATH, 'w', encoding='utf-8') as f:
         f.write(idx_content)
 
-    print(f"Grand Unified Master Portal successfully generated at: {OUTPUT_PATH}")
-    print(f"Total file size: {len(idx_content)} characters.")
+    # Sync to root index.html and knowledge_graph_viewer.html
+    shutil.copyfile(INDEX_PATH, ROOT_INDEX)
+    shutil.copyfile(INDEX_PATH, ROOT_VIEWER)
+
+    print(f"Grand Unified Master Portal successfully generated and synchronized!")
+    print(f"- website/index.html ({len(idx_content)} chars)")
+    print(f"- index.html (root)")
+    print(f"- knowledge_graph_viewer.html (root)")
 
 if __name__ == "__main__":
     generate()
