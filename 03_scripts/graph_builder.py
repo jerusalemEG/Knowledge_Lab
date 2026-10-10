@@ -1622,44 +1622,76 @@ def generate_unified_html(nodes, links):
             .chakras-container {{ grid-template-columns: 1fr; }}
         }}
         .body-silhouette-wrapper {{
-            background: radial-gradient(circle at center, #0e1628 0%, #050810 100%);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: 30px 20px;
+            background: radial-gradient(ellipse at center, #0f172a 0%, #030712 100%);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 24px;
+            padding: 25px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
-            box-shadow: 0 16px 45px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 35px rgba(0, 240, 255, 0.12);
+            overflow: hidden;
+        }}
+        .chakra-pills-bar {{
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            max-width: 100%;
+            padding: 4px 6px 12px 6px;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+            justify-content: flex-start;
+        }}
+        .c-pill-btn {{
+            flex: 0 0 auto;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 7px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+        }}
+        .c-pill-btn:hover {{
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }}
+        .c-pill-btn.active {{
+            border-color: currentColor;
+            box-shadow: 0 0 15px currentColor;
+            transform: translateY(-2px);
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
         }}
         .silhouette-canvas {{
-            width: 380px;
-            height: 640px;
+            width: 100%;
+            max-width: 340px;
+            height: 540px;
             position: relative;
             display: flex;
             justify-content: center;
+            margin: 0 auto;
         }}
         .human-figure-svg {{
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
+            width: 100%;
             height: 100%;
-            opacity: 0.32;
-            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.25));
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.35));
             pointer-events: none;
         }}
         .central-sushumna-line {{
-            position: absolute;
-            top: 55px;
-            bottom: 60px;
-            left: 50%;
-            width: 4px;
-            transform: translateX(-50%);
-            background: linear-gradient(180deg, #ffffff, #a855f7, #3b82f6, #00f0ff, #10b981, #f59e0b, #f97316, #ef4444);
-            box-shadow: 0 0 15px rgba(255,255,255,0.7);
-            border-radius: 4px;
-            z-index: 2;
+            display: none; /* Replaced by rich SVG line */
         }}
         .chakra-point-btn {{
             position: absolute;
@@ -1673,17 +1705,17 @@ def generate_unified_html(nodes, links):
             justify-content: center;
             cursor: pointer;
             z-index: 5;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid rgba(255,255,255,0.8);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255,255,255,0.85);
             box-shadow: 0 0 20px currentColor;
-            background: rgba(11, 15, 23, 0.85);
+            background: rgba(11, 15, 23, 0.9);
             font-size: 1.15rem;
             color: #fff;
         }}
         .chakra-point-btn:hover, .chakra-point-btn.active {{
-            transform: translate(-50%, -50%) scale(1.3);
+            transform: translate(-50%, -50%) scale(1.35);
             border-color: #ffffff;
-            box-shadow: 0 0 35px currentColor, inset 0 0 12px currentColor;
+            box-shadow: 0 0 35px currentColor, inset 0 0 14px currentColor;
         }}
         .chakra-point-btn::after {{
             content: '';
@@ -2252,47 +2284,160 @@ def generate_unified_html(nodes, links):
         <!-- TAB CHAKRAS: PROPHETIC BODY & 7 CHAKRAS HOLOGRAPHIC VISUALIZER -->
         <section id="tab-chakras" class="tab-section">
             <div class="hero">
-                <div class="quran-ayah">«وَفِي أَنفُسِكُمْ ۚ أَفَلَا تُبْصِرُونَ» [الذاريات: 21] — «لَقَدْ خَلَقْنَا الْإِنسَانَ فِي أَحْسَنِ تَقْوِيمٍ»</div>
+                <div class="quran-ayah">«وَفِي أَنفُسِكُمْ ۚ أَفَلَا تُبْصِرُونَ» [الذاريات: 21] — «لَقَدْ خَلَقْنَا الْإِنسَانَ فِي أَحْسَنِ تَقْوِيمٍ» [التين: 4]</div>
                 <h1 style="color: #00f0ff;">مجسم التشاكرات السبعة واللطائف ومقامات الأنبياء (العالم الصغير)</h1>
-                <p>تطابق مراكز الطاقة السبعة وألوانها الترددية في الإنسان مع السماوات السبع، ومقامات الأنبياء، والمعادن الخيميائية، واللطائف الصوفية السبع في علم السلوك العرفاني.</p>
+                <p>الموسوعة التشريحية الكبرى للإنسان الكامل: دراسة مضاهاة جامعة بين اللطائف الصوفية السبع، الشاكرات الفيدية (Sat-Chakra-Nirupana)، الدانتيان ومسارات التشي الصينية (Jing-Luo)، شجرة الحياة الكابالية، ومحور الغدد الصماء والضفائر العصبية الحديث (Neuro-Endocrine Axis).</p>
+            </div>
+
+            <!-- ANALYTICAL COMPENDIUM FOR CHAKRAS & MICROCOSM (4 MASTER TREATISES) -->
+            <div class="spheres-compendium" style="margin-bottom: 40px;">
+                <div class="compendium-header">
+                    <span class="compendium-badge">الموسوعة التحقيقية للعالم الصغير • الإنسان الكامل وتشريح النور</span>
+                    <h2>هندسة مراكز الروح والجسد الأثيري ومطابقة المقامات عبر حضارات الأرض</h2>
+                    <p>أربعة مباحث تأسيسية متعمقة تشهد فيها الفلسفة الإسلامية، والطب الفلكي القديم، ونصوص الفيدا، والطاوية الصينية، والبيولوجيا العصبية المعاصرة بأن الإنسان هو النسخة الجامعة للكون الأكبر، وأن مراكز طاقته هي بوابات معراج الوعي.</p>
+                </div>
+
+                <div class="compendium-cards-grid">
+                    <!-- Treatise 1 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الأول 🧘</span>
+                            <h3>نظرية الإنسان الكامل والعالم الصغير (Microcosm) في العرفان الإسلامي</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p><strong>تطابق الأكوان في القبضة الإنسانية:</strong> أجمع حكماء الإسلام وأئمة العرفان - من الإمام علي في بيته المشهور: <em>«أتزعم أنك جرم صغير وفيك انطوى العالم الأكبر؟»</em>، إلى عبد الكريم الجيلي في كتابه <em>'الإنسان الكامل في معرفة الأواخر والأوائل'</em> وابن عربي في <em>'الفتوحات المكية' (الباب 361)</em> - على أن الإنسان هو الثمرة المقصودة من شجرة الوجود. فكل فلك كوكبي في السماء، وكل عنصر طبيعي، وكل صفة إلهية، لها مركز مطابق في باطن التركيب الإنساني، بحيث صار جسد الإنسان خريطة حية لكامل أبعاد الملك والملكوت.</p>
+                            <p><strong>النفخة الإلهية وقالب الطين:</strong> يمثل الجسد الترابي قاعدة الهرم (شاكرا الجذر / سماء آدم)، بينما تمثل الروح القدسية قمة الهرم وسدرة المنتهى (شاكرا التاج والهالة المحمدية). وبين القاع والقمة تمتد قناة النور (الصراط الباطني)، فكلما ترقى الإنسان بتزكية نفسه عبر مقامات الأنبياء، انفتحت له بوابات الفهم الكوني وتطهرت لطائفه من كثافة التراب.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 2 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الثاني ⚡</span>
+                            <h3>فسيولوجيا النور: مطابقة الشاكرات مع الغدد الصماء والضفائر العصبية</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p><strong>المحور العصبي والغدي (Neuro-Endocrine-Vagal Axis):</strong> كشفت العلوم الطبية الحديثة عن تطابق تام بين مواقع مراكز الطاقة القديمة ومراكز التحكم الفسيولوجي الأعمق في الجسم البشري: فشاكرا التاج تطابق الغدة الصنوبرية (إفراز الميلاتونين وحفظ الإيقاع الحيوي)، وشاكرا الجبين تطابق الغدة النخامية (سيدة الغدد الصماء Master Gland)، وشاكرا الحنجرة تطابق الغدة الدرقية المنظمة للأيض، وشاكرا القلب تطابق غدة التيموس (مركز المناعة الخلوية) والضفيرة القلبية، وشاكرا الضفيرة تطابق البنكرياس والضفيرة البطنية (Celiac Plexus)، وشاكرا العجز تطابق الغدد التناسلية، وشاكرا الجذر تطابق غدتي الكظر (الأدرينالين ومواجهة الخطر).</p>
+                            <p><strong>ترددات الأوكتاف الكوني والنبض الحيوي (Hz):</strong> وفق أبحاث الفيزياء الحيوية وقوانين هانز كوستو، تهتز كل شاكرا وكل عضو بتردد رنيني محدد بالهرتز يطابق بدقة الترددات الصوتية الناتجة عن دوران الكواكب، مما يثبت أن صحة الإنسان الجسدية والنفسية تعتمد على تناغمه الرنيني مع السيمفونية الكونية المحيطة به.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 3 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الثالث 🌏</span>
+                            <h3>الإجماع الحضاري: اللطائف الصوفية، الشاكرات الفيدية، ومسارات التشي الصينية</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p><strong>اللطائف الصوفية السبع (طريق السلوك النقشبندي):</strong> يقابل العرفان الإسلامي الشاكرات الفيدية بما يُعرف بـ 'اللطائف السبع': لطيفة القالب (الجسد)، لطيفة النفس (تحت السرة)، لطيفة القلب (يسار الصدر)، لطيفة الروح (يمين الصدر)، لطيفة السر (فوق القلب)، لطيفة الخفي (فوق الروح)، ولطيفة الأخفى (وسط الصدر وأعلى الرأس). يترقى السالك بالذكر القلبي لتطهير كل لطيفة حتى يشرق نور الأحدية.</p>
+                            <p><strong>الصين والطاوية (حقول الدانتيان ومسارات Jing-Luo):</strong> في الطب الصيني التقليدي وكتاب <em>'هوانغدي نيجينغ'</em>، لا يُنظر للجسد ككتلة مادية، بل كشبكة من 12 مساراً رئيسياً لسريان طاقة التشي (Qi)، تتجمع في ثلاثة حقول كبرى تسمى الدانتيان (Dan Tian): الدانتيان السفلي (مركز طاقة الحياة والجوهر Jing في أسفل البطن)، الدانتيان الأوسط (مركز التنفس والمشاعر Qi في الصدر)، والدانتيان العلوي (مركز الروح والوعي الاستناري Shen في الجبين بين الحاجبين).</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 4 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الرابع 🏛️</span>
+                            <h3>علم الميلوثيسيا الطبية والطب الفلكي القديم (ابن سينا والبيروني)</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p><strong>التشريح الفلكي للأعضاء والأمزجة:</strong> فصّل الشيخ الرئيس ابن سينا في كتابه الخالد <em>'القانون في الطب'</em>، وأبو الريحان البيروني في <em>'التفهيم لأوائل صناعة التنجيم'</em>، وأطباء الإسكندرية واليونان (أبقراط وجالينوس)، علم 'الميلوثيسيا' (Melothesia) وهو مطابقة أعضاء الجسد البشري بالبروج الاثني عشر والكواكب السبعة: فالرأس للحمل، والحنجرة للثور، والصدر للسرطان، والقلب للأسد والشمس، والعمود الفقري للميزان، وصولاً للأقدام عند الحوت.</p>
+                            <p><strong>توازن الأخلاط الأربعة واستشفاء الروح:</strong> قرر هذا العلم أن المرض هو اضطراب في ميزان الأخلاط الأربعة (الدم، البلغم، الصفراء، والسوداء) الناتجة عن طبائع العناصر الكونية (الحرارة، البرودة، الرطوبة، واليبوسة). والعلاج الكامل لا يقتصر على العقاقير الكيميائية وحدها، بل يشمل موازنة الرنين الطاقي وتصحيح مسار التنفس وتطهير الخيال بالتوحيد والسكينة الروحية.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="chakras-container">
                 <!-- Human Silhouette Hologram -->
                 <div class="body-silhouette-wrapper">
-                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
                         <span>🧘 مجسم الجسد الأثيري ومسار الشوشومنا (قناة النور)</span>
                     </div>
 
+                    <!-- Interactive Quick Selector Pills -->
+                    <div class="chakra-pills-bar" id="chakra-pills-bar"></div>
+
                     <div class="silhouette-canvas" id="silhouette-canvas">
-                        <!-- Meditating Human Silhouette SVG -->
-                        <svg class="human-figure-svg" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Head & Crown Aura -->
-                            <circle cx="150" cy="70" r="38" stroke="#00f0ff" stroke-width="2" />
-                            <ellipse cx="150" cy="50" rx="55" ry="30" stroke="#f4b41a" stroke-width="1.5" stroke-dasharray="4 4" />
-                            <!-- Neck & Shoulders -->
-                            <path d="M135 106 L110 135 L60 165 L40 250 L65 260 L85 190 L115 170" stroke="#00f0ff" stroke-width="2" />
-                            <path d="M165 106 L190 135 L240 165 L260 250 L235 260 L215 190 L185 170" stroke="#00f0ff" stroke-width="2" />
-                            <!-- Torso & Spine -->
-                            <path d="M115 170 L110 280 L90 340 L50 430 L80 460 L130 380 L140 330 L150 330 L160 330 L170 380 L220 460 L250 430 L210 340 L190 280 L185 170" stroke="#00f0ff" stroke-width="2" />
-                            <!-- Heart & Ribs Geometric Flow -->
-                            <circle cx="150" cy="225" r="45" stroke="rgba(244, 180, 26, 0.2)" stroke-width="1" />
-                            <polygon points="150,185 185,245 115,245" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1" />
-                            <polygon points="150,265 185,205 115,205" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1" />
+                        <!-- High-Tech Sacred Meditating Human Hologram SVG -->
+                        <svg class="human-figure-svg" viewBox="0 0 320 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="540" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35" />
+                                    <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.22" />
+                                    <stop offset="100%" stop-color="#ef4444" stop-opacity="0.35" />
+                                </linearGradient>
+                                <linearGradient id="spineRainbow" x1="0" y1="30" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffffff" />
+                                    <stop offset="12%" stop-color="#a855f7" />
+                                    <stop offset="25%" stop-color="#3b82f6" />
+                                    <stop offset="40%" stop-color="#00f0ff" />
+                                    <stop offset="55%" stop-color="#10b981" />
+                                    <stop offset="70%" stop-color="#f59e0b" />
+                                    <stop offset="85%" stop-color="#f97316" />
+                                    <stop offset="100%" stop-color="#ef4444" />
+                                </linearGradient>
+                                <radialGradient id="auraGlow" cx="160" cy="95" r="90" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.15" />
+                                    <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                                </radialGradient>
+                                <filter id="glowFilt" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+
+                            <!-- Glowing Aura Background -->
+                            <circle cx="160" cy="95" r="85" fill="url(#auraGlow)" />
+                            
+                            <!-- Sacred Geometry Halo behind Head -->
+                            <circle cx="160" cy="95" r="75" stroke="rgba(244, 180, 26, 0.4)" stroke-width="1.5" stroke-dasharray="6 4" />
+                            <circle cx="160" cy="95" r="60" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1" />
+                            <circle cx="160" cy="95" r="45" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+                            <!-- Radiating Rays -->
+                            <line x1="160" y1="15" x2="160" y2="35" stroke="#ffd166" stroke-width="2" />
+                            <line x1="160" y1="155" x2="160" y2="175" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="80" y1="95" x2="100" y2="95" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="220" y1="95" x2="240" y2="95" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="105" y1="40" x2="118" y2="53" stroke="rgba(244,180,26,0.6)" stroke-width="1.5" />
+                            <line x1="215" y1="40" x2="202" y2="53" stroke="rgba(244,180,26,0.6)" stroke-width="1.5" />
+
+                            <!-- Meditating Human Silhouette Contour (Lotus Pose) -->
+                            <circle cx="160" cy="95" r="28" fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.8" />
+                            <path d="M152,122 L150,135 L170,135 L168,122" fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.5" />
+                            <path d="M150,135 C138,138 112,148 95,165 C78,182 66,215 62,250 C58,285 64,310 75,325 C84,337 96,335 105,320 C114,305 118,275 125,235 C130,205 136,175 145,160 L145,260 C138,295 132,340 120,370 C108,400 78,430 52,455 C35,472 40,498 70,505 C108,512 140,512 160,512 C180,512 212,512 250,505 C280,498 285,472 268,455 C242,430 212,400 200,370 C188,340 182,295 175,260 L175,160 C184,175 190,205 195,235 C202,275 206,305 215,320 C224,335 236,337 245,325 C256,310 262,285 258,250 C254,215 242,182 225,165 C208,148 182,138 170,135 Z" 
+                                  fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.8" filter="url(#glowFilt)" />
+
+                            <!-- Meditating Hands in Mudra over Lap -->
+                            <ellipse cx="160" cy="425" rx="36" ry="16" fill="rgba(0, 240, 255, 0.12)" stroke="rgba(0, 240, 255, 0.5)" stroke-width="1.5" />
+
+                            <!-- Sacred Heart Geometry (Merkabah) at Heart Center -->
+                            <polygon points="160,230 182,268 138,268" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.2" fill="none" />
+                            <polygon points="160,280 182,242 138,242" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.2" fill="none" />
+                            <circle cx="160" cy="255" r="24" stroke="rgba(244, 180, 26, 0.3)" stroke-width="1" stroke-dasharray="2 2" fill="none" />
+
+                            <!-- Sushumna (Central Spine Rainbow Light Channel) -->
+                            <line x1="160" y1="45" x2="160" y2="480" stroke="url(#spineRainbow)" stroke-width="4.5" stroke-linecap="round" />
+
+                            <!-- Ida (Left Lunar Channel - Cyan) -->
+                            <path d="M160,470 C135,435 135,415 160,395 C185,360 185,345 160,325 C135,290 135,275 160,255 C185,225 185,210 160,195 C135,165 135,155 160,140 C185,110 185,100 160,85" 
+                                  stroke="#00f0ff" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
+
+                            <!-- Pingala (Right Solar Channel - Gold) -->
+                            <path d="M160,470 C185,435 185,415 160,395 C135,360 135,345 160,325 C185,290 185,275 160,255 C135,225 135,210 160,195 C185,165 185,155 160,140 C135,110 135,100 160,85" 
+                                  stroke="#ffd166" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
                         </svg>
 
-                        <!-- Central Energy Spine -->
-                        <div class="central-sushumna-line"></div>
-
-                        <!-- 7 Chakra Pulsating Interactive Nodes + Universal Halo -->
-                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 45px; color: #ffffff; border-color: #f4b41a; background: radial-gradient(#fff, #f4b41a);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
-                        <div class="chakra-point-btn" id="chakra-node-7" style="top: 85px; color: #a855f7;" onclick="selectChakra(7)" title="شاكرا التاج — إبراهيم الخليل">🟣</div>
-                        <div class="chakra-point-btn" id="chakra-node-6" style="top: 135px; color: #3b82f6;" onclick="selectChakra(6)" title="شاكرا العين الثالثة — موسى وهارون">👁️</div>
-                        <div class="chakra-point-btn" id="chakra-node-5" style="top: 185px; color: #00f0ff;" onclick="selectChakra(5)" title="شاكرا الحنجرة — داود وسليمان">🗣️</div>
-                        <div class="chakra-point-btn" id="chakra-node-4" style="top: 245px; color: #10b981;" onclick="selectChakra(4)" title="شاكرا القلب — عيسى المسيح وإدريس">💚</div>
-                        <div class="chakra-point-btn" id="chakra-node-3" style="top: 310px; color: #f59e0b;" onclick="selectChakra(3)" title="شاكرا الضفيرة الشمسية — يوسف الصديق">🟡</div>
-                        <div class="chakra-point-btn" id="chakra-node-2" style="top: 380px; color: #f97316;" onclick="selectChakra(2)" title="شاكرا العجز — نوح عليه السلام">🟠</div>
-                        <div class="chakra-point-btn" id="chakra-node-1" style="top: 455px; color: #ef4444;" onclick="selectChakra(1)" title="شاكرا الجذر — آدم عليه السلام">🔴</div>
+                        <!-- 8 Chakra Pulsating Interactive Nodes on Body -->
+                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #ffffff; border-color: #ffd166; background: radial-gradient(#fff, #f4b41a);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
+                        <div class="chakra-point-btn" id="chakra-node-7" style="top: 85px; color: #a855f7; border-color: #a855f7;" onclick="selectChakra(7)" title="شاكرا التاج — إبراهيم الخليل">🟣</div>
+                        <div class="chakra-point-btn" id="chakra-node-6" style="top: 140px; color: #3b82f6; border-color: #3b82f6;" onclick="selectChakra(6)" title="شاكرا العين الثالثة — موسى وهارون">👁️</div>
+                        <div class="chakra-point-btn" id="chakra-node-5" style="top: 195px; color: #00f0ff; border-color: #00f0ff;" onclick="selectChakra(5)" title="شاكرا الحنجرة — داود وسليمان">🗣️</div>
+                        <div class="chakra-point-btn" id="chakra-node-4" style="top: 255px; color: #10b981; border-color: #10b981;" onclick="selectChakra(4)" title="شاكرا القلب — عيسى المسيح وإدريس">💚</div>
+                        <div class="chakra-point-btn" id="chakra-node-3" style="top: 325px; color: #f59e0b; border-color: #f59e0b;" onclick="selectChakra(3)" title="شاكرا الضفيرة الشمسية — يوسف الصديق">🟡</div>
+                        <div class="chakra-point-btn" id="chakra-node-2" style="top: 395px; color: #f97316; border-color: #f97316;" onclick="selectChakra(2)" title="شاكرا العجز — نوح عليه السلام">🟠</div>
+                        <div class="chakra-point-btn" id="chakra-node-1" style="top: 470px; color: #ef4444; border-color: #ef4444;" onclick="selectChakra(1)" title="شاكرا الجذر — آدم عليه السلام">🔴</div>
                     </div>
 
                     <div style="margin-top: 15px; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
@@ -2303,6 +2448,35 @@ def generate_unified_html(nodes, links):
                 <!-- Deep Interactive Synthesis Panel -->
                 <div class="chakra-detail-card" id="chakra-detail-card">
                     <!-- Injected dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- PANORAMIC COMPARATIVE MATRIX TABLE FOR CHAKRAS & MICROCOSM -->
+            <div class="panoramic-matrix-wrapper">
+                <div class="matrix-table-header">
+                    <span class="matrix-tag">المصفوفة التشريحية الكبرى</span>
+                    <h3>جدول المضاهاة البانورامية الشاملة لمراكز الطاقة والإنسان الكامل (العالم الصغير)</h3>
+                    <p>مقارنة أفقية وعمودية دقيقة تلخص نواميس الطاقة الإنسانية السبعة وما وراءها: اللطائف الصوفية، الأنبياء والمقامات، الأفلاك والمعادن، الترددات بالهرتز (Hz)، الغدد الصماء، الضفائر العصبية، الدانتيان الصيني، الفيدا (Bija Mantra)، سفيرات شجرة الحياة، والنقلة في الوعي الباطني.</p>
+                </div>
+                <div class="matrix-responsive-table">
+                    <table class="panoramic-spheres-table">
+                        <thead>
+                            <tr>
+                                <th>الشاكرا والمركز</th>
+                                <th>اللطيفة الصوفية</th>
+                                <th>النبي والمقام</th>
+                                <th>الفلك والكوكب</th>
+                                <th>التردد (Hz)</th>
+                                <th>الغدة الصماء</th>
+                                <th>الضفيرة العصبية</th>
+                                <th>الدانتيان والعنصر الصيني</th>
+                                <th>الفيدا (Bija Mantra)</th>
+                                <th>سفيرة شجرة الحياة</th>
+                                <th>النقلة في الوعي الباطني</th>
+                            </tr>
+                        </thead>
+                        <tbody id="panoramic-chakras-tbody"></tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -3189,141 +3363,259 @@ def generate_unified_html(nodes, links):
             btn.innerHTML = cosmicPhysicsRunning ? '⏸ تثبيت الحركة' : '▶ تحريك الأجرام';
         }}
 
-        // CHAKRAS & PROPHETIC BODILY CENTRES DATA
+        // CHAKRAS & PROPHETIC BODILY CENTRES DATA (GLOBAL CIVILIZATIONAL SYNTHESIS)
         const CHAKRAS_DATA = [
             {{
                 id: 8,
-                name: "الهالة المحيطة الكبرى (The Auric Field / نور النبوة)",
-                sanskrit: "أورا براكاشا (Aura Prakasha) • النور الأكبر",
+                name: "الهالة المحيطة الكبرى (The Auric Field / الحقيقة المحمدية)",
+                sanskrit: "أورا براكاشا (Aura Prakasha) • النور الأكبر المحيط",
                 sufiLatifa: "اللطيفة الأحدية / مقام العرش الأطلس وسدرة المنتهى",
-                colorName: "النور الأبيض اللؤلؤي المتوهج بالذهب (White & Gold)",
+                colorName: "النور الأبيض اللؤلؤي المتوهج بالذهب الأثيري (White & Gold)",
                 colorHex: "#ffffff",
                 prophet: "النبي الخاتم محمد صلى الله عليه وسلم (الحقيقة المحمدية)",
                 sphere: "فلك العرش الكلي المحيط الأكبر ما وراء السماوات السبع",
                 metal: "الأثير الكوني الخالص (الجوهر الفرد / Quintessence)",
-                organ: "الهالة النورانية المحيطة بكامل الجسد والروح",
-                quran: "«وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ» [القلم: 4] • «ثُمَّ دَنَا فَتَدَلَّىٰ * فَكَانَ قَابَ قَوْسَيْنِ أَوْ أَدْنَىٰ» [النجم: 8-9] • «يَا أَيُّهَا النَّبِيُّ إِنَّا أَرْسَلْنَاكَ شَاهِدًا وَمُبَشِّرًا وَنَذِيرًا * وَدَاعِيًا إِلَى اللَّهِ بِإِذْنِهِ وَسِرَاجًا مُّنِيرًا».",
-                shift: "وعي الكمال الإنساني الجامع (الإنسان الكامل): ختام النبوات، جمع دائرة البروج الاثني عشر تحت نور واحد، التحول من التشتت في العوالم إلى مقام السراج المنير الذي يفيض الرحمة على الخلائق أجمعين.",
-                proof: "«فص حكمة فردية في كلمة محمدية» — ابن عربي في الفصوص: الحقيقة المحمدية هي الفلك المحيط الأعظم، وأول التعينات النورانية، وبها تتنزل الأنوار على سائر الأفلاك والأنبياء والمقامات."
+                organ: "الحقل الحيوي الكهرومغناطيسي الشامل المحيط بالجسد والروح",
+                freqHz: "963 Hz / 432 Hz",
+                gland: "منظومة التزامن الهرموني العصبي الشامل (Endocrine Axis)",
+                plexus: "الحقل الكهرومغناطيسي الحلقي (Biofield Torus)",
+                dantian: "حقل الوي تشي المحيط الأكبر (Wei Qi Protective Field)",
+                bija: "AUM / كُنْ (The Creative Word)",
+                sefirot: "عين صوف (Ein Sof / النور اللانهائي المحيط بالشجرة)",
+                quran: "«وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ» [القلم: 4] • «ثُمَّ دَنَا فَتَدَلَّىٰ * فَكَانَ قَابَ قَوْسَيْنِ أَوْ أَدْنَىٰ» [النجم: 8-9] • «يَا أَيُّهَا النَّبِيُّ إِنَّا أَرْسَلْنَاكَ شَاهِدًا وَمُبَشِّرًا وَنَذِيرًا * وَدَاعِيًا إِلَى اللَّهِ بِإِذْنِهِ وَسِرَاجًا مُّنِيرًا» [الأحزاب: 45-46].",
+                shift: "وعي الكمال الإنساني الجامع (الإنسان الكامل): ختام النبوات، جمع دائرة البروج الاثني عشر والمقامات السبعة في نقطة التوحيد المطلق، والتحول من التشتت في العوالم المخلوقة إلى مقام السراج المنير الذي يفيض الرحمة الشاملة على الأكوان أجمعين.",
+                proof: "«فص حكمة فردية في كلمة محمدية» — ابن عربي في الفصوص: الحقيقة المحمدية هي الفلك المحيط الأعظم وأول التعينات النورانية، وبها انشقت الأكوان وتنزلت سائر المقامات والنبوات.",
+                vedic_kundalini: "في فلسفة اليوغا المتقدمة، يُعرف هذا الحقل بـ (Aura / Koshas الخمسة المحيطة). إنه الغلاف النوراني الأسمى (Anandamaya Kosha - غلاف الغبطة الأبدية) المحيط بكامل الهيكل، حيث تتلاشى ثنائية الرائي والمرئي ويتحقق طور الانعتاق (Moksha) في محيط الوعي الكوني الواحد.",
+                chinese_tao: "في الخيمياء الطاوية الداخلية (Neidan)، يمثل هذا المستوى طور «العودة إلى الفراغ العظيم» (Lian Shen Huan Xu). تمثل الهالة طاقة «الوي تشي» (Wei Qi) المنقاة لأقصى درجاتها، حيث تتحد قوى الجوهر (Jing) والطاقة (Qi) والروح (Shen) في مجال كروي يحمي الهيكل الإنساني.",
+                neuro_endocrine: "في الفيزياء الحيوية والتشريح العصبي المتقدم، يولد القلب والدماغ حقلاً كهرومغناطيسياً حلقياً (Toroidal Biofield) يمتد لأمتار خارج الجلد. في حالات التبتل والمحبة، يحدث تناغم تام (Heart-Brain Coherence) مع سيطرة موجات غاما عالية التزامن (>40 Hz).",
+                sufi_sefirot: "في العرفان المقارن (الجيلي والسمناني)، تقابل هذه الهالة «اللطيفة الأحدية» ومقام «قاب قوسين». وفي القبالاه العتيقة، تطابق «أور عين صوف» (Ohr Ein Sof - النور المنبثق من اللانهائي) الذي يسبق انبثاق السفيرات العشر ويحويها جميعاً في كينونته."
             }},
             {{
                 id: 7,
-                name: "شاكرا التاج (Sahasrara - ساهاسرارا)",
-                sanskrit: "زهرة اللوتس ذات الألف بتلة (Sahasrara)",
-                sufiLatifa: "سر السر (Sirr al-Sirr) • الخفاء والتوحيد الصرف",
-                colorName: "البنفسجي الملكي والأبيض الشفاف (Violet & Pure White)",
+                name: "شاكرا التاج (Sahasrara - ساهاسرارا / زهرة اللوتس)",
+                sanskrit: "ساهاسرارا (Sahasrara) • اللوتس ذات الألف بتلة",
+                sufiLatifa: "لطيفة سر السر (Sirr al-Sirr) • الخفاء والتوحid الصرف",
+                colorName: "البنفسجي الملكي المتوج بالأبيض النقي الشفاف (Violet & White)",
                 colorHex: "#a855f7",
                 prophet: "النبي إبراهيم الخليل عليه السلام (إمام الحنفاء)",
                 sphere: "فلك زحل (السماء السابعة عند البيت المعمور)",
-                metal: "الرصاص (Lead - Pb) • أصل التحول الخيميائي",
-                organ: "أعلى الرأس، الغدة الصنوبرية (Pineal Gland)، القشرة الدماغية",
-                quran: "«إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ» [الأنعام: 79] • كسر أصنام الكواكب والوصول إلى خالق الأكوان.",
-                shift: "وعي التوحيد المفارق والصمت الأبدي: التجرد المطلق من التعلق بالصور والآفات الزائلة، ملامسة مكعب التوحيد الخالص (الكعبة المشرفة)، وفناء الأوهام في نور الحق.",
-                proof: "«فص حكمة مهيمية في كلمة إبراهيمية» — ابن عربي: إبراهيم هو الخليل الذي تخللت محبته كل ذرات الوجود، مقامه زحل (التجرد والصمت الأبدي وبناء بيت الله الحرام)."
+                metal: "الرصاص العتيق (Lead - Pb) • سر التحول الخيميائي",
+                organ: "قبة الجمجمة واليافوخ، الغدة الصنوبرية، القشرة المخية العليا",
+                freqHz: "963 Hz / 147.85 Hz",
+                gland: "الغدة الصنوبرية (Pineal Gland) • سيدة الإيقاع الحيوي والميلاتونين",
+                plexus: "القشرة الدماغية والشبكة العصبية المركزية (Cerebral Cortex)",
+                dantian: "الدانتيان العلوي الأسمى (نقطة بايهوي GV-20 ملتقى المائة مسار)",
+                bija: "OM / الصمت الأبدي (Silent AUM)",
+                sefirot: "سفيرة التاج (Keter - كيتر / الإرادة الإلهية الباطنة)",
+                quran: "«إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ» [الأنعام: 79] • كسر أصنام الكواكب والرسوخ التام عند البيت المعمور في السماء السابعة.",
+                shift: "وعي التوحيد المفارق والصمت الأبدي: التجرد المطلق من التعلق بالصور والوسائط والأصنام العقلية، ملامسة مكعب التوحيد الخالص (الكعبة المشرفة)، وفناء الأوهام والظنون في شهود قيومية الحق.",
+                proof: "«فص حكمة مهيمية في كلمة إبراهيمية» — ابن عربي في الفصوص: إبراهيم سُمي خليلاً لتخلل محبة الحق جميع ذرات كيانه، ومقامه الفلك السابع زحل لأنه فلك الصمت الأبدي والتجرد وبناء البيت المعمور.",
+                vedic_kundalini: "تعد ساهاسرارا تاج الكونداليني ومقر الشيفا (Shiva - الوعي الخالص). باختراق طاقة الشاكتي للبتلات الألف، يختبر السالك طور (السامادهي - Samadhi)، حيث يزول وهم الانفصال ويسيل رحيق الخلود الأثيري (Amrita) من قمة الرأس مغذياً الجسد.",
+                chinese_tao: "في الطب الصيني والكيغونغ، تسمى قمة الرأس «بايهوي» (Baihui GV-20 - مجمع المئات)، وهي بوابة تلقي طاقة يانغ السماوية (Tian Qi). هنا يكتمل استقرار «الجنين الخالد» (Shengtai) في الدانتيان العلوي وتتحول طاقة الروح (Shen) إلى سكينة صافية.",
+                neuro_endocrine: "ترتبط تشريحياً بالغدة الصنوبرية (Pineal Gland) التي تفرز الميلاتونين وتتحكم في الإيقاع اليومي (Circadian Rhythm) وإنتاج جزيئات البصيرة الداخلية. يظهر تخطيط الدماغ في هذه الحالة نمط موجات ثيتا ودلتا متزامنة وبطفرات هدوء عصبي عميقة.",
+                sufi_sefirot: "يقابل هذا المركز في سلم السمناني «اللطيفة الخفية» وعند الجيلي «سر السر». وفي شجرة السفيرات، يتطابق مع سفيرة (كيتر Keter - التاج الأسمى) التي تمثل النقطة الأولى لفيض النور الإلهي من الغيب المطلق إلى عوالم الإمكان."
             }},
             {{
                 id: 6,
-                name: "شاكرا العين الثالثة (Ajna - آجنا)",
-                sanskrit: "مركز البصيرة والأمر (Ajna)",
-                sufiLatifa: "لطيفة الأخفى (Al-Akhfa) • البصيرة اللدنية",
-                colorName: "الأزرق النيلي العميق (Indigo)",
+                name: "شاكرا العين الثالثة (Ajna - آجنا / مركز البصيرة)",
+                sanskrit: "آجنا (Ajna) • مركز الأمر والبصيرة اللدنية الكلية",
+                sufiLatifa: "لطيفة الأخفى (Al-Akhfa) • البصيرة اللدنية والسر المصون",
+                colorName: "الأزرق النيلي العميق المشع (Deep Indigo Blue)",
                 colorHex: "#3b82f6",
-                prophet: "النبي موسى وهارون عليهما السلام (الكليم والشريعة)",
-                sphere: "فلك المشتري (السماء السادسة) • كوكب العدالة والرحمة",
-                metal: "القصدير (Tin - Sn)",
-                organ: "الجبهة بين الحاجبين، الغدة النخامية (Pituitary)، العينان",
-                quran: "«وَلَمَّا جَاءَ مُوسَىٰ لِمِيقَاتِنَا وَكَلَّمَهُ رَبُّهُ» [الأعراف: 143] • تنزيل ألواح التوراة والوصايا العشر لإقامة ميزان العدل والحكمة الكلية.",
-                shift: "وعي البصيرة الكلية والناموس: تجاوز الرؤية البصرية الظاهرة إلى الرؤية الباطنية، إدراك نواميس القضاء والقدر، وقراءة مقادير الأحداث ومآلات الأمم قبل وقوعها.",
-                proof: "«فص حكمة علوية في كلمة هارونية» — ابن عربي: هارون وموسى جمعا بين نور البصيرة المشترية التشريعية وحكمة تدبير الأمة."
+                prophet: "النبي موسى وهارون عليهما السلام (الكليم والشريعة الإلهية)",
+                sphere: "فلك المشتري (السماء السادسة) • فلك العدالة والرحمة والحكمة الكلية",
+                metal: "القصدير (Tin - Sn) • معدن الاتساع والعدل",
+                organ: "الجبهة بين الحاجبين، الغدة النخامية، العينان والأعصاب البصرية",
+                freqHz: "852 Hz / 183.58 Hz",
+                gland: "الغدة النخامية (Pituitary Gland) • سيدة الغدد الصماء والمتحكمة بالهرمونات",
+                plexus: "الضفيرة السباتية والكهفية (Carotid & Cavernous Plexus)",
+                dantian: "الدانتيان العلوي (Shang Dantian - قصر نيوان / Niwan Palace)",
+                bija: "KSHAM / AUM (أوم الحكيمة)",
+                sefirot: "سفيرتا الحكمة والفهم (Chokhmah & Binah - البصيرة والتمييز)",
+                quran: "«وَلَمَّا جَاءَ مُوسَىٰ لِمِيقَاتِنَا وَكَلَّمَهُ رَبُّهُ» [الأعراف: 143] • «وَكَتَبْنَا لَهُ فِي الْأَلْوَاحِ مِن كُلِّ شَيْءٍ مَّوْعِظَةً وَتَفْصِيلًا لِّكُلِّ شَيْءٍ» [الأعراف: 145].",
+                shift: "وعي البصيرة الكلية وتنزيل الناموس: الترفع عن الرؤية البصرية الحسية المحدودة إلى الرؤية الباطنية اللدنية، استيعاب قوانين العدل والقدر، وإدراك حكمة التشريع وتسيير مآلات الأمم قبل وقوعها.",
+                proof: "«فص حكمة علوية في كلمة هارونية» وفص الحكمة الإمامية الموسوية — ابن عربي: الجمع بين نور البصيرة المشترية التشريعية وحكمة تدبير الأمة بالحق المبين.",
+                vedic_kundalini: "تتكون شاكرا آجنا من بتلتين تماثلان التقاء القناتين القمريتين والشمسيتين (Ida & Pingala) في مسار الشوشومنا. هنا تتجاوز الذات ثنائية العقل وتتحقق رؤية النور الأزرق (Nila Bindu) المعبر عن الحكمة اللدنية الفائقة للحواس.",
+                chinese_tao: "في الطب الصيني، يقع هذا المركز في قصر «نيوان» (Niwan Palace) ونقطة «يينتانغ» (Yintang EX-HN3). وهو مستقر طاقة الروح (Shen). عندما يصفو هذا المركز من شوائب القلق تنفتح «عين السماء» (Tian Mu) التي تكشف بواطن الأمور.",
+                neuro_endocrine: "تطابق شاكرا آجنا الغدة النخامية (Pituitary Gland) المرتبطة بالمهاد (Hypothalamus) عبر المحور النخامي (HPA Axis). يتحكم هذا المركز في التوازنات الهرمونية، ويمثل فسيولوجياً جسر الترجمة بين الوعي العصبي والإفراز الكيميائي.",
+                sufi_sefirot: "تقابل «لطيفة الأخفى» الموصوفة بالنور الأزرق الصافي. وفي القبالاه الهرمسية، تقابل اقتران سفيرة الحكمة (Chokhmah) بسفيرة الفهم (Binah) خلف حجاب المعرفة (Da'at)، رمزاً لاكتمال الإدراك العقلي الروحي الشامل."
             }},
             {{
                 id: 5,
-                name: "شاكرا الحنجرة والنطق (Vishuddha - فيشودها)",
-                sanskrit: "مركز النقاء والتطهير بالصوت (Vishuddha)",
-                sufiLatifa: "لطيفة الخفي (Al-Khafi) • سر الكلمة الإلهية",
-                colorName: "الأزرق الفيروزي السماوي (Cyan / Sky Blue)",
+                name: "شاكرا الحنجرة والنطق (Vishuddha - فيشودها / الكلمة النافذة)",
+                sanskrit: "فيشودها (Vishuddha) • النقاء والتطهير بالتردد الصوتي",
+                sufiLatifa: "لطيفة الخفي (Al-Khafi) • سر النطق والكلمة التكوينية",
+                colorName: "الأزرق الفيروزي السماوي الرائق (Sky Turquoise Cyan)",
                 colorHex: "#00f0ff",
-                prophet: "النبي داود وسليمان عليهما السلام (صهر الحديد والمزامير)",
-                sphere: "فلك المريخ (السماء الخامسة) • فلك الشدة والبأس والتردد الصوتي",
+                prophet: "النبي داود وسليمان عليهما السلام (صهر الحديد ومزامير التسبيح)",
+                sphere: "فلك المريخ (السماء الخامسة) • فلك الشدة والبأس ونفوذ التردد الصوتي",
                 metal: "الحديد (Iron - Fe) • «وَأَلَنَّا لَهُ الْحَدِيدَ»",
-                organ: "الحنجرة، الحبال الصوتية، الغدة الدرقية، الرقبة",
-                quran: "«يَا جِبَالُ أَوِّبِي مَعَهُ وَالطَّيْرَ ۖ وَأَلَنَّا لَهُ الْحَدِيدَ» [سبأ: 10] • تسبيح الجبال مع مزامير داود (فيزياء الهارموني والتردد الصوتي الكوني).",
-                shift: "وعي الكلمة الصادقة الحاكمة وسلطان الحق: تسخير الترددات الصوتية لتغيير المادة الفيزيائية (تليين الحديد)، قول الحق بشجاعة دون خوف من الطغاة، ومطابقة النطق لمراد الله.",
-                proof: "«رسائل إخوان الصفا»: النغمات الموسيقية والأصوات الموزونة تحاكي نغمات حركات الأفلاك وتطهر النفس من كدر الطبيعة."
+                organ: "الحنجرة، الحبال الصوتية، الغدة الدرقية وجارات الدرقية، الرقبة",
+                freqHz: "741 Hz / 144.72 Hz",
+                gland: "الغدة الدرقية وجارات الدرقية (Thyroid & Parathyroid) • منظمات الأيض والكالسيوم",
+                plexus: "الضفيرة البلعومية والعنقية (Pharyngeal & Cervical Plexus)",
+                dantian: "نقطة تيانتو (Tiantu CV-22) ومسار الرين ماي (Ren Mai الحلقي)",
+                bija: "HAM (هام المنقية الصافية)",
+                sefirot: "سفيرة الجبوراه (Gevurah - القوة والفرقان والصرامة الحقة)",
+                quran: "«يَا جِبَالُ أَوِّبِي مَعَهُ وَالطَّيْرَ ۖ وَأَلَنَّا لَهُ الْحَدِيدَ» [سبأ: 10] • «وَشَدَدْنَا مُلْكَهُ وَآتَيْنَاهُ الْحِكْمَةَ وَفَصْلَ الْخِطَابِ» [ص: 20].",
+                shift: "وعي الكلمة النافذة وسلطان الحق: تسخير الاهتزاز الصوتي والتسبيح لإعادة تشكيل المادة الكثيفة (تليين الحديد)، قول الحق بشجاعة لا تعرف المواربة، وتطابق النطق البشري مع الأمر الإلهي التكويني.",
+                proof: "«رسائل إخوان الصفا»: النغمات الصوتية الموزونة تحاكي نغمات حركات الأفلاك وتحدث اهتزازاً أثيرياً يفكك كثافة المواد ويطهر النفوس من كدورات الطبيعة.",
+                vedic_kundalini: "تمتلك فيشودها 16 بتلة تمثل الحروف الصوتية السنسكريتية وعنصرها الأثير الكوني (Akasha). هنا يتم تطهير السالك من سموم الكذب والرياء، ويولد صوت الحقيقة الصادق وتتحقق موهبة (Vak Siddhi - صدق الكلمة ونفوذها في الواقع).",
+                chinese_tao: "في الطب الصيني، تمر بالحلق مسارات هامة كنهر التشي الأمامي (Ren Mai). تعتبر نقطة «تيانتو» صمام تنفيس طاقة الرئة والقلب؛ وإذا كُتم التعبير احتقن تشي الكبد مسبباً «عقدة البرقوق» (Mei He Qi). طهارة هذا المركز تضمن سلاسة التعبير.",
+                neuro_endocrine: "ترتبط بالغدة الدرقية (Thyroid) المفرزة للثيروكسين (T4 و T3) المتحكمين بالأيض وإنتاج الطاقة الحيوية. عصبياً، يغذيها العصب المبهم (Vagus Nerve) عبر الفرع الحنجري، وهو أساس استجابة التعبير الصوتي والتنفس الهادئ.",
+                sufi_sefirot: "تقابل «لطيفة الخفي» المرتبطة بسر النطق والكلمة. وفي شجرة السفيرات، تتناظر مع (جبوراه Gevurah - القوة والفرقان الإلهي الحاكم)، حيث تكون الكلمة سيفاً فاصلاً بين الحق والباطل."
             }},
             {{
                 id: 4,
-                name: "شاكرا القلب والصدر (Anahata - أناهاتا)",
-                sanskrit: "الصوت الذي لا يُقرع • المركز الكوني (Anahata)",
-                sufiLatifa: "لطيفة السر (Al-Sirr) • شمس الروح والمحبة الخالصة",
-                colorName: "الأخضر الزمردي المتألق بالذهب الشمسي (Emerald & Gold)",
+                name: "شاكرا القلب والصدر (Anahata - أناهاتا / شمس الروح والمحبة)",
+                sanskrit: "أناهاتا (Anahata) • الصوت الذي لا يُقرع • المركز الكوني التكاملي",
+                sufiLatifa: "لطيفة السر (Al-Sirr) • شمس الروح والمحبة والفيض الرحماني",
+                colorName: "الأخضر الزمردي المتألق بنور الذهب الشمسي (Emerald & Solar Gold)",
                 colorHex: "#10b981",
-                prophet: "السيد المسيح عيسى عليه السلام والنبي إدريس",
-                sphere: "فلك الشمس (السماء الرابعة) • قلب المنظومة الكونية",
-                metal: "الذهب الخالص (Gold - Au)",
-                organ: "القلب العضوي، التيموس (Thymus)، الرئتان والدورة الدموية",
-                quran: "«وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ وَأَيَّدْنَاهُ بِرُوحِ الْقُدُسِ» [البقرة: 87] • إحياء الموتى وإبراء الأكمه والأبرص بالنفخة الروحية القلبية.",
-                shift: "وعي شمس الروح والمحبة غير المشروطة: ولادة الإنسان الحقيقي في باطن الجسد، التسامي فوق الحرفية القاتلة للناموس لصالح روح الإحياء، والشفاء الذاتي وفيض الرحمة.",
-                proof: "«فص حكمة روحية في كلمة عيسوية» — ابن عربي: عيسى هو النفس الإلهي النازل بالروح، مقامه فلك الشمس الذي يفيض الحياة على الوجود كله."
+                prophet: "السيد المسيح عيسى عليه السلام والنبي إدريس (المحبة والرفع)",
+                sphere: "فلك الشمس (السماء الرابعة) • قلب المنظومة الكونية وميزان الاعتدال",
+                metal: "الذهب الخالص (Gold - Au) • معدن الكمال والضياء",
+                organ: "القلب العضوي، الغدة الزعترية (Thymus)، الرئتان، مركز الصدر",
+                freqHz: "639 Hz / 126.22 Hz / 528 Hz",
+                gland: "الغدة الزعترية / التيموس (Thymus Gland) • حصن المناعة وتمييز الخلايا التائية",
+                plexus: "الضفيرة القلبية الرئوية (Cardiac & Pulmonary Plexus)",
+                dantian: "الدانتيان الأوسط (Zhong Dantian - نقطة شانزونغ CV-17)",
+                bija: "YAM (يام المحبة الكونية)",
+                sefirot: "سفيرة التيفئيريت (Tiferet - الجمال والتناغم والمركز القلبي النابض)",
+                quran: "«وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ وَأَيَّدْنَاهُ بِرُوحِ الْقُدُسِ» [البقرة: 87] • «وَرَفَعْنَاهُ مَكَانًا عَلِيًّا» [مريم: 57] • «أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ» [الرعد: 28].",
+                shift: "وعي شمس الروح والمحبة غير المشروطة: ولادة الإنسان الروحي الجديد في باطن الهيكل، التحرر من حرفية الناموس القاتلة لصالح روح الإحياء والنفخة الإلهية، وتحقيق التوازن الذهبي بين عوالم السماء والأرض.",
+                proof: "«فص حكمة روحية في كلمة عيسوية» — ابن عربي في الفصوص: عيسى هو النفس الإلهي النازل بالروح، مقامه فلك الشمس الذي يمد سائر الكواكب بالحياة والنور، كمد القلب للأعضاء بالحياة.",
+                vedic_kundalini: "تتكون أناهاتا من 12 بتلة وعنصرها الهواء (Vayu)، وفي مركزها الينترا السداسية الجامعة لمثلث النور ومثلث المادة. هي الجسر الحرج بين الشاكرات الأرضية الثلاث والشاكرات العلوية الثلاث، ومستقر الصوت الصامت الأزلي (Anahata Nada).",
+                chinese_tao: "في الطب الصيني، القلب هو «الإمبراطور الأعظم» (Jun Zhu) الذي يستقر فيه الشين (Shen). والمركز هو الدانتيان الأوسط عند نقطة «شانزونغ» (CV-17). إذا عم السلام هذا المركز سكنت العواطف وصفت البصيرة الداخلية.",
+                neuro_endocrine: "يحتوي القلب على أكثر من 40,000 خلية عصبية تشكل «دماغ القلب» (Heart Brain)، ويفرز هرموني الأوكسيتوسين وANP. ينتج نبض القلب حقلاً كهرومغناطيسياً أقوى بآلاف المرات من الدماغ، وهو مركز التناغم الفسيولوجي التام (Heart Coherence).",
+                sufi_sefirot: "تطابق «لطيفة السر» والقلب الصوفي الحقيقي مظهر الأنوار. وفي شجرة السفيرات، تتطابق حرفياً مع (تيفئيريت Tiferet - الجمال والتناغم) المحتلة للمركز الدقيق للشجرة والجامعة بين الرحمة (Chesed) والشدة (Gevurah)."
             }},
             {{
                 id: 3,
-                name: "شاكرا الضفيرة الشمسية (Manipura - مانيبورا)",
-                sanskrit: "مدينة الجواهر والحرارة (Manipura)",
-                sufiLatifa: "لطيفة القلب الظاهر / النفس المطمئنة",
-                colorName: "الأصفر الشمسي الذهبي (Solar Yellow)",
+                name: "شاكرا الضفيرة الشمسية (Manipura - مانيبورا / مدينة الجواهر)",
+                sanskrit: "مانيبورا (Manipura) • مدينة الجواهر والحرارة والتحويل",
+                sufiLatifa: "لطيفة القلب الظاهر / النفس المطمئنة وسيادة الإرادة",
+                colorName: "الأصفر الشمسي الذهبي المتوهج (Solar Golden Yellow)",
                 colorHex: "#f59e0b",
-                prophet: "النبي يوسف الصديق عليه السلام (شمس الرؤى والجمال)",
-                sphere: "فلك الزهرة (السماء الثالثة) • فلك الجمال والتناغم",
-                metal: "النحاس (Copper - Cu)",
-                organ: "فم المعدة، الكبد، البنكرياس، الجهاز الهضمي والتمثيل الغذائي",
-                quran: "«إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ» [يوسف: 4] • «مَعَاذَ اللَّهِ ۖ إِنَّهُ رَبِّي أَحْسَنَ مَثْوَايَ».",
-                shift: "وعي السيادة وتسامي الرغبات الحسية: ترويض إرادة القوة والشهوات الدنيوية، تحويل طاقة الانجذاب الغريزي إلى بهاء جمالي روحي خالص، وحكمة إدارة موارد الأرض في سنين الشدة.",
-                proof: "«فص حكمة نورية في كلمة يوسفية» — ابن عربي: يوسف تجلت فيه مرآة الجمال المطلق، فعف عن المعصية وساد بالعلم وتأويل الرؤى."
+                prophet: "النبي يوسف الصديق عليه السلام (جمال الملك وتأويل الرؤى)",
+                sphere: "فلك الزهرة (السماء الثالثة) • فلك الجمال والتناغم والتدبير الحكيم",
+                metal: "النحاس (Copper - Cu) • موصل الطاقة والحرارة",
+                organ: "فم المعدة، الكبد، البنكرياس، الطحال، الجهاز الهضمي والتمثيل الغذائي",
+                freqHz: "528 Hz / 221.23 Hz",
+                gland: "البنكرياس (Pancreas) والجزر اللانغرهانسية • منظم السكر وطاقة الأيض",
+                plexus: "الضفيرة الشمسية والبطنية (Celiac & Solar Plexus)",
+                dantian: "منطقة البطن العلوي (Zhongwan CV-12) وموقد الهضم الأوسط",
+                bija: "RAM (رام النارية المحولة)",
+                sefirot: "سفيرتا النيتساخ والهود (Netzach & Hod - النصر والمجد وتدبير القوى)",
+                quran: "«إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ» [يوسف: 4] • «قَالَ اجْعَلْنِي عَلَىٰ خَزَائِنِ الْأَرْضِ ۖ إِنِّي حَفِيظٌ عَلِيمٌ» [يوسف: 55].",
+                shift: "وعي السيادة وتسامي الرغبات الحسية: تحويل إرادة القوة والأطماع الدنيوية إلى بهاء حكم وحفظ موارد، العفة أمام المغريات العاصفة، والتمكن من إدارة خزائن الأرض بعلم وحكمة وتأويل الرؤى.",
+                proof: "«فص حكمة نورية في كلمة يوسفية» — ابن عربي في الفصوص: يوسف تجلت له معاني الغيب متجسدة في عالم المثال، فتحكم في رغبات النفس وتسامى بها حتى سجدت له عوالم التدبير.",
+                vedic_kundalini: "تمتلك مانيبورا 10 بتلات وعنصرها النار (Agni). هي محرك الاستقلاب والتحويل الحراري في الجسد (Samana Vayu). عند استنارتها، يمتلك السالك عزيمة فولاذية وشجاعة ذاتية، وتتحول رغبات الأنا إلى رغبة في خدمة الخير الكلي.",
+                chinese_tao: "في الطب الصيني، تمثل هذه المنطقة «الموقد الأوسط» (Middle Sanjiao) الذي يحكمه الطحال والمعدة (عنصر الأرض). وهي المسؤولة عن تحويل الغذاء إلى «تشي مكتسب» (Gu Qi). صفاء هذا المركز يمنح الذهن ثقة وقدرة على الهضم الفكري للأحداث.",
+                neuro_endocrine: "تتطابق مع الضفيرة الشمسية (Celiac Plexus) المسماة «الدماغ البطني»، وتتحكم بإفراز الأنسولين والجلوكاجون وإنزيمات الكبد الهضمية. هذا المركز هو بؤرة استجابة الكر والفر (Fight or Flight) واستقرار هرمونات التوتر كالكورتيزول.",
+                sufi_sefirot: "ترتبط في العرفان بانتقال النفس من أمارة إلى لوامة ثم مطمئنة مستقرة. وفي السفيرات، تقابل محوري (نيتساخ وهود Netzach & Hod) اللذين يمثلان التناغم التنفيذي والنصر العملي في المادة."
             }},
             {{
                 id: 2,
-                name: "شاكرا العجز وأسفل البطن (Svadhisthana - سفاديستانا)",
-                sanskrit: "المستقر الذاتي والرحم المائي (Svadhisthana)",
-                sufiLatifa: "لطيفة النفس (Al-Nafs) • التطهير من طوفان الشهوات",
-                colorName: "البرتقالي المتوهج الناري (Vibrant Orange)",
+                name: "شاكرا العجز والرحم المائي (Svadhisthana - سفاديستانا / سفينة النجاة)",
+                sanskrit: "سفاديستانا (Svadhisthana) • المستقر الذاتي والرحم المائي",
+                sufiLatifa: "لطيفة النفس (Al-Nafs) • التطهير من طوفان الشهوات وفلك النجاة",
+                colorName: "البرتقالي المتوهج الدافئ (Vibrant Radiant Orange)",
                 colorHex: "#f97316",
-                prophet: "النبي نوح عليه السلام (شيخ أولي العزم والنجاة)",
-                sphere: "فلك عطارد والماء الكوني • فلك الفلك المشحون والسرطان",
+                prophet: "النبي نوح عليه السلام (شيخ أولي العزم وفلك النجاة في الطوفان)",
+                sphere: "فلك عطارد والماء الكوني • فلك الفلك المشحون والتدفق والذكاء التكيفي",
                 metal: "الزئبق المائي (Quicksilver - Hg)",
-                organ: "أسفل السرة، الحوض، المثانة، الأعضاء التناسلية الداخلية",
-                quran: "«وَاصْنَعِ الْفُلْكَ بِأَعْيُنِنَا وَوَحْيِنَا» • «حَتَّىٰ إِذَا جَاءَ أَمْرُنَا وَفَارَ التَّنُّورُ قُلْنَا احْمِلْ فِيهَا مِن كُلٍّ زَوْجَيْنِ اثْنَيْنِ» [هود: 37-40].",
-                shift: "وعي النجاة وحفظ بذور الحياة: التطهير من طوفان المشاعر الغامرة والغرائز المنفلتة، بناء فلك النجاة الروحي لحمل بذور الفطرة السليمة، والعبور إلى عهد الإنسانية الجديد.",
-                proof: "«فص حكمة سبوحية في كلمة نوحية» — ابن عربي: فلك نوح هو سر النجاة في طوفان الكثرة، وهو تطهير عالم الماء الباطني لولادة العهد الجديد."
+                organ: "أسفل السرة، الحوض، الرحم والمبيضان / الخصيتان، المثانة، الكليتان",
+                freqHz: "417 Hz / 141.27 Hz",
+                gland: "الغدد التناسلية (Gonads / Testes & Ovaries) • صانعة الهرمونات الجنسية والإخصاب",
+                plexus: "الضفيرة الخثلية والعجزية (Hypogastric & Sacral Plexus)",
+                dantian: "الدانتيان السفلي الحيوي (Xia Dantian - نقطة غوانيوان CV-4)",
+                bija: "VAM (فام المائية المطهرة)",
+                sefirot: "سفيرة الييسود (Yesod - الأساس والأسمنت الرابط للفيض الإلهي)",
+                quran: "«وَاصْنَعِ الْفُلْكَ بِأَعْيُنِنَا وَوَحْيِنَا» • «حَتَّىٰ إِذَا جَاءَ أَمْرُنَا وَفَارَ التَّنُّورُ قُلْنَا احْمِلْ فِيهَا مِن كُلٍّ زَوْجَيْنِ اثْنَيْنِ» [هود: 37-40] • «وَقِيلَ يَا أَرْضُ ابْلَعِي مَاءَكِ وَيَا سَمَاءُ أَقْلِعِي» [هود: 44].",
+                shift: "وعي النجاة وحفظ بذور الفطرة: التطهير من طوفان المشاعر الغامرة والانفعالات النفسية المنفلتة، تشييد فلك العقل واليقين لحمل بذور الطهارة، والولادة الجديدة للإنسانية بعد انحسار ماء الهوى.",
+                proof: "«فص حكمة سبوحية في كلمة نوحية» — ابن عربي في الفصوص: دعوة نوح جمعت بين التنزيه والتشبيه، وفلكه هو سر النجاة في بحار الهيولى وطوفان الكثرة لتطهير العالم المائي الباطني.",
+                vedic_kundalini: "تمتلك سفاديستانا 6 بتلات وعنصرها الماء (Jala). هي خزان الطاقة الجنسية والإبداعية ومستودع الانطباعات الباطنية (Samskaras). عند تنقيتها، يتحول الانجذاب الحسي السفلي إلى طاقة إبداع وتدفق عاطفي راقٍ.",
+                chinese_tao: "في الطاوية، هذا المركز هو موضع «الدانتيان السفلي» (Lower Dantian) ونقطة «غوانيوان» (CV-4 - بوابة الأصل). هنا يُخزن جوهر الحياة الأصلي (Yuan Jing). تبدأ ممارسة تدوير التشي (Microcosmic Orbit) بتسخين هذا الموقد لتحويل الجوهر إلى طاقة.",
+                neuro_endocrine: "تتصل بالضفيرة الخثلية (Hypogastric Plexus) والغدد التناسلية المفرزة للإستروجين والبروجستيرون والتستوستيرون. يحكم هذا المركز وظائف التكاثر والاستجابة للذة والتوازن السائلي عبر الكلى والجهاز البولي.",
+                sufi_sefirot: "تقابل مجاهدة النفس لترويض نوازعها الحيوانية والعبور بها إلى بر السلامة. وفي شجرة السفيرات، تتطابق مع (ييسود Yesod - الأساس) التي تجمع طاقات السفيرات العليا وتسكبها في العالم المادي السفلي (Malkuth)."
             }},
             {{
                 id: 1,
-                name: "شاكرا الجذر والقاعدة (Muladhara - مولادارا)",
-                sanskrit: "الجذر الأساسي للوجود (Muladhara)",
-                sufiLatifa: "لطيفة القالب والجسد الترابي (Al-Qalib)",
-                colorName: "الأحمر الياقوتي الأرضي (Deep Ruby Red)",
+                name: "شاكرا الجذر والقاعدة الأرضية (Muladhara - مولادارا / معبد التجسد)",
+                sanskrit: "مولادارا (Muladhara) • الجذر والأساس الراسخ للوجود المادي",
+                sufiLatifa: "لطيفة القالب والجسد الترابي (Al-Qalib) • سر الاستخلاف في الأرض",
+                colorName: "الأحمر الياقوتي الأرضي العميق (Deep Grounding Ruby Red)",
                 colorHex: "#ef4444",
-                prophet: "النبي آدم عليه السلام (أبو البشرية وبداية التجسد)",
-                sphere: "فلك القمر (السماء الدنيا) • مجمع الطينات وعالم الكون والفساد",
-                metal: "الفضة والصلصال الفخاري (Silver & Clay)",
-                organ: "قاعدة العمود الفقري، العجان، عظم العجز، الساقان والعظام",
-                quran: "«إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً» • «وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا» [البقرة: 30-31] • «خَلَقَ الْإِنسَانَ مِن صَلْصَالٍ كَالْفَخَّارِ».",
-                shift: "وعي التجسد والاستخلاف في الأرض: إدراك قدسية الجسد المادي كمعبد للروح، التحرر من الخوف من الموت والفقر، وفك شيفرة أسماء الكائنات والمفاهيم الكونية.",
-                proof: "«الإنسان الكامل» — الجيلي: آدم هو مظهر الاسم الإلهي 'الله' في عالم الأجسام، وقاعدته ترابية تنبثق منها سائر المراتب الروحية."
+                prophet: "النبي آدم عليه السلام (أبو البشرية وسر القبضة الترابية والأسماء)",
+                sphere: "فلك القمر (السماء الأولى) • مجمع العناصر الأربعة وعالم التجسد والشهادة",
+                metal: "الفضة والصلصال الترابي (Silver & Sacred Clay)",
+                organ: "قاعدة العمود الفقري، العجان (Perineum)، العصعص، الساقان والقدمان والعظام",
+                freqHz: "396 Hz / 210.42 Hz",
+                gland: "الغدتان الكظريتان (Adrenal Glands) • مصنع الأدرينالين واستجابة البقاء",
+                plexus: "الضفيرة العصعصية (Coccygeal Plexus)",
+                dantian: "نقطة هويين (Huiyin CV-1 - ملتقى الين وقاع الجذع)",
+                bija: "LAM (لام الأرضية الراسخة)",
+                sefirot: "سفيرة الملكوت (Malkuth - التجلي المادي للأمر الإلهي على الأرض)",
+                quran: "«وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً» [البقرة: 30] • «وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا» [البقرة: 31] • «خَلَقَ الْإِنسَانَ مِن صَلْصَالٍ كَالْفَخَّارِ» [الرحمن: 14].",
+                shift: "وعي التجسد والاستخلاف في الأرض: إدراك قدسية الهيكل الجسدي المادي كمعبد حامل للروح، التحرر الجذري من مخاوف الفناء والفقر والموت، وفك شفرة الأسماء الإلهية المودعة في طينة الخليقة.",
+                proof: "«كتاب الإنسان الكامل» — عبد الكريم الجيلي: آدم عليه السلام هو النسخة الكاملة الأولى التي جمعت حقائق الأسماء الإلهية في قالب الطين، وقاعدته ترابية تنبثق منها سائر المعارج الروحية.",
+                vedic_kundalini: "تمتلك مولادارا 4 بتلات تمثل أركان المادة وعنصرها الأرض (Prithvi). في قعرها تنام حية الكونداليني (Kundalini Shakti) ملتفة ثلاث لفات ونصف حول اللينغام. إيقاظ هذا المركز بالطهارة والاستقامة شرط أساسي لصعود الطاقة دون اختلال.",
+                chinese_tao: "في الطب الصيني، ترتبط بنقطة «هويين» (Huiyin CV-1 - التقاء الين) وقناة الحاكم (Du Mai). وهي مقر طاقة الأرض (Di Qi) وبوابة تجذير الجسد مع كوكب الأرض لحفظ توازن طاقات اليانغ العلوية.",
+                neuro_endocrine: "تتصل بالغدتين الكظريتين (Adrenal Glands) المفرزتين للأدرينالين والنورأدرينالين، والضفيرة العصعصية. هذا المركز هو المسؤول بيولوجياً عن غريزة البقاء الأساسية، والشعور بالأمان الحركي، وتكوين نقي العظام.",
+                sufi_sefirot: "يقابل «لطيفة القالب» الترابي المأمور بتزكيته ليكون أهلاً لسكنى الروح القدسية. وفي شجرة السفيرات، يتطابق حرفياً مع (ملكوت Malkuth - المملكة)، المحطة الأرضية التي تتجلى فيها الإرادة الإلهية في عالم الأجسام."
             }}
         ];
 
         function renderChakras() {{
+            // Populate Quick Selector Pills Bar
+            const pillsBar = document.getElementById('chakra-pills-bar');
+            if (pillsBar) {{
+                pillsBar.innerHTML = CHAKRAS_DATA.map(c => `
+                    <button class="c-pill-btn ${{c.id === 8 ? 'active' : ''}}" id="c-pill-${{c.id}}" onclick="selectChakra(${{c.id}})">
+                        <span style="color:${{c.colorHex}};">●</span> ${{c.name.split('(')[0].trim()}}
+                    </button>
+                `).join('');
+            }}
+
+            // Populate Panoramic Comparative Matrix Table
+            const tableBody = document.getElementById('panoramic-chakras-tbody');
+            if (tableBody) {{
+                tableBody.innerHTML = CHAKRAS_DATA.map(c => `
+                    <tr>
+                        <td><b style="color:${{c.colorHex}};">${{c.name.split('(')[0].trim()}}</b><br><span style="font-size:0.75rem; color:var(--text-muted);">${{c.sanskrit.split('•')[0].trim()}}</span></td>
+                        <td><b style="color:#fff;">${{c.sufiLatifa.split('•')[0].trim()}}</b></td>
+                        <td><span style="color:var(--gold); font-weight:700;">${{c.prophet.split('(')[0].trim()}}</span></td>
+                        <td>${{c.sphere.split('(')[0].trim()}}</td>
+                        <td><span class="badge-hz" style="background:rgba(255,209,102,0.12); color:var(--gold); border:1px solid rgba(255,209,102,0.3); padding:2px 8px; border-radius:10px; font-weight:700;">${{c.freqHz}}</span></td>
+                        <td><b>${{c.gland.split('•')[0].trim()}}</b></td>
+                        <td>${{c.plexus.split('(')[0].trim()}}</td>
+                        <td>${{c.dantian.split('(')[0].trim()}}</td>
+                        <td><span style="color:var(--cyan); font-weight:700;">${{c.bija.split('/')[0].trim()}}</span></td>
+                        <td>${{c.sefirot.split('(')[0].trim()}}</td>
+                        <td style="white-space:normal; min-width:240px; font-size:0.82rem; line-height:1.5;">${{c.shift}}</td>
+                    </tr>
+                `).join('');
+            }}
+
             selectChakra(8);
         }}
 
         function selectChakra(id) {{
             const c = CHAKRAS_DATA.find(x => x.id === id);
             if (!c) return;
+
+            // Sync Hologram SVG Node Buttons
             document.querySelectorAll('.chakra-point-btn').forEach(btn => btn.classList.remove('active'));
             const activeNode = document.getElementById('chakra-node-' + id);
             if (activeNode) activeNode.classList.add('active');
 
+            // Sync Quick Selector Pills
+            document.querySelectorAll('.c-pill-btn').forEach(btn => btn.classList.remove('active'));
+            const activePill = document.getElementById('c-pill-' + id);
+            if (activePill) activePill.classList.add('active');
+
+            // Render Comprehensive Dossier
             const container = document.getElementById('chakra-detail-card');
             container.innerHTML = `
                 <div class="chakra-main-header">
@@ -3340,12 +3632,24 @@ def generate_unified_html(nodes, links):
                         <div class="c-spec-val">${{c.sphere}}</div>
                     </div>
                     <div class="c-spec-item">
-                        <div class="c-spec-label">اللون والتردد في المتون القديمة</div>
-                        <div class="c-spec-val" style="color:${{c.colorHex}};">${{c.colorName}}</div>
+                        <div class="c-spec-label">اللون والتردد بالهرتز (Hz)</div>
+                        <div class="c-spec-val" style="color:${{c.colorHex}};">${{c.colorName}} • ${{c.freqHz}}</div>
                     </div>
                     <div class="c-spec-item">
                         <div class="c-spec-label">المعدن الخيميائي وعضو الجسد</div>
                         <div class="c-spec-val">${{c.metal}} • ${{c.organ}}</div>
+                    </div>
+                    <div class="c-spec-item">
+                        <div class="c-spec-label">الغدة الصماء المقابلة</div>
+                        <div class="c-spec-val">${{c.gland}}</div>
+                    </div>
+                    <div class="c-spec-item">
+                        <div class="c-spec-label">الضفيرة العصبية ومسار التشي</div>
+                        <div class="c-spec-val">${{c.plexus}} • ${{c.dantian}}</div>
+                    </div>
+                    <div class="c-spec-item">
+                        <div class="c-spec-label">صوت البذور (Bija) وسفيرة القبالاه</div>
+                        <div class="c-spec-val">${{c.bija}} • ${{c.sefirot}}</div>
                     </div>
                 </div>
 
@@ -3354,13 +3658,39 @@ def generate_unified_html(nodes, links):
                     <div style="font-size:0.95rem; font-weight:600; line-height:1.8;">${{c.quran}}</div>
                 </div>
 
+                <!-- GLOBAL CIVILIZATIONAL CONSENSUS BOX -->
+                <div class="global-consensus-box" style="margin-bottom: 20px;">
+                    <div class="consensus-header">
+                        <h4><i class="fa-solid fa-earth-americas"></i> الإجماع الحضاري والعلمي الشامل لهذا المركز الطاقي</h4>
+                        <span style="font-size:0.78rem; color:var(--cyan); background:rgba(0,240,255,0.1); padding:3px 10px; border-radius:12px; border:1px solid rgba(0,240,255,0.25);">مضاهاة الشرق والغرب والطب الحديث</span>
+                    </div>
+                    <div class="consensus-grid">
+                        <div class="civ-card">
+                            <div class="civ-card-title">🇮🇳 الفيدا والكونداليني (Vedic Kundalini)</div>
+                            <div class="civ-card-text">${{c.vedic_kundalini}}</div>
+                        </div>
+                        <div class="civ-card">
+                            <div class="civ-card-title">🇨🇳 الخيمياء الصينية والطب الإمبراطوري (Taoism & TCM)</div>
+                            <div class="civ-card-text">${{c.chinese_tao}}</div>
+                        </div>
+                        <div class="civ-card">
+                            <div class="civ-card-title">🧬 التشريح العصبي والغدد الصماء (Neuro-Endocrine Axis)</div>
+                            <div class="civ-card-text">${{c.neuro_endocrine}}</div>
+                        </div>
+                        <div class="civ-card">
+                            <div class="civ-card-title">📜 اللطائف العرفانية وشجرة السفيرات (Sufi Lata'if & Hermetica)</div>
+                            <div class="civ-card-text">${{c.sufi_sefirot}}</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="chakra-deep-desc">
                     <div style="color:var(--gold); font-weight:700; margin-bottom:8px;">🌟 النقلة في الوعي الإنساني ومستوى الاستنارة الباطنية:</div>
                     ${{c.shift}}
                 </div>
 
                 <div class="chakra-proof-quote">
-                    <strong>📜 الشاهد من أمهات المخطوطات والكتب (الفصوص / الكيباليون / إخوان الصفا / الجيلي):</strong><br>
+                    <strong>📜 الشاهد من أمهات المخطوطات والكتب (الفصوص / الكيباليون / إخوان الصفا / الجيلي / السمناني):</strong><br>
                     ${{c.proof}}
                 </div>
             `;
