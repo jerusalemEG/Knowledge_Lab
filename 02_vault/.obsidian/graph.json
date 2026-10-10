@@ -1,0 +1,59 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "local-search": "",
+  "local-backend": "gephi",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#MOC",
+      "color": {
+        "a": 1,
+        "rgb": 15024467
+      }
+    },
+    {
+      "query": "tag:#astronomy OR tag:#cycles OR tag:#precession",
+      "color": {
+        "a": 1,
+        "rgb": 3848178
+      }
+    },
+    {
+      "query": "tag:#eras OR tag:#civilization OR tag:#polarity",
+      "color": {
+        "a": 1,
+        "rgb": 15379767
+      }
+    },
+    {
+      "query": "tag:#esoteric OR tag:#melothesia OR tag:#angels",
+      "color": {
+        "a": 1,
+        "rgb": 10565887
+      }
+    },
+    {
+      "query": "tag:#source OR tag:#scholar",
+      "color": {
+        "a": 1,
+        "rgb": 3862624
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.25,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.52,
+  "repulseStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1
+}

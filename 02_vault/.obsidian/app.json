@@ -1,0 +1,12 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "attachmentFolderPath": "02_vault/attachments",
+  "useMarkdownLinks": false,
+  "newFileLocation": "current",
+  "showLineNumber": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "autoConvertHtml": true,
+  "readableLineLength": false
+}

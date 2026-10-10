@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرشد الحياة الروحية — المنظومة التفاعلية الشاملة للدورة التدريبية الخاصة</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #07090e;
+            --bg-panel: rgba(13, 17, 26, 0.95);
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --gold: #f4b41a;
+            --gold-glow: rgba(244, 180, 26, 0.35);
+            --cyan: #00f0ff;
+            --cyan-glow: rgba(0, 240, 255, 0.35);
+            --purple: #a855f7;
+            --rose: #ff3366;
+            --emerald: #10b981;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(244, 180, 26, 0.05) 0%, transparent 40%);
+        }
+
+        /* Top Header */
+        header {
+            background: rgba(11, 15, 24, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 14px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand-icon {
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 8px var(--gold-glow));
+        }
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+        .brand-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Nav Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid var(--border-glass);
+            overflow-x: auto;
+        }
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.86rem;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .nav-btn.active {
+            background: var(--gold);
+            color: #07090e;
+            font-weight: 800;
+            box-shadow: 0 0 16px var(--gold-glow);
+        }
+
+        /* Container Sections */
+        main {
+            max-width: 1540px;
+            margin: 0 auto;
+            padding: 24px 20px 80px 20px;
+        }
+        .tab-section {
+            display: none;
+            animation: fadeIn 0.35s ease;
+        }
+        .tab-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 18px 20px 32px 20px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .ayah-pill {
+            background: rgba(244, 180, 26, 0.08);
+            border: 1px solid rgba(244, 180, 26, 0.35);
+            border-radius: 14px;
+            padding: 12px 24px;
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: inline-block;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        }
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Fullscreen Network Graph */
+        #graph-wrapper {
+            width: 100%;
+            height: 760px;
+            background: radial-gradient(circle at center, #0e1422 0%, #05070b 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 16px 45px rgba(0,0,0,0.8);
+        }
+        #network-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Floating Controls on Graph */
+        .graph-filters {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            left: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+            background: rgba(11, 15, 24, 0.88);
+            backdrop-filter: blur(14px);
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border-glass);
+        }
+        .pills-group {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+        }
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 14px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .filter-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+        .filter-btn.active {
+            background: var(--cyan);
+            color: #07090e;
+            font-weight: 800;
+            border-color: var(--cyan);
+            box-shadow: 0 0 12px var(--cyan-glow);
+        }
+        .search-input {
+            width: 220px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-glass);
+            padding: 6px 12px;
+            border-radius: 14px;
+            color: #fff;
+            font-size: 0.82rem;
+            outline: none;
+        }
+
+        /* Slide Drawer for details */
+        #reader-drawer {
+            position: absolute;
+            top: 70px;
+            left: 18px;
+            bottom: 18px;
+            width: 550px;
+            max-width: 92vw;
+            background: var(--bg-panel);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            z-index: 90;
+            box-shadow: 0 16px 50px rgba(0,0,0,0.85);
+            display: flex;
+            flex-direction: column;
+            transform: translateX(-590px);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+        #reader-drawer.open {
+            transform: translateX(0);
+        }
+        .drawer-header {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-glass);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .drawer-title {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+        .close-btn:hover { color: #fff; }
+        .drawer-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+            font-size: 0.92rem;
+            line-height: 1.85;
+            color: #c9d1d9;
+        }
+        .drawer-body h2, .drawer-body h3 {
+            color: var(--gold);
+            margin: 16px 0 8px 0;
+        }
+        .drawer-body blockquote {
+            background: rgba(244, 180, 26, 0.07);
+            border-right: 3px solid var(--gold);
+            padding: 10px 14px;
+            margin: 12px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        /* Esoteric Body Map Section */
+        .body-map-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            background: rgba(13, 17, 26, 0.7);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(16px);
+        }
+        @media(max-width: 992px) {
+            .body-map-grid { grid-template-columns: 1fr; }
+        }
+
+        .silhouette-box {
+            background: radial-gradient(circle at center, #121829 0%, #080b12 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            height: 640px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.7);
+        }
+        .body-svg {
+            width: 100%;
+            height: 94%;
+        }
+
+        .point-interactive {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            z-index: 20;
+        }
+        .chakra-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #fff;
+            border: 2px solid #fff;
+            box-shadow: 0 0 15px currentColor;
+        }
+        .chakra-dot:hover {
+            transform: scale(1.28);
+            filter: brightness(1.3);
+        }
+
+        .gate-dot {
+            width: 14px;
+            height: 14px;
+            background: #ff3366;
+            border-radius: 50%;
+            border: 1.5px solid #fff;
+            box-shadow: 0 0 8px #ff3366;
+        }
+        .gate-dot:hover { transform: scale(1.5); }
+
+        .black-dot {
+            width: 18px;
+            height: 18px;
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid var(--cyan);
+            box-shadow: 0 0 10px var(--cyan);
+        }
+        .black-dot:hover { transform: scale(1.4); }
+
+        .body-detail-card {
+            background: rgba(18, 24, 38, 0.9);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .body-filter-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* 7 Sacred Esoteric Symbols Studio */
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .symbol-card {
+            background: rgba(13, 17, 26, 0.85);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .symbol-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        }
+        .symbol-icon-box {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.4);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px dashed rgba(255,255,255,0.15);
+        }
+        .symbol-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .symbol-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .tag-pill {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-glass);
+            padding: 3px 9px;
+            border-radius: 10px;
+            font-size: 0.74rem;
+            color: var(--cyan);
+        }
+
+        /* Interactive Tracker & Scheduler */
+        .tracker-levels {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .level-tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-align: center;
+        }
+        .level-tab-btn.active {
+            background: var(--gold);
+            color: #07090e;
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        .cards-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 18px;
+        }
+        .routine-card {
+            background: rgba(15, 20, 31, 0.9);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .routine-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 10px;
+        }
+        .badge-day {
+            background: rgba(0, 240, 255, 0.12);
+            color: var(--cyan);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        /* Interactive Tasbeeh / Bead Counter */
+        .counter-widget {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+        .counter-num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .counter-btn {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 0.85rem;
+            transition: transform 0.1s;
+        }
+        .counter-btn:active { transform: scale(0.92); }
+        .reset-btn {
+            background: none;
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+
+        /* Master Matrix Table */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border-glass);
+            background: rgba(13, 17, 26, 0.85);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.86rem;
+        }
+        th {
+            background: rgba(244, 180, 26, 0.12);
+            color: var(--gold);
+            padding: 14px 16px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-glass);
+            white-space: nowrap;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #c9d1d9;
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+            color: #fff;
+        }
+
+        /* Verbatim Master Reader */
+        .verbatim-reader-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            background: rgba(13, 17, 26, 0.85);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 20px;
+        }
+        @media(max-width: 860px) {
+            .verbatim-reader-container { grid-template-columns: 1fr; }
+        }
+        .pages-toc {
+            max-height: 750px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding-left: 8px;
+        }
+        .toc-item {
+            padding: 9px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: right;
+        }
+        .toc-item:hover, .toc-item.active {
+            background: var(--gold);
+            color: #07090e;
+            font-weight: 700;
+        }
+        .page-content-box {
+            background: rgba(7, 9, 14, 0.7);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 28px;
+            max-height: 750px;
+            overflow-y: auto;
+            line-height: 2;
+            font-size: 0.98rem;
+        }
+        .page-badge {
+            display: inline-block;
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--cyan);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 0.82rem;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand">
+            <span class="brand-icon">📜</span>
+            <div>
+                <div class="brand-title">مرشد الحياة الروحية — المخطوطة التفاعلية الكاملة</div>
+                <div class="brand-sub">الدورة التدريبية الخاصة الكاملة (المتن الأصلي التام حرفاً بحرف) — أسرار علم الباطن</div>
+            </div>
+        </div>
+        <div class="nav-tabs">
+            <button class="nav-btn active" onclick="switchTab('graph')">🌐 الشبكة الكونية المعرفية</button>
+            <button class="nav-btn" onclick="switchTab('bodymap')">🧘 مجسم الجسد والمسارات الـ 19</button>
+            <button class="nav-btn" onclick="switchTab('symbols')">✨ الرموز والشيفرات السبعة</button>
+            <button class="nav-btn" onclick="switchTab('tracker')">📅 مخطط الرياضات والمستويات الثلاثة</button>
+            <button class="nav-btn" onclick="switchTab('matrix')">🕯️ مصفوفة الشموع والطبائع</button>
+            <button class="nav-btn" onclick="switchTab('reader')">📖 المتن الكامل (ص 1 إلى 36)</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- TAB 1: INTERACTIVE NETWORK GRAPH -->
+        <section id="tab-graph" class="tab-section active">
+            <div class="hero">
+                <div class="ayah-pill">«رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي يَفْقَهُوا قَوْلِي»</div>
+                <h1>شبكة الإرشاد الروحي وعلم الباطن التفاعلية</h1>
+                <p>مخطط بصري ديناميكي يربط كافة أبواب الدورة: المستويات الثلاثة، جلسات الافتتاح، الغسل الروحي، الشاكرات، النقط التسعة عشر، الأسماء التنزيلية، رموز الاسم الأعظم، أسرار الشموع، والأملاك العلوية والأرضية.</p>
+            </div>
+
+            <div id="graph-wrapper">
+                <div class="graph-filters">
+                    <div class="pills-group">
+                        <button class="filter-btn active" onclick="filterGraph('all')">كافة العقد (الكل)</button>
+                        <button class="filter-btn" onclick="filterGraph('levels')">المستويات الثلاثة 🏆</button>
+                        <button class="filter-btn" onclick="filterGraph('chakras')">مراكز الطاقة والشاكرات 🌀</button>
+                        <button class="filter-btn" onclick="filterGraph('symbols')">الرموز والشيفرات السبعة ✨</button>
+                        <button class="filter-btn" onclick="filterGraph('candles')">الشموع والألوان 🕯️</button>
+                        <button class="filter-btn" onclick="filterGraph('beings')">الملوك والأملاك 👑</button>
+                    </div>
+                    <input type="text" id="graph-search" class="search-input" placeholder="بحث في الشبكة..." onkeyup="searchGraph(this.value)">
+                </div>
+
+                <div id="network-canvas"></div>
+
+                <!-- Sliding Detail Drawer -->
+                <div id="reader-drawer">
+                    <div class="drawer-header">
+                        <div class="drawer-title" id="drawer-node-title">تفاصيل العقدة</div>
+                        <button class="close-btn" onclick="closeDrawer()">&times;</button>
+                    </div>
+                    <div class="drawer-body" id="drawer-node-body"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: ESOTERIC BODY MAP -->
+        <section id="tab-bodymap" class="tab-section">
+            <div class="hero">
+                <div class="ayah-pill">«اللَّهُ نُورُ السَّمَاوَاتِ وَالأَرْضِ مَثَلُ نُورِهِ كَمِشْكَاةٍ فِيهَا مِصْبَاحٌ»</div>
+                <h1>تشريح الجسد الأثيري ومسارات الطاقة والنقط النورانية</h1>
+                <p>تخطيط تفاعلي للنقط السبعة الكبرى (الشاكرات وأسماء السر)، النقط التسعة عشر (بوابات الجسد وحروف البسملة)، والنقط النورانية التسع (اليافوخ والعنق والركبة والقدمين) ومسارات المريديانات (72,000 مسار).</p>
+            </div>
+
+            <div class="body-map-grid">
+                <!-- Silhouette interactive SVG Canvas -->
+                <div class="silhouette-box">
+                    <svg class="body-svg" viewBox="0 0 300 560">
+                        <!-- Human silhouette contour -->
+                        <path d="M150,30 C135,30 120,45 120,65 C120,80 130,95 140,102 C125,108 105,118 90,135 C70,160 55,210 50,260 C46,290 60,300 68,280 C78,255 90,215 102,185 L106,280 L96,360 L78,450 C74,470 90,480 98,470 L125,380 L140,320 L150,320 L160,320 L175,380 L202,470 C210,480 226,470 222,450 L204,360 L194,280 L198,185 C210,215 222,255 232,280 C240,300 254,290 250,260 C245,210 230,160 210,135 C195,118 175,108 160,102 C170,95 180,80 180,65 C180,45 165,30 150,30 Z" 
+                              fill="rgba(0, 240, 255, 0.03)" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1.5" />
+
+                        <!-- Central Spine Channel (Sushumna / مسار النور) -->
+                        <line x1="150" y1="65" x2="150" y2="400" stroke="rgba(244, 180, 26, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+
+                        <!-- Meridians Left & Right Curves -->
+                        <path d="M125,105 Q115,220 125,360" fill="none" stroke="rgba(168, 85, 247, 0.25)" stroke-width="1.5" />
+                        <path d="M175,105 Q185,220 175,360" fill="none" stroke="rgba(168, 85, 247, 0.25)" stroke-width="1.5" />
+                    </svg>
+
+                    <!-- 7 Major Chakras (Large Colored Points with Secret Letters) -->
+                    <!-- Crown (ف - فرد) -->
+                    <div class="point-interactive" style="top: 55px; left: 150px;" onclick="showBodyDetail('c7')">
+                        <div class="chakra-dot" style="background: #a855f7;" title="التاج — ف (فرد)">ف</div>
+                    </div>
+                    <!-- Third Eye (ج - جبار) -->
+                    <div class="point-interactive" style="top: 95px; left: 150px;" onclick="showBodyDetail('c6')">
+                        <div class="chakra-dot" style="background: #3b82f6;" title="العين الثالثة — ج (جبار)">ج</div>
+                    </div>
+                    <!-- Throat (ش - شكور) -->
+                    <div class="point-interactive" style="top: 145px; left: 150px;" onclick="showBodyDetail('c5')">
+                        <div class="chakra-dot" style="background: #00f0ff;" title="الحنجرة — ش (شكور)">ش</div>
+                    </div>
+                    <!-- Heart (ث - ثابت) -->
+                    <div class="point-interactive" style="top: 200px; left: 150px;" onclick="showBodyDetail('c4')">
+                        <div class="chakra-dot" style="background: #10b981;" title="القلب — ث (ثابت)">ث</div>
+                    </div>
+                    <!-- Solar Plexus (ظ - ظهير) -->
+                    <div class="point-interactive" style="top: 255px; left: 150px;" onclick="showBodyDetail('c3')">
+                        <div class="chakra-dot" style="background: #f59e0b;" title="الضفيرة — ظ (ظهير)">ظ</div>
+                    </div>
+                    <!-- Sacral (خ - خبير) -->
+                    <div class="point-interactive" style="top: 310px; left: 150px;" onclick="showBodyDetail('c2')">
+                        <div class="chakra-dot" style="background: #f97316;" title="العجز — خ (خبير)">خ</div>
+                    </div>
+                    <!-- Root (ز - زكي) -->
+                    <div class="point-interactive" style="top: 365px; left: 150px;" onclick="showBodyDetail('c1')">
+                        <div class="chakra-dot" style="background: #ef4444;" title="الجذر — ز (زكي)">ز</div>
+                    </div>
+
+                    <!-- 9 Black Healing Points (النقط السوداء التسع) -->
+                    <!-- 1. اليافوخ -->
+                    <div class="point-interactive" style="top: 32px; left: 150px;" onclick="showBodyDetail('black_yafookh')">
+                        <div class="black-dot" title="نقطة اليافوخ الشفائية"></div>
+                    </div>
+                    <!-- 2, 3. العنق من الأمام -->
+                    <div class="point-interactive" style="top: 125px; left: 140px;" onclick="showBodyDetail('black_neck')">
+                        <div class="black-dot" title="نقطة العنق الأمامية"></div>
+                    </div>
+                    <div class="point-interactive" style="top: 125px; left: 160px;" onclick="showBodyDetail('black_neck')">
+                        <div class="black-dot" title="نقطة العنق الأمامية"></div>
+                    </div>
+                    <!-- 4, 5. وراء العنق -->
+                    <div class="point-interactive" style="top: 115px; left: 130px;" onclick="showBodyDetail('black_neck_back')">
+                        <div class="black-dot" title="نقطة وراء العنق"></div>
+                    </div>
+                    <div class="point-interactive" style="top: 115px; left: 170px;" onclick="showBodyDetail('black_neck_back')">
+                        <div class="black-dot" title="نقطة وراء العنق"></div>
+                    </div>
+                    <!-- 6, 7. وراء الركبة -->
+                    <div class="point-interactive" style="top: 430px; left: 115px;" onclick="showBodyDetail('black_knee')">
+                        <div class="black-dot" title="نقطة وراء الركبة"></div>
+                    </div>
+                    <div class="point-interactive" style="top: 430px; left: 185px;" onclick="showBodyDetail('black_knee')">
+                        <div class="black-dot" title="نقطة وراء الركبة"></div>
+                    </div>
+                    <!-- 8, 9. أسفل القدمين -->
+                    <div class="point-interactive" style="top: 520px; left: 95px;" onclick="showBodyDetail('black_feet')">
+                        <div class="black-dot" title="نقطة أسفل القدمين"></div>
+                    </div>
+                    <div class="point-interactive" style="top: 520px; left: 205px;" onclick="showBodyDetail('black_feet')">
+                        <div class="black-dot" title="نقطة أسفل القدمين"></div>
+                    </div>
+
+                    <!-- 19 Red Gates (بوابات الجسد بحروف البسملة) surrounding aura <2mm -->
+                    <div class="point-interactive" style="top: 25px; left: 120px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 1 (ب)"></div></div>
+                    <div class="point-interactive" style="top: 25px; left: 180px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 2 (س)"></div></div>
+                    <div class="point-interactive" style="top: 70px; left: 105px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 3 (م)"></div></div>
+                    <div class="point-interactive" style="top: 70px; left: 195px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 4 (ا)"></div></div>
+                    <div class="point-interactive" style="top: 130px; left: 80px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 5 (ل)"></div></div>
+                    <div class="point-interactive" style="top: 130px; left: 220px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 6 (ل)"></div></div>
+                    <div class="point-interactive" style="top: 200px; left: 60px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 7 (هـ)"></div></div>
+                    <div class="point-interactive" style="top: 200px; left: 240px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 8 (ا)"></div></div>
+                    <div class="point-interactive" style="top: 270px; left: 45px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 9 (ل)"></div></div>
+                    <div class="point-interactive" style="top: 270px; left: 255px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 10 (ر)"></div></div>
+                    <div class="point-interactive" style="top: 340px; left: 75px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 11 (ح)"></div></div>
+                    <div class="point-interactive" style="top: 340px; left: 225px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 12 (م)"></div></div>
+                    <div class="point-interactive" style="top: 400px; left: 70px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 13 (ن)"></div></div>
+                    <div class="point-interactive" style="top: 400px; left: 230px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 14 (ا)"></div></div>
+                    <div class="point-interactive" style="top: 460px; left: 65px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 15 (ل)"></div></div>
+                    <div class="point-interactive" style="top: 460px; left: 235px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 16 (ر)"></div></div>
+                    <div class="point-interactive" style="top: 500px; left: 75px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 17 (ح)"></div></div>
+                    <div class="point-interactive" style="top: 500px; left: 225px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 18 (ي)"></div></div>
+                    <div class="point-interactive" style="top: 535px; left: 150px;" onclick="showBodyDetail('gate19')"><div class="gate-dot" title="بوابة 19 (م)"></div></div>
+                </div>
+
+                <!-- Detail Card -->
+                <div class="body-detail-card" id="body-detail-content">
+                    <div style="font-size: 1.3rem; font-weight: 800; color: var(--gold);" id="body-detail-title">اضغط على أي مركز في مجسم الجسد</div>
+                    <div style="font-size: 0.95rem; line-height: 1.85; color: #c9d1d9;" id="body-detail-desc">
+                        يحتوي مجسم الجسد على:
+                        <ul style="margin: 10px 24px;">
+                            <li><b style="color: #a855f7;">الشاكرات السبعة الكبرى الملونة:</b> مراكز الطاقة من أسفل العمود الفقري إلى أعلى الرأس، حاملة لحروف وأسماء السر الأعظم (ف فرد، ج جبار، ش شكور، ث ثابت، ظ ظهير، خ خبير، ز زكي).</li>
+                            <li><b style="color: #ff3366;">النقط الحمراء التسعة عشر:</b> بوابات حماية الجسد التي تبعد أقل من مليمترين عن الجسد، وتطابق عدد حروف «بسم الله الرحمن الرحيم»، تحمي من اختراق الأرواح السفلية.</li>
+                            <li><b style="color: var(--cyan);">النقط السوداء التسع (النورانية):</b> ملفات الشفاء الجسدي الروحي (اليافوخ، نقط العنق من الأمام والخلف، وراء الركبة، أسفل القدمين) وطرق معالجتها بالضرب والتدليك والضغط.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: 7 SACRED ESOTERIC SYMBOLS -->
+        <section id="tab-symbols" class="tab-section">
+            <div class="hero">
+                <div class="ayah-pill">«وَهِيَ شَرْطٌ لِتَلَقِّي كُلِّ الأَسْرَارِ الأُخْرَى التَّنْزِيلِيَّةِ»</div>
+                <h1>الرموز والعلامات والشيفرات الروحية السبعة (رموز الاسم الأعظم)</h1>
+                <p>الأسرار التنزيلية الكبرى من المستوى الثالث — الأسبوع الثاني: الرسم في الهواء بالسبابة، سر النفخ كالغبار، التناظر الكوكبي واليومي، ورسمها على الشموع والأكف والماء.</p>
+            </div>
+
+            <div class="symbols-grid">
+                <!-- Symbol 1: Five-Pointed Star -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" 
+                                     fill="none" stroke="#f4b41a" stroke-width="3" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز الأول: النجمة المخمسة ⭐</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: الأحد</span>
+                        <span class="tag-pill">الكوكب: الشمس</span>
+                        <span class="tag-pill">اللون: الذهبي / الأبيض</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> عهد بداية الحياة في جماعة المؤمنين، إشارة إلى الأركان الخمسة والعهود الخمسة التي بُني عليها الإسلام. أول عهد يمنح لك تحت رايتنا وهو شرط لتلقي كل الأسرار.<br>
+                        <b>الكيفية:</b> تغسل جسدك صباح الأحد للتطهير، وترسم النجمة على الماء بالسبابة 7 مرات وتسكب منه 3 مرات متقطعة. ثم ترسم 7 نجمات على شمعة بيضاء وتشعلها حتى تنتهي.
+                    </p>
+                </div>
+
+                <!-- Symbol 2: Three Staffs with Arrow -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Three vertical lines with arrow heads -->
+                            <line x1="28" y1="25" x2="28" y2="85" stroke="#00f0ff" stroke-width="3.5" />
+                            <polyline points="22,35 28,25 34,35" fill="none" stroke="#00f0ff" stroke-width="3.5" />
+                            <line x1="50" y1="25" x2="50" y2="85" stroke="#00f0ff" stroke-width="3.5" />
+                            <polyline points="44,35 50,25 56,35" fill="none" stroke="#00f0ff" stroke-width="3.5" />
+                            <line x1="72" y1="25" x2="72" y2="85" stroke="#00f0ff" stroke-width="3.5" />
+                            <polyline points="66,35 72,25 78,35" fill="none" stroke="#00f0ff" stroke-width="3.5" />
+                            <line x1="18" y1="85" x2="82" y2="85" stroke="#00f0ff" stroke-width="3.5" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز الثاني: الثلاث عصي كالسهم ⫚⫚⫚</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: الاثنين</span>
+                        <span class="tag-pill">الكوكب: القمر</span>
+                        <span class="tag-pill">اللون: الفضي / الرمادي</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> ثلاث عصي على رأسها مثل السهم المقوم، ترمز إلى الصلاة والشكر والبركة التي هي كالسهم الخارق لإصابة الهدف والاستمداد من عالم الحمد.<br>
+                        <b>الكيفية:</b> ترسم بأصبعك السبابة في الهواء الخطوط الثلاثة العمودية ثم الخط الأفقي وتنفخ عليها كأنها غبار في الهواء (النفخ يولد طاقة قوية جداً).
+                    </p>
+                </div>
+
+                <!-- Symbol 3: Blind Meem -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Meem Tamees -->
+                            <path d="M75,50 C75,36 60,32 45,42 C30,52 20,68 15,85" fill="none" stroke="#ff3366" stroke-width="5" stroke-linecap="round" />
+                            <circle cx="65" cy="40" r="14" fill="#ff3366" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز الثالث: الميم الطميس الأبتر مـ</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: الثلاثاء</span>
+                        <span class="tag-pill">الكوكب: المريخ</span>
+                        <span class="tag-pill">اللون: الأحمر</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> باطن الميم النبوي المحمدي، وبداية اسم المهدي (الروح العلية وسر خلق الأكوان قبل آدم وإبليس وطاووس الجنة ونزولها للأرض الملعونة).<br>
+                        <b>الكيفية:</b> كتابته في الهواء 7 مرات والنفخ عليه كأنه غبار، أو كتابته على كفك الأيسر والنفخ عليه كل مرة لتحس بقوة وحضور.
+                    </p>
+                </div>
+
+                <!-- Symbol 4: The Ladder -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Hash / Ladder -->
+                            <line x1="32" y1="15" x2="32" y2="85" stroke="#f4b41a" stroke-width="4" />
+                            <line x1="68" y1="15" x2="68" y2="85" stroke="#f4b41a" stroke-width="4" />
+                            <line x1="15" y1="38" x2="85" y2="38" stroke="#f4b41a" stroke-width="4" />
+                            <line x1="15" y1="62" x2="85" y2="62" stroke="#f4b41a" stroke-width="4" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز الرابع: السلم المشبك #</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: الأربعاء</span>
+                        <span class="tag-pill">الكوكب: عطارد</span>
+                        <span class="tag-pill">اللون: الأصفر</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> سلم وما هو بسلم، سر الأسرار المقابل للخير والشر، جامع القوى المربعة والرزق والملك ميكائيل عليه السلام، ومعراج الترقي من النفس اللوامة للمطمئنة ومن الأرضي للسماوي.<br>
+                        <b>الكيفية:</b> رسمه في الهواء بأصبعك السبابة والنفخ عليه.
+                    </p>
+                </div>
+
+                <!-- Symbol 5: Four Fingers -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Four vertical lines -->
+                            <line x1="26" y1="20" x2="26" y2="80" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" />
+                            <line x1="42" y1="16" x2="42" y2="84" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" />
+                            <line x1="58" y1="16" x2="58" y2="84" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" />
+                            <line x1="74" y1="20" x2="74" y2="80" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز الخامس: أربع صُففت كالأنامل ||||</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: الخميس</span>
+                        <span class="tag-pill">الكوكب: المشتري</span>
+                        <span class="tag-pill">اللون: الأخضر</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> أربع صففت مثل الأنامل وما هي بأنامل؛ اتصال بتساوٍ وتوازٍ بين الجسد والروح والنفس والعقل.<br>
+                        <b>الكيفية:</b> قراءة سورة يس مرة واحدة، وكلما وصلت لقوله تعالى «مبين» ترسم الرمز بالسبابة في الهواء وتنفخ عليه، مع إشعال عود نِد وقت القراءة وتواصل لأخذ عهد التسليم.
+                    </p>
+                </div>
+
+                <!-- Symbol 6: Peacock Curved Haa -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Haa -->
+                            <path d="M25,70 C15,50 35,25 60,25 C80,25 85,45 75,60 C65,75 35,70 25,70 Z M65,45 C65,38 55,35 48,42 C40,50 50,60 60,56 Z" 
+                                  fill="none" stroke="#fff" stroke-width="3.5" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز السادس: الهاء المقوسة هـ</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: الجمعة</span>
+                        <span class="tag-pill">الكوكب: الزهرة</span>
+                        <span class="tag-pill">اللون: الأبيض</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> تمثل الاتصال بـ «الهو» المطلق وكافة العوالم العلوية الربانية، الحرف الأول من اسم هو. كوكبها زهرة حاكمة غير محكومة ولونها أبيض.<br>
+                        <b>الكيفية:</b> الرسم على الهواء والنفخ فيه مع رش قليل من العطر الطيب في المكان لتكتمل طاقة المكان مع طاقة الرمز.
+                    </p>
+                </div>
+
+                <!-- Symbol 7: Curved Waw -->
+                <div class="symbol-card">
+                    <div class="symbol-icon-box">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Waw / Inverted hook -->
+                            <path d="M75,30 L25,30 C18,30 18,50 25,60 C32,70 32,90 28,95" 
+                                  fill="none" stroke="#a855f7" stroke-width="4.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="symbol-title">الرمز السابع: الواو المقوسة و</div>
+                    <div class="symbol-meta">
+                        <span class="tag-pill">اليوم: السبت</span>
+                        <span class="tag-pill">الكوكب: زحل</span>
+                        <span class="tag-pill">اللون: الأسود</span>
+                    </div>
+                    <p style="font-size: 0.88rem; line-height: 1.7; color: #a0aec0;">
+                        <b>التأويل:</b> إكمال لهاء الهو واكتمالها؛ الحاكم على كل الطاقات السوداوية والملوك الأرضية السوداء بإذن الله تعالى. أول باب نحو بحر الدم.<br>
+                        <b>الكيفية:</b> يكتب على شمعة بيضاء 7 مرات وترش بعطر وتشعل في مكان حتى تنتهي، أو رسمه في الهواء والنفخ كباقي الرموز يعقبه جلسة التثبيت.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: RITUALS & DAILY PRACTICE TRACKER -->
+        <section id="tab-tracker" class="tab-section">
+            <div class="hero">
+                <div class="ayah-pill">«التَّدْرِيبُ هُوَ تَقْنِيَةُ فِعْلِ الشَّيْءِ.. وَالتَّعْلِيمُ هُوَ دِرَاسَةُ الشَّيْءِ»</div>
+                <h1>مخطط الرياضات والتطبيقات اليومية التفاعلي</h1>
+                <p>توزيع برامج وأوراد المستويات الثلاثة كاملة كما وردت في المتن، مع عدادات تسبيح تفاعلية للأوراد والأعداد المحددة.</p>
+            </div>
+
+            <div class="tracker-levels">
+                <button class="level-tab-btn active" onclick="switchLevelTracker('lvl1')">المستوى الأول (أسبوع الفتح والتنقية A.1)</button>
+                <button class="level-tab-btn" onclick="switchLevelTracker('lvl2')">المستوى الثاني (21 يوماً: الغسل والأسماء والاستنزالات B.1)</button>
+                <button class="level-tab-btn" onclick="switchLevelTracker('lvl3')">المستوى الثالث (21 يوماً: الشموع والرموز والنفخ C.1)</button>
+            </div>
+
+            <!-- Level 1 Cards -->
+            <div id="tracker-lvl1" class="cards-list">
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">الغسل المائي وتطهير الهالة</div>
+                        <span class="badge-day">يوم الجمعة (صباحاً)</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        غسل الجسد بماء وصابون، ثم تشليله بـ 5 لتر ماء وُضع فيه 21 ورقة سدر منقوعة لثلاثة أيام مسبقة. التبخير بحجر شب أبيض بعد المغرب مع قراءة الإخلاص 11 مرة.
+                    </p>
+                    <div class="counter-widget">
+                        <div><span style="font-size:0.75rem; color:var(--text-muted);">سورة الإخلاص: </span><span class="counter-num" id="cnt-iklas">0</span> / 11</div>
+                        <div>
+                            <button class="counter-btn" onclick="incCounter('cnt-iklas', 11)">تسبيح +1</button>
+                            <button class="reset-btn" onclick="resetCounter('cnt-iklas')">تصفير</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">غسل القرين وتقوية المسارات</div>
+                        <span class="badge-day">صباحاً وقبل النوم</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        شرب ملعقة صغيرة مخلوطة من الريحان المدقوق وحبوب القزبراء المدقوقة في ماء صباحاً على الريق وقبل النوم. مسك معدنين مختلفين باليدين واستقبال القبلة عند الشروق وذكر «لا إله إلا الله» ربع ساعة لمدة 3 أيام.
+                    </p>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">الاسم التنزيلي والآية الربانية</div>
+                        <span class="badge-day">دبر كل صلاة (7 أيام)</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        اختيار أحد الأسماء (حسيب، حفيظ، حق، حكيم، حليم، حميد، حي). قراءته 108 مرات دبر كل صلاة، ثم قراءة الآية 19 من سورة الأنفال («إن تستفتحوا فقد جاءكم الفتح...») 11 مرة.
+                    </p>
+                    <div class="counter-widget">
+                        <div><span style="font-size:0.75rem; color:var(--text-muted);">الاسم المختار: </span><span class="counter-num" id="cnt-name108">0</span> / 108</div>
+                        <div>
+                            <button class="counter-btn" onclick="incCounter('cnt-name108', 108)">+1</button>
+                            <button class="reset-btn" onclick="resetCounter('cnt-name108')">تصفير</button>
+                        </div>
+                    </div>
+                    <div class="counter-widget">
+                        <div><span style="font-size:0.75rem; color:var(--text-muted);">آية الفتح (الأنفال 19): </span><span class="counter-num" id="cnt-fath11">0</span> / 11</div>
+                        <div>
+                            <button class="counter-btn" onclick="incCounter('cnt-fath11', 11)">+1</button>
+                            <button class="reset-btn" onclick="resetCounter('cnt-fath11')">تصفير</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">السر الأرضي والسر السماوي</div>
+                        <span class="badge-day">جلسات الاتصال والمكالمة</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        <b>الكف اليسرى (أرضي صعودي):</b> «السلام عليكم ورحمة الله وبركاته، صعود في الكف أو حضور على الكف، اصعد أو اطلع وليس انزل».<br>
+                        <b>الكف اليمنى (سماوي نزولي):</b> «السلام عليكم أيها الملكان الموكلان بيميني وشمالي... انزلوا بارك الله فيكم وأعطوني إشارة حضور من نوركم».
+                    </p>
+                </div>
+            </div>
+
+            <!-- Level 2 Cards -->
+            <div id="tracker-lvl2" class="cards-list" style="display:none;">
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">الغسل الداخلي بالعسل والآيات السبع</div>
+                        <span class="badge-day">الأسبوع 1 — صباحاً على الريق</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        عسل نحل مغلي هادئاً مع زعفران (21) وسدر (7) وكزبراء (21) وريحان (7). قراءة الآيات السبع 7 مرات على ماء وإذابة ملعقة عسل فيه وشربه قبل الإفطار.
+                    </p>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">تنزيل الأخ إسماعيل والأخ عبد الرحمن</div>
+                        <span class="badge-day">رياضة سورة الفاتحة</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        قراءة سورة الفاتحة 40 مرة دبر كل صلاة (فجر، ظهر، عصر، مغرب، عشاء). الجلوس بين الشفع والوتر بشمعة بيضاء واستقبال القبلة والنظر في الكف لطلب العهد.
+                    </p>
+                    <div class="counter-widget">
+                        <div><span style="font-size:0.75rem; color:var(--text-muted);">الفاتحة دبر الصلاة: </span><span class="counter-num" id="cnt-fatiha40">0</span> / 40</div>
+                        <div>
+                            <button class="counter-btn" onclick="incCounter('cnt-fatiha40', 40)">+1</button>
+                            <button class="reset-btn" onclick="resetCounter('cnt-fatiha40')">تصفير</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">تسخير أسماء السر الأعظم السبعة</div>
+                        <span class="badge-day">الأسبوع 2 (7 أيام كاملة)</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        10 دقائق دبر كل صلاة بياء النداء مع رش ماء ورد + الآية 40 مرة + السور الثلاث بعد المغرب:<br>
+                        • يوم 1: فرد (الأنبياء 89) | يس، نوح، الملك.<br>
+                        • يوم 2: جبار (الشعراء 130) | الكهف، الجن، محمد.<br>
+                        • يوم 3: شكور (فاطر 30) | الحديد، الواقعة، النور.<br>
+                        • يوم 4: ثابت (البقرة 250) | الرعد، مريم، المجادلة.<br>
+                        • يوم 5: ظهير (سبأ 22) | الأنعام، فاطر، غافر.<br>
+                        • يوم 6: خبير (التحريم 3) | إبراهيم، السجدة، النساء.<br>
+                        • يوم 7: زكي (الجمعة 2) | النحل، الجاثية، الصافات.
+                    </p>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">الاستنزالات النفسية السبعة</div>
+                        <span class="badge-day">الأسبوع 3 (بعد صلاة المغرب)</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        شرب كأس ماء مقروء عليه بعد كل صلاة (الفاتحة 7، الإخلاص 11، الكوثر 7، الضحى 7، الفاتحة 7، الانشراح 7، الفيل 7). ثم الجلوس بعد المغرب على انفراد ووضع اليدين على الركبتين لطلب إشارة تحريك الشاهد وصرفهم.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Level 3 Cards -->
+            <div id="tracker-lvl3" class="cards-list" style="display:none;">
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">أسبوع التناغم مع الشموع والألوان</div>
+                        <span class="badge-day">الأسبوع 1 — رياضات الشموع</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        إشعال الشمعة بالوقت المحدد وكتابة حروفها عليها، وتنسيق اللباس والبخور اليومي. قراءة الورد القرآني المخصص 108 مرات دبر كل صلاة مفروضة.
+                    </p>
+                    <div class="counter-widget">
+                        <div><span style="font-size:0.75rem; color:var(--text-muted);">ورد اليوم (108): </span><span class="counter-num" id="cnt-wird108">0</span> / 108</div>
+                        <div>
+                            <button class="counter-btn" onclick="incCounter('cnt-wird108', 108)">+1</button>
+                            <button class="reset-btn" onclick="resetCounter('cnt-wird108')">تصفير</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">أسبوع الشيفرات والرموز السبعة</div>
+                        <span class="badge-day">الأسبوع 2 — تنزيل رموز الاسم الأعظم</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        تنزيل رمز كل يوم برسمه في الهواء بالسبابة والنفخ عليه كالغبار، وتطبيقه على الماء والشموع والأكف كما هو مسطر في كل رمز.
+                    </p>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">رياضة النفخ والتثبيت (الأيام 1، 2، 3)</div>
+                        <span class="badge-day">الأسبوع 3 — الأحد، الاثنين، الثلاثاء</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        مسح اليدين بماء ورد مقروء عليه سورة الكافرون 13 مرة صباحاً ومساءً. الجلوس مشبك اليدين بعد المغرب 45 دقيقة ثم النفخ على الكفين دقيقتين. ذكر «يا شافي – يا حق – يا حي» 108 مرات + آية البقرة 173.
+                    </p>
+                </div>
+
+                <div class="routine-card">
+                    <div class="routine-header">
+                        <div style="font-weight: 800; color: var(--gold);">كؤوس البصيرة الزجاجية الثلاثة</div>
+                        <span class="badge-day">الأيام 5، 6، 7 (خميس، جمعة، سبت)</span>
+                    </div>
+                    <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.7;">
+                        الكتابة بحبر ثابت على الكؤوس الثلاثة:<br>
+                        • <b>كأس الخميس:</b> «فارجع البصر هل ترى من فطور...»<br>
+                        • <b>كأس الجمعة:</b> «لقد كنت في غفلة من هذا فكشفنا عنك غطاءك فبصرك اليوم حديد»<br>
+                        • <b>كأس السبت:</b> «سلام قولا من رب رحيم * قوله الحق وله الملك * ولا يؤوده حفظهما وهو العلي العظيم»
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: CANDLES & ALCHEMY MATRIX -->
+        <section id="tab-matrix" class="tab-section">
+            <div class="hero">
+                <div class="ayah-pill">«لِكُلِّ يَوْمٍ طَاقَةٌ خَاصَّةٌ وَمَسَارٌ خَاصٌّ وَنُورَانِيَّةٌ خَاصَّةٌ بِهِ»</div>
+                <h1>مصفوفة الشموع، الكواكب، البخورات والطبائع الشاملة</h1>
+                <p>الجدول التناظري الكامل لأيام الأسبوع من المتن الأصلي (المستوى الثالث): الألوان، أوقات الإشعال، الحروف، الأسماء المركبة، والأوراد القرآنية.</p>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>الكوكب</th>
+                            <th>اللون العام</th>
+                            <th>لون الشمعة</th>
+                            <th>عدد الشموع</th>
+                            <th>وقت الإشعال</th>
+                            <th>الطبع</th>
+                            <th>حروف الشمعة</th>
+                            <th>الأسماء المركبة</th>
+                            <th>الاسم الفردي</th>
+                            <th>البخور المستخدم</th>
+                            <th>الورد القرآني (108 مرة)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>الأحد</b></td>
+                            <td>الشمس</td>
+                            <td>الذهبي</td>
+                            <td>شمع النحل الأصفر</td>
+                            <td>1</td>
+                            <td>الصباح</td>
+                            <td>ناري</td>
+                            <td>ف – ل – ف</td>
+                            <td>غفور – رحيم</td>
+                            <td>فرد</td>
+                            <td>حصى لبان</td>
+                            <td>سَلامٌ قَوْلاً مِن رَّبٍّ رَّحِيمٍ</td>
+                        </tr>
+                        <tr>
+                            <td><b>الاثنين</b></td>
+                            <td>القمر</td>
+                            <td>الفضي</td>
+                            <td>الرصاصي أو الفضي</td>
+                            <td>1</td>
+                            <td>الظهيرة</td>
+                            <td>ترابي</td>
+                            <td>ق – م – ج</td>
+                            <td>علي – عظيم</td>
+                            <td>جبار</td>
+                            <td>عود – صندل – خليط عود</td>
+                            <td>وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ</td>
+                        </tr>
+                        <tr>
+                            <td><b>الثلاثاء</b></td>
+                            <td>المريخ</td>
+                            <td>الأحمر</td>
+                            <td>الأحمر</td>
+                            <td>3</td>
+                            <td>بعد العصر</td>
+                            <td>ناري</td>
+                            <td>ج – ق – ش</td>
+                            <td>قادر – قوي</td>
+                            <td>شكور</td>
+                            <td>جاوي أحمر – مستكى</td>
+                            <td>مِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ</td>
+                        </tr>
+                        <tr>
+                            <td><b>الأربعاء</b></td>
+                            <td>عطارد</td>
+                            <td>الأصفر</td>
+                            <td>الأصفر أو البرتقالي</td>
+                            <td>1</td>
+                            <td>الظهيرة</td>
+                            <td>هوائي</td>
+                            <td>م – ف – ث</td>
+                            <td>لطيف – خبير</td>
+                            <td>ثابت</td>
+                            <td>حصى لبان – عود – لبان – صندل</td>
+                            <td>قَوْلُهُ الْحَقُّ وَلَهُ الْمُلْكُ</td>
+                        </tr>
+                        <tr>
+                            <td><b>الخميس</b></td>
+                            <td>المشتري</td>
+                            <td>الأخضر</td>
+                            <td>الأخضر أو الأرجواني</td>
+                            <td>3</td>
+                            <td>بعد المغرب</td>
+                            <td>ترابي</td>
+                            <td>خ – ن – ظ</td>
+                            <td>عزيز – غفور</td>
+                            <td>ظهير</td>
+                            <td>حبوب القزبراء</td>
+                            <td>لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</td>
+                        </tr>
+                        <tr>
+                            <td><b>الجمعة</b></td>
+                            <td>الزهرة</td>
+                            <td>الأبيض</td>
+                            <td>الأبيض</td>
+                            <td>1</td>
+                            <td>الصباح</td>
+                            <td>مائي</td>
+                            <td>م – ج – خ</td>
+                            <td>فتاح – رزاق</td>
+                            <td>خبير</td>
+                            <td>عود – لبان – حصى لبان</td>
+                            <td>حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</td>
+                        </tr>
+                        <tr>
+                            <td><b>السبت</b></td>
+                            <td>زحل</td>
+                            <td>الأسود</td>
+                            <td>الأسود</td>
+                            <td>3</td>
+                            <td>الليل</td>
+                            <td>هوائي</td>
+                            <td>ت – ل – ز</td>
+                            <td>رحمن – رحيم</td>
+                            <td>زكي</td>
+                            <td>جاوي أبيض – جاوي أسود</td>
+                            <td>وَمَن يَزِغْ مِنْهُمْ عَنْ أَمْرِنَا نُذِقْهُ مِنْ عَذَابِ السَّعِيرِ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 25px; background: rgba(13, 17, 26, 0.7); border: 1px solid var(--border-glass); border-radius: 14px; padding: 20px;">
+                <h3 style="color: var(--gold); margin-bottom: 12px;">🕯️ دلالات وتوجيه طاقة ألوان الشموع في الحياة:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; font-size: 0.88rem; line-height: 1.7; color: #cbd5e1;">
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #fff;">
+                        <b>الشمع الأبيض:</b> أقوى الشموع المنظفة للمنزل من الأرواح السفلية ولعلاج الأمراض الخطيرة والتأمل.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #f4b41a;">
+                        <b>شمع النحل:</b> يبدد الطاقات السالبة، يعطي الأمان والبهجة، ويجذب المال والثروة والشهرة.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #ef4444;">
+                        <b>الشمع الأحمر:</b> طاقة القوة، الوفرة، الإثارة، المحبة، والشجاعة.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #eab308;">
+                        <b>الشمع الأصفر:</b> طاقة المحبة والنشاط وقوى الإرادة والمال وتحقيق الأماني.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #10b981;">
+                        <b>الشمع الأخضر:</b> العدالة والعطاء والتسامح، ونورانيات الصحة وجلب المال والاتصال بالأملاك النورانية.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #3b82f6;">
+                        <b>الشمع الأزرق:</b> جالب للترددات الروحانية وفك المشاكل القضائية وحسم مسائل الإرث باليسر.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #a855f7;">
+                        <b>التركواز أو البنفسجي:</b> للمكاشفة والكشف الروحي وتنشيط القوى التخيلية وتفعيل العين الثالثة.
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border-right: 3px solid #78350f;">
+                        <b>الشمع البني:</b> تردد أرضي يوقف ويخمد كل ما يضايقنا من سلبيات ومخاوف وطوارئ.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: VERBATIM MASTER READER (PAGES 1 - 36) -->
+        <section id="reader" class="tab-section">
+            <div class="hero">
+                <div class="ayah-pill">«المَتْنُ الأَصْلِيُّ الكَامِلُ دُونَ زِيَادَةٍ أَوْ نُقْصَانٍ»</div>
+                <h1>القارئ النصي الكامل لكتاب مرشد الحياة الروحية</h1>
+                <p>قراءة حرفية للمخطوطة الأصلية بصفحاتها الـ 36 كاملة كما وردت دون حذف أو تغيير كلمة واحدة، مع إمكانية التنقل السريع والبحث الفوري.</p>
+            </div>
+
+            <div class="verbatim-reader-container">
+                <div class="pages-toc" id="toc-list">
+                    <!-- Dynamic TOC injected by JS -->
+                </div>
+                <div class="page-content-box" id="page-display">
+                    <!-- Dynamic Page content injected by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Tab switching
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            
+            const targetSection = document.getElementById('tab-' + tabId) || document.getElementById(tabId);
+            if(targetSection) targetSection.classList.add('active');
+
+            // highlight button
+            const btns = document.querySelectorAll('.nav-btn');
+            btns.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(tabId)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            if (tabId === 'graph' && network) {
+                setTimeout(() => { network.fit(); }, 200);
+            }
+        }
+
+        function switchLevelTracker(lvlId) {
+            document.querySelectorAll('.level-tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tracker-lvl1').style.display = 'none';
+            document.getElementById('tracker-lvl2').style.display = 'none';
+            document.getElementById('tracker-lvl3').style.display = 'none';
+
+            document.getElementById('tracker-' + lvlId).style.display = 'grid';
+            event.target.classList.add('active');
+        }
+
+        // Counter functionality
+        function incCounter(id, max) {
+            const el = document.getElementById(id);
+            let val = parseInt(el.innerText);
+            if(val < max) {
+                el.innerText = val + 1;
+            }
+        }
+        function resetCounter(id) {
+            document.getElementById(id).innerText = 0;
+        }
+
+        // Esoteric Body Map Details
+        const bodyDetails = {
+            c7: {
+                title: "شاكرا التاج — ف (فرد)",
+                color: "#a855f7",
+                desc: "أعلى الرأس، الحرف الساقط عليها هو حرف الفاء (ف)، والاسم المفعل لروحانيتها هو اسم الله «فرد». اليوم المخصص لها في الأسبوع الثاني هو اليوم الأول، وتقرأ بياء النداء «يا فرد» لمدة 10 دقائق بعد كل صلاة مغمض العينين مع رش ماء ورد، ثم قراءة: «رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ» 40 مرة، وقراءة سور (يس، نوح، الملك) بعد المغرب."
+            },
+            c6: {
+                title: "شاكرا العين الثالثة (الجبهة) — ج (جبار)",
+                color: "#3b82f6",
+                desc: "بين العينين وفي الجبهة، الحرف الساقط عليها هو حرف الجيم (ج)، والاسم المفعل هو «جبار». تقرأ «يا جبار» 10 دقائق دبر كل صلاة مع رش ماء ورد، ثم الآية: «وَإِذَا بَطَشْتُم بَطَشْتُمْ جَبَّارِينَ» 40 مرة (الشعراء 130)، وقراءة سور (الكهف، الجن، محمد) بعد المغرب."
+            },
+            c5: {
+                title: "شاكرا الحنجرة — ش (شكور)",
+                color: "#00f0ff",
+                desc: "مركز الحنجرة والتعبير، الحرف الساقط عليها هو حرف الشين (ش)، والاسم المفعل هو «شكور». تقرأ «يا شكور» 10 دقائق دبر كل صلاة مع رش ماء ورد، ثم الآية: «لِيُوَفِّيَهُمْ أُجُورَهُمْ وَيَزِيدَهُم مِّن فَضْلِهِ إِنَّهُ غَفُورٌ شَكُورٌ» 40 مرة (فاطر 30)، وقراءة سور (الحديد، الواقعة، النور) بعد المغرب."
+            },
+            c4: {
+                title: "شاكرا القلب — ث (ثابت)",
+                color: "#10b981",
+                desc: "مركز الصدر والقلب المتنور، الحرف الساقط عليها هو حرف الثاء (ث)، والاسم المفعل هو «ثابت». تقرأ «يا ثابت» 10 دقائق دبر كل صلاة، ثم الآية: «رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ» 40 مرة (البقرة 250)، وقراءة سور (الرعد، مريم، المجادلة) بعد المغرب."
+            },
+            c3: {
+                title: "شاكرا الضفيرة الشمسية — ظ (ظهير)",
+                color: "#f59e0b",
+                desc: "فم المعدة والبطن، الحرف الساقط عليها هو حرف الظاء (ظ)، والاسم المفعل هو «ظهير». تقرأ «يا ظهير» 10 دقائق دبر كل صلاة، ثم الآية: «وَمَا لَهُمْ فِيهِمَا مِن شِرْكٍ وَمَا لَهُ مِنْهُم مِّن ظَهِيرٍ» 40 مرة (سبأ 22)، وقراءة سور (الأنعام، فاطر، غافر) بعد المغرب."
+            },
+            c2: {
+                title: "شاكرا العجز والرحم — خ (خبير)",
+                color: "#f97316",
+                desc: "أسفل السرة والحوض، الحرف الساقط عليها هو حرف الخاء (خ)، والاسم المفعل هو «خبير». تقرأ «يا خبير» 10 دقائق دبر كل صلاة، ثم الآية: «فَلَمَّا نَبَّأَهَا بِهِ قَالَتْ مَنْ أَنبَأَكَ هَٰذَا قَالَ نَبَّأَنِيَ الْعَلِيمُ الْخَبِيرُ» 40 مرة (التحريم 3)، وقراءة سور (إبراهيم، السجدة، النساء) بعد المغرب."
+            },
+            c1: {
+                title: "شاكرا الجذر والقاعدة — ز (زكي)",
+                color: "#ef4444",
+                desc: "قاعدة العمود الفقري، الحرف الساقط عليها هو حرف الزاي (ز)، والاسم المفعل هو «زكي». تقرأ «يا زكي» 10 دقائق دبر كل صلاة، ثم الآية: «يَتْلُو عَلَيْهِمْ آيَاتِهِ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ الْكِتَابَ وَالْحِكْمَةَ» 40 مرة (الجمعة 2)، وقراءة سور (النحل، الجاثية، الصافات) بعد المغرب."
+            },
+            gate19: {
+                title: "البوابات الروحية التسعة عشر (حروف البسملة)",
+                color: "#ff3366",
+                desc: "توجد بعيدة عن الجسد بأقل من 2 ملم وتسمى البوابات الروحية للجسد. تضيء وتنطفئ حسب روحانية وقوة طاقة الإنسان، وتعتبر مسؤولة عن حماية الجسد وصحته الروحية. إذا تخربت استطاعت الأرواح السفلية اختراق الجسد، وكلما كانت قوية لا يمكن مطلقاً للأرواح السفلية اختراقنا. كل نقطة منها لها حرف معين يطابق حروف «بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ» (19 حرفاً)."
+            },
+            black_yafookh: {
+                title: "النقطة النورانية 1: اليافوخ (أعلى الرأس)",
+                color: "#00f0ff",
+                desc: "أول وأهم النقط الشفائية بالجسد، وتتم معالجتها بالضرب على منطقة اليافوخ أو أعلى الرأس بالكف سبع مرات ضرباً خفيفاً غير موجع لمعالجة من فقد السمع أو النطق أو أصيب بخلط روحي أو تلبس شيطاني."
+            },
+            black_neck: {
+                title: "النقطتان النورانيتان 2 و 3: العنق من الأمام",
+                color: "#00f0ff",
+                desc: "نقطتان في العنق من الأمام تسهم في فتح مجاري الطاقة وإزالة العقد الناتجة عن العين والحسد والمس عبر التدليك اللطيف بالزيوت الطيبة أو ماء الورد المقروء عليه."
+            },
+            black_neck_back: {
+                title: "النقطتان النورانيتان 4 و 5: وراء العنق",
+                color: "#00f0ff",
+                desc: "نقطتان في الرقبة من الخلف، وتدليكهما يزيل التشنجات العصبية والضغوطات النفسية الناتجة عن تراكم الطاقات السالبة المحيطة بالهالة."
+            },
+            black_knee: {
+                title: "النقطة النورانية 6: وراء الركبة",
+                color: "#00f0ff",
+                desc: "نقطة ارتكاز مسارات الهبوط والتصريف الأثيري بالجسد، تسهم في سحب الطاقات الثقيلة والحرارة الزائدة المتجمعة في المفاصل السفلية."
+            },
+            black_feet: {
+                title: "النقطتان 7 و 8: أسفل القدمين",
+                color: "#00f0ff",
+                desc: "أسفل القدمين تعالج بالضرب الخفيف عليها بقطعة من الخشب، وهي من الطرق الباطنية العجيبة لإخراج المس وفك التلبس وتصريف الخلط الروحي عبر الأرض."
+            }
+        };
+
+        function showBodyDetail(id) {
+            const data = bodyDetails[id];
+            if(data) {
+                document.getElementById('body-detail-title').innerText = data.title;
+                document.getElementById('body-detail-title').style.color = data.color;
+                document.getElementById('body-detail-desc').innerHTML = `<p>${data.desc}</p>`;
+            }
+        }
+
+        // --- Vis.js Interactive Knowledge Graph Setup ---
+        const graphNodes = [
+            // Core levels
+            { id: 'murshid', label: 'مرشد الحياة الروحية', group: 'core', size: 45, color: '#f4b41a', desc: 'الدورة التدريبية الخاصة بإشراف موقع أسرار علم الباطن لتأهيل المرشد الروحي والاستشاري الباطني.' },
+            { id: 'iftitah', label: 'جلسة الافتتاح والتناغم', group: 'levels', size: 34, color: '#00f0ff', desc: 'جلسة تدفقية خاصة لفتح المسارات مع القرين والطاقات المحيطة، بديلة عن سنوات الإذن الصوفي الطويلة.' },
+            { id: 'lvl1', label: 'المستوى الأول (7 أيام)', group: 'levels', size: 38, color: '#10b981', desc: 'الإرشاد، الغسل المائي بورق السدر 21، غسل القرين، تقوية المسارات بالمعدنين، والاسم التنزيلي والآية التنزيلية.' },
+            { id: 'lvl2', label: 'المستوى الثاني (21 يوماً)', group: 'levels', size: 40, color: '#3b82f6', desc: 'معرفة النقط والشاكرات، عسل الأعشاب وآيات الإبطال السبع، تنزيل الأخ إسماعيل وعبد الرحمن، تسخير أسماء السر، والاستنزالات السبعة.' },
+            { id: 'lvl3', label: 'المستوى الثالث (21 يوماً)', group: 'levels', size: 40, color: '#a855f7', desc: 'التناغم مع الشموع والألوان، رموز الاسم الأعظم السبعة، رياضة النفخ والتثبيت، كؤوس البصيرة، وتسكين جوهر الجسد.' },
+            
+            // Level 1 Nodes
+            { id: 'ghusl_sidr', label: 'الغسل المائي (21 ورقة سدر)', group: 'lvl1', color: '#10b981', desc: 'غسل الجمعة بماء وصابون ثم 5 لتر ماء نقع فيه 21 ورقة سدر لـ 3 أيام، وتبخير بالشب الأبيض بعد المغرب.' },
+            { id: 'ghusl_qareen', label: 'غسل القرين (ريحان وقزبراء)', group: 'lvl1', color: '#10b981', desc: 'شرب ملعقة صغيرة من الريحان المدقوق وحبوب القزبراء المدقوقة على الريق وقبل النوم.' },
+            { id: 'metals_pole', label: 'موازنة الأقطاب المعدنية', group: 'lvl1', color: '#10b981', desc: 'مسك معدن باليمنى ومخالف باليسرى واستقبال القبلة عند الشروق وذكر لا إله إلا الله ربع ساعة.' },
+            { id: 'tanzeeli_name', label: 'الاسم التنزيلي (7 أسماء)', group: 'lvl1', color: '#10b981', desc: 'حسيب، حفيظ، حق، حكيم، حليم، حميد، حي. يقرأ 108 مرات دبر كل صلاة مع آية الفتح 11 مرة.' },
+            { id: 'ardee_secret', label: 'السر التنزيلي الأرضي', group: 'lvl1', color: '#10b981', desc: 'تنزيل صعودي على الكف اليسرى لملوك الأيام أو الأملاك الأرضية.' },
+            { id: 'samawi_secret', label: 'السر الاستحضاري السماوي', group: 'lvl1', color: '#10b981', desc: 'استحضار نزولي علوي على الكف اليمنى للأملاك العلوية الربانية.' },
+
+            // Level 2 Nodes
+            { id: 'honey_wash', label: 'عسل الأعشاب وآيات الإبطال السبع', group: 'lvl2', color: '#3b82f6', desc: 'نصف كيلو عسل مع زعفران وسدر وقزبراء وريحان، يشرب في ماء مقروء عليه آيات الإبطال السبع 7 مرات.' },
+            { id: 'shabb_milh', label: 'حجر الشب وملح الفراش', group: 'lvl2', color: '#3b82f6', desc: 'شب تحت الوسادة 7 أيام يذاب عند شجرة + حجران من الملح الصخري تحت الرأس والرجلين.' },
+            { id: 'ismail_abdelrahman', label: 'الأخ إسماعيل والأخ عبد الرحمن', group: 'lvl2', color: '#3b82f6', desc: 'أملاك الفاتحة المباركة، إسماعيل الكاتب الصالح وعبد الرحمن الحارس القوي، يُنزلان برياضة الفاتحة 40 مرة.' },
+            { id: 'tanzil_f_j_sh', label: 'تسخير أسماء السر (ف ج ش ث ظ خ ز)', group: 'lvl2', color: '#3b82f6', desc: 'رياضة 7 أيام للأسماء السبعة، 10 دقائق بعد الصلاة مع آياتها وسور المساء الثلاث.' },
+            { id: 'istinzalat_7', label: 'الاستنزالات النفسية السبعة', group: 'lvl2', color: '#3b82f6', desc: 'تحريك الشاهد بعد صلاة المغرب من الأحد للسبت بالتناغم مع أشعة الشمس والقمر والكواكب.' },
+
+            // Level 3 Nodes
+            { id: 'candles_harmony', label: 'تناغم الشموع والألوان السبعة', group: 'lvl3', color: '#a855f7', desc: 'توزيع الشموع والكواكب والألوان وحروف الشمعة والبخورات لكل يوم من الأحد للسبت.' },
+            { id: 'symbols_7', label: 'رموز الاسم الأعظم السبعة', group: 'lvl3', color: '#a855f7', desc: 'النجمة المخمسة، الثلاث عصي، الميم الطميس، السلم، الأربع أنامل، الهاء الطاووسية، الواو المقوسة.' },
+            { id: 'nafh_tathbeet', label: 'رياضة النفخ والتثبيت', group: 'lvl3', color: '#a855f7', desc: 'غسل اليدين بماء ورد والكافرون 13 مرة، تشبيك اليدين بعد المغرب 45 دقيقة والنفخ دقيقتين.' },
+            { id: 'glasses_3', label: 'كؤوس البصيرة الزجاجية الثلاثة', group: 'lvl3', color: '#a855f7', desc: 'كؤوس الخميس والجمعة والسبت المكتوب عليها آيات كشف الغطاء بحبر ثابت.' },
+            { id: 'spiritual_code', label: 'الشيفرة الروحية والهالة البيضاء', group: 'lvl3', color: '#f4b41a', desc: 'حماية طبع ومزاج وبرج الإنسان بتحويل الوعي إلى هالة بيضاء غير مخترقة.' },
+            { id: 'hypnotherapy_subconscious', label: 'التنويم الإيحائي والعقل الباطن', group: 'lvl3', color: '#f4b41a', desc: 'الدخول في حالة وعي مركزة (Altered State) لمخاطبة العقل الباطن وفك الشيفرات وعلاج العقد.' }
+        ];
+
+        const graphEdges = [
+            { from: 'murshid', to: 'iftitah' },
+            { from: 'murshid', to: 'lvl1' },
+            { from: 'murshid', to: 'lvl2' },
+            { from: 'murshid', to: 'lvl3' },
+
+            // lvl1 connections
+            { from: 'lvl1', to: 'ghusl_sidr' },
+            { from: 'lvl1', to: 'ghusl_qareen' },
+            { from: 'lvl1', to: 'metals_pole' },
+            { from: 'lvl1', to: 'tanzeeli_name' },
+            { from: 'lvl1', to: 'ardee_secret' },
+            { from: 'lvl1', to: 'samawi_secret' },
+
+            // lvl2 connections
+            { from: 'lvl2', to: 'honey_wash' },
+            { from: 'lvl2', to: 'shabb_milh' },
+            { from: 'lvl2', to: 'ismail_abdelrahman' },
+            { from: 'lvl2', to: 'tanzil_f_j_sh' },
+            { from: 'lvl2', to: 'istinzalat_7' },
+
+            // lvl3 connections
+            { from: 'lvl3', to: 'candles_harmony' },
+            { from: 'lvl3', to: 'symbols_7' },
+            { from: 'lvl3', to: 'nafh_tathbeet' },
+            { from: 'lvl3', to: 'glasses_3' },
+            { from: 'lvl3', to: 'spiritual_code' },
+            { from: 'lvl3', to: 'hypnotherapy_subconscious' },
+
+            // cross connections
+            { from: 'tanzil_f_j_sh', to: 'candles_harmony' },
+            { from: 'candles_harmony', to: 'symbols_7' },
+            { from: 'symbols_7', to: 'nafh_tathbeet' }
+        ];
+
+        let network = null;
+        let nodesDataSet = new vis.DataSet(graphNodes);
+        let edgesDataSet = new vis.DataSet(graphEdges);
+
+        function initGraph() {
+            const container = document.getElementById('network-canvas');
+            const data = { nodes: nodesDataSet, edges: edgesDataSet };
+            const options = {
+                physics: {
+                    solver: 'forceAtlas2Based',
+                    forceAtlas2Based: {
+                        gravitationalConstant: -70,
+                        centralGravity: 0.015,
+                        springLength: 130,
+                        springConstant: 0.09
+                    },
+                    stabilization: { iterations: 120 }
+                },
+                nodes: {
+                    shape: 'dot',
+                    font: { face: 'system-ui', color: '#ffffff', size: 14 }
+                },
+                edges: {
+                    color: { color: 'rgba(255,255,255,0.18)', highlight: '#f4b41a' },
+                    width: 1.5,
+                    smooth: { type: 'continuous' }
+                },
+                interaction: { hover: true, tooltipDelay: 100 }
+            };
+
+            network = new vis.Network(container, data, options);
+
+            network.on('click', function(params) {
+                if (params.nodes.length > 0) {
+                    const nodeId = params.nodes[0];
+                    const node = graphNodes.find(n => n.id === nodeId);
+                    if(node) openDrawer(node);
+                }
+            });
+        }
+
+        function openDrawer(node) {
+            document.getElementById('drawer-node-title').innerText = node.label;
+            document.getElementById('drawer-node-body').innerHTML = `
+                <div style="margin-bottom:14px;"><span class="tag-pill">${node.group || 'عقدة رئيسية'}</span></div>
+                <p style="font-size:1.02rem; line-height:1.9;">${node.desc}</p>
+            `;
+            document.getElementById('reader-drawer').classList.add('open');
+        }
+
+        function closeDrawer() {
+            document.getElementById('reader-drawer').classList.remove('open');
+        }
+
+        function filterGraph(category) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if(category === 'all') {
+                nodesDataSet.clear();
+                nodesDataSet.add(graphNodes);
+            } else if(category === 'levels') {
+                const filtered = graphNodes.filter(n => n.group === 'levels' || n.group === 'core');
+                nodesDataSet.clear();
+                nodesDataSet.add(filtered);
+            } else if(category === 'chakras') {
+                const filtered = graphNodes.filter(n => n.id.includes('f_j_sh') || n.group === 'core' || n.id === 'lvl2');
+                nodesDataSet.clear();
+                nodesDataSet.add(filtered);
+            } else if(category === 'symbols') {
+                const filtered = graphNodes.filter(n => n.id.includes('symbols') || n.group === 'lvl3');
+                nodesDataSet.clear();
+                nodesDataSet.add(filtered);
+            } else if(category === 'candles') {
+                const filtered = graphNodes.filter(n => n.id.includes('candle') || n.group === 'lvl3');
+                nodesDataSet.clear();
+                nodesDataSet.add(filtered);
+            } else if(category === 'beings') {
+                const filtered = graphNodes.filter(n => n.id.includes('ismail') || n.id.includes('secret') || n.id.includes('istinzalat'));
+                nodesDataSet.clear();
+                nodesDataSet.add(filtered);
+            }
+            network.fit();
+        }
+
+        function searchGraph(term) {
+            if(!term) {
+                nodesDataSet.clear();
+                nodesDataSet.add(graphNodes);
+                return;
+            }
+            const filtered = graphNodes.filter(n => n.label.includes(term) || (n.desc && n.desc.includes(term)));
+            nodesDataSet.clear();
+            nodesDataSet.add(filtered);
+        }
+
+        // --- Verbatim Reader Content (All 36 pages from OCR) ---
+        const bookPages = [
+            {
+                page: 1,
+                title: "صفحة 1 — الغلاف والاستفتاح",
+                text: `### دورة تدريبية خاصة
+## مرشد الحياة الروحية
+
+> **«رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي يَفْقَهُوا قَوْلِي»**
+
+**بإشراف موقع أسرار علم الباطن**  
+(asrar.org — albatine.org)`
+            },
+            {
+                page: 2,
+                title: "صفحة 2 — أمور يجب أن نعرفها والتدريب",
+                text: `### أمور يجب أن نعرفها..
+
+> *«التدريب ليس هو التعليم.. التدريب هو تقنية فعل الشيء.. و التعليم هو دراسة الشيء»*
+
+هذه الدراسة ستكون مهمة جدا للسادة المهتمين بالحياة الروحية والتنزيلات الربانية.. والباحثين عن طرق التواصل مع الأرواح الطيفية ومعرفة كل الأمور النورانية التي تجعلهم يتواصلون مع الأشخاص وقرنائهم وروحانيتهم الخاصة.. كمتصل بالحياة الروحية يمكنك أن تحس بالأشخاص الأخرين وطاقتهم وطاقة الأماكن والأشياء.. يمكنك اكتساب الكثير جدا من المعلومات – الحكمة – الفهم – النور – التواصل – المكاشفة.. من خلال السكريبت المرفق.. وبالفيديو المرفق ستجد شرح لهذا السكريبت بطريقة صوتية.. لا تنس أن هناك اتصالات هاتفية ستكون بيني وبينكم.
+
+سيكون لديك عدد من الاتصالات عبر الهاتف أو أي تطبيق تختاره للاتصال.. و ستكون هذه الاتصالات طيلة مدة الدورة سنقوم فيها بالافتتاحات وأعلمك بعض الأمور التي سيستعصي فهمها لديك.. بعد ان تنتهي ال 3 ساعات يمكنك شراء ساعات إضافية من موقعنا في شكل استشارات أو متابعات خاصة على الرابط التالي asrar.org
+
+قبل أن نقوم معا بجلسة الافتتاح وندخل على تطبيقات السكريبت.. أرجوا قراءة هذا السكريبت وفهمه ومشاهدة الفيديو المرفق وفهم كل الأمور التي في هذه الدراسة لكي تكون الأمور واضحة..
+
+**قبل أن تكون مرشدا للحياة الروحية اعلم...!**
+الروحانيات تعني أشياء مختلفة لأناس مختلفين. بالنسبة للبعض يتعلق الأمر في المقام الأول بالإيمان بالله والمشاركة الفعالة في الدين المنظم.. والأديان المنظمة أقصد بها مثلا... الإسلام ... المسيحية أو اليهودية وغيرها من الأديان التي لها عدد من الاتباع ويؤمنون بتعاليمها.. بالنسبة للآخرين يتعلق الأمر بالتجارب غير الدينية التي تساعدهم على الاتصال بأرواحهم الأثيرية من خلال التفكير الهادئ أو قضاء الوقت في الطبيعة أو الصلاة الخاصة، أو اليوجا، أو التأمل.
+
+✓ يعرف العديد من الأشخاص في هذا الكون على أنهم روحانيون وليسوا متدينين: مع استثناءات قليلة فإن النسبة المئوية للبالغين الذين يعتبرون متدينين في العديد من البلدان الصناعية آخذة في الانخفاض بينما تظل مرتفعة بشكل عام في الدول الأقل تقدماً. حتى مع انخفاض الانتماء الديني يمكن أن يظل الشعور بالتماهي الروحي ثابتاً أو حتى يزداد ولكن في الغالب يكون الدين كانتماء وليس كاعتقاد حقيقي.
+✓ قبل أن تكون أنت من يوجه الأشخاص ويكون لهم تصورهم الروحي يجب أن تكون أصلا شخص روحاني متعمق في كونك الداخلي.. وهذا لا يتم الا بتدين حقيقي يعطيك كافة الطاقة لتحقيق التواصل السليم مع روحانيتك..`
+            },
+            {
+                page: 3,
+                title: "صفحة 3 — المستويات الثلاثة وخطة الدورة",
+                text: `.. لا تقلق سوف نفتح معا كل الخطوط الروحية الخاصة بك..
+وقبل أن ندخل في التفاصيل سنقوم بالمطلوبات التالية لكي نسموا بقوانا الروحية أولا..
+
+ما ستقرأه وتطبقه هنا سيضعك على الطريق الصحيح لتكون مرشدا روحيا متمرس سنعلمك أسرار كثيرة في هذه الدراسة وسنقوم بعمل عدد من الافتتاحات الروحية لك.. وسيكون لنا معك ثلاث ساعات من الحديث المباشر لتفهم جيدا ما أنت مقبل عليه..
+سنحاول قدر الامكان أن تكون الدراسة في عدد قليل من الصفحات الهادفة فليس هدفنا وضع كتاب كبير الحجم قليل الفائدة بقدر ما يهمنا وضع دراسة صغيرة الحجم عظيمة الفائدة.
+
+✓ دراستنا ستعتمد على ثلاثة مستويات لتصبح فعلا أنت مرشدا روحيا وهذه المستويات الثلاثة لكل مستوى منها اسم معين وطاقة معينة..
+
+| المستوى | مدته | عدد الافتتاحات | عدد المكالمات الخاصة |
+|---|---|---|---|
+| المستوى الأول | أسبوع واحد | افتتاح واحد | واحدة |
+| المستوى الثاني | ثلاث اسابيع | لا يوجد | واحدة |
+| المستوى الثالث | ثلاث اسابيع | افتتاح واحد | واحدة |
+
+**ما الذي سنقوم به في هذه الدراسة..؟**
+أ- جلسة الافتتاح (يوم واحد الى ثلاث أيام حسب روحانيتك الشخصية):
+✓ وهي مكالمة هاتفية ستكون بيني وبينك افتح لك فيها المسار الروحي.. سنقرأ السكريبت التالي ونشاهد الفيديو المرفق.
+
+ب- المستوى الأول (سبعة أيام):
+➢ الارشاد الروحي و كيفيات اكتساب النور الداخلي الروحي .. مع مكالمة هاتفية .
+➢ غسل روحي كامل في يوم واحد مع تقوية الجسد النجمي و الهالة الروحية ..
+➢ فتح المسارات و القوات الروحية بالهالة و الجسد الروحي.. مع مكالمة هاتفية للفتح المباشر.
+➢ (السر) الاسم التنزيلي الخاص و فتح باب التسخير به مع اكمال التنزيل الأرضي و السماوي .
+
+ت- المستوى الثاني (21 يوم):
+➢ معرفة النقط الروحية و قنوات الطاقة و مساراتها بالجسد الروحي .
+➢ المهام الثلاثة للغسل الروحي المخصص .. + تنزيل روحي لأملاك الفاتحة الأخ اسماعيل و الأخ عبد الرحمن .`
+            },
+            {
+                page: 4,
+                title: "صفحة 4 — تكملة المستويات والدورات الخمس",
+                text: `➢ كيفية عمل المحلة و الاستحضار و التنزيل و اكتساب طاقة الأسماء و الحروف و الآيات .
+➢ تسخير أسماء السر الأعظم ف ج ش ث ظ خ ز رياضة لمدة سبعة أيام كاملة تسخيريه تحضرية .
+➢ معرفة المهام الروحية و القوى التسخيرية للغسل الروحي القريني .
+➢ الاستنزالات النفسية السبعة بعد صلاة المغرب.
+
+ث- المستوى الثالث (21 يوم):
+➢ التنزيل الخاص بالأيام السبعة .
+➢ العلامات و الشيفرات الروحية و تسخير رموز الاسم الأعظم .
+➢ النفخ و التثبيت + التبادل الروحي و التسليم .
+➢ روحنه و تسكين جوهر الجسد .
+
+ويمكن اكتساب الصفاء الروحي بطرق عديدة وبناء عليه سوف نقوم بعدد من الأمور التي ستصل بنا فعلا الى اكتساب صفاء روحي وطاقي غاية في الروعة..
+وهنا حددنا خطوات سنمشي عليها لكي نكون في أحسن حال من الاستقبال الروحي لكل التعاليم والطاقات الخاصة التي سنتوصل بها أو سنستزلها..
+
+الخطوط التعليمية سوف نسطرها عند الانتهاء من التجهيزات الروحية..
+
+➢ جلسة الافتتاح أو التناغم الروحي
+هنا أنت على وشك تحضير نفسك لبدء التناغم مع طاقة روحية وحال روحي جديد.. والمقصود بالحال الروحاني الجديد هو خروجك من الدائرة التي انت حاليا فيها والدخول في دائرة روحية ستغير فكرك وتغير اعتقادك وتغير سلوكك..
+وهذا معناه أنه عندما تبدأ في أي رحلة روحية معي.. فاعلم أنني سأدخل بك الى عوالم جديدة وأبواب روحية رائعة للغاية..
+
+في الجلسات التي سنقوم بها والافتتاحات التي تنتظرك لن تكون بحاجة الى قراءة أسماء روحانية الالاف المرات ولن تكون مضطرا لتكون في خلوات روحية أو تتقمص دورا من الأدوار الروحية أو تدخل نفسك في أبواب لا علاقة لها بالحقيقة الروحية.. نحن لا نعلمك كل هذه الأمور ولا نريد ان تكون ذلك الراهب أو الزاهد أو المجذوب.. نريد أن تكون أنت الحقيقة وأنت القوة وأنت النور الألهي والمحبة والحكمة.
+
+أنت على وشك البداية كمرشد للحياة الروحية أو استشاري في الحياة الروحية.. وهي أحد أروع الدورات التعليمية فنحن نوفر فقط خمس دورات خاصة.. – دورة مرشد الحياة الروحية – دورة سيد الأرواح – دورة المعالج الروحاني – دورة العلاج بطاقة الريكي- دورة الرقية الشرعية.
+أما باقي الدورات التدريبية الصغيرة سيتم افتتاحها لاحقا.`
+            },
+            {
+                page: 5,
+                title: "صفحة 5 — ما معنى جلسة الافتتاح؟",
+                text: `➢ ما معنى جلسة الافتتاح؟
+جلسة الافتتاح هي طاقة تدفقية خاصة مني أنا شخصيا كمعلم لك ومرشد لك في هذا الطريق سأفتح لك بها في روحانيتك باب التواصل مع طاقتك الروحية ومع قرينك وكافة الطاقات الروحية المحيطة بك.
+
+سابقا كانت مثل هذه الجلسات تسمى بجلسة الأذن وكان يقوم بها الشيخ الصوفي لمريديه وكانت تتم بطقوس وبروتكوالت غاية في الروعة – ذكر وابتهاالت وجلوس مع الشيخ في تشابك للأيادي كمعنى للإعطاء والتسليم.. وغالبا في الطقوس الصوفية لا يستطيع الشيخ الصوفي أن يفتح للمريد الطريق بشكل مباشر مع عوالم خفية بل المريد قد يلزمه سنوات كثيرة جدا لكي يصل الى أول باب من الطريق.. بعضهم وصل الى عشرون سنة ولم ينفتح له الباب... أي لم يشاهد أو يتواصل أو تأتيه أي إشارات روحانية تفهمه أنه قد بدأ في المسار الروحي..
+
+نحن نعلم أنه لن يكون لك صبر على تحمل الشيخ الصوفي واالذكار التي يسلمها والخلوات والأمور التي قد تكون في أحيان كثيرة غير منطقية وغير مقنعة للعقل وغير معقولة حيث أن المريد قد يرابط في زاوية شيخه سنوات عديدة دون تحصيل أي نتيجة حقيقية..
+
+لا تقلق.. نحن فكرنا في كل شيء.. لن تكون في حاجة الى القدوم الينا وتحمل مشاق السفر والطائرة والفندق والانتظار.. لن تكون مضطرا الى الانتظار لسنوات لكي تصل الى الباب لأنك ببساطة ستكون أحد أبناء الدائرة التي أنا أيضا ابن لها والدائرة لها عدد كبير جدا من الأبناء ستكون أنت واحدا منهم..
+
+لهذا سيكون من السهل جدا علينا أن نفتح لك الطريق في أول جلسة سنقوم بها معك ونوصلك لقرينك ونفتح لك كافة الطاقات الروحية المحيطة بك بدون حتى أن تكون مضطرا لسماع أذكار أو أسماء أو قراءات أو أن تكون مضطرا لإشعال بخورات أو غيره.
+
+علمنا وعملنا شكل مختلف تماما فنحن مرشدون باطنيون قبل أن نكون مرشدين روحيين وبالتالي ستجد كل شيء سهل للغاية وكل الأبواب تفتح أمامك بسهولة بالغة وسنصل الى تحقيق ما تفكر فيه سريعا جدا..`
+            },
+            {
+                page: 6,
+                title: "صفحة 6 — المستوى الأول: مفهوم المرشد",
+                text: `## مرشد الحياة الروحية — المستوى الأول
+**المستوي الأول (أول سبعة أيام) A.1**
+
+➢ ما معنى مرشد في الحياة الروحية
+.1 من يكون المرشد الروحي؟
+كثير جدا من الأشخاص في عدد من المجتمعات يحتاجون فعلا الى شخص ذو تقه يتواصلون معه لكي يحكوا له أو يبثوه ما يعانون من مشاكالت أو ضغوطات أو تعب جسدي أو نفسي أو تعب عاطفي.. أو قد يكون الأمر خارج السيطرة ويكون لديهم شيء من التعب الروحي.. والتعب الروحي هو أشد أنوع الابتلاءات التي قد يتعرض لها الشخص.. والمقصود من التعب الروحي هو مجموعة من التأثيرات المخلوطة بين ضرر نفسي وعصبي وروحي أحيانا.. وأشد أنواع التعب الروحي حينما يكون مخلوط بين النفساني والروحاني.
+
+حينما يصاب الانسان بالتعب الروحي ان لم يكن للمصاب عزم ثابت.. وايمان قوي.. ومرشد صادق يمده بروحانية قوية من الممكن أن يتزعزع اعتقاده بالله تعالى لأنه سيعتقد أنه وقع عليه ظلم وحيف من الخالق بسبب اصابته وهذا ما نسمعه ونعاينه يوميا خلال طيلة مدة عملنا في هذا الميدان ويصبح متذبذب روحيا وقد يصاب بالاكتئاب وبالتالي يتعرض للضياع والحيرة.. كما أن عدد من المصابين بالتعب الروحي يكونون كمن يدور في دائرة مقفلة ويكون في الغالب لديهم إحساس بعدم الاستقرار والخوف.
+
+نحن جهزنا هذه الدراسة لكي تكون أنت منارة الارشاد لكل من فقد البوصلة الروحية في حياته.. ليس فقط بالنصيحة والتجهيز الروحي ولكن أيضا بالتطبيق الروحي الذي هو أهم من التجهيز والنصيحة وبناء عليه ستجد في دراستنا عدد من التطبيقات الروحية التي ستعطيك القوة والجمال والنور والبركة والخير... لك أنت كمرشد جديد في الحياة الروحية أو لعملائك مستقبلا.. لكي ينتفعوا بنفس النور والبركة والخير المتدفق من الله الخالق للجميع..
+
+نحن سنعتمد على استنزال البركات الروحية التي هي قريبة منا ليس فقط عبر الصلوات والعبادات ولكن عبر التطبيقات الروحية التي ستجعلنا أيضا نتواصل مع عوالم أخرى ومع طاقات روحية شافية أحيانا ومحبة أحيانا أخرى لديها قدرات فوق الطبيعية في حياتنا.. وسنقوم بالتواصل معها بمحبة واستمداد تردداتها وموجاتها الشافية ونستقبلها في جسدنا الروحي وكلما كان جسدنا الروحي قويا وشفافا كلما كانت روحانيتنا قوية ولديها تلك الموجة والتردد المطلوب وبالتالي سنستطيع أن نمد الانسان والحيوان والطبيعة بقدراتنا النورانية.
+
+وبناء عليه سنقوى أولا في أنفسنا عدد من الرابطات الروحية التي ستساعدنا في التلقي والحصول على النور الكوني والبركة الإلهية وهذا التلقي يسمى عادة الاستمداد وهو في الأصل مدد من الله تعالى لمن يريده ويبحث عنه.. وبعدها سيمكننا جعل هذا النور والبركة الكونية والخير الرباني يتدفق من خلالنا الى باقي الأشخاص الذين سيرغبون فعلا في أن يأخذوا قليلا من هذه الطاقات الروحية..`
+            },
+            {
+                page: 7,
+                title: "صفحة 7 — اكتساب النور وميزان الإمام علي",
+                text: `الأمر ليس مدد واستمداد ولكنه فهم عميق جدا سيغير تفكيرك ورؤيتك للحياة بدرجة كبيرة جدا واتصال روحي رائع جدا سيكون لنا مع أرواح طيفية غاية في الصفاء والنقاء.. فكلما سمت وعلت أرواحنا وتطهرت اتصلت.
+
+فأنت كمرشد للحياة الروحية.. لن يستطيع أن يستمد منك البركة والنقاء والطاقة الروحية الا الأشخاص الذين لديهم نفس موجتك الروحية ونفس ذبذباتك الكونية وبالتالي يجب أن تجعل كل المتواصلين يتفاعلون معك حقيقة لكي يصلوا الى اكتساب النية واكتساب موجة روحية نقية تجعل بصيرتهم تتفتح ونورهم يتوهج.. مهمتنا هو الوصول الى المدد والى اكتشاف ارواحنا ونورانيتنا.
+
+ان كان المتصل معك ليس لديه طاقة كافية وليس له درجة قوية من النية واليقين قم بتوجيه واعطه كل التقه واليقين في أن تكون له قابلية لاستقبال نورانيتك.. ان كان متشكك أو غير مقتنع لا تحاول معه مرة أخرى الن عقله الباطن سيكون مغلق عن استقبال اشاراتك.
+
+**A-1.1**
+**.2 كيف سأكتسب هذا النور وكيف سأعطيه**
+ان الله الخالق عز وجل عندما قال في سورة النور الآية 40: «وَمَن لَّمْ يَجْعَلِ اللَّهُ لَهُ نُورًا فَمَا لَهُ مِن نُورٍ»..
+لم يقلها عبثا ولم يخبرنا بها من باب المزاح أو الفراغ.. بل هي حقيقة وهي أن النور يكتسب من الله تعالى بالطلب فالجعل هو الوضع وبالتالي.. الذي جعل الله فيه من نوره فهو يشتق من أنوار التأييد القدسي عليه والمدد العقلي.. وقبله يجب أن نقوى أنفسنا لكي تسموا وتكون قوية وشفافة..
+
+لكي تسمو النفس يجب أن تقتل الرغبة في الطمع والتملك والرغبة في الترف.. وفي نفس الوقت أن تعيش كما الطامعون الطامحون وأن تحترم الحياة كما الراغبون فيها.. المعادلة ليست صعبة ولكن هي ميزان تقوي به روحك فسيدنا علي كرم الله وجهه قال.. *«عش دنياك كأنك ستعيش أبدا واعمل لأخرتك كأنك تموت غدا»*.. أقوى ميزان حياتي من رجل حكيم فتح الله بصيرته..
+
+ان أول باب من الأبواب التي تفتح لنا أبواب الرحمة والنور والبركة هي الصلاة والتأمل فيها.. أي البقاء بعد الصلاة في تأمل على الأقل لمدة ربع ساعة جالسا متأملا مغمض عينيك وتذكر في نفسك لا إلـــــــه الا الله بالعقل وليس بالقول أو الترديد الداخلي. بل بالروح وحقيقتك كخليفة فوق الأرض.
+
+ما يجب أن تتعلمه كمرشد في الحياة الروحية أننا نحن الانسان إذا حاولنا الفرار من هذا العالم قبل أن نتمم تعليمنا ونحقق عبادة الله ونحقق الخلافة في الأرض ونحقق أن الشيطان عدو ونتخذه عدوا.. فسنرد على أعقابنا مرة أخرى اليه في صورة أخرى الى يتم تحقيق كل هذه العهود ونؤدي الرسالة..`
+            },
+            {
+                page: 8,
+                title: "صفحة 8 — متاهات الروح وحقيقة الكون الحي",
+                text: `فان لم نستطع لأن الشيطان حاربنا وغلبنا فانه سنرد على أعقابنا الى نصل الى جهنم والعياذ بالله وبالتالي الفهم الروحي لك أنت شخصيا سيتدفق على الأخرين ويجعلهم يتحررون من السلاسل والقيود والأغلال التي تربط عقلهم وفكرهم وأفكارهم..
+
+وجهنم وسقر والجحيم والنار والعذاب هو الدخول في متاهات الروح التي لها تسعة عشر طريقا وتكون في الغالب مثل الاحلام الحقيقية المتحققة ولا علاقة لها بالمعنى الحقيقي للاسم..
+
+الانسان سيبقى في صراع بين روحه وجسده وعقله وخياله الى ان تنتهي طاقة الكون ويعود الى نفخة الله وينسجم معها ليكون هو العودة الى السكون.. نحن خلقنا من نفخة الله وليس من كلمة الله ...
+
+أنت كمرشد في الحياة الروحية أو استشاري روحي يجب أن ترسخ في اعتقادك أن الموت والحياة هما في الواقع مظهران للحياة.. وبالتالي لا يجب عليك أن تخاف من الموت أو تستأنس بالحياة.. يجب أن تكون سيدا فان خفت كنت عبدا.. وبالتالي يجب أن يكون في قلبك النور والخير والمحبة للجميع..
+
+وكيفية تحقيق هذا بأن تبحث في قلبك عن مصدر الشر وتقتلعه لأن الشر ينموا ويترعرع في القلب.. فالشر قد ينموا ويترعرع في قلب الانسان المخلص وفي قلب الانسان الغير مخلص ولكي نقضي على الشر داخلنا يجب أن نكون أقوياء.. واعلم شيئا مهما جدا في حياتك أن أي كلمة تقال في أي مكان في هذا العالم فسمعتها.. قدر لك أن تسمعها.. وحتى هذه الكلمات التي أنا اكتبها قدر الله تعالى لك أن تقرأها..
+
+وان ما قدر لك أن تحيط به من علم أو حكمة لا بد وأن تجد طريقهما اليك مباشرة وغير مباشر.. انها لعبة الحياة.. وأنها ميتركس الحياة التي تسوق الينا أمور لا نحلم بها وتجبرنا على فعل أشياء نكرهها.
+
+الكون كل الكون حي ينبض بالحياة والقوة والعقل.. إنه كائن حي ونحن جزء منه إننا ذرة من شعاع نور الخالق تتجلى فينا قدرته ونحن على اتصال مع الخالق بكل شيء وهو يعرفنا ويعرف صلتنا به إننا نزداد معرفة للخالق ونزداد شعوراً به بالاتحاد معه وهذا الشعور ليس نتيجة تفكير عقلي فقط.. إنه يقين بل هو عين اليقين.. كلما كنت قريبا من الخالق عبر صلاتك وايمانك كنت أقوى وأوسع فهما.
+
+فالمدرك الذي له فهم روحي عميق أو فهم ديني صحيح لا يؤمن.. بأن الله يطلب من الناس أن يحبوه وأنه يحتفظ بالخير والبركة لمكافئتهم في شكل حسنات.. وجنة بعد الموت وسيئات وجحيم وعذاب لمن بخل عليه في حبه في شكل سيئات إن الله أجل وأعلى من هذه الأحاسيس.. الله مثل الشمس تشرق على الجميع مثل المطر يفرق ماءه على الجميع.. أما النعيم فليس مكافأة لرضا الله عن عابد إنما هو نتيجة لعمل الإنسان فكل مكان معبد لله ... لأنه فيه ... وكل الأيام ايام اتصال بالله وعبادة. سبت وجمعة وأحد ... لأنها كلها له والصلاة هي ما يجعل الإنسان ينتقل الى نوع من الاندماج في قدرة الله وحكمته، فتغمر الحكمة والقوة روحه حيث يجد القدرة على الهدوء للعقل..
+
+لذا يجب أن تكون الصلاة حديث قلب لقلب وأن نرفع من خلالها الحواجز التي أقمناها بيننا وبين الله في تصوراتنا عندما تصورنا أنه بعيد عنا مع أنه منا قريب.. لا تستمع الا الى ما يفتيه قلبك ولا تستمع الى من ينطق بالأمور التي لا يؤمن بها قلبك قبل عقلك.
+
+الحياة التي نعيشها.... ووسوسة الشيطان التي تحيط بنا.. والكلام المحيط بنا سيجعلنا نتخبط في الخيال وننسى الحقيقة وننسى أن الكون كله مثل لعبة أو مثل فلم نشاهده له بداية ونهاية فمهما صعد الانسان من سفح الجبل باتجاه القمة فانه ان وصلها فهو وصل نهاية الجبل ولا توجد نهاية أخرى للجبل.. وصولك لقمة الجبل معناه البقاء في القمة وليس النزول مجددا الى السفح.`
+            },
+            {
+                page: 9,
+                title: "صفحة 9 — الغسل الروحي ومسارات الطاقة",
+                text: `.3 ما الذي سنقوم به ؟
+في اليوم الأول سنقوم بجلسة هاتفية اشرح لك فيك السكريبت و اشرح لك برنامج الدورة و التعاليم الخاصة بها ....
+
+**A-1.2**
+➢ ما هو الغسل الروحي وكيف نفتح مسارات الطاقة؟
+الغسل الروحي الموضوع هنا ليس غسل القرين ولكنه تنقية روحية يتم معها فتح كل مسارات الطاقة بالجسد الاثيري وتقوية الهالة وإزالة كل الطاقات السالبة عن منافذ الجسد والنقط النورانية بالجسد.. سنضع الطريقة الصحيحة المجربة وهي كالتالي..
+
+اعلم أنه لغسل روحي صحيح.. تتبع ثلاث أمور أساسية:
+أولها أن تقوم بغسل مائي للجسد ويكون يوم الجمعة صباحا والمستحسن أن يكون الغسل أول الشهر العربي أي قبل 13 من الشهر العربي فهو غاية أما إذا لم يتوفر فلا مانع من الغسل أي وقت في الشهر.. شرط أن يكون اليوم يوم جمعة.. والغسل يكون بماء وصابون أول الأمر ثم يشلل الجسد بعدها بخمسة لتر من الماء وضع فيه 21 ورقة من ورق السدر سبق ووضعت فيه قبل الغسل بثلاثة أيام..
+
+بعد ذلك وفي نفس اليوم نبخر الجسد بحجر من الشب الأبيض فقط لا غير وعند التبخير نقرأ سورة الإخلاص 11 مرة ... ويكون البخور بعد صلاة المغرب..
+
+فان احسسنا أننا بخير وعلى خير والأمور معنا طيبة ولا توجد أحلام مزعجة أو كوابيس مخيفة أو أرق أثناء النوم فالأمر جيد وعادي وان كان العكس كما ذكرنا فتواصل معي عبر البريد أو عبر ارسال رسالة الى الهاتف لكي أتواصل معك..
+
+الأمر الثاني في غسل الجسد وهو مهم جدا ويسمى غسل القرين روحيا وهو أن تشرب صباح يوم الغسل قبل الفطار وقبل النوم معلقة صغير مخلوطة من الريحان المدقوق وحبوب القزبراء المدقوقة ويكون الشرب فقط يوم الغسل ويمكن تمديدها الى مدة سبع أيام.. لمن أراد.
+
+علما أن تقوية مسارات الطاقة بالجسد سنقوم بها بطريقة جد بسيطة وهي أن نمسك في اليد اليمنى معدن نحاس أحمر أو نحاس أصفر أو فضة أو ذهب وفي اليد اليسرى معدن مخالف للمعدن الذي نمسكه باليد اليمنى ونستقبل القبلة ونغمض أعيننا ونذكر لا إله الا الله على الأقل لمدة ربع ساعة.. فسنحس بطاقة تسري بين اليدين وقوة عجيبة تغشى الجسد وتملأه بالنور.. وكرر العملية لمدة ثلاث أيام وأجود وقت للقيام بهذا في الصباح عند شروق الشمس..
+
+هنا نكون قد انتهينا من الغسل الروحاني وتنقية مسارات الطاقة بالجسد.. وندخل الى الجزء الأهم وهو..
+وللتذكير الغسل سنقوم به في يوم واحد كما هو مسطر ببرنامج الدورة B-1.2
+
+تقوية روحانية والتنزيل المباشر عندك.. سوف تتصل بي هاتفيا بعد تحديد موعد مسبق وسأقوم بإذن الله تعالى بتقوية روحانيتك وتقوية قرينك وزيادة قواك الروحية لدرجة كبيرة وهذا سيكون عن طريق جلسة التناغم التي سنقوم بها معا..
+وبعدها سيكون لنا مرور الى سرد ومعرفة ما الأمور التي يجب علينا معرفتها والمرور عليها والتعمق في معرفتها لكي نكتسب كل القوى التي تؤهلنا لنكون مرشدين روحيين بإذن الله تعالى.. الأمر سيكون سهل وبسيط مع قليل من التركيز.`
+            },
+            {
+                page: 10,
+                title: "صفحة 10 — النقط الشفائية التسع وقنوات الطاقة",
+                text: `**A-1.3**
+✓ شرح لا بد منه
+بخصوص النقط الروحية التسعة وهي التي باللون الأسود في الصورة أعلاه.. يمكن من خلالها معالجة الجسد:
+- وبالضرب على منطقة اليافوخ أو أعلى الرأس بالكف سبع مرات ضربا خفيفا غير موجع
+- وتدليك النقط التي في الرقبة من الوراء والأمام
+- والضغط على اللسان بقوة بواسطة الاصبع السبابة من الداخل
+- والضرب على أسفل القدمين بقطعة من الخشب
+ان نحصل على علاجات عجيبة جدا خصوصا لمن فقد السمع او النطق او حصل معه خلط روحي او تلبس شيطاني والكثير من الحالات التي تعالج بالطريقة نفسها.
+
+واعلم أن أرواحنا لها قدرات غير محدودة تفوق الزمان والمكان ولها سرعة في الانتقال تفوق أي مقاييس أخرى يعرفها العلم فهي تخترق الزمن والقوانين والمادة ولديها القدرة على الانشطار وإدراك أكثر من أمر واحد في وقت واحد..
+وأهم أمر أن خيالنا منسجم جدا مع روحنا فأحيانا يطلقها الى أبعاد غير متوقعة فتصل الروح عن طريق الخيال الى هذه الأبعاد التي نراها مثل الخيال أو أن عقلنا يفسر الأمر على أنه خيال ولكن ربما ببحث قصير قد تعلم أن ما وصلت اليه روحك عن طريق خيال هو حقيقة لم يستوعبها العقل الواعي..
+
+في هذه الحالة السؤال الذي يطرح نفسه وأرجوا أن تنتبه له جيدا لأنه مهم جدا.. هل العقل له فعلا تلك القدرة على التخيل أم أنه خلق الله به خاصية متطورة جدا جعلت منه جهاز كامل الدقة في تحليل البيانات والإشارات والرموز وإعادة توصيلها مرة أخرى الى العقل الواعي في شكل خيال أو توصيلها الى العقل اللاواعي في شكل أحلام أو رؤية أو كوابيس؟
+تأمل في الصورة المرفقة للمسارات الطاقة او الميرديان
+
+➢ الطاقة الروحية والطاقة الكونية والمريديان أو مسارات الطاقة في الجسد؟
+لعدة قرون كان لدى الحكماء والمعالجين القدامى من مختلف التقاليد فهم عميق للجسم في الصين والهند واليابان والتبت وكذلك في بلدان أخرى تحدث الناس عن قنوات الطاقة أو خطوط الطول أو المسارات التي تتدفق على طولها طاقة الحياة.
+
+.4 قنوات الطاقة
+تتكون قوة الحياة أو مسارات الطاقة التي تسمى أيضا تشي من نوعين من القوى: يتدفق الين واليانغ عبر جسمك عبر شبكة معقدة من مسارات الطاقة وهذا الين واليانغ تكلم لنا عليه القران الكريم في اية النور..
+لدينا في كتاب الله في اية النور.. الشجرة المباركة التي تمثل كل مسارات الكون فكان مقصده عز وجل بالشجرة المباركة إشارة إلى الجسد لظلمته في نفسه وتنوّره بنور الروح الذي أشير إليه بالمصباح وتشبكه بشباك الحواس وتلألؤ النور من خلالها كحال المشكاة مع المصباح.
+والزجاجة إشارة إلى القلب المتنوّر بالروح المنوّر لما عداه بالإشراق عليه تنور القنديل كله بالشعلة وتنويره لغيره. وشبّه الزجاجة بالكوكب الدريّ لبساطتها وفرط نورانيتها وعلوّ مكانها وكثرة شعاعها كما هو الحال في القلب ومعنى كونها لا شرقية ولا غربية إنها متوسطة بين غرب عالم الأجساد الذي هو موضع غروب النور الإلهي وتستره بالحجاب الظلماني وبين شرق عالم الأرواح الذي هو موضع طلوع النور وبروزه عن الحجاب النوراني لكونها ألطف وأنور من الجسد وأكثف من الروح..`
+            },
+            {
+                page: 11,
+                title: "صفحة 11 — مسميات المسارات والمريديانات",
+                text: `كانوا يسمون المسارات الطاقية بالجسد "سين" في تايلاند و "ناديس" في الهند و "ميريديان" و "القنوات" أو "السفن" في الصين واليابان أو أيضاً "القنوات" في التبت. في الهند حيث تم تطوير العديد من فنون العلاج الشرقية تحدثوا عن 72000 مسار أو قناة طاقة بالجسد الواحد.
+
+**شبكة المريديانات والأعضاء في خريطة الجسد:**
+- الأمعاء الدقيقة
+- السخان الثلاثي
+- الأمعاء الغليظة
+- المعدة
+- الكبد
+- الطحال
+- الكلية
+- القلب (حاكم القلب)
+- الرئة
+- المثانة
+- المرارة`
+            },
+            {
+                page: 12,
+                title: "صفحة 12 — الاسم التنزيلي وآية الفتح",
+                text: `يمكن أن ينشأ المرض عندما يكون هناك انسداد في تدفق الطاقة في هذه القنوات خصوصا المرض الروحي أو يمكن بشكل أو بأخر أن يوصل انسداد تدفق الطاقة الى توقف في التوزيع الطبيعي على الجسد وبالتالي تظهر العديد من العلامات على جسد المريض باهتزاز أو تصلب أو تخشب في بعض او جزء من الجسد خصوصا اليدين والأطراف ويمكن ان يتواصل ساعتها الجسد بالأرواح الأخرى في حالة وجود هذا الانسداد كأرواح الموتى او أرواح أرضية او سفلية ومن الممكن ان تستحوذ عليه في حالة كان لديه ضعف روحي.. ولهذا يتم اعتماد عدد من التقاليد بالشفاء وأروعها حسب التجربة الشفاء عن طريق تحرير المسارات روحيا عن طريق روحانية المعالج نفسه ويتم هذا عن طريق تواصل روحي بين المريض والمعالج.
+
+.5 ما الذي سنقوم به ؟
+ستكون لنا مكالمة هاتفية سأقوم خلالها بتطهير مسارات الطاقة الخاصة بك و فك كل العقد ان وجدت في جسدك و روحانيتك او هالتك او جسدك الاثيري .. هذه العقد قد تكون ناتجة عن سحر – مس – عين أو حسد .. نحن سنقوم بطريقة روحانية جد متطورة بفك كل العقد التي في الجسد و تطهيره بصفة نهائية من كل عائق او مشكل قد يواجهنا اثناء عمليات التسخير التي سنقوم بها ..
+
+**A-1.4**
+**(سر) الاسم التنزيلي والآية الربانية لسبعة أيام الأولى**
+الاسم التنزيلي هو اسم من أسماء الله الحسنى موافق تماما لما ترغب في البدء في تطبيقه وهنا تم اختيار سبعة أسماء من أسماء الله الحسنى.. كلها رائعة جدا وكلها لنفس التطبيق الخاص بمرشد الحياة الروحية شخصيا لن اعطيك اسم واطلب منك أن تتبع قرع روحانيته بالذكر حتى ينير ويعطيك تلك اللمعة النورانية..
+
+- ما سأقوم به مختلف تماما الأسماء المختارة هي:
+**حسيب – حفيظ – حق – حكيم – حليم – حميد – حي**
+
+قم باختيار اسم من هذه الأسماء اقرأها أو استخر الله تعالى فيها أو اختر اسم سترتاح له انت وستحبه أول ما تنطق به سيكون هو الاسم التنزيلي الخاص بك.
+طيلة السبعة أيام الأولى قم بقراءة الاسم الذي ستختاره عدد **108 مرة** وراء كل صلاة مفروضة وبعده اقرأ الاية التنزيلية التي ستقوى روحانيتك بشكل رائع جدا وقوي جدا وعدد قراءة الاية التنزيلية هو **11 مرة**..
+
+تابع طيلة السبعة أيام الأولى على هذه الرياضة الروحية للأسماء والآية المباركة.. سيحصل لك فتح في المسار التنزيلي الروحي الخاص بك مباشرة بعد انتهاء السبعة ايام الاولى..
+
+والاية المباركة التنزيلية هي.. الآية 19 من سورة الأنفال.. قوله تعالى:
+> «إِن تَسْتَفْتِحُوا فَقَدْ جَاءَكُمُ الْفَتْحُ ۖ وَإِن تَنتَهُوا فَهُوَ خَيْرٌ لَّكُمْ ۖ وَإِن تَعُودُوا نَعُدْ وَلَن تُغْنِيَ عَنكُمْ فِئَتُكُمْ شَيْئًا وَلَوْ كَثُرَتْ وَأَنَّ اللَّهَ مَعَ الْمُؤْمِنِينَ» صدق الله العظيم.`
+            },
+            {
+                page: 13,
+                title: "صفحة 13 — السر التنزيلي الأرضي والسماوي",
+                text: `**A-1.5**
+**السر التزيلي الأرضي..**
+هذا السر سيكون عبر مكالمة هاتفية بينك و بيني سأقوم بإنزال روحانية أرضية عندك . و يكون في العادة على الشق الايسر من الجسد بعد تتبيث القرين و عادة يكون فيه تنزيل احد ملوك الأيام او احد الأملاك الروحانية الأرضية .
+
+شرح مهم للغاية ... بخصوص التنزيل على الكف اليسرى فان التنزيل يكون صعودي من الأرض الى اليد و بالتالي عند طلب الحضور نقول ..
+> *«السلام عليكم عليكم و رحمة الله و بركاته صعود في الكف او حضور على الكف اصعد او اطلع و ليس انزل»*
+
+و بالتالي يمكننا ان نطلب حتى حضور القرين على نفس الطاقة أي طاقة صعودية من الأسفل الى الأعلى .
+
+**A-1.6**
+**السر الاستحضاري السماوي..**
+هذا السر سيكون عبر مكالمة هاتفية بينك و بيني سأقوم باستنزال او استحضار روحانية علوية أو ربانية لديك . و يكون في العادة على الشق الأيمن من الجسد و عادة نقوم به للاتصال و استحضار الأملاك العلوية الربانية.
+
+شرح مهم للغاية ... بخصوص الاستحضار السماوي أو العلوي فأنه يكون على الكف اليمنى و التحضير يكون نزولي او هبوط من الأعلى الى اليد بالتالي عند طلب الحضور نقول ..
+> *«السلام عليكم أيها الملكان الموكلان بيميني و شمالي ( أو يمين هذا الجسد و شماله اذا كان عملنا مع شخص اخر ) انزلوا بارك الله فيكم و اعطوني إشارة حضور من نوركم ..»*
+
+**A-1.7**
+✓ مراجعة عامة للأسبوع الأول
+خلال هذا اليوم سنقوم بمكالمة هاتفيه أخرى و سنرى مدى تقدمك في الأسبوع الأول و نناقش المشاكل و الحلول التي سنتوصل اليها انا و أنت ..
+المراجعة العامة للأسبوع الأول على ضوئها سنحدد الدخول الى المستوى الثاني او إعادة بعض الأمور التي يجب اعادتها مثل الغسل الروحي او التنازيل الأرضية و السماوية و غالبا .. قد يكون مشكل في التواصل الروحي مع التنزيل الأرضي او السماوي .. فيتم معرفة السبب و إصلاحه قبل الانتقال الى المستوى الثاني ... طبعا يمكنك طيلة المستوى مراسلتي عبر المنتدى و مناقشة الأمور التي قد لا تكون واضحة بالنسبة لك ..
+
+هنا ينتهي المستوى الأول الذي كانت مدته سبعة أيام وسندخل على المستوى الثاني`
+            },
+            {
+                page: 14,
+                title: "صفحة 14 — المستوى الثاني: المعرفة والوعي",
+                text: `## مرشد الحياة الروحية — المستوى الثاني
+سأحاول أن يكون هذا المستوى واضح وبدون تعقيد في الفهم وبالتالي سأحاول أن يكون مختصرا ومفيدا وخالي من الحشو الفارغ وبه فقط الفائدة التي ستوصلنا الى اكتساب المعرفة والحكمة..
+
+**B-1.1**
+**المستوى الثاني (21 يوم) B**
+.1 ما هي أهم الأمور التي يجب أن أعرفها؟
+أهم الأمور الخاصة التي يجب علينا معرفتها هي أنه كمرشد للحياة الروحية يجب أن أصل الى مستوى عال جد من الوعي الروحي وأطبق كل المعلومات الخاصة والتعاليم الروحية لكي أحصل فعلا على هذا الوعي الروحي الذي يتم تنزيله واستمداده من الطاقة الكونية المحيطة بنا..
+
+هنا أذكر بشكل كبير يجب أن تكون صادق جدا مع المرشد الروحي الذي تتعامل معه سواء أنا أو المرشد مولاي المهدي أو المرشد أبو عبد الله أو المرشد الحاج مبارك. وتزوده بكل التغيرات التي معك وكل الطاقات التي اكتسبتها وتخبره بكل التغيرات الإيجابية والسلبية التي لديك لكي يفهم ويعرف الخطوة الجديدة التي يجب عليه أن يقوم بها معك.. بدون هذا الاخبار والتواصل سيكون الامر صعب عليك وعلى المرشد الروحي الذي تتعامل معه وبالتالي لن تستفيد شيء من هذه الدراسة.
+
+• كمرشد للحياة الروحية يجب أن تكون لديك معلومات حول الحياة وحول الكون وحول الله وحول الملائكة والجن والشياطين والكتب السماوية والنور والظلام والخير والشر..
+• يجب أن يكون لدي اقتناع تام بالمرشد الذي أخد منه الخط العلمي لأنه سيضعني على الطريق الصحيح ويجب أن أعرف جيدا أن المرشد الروحي سيسلمني أقصى ما يمكن من المعلومات التي ستجعل مني أنا أيضا ممارس للإرشاد الروحي وبالتالي سيتروحن جسدي الاثيري والنجمي ويصبح لدي ذلك الاتصال مع الطبيعة ومع النورانيات المحيطة بنا..
+
+قبل أن نبدأ في تطبيقات المستوى الثاني لا بد لنا أن نعرف هذه الأمور الخاصة عن روحانيتنا`
+            },
+            {
+                page: 15,
+                title: "صفحة 15 — خريطة الشاكرات والنقط الـ 19 والنورانية",
+                text: `في الصورة نلاحظ ما يلي:
+
+**-1 النقط الكبيرة الملونة:** وهذه النقط الكبيرة السبعة الملونة هي شاكرات الجسد او النقط السبعة الطاقية للجسد والشاكرات السبع هي مراكز الطاقة السبعة الموجودة في الجسم وتوجد في مواقع محدد ابتدأ من أسفل العمود الفقري وحتى أعلي الرأس وهي تلعب أدوار حيوية في جسم الإنسان حيث هي مركز طاقته وحيويته الطاقية وتعمل الشاكرات السبع علي زيادة مستويات الطاقة الإيجابية في الجسم وبالتالي فهي المولد الرئيسي لهالة سليمة وطاقة إيجابية سليمة محيطة بالجسد..
+(الحروف والأسماء المقترنة بها في الرسم: ف فرد، ج جبار، ش شكور، ث ثابت، ظ ظهير، خ خبير، ز زكي).
+
+**-2 النقط الصغيرة الملونة بالأحمر:** وهي النقط التسعة عشر التي توجد بعيدة عن الجسد بأقل من ملمترين وتسمى البوابات الروحية للجسد وهي تضيء وتنطفأ حسب روحانية وقوة طاقة الانسان الروحية وتعتبر النقط التسعة عشر مسؤولة عن حماية الجسد وقوته وصحته الروحية وهذه النقط هي بوابات روحية إذا تخربت تستطيع الأرواح السفلية اختراقنا وكلما كانت قوية لا يمكن مطلقا للأرواح السفلية اختراقنا وللمعلومة كل نقطة من هذه النقط لها حرف معين عدد حروف بسم الله الرحمن الرحيم..
+
+**-3 النقط الصغيرة الملونة بالأسود:** وهي أهم النقط التي في الجسد وتسمى النقط نورانية وهذه النقط بها كل الملفات الخاصة بالجسد وأولها يوجد فوق الرأس وتسمى اليافوخ واثنين وراء العنق واثنين من العنق من الامام ووراء الركبة واحدة وأسفل القدمين واحدة.. هذه النقط شفائية قوية جدا وفي شفاء عدد من الامراض الروحية المزمنة وهي بوابات مسارات الطاقة في الجسد الروحي..`
+            },
+            {
+                page: 16,
+                title: "صفحة 16 — المهام الثلاث للغسل (المهمة 1 و 2)",
+                text: `**B-1.2**
+➢ المهام الثلاثة للغسل الروحاني
+خلال هذا اليوم من المستوى الثاني سنقوم بهذا الغسل الروحاني الذي سيهيأ جسدنا مستعد للاستنزال النفسي الذي سيكون لاحقا وسنصبح أكثر تناغما مع القوى المحيطة بنا و سيكون المكمل لهذا الغسل هو التناغم مع الألوان والشموع الذي سنقوم به لاحقا في هذه الدورة ..
+
+**.2 الغسل الروحي (المهمة الأولى)**
+الغسل الروحي الداخلي وهو مهم جدا ومدته سبعة ايام وسيكون بهذه الطريقة.. خد نصف كيلو من عسل النحل وضعه على نار هادئة وضع فيه 21 شعرة من الزعفران و7 ورقات من السدر و21 حبة من حبوب الكزبراء و7 أوراق الريحان واتركه على نار هادئة جدا وحركه حتى يسخن وينسجم وبعدها قم بتصفيته واتركه جانبا لكي يبرد وضعه في مكان قريب منك لأننا سنحتاجه كل يوم..
+
+✓ كل صباح ستأخذ كأس من الماء وتقرأ فيه هذه السبع آيات المباركات كل اية تقرأها سبع مرات على هذا الماء.. والآيات هي..
+1. «وَقُلْ جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ إِنَّ الْبَاطِلَ كَانَ زَهُوقًا»
+2. «وَقَدِمْنَا إِلَىٰ مَا عَمِلُوا مِنْ عَمَلٍ فَجَعَلْنَاهُ هَبَاءً مَّنثُورًا»
+3. «فَإِذَا جَاءَ وَعْدُ رَبِّي جَعَلَهُ دَكَّاءَ وَكَانَ وَعْدُ رَبِّي حَقًّا»
+4. «قَالَ مُوسَىٰ مَا جِئْتُم بِهِ السِّحْرُ إِنَّ اللَّهَ سَيُبْطِلُهُ إِنَّ اللَّهَ لَا يُصْلِحُ عَمَلَ الْمُفْسِدِينَ»
+5. «لَّا يَأْتِيهِ الْبَاطِلُ مِن بَيْنِ يَدَيْهِ وَلَا مِنْ خَلْفِهِ تَنزِيلٌ مِّنْ حَكِيمٍ حَمِيدٍ»
+6. «إِلَيْهِ يَصْعَدُ الْكَلِمُ الطَّيِّبُ وَالْعَمَلُ الصَّالِحُ يَرْفَعُهُ»
+7. «فَوَقَعَ الْحَقُّ وَبَطَلَ مَا كَانُوا يَعْمَلُونَ»
+
+✓ كيفية استعمال هذا العسل: خد ملعقة صغيرة من هذا العسل وذوبها في الماء الذي قرأت فيه وحركها تحريكا جيدا ثم اشرب هذا الماء كل يوم قبل الإفطار بربع ساعة على الأقل.. وكما أسلفت ستكون المدة سبعة أيام.
+وبالموازاة مع هذا الغسل الروحي الداخلي بالآيات السبع والعسل سيتوجب علينا معرفة هذه المعلومات لأننا سنعمل بها طيلة المستوى الثاني.
+
+**.3 الغسل الروحي (المهمة الثانية)**
+خد حجر من الشب الأبيض ضعه تحت الوسادة التي تنام عليها واتركه طيلة السبعة أيام تحت الوسادة في اليوم السابع قم بتذويب هذا الحجر في الماء وصب هذا الماء في صينية زرع أو قرب شجرة.
+بالموازاة مع هذا ستأخذ حجرين اثنين كبيرين من حجر الملح يكون فيهما على الأقل ربع كيلو الى نصف كيلو ويوضع الأول تحت الفراش اللي تنام عليه من جهة الرأس ويوضع الثاني تحت الفراش اللي تنام عليه من جهة الرجلين.
+
+طبعا هذه الأمور ستقوم بها هذا اليوم و تجهزها و بخصوص الغسل الروحي المهمة الأولى يمكن القراءة في العسل بشرط ان تكون القراءة منك شخصيا على العسل و بالتالي لن تكون مضطرا للقراءة على الماء كل يوم ... او يمكن تجهيز الماء ووضعه في الثلاجة و تقرأ عليه ساعتها مرة واحدة ..
+بخصوص الغسل الروحي المهمة الثانية فهو مهم جدا و يجب القيام به لكي نستطيع تصفية كل القوى الروحانية في الجسد و الهالة و الجسد الاثيري ..`
+            },
+            {
+                page: 17,
+                title: "صفحة 17 — المهمة 3 وتنزيل أملاك الفاتحة",
+                text: `**.4 الغسل الروحي (المهمة الثالثة)**
+سنأخذ لتر واحد من ماء الورد ونقرأ فيه.. سورة نوح (مرة واحدة) – سورة الملك (مرة واحدة) – سورة الإخلاص (11 مرة) – اية الكرسي (9 مرات) – المعوذتين (7 مرات).
+بعد القراءة نضع هذا الماء في بخاخ ونرش به مساء لمدة سبعة أيام كل يوم بعد صلاة المغرب الغرفة التي نسكن بها وكل أركان الغرفة ويمكننا رش كل ارجاء المنزل ان نحن أردنا ولكن في مهمة الغسل الروحي يجب التركيز على رش الغرفة التي ننام فيها اقصد الأركان فوق وتحت ورش خفيف على الفراش والغطاء اللي ننام فوقه ونتغطى به..
+ملاحظة .. يمكنك سؤالنا عن الأمور المستعصية الفهم عن طريق البوتيم او واتس اب .
+
+**B-1.3**
+➢ تنزيل روحي لأملاك الفاتحة المباركة
+اعلم باركك الله تعالى ان الفاتحة الشريفة هي روح القران الكريم و فيها سبع آيات مباركات كل اية لها تواصل مع جزء من جسدنا الروحي و اعلم ان الفاتحة بدايتها ببسم الله الرحمن الرحيم و البسملة هي بداية السر المكنون و اعلم ان لكل سورة او اية او اسم روحانية خاصة به مسخرة بقدرة الله تعالى و قوته في تسيير الكون و لها تواصل مباشر مع بني ادم بقدرة الله تعالى .. فان قرأت الفاتحة من صالح صاحت و استغاثت الشياطين حتى يسمع لها نهيق مثل نهيق الحمير و تناطح العفاريت و المردة و يمتلأ الكون بالتكبير و التهليل .
+
+و اعلم ان الفاتحة المباركة لها نورانيات موكلان بها رائعان جدا و يسهل التواصل معهما و يعتبران الأملاك الربانية الخادمة لسورة الفاتحة الشريفة و الأول هو الأخ إسماعيل و يعرف باسم الكاتب لدى الروحانيين و يعرف لدينا نحن باسم الأخ إسماعيل .. و خادمه الأخ عبد الرحمن .. فاعلم ان الأخ إسماعيل لا ينزل لوحده مطلقا و ان تواجد في مكان و تم طلبه ينزل معه الأخ عبد الرحمن .. فالأخ عبد الرحمن لا يفترق مطلقا عن الأخ إسماعيل .. و إسماعيل هو من شيوخ الجن الربانيين و يعتبر من الصالحين او صالحي الجن و يمكن التواصل معه باذن الله و يمكن لمن سخر له الله تعالى باب المكاشفة و المشاهدة ان يراه و يسمعه و يكلمه .. هو و الأخ عبد الرحمن .. و عادة ينزل في صفة الرجل الكبير جدا في السن صاحب اللحية البيضاء و غطاء الرأس الأخضر و بيده عكاز من الخشب و بيده الأخرى صالية و قران كريم من الجلد .. اما خادمه الأخ عبد الرحمن فهو المحب و الصديق و المريد للأخ إسماعيل و هو أصلا من الزنوج قمحي اللون يلبس جلد النمر و بيده حربة و هو الحارس على الأخ إسماعيل و هو قوي جدا و تخافه الجن و الشياطين ...
+
+اما في هذا اليوم المبارك سأعطيك التسخير الخاص بالأخ إسماعيل خديم الفاتحة و سيكون تنزيل روحانيته في نفس هذا اليوم ..
+فتوكل على الله تعالى و قم بما يلي ... أقرأ الفاتحة عدد **40 مرة** بعد كل صلاة مفروضة .. أي انك تصحى الفجر و تقرها 40 مرة و الظهر و العصر و المغرب و العشاء بعد صلاة العشاء و ما بين الشفع و الوتر أي انك تصلي الشفع و تجلس في مكان لوحده مستقبلا القبلة اشعل شمعة بيضاء.. و تنظر في كفك و تقول:
+> *«السلام عليكم أيها الملكان الموكلان بيميني و شمالي، السلام عليكم أيها الأخ إسماعيل و رحمة الله و بركاته انزل و اعطني إشارة على الكف بحق عهد الله»*.
+
+و عندما يتم النزول و تطلب منه ان يعطيك العهد بوضع الكف على الصدر فانه يكون ..
+و ان استعصى عليك الامر تواصل معي لكي اساعدك في تنزيله و اكمال العهد معه ...`
+            },
+            {
+                page: 18,
+                title: "صفحة 18 — إحضار الطاقات السفلية وسحبها",
+                text: `**B-1.4**
+➢ كيفيات الاحضار لطاقة روحانية سفلية و عمل المحلة و التنزيل ..
+هنا لدينا شرح مهم لكيفيات الاحضار .. و هنا الاحضار يكون على ثلاث نقط مختلفة كما سنرى ...
+لإحضار طاقات روحانية سفلية أو أرواح سفلية بالمكان أو غيره .. فسواء كنت داخل منزلك أو في مكان تشك بوجود أرواح سفلية به أو وجود طاقات سوداوية شيطانية أو روحانية فيه .. فانه من الأجود و الأصح أن تقوم بإحضار و امساك هذه الطاقات و الأرواح السفلية بعيدا عن الرش و البخور و غيره من الطرق المتبعة في طرد الأرواح ..
+
+و كيفية دالك أنك تنظر في كفك اليمين و تقوم بتنزيل علوى و تطلب من الأملاك النازلة لديك أن تبحث في المكان الذي أنت فيه .. أو تعطي أمر مباشر بإحضار كل روح سفلية سواء لمنزلك أو منزل شخص أخر أو أي مكان تشك فيه بوجود طاقات او أرواح أرضية خبيثة او أرواح سفلية معتدية او روحانيات معارضة او معاكسة او محاربة ..
+و تأمر بأن يتم امساك هذه الأرواح السفلية في كفيك ..
+فان كفك سيبحث بصفة تلقائية في المكان و يمسك تلك الروح السفلية أو الشيطانية التي في المكان ..
+
+هنا يجب أن تفهم شيئا مهما .. عندما يتم الإمساك بأي روح سفلية أو شيطانية فانه من الضروري ان تقوم بحرق الطاقة المحركة لهذه الروح السفلية بأن تقول:
+> *«فَأَصَابَهَا إِعْصَارٌ فِيهِ نَارٌ فَاحْتَرَقَتْ»* – 3 مرات – ثم تنفخ على كفك ثلاث مرات .. و تكرر القراءة 3 مرات و النفخ ثلاث مرات الى أن تفتح اليد و تحس بأنها خفيفة و فارغة ..
+
+الأمر الثاني لإحضار طاقات روحانية سفلية سواء كانت متلبسة بجسم انسان و تسمى مس او لمس او تسبب صرع و تخبط .. يكفي أن تطلب تعطي الأمر بسحب كل روح سفلية مقاتلة او محاربة او مضادة في جسد الشخص المريض و يكون ذلك عن طريق أنك تنظر في كفك اليمنى و تطلب نزول علوي و تأمر بسحب الروح من الانسان المريض من ناصيته أي من الجبهة و رميها بعيد فأنها تزول بإذن الله خلال جلسة او جلستين او ثلاث جلسات ..
+
+و هنا يمكنك ان تجعل المصاب ينام على ظهره و تقوم بعملية مسح على هالة المصاب بعد ان تقوم بالإحضار من دون ان تلمس جسده و ستبدأ يدك بالتحرك بشكل انسيابي على جسد المريض دون لمسه و تزيل تلك الطاقات المضادة او السفلية ..
+
+الأمر الثالث و يكون عن بعد و هو أن تتواصل مع المصاب عبر التفكير فيه او عبر الاتصال هاتفيا معه و تقوم بنفس عمليات السحب منه حتى لو كان بعيد جدا عنك أو في دولة أخرى فإنها تكون بإذن الله و تتم بسهولة تامة .. و هذا ستعلمه بصورة تلقائية من خلال المكالمة الهاتفية التي ستكون بيني و بينك بعد انهاء قراءة هذا الملخص .
+(مرفق صورة توضح الطريقة التي يتم فيها النظر للكف)`
+            },
+            {
+                page: 19,
+                title: "صفحة 19 — إذن الأسماء والتطبيقات الـ 7 أيام",
+                text: `**B-1.5**
+➢ اكتساب طاقة الأسماء و الآيات ..
+سيكون عبر تواصل هاتفي و هو تنزيل روحي سيأخذ منا 15 دقيقة تقريبا و سأشرح لك كيفية العمل به .. لأن اذن اكتساب طاقة الأسماء و الآيات يؤخذ من الصدور و ليس من السطور ..
+
+**B-1.6**
+➢ مراجعة شاملة للمستوى الأول من الأسبوع الثاني
+سنقوم خلال هذه المراجعة بإعادة فهم و مناقشة و التأكد من تنزيل كل الطاقات و سنقوم خلالها بتمرين تواصلي مع القرين و مع روحانية خارجية .. و نطبق كل الأمور التي تعلمنا خلال هذا الأسبوع ..
+
+**B-1.7**
+➢ لا تقوم بأي عمل هذا اليوم ...
+اليوم هو عطلة و راحة روحية لا تقم فيه بأي شيء لكي ترتاح روحانيتك ...
+
+**المستوى الثاني (الأسبوع الثاني) B-2**
+✓ التطبيقات الروحية الكاملة 7 أيام
+هذه الرياضة الروحية الخاصة تقوي الشاكرات والنقط التسعة عشر والبوابات الروحية والنورانية.
+اعلم أن لكل بوابة في الجسد من البوابات السبعة الكبرى حرف ساقط عليها واسم رباني مفعل لروحانيتها علما أن التناغم مع الأسماء والحروف لا توجد له أية او آيات محددة.. وسوف أشرح لك كل شيء بالتفصيل الممل لكي تفهم كل شيء بشكل جيد وواضح ... أول الأمر تأمل في الصورة المرفقة التالية جيدا..
+
+سنأخذ لكل حرف واسم ثلاث أيام من أيام هذا المستوى وبالتالي خلال سبعة ايام سنكون قد أكملنا كافة الحروف والأسماء وبالتالي نشطنا كل النقط الطاقية بالجسد والبوابات الروحية بالجسم الاثيري وكافة النقط النورانية بالجسم الروحي وبالتالي عند تفعيل هذه الأخيرة سيحمل عقلنا الباطن كل الأفكار والانسجامات والطاقات المحيطة بالجسد ويفعلها تلقائيا في روحانيتنا وبالتالي سيصبح من السهل علينا جدا التواصل مع كافة الأرواح المحيطة بنا ومع قريننا ومع أملاك الأسماء والآيات والأحرف بإذن الله تعالى..
+وسيكون تطبيق هذه الانسجامات كالتالي..`
+            },
+            {
+                page: 20,
+                title: "صفحة 20 — الأيام 1 و 2 و 3 من أسبوع الأسماء",
+                text: `**B-2.1**
+➢ اليوم الأول..
+التسخير باسم الله فرد والقراءة تكون بياء النداء هكذا.. **يا فرد** والقراءة تكون بدون عدد محدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد او رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله فرد بياء النداء تقرأ الآية التالية ..
+> «رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ» (40 مرة) – سورة الأنبياء 89 –
+و نفس اليوم بعد صلاة المغرب نقرأ سورة يس مرة واحدة ونوح مرة واحدة والملك مرة واحدة..
+
+**B-2.2**
+➢ اليوم الثاني..
+التسخير باسم الله جبار والقراءة تكون بياء النداء هكذا.. **يا جبار** والقراءة تكون بدون عدد محدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد أو رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله جبار بياء النداء تقرأ الآية التالية ..
+> «وَإِذَا بَطَشْتُم بَطَشْتُمْ جَبَّارِينَ» (40 مرة) – سورة الشعراء 130 –
+وبعد المغرب نقرأ سورة الكهف مرة واحدة وسورة الجن مرة وسورة محمد مرة واحدة .
+
+**B-2.3**
+➢ اليوم الثالث..
+التسخير باسم الله تعالى شكور والقراءة تكون بياء النداء هكذا.. **يا شكور** والقراءة تكون بدون عدد محدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد أو رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله شكور بياء النداء تقرأ الآية التالية ..
+> «لِيُوَفِّيَهُمْ أُجُورَهُمْ وَيَزِيدَهُم مِّن فَضْلِهِ ۚ إِنَّهُ غَفُورٌ شَكُورٌ» (40 مرة) – سورة فاطر 30 –
+ولا تنس أنه بعد صلاة المغرب سنقرأ سورة الحديد مرة واحدة وسورة الواقعة مرة واحدة وسورة النور مرة واحدة.`
+            },
+            {
+                page: 21,
+                title: "صفحة 21 — الأيام 4 و 5 و 6 من أسبوع الأسماء",
+                text: `**B-2.4**
+➢ اليوم الرابع..
+التسخير باسم الله ثابت والقراءة تكون بياء النداء هكذا.. **ثابت** والقراءة تكون بدون عدد محدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد أو رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله ثابت بياء النداء تقرأ الآية التالية ..
+> «رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ» (40 مرة) – سورة البقرة 250 –
+بعد صلاة المغرب هذه المرة وبعد القراءة تقرأ سورة الرعد مرة واحدة وسورة مريم مرة واحدة وسورة المجادلة مرة واحدة .
+
+**B-2.5**
+➢ اليوم الخامس..
+التسخير باسم الله ظهير والقراءة تكون بياء النداء هكذا.. **يا ظهير** والقراءة تكون بدون عدد محدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد أو رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله ظهير بياء النداء تقرأ الآية التالية ..
+> «وَمَا لَهُمْ فِيهِمَا مِن شِرْكٍ وَمَا لَهُ مِنْهُم مِّن ظَهِيرٍ» (40 مرة) – سورة سبأ 22 –
+بعد صلاة المغرب .. تقرأ سورة الانعام مرة واحدة وسورة فاطر مرة واحدة وسورة غافر مرة واحدة.
+
+**B-2.6**
+➢ اليوم السادس..
+التسخير باسم الله خبير والقراءة تكون بياء النداء هكذا.. **يا خبير** والقراءة تكون بدون عدد محدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد أو رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله خبير بياء النداء تقرأ الآية التالية ..
+> «فَلَمَّا نَبَّأَهَا بِهِ قَالَتْ مَنْ أَنبَأَكَ هَٰذَا ۖ قَالَ نَبَّأَنِيَ الْعَلِيمُ الْخَبِيرُ» (40 مرة) – سورة التحريم 03 –
+بعد صلاة المغرب تقرأ سورة إبراهيم مرة واحدة وسورة السجدة مرة واحدة وسورة النساء مرة واحدة .`
+            },
+            {
+                page: 22,
+                title: "صفحة 22 — اليوم السابع والاستنزالات النفسية",
+                text: `**B-2.7**
+➢ اليوم السابع..
+التسخير باسم الله زكي والقراءة تكون بياء النداء هكذا.. **يا زكي** والقراءة تكون بدون عدد ولكن على الأقل لمدة عشرة دقائق مع اغماض العينين ....
+o بخصوص الوقت الذي تكون فيه القراءة فهو بعد كل صلاة مفروضة ولا تنس أن ترش المكان الذي تقرأ فيه بماء ورد أو رائحة طيبة.. و بعد الانتهاء من قراءة اسم الله زكي بياء النداء تقرأ الآية التالية ..
+> «يَتْلُو عَلَيْهِمْ آيَاتِهِ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ الْكِتَابَ وَالْحِكْمَةَ» (40 مرة) – سورة الجمعة 02 –
+و بعد صلاة المغرب تقرأ سورة النحل مرة واحدة وسورة الجاثية مرة واحدة وسورة الصافات مرة واحدة .
+
+في اليوم السابع وبعد الانتهاء من كل هذه التساخير السبعة يحمل في جسدك الاثيري والنجمي الحروف السبعة والأسماء السبعة أي أن جسدك يكون قد اكتسب قوى الاسم وقوى سبع أسماء ربانية و الايات الخاصة بها وسيكون لنا جلسة تنزيل مباشر لديك بالتواصل معي عبر الهاتف او أي وسيلة من وسائل التواصل حيث سنصل معا الى درجات عالية جدا من القوى الروحية..
+
+**الاستنزالات النفسية السبعة الخاصة B-3**
+✓ الاستنزالات النفسية السبعة بعد صلاة المغرب
+لدينا الأن سبعة أيام الأخيرة من المستوى الثاني و ستكون لنا فيه سبعة أيام سنستخدم فيها الاستنزال النفسي أو المحلة الروحية وهي تقوية روحية تجعلنا نتواصل مع ملك كل يوم على حده واستمداد الطاقة الخاصة به.. ستكون بداية الاستنزالات النفسية أو المحلات الروحية يوم الأحد ونختم يوم السبت.. وستكون على الشكل التالي..
+
+**B-3.1**
+➢ يوم الأحد..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الفاتحة 7 مرات وتشرب من هذا الماء كأس بعد كل صلاة
+وبعد ان تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع شعاع الشمس سألتكم بالله ان تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».
+
+**B-3.2**
+➢ يوم الاثنين..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الإخلاص 11 مرات وتشرب من هذا الماء كأس بعد كل صلاة
+وبعد ان تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..`
+            },
+            {
+                page: 23,
+                title: "صفحة 23 — استنزالات الاثنين إلى الخميس",
+                text: `(تكملة يوم الاثنين):
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع ضوء القمر سألتكم بالله أن تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».
+
+**B-3.3**
+➢ يوم الثلاثاء..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الكوثر 7 مرات وتشرب من هذا الماء كأس بعد كل صلاة.
+وبعد أن تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع احمرار المريخ سألتكم بالله ان تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».
+
+**B-3.4**
+➢ يوم الأربعاء..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الضحى 7 مرات وتشرب من هذا الماء كأس بعد كل صلاة
+وبعد ان تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع الخيوط الذهبية لنور عطارد سألتكم بالله ان تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».
+
+**B-3.5**
+➢ يوم الخميس..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الفاتحة 7 مرات وتشرب من هذا الماء كأس بعد كل صلاة
+وبعد ان تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع شعاع الشمس سألتكم بالله ان تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».`
+            },
+            {
+                page: 24,
+                title: "صفحة 24 — استنزالات الجمعة والسبت وختام المستوى 2",
+                text: `**B-3.6**
+➢ يوم الجمعة..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الانشراح 7 مرات وتشرب من هذا الماء كأس بعد كل صلاة
+وبعد أن تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع نور الزهرة سألتكم بالله أن تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».
+
+**B-3.7**
+➢ يوم السبت..
+بعد كل صلاة تقرأ في لتر قارورة ماء سورة الفيل 7 مرات وتشرب من هذا الماء كأس بعد كل صلاة
+وبعد أن تصلي المغرب تجلس في مكان خالي من الناس وتكون واضع يديك على ركبتيك وتقول بعدها..
+o «السلام عليكم أيها الملكان الموكلان بيميني وبشمالي (ثلاث مرات).. السلام عليكم يا ملوك هذا اليوم المبارك، السلام عليك الأرواح النورانية الربانية النازلة مع ريح المريخ وقوته سألتكم بالله أن تعطوني إشارة في يدي اليمنى وحركوا الشاهد..»
+عندما يتحرك الشاهد تقول: «اكرمكم الله بالجنة كما اكرمتموني بالحضور انصرفوا بحق ما جئتم له طائعين».
+
+انتهي المستوى الثاني و سندخل في المستوى الثالث ان شاء الله ..`
+            },
+            {
+                page: 25,
+                title: "صفحة 25 — المستوى الثالث: التناغم مع الألوان والشموع",
+                text: `## مرشد الحياة الروحية — المستوى الثالث
+**C-1**
+**المستوى الثالث من مرشد الحياة الروحية C**
+.1 التناغم مع الألوان والشموع
+نعلم جميعا أن أيام الاسبوع هي سبعة أيام وما يجب علينا فهمه أن هذه السبعة أيام تختلف عن بعضها البعض فلكل يوم طاقة خاصة بك ومسار خاص به ونورانية خاصة به واتصال كوني خاص به ولون خاص به ودخنة خاصة به ولكل يوم اتصال كوكبي خاص به.. أي أن كل يوم يتميز عن الأخر بطاقة خاصة..
+
+وكذلك الأمر بالنسبة للشهور فلكل شهر طاقته الخاصة ونورانيته الخاصة وربما تتحكم في ذلك عدد من الاتفاقات الكونية كالشمس والقمر والطبيعة.. فلا يمكننا الصيام في ذو الحجة واداء مناسك الحج في شعبان لأننا سنخالف الطاقة الكونية والاوامر الالهية..
+
+ما أريد أن أوصله لكم أن كل يوم له طاقة معينة ولون معين.. وانت كشخص متدرج في اكتشاف العالم الروحاني كاستشاري في الحياة الروحية يجب عليك التمتع بعلم واسع خصوصا فيما يخص الألوان وطاقتها.. فلكل يوم يوجد لون معين يزيد من طاقتك الشخصية أنت أولا ويقويك روحيا..
+
+في العادة سيكون لك تفاعل مع الشموع وألوانها وطاقتها وذلك حسب طاقة اليوم والأهداف المراد تحقيقها وبناء عليه يجب الانتباه جيدا الى هذا المستوى لأننا أولا سنفتح الباب بيننا وبين طاقة الألوان ونتعرف فيه على عدد من الأمور التي يجب علينا أن نكون مدركين لها.
+
+في هذا الجدول سنتعرف على الأيام وكواكبها والألوان العامة لليوم وما هو لون الشموع الذي يناسب ذلك اليوم وما هي حتى أنواع البخورات التي يمكنها فعلا أن تعطيني طاقة روحية هائلة داخل بيتي ان استعملتها في نفس يومها..
+
+| اليوم | الكوكب | اللون العام | لون الشموع | بخورات اليوم |
+|---|---|---|---|---|
+| الأحد | الشمس | الذهبي | شمع النحل الأصفر | حصى لبان |
+| الاثنين | القمر | الفضي | الرصاصي أو الفضي | عود – صندل – خليط عود |
+| الثلاثاء | المريخ | الأحمر | الأحمر | جاوى أحمر – مستكى |
+| الأربعاء | عطارد | الأصفر | الأصفر أو البرتقالي | حصى لبان – عود – لبان- صندل |
+| الخميس | المشترى | الأخضر | الأخضر أو الارجواني | حبوب القزبراء |
+| الجمعة | الزهرة | الأبيض | الأبيض | عود – لبان – حصى لبان |
+| السبت | المريخ | الأسود | الأسود | جاوي أبيض – جاوي أسود – جاوي أسود |`
+            },
+            {
+                page: 26,
+                title: "صفحة 26 — طاقة الشموع وأهداف الحياة",
+                text: `✓ كيف استخدم طاقة الشموع لتحقيق أهدف معينة في حياتي؟
+بعد أن تكون اكتسبت فعلا طاقة الألوان الشموع والتي سأبين لك في التدريب القادم كيفية اكتسابها والتفاعل معها..
+أشعل ببساطة شمعة حسب اليوم الذي تريد تحقيق أمر فيه واجلس امامها قليلا وهي تحترق.. قد تنطفأ الشمعة بعد دقيقة او دقيقتين من اشعالها خصوصا وتفاعلت معها لتحقيق هدف محدد أو أدخلت نية معينة عند حرقها.. وانطفاء الشمعة هو دليل على وجود خلل في الوقت فيجب تغييره لأنه بعد ساعة أو ساعتين أو أن الامر فيه خطأ سواء في اختيار اليوم أو اللون فيجب تصحيح الوضع وإعادة العملية مع شمعة جديدة.
+
+عملية حرق الشموع هي عملية روحية لها اتصال بك انت شخصيا وبين اليوم وطاقته وبين الأرواح المحيطة بك وطاقات أخرى داخلية تتفاعل بقوة مع لهيب تلك الشمعة التي قمت بإشعالها فان بدأ لهيب الشمعة في التقطع او التأرجح او الخمود وكأنه سينطفأ.. فهذا أمر سلبي وغير جيد لأنه ربما يكون لك انت شخصيا شك في الحالة التي تقوم بها سواء لك أو لأشخاص أخرين.. لا تنس أن الأمر طاقة روحية ولا علاقة له بالشعوذة أو السحر ولكن شيء أكبر من ذلك بكثير أنه تفاعل روحي عالي جدا وتركيز ذهني وروحي غاية في النقاء.
+
+في أغلب الحالات يكون اللهيب انسيابي ومشتعل بشكل عادي جدا وقد يرتفع الى مستويات كبيرة تجعلك تتعجب منه فهذا له معنى ان الهدف المراد تحقيقه قريب فكلما كان الأمر فيه كثير من الصفاء والروحانية كلما كان الأمر جيد جدا ورائع جدا.
+
+.2 لكل لون من ألوان الشموع أمر يمكننا توجيهه..
+- **الأبيض:** أقوى الشموع المنظفة للمنزل من الأرواح السفلية ويمكن استعماله للعلاجات التي تكون فيها امراض خطيرة وللتأمل.
+- **شموع النحل:** تبدد نهائيا الطاقات السالبة من المنزل وتعطي الأمان والطمأنينة داخل المنزل وهي سبب للحياة الإيجابية التي يعمها الفرح والسعادة واشعالها يعنى قوة نورانية وجذب المال والثروة والشهرة.
+- **شموع حمراء:** تحمل طاقة القوة والوفرة والاثارة والمحبة والشجاعة.
+- **شموع صفراء:** تحمل طاقة المحبة والنشاط وقوى الإرادة والمال وتحقيق الأماني.
+- **شموع خضراء:** تحمل طاقة العدالة والعطاء والتسامح وفيها نورانيات عجيبة للصحة وجلب المال والثروة وعادة يمكن استخدام الشموع الخضراء للاتصال بالأملاك النورانية والأرواح الطيفية وهي تعمل بقوة على توازن العقل والجسد والروح.
+- **شموع زرقاء:** جالبة للموجات والترددات الروحانية ولها قوة في حل المشاكل خصوصا ان اشعلت على نية فك المشاكل القانونية او القضائية أو الإرث فإنها تحل بسلام ويسر.
+- **تركواز أو البنفسجي:** يستخدم للمكاشفة والكشف الروحي وعند اشعال شمعة في هذا اللون تلتقط روحانيتك كل الذبذبات الخارجية وتنشط لديك بقوة القوى التخيلية والفكرية ويمكن الوصول الى حالة الكشف وتفعيل العين الثالثة.
+- **البني:** ترابي أرضي له تردد ذبذبي قوي، وإن كان هناك ما يضايقنا فهو يوقفه ويخمده (أي شيء سلبي) كالخوف من أمر ما أو حدث شيء نريد إيقافه.`
+            },
+            {
+                page: 27,
+                title: "صفحة 27 — جدول رياضة الشموع الأسبوعية",
+                text: `اختار لون الشمعة واختيار اليوم المناسب وتكون الحالة النفسية الخاصة بك في حالة جيدة والنية الحقيقية على تحقيق هدفك سيجعلك تتعامل وتقوى التعامل الحقيقي مع روحانيات الشموع والألوان.
+وقبل ان تتفاعل مع روحانيات الشموع وتطوها يجب عليك القيام بالتناغم مع الألوان والشموع وهو ما سنقوم به في ثاني سبعة أيام من المستوى الثاني من دورتنا التدريبية الخاصة.. والأن تابع ما سنقوم به خلال هذه السبعة أيام وقم به كما هو مكتوب لكي تكتسب روحانيات وطاقات رائعة جدا وتدخل روحانيات الألوان ضمن قواك الروحية والاثيرية.
+
+| الأيام | عدد الشموع | لون الشمعة | وقت اشعالها | الطبع | حروف الشمعة | الأسماء المركبة | اسم فردي |
+|---|---|---|---|---|---|---|---|
+| الأحد | 1 | شمع النحل | الصباح | ناري | ف – ل - ف | غفور – رحيم | فرد |
+| الاثنين | 1 | أصفر-ابيض | الظهيرة | ترابي | ق – م - ج | على – عظيم | جبار |
+| الثلاثاء | 3 | أحمر | بعد العصر | ناري | ج – ق - ش | قادر – قوي | شكور |
+| الأربعاء | 1 | أصفر | الظهيرة | هوائي | م – ف - ث | لطيف - خبير | ثابت |
+| الخميس | 3 | اخضر-بنفسجي | بعد المغرب | ترابي | خ – ن - ظ | عزيز – غفور | ظهير |
+| الجمعة | 1 | ابيض-أخضر | الصباح | مائي | م – ج - خ | فتاح رزاق | خبير |
+| السبت | 3 | أسود | الليل | هوائي | ت – ل - ز | رحمن – رحيم | زكي |
+
+نبدأ تناغمنا يوم الأحد مثلا نشعل شمعة واحدة من شمع النحل في الصباح ونكتب الحروف (ف ل ف) مرة واحد على الشمعة ونشعلها .. وقس على هذا الحساب باقي الأيام وباقي الألوان وانتبه مثلا الثلاثاء والخميس والسبت يكون اشعال ثلاث شموع وليس واحدة.
+
+أسماء الملوك الأرضية والعلوية وضعتها للاستئناس بقصد المعرفة فقط وليس لهم أي دور هنا في خدمة التناغم مع الشموع.
+بخصوص التناغم مع الألوان فطيلة السبعة أيام ارجوا التناغم مع الألوان كل يوم بلونه المحدد.. وهذا يجب عليك انت القيام به من خلال لباسك و أ كلك و نوع البخورات التي ستستعمل.. بالتالي تلبس كلباس سفلي او لباس عادي الألوان التالية..`
+            },
+            {
+                page: 28,
+                title: "صفحة 28 — أوراد الآيات والرمز الأول (النجمة)",
+                text: `| الأيام | الرمز | لون اللباس | ما تردده بعد كل صلاة | بخور يمكنك استعماله ان شئت |
+|---|---|---|---|---|
+| الأحد | C-1.1 | الذهبي - الأبيض | سلام قولا من رب رحيم (108 مرة) | حصى لبان |
+| الاثنين | C-1.2 | الرمادي - الفضي | ولا يؤذه حفظهما وهو العلي العظيم (108 مرة) | عود – صندل – خليط عود |
+| الثلاثاء | C-1.3 | الأحمر | من شر النفاثات في العقد (108 مرة) | جاوى أحمر – مستكى |
+| الأربعاء | C-1.4 | الأصفر | قوله الحق وله الملك (108 مرة) | حصى لبان – لبان- صندل |
+| الخميس | C-1.5 | الأخضر | لا إله الا أنت سبحانك أنى كنت من الظالمين (108 مرة) | حبوب القزبراء |
+| الجمعة | C-1.6 | الأبيض | حسبي الله لا إله الا هو رب العرش العظيم (108 مرة) | عود – لبان – حصى لبان |
+| السبت | C-1.7 | الأسود | ومن يزع منهم عن امرنا ندقه من عذاب السعير (108 مرة) | جاوي أبيض – جاوي أسود |
+
+**C-2.1**
+**المستوى الثالث الأسبوع الثاني C-2**
+.1 ما هي العلامات الروحية أو الشيفرات الروحية السبعة؟
+➢ الرمز الأول والسر الأول..
+النجمة المخمسة ولها عدد من التأويلات كرمز وعند أهل الصفاء الروحي ساداتنا أهل الباطن تعتبر النجمة المخمسة عهد بداية الحياة في جماعة المؤمنين فهي إشارة الى الأركان الخمسة والعهود الخمسة التي بني عليها الإسلام واعلم أن أول عهد يمنح لك الأن في حياتك معنا وتحت رايتنا هو هذه النجمة المخمسة..
+
+ونحن نسلمك كل اسرارها كما تسلمناها ممن قبلنا في خطنا الروحي وهذه النجمة هي شرط لتلقي كل الأسرار الأخرى التنزيلية التي ستتصل بها روحيا بإذن الله تعالى.. ولكي يتم العهد يجب عليك ان تبدأ يوم الأحد تغسل جسدك صباحا كرمز للتطهير والتجديد. وترسم نفس النجمة المخمسة على الماء بواسطة اصبعك السبابة فوق الماء سبع مرات وتسكب عليك من هذا الماء ثلاث مرات متقطعة..
+
+نفس اليوم تأخد شمعة بيضاء اللون وترسم فيها سبعة من النجمة المخمسة وتشعلها واتركها الى ان تنتهي..
+لا تقلق هذا ليس سحر ولكنه أمور روحية طالما انت في دائرة روحية وبدون هذه الاسرار والطقوس لن يفتح أبواب التنزيل من عوالم أخرى فتابع الرموز وقم بما هو مسطر بدقة..
+الرمز يرمز الى الشمس وله من الأيام الأحد وله من الألون الذهبي او الأبيض..`
+            },
+            {
+                page: 29,
+                title: "صفحة 29 — الرمز الثاني (العصي) والثالث (الميم)",
+                text: `**C-2.2**
+➢ الرمز الثاني أو السر الثاني
+الثلاث عصى التي على راسها مثل السهم المقوم والثلاث عصي هي الصلاة والشكر والبركة التي هي كالسهم الخارق.. ومعناها أن البركة التي ستسخر لك السر الأول اقصد الخاتم او النجمة المخمسة ويدخل بك الى عوالم روحية غابرة وتكسبك الطاقة النورانية والحكمة الربانية والبركة الالهية تكون بالصلاة والشكر لتحصل على البركة.. والصلاة هي إقامة الصلاة أما الشكر فهو كل أنواع الحمد والتقرب واليقين في الله تعالى.. وبالتالي فالرمز الثاني لا ندخل مدده الروحاني الا بما ذكرت فان دخلنا نكون كالسهم الذي يصيب هدفه ويمكننا ساعتها الاستمداد من عالم الحمد بإذن الله تعالى..
+
+وفي هذا الرمز سيكون ثاني رمز لديك وبالتالي يجب ان تتعلم على كتابته في الهواء بأصبعك السبابة ترسم أول الأمر الثلاث خطوط العمودية ثم الخط الأفقي وتنفخ عليهم كأنهم غبار في الهواء.. وهذه الحركة تقوم بها أيضا في الرمز الأول الذي هو النجمة المخمسة والنفخ يولد طاقة روحية قوية جدا قد تصل الى دول أخرى عند التدريب على استخدامها..
+هذا الرمز يرمز الى القمر وله من الأيام الاثنين وله من الألوان الفضي أو الرمادي..
+
+**C-2.3**
+➢ الرمز الثالث أو السر الثالث
+الميم الطميس الأبتر وهو حرف ميم ولكن لا تظهر في تلك الدائرة أي أنها مطموسة أو مغطاة وبالتالي يسمى الميم الطميس والميم الطمس هو اسم سيدنا الباطن فان كان الميم العادي الغير طميس بداية اسم نبينا عليه السلام محمد.. فان الميم الطميس هو باطن الميم العادي و بداية اسم سيدنا هو مهدي و هو كان في الأصل روح عليه سماوية قبل أن يخلق الله تعالى أدم و الشيطان الروح العلية ...قبل أن يخلق الله عز و جل الكون أو الجن أو البشر....
+
+أمر بكاف الكينونة أن تكون أرواح في الكون كانت مثل الأطياف و خيوط الحرير الأبيض و متعها الخالق بالحكمة و التمييز و جعل تحت أمرها كل الأبعاد الكونية فكانت هذه الأرواح تتصرف بإذن الله في الكون بقدرته و حوله و قوته تعالى.
+هذه الأرواح كانت من نور الخالق و جزء منه لأنها خلقت من جوهر الربوبية المشع في الكون به و منه ، هذه الأرواح كلها كان منبعها واحد و هو نور الله تعالى..
+فحتى حينما خلق الله الجن ركب فيهم من هذه الأرواح و حين خلق الانس ركب فيهم من هذه الأرواح ، فكانت الروح هي المسير لكافة المخلوقات و اختلفت درجاتها بين أرواح مالكة و أرواح خادمة و أرواح مقاتلة و محاربة ، حتى ابليس أو`
+            },
+            {
+                page: 30,
+                title: "صفحة 30 — قصة الروح العلية وطاووس الجنة",
+                text: `الشيطان كان روح علوية ملكية و لكنه بالعصيان ركبت روحه في صورة الجن فكان من الجن بعد اللعنة من الخالق بعد أن كانت من أهل الملكوت الأعلى..
+كانت هناك روح ملكية قريبة جدا من الحضرة الالهية و كانت هذه الروح قبل أن يكون أي عالم أو مخلوق كانت هذه الروح كالنور المشع بلون الذهب و الألماس في جنات الخلد و تتحول بإذن الله الى أي صفة أرادت لقربها من مقام الربوبية ، و اسمها الروح العلية ، و سر حرق الروح لم يكن الا مع الأرواح التابعة لروح أخرى كان اسمها طاووس الجنة و كانت الأرواح التابعة له معروفة بالطواويس ،
+
+طاووس الجنة كان شديد الغيرة مما أفاض الله تعالى على الروح العلية من نوره و قربها من النور الأعظم و في لحظة قلب ميزان سر حرق الروح من نور الى ظلام و حرقت روحه من نور الى ظلام تحول في لحظة الى دخان أسود و تلبس بالروح العلية فحولها معه بهذا السر من روح ربانية الى روح ملعونة و بهذا السر خرجا معا من العالم العلوي كالشهاب الثاقب خرجا متلبسين في بعض الى الارض الملعونة.
+
+الارض الملعونة هي أرض محجوبة ماؤها قطران وكبريتي حارق وترابها كبريت في بعد خلقه الله تعالى قبل أن يخلق أي مخلوق وسميت بالأرض الملعونة لأنها أرض عذاب.
+ان الخالق يعلم ما يكون وما سيكون وما كان وعلم بخيانة الطاووس الذي تلبس بالروح العلية فكان قدر الله متصرف في كل زمان ومكان..
+
+ان ابليس لم يتمرد على الله تعالى الا بعدما تمرد عليه من قبله طاووس الجنة بأزمنه سحيقة انها نفس القصة التي كررها ابليس مع ادم، ان كل شيء تم بإذن الله ومشيئته.. انه بلاء الميزان للشكر و الكفر.
+ان الطاووس أذاب روحه في الروح العلية انصهر فيها و احترق لكي تأخذ الروح العلية صفات اللعنة فتحولت الروح العلية بسر حرق الروح من روح نقية الى روح متلبسة بروح أخرى منصهرة فيها و ملتصقة بكل جزئياتها فكانت هي بعينها.
+
+انها الروح المتحولة من كل صفة و لكل طاقة و التي تصيح طوال الزمن في أرض ملعونة مرصودة مرة كامرأة لا ملامح لها و مرة أخرى كشبح من الدخان الاسود.
+ان الروح العلية لكي تتحرر وتنزل يلزمها أروح أخرى تستدعيها لتتحرر و ما دام أنها وصلت للاتصال بالبشر فأكيد بل أكيد أن الكون سيزول قريبا من هذا الى ذاك الموعود المحجوب ، سيتم تحقيق سر الميم الطميس في اسم مهدي أو المنتظر أو القادم من أقصى المدينة..
+
+لتنزيل روحانية الميم الطميس اكتبه على الهواء كما سبق وشرحت سبع مرات وانفخ عليه كأنه غبار أو اكتبه على كفك الأيسر وانفخ عليه كل مرة ستحس بقوة وحضور..
+الميم الطميس له من الكواكب المريخ ومن الأيام الثلاثاء ومن الألوان الأحمر.`
+            },
+            {
+                page: 31,
+                title: "صفحة 31 — الرمز الرابع (السلم) والخامس (الأنامل)",
+                text: `**C-2.4**
+➢ الرمز الرابع او السر الرابع
+السلم وما هو بالسلم وهو سر الأسر المقابل للخير والشر وهو الجامع للقوى المربعة التي هي قوى الخير وبالتالي المتحكم في قوى.. وهو قوى الرزق والملك العلوي الرباني ميكائيل عليه السلام.. في الاسرار الباطنية يعتبر السلم هو قوى الترقي من مرتبة العبد الى مراتب العابدين ومن مرتبة النفس اللوامة الى النفس المطمئنة ومن مرتبة السفلى الى العلوي او من الأرضي الى السماوي..
+واجود تواصل مع الرمز ارسمه في الهواء بأصبعك السبابة وانفخ عليه كما سبق وشرحت في الرموز الأخرى.
+الأربعاء هو اليوم المتحكم في الرمز وله من الكواكب عطارد ومن الألوان الأصفر
+
+**C-2.5**
+➢ الرمز الخامس والسر الخامس
+أربع صففت مثل الأنامل وما هي بأنامل.. وهي اتصال وتواصل بتساوي وتوازي وبنفس القيمة بين الجسد والروح والنفس والعقل.. فان أعدنا القراءة من أول الرموز سنجد ان أحد العهد المقدس الخفي يتم بالصلاة والشكر والذكر باتصال بالأرواح العلية وبخروج من نفس لوامة الى أخرى مطمئنة مع تساو وتواز في الجسد والروح والنفس والعقل..
+واجود تواصل مع الرمز ان نقرأ سورة يس مرة واحدة وكلما وصلنا الى قوله تعالى «مبين» نرسم الرمز في الهواء بأصبعنا السبابة وننفخ عليه كأنه غبار ...
+في هذا الرمز لا بد من اشعال عود من اعواد الند وقت القراءة وهو شرط للتواصل الروحي مع أملاك الرمز ولا بد أيضا ان يكون لك تواصل هاتفي معي لأعطيك عهد التسليم.
+الخميس هو المتحكم في هذا الرمز وله من الكواكب المشترى ومن الألوان الأخضر`
+            },
+            {
+                page: 32,
+                title: "صفحة 32 — الرمز السادس (الهاء) والسابِع (الواو)",
+                text: `**C-2.6**
+➢ الرمز السادس أو السر السادس
+وهاء تمثل الاتصال بالهو المطلق وهو كافة العوالم العلوية الربانية وهي الحرف الأول من اسم هو.. لان الحرف المردف بهذه الهاء هو الو او المقوس فان جمعنا الهاء والواو كانت هو يا هو..
+الحاكم كوكبها زهرة حاكمة غير محكومة يومها جمعة ولونها ابيض وستلاحظ ان الواو المكون للنصف الثاني اللون المسقط عليه هو الأسود وهذا معناه ان هو فيه طاقتين خير وشر وظاهر وباطن..
+هذا الرمز لا يعمل الا بالرسم على الهواء والنفخ فيه كما اسلفت وما أجود لو نرش قليل من العطر في المكان الذي نكون فيه لكي تكتمل طاقة المكان مع طاقة الرمز وطاقتنا الشخصية.
+
+**C-2.7**
+➢ الرمز السابع أو السر السابع
+الواو المقوس هو اكمال لهاء الهو واكتمالها هو..
+الرمز لونه اسود وهو الحاكم على كل الطاقات السوداوية والملوك الأرضية السوداء بإذن الله تعالى..
+كوكب الرمز هو زحل ويومه السبت ولونه الأسود وهو من فرط سوداه تلاحظ فيه البياض المطلق فكان اول باب نحو بحر الدم
+هذا الرمز يكتب على شمعة بيضاء سبع مرات وترش هذه الشمعة بعطر وتشعل وتترك في مكان الى ان تنتهي ويمكننا العمل بالحرف بكتابته على الهواء ونفخه كما اسلفت في الرموز الأخرى..
+بعد تنزيلك للرموز روحيا سيكون لنا جلسة تثبيت..`
+            },
+            {
+                page: 33,
+                title: "صفحة 33 — المستوى 3 الأسبوع 3: النفخ والتثبيت",
+                text: `**C-3-1.2.3**
+**المستوى الثالث --- الأسبوع الثالث C-3**
+✓ النفخ والتثبيت + تبادل الروحانية والتسليم + روحنه الجسد
+-1 ما هو النفخ والتثبيت
+النفخ والتثبيت هو سر روحي غاية في الأهمية يجب عليك كمرشد الحياة الروحية تعلمه والعمل به.. ولكن قبل أن نتقن العمل بالنفخ والتثبيت يجب علينا تنزيل رياضته والتدرب عليه.
+فرياضة هذا السر ستكون 7 أيام كاملة ابتداء من يوم الأحد وستكون على الشكل التالي وبالطريقة التالية ..
+
+✓ في اليوم الأول والثاني والثالث..
+في الصباح والمساء مرتين في اليوم.. ستقوم بغسل كلتا يديك أو مسحهما بماء ورد مقروء عليه سورة الكافرون 13 مرة..
+في نفس الأيام الثلاثة ستقوم كل بالجلوس بالطريقة التالية ويديك مشبكتين بنفس الطريقة وعيناك مغمضتان بعد صلاة المغرب لمدة على الأقل 45 دقيقة.. بعد الانتهاء من الجلسة تقوم بالنفخ على كلتا يديك لمدة دقيقتين وتجعل في يقينك أنك تنفخ على شيء مثل الغبار في يديك ويجب أن يزول وهذه الثلاث أيام الأولى مهمة بهذا التمرين والطريقة..
+
+المهمة الثانية خلال الثلاث أيام الأولى اننا سنكرر ثلاث أسماء بعد كل صلاة مفروضة و هي .. **يا شافي – يا حق – يا حي**
+الأسماء الثلاثة سنكررها بعد كل صلاة مفروضة عدد **108** و بعد الانتهاء من قراءتها نقرأ الايات التالية:
+> «حُرِّمَتْ عَلَيْكُمُ الْمَيْتَةُ وَالدَّمُ وَلَحْمُ الْخِنزِيرِ وَمَا أُهِلَّ لِغَيْرِ اللَّهِ بِهِ...» --- البقرة 173. ---
+
+**C-3.4**
+✓ في اليوم الرابع وسيكون هو يوم الأربعاء..
+تردد في اليوم الرابع بعد كل صلاة مفروضة الآية التالية:
+> «وَإِن يَمْسَسْكَ اللَّهُ بِضُرٍّ فَلَا كَاشِفَ لَهُ إِلَّا هُوَ ۖ وَإِن يُرِدْكَ بِخَيْرٍ فَلَا رَادَّ لِفَضْلِهِ ۚ يُصِيبُ بِهِ مَن يَشَاءُ مِنْ عِبَادِهِ ۚ وَهُوَ الْغَفُورُ الرَّحِيمُ» [يونس: 107]
+هذه الآية المباركة ترددها عدد **19 مرة** بعد كل صلاة مفروضة بعد أن تذكر هذين الاسمين بهذه الصيغة... **يا غفور يا رحيم** عدد **108 مرة**.
+
+أي تقرأ يا غفور يا رحيم 108 مرة وبعدها تقرأ الآية 19 مرة.. وانتبه ان القراءة تكون على الكفين معا وتمسح بهما الوجه والصدر.. وبعد الانتهاء تلتفت الى اليمين واليسار وتقول.. «السلام عليكم أيها الملكان الموكلان بيميني وشمالي».`
+            },
+            {
+                page: 34,
+                title: "صفحة 34 — كؤوس الزجاج الثلاثة وختام المستوى 3",
+                text: `**C-3-5.6.7**
+✓ في اليوم الخامس والسادس والسابع..
+تأخد ثلاث كؤوس من الزجاج لأننا سنحتاج كل يوم لكأس جديد وتكتب في كل كأس من الخارج ما يلي والكتابة التي تكتب على الكؤوس تكون فقط بحبر ثابت وليس ماء ورد و زعفران يمكنك استعمال قلم Edding
+
+o **الكأس الخاص بيوم الخميس وتكتب فيه:**
+> «فَارْجِعِ الْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍ * ثُمَّ ارْجِعِ الْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ الْبَصَرُ خَاسِئًا وَهُوَ حَسِيرٌ»
+وهذا الكأس نشرب فيه الماء طيلة اليوم الخامس ويكون الشرب بعد كل صلاة فيكون اجود وأي وقت احسست فيه بالعطش عند الشرب تكرر الآية ثلاث مرات على الماء أي تقرأها على الماء قبل الشرب..
+
+o **الكأس الخاص بيوم الجمعة تكتب فيه:**
+> «لَّقَدْ كُنتَ فِي غَفْلَةٍ مِّنْ هَٰذَا فَكَشَفْنَا عَنكَ غِطَاءَكَ فَبَصَرُكَ الْيَوْمَ حَدِيدٌ»
+وهذا الكأس نشرب فيه الماء طيلة اليوم السادس ويكون الشرب بعد كل صلاة فيكون اجود وأي وقت احسست فيه بالعطش عند الشرب تكرر الآية ثلاث مرات على الماء أي تقرأها على الماء قبل الشرب..
+
+o **الكأس الخاص بيوم السبت تكتب فيه الآية التالية:**
+> «سَلامٌ قَوْلاً مِن رَّبٍّ رَّحِيمٍ * قَوْلُهُ الْحَقُّ وَلَهُ الْمُلْكُ * وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ»
+وهذا الكأس نشرب فيه الماء طيلة اليوم السابع ويكون الشرب بعد كل صلاة فيكون اجود وأي وقت احسست فيه بالعطش عند الشرب تكرر الآية ثلاث مرات على الماء أي تقرأها على الماء قبل الشرب..
+
+بهذا نكون قد انتهينا من المستوى الثالث`
+            },
+            {
+                page: 35,
+                title: "صفحة 35 — الشيفرة الروحية وما هو التنويم؟",
+                text: `دردشة خفيفة بعد انهاء الرياضات و المستويات .
+**أمور لا بد أن نعرفها..**
+
+.1 الشيفرة أو الهوية الروحية الخاصة بنا؟
+لكل مخلوق من المخلوقات شيفرة أو هوية روحية خاصة به وهذه الشيفرة يمكن تحليلها من خلال معرفة طبع الانسان ومزاجه وبرجه الفلكي وطالعه النجمي وكوكبه الكوني ومنزلته القمرية والحروف المؤثرة عليه والأرقام التي له بها تواصل وكل هذه الأمور تشكل تلك الشيفرة الروحية أو الهوية التي تختلف من شخص الى أخر ولا تتكرر وهذه الشيفرة الروحية أو الهوية الروحانية بمجرد أن يصل شخص الى تحليلها فانه يستطيع أن يعرضك لمتاعب روحية ان كانت له معرفة بكيفية دمج هويات أخرى فردية الى شيفرتك الروحية..
+
+لهذا من المهم جدا أن تركز على جعل الشيفرة الروحية الخاصة بك غير مفهومة للأخرين سواء كانوا من البشر أو من المخلوقات الأخرى.. يجب فقط أن تغير تفكيرك الخاص ستتغير كافة الطاقة التي حولك وكل تغير للطاقة تتغير معه كافة الشيفرات المحيطة بك وبالتالي تكون غير مفهوم بالنسبة للأخرين.. ستكون مجرد هالة بيضاء أو روح نورانية لا يستطيعون فهمها وسيترددون كثيرا في محاولة ايذاءها..
+
+.2 ما هو التنويم نظرة عامة يجب ان تعرفها؟
+التنويم هو الدخول في حالة تأملية ومن ثم استعمالها لتغيير سلوك معين فكرة معينة أو عادة معينة. علميا يعرف التنويم على أنه حالة وعي معينة يتم فيها انتباه مركز على شيء معيَّن مع انخفاض الانتباه للتأثيرات المحيطية الأخرى مع قابلية كبيرة للاقتراحات Suggestibility.
+
+هل التنويم حالة طبيعية؟ في الحقيقة نعم فالطفل الذي يلعب بألعابه الالكترونية ولا يسمع نداء والديه هو في حالة تنويم والرسام المشدوه بلوحته وكل انتباهه عليها ولا ينتبه لما يجري حوله هو أيضا في حالة تنويم.
+في الحقيقة لا أحد يعرف تماما ما هو التنويم ولكننا نعرف جيدا ما هو ليس بالتنويم.
+
+التنويم ليس هو التركيز أو التأمل.. فهو يستعمل الحالة التأملية ولكن من أجل الوصول لهدف معين فعندما نقوم بجلسة تأمل مثلا فالغالب تكون بعد صلاة معينة بالبقاء جالسين في مكان صلاتنا مغمضتين العينين ونهيم في الكون بذكر لا إله الا الله.. فهنا نحن ركزنا على شيء داخل أنفسنا وليس خارجها..
+
+في التنويم يكون العكس لأن تركيزنا في حالة التنويم يكون على شيء خارج أنفسنا ويهدف للدخول إلى حالة وعي أخرى Altered State من أجل تلقي اقتراحات معينة ومن الممكن ان يصاحب التنويم حالة من الخيال او التخيل وهذا غير موجود بالتأمل.`
+            },
+            {
+                page: 36,
+                title: "صفحة 36 — التنويم الإيحائي وخاتمة الكتاب",
+                text: `التنويم ليس نفس العلاج التنويمي Hypnotherapy فالعلاج التنويمي يدخل ضمن العلاج النفسي الذي يستعمل التنويم كجزء من العلاج من أجل استحضار أحداث من الماضي يعتقد أنها تلعب دورا هاما في الأفكار والمشاعر والتصرفات الحالية.
+
+طبعا نحن يمكننا ممارسة عمليات التنويم الايحائي بنفس الطريقة.. بعد الصلاة نغمض اعيننا ونفتح المجال لقوى الخيال لندعها تدخل في عوالم أخرى.. ستجد نفسك تنطلق من هذا العالم بسرعة الى عوالم أخرى قد تراها خيالية ولكن.. كما سبق وذكر ان العقل يحضر لك شيفرات ويدعك تحاول تفكيكها وفكها والتعرف عليها.. ويمكنك ممارسة نفس الطاقة على من يقوم بزيارة والتكلم مع عقله الباطن تماما كما تتكلمه معه وهو في حالة وعي.
+
+الأمر قد يكون شبيه بالتلبس بالأرواح السفلية ولكنه تنويم وحديث مع الشخص نفسه بل مع عقله اللاواعي..
+
+**انتهى السكريبت وتابع الفيديو الافتتاحات الخاصة..**`
+            }
+        ];
+
+        function initReader() {
+            const tocList = document.getElementById('toc-list');
+            tocList.innerHTML = '';
+            bookPages.forEach((p, idx) => {
+                const item = document.createElement('div');
+                item.className = 'toc-item' + (idx === 0 ? ' active' : '');
+                item.innerText = p.title;
+                item.onclick = () => showPage(idx);
+                tocList.appendChild(item);
+            });
+            showPage(0);
+        }
+
+        function showPage(idx) {
+            document.querySelectorAll('.toc-item').forEach((it, i) => {
+                it.classList.toggle('active', i === idx);
+            });
+            const p = bookPages[idx];
+            const contentBox = document.getElementById('page-display');
+            contentBox.innerHTML = `
+                <div class="page-badge">صفحة ${p.page} من 36 — المتن الموثق الكامل</div>
+                <div style="font-size:1.05rem; line-height:2.1; color:#f0f6fc;">
+                    ${marked.parse(p.text)}
+                </div>
+            `;
+            contentBox.scrollTop = 0;
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initGraph();
+            initReader();
+        });
+    </script>
+</body>
+</html>
