@@ -2,6 +2,7 @@
 """
 Generator for the Grand Occult Cosmology Codex Interactive Standalone HTML.
 Enriched with:
+- 12 Zodiac Ruling Angels & 36 Decans Matrix across World Civilizations
 - 24 Planetary Hours Matrix (Day & Night for all 7 Days)
 - 28 Lunar Mansions Complete Data
 - 28 Letter Natures (Fire, Air, Water, Earth)
@@ -18,7 +19,7 @@ html_content = '''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أطلس النواميس الباطنية الأعظم — شفرة الأرقام، الأفلاك، الساعات، المنازل، والأجساد السبعة</title>
+    <title>أطلس النواميس الباطنية الأعظم — ملائكة الأبراج، الساعات، المنازل، والأجساد السبعة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -142,7 +143,7 @@ html_content = '''<!DOCTYPE html>
         .brand-text h1 { font-size: 1.25rem; font-weight: 800; color: var(--gold); letter-spacing: 0.5px; }
         .brand-text span { font-size: 0.75rem; color: var(--text-muted); display: block; }
 
-        .nav-scroller { overflow-x: auto; max-width: 70%; scrollbar-width: none; }
+        .nav-scroller { overflow-x: auto; max-width: 72%; scrollbar-width: none; }
         .nav-scroller::-webkit-scrollbar { display: none; }
         .nav-tabs {
             display: flex;
@@ -358,7 +359,7 @@ html_content = '''<!DOCTYPE html>
         <div class="auth-card">
             <div class="auth-icon"><i class="fa-solid fa-atom"></i></div>
             <h2 class="auth-title">بوابة النواميس الباطنية الكبرى</h2>
-            <p class="auth-desc">المخطوطة الروحية الشاملة: الساعات الكونية، المنازل القمرية، طبائع الحروف، والأجساد السبعة. أدخل الرمز السري للولوج.</p>
+            <p class="auth-desc">المخطوطة الروحية الشاملة: ملائكة الأبراج، الساعات الكونية، المنازل القمرية، طبائع الحروف، والأجساد السبعة. أدخل الرمز السري للولوج.</p>
             <form onsubmit="handleAuth(event)">
                 <input type="password" id="pass-input" class="auth-input" placeholder="••••" maxlength="8" autofocus autocomplete="off">
                 <button type="submit" class="auth-btn"><i class="fa-solid fa-key ml-2"></i> فك تشفير المخطوطة</button>
@@ -373,12 +374,13 @@ html_content = '''<!DOCTYPE html>
             <div class="brand-icon"><i class="fa-solid fa-sun"></i></div>
             <div class="brand-text">
                 <h1>أطلس النواميس الباطنية الأعظم</h1>
-                <span>الساعات الفلكية • المنازل الـ 28 • طبائع الحروف • الأجساد السبعة</span>
+                <span>ملائكة الأبراج • الساعات الفلكية • المنازل الـ 28 • الأجساد السبعة</span>
             </div>
         </div>
         <div class="nav-scroller">
             <div class="nav-tabs">
                 <button class="nav-tab active" onclick="switchTab('tab-kings')"><i class="fa-solid fa-crown"></i> ملوك الأفلاك</button>
+                <button class="nav-tab" onclick="switchTab('tab-zodiac-angels')"><i class="fa-solid fa-star-and-crescent"></i> ملائكة الأبراج والـ 36 وجهاً</button>
                 <button class="nav-tab" onclick="switchTab('tab-hours')"><i class="fa-solid fa-clock"></i> ساعات الأيام الـ 24</button>
                 <button class="nav-tab" onclick="switchTab('tab-mansions')"><i class="fa-solid fa-moon"></i> منازل القمر الـ 28</button>
                 <button class="nav-tab" onclick="switchTab('tab-letters-magic')"><i class="fa-solid fa-fire-burner"></i> طبائع الحروف والأسحار</button>
@@ -421,7 +423,38 @@ html_content = '''<!DOCTYPE html>
             <div class="cards-grid" id="kings-grid"></div>
         </div>
 
-        <!-- 2. PLANETARY HOURS MATRIX (24 HOURS) -->
+        <!-- 2. ZODIAC ANGELS & 36 DECANS MATRIX -->
+        <div id="tab-zodiac-angels" class="tab-content">
+            <div class="hero-banner">
+                <h2>✨ مصفوفة ملائكة وأرواح الأبراج الاثني عشر والوجوه الـ 36 عبر الحضارات</h2>
+                <p>التشريح الباطني لملوك الأبراج الـ 12: لكل برج رئيس ملائكي علوي في السميائية العربية، ملاك سار في القبالاه، إله في مصر القديمة، وكيان بابلي، مع أرواح الوجوه العشرية الـ 36 (Decans):</p>
+            </div>
+            <div class="data-table-wrapper" style="margin-bottom:25px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>البرج</th>
+                            <th>العنصر</th>
+                            <th>الملاك السميائي (العربي)</th>
+                            <th>الملاك القبالي (العبراني)</th>
+                            <th>الإله الفرعوني (كيميت)</th>
+                            <th>الكيان البابلي</th>
+                            <th>السبط المقترن</th>
+                        </tr>
+                    </thead>
+                    <tbody id="zodiac-angels-tbody"></tbody>
+                </table>
+            </div>
+
+            <div style="background:var(--panel-bg); border:1px solid var(--border-glass); border-radius:18px; padding:22px;">
+                <h3 style="color:var(--gold); margin-bottom:10px;"><i class="fa-solid fa-compass"></i> سر الوجوه العشرية الـ 36 (The 36 Decans / Bakyu)</h3>
+                <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.7;">
+                    قسّم قدماء المصريين في معبد دندرة والبابليون كل برج إلى <strong>3 وجوه (كل وجه = 10 درجات)</strong>، بإجمالي 36 وجهاً عشرياً تحكمها أرواح تسمى <strong>(باكيو - Bakyu)</strong>. وفي التراث الهرمسي والإغريقي (PGM)، رُبط كل وجه بعضو جسدي وقوة علاجية أو سحرية، وكان السحرة يرصدون دخول الشمس في الوجه المطلوب لعقد أو حل الطلاسم التشاكلية.
+                </p>
+            </div>
+        </div>
+
+        <!-- 3. PLANETARY HOURS MATRIX (24 HOURS) -->
         <div id="tab-hours" class="tab-content">
             <div class="hero-banner">
                 <h2>⏳ نظام ساعات الأيام الفلكية الـ 24 والترتيب الكلداني</h2>
@@ -453,7 +486,7 @@ html_content = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- 3. LUNAR MANSIONS (28 MANZILAH) -->
+        <!-- 4. LUNAR MANSIONS (28 MANZILAH) -->
         <div id="tab-mansions" class="tab-content">
             <div class="hero-banner">
                 <h2>🌙 منازل القمر الـ 28: التشفير الحرفي والطبائعي الكامل</h2>
@@ -478,7 +511,7 @@ html_content = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- 4. LETTER NATURES & 4 ELEMENTAL MAGICS -->
+        <!-- 5. LETTER NATURES & 4 ELEMENTAL MAGICS -->
         <div id="tab-letters-magic" class="tab-content">
             <div class="hero-banner">
                 <h2>🔥 ميزان طبائع الحروف الـ 28 وأنواع الأسحار الأربعة</h2>
@@ -520,7 +553,7 @@ html_content = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- 5. 7 SUBTLE BODIES & OCCULT PENETRATION -->
+        <!-- 6. 7 SUBTLE BODIES & OCCULT PENETRATION -->
         <div id="tab-bodies" class="tab-content">
             <div class="hero-banner">
                 <h2>👤 تشريح الأجساد الإنسانية السبعة ومسارات الاختراق السحري</h2>
@@ -529,7 +562,7 @@ html_content = '''<!DOCTYPE html>
             <div class="bodies-stack" id="bodies-stack"></div>
         </div>
 
-        <!-- 6. NUMBERS & WAFQ -->
+        <!-- 7. NUMBERS & WAFQ -->
         <div id="tab-numbers" class="tab-content">
             <div class="hero-banner">
                 <h2>🔢 شفرة الأرقام المقدسة، وفق الغزالي، والأوفاق الكوكبية السبعة</h2>
@@ -567,7 +600,7 @@ html_content = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- 7. UNIFIED FREQUENCY PHYSICS -->
+        <!-- 8. UNIFIED FREQUENCY PHYSICS -->
         <div id="tab-physics" class="tab-content">
             <div class="hero-banner">
                 <h2>🔊 النظرية الموحدة لفيزياء السحر كذبذبات ورنين أثيري</h2>
@@ -587,7 +620,7 @@ html_content = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- 8. QURANIC CRITERION & MURSHID -->
+        <!-- 9. QURANIC CRITERION & MURSHID -->
         <div id="tab-criterion" class="tab-content">
             <div class="hero-banner">
                 <h2>⚖️ ميزان التحكيم القرآني والتوحيدي لفضيلة المرشد</h2>
@@ -652,6 +685,37 @@ html_content = '''<!DOCTYPE html>
             }
         ];
 
+        // DATA: Zodiac Ruling Angels Matrix
+        const ZODIAC_ANGELS_DATA = [
+            { sign: "الحمل ♈", elem: "ناري 🔥", arabic: "طاطيائيل (أو مَلْخِيائيل)", kabbalah: "مالخيدئيل (Malkhidael)", egypt: "آمون-رع (الكبش الإلهي)", babylon: "دوموزي (Dumuzi)", tribe: "يهوذا" },
+            { sign: "الثور ♉", elem: "ترابي ⛰️", arabic: "طوفيائيل (أو أسموديل)", kabbalah: "أسموديل (Asmodel)", egypt: "أبيس / أوزوريس", babylon: "غوانا (Gu.an.na)", tribe: "يساكر" },
+            { sign: "الجوزاء ♊", elem: "هوائي 💨", arabic: "هَمْرائيئل (أو أمبرييل)", kabbalah: "أمبريئيل (Ambriel)", egypt: "شو وتفنوت", babylon: "لوغال-إيرا وميسلامتا", tribe: "زبولون" },
+            { sign: "السرطان ♋", elem: "مائي 🌊", arabic: "شَلْقِيائيل (أو موريل)", kabbalah: "موريئيل (Muriel)", egypt: "خِبري (الجعران)", babylon: "ألا-لول (السلطعون)", tribe: "رأوبين" },
+            { sign: "الأسد ♌", elem: "ناري 🔥", arabic: "كَلْكِيائيل (أو فيرخييل)", kabbalah: "فيرخيئيل (Verchiel)", egypt: "سخمت (اللبؤة النارية)", babylon: "أور-غولا (أسد نيرغال)", tribe: "شمعون" },
+            { sign: "العذراء ♍", elem: "ترابي ⛰️", arabic: "طَلْقِيائيل (أو حماليل)", kabbalah: "حميليئيل (Hamaliel)", egypt: "إيزيس (حاملة السنبلة)", babylon: "شَالا (ربة الحصاد)", tribe: "جاد" },
+            { sign: "الميزان ♎", elem: "هوائي 💨", arabic: "مَهْقِيائيل (أو زورييل)", kabbalah: "زوريئيل (Zuriel)", egypt: "ماعت (ميزان الحق)", babylon: "زيبانيتو (ميزان شمش)", tribe: "أفرايم" },
+            { sign: "العقرب ♏", elem: "مائي 🌊", arabic: "صَلْصِيائيل (أو بارخييل)", kabbalah: "بارخيئيل (Barchiel)", egypt: "سيركيت (ربة العقرب)", babylon: "جير-تاب (عقرب عشتار)", tribe: "منسى" },
+            { sign: "القوس ♐", elem: "ناري 🔥", arabic: "عَمْشِيائيل (أو أدفخييل)", kabbalah: "أدفخيئيل (Advachiel)", egypt: "نفرتوم القنطورس", babylon: "بابيلساغ (المحارب المجنح)", tribe: "بنيامين" },
+            { sign: "الجدي ♑", elem: "ترابي ⛰️", arabic: "غَفْقِيائيل (أو هنائيل)", kabbalah: "هنائيل (Hanael)", egypt: "خنوم (صانع الطين)", babylon: "سوخور-ماش (عنزة إنكي)", tribe: "دان" },
+            { sign: "الدلو ♒", elem: "هوائي 💨", arabic: "عَرْفِيائيل (أو قمبييل)", kabbalah: "غمبريئيل (Cambiel)", egypt: "حابي (فيضان النيل)", babylon: "غُولا (ساكب المياه)", tribe: "أشير" },
+            { sign: "الحوت ♓", elem: "مائي 🌊", arabic: "طَلْحِيائيل (أو أمنيتزيئيل)", kabbalah: "أمنيتزيئيل (Amnitziel)", egypt: "نفتيس (حارسة البرزخ)", babylon: "سيم-ماه (السمكتان)", tribe: "نفتالي" }
+        ];
+
+        function renderZodiacAngels() {
+            const tbody = document.getElementById('zodiac-angels-tbody');
+            tbody.innerHTML = ZODIAC_ANGELS_DATA.map(z => `
+                <tr>
+                    <td><strong style="color:var(--gold); font-size:1rem;">${z.sign}</strong></td>
+                    <td>${z.elem}</td>
+                    <td><strong style="color:var(--cyan);">${z.arabic}</strong></td>
+                    <td>${z.kabbalah}</td>
+                    <td>${z.egypt}</td>
+                    <td>${z.babylon}</td>
+                    <td><strong style="color:var(--rose);">${z.tribe}</strong></td>
+                </tr>
+            `).join('');
+        }
+
         // Chaldean Order Cycle
         const CHALDEAN_ORDER = ["زحل", "المشتري", "المريخ", "الشمس", "الزهرة", "عطارد", "القمر"];
         const PLANET_NATURES = {
@@ -664,7 +728,7 @@ html_content = '''<!DOCTYPE html>
             "المريخ": { nature: "نحس أصغر (حار يابس)", freq: 144.72, work: "النزاع، التفرقة، الحروب، والحميات والقطع" }
         };
 
-        const DAY_START_PLANET_INDEX = [3, 6, 2, 5, 1, 4, 0]; // Sun (Index 3), Mon (Index 6)...
+        const DAY_START_PLANET_INDEX = [3, 6, 2, 5, 1, 4, 0];
 
         function loadDayHours(dayIdx) {
             document.querySelectorAll('.day-btn').forEach((b, i) => b.classList.toggle('active', i === dayIdx));
@@ -1010,6 +1074,7 @@ html_content = '''<!DOCTYPE html>
 
         // Init
         renderKings();
+        renderZodiacAngels();
         loadDayHours(0);
         renderMansions();
         renderBodies();
