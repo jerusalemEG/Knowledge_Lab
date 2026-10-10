@@ -455,7 +455,7 @@ def generate():
             <!-- GROUP 1: ATLAS -->
             <div class="sidebar-group">
                 <div class="sidebar-group-title" style="color:var(--gold);">
-                    <i class="fa-solid fa-atom"></i> أطلس الكوزمولوجيا القرآنية (8)
+                    <i class="fa-solid fa-atom"></i> أطلس الكوزمولوجيا القرآنية (8 أروقة)
                 </div>
                 <div class="sidebar-items-list">
                     <button class="sidebar-item active" data-wing="atlas" data-tab="graph" onclick="navTo('atlas', 'graph')">
@@ -488,7 +488,7 @@ def generate():
             <!-- GROUP 2: CODEX -->
             <div class="sidebar-group">
                 <div class="sidebar-group-title" style="color:#d8b4fe;">
-                    <i class="fa-solid fa-scroll"></i> سفر النواميس الباطنية (9)
+                    <i class="fa-solid fa-scroll"></i> سفر النواميس الباطنية (9 أبواب)
                 </div>
                 <div class="sidebar-items-list">
                     <button class="sidebar-item" data-wing="codex" data-tab="tab-kings" onclick="navTo('codex', 'tab-kings')">
@@ -530,7 +530,7 @@ def generate():
         </div>
     </aside>
 
-    <!-- MASTER UNIFIED PORTAL HEADER -->
+    <!-- MASTER UNIFIED PORTAL HEADER (SINGLE CLEAN BAR) -->
     <header class="master-header-container">
         <div class="master-top-bar">
             <!-- HAMBURGER BUTTON -->
@@ -539,16 +539,17 @@ def generate():
                 <span>الأبواب (17)</span>
             </button>
 
+            <!-- BRAND TITLE -->
             <div class="master-brand-box">
                 <div class="master-brand-logo">🌌</div>
                 <div class="master-brand-text">
                     <h1>بوابة المعرفة والنواميس الكونية</h1>
-                    <span id="current-active-section-label">الرواق الحالي: الشبكة الكونية الكبرى</span>
+                    <span id="current-active-section-label">الرواق النشط: الشبكة الكونية الكبرى</span>
                 </div>
             </div>
 
             <!-- DESKTOP QUICK WINGS -->
-            <div class="master-wings-nav desktop-only">
+            <div class="master-wings-nav">
                 <button id="master-btn-atlas" class="master-wing-btn active-atlas" onclick="switchMasterWing('atlas')">
                     <i class="fa-solid fa-atom"></i>
                     <span>أطلس الكوزمولوجيا</span>
@@ -563,30 +564,6 @@ def generate():
                 </button>
             </div>
         </div>
-
-        <!-- DESKTOP SUBNAV BARS (HIDDEN ON PHONES <= 768px TO PREVENT OVERFLOW!) -->
-        <nav id="subnav-atlas" class="master-subnav-bar desktop-only">
-            <button class="nav-btn active" onclick="switchTab('graph')">الشبكة الكونية الكبرى 🕸️</button>
-            <button class="nav-btn" onclick="switchTab('spheres')">سلم الأفلاك والأنبياء 🪐</button>
-            <button class="nav-btn" style="border: 1px solid #00f0ff; color: #00f0ff;" onclick="switchTab('chakras')">مجسم التشاكرات والأنبياء 🧘</button>
-            <button class="nav-btn" onclick="switchTab('zodiac')">دائرة البروج الاثني عشر ♈</button>
-            <button class="nav-btn" onclick="switchTab('timeline')">تعاقب العصور (2,160 سنة) ⏳</button>
-            <button class="nav-btn" onclick="switchTab('matrix')">المصفوفة المعمارية الشاملة 🏛️</button>
-            <button class="nav-btn" onclick="switchTab('manuscripts')">أمهات المخطوطات والكتب 📜</button>
-            <button class="nav-btn" style="border: 1px solid #ff3366; color: #ff3366;" onclick="switchTab('critique')">ميزان القرآن والتناقضات ⚖️</button>
-        </nav>
-
-        <nav id="subnav-codex" class="master-subnav-bar desktop-only" style="display:none;">
-            <button class="codex-tab-btn active" onclick="switchCodexTab('tab-kings')"><i class="fa-solid fa-crown"></i> ملوك الأفلاك والأيام</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-zodiac-angels')"><i class="fa-solid fa-star-and-crescent"></i> ملائكة الأبراج والـ 36 وجهاً</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-hours')"><i class="fa-solid fa-clock"></i> ساعات الأيام الـ 24 الكلدانية</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-mansions')"><i class="fa-solid fa-moon"></i> منازل القمر الـ 28</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-letters-magic')"><i class="fa-solid fa-fire-burner"></i> طبائع الحروف والأسحار الأربعة</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-bodies')"><i class="fa-solid fa-person-rays"></i> الأجساد السبعة وميكانيكا الاختراق</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-numbers')"><i class="fa-solid fa-cubes-stacked"></i> شفرة الأرقام والوفق الغزالي 3×3</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-physics')"><i class="fa-solid fa-wave-square"></i> فيزياء الذبذبات والمولد الصوتي</button>
-            <button class="codex-tab-btn" onclick="switchCodexTab('tab-criterion')"><i class="fa-solid fa-scale-balanced"></i> ميزان الوحي الإلهي المطلق</button>
-        </nav>
     </header>
     """
 
@@ -888,20 +865,14 @@ def generate():
 
         if (wing === 'atlas') {
             if (btnAtlas) btnAtlas.classList.add('active-atlas');
-            if (subnavAtlas) subnavAtlas.style.display = 'flex';
-            if (subnavCodex) subnavCodex.style.display = 'none';
             if (wingAtlas) wingAtlas.classList.remove('hidden-wing');
             window.location.hash = '#wing-atlas';
         } else if (wing === 'codex') {
             if (btnCodex) btnCodex.classList.add('active-codex');
-            if (subnavAtlas) subnavAtlas.style.display = 'none';
-            if (subnavCodex) subnavCodex.style.display = 'flex';
             if (wingCodex) wingCodex.classList.remove('hidden-wing');
             window.location.hash = '#wing-codex';
         } else if (wing === 'index') {
             if (btnIndex) btnIndex.classList.add('active-index');
-            if (subnavAtlas) subnavAtlas.style.display = 'none';
-            if (subnavCodex) subnavCodex.style.display = 'none';
             if (wingIndex) wingIndex.classList.remove('hidden-wing');
             window.location.hash = '#wing-index';
         }

@@ -367,20 +367,19 @@ def generate_unified_html(nodes, links):
 
         /* Topbar Controls within Graph */
         .graph-top-filters {{
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            left: 15px;
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
             z-index: 10;
-            background: rgba(11, 15, 23, 0.85);
-            backdrop-filter: blur(14px);
-            padding: 8px 14px;
+            background: rgba(11, 15, 23, 0.9);
+            backdrop-filter: blur(16px);
+            padding: 10px 16px;
             border-radius: 14px;
             border: 1px solid var(--border-glass);
+            margin-bottom: 12px;
+            flex-wrap: wrap;
         }}
         .pills-container {{
             display: flex;
@@ -2272,7 +2271,7 @@ def generate_unified_html(nodes, links):
             nodes: {{
                 shape: 'dot',
                 font: {{
-                    size: 13,
+                    size: 11,
                     color: '#f0f6fc',
                     face: 'Segoe UI, Tahoma',
                     strokeWidth: 3,
@@ -2289,14 +2288,14 @@ def generate_unified_html(nodes, links):
             physics: {{
                 solver: 'barnesHut',
                 barnesHut: {{
-                    gravitationalConstant: -2400,
-                    centralGravity: 0.15,
-                    springLength: 190,
-                    springConstant: 0.04,
-                    damping: 0.22,
+                    gravitationalConstant: -8500,
+                    centralGravity: 0.015,
+                    springLength: 220,
+                    springConstant: 0.03,
+                    damping: 0.28,
                     avoidOverlap: 1
                 }},
-                stabilization: {{ iterations: 220 }}
+                stabilization: {{ iterations: 200 }}
             }},
             interaction: {{ hover: true, tooltipDelay: 150, zoomView: true }}
         }};
