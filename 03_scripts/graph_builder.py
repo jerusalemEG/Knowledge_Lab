@@ -444,27 +444,190 @@ def generate_unified_html(nodes, links):
         }}
 
         /* Sliding Markdown Reader Drawer */
+                /* BACKDROP & ENHANCED DRAWER (MOBILE & DESKTOP) */
+        .drawer-backdrop {{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 1400;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }}
+        .drawer-backdrop.active {{
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }}
+
         #reader-drawer {{
-            position: absolute;
-            top: 75px;
+            position: fixed;
+            top: 80px;
             left: 20px;
             bottom: 20px;
             width: 540px;
             max-width: 90vw;
-            background: var(--panel-bg);
+            background: rgba(7, 11, 20, 0.96);
             backdrop-filter: blur(24px);
-            border: 1px solid var(--border-glass);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 209, 102, 0.35);
             border-radius: 16px;
-            z-index: 90;
+            z-index: 1500;
             box-shadow: 0 16px 50px rgba(0,0,0,0.85);
             display: flex;
             flex-direction: column;
             transform: translateX(-580px);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }}
         #reader-drawer.open {{
             transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }}
+
+        @media (max-width: 768px) {{
+            #reader-drawer {{
+                top: auto !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 82vh !important;
+                max-height: 82vh !important;
+                border-radius: 20px 20px 0 0 !important;
+                border-bottom: none !important;
+                border-left: none !important;
+                border-right: none !important;
+                border-top: 2px solid var(--gold) !important;
+                transform: translateY(100%) !important;
+            }}
+            #reader-drawer.open {{
+                transform: translateY(0) !important;
+            }}
+        }}
+
+        /* GRAPH DUAL MODE: THEORY VS CANVAS */
+        .graph-mode-toggle-bar {{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 12px;
+        }}
+        .mode-toggle-buttons {{
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }}
+        .mode-toggle-btn {{
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            transition: all 0.2s ease;
+            font-family: 'Tajawal', sans-serif;
+        }}
+        .mode-toggle-btn:hover {{
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }}
+        .mode-toggle-btn.active {{
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.25), rgba(6, 214, 160, 0.08));
+            border-color: #06d6a0;
+            color: #a7f3d0;
+            box-shadow: 0 0 14px rgba(6, 214, 160, 0.25);
+        }}
+        .mode-hint-text {{
+            font-size: 0.76rem;
+            color: #94a3b8;
+        }}
+
+        /* THEORY CARDS GRID */
+        .theory-cards-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+            max-height: calc(100vh - 270px);
+            overflow-y: auto;
+            padding-bottom: 30px;
+            -webkit-overflow-scrolling: touch;
+        }}
+        @media (max-width: 768px) {{
+            .theory-cards-grid {{
+                grid-template-columns: 1fr;
+                max-height: none;
+            }}
+        }}
+        .theory-node-card {{
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }}
+        .theory-node-card:hover {{
+            border-color: rgba(255, 209, 102, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }}
+        .theory-card-header {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }}
+        .theory-card-cat {{
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }}
+        .theory-card-links {{
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }}
+        .theory-card-title {{
+            font-family: 'Amiri', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 6px;
+        }}
+        .theory-card-snippet {{
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }}
+        .theory-card-btn {{
+            font-size: 0.78rem;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
         }}
         .drawer-header {{
             padding: 16px 20px;
@@ -1330,9 +1493,24 @@ def generate_unified_html(nodes, links):
 
     <main>
 
-        <!-- TAB 1: FULLSCREEN MASTER FORCE GRAPH -->
+        <!-- TAB 1: FULLSCREEN MASTER FORCE GRAPH & THEORY VIEW -->
         <section id="tab-graph" class="tab-section active">
             <div id="graph-fullscreen-wrapper">
+                <!-- MODE TOGGLE BAR: MOBILE THEORY VS DESKTOP CANVAS -->
+                <div class="graph-mode-toggle-bar">
+                    <div class="mode-toggle-buttons">
+                        <button id="btn-mode-theory" class="mode-toggle-btn active" onclick="switchGraphMode('theory')">
+                            <i class="fa-solid fa-book-open"></i> أطلس المفاهيم النظرية (موصى به للهاتف 📱)
+                        </button>
+                        <button id="btn-mode-canvas" class="mode-toggle-btn" onclick="switchGraphMode('canvas')">
+                            <i class="fa-solid fa-circle-nodes"></i> شبكة الجراف البصرية ثلاثية الأبعاد (للكمبيوتر 💻)
+                        </button>
+                    </div>
+                    <div class="mode-hint-text">
+                        💡 تم تصميم الوضع النظري ليعمل على أي هاتف بسرعة فائقة وسلاسة تامة دون أي بطء أو تجميد للشاشة.
+                    </div>
+                </div>
+
                 <div class="graph-top-filters">
                     <div class="pills-container">
                         <button class="filter-pill active" onclick="filterGraphCategory('ALL')">الكل 🌐</button>
@@ -1347,15 +1525,34 @@ def generate_unified_html(nodes, links):
                         <button class="filter-pill" onclick="filterGraphCategory('المخطوطات والحكماء')">المخطوطات والحكماء 🌿</button>
                     </div>
 
-                    <input type="text" id="graph-search-input" class="search-box" placeholder="🔍 ابحث في المفاهيم والروابط...">
+                    <input type="text" id="graph-search-input" class="search-box" placeholder="🔍 ابحث في المفاهيم والروابط..." oninput="handleGraphSearch(this.value)">
                 </div>
 
-                <div id="cosmic-network-canvas"></div>
+                <!-- 1. THEORY CARDS VIEW (DEFAULT ON MOBILE) -->
+                <div id="graph-theory-container">
+                    <div class="theory-cards-grid" id="theory-cards-grid">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
 
+                <!-- 2. CANVAS VIEW (DEFAULT ON DESKTOP) -->
+                <div id="graph-canvas-container" style="display:none; position:relative; width:100%; height:100%;">
+                    <div id="cosmic-network-canvas"></div>
+                    <div class="graph-bottom-controls">
+                        <button class="g-btn" onclick="cosmicNetwork.fit({{animation: {{duration: 700}}}})">🔍 ضبط المشهد</button>
+                        <button class="g-btn" id="physics-toggle-btn" onclick="toggleCosmicPhysics()">⏸ تثبيت / تحريك</button>
+                        <button class="g-btn" onclick="resetFocus()">✨ إعادة تركيز</button>
+                    </div>
+                </div>
+
+                <!-- BACKDROP FOR MOBILE DRAWER -->
+                <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeDrawer()"></div>
+
+                <!-- SLIDING READER DRAWER / BOTTOM SHEET -->
                 <div id="reader-drawer">
                     <div class="drawer-header">
                         <div class="drawer-title" id="drawer-title">عنوان المفهوم</div>
-                        <button class="close-btn" onclick="closeDrawer()">✕</button>
+                        <button class="close-btn" onclick="closeDrawer()" title="إغلاق">✕</button>
                     </div>
                     <div class="drawer-meta" id="drawer-meta"></div>
                     <div class="drawer-body" id="drawer-body"></div>
@@ -1363,12 +1560,6 @@ def generate_unified_html(nodes, links):
                         <div class="conn-title">الروابط المتقاطعة مباشرة في الجراف:</div>
                         <div class="conn-pills" id="drawer-connections-pills"></div>
                     </div>
-                </div>
-
-                <div class="graph-bottom-controls">
-                    <button class="g-btn" onclick="cosmicNetwork.fit({{animation: {{duration: 700}}}})">🔍 ضبط المشهد</button>
-                    <button class="g-btn" id="physics-toggle-btn" onclick="toggleCosmicPhysics()">⏸ تثبيت / تحريك</button>
-                    <button class="g-btn" onclick="resetFocus()">✨ إعادة تركيز</button>
                 </div>
             </div>
         </section>
@@ -2606,6 +2797,144 @@ def generate_unified_html(nodes, links):
         renderMatrix();
         renderManuscripts();
         renderCritique();
+    
+        // ========================================================
+        // GRAPH DUAL MODE: THEORY ATLAS & ZERO-LAG CONTROLLER
+        // ========================================================
+        let currentGraphMode = 'theory';
+
+        function switchGraphMode(mode) {{
+            currentGraphMode = mode;
+            const btnTheory = document.getElementById('btn-mode-theory');
+            const btnCanvas = document.getElementById('btn-mode-canvas');
+            const theoryContainer = document.getElementById('graph-theory-container');
+            const canvasContainer = document.getElementById('graph-canvas-container');
+
+            if (mode === 'theory') {{
+                if (btnTheory) btnTheory.classList.add('active');
+                if (btnCanvas) btnCanvas.classList.remove('active');
+                if (theoryContainer) theoryContainer.style.display = 'block';
+                if (canvasContainer) canvasContainer.style.display = 'none';
+                renderTheoryCards();
+            }} else {{
+                if (btnTheory) btnTheory.classList.remove('active');
+                if (btnCanvas) btnCanvas.classList.add('active');
+                if (theoryContainer) theoryContainer.style.display = 'none';
+                if (canvasContainer) canvasContainer.style.display = 'block';
+                // Trigger canvas redraw and fit
+                setTimeout(() => {{
+                    if (cosmicNetwork) {{
+                        cosmicNetwork.redraw();
+                        cosmicNetwork.fit();
+                    }}
+                }}, 100);
+            }}
+        }}
+
+        function renderTheoryCards() {{
+            const grid = document.getElementById('theory-cards-grid');
+            if (!grid) return;
+
+            const searchVal = (document.getElementById('graph-search-input')?.value || '').trim().toLowerCase();
+
+            const filtered = rawGraphData.nodes.filter(n => {{
+                const matchCat = (activeGraphCategory === 'ALL' || n.category === activeGraphCategory);
+                const matchSearch = (!searchVal || n.label.toLowerCase().includes(searchVal) || (n.snippet && n.snippet.toLowerCase().includes(searchVal)) || (n.tags && n.tags.some(t => t.toLowerCase().includes(searchVal))));
+                return matchCat && matchSearch;
+            }});
+
+            grid.innerHTML = filtered.map(node => `
+                <div class="theory-node-card" onclick="openNodeById('${{node.id}}')">
+                    <div>
+                        <div class="theory-card-header">
+                            <span class="theory-card-cat" style="background:${{node.color.background}}25; color:${{node.color.background}}; border:1px solid ${{node.color.border}};">
+                                ${{node.category}}
+                            </span>
+                            <span class="theory-card-links">🔗 ${{node.degree || 0}} روابط</span>
+                        </div>
+                        <div class="theory-card-title">${{node.label}}</div>
+                        <div class="theory-card-snippet">${{node.snippet || (node.body ? node.body.slice(0, 110) + '...' : 'مفهوم كوزمولوجي متصل بشبكة الوحي والنبوات.')}}</div>
+                    </div>
+                    <div class="theory-card-btn">
+                        <span>قراءة التفاصيل والروابط</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+            `).join('');
+        }}
+
+        function handleGraphSearch(val) {{
+            if (currentGraphMode === 'theory') {{
+                renderTheoryCards();
+            }} else {{
+                // Filter canvas
+                filterGraphCategory(activeGraphCategory);
+            }}
+        }}
+
+        function openNodeById(nodeId) {{
+            const nodeData = rawGraphData.nodes.find(n => n.id === nodeId);
+            if (nodeData) {{
+                openDrawer(nodeData);
+            }}
+        }}
+
+        // Enhanced openDrawer with backdrop and seamless connected node pills
+        const oldOpenDrawer = openDrawer;
+        openDrawer = function(nodeData) {{
+            drawerTitle.innerText = nodeData.label;
+            drawerMeta.innerHTML = `
+                <span class="meta-tag">🏷️ ${{nodeData.category}}</span>
+                <span class="meta-tag">🔗 ${{nodeData.degree || 0}} روابط</span>
+                ${{(nodeData.tags || []).map(t => `<span class="meta-tag">#${{t}}</span>`).join('')}}
+            `;
+            drawerBody.innerHTML = marked.parse(nodeData.body || nodeData.snippet || 'لا يوجد محتوى.');
+
+            // Connected pills
+            const connectedIds = cosmicNetwork ? cosmicNetwork.getConnectedNodes(nodeData.id) : (rawGraphData.links.filter(l => l.source === nodeData.id || l.target === nodeData.id).map(l => l.source === nodeData.id ? l.target : l.source));
+            drawerConns.innerHTML = (connectedIds || []).map(cid => {{
+                const targetNode = rawGraphData.nodes.find(n => n.id === cid);
+                const lbl = targetNode ? targetNode.label : cid;
+                return `<span class="conn-pill" onclick="openNodeById('${{cid}}')">🔗 ${{lbl}}</span>`;
+            }}).join('');
+
+            drawer.classList.add('open');
+            const backdrop = document.getElementById('drawer-backdrop');
+            if (backdrop) backdrop.classList.add('active');
+
+            if (currentGraphMode === 'canvas') {{
+                highlightNeighborhood(nodeData.id);
+            }}
+        }};
+
+        const oldCloseDrawer = closeDrawer;
+        closeDrawer = function() {{
+            drawer.classList.remove('open');
+            const backdrop = document.getElementById('drawer-backdrop');
+            if (backdrop) backdrop.classList.remove('active');
+            if (currentGraphMode === 'canvas') {{
+                resetFocus();
+            }}
+        }};
+
+        // Stabilization physics freeze for mobile performance
+        window.addEventListener('load', () => {{
+            if (window.innerWidth <= 768) {{
+                switchGraphMode('theory');
+            }} else {{
+                switchGraphMode('canvas');
+            }}
+
+            if (cosmicNetwork) {{
+                cosmicNetwork.on('stabilizationIterationsDone', () => {{
+                    // Turn physics off to prevent continuous CPU consumption on mobile
+                    cosmicNetwork.setOptions({{ physics: {{ enabled: false }} }});
+                    const pBtn = document.getElementById('physics-toggle-btn');
+                    if (pBtn) pBtn.innerText = '▶ تحريك الجراف';
+                }});
+            }}
+        }});
+
     </script>
 </body>
 </html>
@@ -2617,9 +2946,9 @@ def generate_unified_html(nodes, links):
     OUTPUT_HTML_WEB.write_text(html_template, encoding="utf-8")
     OUTPUT_JSON.write_text(json.dumps({"nodes": nodes, "links": links}, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[OK] Master Quranic Cosmic Architecture Engine v5.0 built successfully!")
-    print(f"     - Total nodes: {len(nodes)}")
-    print(f"     - Total connections: {len(links)}")
-    print(f"     - Synchronized to: {OUTPUT_HTML_1.name}, {OUTPUT_HTML_2.name}, & {OUTPUT_HTML_WEB.relative_to(OUTPUT_HTML_WEB.parent.parent)}")
+    print(f"     - Total nodes: {{len(nodes)}}")
+    print(f"     - Total connections: {{len(links)}}")
+    print(f"     - Synchronized to: {{OUTPUT_HTML_1.name}}, {{OUTPUT_HTML_2.name}}, & {{OUTPUT_HTML_WEB.relative_to(OUTPUT_HTML_WEB.parent.parent)}}")
 
 
 if __name__ == "__main__":
