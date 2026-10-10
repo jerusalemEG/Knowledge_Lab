@@ -369,6 +369,316 @@ def generate():
     .wing-container.hidden-wing {
         display: none !important;
     }
+
+    /* ========================================================
+       ULTRA-RESPONSIVE MOBILE ENGINE (PHONES & TABLETS)
+       ======================================================== */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Horizontal scroll containers touch momentum */
+    .master-subnav-bar, .pills-container, .synth-buttons, .table-container, .timeline-horizontal-scroll {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .master-subnav-bar::-webkit-scrollbar, 
+    .pills-container::-webkit-scrollbar, 
+    .synth-buttons::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Mobile screens <= 768px */
+    @media (max-width: 768px) {
+        .master-top-bar {
+            padding: 8px 12px !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 10px !important;
+        }
+
+        .master-brand-box {
+            justify-content: center !important;
+            text-align: center !important;
+            gap: 10px !important;
+        }
+
+        .master-brand-logo {
+            width: 36px !important;
+            height: 36px !important;
+            font-size: 1.25rem !important;
+            border-radius: 10px !important;
+        }
+
+        .master-brand-text h1 {
+            font-size: 1.05rem !important;
+            line-height: 1.3 !important;
+        }
+
+        .master-brand-text span {
+            font-size: 0.68rem !important;
+        }
+
+        /* Segmented Controller Wings on Mobile */
+        .master-wings-nav {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            padding: 4px !important;
+            gap: 4px !important;
+            width: 100% !important;
+        }
+
+        .master-wing-btn {
+            padding: 8px 4px !important;
+            font-size: 0.72rem !important;
+            justify-content: center !important;
+            text-align: center !important;
+            flex-direction: column !important;
+            gap: 3px !important;
+            border-radius: 8px !important;
+        }
+
+        .master-wing-btn i {
+            font-size: 0.95rem !important;
+        }
+
+        .master-wing-btn span {
+            font-size: 0.72rem !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            max-width: 85px !important;
+        }
+
+        .wing-pill-count {
+            display: none !important;
+        }
+
+        /* Subnav Bars */
+        .master-subnav-bar {
+            padding: 6px 10px !important;
+            gap: 6px !important;
+        }
+
+        .nav-btn, .codex-tab-btn {
+            padding: 6px 12px !important;
+            font-size: 0.78rem !important;
+            border-radius: 8px !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+
+        /* Main Workspace & Hero */
+        main, .wing-container {
+            padding: 12px 8px !important;
+        }
+
+        .hero-banner, .index-hero-banner {
+            padding: 20px 14px !important;
+            margin-bottom: 20px !important;
+            border-radius: 14px !important;
+        }
+
+        .index-hero-banner h2, .hero-banner h2 {
+            font-size: 1.35rem !important;
+            line-height: 1.4 !important;
+        }
+
+        .index-hero-banner p, .hero-banner p {
+            font-size: 0.82rem !important;
+            line-height: 1.6 !important;
+        }
+
+        .modules-grid {
+            grid-template-columns: 1fr !important;
+            gap: 14px !important;
+        }
+
+        .module-card {
+            padding: 16px !important;
+        }
+
+        /* Force Graph Container on Mobile */
+        #graph-fullscreen-wrapper {
+            height: calc(100vh - 190px) !important;
+            min-height: 460px !important;
+        }
+
+        #cosmic-network-canvas {
+            height: 100% !important;
+            min-height: 440px !important;
+        }
+
+        .graph-top-filters {
+            padding: 8px 10px !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+        }
+
+        .pills-container {
+            width: 100% !important;
+        }
+
+        .search-box {
+            width: 100% !important;
+            font-size: 0.82rem !important;
+            padding: 8px 12px !important;
+        }
+
+        /* Reader Drawer as Bottom Sheet on Mobile */
+        #reader-drawer {
+            width: 100% !important;
+            max-width: 100% !important;
+            right: 0 !important;
+            left: 0 !important;
+            border-left: none !important;
+            border-top: 2px solid var(--gold) !important;
+            top: auto !important;
+            bottom: 0 !important;
+            height: 75vh !important;
+            border-radius: 20px 20px 0 0 !important;
+            box-shadow: 0 -12px 40px rgba(0,0,0,0.85) !important;
+            z-index: 2000 !important;
+        }
+
+        /* 3D Visualizers / Grids */
+        .chakras-visualizer-container, .spheres-view-container {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+        }
+
+        .chakra-3d-box, .spheres-ladder-box {
+            min-height: 340px !important;
+        }
+
+        /* Wafq Live Calculator */
+        .magic-grid-3x3 {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 6px !important;
+            max-width: 290px !important;
+            margin: 0 auto !important;
+        }
+
+        .magic-cell {
+            padding: 8px 4px !important;
+            min-height: 56px !important;
+        }
+
+        .magic-cell span {
+            font-size: 1rem !important;
+        }
+
+        .cell-letter {
+            font-size: 0.64rem !important;
+        }
+
+        #wafq-input {
+            width: 100% !important;
+        }
+
+        /* Responsive Tables */
+        .table-container {
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            border-radius: 12px !important;
+            margin-bottom: 18px !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+
+        .planetary-table {
+            min-width: 620px !important;
+            font-size: 0.76rem !important;
+        }
+
+        .planetary-table th, .planetary-table td {
+            padding: 7px 9px !important;
+        }
+
+        /* Synth Bar & Canvas Wave */
+        .audio-synth-bar {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            padding: 10px 12px !important;
+            gap: 8px !important;
+        }
+
+        .synth-buttons {
+            overflow-x: auto !important;
+            padding-bottom: 4px !important;
+            flex-wrap: nowrap !important;
+        }
+
+        .synth-btn {
+            padding: 6px 12px !important;
+            font-size: 0.74rem !important;
+            flex-shrink: 0 !important;
+        }
+
+        .wave-canvas-wrapper canvas {
+            height: 180px !important;
+        }
+
+        .canvas-controls {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 8px !important;
+        }
+
+        .canvas-controls div {
+            flex-wrap: wrap !important;
+        }
+
+        .wave-mode-btn {
+            padding: 5px 9px !important;
+            font-size: 0.72rem !important;
+        }
+
+        /* Password Gate on Mobile */
+        .auth-card {
+            padding: 24px 16px !important;
+            max-width: 92vw !important;
+        }
+
+        .auth-title {
+            font-size: 1.25rem !important;
+        }
+
+        .auth-subtitle {
+            font-size: 0.82rem !important;
+        }
+
+        .auth-password-input {
+            font-size: 1.1rem !important;
+            padding: 10px !important;
+        }
+    }
+
+    /* Extra Small screens <= 480px */
+    @media (max-width: 480px) {
+        .master-brand-text h1 {
+            font-size: 0.95rem !important;
+        }
+        .master-wing-btn span {
+            font-size: 0.66rem !important;
+            max-width: 70px !important;
+        }
+        .magic-grid-3x3 {
+            max-width: 260px !important;
+            gap: 4px !important;
+        }
+        .magic-cell {
+            min-height: 50px !important;
+            padding: 4px 2px !important;
+        }
+    }
+    
     """
 
     # --- 4. NEW MASTER HEADER HTML ---
