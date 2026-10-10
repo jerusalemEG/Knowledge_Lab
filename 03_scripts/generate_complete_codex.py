@@ -1,0 +1,1033 @@
+# -*- coding: utf-8 -*-
+"""
+Generator for the Grand Occult Cosmology Codex Interactive Standalone HTML.
+Enriched with:
+- 24 Planetary Hours Matrix (Day & Night for all 7 Days)
+- 28 Lunar Mansions Complete Data
+- 28 Letter Natures (Fire, Air, Water, Earth)
+- 4 Elemental Magic Types
+- 7 Subtle Bodies of Man & Penetration Mechanics
+- Web Audio Synthesizer & Canvas Wave Simulator
+- Quranic Absolute Criterion
+"""
+
+import os
+
+html_content = '''<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أطلس النواميس الباطنية الأعظم — شفرة الأرقام، الأفلاك، الساعات، المنازل، والأجساد السبعة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-void: #030508;
+            --panel-bg: rgba(10, 14, 24, 0.94);
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --gold: #f4b41a;
+            --gold-glow: rgba(244, 180, 26, 0.35);
+            --cyan: #00f0ff;
+            --cyan-glow: rgba(0, 240, 255, 0.3);
+            --rose: #ff3366;
+            --purple: #9d4edd;
+            --emerald: #06d6a0;
+            --fire: #ef4444;
+            --water: #3b82f6;
+            --air: #06b6d4;
+            --earth: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-void);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 85%, rgba(244, 180, 26, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 50%);
+            min-height: 100vh;
+        }
+
+        /* Gate */
+        #portal-auth-gate {
+            position: fixed;
+            inset: 0;
+            background: #030508;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            transition: opacity 0.4s ease, visibility 0.4s;
+        }
+        #portal-auth-gate.unlocked {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .auth-card {
+            background: rgba(13, 17, 28, 0.95);
+            border: 1px solid var(--gold);
+            box-shadow: 0 0 50px rgba(244, 180, 26, 0.25);
+            border-radius: 24px;
+            padding: 40px 32px;
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+        }
+        .auth-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+            filter: drop-shadow(0 0 15px var(--gold-glow));
+        }
+        .auth-title { font-size: 1.5rem; color: #fff; margin-bottom: 8px; font-weight: 800; }
+        .auth-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+        .auth-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+            text-align: center;
+            letter-spacing: 4px;
+            outline: none;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+        }
+        .auth-input:focus { border-color: var(--gold); box-shadow: 0 0 15px var(--gold-glow); }
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--gold), #d49300);
+            border: none;
+            border-radius: 12px;
+            color: #030508;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px var(--gold-glow);
+        }
+
+        /* Header */
+        header {
+            background: rgba(8, 11, 20, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand-icon { font-size: 1.8rem; color: var(--gold); filter: drop-shadow(0 0 10px var(--gold-glow)); }
+        .brand-text h1 { font-size: 1.25rem; font-weight: 800; color: var(--gold); letter-spacing: 0.5px; }
+        .brand-text span { font-size: 0.75rem; color: var(--text-muted); display: block; }
+
+        .nav-scroller { overflow-x: auto; max-width: 70%; scrollbar-width: none; }
+        .nav-scroller::-webkit-scrollbar { display: none; }
+        .nav-tabs {
+            display: flex;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 4px;
+            border-radius: 14px;
+            border: 1px solid var(--border-glass);
+            white-space: nowrap;
+        }
+        .nav-tab {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.84rem;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-tab:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+        .nav-tab.active { background: var(--gold); color: #030508; box-shadow: 0 0 18px var(--gold-glow); }
+
+        /* Audio Synth Bar */
+        .audio-synth-bar {
+            background: rgba(13, 18, 30, 0.85);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.84rem;
+        }
+        .synth-info { display: flex; align-items: center; gap: 10px; color: var(--cyan); }
+        .synth-buttons { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0; }
+        .synth-btn {
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            color: var(--cyan);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .synth-btn:hover, .synth-btn.playing { background: var(--cyan); color: #030508; box-shadow: 0 0 12px var(--cyan-glow); }
+        .synth-btn.stop { background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.4); color: var(--rose); }
+
+        /* Main Container */
+        main { max-width: 1500px; margin: 0 auto; padding: 25px 20px 80px 20px; }
+        .tab-content { display: none; animation: fadeIn 0.35s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(244, 180, 26, 0.1) 0%, rgba(0, 240, 255, 0.05) 50%, rgba(157, 78, 221, 0.08) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 26px 30px;
+            margin-bottom: 25px;
+        }
+        .hero-banner h2 { font-size: 1.7rem; color: var(--gold); font-weight: 800; margin-bottom: 6px; }
+        .hero-banner p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; max-width: 1100px; }
+
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; }
+
+        /* Cards Styling */
+        .king-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+        }
+        .king-card::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 6px; background: var(--k-color, var(--gold)); opacity: 0.8; }
+        .king-card:hover { transform: translateY(-4px); border-color: var(--k-color, var(--gold)); box-shadow: 0 12px 35px rgba(0,0,0,0.6); }
+
+        .king-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .king-day { font-size: 1.25rem; font-weight: 800; color: #fff; }
+        .king-planet { font-size: 0.82rem; padding: 4px 10px; border-radius: 12px; font-weight: 700; background: rgba(255, 255, 255, 0.06); color: var(--k-color, var(--gold)); }
+        .king-archetype { font-size: 0.88rem; color: var(--cyan); font-weight: 700; margin-bottom: 12px; }
+
+        .civ-matrix {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.8rem;
+        }
+        .civ-row { display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255, 255, 255, 0.05); padding-bottom: 3px; }
+        .civ-row:last-child { border-bottom: none; }
+        .civ-lbl { color: var(--text-muted); }
+        .civ-val { color: #fff; font-weight: 600; }
+
+        .king-props { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; font-size: 0.78rem; margin-bottom: 12px; }
+        .prop-box { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: 8px; padding: 6px 8px; }
+        .prop-lbl { font-size: 0.7rem; color: var(--text-muted); display: block; }
+        .prop-val { font-weight: 700; color: #fff; }
+
+        .king-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+        .king-footer { border-top: 1px solid var(--border-glass); padding-top: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .freq-badge { font-size: 0.75rem; color: var(--cyan); font-weight: 750; background: rgba(0, 240, 255, 0.1); padding: 3px 8px; border-radius: 10px; }
+        .play-freq-btn { background: var(--k-color, var(--gold)); border: none; color: #030508; padding: 5px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 800; cursor: pointer; }
+
+        /* Magic Squares */
+        .squares-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        @media (max-width: 992px) { .squares-wrapper { grid-template-columns: 1fr; } }
+        .wafq-box { background: var(--panel-bg); border: 1px solid var(--border-glass); border-radius: 20px; padding: 26px; }
+        .wafq-title { font-size: 1.3rem; color: var(--gold); font-weight: 800; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .wafq-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.6; }
+
+        .magic-grid-3x3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 300px; margin: 0 auto 20px auto; }
+        .magic-cell {
+            aspect-ratio: 1; background: rgba(0, 0, 0, 0.6); border: 2px solid var(--gold); border-radius: 10px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 900; color: #fff; cursor: pointer; position: relative;
+        }
+        .magic-cell:hover { background: rgba(244, 180, 26, 0.2); }
+        .cell-letter { font-size: 0.75rem; color: var(--cyan); position: absolute; bottom: 4px; font-weight: 700; }
+
+        /* Tables & Mansions */
+        .data-table-wrapper {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        table { width: 100%; border-collapse: collapse; text-align: right; min-width: 850px; font-size: 0.86rem; }
+        th, td { padding: 12px 16px; border-bottom: 1px solid var(--border-glass); }
+        th { background: rgba(0, 0, 0, 0.5); color: var(--gold); font-weight: 800; }
+        tr:hover { background: rgba(255, 255, 255, 0.02); }
+
+        /* Day Hours Selector */
+        .day-select-bar {
+            display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 6px;
+        }
+        .day-btn {
+            background: var(--panel-bg); border: 1px solid var(--border-glass); color: var(--text-muted);
+            padding: 8px 16px; border-radius: 12px; font-size: 0.84rem; font-weight: 700; cursor: pointer;
+            white-space: nowrap; transition: all 0.2s;
+        }
+        .day-btn:hover, .day-btn.active {
+            background: var(--gold); color: #030508; box-shadow: 0 0 14px var(--gold-glow);
+        }
+
+        /* Subtle Bodies Stack */
+        .bodies-stack { display: flex; flex-direction: column; gap: 14px; }
+        .body-row {
+            background: var(--panel-bg); border: 1px solid var(--border-glass); border-radius: 14px;
+            padding: 16px 20px; display: grid; grid-template-columns: 80px 180px 1fr 1fr;
+            align-items: center; gap: 16px; transition: all 0.2s;
+        }
+        .body-row:hover { transform: translateX(-4px); border-color: var(--cyan); }
+        .body-num { font-size: 1.4rem; font-weight: 900; color: var(--gold); }
+        .body-title { font-weight: 800; font-size: 1rem; color: #fff; }
+        .body-title span { display: block; font-size: 0.75rem; color: var(--cyan); }
+        .body-layer { font-size: 0.82rem; color: var(--text-muted); }
+        .body-penetration { font-size: 0.82rem; color: #ffccd5; background: rgba(255, 51, 102, 0.08); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255, 51, 102, 0.2); }
+
+        /* Canvas */
+        .wave-canvas-wrapper {
+            background: radial-gradient(circle at center, #0a1122 0%, #030508 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px; padding: 20px; margin-bottom: 25px;
+        }
+        #waveCanvas { width: 100%; height: 220px; display: block; border-radius: 10px; background: #020407; border: 1px solid rgba(255,255,255,0.06); }
+        .canvas-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; flex-wrap: wrap; gap: 10px; }
+        .wave-mode-btn {
+            background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border-glass); color: var(--text-muted);
+            padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: 700;
+        }
+        .wave-mode-btn.active { background: var(--cyan); color: #030508; border-color: var(--cyan); box-shadow: 0 0 12px var(--cyan-glow); }
+
+        /* Criterion */
+        .step-block { margin-bottom: 12px; padding: 14px 16px; border-radius: 10px; font-size: 0.88rem; line-height: 1.8; }
+        .step-quran { background: rgba(0, 240, 255, 0.04); border: 1px solid rgba(0, 240, 255, 0.25); color: #e0fbfc; border-right: 4px solid var(--cyan); }
+        .step-occult { background: rgba(255, 51, 102, 0.04); border: 1px solid rgba(255, 51, 102, 0.25); color: #ffe5ec; border-right: 4px solid var(--rose); }
+        .step-murshid { background: rgba(244, 180, 26, 0.08); border: 1px solid var(--gold); border-right: 4px solid var(--gold); color: #ffd166; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 10px; padding: 12px; }
+            .nav-scroller { max-width: 100%; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .body-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Security Gate -->
+    <div id="portal-auth-gate">
+        <div class="auth-card">
+            <div class="auth-icon"><i class="fa-solid fa-atom"></i></div>
+            <h2 class="auth-title">بوابة النواميس الباطنية الكبرى</h2>
+            <p class="auth-desc">المخطوطة الروحية الشاملة: الساعات الكونية، المنازل القمرية، طبائع الحروف، والأجساد السبعة. أدخل الرمز السري للولوج.</p>
+            <form onsubmit="handleAuth(event)">
+                <input type="password" id="pass-input" class="auth-input" placeholder="••••" maxlength="8" autofocus autocomplete="off">
+                <button type="submit" class="auth-btn"><i class="fa-solid fa-key ml-2"></i> فك تشفير المخطوطة</button>
+            </form>
+            <div id="auth-err" style="display:none; color:var(--rose); font-size:0.8rem; margin-top:12px; font-weight:700;">رمز المرور غير صحيح!</div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-sun"></i></div>
+            <div class="brand-text">
+                <h1>أطلس النواميس الباطنية الأعظم</h1>
+                <span>الساعات الفلكية • المنازل الـ 28 • طبائع الحروف • الأجساد السبعة</span>
+            </div>
+        </div>
+        <div class="nav-scroller">
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="switchTab('tab-kings')"><i class="fa-solid fa-crown"></i> ملوك الأفلاك</button>
+                <button class="nav-tab" onclick="switchTab('tab-hours')"><i class="fa-solid fa-clock"></i> ساعات الأيام الـ 24</button>
+                <button class="nav-tab" onclick="switchTab('tab-mansions')"><i class="fa-solid fa-moon"></i> منازل القمر الـ 28</button>
+                <button class="nav-tab" onclick="switchTab('tab-letters-magic')"><i class="fa-solid fa-fire-burner"></i> طبائع الحروف والأسحار</button>
+                <button class="nav-tab" onclick="switchTab('tab-bodies')"><i class="fa-solid fa-person-rays"></i> الأجساد السبعة والاختراق</button>
+                <button class="nav-tab" onclick="switchTab('tab-numbers')"><i class="fa-solid fa-cubes-stacked"></i> شفرة الأرقام والأوفاق</button>
+                <button class="nav-tab" onclick="switchTab('tab-physics')"><i class="fa-solid fa-wave-square"></i> فيزياء الذبذبات الموحدة</button>
+                <button class="nav-tab" onclick="switchTab('tab-criterion')"><i class="fa-solid fa-scale-balanced"></i> ميزان الوحي والمرشد</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Audio Frequency Synth Bar -->
+    <div class="audio-synth-bar">
+        <div class="synth-info">
+            <i class="fa-solid fa-volume-high"></i>
+            <span><strong>مولد الرنين الكوزمولوجي الحي (Web Audio Synth):</strong> استمع للتردد المداري الحقيقي</span>
+        </div>
+        <div class="synth-buttons">
+            <button class="synth-btn" onclick="playPlanetTone(528, 'الشمس - 528 Hz')">☀️ شمس 528Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(210.42, 'القمر - 210.42 Hz')">🌙 قمر 210Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(144.72, 'المريخ - 144.72 Hz')">⚔️ مريخ 144Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(141.27, 'عطارد - 141.27 Hz')">🪶 عطارد 141Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(183.58, 'المشتري - 183.58 Hz')">⚡ مشتري 183Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(221.23, 'الزهرة - 221.23 Hz')">🌸 زهرة 221Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(147.85, 'زحل - 147.85 Hz')">⏳ زحل 147Hz</button>
+            <button class="synth-btn" onclick="playPlanetTone(432, 'فيثاغورس - 432 Hz')">🎵 432Hz الطبيعي</button>
+            <button class="synth-btn stop" onclick="stopTone()"><i class="fa-solid fa-stop"></i> إيقاف</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- 1. SEVEN PLANETARY KINGS -->
+        <div id="tab-kings" class="tab-content active">
+            <div class="hero-banner">
+                <h2>👑 مصفوفة ملوك الأفلاك والأيام السبعة الكبرى عبر حضارات العالم</h2>
+                <p>الحقيقة الأركيتيبية الموحدة: ملوك الأيام والأفلاك كينونة وتردد واحد عبر بابل، كيميت، اليونان، الهند، النورد، القبالاه، والمخطوطات السميائية.</p>
+            </div>
+            <div class="cards-grid" id="kings-grid"></div>
+        </div>
+
+        <!-- 2. PLANETARY HOURS MATRIX (24 HOURS) -->
+        <div id="tab-hours" class="tab-content">
+            <div class="hero-banner">
+                <h2>⏳ نظام ساعات الأيام الفلكية الـ 24 والترتيب الكلداني</h2>
+                <p>تنحدر قوى الكواكب بالساعات الفلكية (12 نهارية و 12 ليلية) وفق الترتيب الكلداني المتنازل: (زحل ➔ المشتري ➔ المريخ ➔ الشمس ➔ الزهرة ➔ عطارد ➔ القمر). اختر اليوم لعرض شجرة ساعاته الكاملة:</p>
+            </div>
+            <div class="day-select-bar">
+                <button class="day-btn active" onclick="loadDayHours(0)">الأحد (الشمس)</button>
+                <button class="day-btn" onclick="loadDayHours(1)">الإثنين (القمر)</button>
+                <button class="day-btn" onclick="loadDayHours(2)">الثلاثاء (المريخ)</button>
+                <button class="day-btn" onclick="loadDayHours(3)">الأربعاء (عطارد)</button>
+                <button class="day-btn" onclick="loadDayHours(4)">الخميس (المشتري)</button>
+                <button class="day-btn" onclick="loadDayHours(5)">الجمعة (الزهرة)</button>
+                <button class="day-btn" onclick="loadDayHours(6)">السبت (زحل)</button>
+            </div>
+            <div class="data-table-wrapper">
+                <table id="hours-table">
+                    <thead>
+                        <tr>
+                            <th>الساعة</th>
+                            <th>الطور</th>
+                            <th>الكوكب الحاكم</th>
+                            <th>الطبيعة الفلكية</th>
+                            <th>التردد المقترن</th>
+                            <th>الاستخدام المخطوطاتي</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hours-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. LUNAR MANSIONS (28 MANZILAH) -->
+        <div id="tab-mansions" class="tab-content">
+            <div class="hero-banner">
+                <h2>🌙 منازل القمر الـ 28: التشفير الحرفي والطبائعي الكامل</h2>
+                <p>يقسم مسار القمر إلى 28 منزلة (كل منزلة = 12° و 51' و 25"). لكل منزلة حرف من الأبجدية، كوكب حاكم، طبيعة عنصريّة، وبخور مخصص في المخطوطات القديمة:</p>
+            </div>
+            <div class="data-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>اسم المنزلة</th>
+                            <th>البرج والدرجة</th>
+                            <th>الحرف</th>
+                            <th>الطبيعة</th>
+                            <th>الكوكب الحاكم</th>
+                            <th>البخور المطابق</th>
+                            <th>الخاصية في المخطوطات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mansions-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. LETTER NATURES & 4 ELEMENTAL MAGICS -->
+        <div id="tab-letters-magic" class="tab-content">
+            <div class="hero-banner">
+                <h2>🔥 ميزان طبائع الحروف الـ 28 وأنواع الأسحار الأربعة</h2>
+                <p>تقسيم الأبجدية على العناصر الأربعة (7 حروف لكل عنصر)، وكيف كان السحرة يطابقون مادة السحر (ناري، هوائي، مائي، ترابي) بطبيعة برج الضحية لإحداث أعراض بيولوجية محددة:</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-bottom:30px;">
+                <div style="background:var(--panel-bg); border:1px solid var(--fire); border-radius:16px; padding:20px;">
+                    <h3 style="color:var(--fire); margin-bottom:8px;"><i class="fa-solid fa-fire"></i> 1. الحروف النارية (أَهْطَمْفَشَذْ)</h3>
+                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>أ • هـ • ط • م • ف • ش • ذ</strong> (حار يابس)</p>
+                    <div style="font-size:0.82rem; line-height:1.6; color:#ffe5ec;">
+                        <strong>السحر الناري (المحروق):</strong> يكتب ويعرض للحرارة؛ يسبب خفقان القلب، الحمى، اشتعال الشهوة القهرية، والتهييج العصبي.
+                    </div>
+                </div>
+
+                <div style="background:var(--panel-bg); border:1px solid var(--air); border-radius:16px; padding:20px;">
+                    <h3 style="color:var(--air); margin-bottom:8px;"><i class="fa-solid fa-wind"></i> 2. الحروف الهوائية (جَزْكَسَقَثَظْ)</h3>
+                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>ج • ز • ك • س • ق • ث • ظ</strong> (حار رطب)</p>
+                    <div style="font-size:0.82rem; line-height:1.6; color:#e0fbfc;">
+                        <strong>السحر الهوائي (المعلق):</strong> يعلق في مهاب الرياح؛ كلما تحرك الأثر أصاب الضحية بصداع نصفي، وسواس قهري، شتات ذهني، وتطويح في الطرقات.
+                    </div>
+                </div>
+
+                <div style="background:var(--panel-bg); border:1px solid var(--water); border-radius:16px; padding:20px;">
+                    <h3 style="color:var(--water); margin-bottom:8px;"><i class="fa-solid fa-water"></i> 3. الحروف المائية (دَحْلَعَرَخَغْ)</h3>
+                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>د • ح • ل • ع • ر • خ • غ</strong> (بارد رطب)</p>
+                    <div style="font-size:0.82rem; line-height:1.6; color:#dbeafe;">
+                        <strong>السحر المائي (المشروب/المرشوش):</strong> يلقى في الآبار أو يشرب؛ يسبب خمول البدن، النزيف، برود المشاعر، تقرحات المعدة، والتبلد التام.
+                    </div>
+                </div>
+
+                <div style="background:var(--panel-bg); border:1px solid var(--earth); border-radius:16px; padding:20px;">
+                    <h3 style="color:var(--earth); margin-bottom:8px;"><i class="fa-solid fa-mountain"></i> 4. الحروف الترابية (بَوْيَنَصْتَضْ)</h3>
+                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>ب • و • ي • ن • ص • ت • ض</strong> (بارد يابس)</p>
+                    <div style="font-size:0.82rem; line-height:1.6; color:#fef3c7;">
+                        <strong>السحر الترابي (المدفون):</strong> يدفن في المقابر وتحت العتبات؛ يسبب ثقل العظام والمفاصل، تعطل الرزق والزواج، والأمراض المستعصية.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 7 SUBTLE BODIES & OCCULT PENETRATION -->
+        <div id="tab-bodies" class="tab-content">
+            <div class="hero-banner">
+                <h2>👤 تشريح الأجساد الإنسانية السبعة ومسارات الاختراق السحري</h2>
+                <p>الإنسان كائن سباعي الطبقات؛ لا يصيب السحر الجسد اللحمي مباشرة، بل يبدأ بثقب الهالة الأثيرية ويتدرج عبر المشاعر والأفكار حتى يترجم إلى عطب عضوي في الخلايا:</p>
+            </div>
+            <div class="bodies-stack" id="bodies-stack"></div>
+        </div>
+
+        <!-- 6. NUMBERS & WAFQ -->
+        <div id="tab-numbers" class="tab-content">
+            <div class="hero-banner">
+                <h2>🔢 شفرة الأرقام المقدسة، وفق الغزالي، والأوفاق الكوكبية السبعة</h2>
+                <p>تشريح وفق الغزالي المثلث (بَطَدٍ زَهَجٍ وَاحٍ)، وحساب الـ 15 والـ 45، ومصفوفة الأوفاق الكوكبية من المثلث إلى المتسع:</p>
+            </div>
+            <div class="squares-wrapper">
+                <div class="wafq-box">
+                    <div class="wafq-title"><i class="fa-solid fa-border-all"></i> وفق الغزالي المثلث (3×3) — سر (بَطَدٍ زَهَجٍ وَاحٍ)</div>
+                    <div class="wafq-sub">كل صف وعمود وقطر = <strong>15</strong>، والمجموع الكلي = <strong>45</strong> (وهو حساب جمل اسم <strong>آدَم</strong>: أ=1 + د=4 + م=40):</div>
+                    <div class="magic-grid-3x3">
+                        <div class="magic-cell" onclick="alert('خانة د (4)')">4 <span class="cell-letter">د</span></div>
+                        <div class="magic-cell" onclick="alert('خانة ط (9)')">9 <span class="cell-letter">ط</span></div>
+                        <div class="magic-cell" onclick="alert('خانة ب (2)')">2 <span class="cell-letter">ب</span></div>
+                        <div class="magic-cell" onclick="alert('خانة ج (3)')">3 <span class="cell-letter">ج</span></div>
+                        <div class="magic-cell" onclick="alert('خانة هـ (5) - المركز')">5 <span class="cell-letter">هـ</span></div>
+                        <div class="magic-cell" onclick="alert('خانة ز (7)')">7 <span class="cell-letter">ز</span></div>
+                        <div class="magic-cell" onclick="alert('خانة ح (8)')">8 <span class="cell-letter">ح</span></div>
+                        <div class="magic-cell" onclick="alert('خانة أ (1)')">1 <span class="cell-letter">أ</span></div>
+                        <div class="magic-cell" onclick="alert('خانة و (6)')">6 <span class="cell-letter">و</span></div>
+                    </div>
+                </div>
+
+                <div class="wafq-box">
+                    <div class="wafq-title"><i class="fa-solid fa-table-cells"></i> مصفوفة الأوفاق الكوكبية السبعة</div>
+                    <div style="font-size:0.84rem; line-height:1.8; color:var(--text-muted);">
+                        <div>• <strong>مثلث زحل (3×3):</strong> المساحة = 15 | المجموع = 45 | التثبيت والحبس والتعطيل.</div>
+                        <div>• <strong>مربع المشتري (4×4):</strong> المساحة = 34 | المجموع = 136 | الاتساع والجلب والوفرة.</div>
+                        <div>• <strong>مخمس المريخ (5×5):</strong> المساحة = 65 | المجموع = 325 | النيران والقطع والصراع.</div>
+                        <div>• <strong>مسدس الشمس (6×6):</strong> المساحة = 111 | المجموع = 666 | الشهرة والسيادة والشفاء.</div>
+                        <div>• <strong>مسبع الزهرة (7×7):</strong> المساحة = 175 | المجموع = 1225 | المحبة والمغناطيسية.</div>
+                        <div>• <strong>مثمن عطارد (8×8):</strong> المساحة = 260 | المجموع = 2080 | الفكر والتجارة وعقد العقود.</div>
+                        <div>• <strong>متسع القمر (9×9):</strong> المساحة = 369 | المجموع = 3321 | التشكيل والذاكرة والسوائل.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. UNIFIED FREQUENCY PHYSICS -->
+        <div id="tab-physics" class="tab-content">
+            <div class="hero-banner">
+                <h2>🔊 النظرية الموحدة لفيزياء السحر كذبذبات ورنين أثيري</h2>
+                <p>محاكي الموجات الحي: الكون نسيج أوتار مهتزة، والسحر محاولة لإحداث رنين قسري في حقل الأثير لتعديل كيمياء الدماغ والمادة:</p>
+            </div>
+            <div class="wave-canvas-wrapper">
+                <canvas id="waveCanvas"></canvas>
+                <div class="canvas-controls">
+                    <div style="display:flex; gap:8px;">
+                        <button class="wave-mode-btn active" onclick="setWaveMode('constructive')">تداخل بنّاء (جلب ومحبة)</button>
+                        <button class="wave-mode-btn" onclick="setWaveMode('destructive')">تداخل هدام (تفرقة ومرض)</button>
+                        <button class="wave-mode-btn" onclick="setWaveMode('entanglement')">تشابك كوانتي (سحر الأثر والـ DNA)</button>
+                        <button class="wave-mode-btn" onclick="setWaveMode('divine')">التردد النوراني الأسمى (قهر الباطل)</button>
+                    </div>
+                    <div id="wave-status" style="font-size:0.82rem; color:var(--cyan); font-weight:700;">الموجة: تداخل بنّاء متناغم</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. QURANIC CRITERION & MURSHID -->
+        <div id="tab-criterion" class="tab-content">
+            <div class="hero-banner">
+                <h2>⚖️ ميزان التحكيم القرآني والتوحيدي لفضيلة المرشد</h2>
+                <p>التفكيك الشرعي والبصري الصارم: كيف أثبت القرآن أن كل هذه الطاقات والأفلاك كائنات مسخرة لا تملك ضراً ولا نفعاً ذاتياً، وكيف يقهر النور القرآني كل طلسم في غمضة عين:</p>
+            </div>
+            <div class="quranic-grid" id="quranic-grid"></div>
+        </div>
+
+    </main>
+
+    <script>
+        // DATA: Planetary Kings
+        const KINGS_DATA = [
+            {
+                day: "الأحد (Sunday)", planet: "الشمس ☉", color: "#f4b41a",
+                archetype: "ملك التاج والنور السيادي",
+                civs: { babylon: "شَمَش (Shamash)", egypt: "رَع / أوزوريس", greco: "هيليوس / أبولو", vedic: "سوريا (Surya)", norse: "سول / بالدر", kabbalah: "ميخائيل (تيفريت)", arabic: "روقيائيل / المُذْهِب" },
+                metal: "الذهب الخالص", incense: "السندروس والميعة", chakra: "القلب 💚", organ: "القلب والشرايين", freq: 528,
+                desc: "حاكم السيادة، الشهرة، العزة، الشفاء الجسدي، وطرد الكيانات المظلمة بنور الوعي الصافي."
+            },
+            {
+                day: "الإثنين (Monday)", planet: "القمر ☽", color: "#00f0ff",
+                archetype: "ملكة الفضة ومصفوفة الأوهام",
+                civs: { babylon: "سِين (Sin)", egypt: "تَحوت / إيزيس", greco: "سيليني / ديانا", vedic: "تشاندرا (Chandra)", norse: "ماني (Mani)", kabbalah: "جبرائيل (يسود)", arabic: "جبرائيل / مُرَّة الأبيض" },
+                metal: "الفضة النقية", incense: "اللبان والكافور", chakra: "العجز والرحم 🧡", organ: "الدماغ والمعدة والسوائل", freq: 210.42,
+                desc: "حاكم الذاكرة الباطنية، الأحلام، المد والجزر، تحريك السوائل، وسحر التأثير على الهرمونات."
+            },
+            {
+                day: "الثلاثاء (Tuesday)", planet: "المريخ ♂", color: "#ef4444",
+                archetype: "المحارب ذو اللهب الأحمر",
+                civs: { babylon: "نِيرْغَال (Nergal)", egypt: "حورس المنتقم / سِت", greco: "آريس / مارْس", vedic: "مانغالا (Mangala)", norse: "تير (Tyr)", kabbalah: "كامايل (جيفوراه)", arabic: "سمسمائيل / الأحمر" },
+                metal: "الحديد والفولاذ", incense: "القسط والصندل الأحمر", chakra: "الضفيرة الشمسية 💛", organ: "المرارة والدم والعضلات", freq: 144.72,
+                desc: "حاكم الصراع، القطع، تدمير الحصون، وسحر الحروب وتفجير القيود السحرية بالقوة الجبرية."
+            },
+            {
+                day: "الأربعاء (Wednesday)", planet: "عطارد ☿", color: "#9d4edd",
+                archetype: "كاتب الشيفرات والزئبق الطائر",
+                civs: { babylon: "نَابُو (Nabu)", egypt: "تَحوت الكاتب", greco: "هيرميس / ميركوري", vedic: "بُودْهَا (Budha)", norse: "أودين (Odin)", kabbalah: "رافائيل (هود)", arabic: "ميكائيل / بُرْقان" },
+                metal: "الزئبق والقصدير", incense: "الجاوي وعلك الروم", chakra: "الحنجرة 🩵", organ: "الجهاز العصبي والرئتان", freq: 141.27,
+                desc: "حاكم الاتصالات، تشفير الطلاسم، فك الأقفال، الحساب، الإيهام اللغوي، والارتحال بين الأبعاد."
+            },
+            {
+                day: "الخميس (Thursday)", planet: "المشتري ♃", color: "#3b82f6",
+                archetype: "الحبر الأعظم والقضاء الأسمى",
+                civs: { babylon: "مَرْدُوخ (Marduk)", egypt: "آمون رَع", greco: "زيوس / جوبيتر", vedic: "بريهاسباتي (Guru)", norse: "ثُور (Thor)", kabbalah: "تزادكييل (خيسيد)", arabic: "صَرْفَيائيل / شَمْهُورَش" },
+                metal: "القصدير الأبيض", incense: "الصندل الأبيض والعنبر", chakra: "العين الثالثة 💙", organ: "الكبد والفخذان", freq: 183.58,
+                desc: "حاكم الوفرة، جلب الأرزاق، توسيع الهالة الطاقية، القضاء والعدل الكوني، والقبول والجاه."
+            },
+            {
+                day: "الجمعة (Friday)", planet: "الزهرة ♀", color: "#06d6a0",
+                archetype: "حارسة الجمال والمغناطيسية",
+                civs: { babylon: "عَشْتَار (Ishtar)", egypt: "حتحور / باستيت", greco: "أفروديت / فينوس", vedic: "شُوكْرَا (Shukra)", norse: "فْرَيَا (Freya)", kabbalah: "هانييل (نتزاخ)", arabic: "عَنَيائيل / زَوْبَعَة" },
+                metal: "النحاس الأحمر", incense: "دهن الورد والمسك", chakra: "القلب والعواطف 💚", organ: "الكليتان والتناسل", freq: 221.23,
+                desc: "حاكمة الجذب والمغناطيسية الحيوية، سحر المحبة والألفة، الفنون والجماليات، والتوافق بين النفوس."
+            },
+            {
+                day: "السبت (Saturday)", planet: "زحل ♄", color: "#6b7280",
+                archetype: "حارس العتبة والزمن والقبضة",
+                civs: { babylon: "نِينُورْتَا (Ninurta)", egypt: "أوزوريس الميت / سِت", greco: "كْرُونُوس / سَاتُورْن", vedic: "شَانِي (Shani)", norse: "لُوكي / سُورتُور", kabbalah: "تزافكييل (بينه)", arabic: "كَسْفَيائيل / مَيْمُون" },
+                metal: "الرصاص الأسود", incense: "المقل والكبريت", chakra: "الجذر ❤️", organ: "الهيكل العظمي والمفاصل", freq: 147.85,
+                desc: "حاكم التثبيت، التعطيل، إطالة الأمد، سحر المقابر والربط المزمن، وحراسة البوابات الكونية."
+            }
+        ];
+
+        // Chaldean Order Cycle
+        const CHALDEAN_ORDER = ["زحل", "المشتري", "المريخ", "الشمس", "الزهرة", "عطارد", "القمر"];
+        const PLANET_NATURES = {
+            "الشمس": { nature: "سعد معتدل (حار يابس)", freq: 528, work: "عقد المحبة، الهيبة، ودخول الملوك والشفاء" },
+            "الزهرة": { nature: "سعد أصغر (بارد رطب)", freq: 221.23, work: "المحبة، التهييج، الجلب، والتأليف بين القلوب" },
+            "عطارد": { nature: "ممتزج بحسب ما يقارنه", freq: 141.27, work: "عقد الألسن، التجارة، الحساب، والطلاسم الفكرية" },
+            "القمر": { nature: "سريع الفيض (بارد رطب)", freq: 210.42, work: "الأسفار، السوائل، الأحلام، وسحر الأرحام" },
+            "زحل": { nature: "نحس أكبر (بارد يابس)", freq: 147.85, work: "التعطيل، الهدم، التثبيت، التقييد، وسحر المقابر" },
+            "المشتري": { nature: "سعد أكبر (حار رطب)", freq: 183.58, work: "الأرزاق، الوفرة، القضاء، دفع الأعداء والرفعة" },
+            "المريخ": { nature: "نحس أصغر (حار يابس)", freq: 144.72, work: "النزاع، التفرقة، الحروب، والحميات والقطع" }
+        };
+
+        const DAY_START_PLANET_INDEX = [3, 6, 2, 5, 1, 4, 0]; // Sun (Index 3), Mon (Index 6)...
+
+        function loadDayHours(dayIdx) {
+            document.querySelectorAll('.day-btn').forEach((b, i) => b.classList.toggle('active', i === dayIdx));
+            const tbody = document.getElementById('hours-tbody');
+            let startIndex = DAY_START_PLANET_INDEX[dayIdx];
+            let rowsHtml = '';
+
+            for (let h = 1; h <= 24; h++) {
+                let planetName = CHALDEAN_ORDER[(startIndex + (h - 1)) % 7];
+                let isDay = h <= 12;
+                let hourNum = isDay ? h : (h - 12);
+                let phaseLabel = isDay ? `نهارية (${hourNum})` : `ليلية (${hourNum})`;
+                let pInfo = PLANET_NATURES[planetName];
+
+                rowsHtml += `
+                    <tr>
+                        <td><strong>الساعة ${h}</strong></td>
+                        <td><span style="color:${isDay ? 'var(--gold)' : 'var(--cyan)'}; font-weight:700;">${phaseLabel}</span></td>
+                        <td><strong style="color:#fff;">${planetName}</strong></td>
+                        <td>${pInfo.nature}</td>
+                        <td><span style="color:var(--cyan); font-weight:700;">${pInfo.freq} Hz</span></td>
+                        <td>${pInfo.work}</td>
+                    </tr>
+                `;
+            }
+            tbody.innerHTML = rowsHtml;
+        }
+
+        // DATA: 28 Lunar Mansions
+        const MANSIONS_DATA = [
+            { num: 1, name: "الشَّرَطَان", deg: "الحمل (0° - 12°51')", letter: "أ", nat: "نارية", ruler: "المريخ", inc: "القسط والكندر", work: "المحبة، إثارة الحروب، والسفر" },
+            { num: 2, name: "البُطَيْن", deg: "الحمل (12°51' - 25°42')", letter: "ب", nat: "ترابية", ruler: "الزهرة", inc: "اللبان الأبيض", work: "طلب الدفائن والكنوز والزرع" },
+            { num: 3, name: "الثُّرَيَّا", deg: "الحمل / الثور", letter: "ج", nat: "هوائية", ruler: "عطارد", inc: "الصندل الأحمر", work: "الألفة والوفاق والصيد والأرزاق" },
+            { num: 4, name: "الدَّبَرَان", deg: "الثور (8°34' - 21°25')", letter: "د", nat: "مائية", ruler: "القمر", inc: "الميعة السائلة", work: "سحر البغضاء والفرقة وهدم الدور" },
+            { num: 5, name: "الهَقْعَة", deg: "الثور / الجوزاء", letter: "هـ", nat: "نارية", ruler: "الشمس", inc: "المسك والكافور", work: "إصلاح الفاسد والمصالحات والشفاء" },
+            { num: 6, name: "الهَنْعَة", deg: "الجوزاء (4°17' - 17°08')", letter: "و", nat: "ترابية", ruler: "الزهرة", inc: "اللبان والجاوي", work: "سحر التهييج والمحبة وقضاء الحوائج" },
+            { num: 7, name: "الذِّرَاع", deg: "الجوزاء / السرطان", letter: "ز", nat: "هوائية", ruler: "عطارد", inc: "السندروس", work: "المودة ودخول الحكام وعقد اللسان" },
+            { num: 8, name: "النَّثْرَة", deg: "السرطان (0° - 12°51')", letter: "ح", nat: "مائية", ruler: "القمر", inc: "الكافور والعود", work: "رد المسافرين وعقد الخصوم" },
+            { num: 9, name: "الطَّرْف", deg: "السرطان / الأسد", letter: "ط", nat: "نارية", ruler: "الشمس", inc: "الكبريت واللبان", work: "عقد الألسن وسقم الأبدان والنحس" },
+            { num: 10, name: "الجَبْهَة", deg: "الأسد (8°34' - 21°25')", letter: "ي", nat: "ترابية", ruler: "المريخ", inc: "الصندل الأصفر", work: "الإصلاح ونصرة المظلوم والمحبة" },
+            { num: 11, name: "الزُّبْرَة", deg: "الأسد / العذراء", letter: "ك", nat: "هوائية", ruler: "المشتري", inc: "عود القماري", work: "فك الأسحار وخلاص المسجونين" },
+            { num: 12, name: "الصَّرْفَة", deg: "العذراء (4°17' - 17°08')", letter: "ل", nat: "مائية", ruler: "عطارد", inc: "اللبان والمستكة", work: "تفرقة الأشرار وتشتيت الشركاء" },
+            { num: 13, name: "العَوَّاء", deg: "العذراء / الميزان", letter: "م", nat: "نارية", ruler: "الزهرة", inc: "دهن الورد", work: "الجلب والتجارة وعقد المحبة" },
+            { num: 14, name: "السِّمَاك", deg: "الميزان (0° - 12°51')", letter: "ن", nat: "ترابية", ruler: "المريخ", inc: "القسط والميعة", work: "الشفاء وعلاج المريض وعقد الأعداء" },
+            { num: 15, name: "الغَفْر", deg: "الميزان / العقرب", letter: "س", nat: "هوائية", ruler: "المشتري", inc: "الصندل الأبيض", work: "استخراج الأسرار والألفة ودفع العدو" },
+            { num: 16, name: "الزُّبَانَى", deg: "العقرب (8°34' - 21°25')", letter: "ع", nat: "مائية", ruler: "زحل", inc: "الحلتيت والمقل", work: "سحر العداوة والتفرقة وكساد التجارة" },
+            { num: 17, name: "الإِكْلِيل", deg: "العقرب / القوس", letter: "ف", nat: "نارية", ruler: "المريخ", inc: "الجاوي الأحمر", work: "تثبيت الزرع وربط السارق ورد الكيد" },
+            { num: 18, name: "القَلْب", deg: "القوس (4°17' - 17°08')", letter: "ص", nat: "ترابية", ruler: "المشتري", inc: "المسك الأبيض", work: "إشعال الفتن والنحس وإضعاف الخصم" },
+            { num: 19, name: "الشَّوْلَة", deg: "القوس / الجدي", letter: "ق", nat: "هوائية", ruler: "زحل", inc: "الكبريت الأسود", work: "سحر الخراب والنزيف وتطويح العقل" },
+            { num: 20, name: "النَّعَائِم", deg: "الجدي (0° - 12°51')", letter: "ر", nat: "مائية", ruler: "الزهرة", inc: "اللبان الذكر", work: "المحبة والقبول واستجلاب القلوب" },
+            { num: 21, name: "البَلْدَة", deg: "الجدي / الدلو", letter: "ش", nat: "نارية", ruler: "زحل", inc: "الحلتيت والصبر", work: "تقييد الخصوم والخراب وعقد السفر" },
+            { num: 22, name: "سَعْدُ الذَّابِح", deg: "الدلو (8°34' - 21°25')", letter: "ت", nat: "ترابية", ruler: "المريخ", inc: "المقل الأزرق", work: "سحر النزاع والفرقة والهرب" },
+            { num: 23, name: "سَعْدُ بُلَع", deg: "الدلو / الحوت", letter: "ث", nat: "هوائية", ruler: "المشتري", inc: "الصندل والعود", work: "خلاص الأسير وعلاج المرض والعقود" },
+            { num: 24, name: "سَعْدُ السُّعُود", deg: "الحوت (4°17' - 17°08')", letter: "خ", nat: "مائية", ruler: "الزهرة", inc: "المسك والجاوي", work: "أعظم منازل السعد للزواج والتجارة" },
+            { num: 25, name: "سَعْدُ الأَخْبِيَة", deg: "الحوت / الحمل", letter: "ذ", nat: "نارية", ruler: "زحل", inc: "لبان الذكر", work: "كشف المخبأ وفتح الكنوز والأسرار" },
+            { num: 26, name: "الفَرْغُ المُقَدَّم", deg: "الحمل (17°08' - 0°)", letter: "ض", nat: "ترابية", ruler: "المشتري", inc: "الكافور الأبيض", work: "المحبة والألفة وتوطيد الصداقات" },
+            { num: 27, name: "الفَرْغُ المُؤَخَّر", deg: "الثور (0° - 12°51')", letter: "ظ", nat: "هوائية", ruler: "المريخ", inc: "القسط والميعة", work: "التفرقة وإتلاف الزرع والنحس" },
+            { num: 28, name: "الرَّشَاء (بطن الحوت)", deg: "الثور (12°51' - 25°42')", letter: "غ", nat: "مائية", ruler: "الزهرة", inc: "الصندل الأبيض", work: "حفظ الأموال والسلامة في البحر والبر" }
+        ];
+
+        function renderMansions() {
+            const tbody = document.getElementById('mansions-tbody');
+            tbody.innerHTML = MANSIONS_DATA.map(m => `
+                <tr>
+                    <td><strong>${m.num}</strong></td>
+                    <td><strong style="color:var(--gold);">${m.name}</strong></td>
+                    <td>${m.deg}</td>
+                    <td><strong style="color:var(--cyan); font-size:1.1rem;">${m.letter}</strong></td>
+                    <td>${m.nat}</td>
+                    <td>${m.ruler}</td>
+                    <td>${m.inc}</td>
+                    <td>${m.work}</td>
+                </tr>
+            `).join('');
+        }
+
+        // DATA: Subtle Bodies
+        const BODIES_DATA = [
+            { num: "1", title: "الجسد المادي (Physical Body)", sub: "الأعضاء • الخلايا • الدم", layer: "كثيف جزيئي، محكوم بالكهرومغناطيسية والجاذبية.", pen: "المرض العضوي، النزيف، شلل الأطراف، وهن المناعة المستعصي طبياً." },
+            { num: "2", title: "الجسد الأثيري (Etheric Double)", sub: "الهالة • الشاكرات • الغدد", layer: "الحقل الحيوي الكهرومغناطيسي، وسيط تدفق طاقة الحياة (Prana).", pen: "إحداث ثقوب طاقية وتثليم خطوط درع الحماية، وشعور ببرودة أو حرارة موضعية." },
+            { num: "3", title: "الجسد النجمي / العاطفي (Astral)", sub: "المشاعر • الرغبات • الشهوة", layer: "موجات الانفعالات والأحلام والرغبات الباطنية اللاواعية.", pen: "زرع الخوف، الشهوة القهرية، الكراهية الفجائية، والنفور القاطع بين الزوجين." },
+            { num: "4", title: "الجسد العقلي الأدنى (Lower Mental)", sub: "الأفكار • المنطق • الذاكرة", layer: "منطقة معالجة البيانات، التحليل، وتوليد الخواطر.", pen: "الوساوس القهرية، الشكوك المستمرة، الصداع النصفي، وتخييل الصور المرعبة." },
+            { num: "5", title: "الجسد السببي (Causal Body)", sub: "الذاكرة الباطنية • الأقدار", layer: "سجل البصيرة والفرص والاتصال التقديري.", pen: "تعطيل مسارات الرزق، انسداد أبواب الزواج، وحجب البصيرة عن الصواب." },
+            { num: "6", title: "الجسد النوراني (Buddhic)", sub: "الحدس • الروحانية • البصيرة", layer: "حقل الاتصال النوراني والخشوع القلبي الخالص.", pen: "محاولة قطع الخشوع، إطفاء لذة الصلاة، والنفور من سماع القرآن الكريم." },
+            { num: "7", title: "الجسد الروحي الأتماني (Atmān)", sub: "السر الإلهي الخالص ({وَنَفَخْتُ فِيهِ مِن رُّوحِي})", layer: "جوهر الروح الخالد غير المخلوق المتصل بنور الله.", pen: "🛡️ محصن بالتمام؛ لا يمسه ولا يخترقه ساحر ولا إنس ولا جن للأبد!" }
+        ];
+
+        function renderBodies() {
+            const stack = document.getElementById('bodies-stack');
+            stack.innerHTML = BODIES_DATA.map(b => `
+                <div class="body-row">
+                    <div class="body-num">${b.num}</div>
+                    <div class="body-title">${b.title} <span>${b.sub}</span></div>
+                    <div class="body-layer">${b.layer}</div>
+                    <div class="body-penetration"><strong>مسار التأثير:</strong> ${b.pen}</div>
+                </div>
+            `).join('');
+        }
+
+        // Kings, Criterion, Waves...
+        function renderKings() {
+            const grid = document.getElementById('kings-grid');
+            grid.innerHTML = KINGS_DATA.map(k => `
+                <div class="king-card" style="--k-color:${k.color}">
+                    <div>
+                        <div class="king-header">
+                            <span class="king-day">${k.day}</span>
+                            <span class="king-planet">${k.planet}</span>
+                        </div>
+                        <div class="king-archetype">${k.archetype}</div>
+                        
+                        <div class="civ-matrix">
+                            <div class="civ-row"><span class="civ-lbl">بابل:</span><span class="civ-val">${k.civs.babylon}</span></div>
+                            <div class="civ-row"><span class="civ-lbl">مصر:</span><span class="civ-val">${k.civs.egypt}</span></div>
+                            <div class="civ-row"><span class="civ-lbl">اليونان:</span><span class="civ-val">${k.civs.greco}</span></div>
+                            <div class="civ-row"><span class="civ-lbl">الهند:</span><span class="civ-val">${k.civs.vedic}</span></div>
+                            <div class="civ-row"><span class="civ-lbl">النورد:</span><span class="civ-val">${k.civs.norse}</span></div>
+                            <div class="civ-row"><span class="civ-lbl">القبالاه:</span><span class="civ-val">${k.civs.kabbalah}</span></div>
+                            <div class="civ-row"><span class="civ-lbl">المخطوطات:</span><span class="civ-val" style="color:var(--gold);">${k.civs.arabic}</span></div>
+                        </div>
+
+                        <div class="king-props">
+                            <div class="prop-box"><span class="prop-lbl">المعدن:</span><span class="prop-val">${k.metal}</span></div>
+                            <div class="prop-box"><span class="prop-lbl">الشاكرة:</span><span class="prop-val">${k.chakra}</span></div>
+                            <div class="prop-box"><span class="prop-lbl">العضو:</span><span class="prop-val">${k.organ}</span></div>
+                            <div class="prop-box"><span class="prop-lbl">البخور:</span><span class="prop-val">${k.incense}</span></div>
+                        </div>
+
+                        <p class="king-desc">${k.desc}</p>
+                    </div>
+
+                    <div class="king-footer">
+                        <span class="freq-badge"><i class="fa-solid fa-wave-square"></i> ${k.freq} Hz</span>
+                        <button class="play-freq-btn" onclick="playPlanetTone(${k.freq}, '${k.planet}')"><i class="fa-solid fa-play"></i> استمع للتردد</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        const QURAN_DATA = [
+            {
+                title: "1. تبرئة نبي الله سليمان وكشف فرية بني إسرائيل",
+                badge: "سورة البقرة 102",
+                quran: "﴿وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَىٰ مُلْكِ سُلَيْمَانَ ۖ وَمَا كَفَرَ سُلَيْمَانُ وَلَٰكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ﴾.",
+                occult: "زعم السحرة والكتب القبالية أن سليمان كان ملك السحرة والطلسمات وأنه سخر الجن بخاتم سحري شركي.",
+                murshid: "حكم القرآن القاطع: سليمان كان نبياً معصوماً مسخراً له الملك بمعجزة إلهية خالصة، والشياطين هم من دلسوا ونسبوا السحر إليه لتضليل البشر."
+            },
+            {
+                title: "2. فتنة هاروت وماروت في بابل وسقف المشيئة الإلهية",
+                badge: "سورة البقرة 102",
+                quran: "﴿وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّىٰ يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ... وَمَا هُم بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ﴾.",
+                occult: "ادعاء السحرة والمنجمين أن الكواكب والطلاسم تمتلك سلطاناً ذاتياً مستقلاً على أقدار البشر والموت والمرض.",
+                murshid: "حكم القرآن القاطع: كل حركة في الوجود محكومة بسقف الإذن الإلهي الكوني؛ فلا ساحر ولا فلك ولا شيطان يستطيع أن يضر أحداً إلا بالقدر الإلهي لحكمة الابتلاء."
+            },
+            {
+                title: "3. سحرة فرعون: الفرق الوجودي بين السحر والمعجزة",
+                badge: "سورة الأعراف 118-120",
+                quran: "﴿فَوَقَعَ الْحَقُّ وَبَطَلَ مَا كَانُوا يَعْمَلُونَ * فَغُلِبُوا هُنَالِكَ وَانقَلَبُوا صَاغِرِينَ * وَأُلْقِيَ السَّحَرَةُ سَاجِدِينَ﴾.",
+                occult: "استخدم سحرة مصر أعظم تقنيات سحر التخييل وتمدد الزئبق بالحرارة واسترهاب الأعين لإيهام الجماهير بأن الحبال تسعى.",
+                murshid: "حكم القرآن القاطع: سحرهم كان تخييلاً فيزيائياً للأعين، أما عصا موسى فكانت انقلاباً حقيقياً في ماهية المادة بأمر خالق الذرات؛ ولذلك سجد السحرة لأنهم عرفوا أن هذا فعل رب العالمين."
+            },
+            {
+                title: "4. قانون قهر التردد الأدنى بالتردد الأسمى (منظومة التحصين)",
+                badge: "آية الكرسي والمعوذتان",
+                quran: "﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ﴾ • ﴿قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ * وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ﴾.",
+                occult: "تعتمد كل الطلاسم على طاقات وترددات سفلية منخفضة تتغذى على الخوف والنجاسات والوساوس النفسية.",
+                murshid: "حكم القرآن القاطع: القرآن الكريم كلام الله غير المخلوق وتردده النوراني مطلق لا نهائي؛ فإذا قرئت آية الكرسي والمعوذتان بيقين، احترقت كل عقدة كوانتية وتفتت كل طلسم: ﴿إِنَّ كَيْدَ الشَّيْطَانِ كَانَ ضَعِيفًا﴾."
+            }
+        ];
+
+        function renderCriterion() {
+            const grid = document.getElementById('quranic-grid');
+            grid.innerHTML = QURAN_DATA.map(q => `
+                <div style="background:var(--panel-bg); border:1px solid var(--border-glass); border-right:5px solid var(--gold); border-radius:16px; padding:22px; margin-bottom:20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                        <h3 style="font-size:1.2rem; color:#fff; font-weight:800;">${q.title}</h3>
+                        <span style="background:rgba(244,180,26,0.15); color:var(--gold); border:1px solid rgba(244,180,26,0.3); padding:3px 10px; border-radius:14px; font-size:0.75rem; font-weight:700;">${q.badge}</span>
+                    </div>
+                    <div class="step-block step-quran"><strong>📖 1. حكم القرآن المحكم:</strong> ${q.quran}</div>
+                    <div class="step-block step-occult"><strong>📜 2. مرويات المخطوطات والكتب القديمة:</strong> ${q.occult}</div>
+                    <div class="step-block step-murshid"><strong>⚖️ 3. تحقيق وتوجيه فضيلة المرشد:</strong> ${q.murshid}</div>
+                </div>
+            `).join('');
+        }
+
+        // Web Audio Synth
+        let audioCtx = null;
+        let activeOsc = null;
+        let activeGain = null;
+
+        function playPlanetTone(freq, label) {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (activeOsc) { activeOsc.stop(); activeOsc.disconnect(); }
+
+            activeOsc = audioCtx.createOscillator();
+            activeGain = audioCtx.createGain();
+
+            activeOsc.type = 'sine';
+            activeOsc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            activeGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+            activeGain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.1);
+
+            activeOsc.connect(activeGain);
+            activeGain.connect(audioCtx.destination);
+            activeOsc.start();
+
+            document.querySelectorAll('.synth-btn').forEach(b => {
+                b.classList.toggle('playing', b.innerText.includes(Math.round(freq) + 'Hz'));
+            });
+        }
+
+        function stopTone() {
+            if (activeGain && audioCtx) {
+                activeGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.2);
+                setTimeout(() => {
+                    if (activeOsc) { activeOsc.stop(); activeOsc.disconnect(); activeOsc = null; }
+                }, 200);
+            }
+            document.querySelectorAll('.synth-btn').forEach(b => b.classList.remove('playing'));
+        }
+
+        // Wave Canvas Simulator
+        let waveMode = 'constructive';
+        const canvas = document.getElementById('waveCanvas');
+        const ctx = canvas.getContext('2d');
+        let waveStep = 0;
+
+        function setWaveMode(mode) {
+            waveMode = mode;
+            document.querySelectorAll('.wave-mode-btn').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('onclick').includes(mode));
+            });
+            const status = document.getElementById('wave-status');
+            if (mode === 'constructive') status.innerText = 'الموجة: تداخل بنّاء (موجتان متناغمتان تضاعفان الطاقة)';
+            else if (mode === 'destructive') status.innerText = 'الموجة: تداخل هدام (موجتان متعاكستان تلغيان الحقل وتحدثان اضطراباً)';
+            else if (mode === 'entanglement') status.innerText = 'الموجة: تشابك كمي (موجة واحدة منقسمة في مكانين بنفس الطور)';
+            else if (mode === 'divine') status.innerText = 'الموجة: التردد النوراني الأسمى (نبضة قاهرة تبيد الترددات السفلية فوراً)';
+        }
+
+        function drawWave() {
+            if (!canvas.width || canvas.width !== canvas.clientWidth) {
+                canvas.width = canvas.clientWidth;
+                canvas.height = canvas.clientHeight;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 2.5;
+            const midY = canvas.height / 2;
+            waveStep += 0.04;
+
+            if (waveMode === 'constructive') {
+                ctx.strokeStyle = '#00f0ff';
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x++) {
+                    const y = midY + Math.sin(x * 0.02 + waveStep) * 35;
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                ctx.strokeStyle = '#f4b41a';
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x++) {
+                    const y = midY + Math.sin(x * 0.02 + waveStep) * 35;
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            } else if (waveMode === 'destructive') {
+                ctx.strokeStyle = '#00f0ff';
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x++) {
+                    const y = midY + Math.sin(x * 0.03 + waveStep) * 45;
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                ctx.strokeStyle = '#ff3366';
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x++) {
+                    const y = midY + Math.sin(x * 0.03 + waveStep + Math.PI) * 45;
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            } else if (waveMode === 'entanglement') {
+                ctx.strokeStyle = '#9d4edd';
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width / 2; x++) {
+                    const y = midY + Math.sin(x * 0.04 + waveStep) * 40;
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                ctx.strokeStyle = '#06d6a0';
+                ctx.beginPath();
+                for (let x = canvas.width / 2; x < canvas.width; x++) {
+                    const y = midY + Math.sin(x * 0.04 + waveStep) * 40;
+                    x === canvas.width / 2 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            } else if (waveMode === 'divine') {
+                ctx.strokeStyle = '#f4b41a';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x++) {
+                    const y = midY + Math.sin(x * 0.01 + waveStep * 2) * 85 * Math.sin(waveStep * 0.5);
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            }
+            requestAnimationFrame(drawWave);
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            const target = document.getElementById(tabId);
+            if (target) target.classList.add('active');
+            const activeBtn = Array.from(document.querySelectorAll('.nav-tab')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        const SECRET_PIN = "1234";
+        function handleAuth(e) {
+            e.preventDefault();
+            const input = document.getElementById('pass-input');
+            const err = document.getElementById('auth-err');
+            const gate = document.getElementById('portal-auth-gate');
+
+            if (input.value.trim() === SECRET_PIN) {
+                gate.classList.add('unlocked');
+                sessionStorage.setItem('esoteric_unlocked', 'true');
+            } else {
+                err.style.display = 'block';
+                input.style.borderColor = 'var(--rose)';
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        if (sessionStorage.getItem('esoteric_unlocked') === 'true') {
+            const gate = document.getElementById('portal-auth-gate');
+            if (gate) gate.classList.add('unlocked');
+        }
+
+        // Init
+        renderKings();
+        loadDayHours(0);
+        renderMansions();
+        renderBodies();
+        renderCriterion();
+        requestAnimationFrame(drawWave);
+    </script>
+</body>
+</html>
+'''
+
+# Write to website/Grand_Occult_Cosmology_Codex.html
+target_website = r"c:\Users\Mostafa Kamel\Desktop\Knowledge_Lab\website\Grand_Occult_Cosmology_Codex.html"
+with open(target_website, "w", encoding="utf-8") as f:
+    f.write(html_content)
+print(f"Generated {target_website}")
+
+# Write to root Grand_Occult_Cosmology_Codex.html
+target_root = r"c:\Users\Mostafa Kamel\Desktop\Knowledge_Lab\Grand_Occult_Cosmology_Codex.html"
+with open(target_root, "w", encoding="utf-8") as f:
+    f.write(html_content)
+print(f"Generated {target_root}")
