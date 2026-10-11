@@ -744,13 +744,13 @@ def build_luxury_portal():
         border-color: rgba(255, 209, 102, 0.3);
     }
 
-    .tag-occult {
+    .tag-occult-lab-lab {
         background: rgba(157, 78, 221, 0.15);
         color: #d8b4fe;
         border-color: rgba(157, 78, 221, 0.35);
     }
 
-    .tag-resonance {
+    .tag-occult-lab-lab {
         background: rgba(0, 240, 255, 0.12);
         color: var(--cyan-accent);
         border-color: rgba(0, 240, 255, 0.35);
@@ -1136,9 +1136,8 @@ def build_luxury_portal():
             <div class="hub-filter-bar">
                 <div class="hub-filter-pills">
                     <button class="hub-filter-pill active" onclick="filterHubCategory('ALL')">الكل (17)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('quran')">كوزمولوجيا الوحي (8)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('occult')">سفر النواميس (6)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('resonance')">المختبر الترددي (3)</button>
+                    <button class="hub-filter-pill" onclick="filterHubCategory('quran')">الركن الأول: كوزمولوجيا الوحي والنبوات (8)</button>
+                    <button class="hub-filter-pill" onclick="filterHubCategory('occult_lab')">الركن الثاني: سفر النواميس والمختبر الرياضي (9)</button>
                 </div>
                 <div class="hub-search-box">
                     <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في الأبواب الـ 17 والمفاهيم..." oninput="filterHubSearch(this.value)">
@@ -1268,9 +1267,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 9 -->
-                <div class="hub-door-card" data-cat="occult" onclick="navigateToChamber('tab-kings')" style="--door-accent:#d8b4fe;">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-kings')" style="--door-accent:#d8b4fe;">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult">سفر النواميس</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 09</span>
                     </div>
                     <div class="card-icon-box">👑</div>
@@ -1283,9 +1282,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 10 -->
-                <div class="hub-door-card" data-cat="occult" onclick="navigateToChamber('tab-zodiac-angels')" style="--door-accent:#d8b4fe;">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-zodiac-angels')" style="--door-accent:#d8b4fe;">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult">سفر النواميس</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 10</span>
                     </div>
                     <div class="card-icon-box">🌟</div>
@@ -1298,9 +1297,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 11 -->
-                <div class="hub-door-card" data-cat="occult" onclick="navigateToChamber('tab-hours')" style="--door-accent:#d8b4fe;">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-hours')" style="--door-accent:#d8b4fe;">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult">سفر النواميس</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 11</span>
                     </div>
                     <div class="card-icon-box">⏱️</div>
@@ -1313,9 +1312,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 12 -->
-                <div class="hub-door-card" data-cat="occult" onclick="navigateToChamber('tab-mansions')" style="--door-accent:#d8b4fe;">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-mansions')" style="--door-accent:#d8b4fe;">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult">سفر النواميس</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 12</span>
                     </div>
                     <div class="card-icon-box">🌙</div>
@@ -1328,9 +1327,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 13 -->
-                <div class="hub-door-card" data-cat="occult" onclick="navigateToChamber('tab-letters-magic')" style="--door-accent:#d8b4fe;">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-letters-magic')" style="--door-accent:#d8b4fe;">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult">سفر النواميس</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 13</span>
                     </div>
                     <div class="card-icon-box">🪶</div>
@@ -1343,9 +1342,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 14 -->
-                <div class="hub-door-card" data-cat="occult" onclick="navigateToChamber('tab-bodies')" style="--door-accent:#d8b4fe;">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-bodies')" style="--door-accent:#d8b4fe;">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult">سفر النواميس</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 14</span>
                     </div>
                     <div class="card-icon-box">🧬</div>
@@ -1358,9 +1357,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 15 -->
-                <div class="hub-door-card" data-cat="resonance" onclick="navigateToChamber('tab-numbers')" style="--door-accent:var(--cyan-accent);">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-numbers')" style="--door-accent:var(--cyan-accent);">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-resonance">المختبر الترددي</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 15</span>
                     </div>
                     <div class="card-icon-box">🔢</div>
@@ -1373,9 +1372,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 16 -->
-                <div class="hub-door-card" data-cat="resonance" onclick="navigateToChamber('tab-physics')" style="--door-accent:var(--cyan-accent);">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-physics')" style="--door-accent:var(--cyan-accent);">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-resonance">المختبر الترددي</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 16</span>
                     </div>
                     <div class="card-icon-box">🔊</div>
@@ -1388,9 +1387,9 @@ def build_luxury_portal():
                 </div>
 
                 <!-- DOOR 17 -->
-                <div class="hub-door-card" data-cat="resonance" onclick="navigateToChamber('tab-criterion')" style="--door-accent:var(--cyan-accent);">
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-criterion')" style="--door-accent:var(--cyan-accent);">
                     <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-resonance">المختبر الترددي</span>
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
                         <span class="card-door-number">الباب 17</span>
                     </div>
                     <div class="card-icon-box">⚖️</div>
@@ -1565,8 +1564,7 @@ def build_luxury_portal():
         const activeText = activePill ? activePill.innerText : '';
         let currentCat = 'ALL';
         if (activeText.includes('الوحي')) currentCat = 'quran';
-        if (activeText.includes('النواميس')) currentCat = 'occult';
-        if (activeText.includes('الترددي')) currentCat = 'resonance';
+        if (activeText.includes('النواميس') || activeText.includes('المختبر')) currentCat = 'occult_lab';
 
         document.querySelectorAll('.hub-door-card').forEach(card => {
             const cardCat = card.getAttribute('data-cat');
