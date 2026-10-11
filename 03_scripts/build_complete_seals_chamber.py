@@ -236,30 +236,96 @@ def build_master_palm_atlas_svg():
 '''
 
 def build_interactive_sigils_js():
-    js_entries = []
+    import json
+    entries = []
+
+    def sanitize(text):
+        if not text:
+            return ""
+        return text.replace('"', '«').replace("'", '»')
+
+    def sanitize_svg(svg_str):
+        if not svg_str:
+            return ""
+        return svg_str.replace('"', "'")
+
     # Include original 7 solomon & planets
-    js_entries.append("{ id: 'solomon_seal', title: 'خاتم سليمان الأعظم', source: 'شمس المعارف الكبرى', desc: 'الرمز الجامع للأسماء السبعة العظمى، يحقق التوازن بين الروح والجسد والمادة.', svg: '<polygon points=\"50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36\" fill=\"none\" stroke=\"#f4b41a\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"16\" fill=\"none\" stroke=\"#00f0ff\" stroke-width=\"3\"/>' }")
-    js_entries.append("{ id: 'ghazali_3x3', title: 'مثلث الغزالي (بطد زهج واح)', source: 'المنقذ من الضلال والأوفاق', desc: 'المربع السحري 3×3 ذو المجموع 15 ومحور التوازن 5. أقدم مصفوفة توازن رياضي في المخطوطات.', svg: '<rect x=\"15\" y=\"15\" width=\"70\" height=\"70\" fill=\"none\" stroke=\"#f4b41a\" stroke-width=\"3\"/><line x1=\"38\" y1=\"15\" x2=\"38\" y2=\"85\" stroke=\"#00f0ff\" stroke-width=\"2\"/><line x1=\"62\" y1=\"15\" x2=\"62\" y2=\"85\" stroke=\"#00f0ff\" stroke-width=\"2\"/><line x1=\"15\" y1=\"38\" x2=\"85\" y2=\"38\" stroke=\"#00f0ff\" stroke-width=\"2\"/><line x1=\"15\" y1=\"62\" x2=\"85\" y2=\"62\" stroke=\"#00f0ff\" stroke-width=\"2\"/><circle cx=\"50\" cy=\"50\" r=\"5\" fill=\"#ef4444\"/>' }")
+    entries.append({
+        "id": "solomon_seal",
+        "title": "خاتم سليمان الأعظم",
+        "source": "شمس المعارف الكبرى",
+        "desc": "الرمز الجامع للأسماء السبعة العظمى، يحقق التوازن بين الروح والجسد والمادة.",
+        "svg": sanitize_svg('<polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" fill="none" stroke="#f4b41a" stroke-width="4"/><circle cx="50" cy="50" r="16" fill="none" stroke="#00f0ff" stroke-width="3"/>')
+    })
+    entries.append({
+        "id": "ghazali_3x3",
+        "title": "مثلث الغزالي (بطد زهج واح)",
+        "source": "المنقذ من الضلال والأوفاق",
+        "desc": "المربع السحري 3×3 ذو المجموع 15 ومحور التوازن 5. أقدم مصفوفة توازن رياضي في المخطوطات.",
+        "svg": sanitize_svg('<rect x="15" y="15" width="70" height="70" fill="none" stroke="#f4b41a" stroke-width="3"/><line x1="38" y1="15" x2="38" y2="85" stroke="#00f0ff" stroke-width="2"/><line x1="62" y1="15" x2="62" y2="85" stroke="#00f0ff" stroke-width="2"/><line x1="15" y1="38" x2="85" y2="38" stroke="#00f0ff" stroke-width="2"/><line x1="15" y1="62" x2="85" y2="62" stroke="#00f0ff" stroke-width="2"/><circle cx="50" cy="50" r="5" fill="#ef4444"/>')
+    })
 
     for s in SEALS_30_DATA:
-        clean_svg = s["svg"].replace('"', '\\"')
-        s_id = s["id"]
-        s_title = s["title"]
-        s_source = s["source"]
-        s_desc = s["desc_ms"]
-        entry = f"{{ id: '{s_id}', title: '{s_title}', source: '{s_source}', desc: '{s_desc}', svg: '{clean_svg}' }}"
-        js_entries.append(entry)
+        entries.append({
+            "id": s["id"],
+            "title": sanitize(s["title"]),
+            "source": sanitize(s["source"]),
+            "desc": sanitize(s["desc_ms"]),
+            "svg": sanitize_svg(s["svg"])
+        })
 
     # Planetary seals
-    js_entries.append("{ id: 'saturn_sigil', title: 'طلسم زحل (أجيئيل)', source: 'Agrippa - De Occulta Philosophia', desc: 'مبني على الوفق المثلث 3×3، يستجلب طاقة التثبيت والانضباط الصارم.', svg: '<line x1=\"20\" y1=\"20\" x2=\"80\" y2=\"20\" stroke=\"#94a3b8\" stroke-width=\"4\"/><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\" stroke=\"#94a3b8\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"80\" r=\"5\" fill=\"#94a3b8\"/>' }")
-    js_entries.append("{ id: 'jupiter_sigil', title: 'طلسم المشتري (يوفائيل)', source: 'Picatrix / غاية الحكيم', desc: 'مبني على الوفق المربع 4×4، يجذب طاقة التوسع والهيبة وسعة الرزق.', svg: '<path d=\"M 25 25 L 50 75 L 75 25\" fill=\"none\" stroke=\"#d8b4fe\" stroke-width=\"4\"/><line x1=\"35\" y1=\"50\" x2=\"65\" y2=\"50\" stroke=\"#d8b4fe\" stroke-width=\"4\"/>' }")
-    js_entries.append("{ id: 'mars_sigil', title: 'طلسم المريخ (غرافائيل)', source: 'Agrippa Lib. II', desc: 'مبني على الوفق المخمس 5×5، يركز طاقة الحسم والشجاعة ودحر العدوان.', svg: '<line x1=\"20\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"#ef4444\" stroke-width=\"4\"/><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\" stroke=\"#ef4444\" stroke-width=\"4\"/><polygon points=\"80,50 65,40 65,60\" fill=\"#ef4444\"/>' }")
-    js_entries.append("{ id: 'sun_sigil', title: 'طلسم الشمس (ناخيئيل)', source: 'شمس المعارف وبسط الحروف', desc: 'مبني على الوفق المسدس 6×6، يعزز الحيوية الجسدية والإشراق القيادي.', svg: '<circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"#f4b41a\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"7\" fill=\"#f4b41a\"/>' }")
-    js_entries.append("{ id: 'venus_sigil', title: 'طلسم الزهرة (هاجيئيل)', source: 'غاية الحكيم والمجريطي', desc: 'مبني على الوفق المسبع 7×7، يولد تردد الألفة والمحبة وتناغم المشاعر.', svg: '<circle cx=\"50\" cy=\"35\" r=\"18\" fill=\"none\" stroke=\"#06d6a0\" stroke-width=\"4\"/><line x1=\"50\" y1=\"53\" x2=\"50\" y2=\"85\" stroke=\"#06d6a0\" stroke-width=\"4\"/><line x1=\"35\" y1=\"70\" x2=\"65\" y2=\"70\" stroke=\"#06d6a0\" stroke-width=\"4\"/>' }")
-    js_entries.append("{ id: 'mercury_sigil', title: 'طلسم عطارد (تيريئيل)', source: 'Agrippa Kamea', desc: 'مبني على الوفق المثمن 8×8، يمنح سرعة الاستيعاب والفصاحة والتجارة.', svg: '<path d=\"M 35 15 C 45 25, 55 25, 65 15\" fill=\"none\" stroke=\"#00f0ff\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"40\" r=\"15\" fill=\"none\" stroke=\"#00f0ff\" stroke-width=\"3\"/><line x1=\"50\" y1=\"55\" x2=\"50\" y2=\"85\" stroke=\"#00f0ff\" stroke-width=\"3\"/><line x1=\"35\" y1=\"70\" x2=\"65\" y2=\"70\" stroke=\"#00f0ff\" stroke-width=\"3\"/>' }")
-    js_entries.append("{ id: 'moon_sigil', title: 'طلسم القمر (ملكيئيل)', source: 'أسرار الحكماء', desc: 'مبني على الوفق المتسع 9×9، ينشط الإدراك الحدسي والأحلام الصادقة.', svg: '<path d=\"M 40 20 A 30 30 0 0 0 40 80 A 22 22 0 0 1 40 20 Z\" fill=\"#60a5fa\"/>' }")
+    entries.append({
+        "id": "saturn_sigil",
+        "title": "طلسم زحل (أجيئيل)",
+        "source": "Agrippa - De Occulta Philosophia",
+        "desc": "مبني على الوفق المثلث 3×3، يستجلب طاقة التثبيت والانضباط الصارم.",
+        "svg": sanitize_svg('<line x1="20" y1="20" x2="80" y2="20" stroke="#94a3b8" stroke-width="4"/><line x1="50" y1="20" x2="50" y2="80" stroke="#94a3b8" stroke-width="4"/><circle cx="50" cy="80" r="5" fill="#94a3b8"/>')
+    })
+    entries.append({
+        "id": "jupiter_sigil",
+        "title": "طلسم المشتري (يوفائيل)",
+        "source": "Picatrix / غاية الحكيم",
+        "desc": "مبني على الوفق المربع 4×4، يجذب طاقة التوسع والهيبة وسعة الرزق.",
+        "svg": sanitize_svg('<path d="M 25 25 L 50 75 L 75 25" fill="none" stroke="#d8b4fe" stroke-width="4"/><line x1="35" y1="50" x2="65" y2="50" stroke="#d8b4fe" stroke-width="4"/>')
+    })
+    entries.append({
+        "id": "mars_sigil",
+        "title": "طلسم المريخ (غرافائيل)",
+        "source": "Agrippa Lib. II",
+        "desc": "مبني على الوفق المخمس 5×5، يركز طاقة الحسم والشجاعة ودحر العدوان.",
+        "svg": sanitize_svg('<line x1="20" y1="50" x2="80" y2="50" stroke="#ef4444" stroke-width="4"/><line x1="50" y1="20" x2="50" y2="80" stroke="#ef4444" stroke-width="4"/><polygon points="80,50 65,40 65,60" fill="#ef4444"/>')
+    })
+    entries.append({
+        "id": "sun_sigil",
+        "title": "طلسم الشمس (ناخيئيل)",
+        "source": "شمس المعارف وبسط الحروف",
+        "desc": "مبني على الوفق المسدس 6×6، يعزز الحيوية الجسدية والإشراق القيادي.",
+        "svg": sanitize_svg('<circle cx="50" cy="50" r="28" fill="none" stroke="#f4b41a" stroke-width="4"/><circle cx="50" cy="50" r="7" fill="#f4b41a"/>')
+    })
+    entries.append({
+        "id": "venus_sigil",
+        "title": "طلسم الزهرة (هاجيئيل)",
+        "source": "غاية الحكيم والمجريطي",
+        "desc": "مبني على الوفق المسبع 7×7، يولد تردد الألفة والمحبة وتناغم المشاعر.",
+        "svg": sanitize_svg('<circle cx="50" cy="35" r="18" fill="none" stroke="#06d6a0" stroke-width="4"/><line x1="50" y1="53" x2="50" y2="85" stroke="#06d6a0" stroke-width="4"/><line x1="35" y1="70" x2="65" y2="70" stroke="#06d6a0" stroke-width="4"/>')
+    })
+    entries.append({
+        "id": "mercury_sigil",
+        "title": "طلسم عطارد (تيريئيل)",
+        "source": "Agrippa Kamea",
+        "desc": "مبني على الوفق المثمن 8×8، يمنح سرعة الاستيعاب والفصاحة والتجارة.",
+        "svg": sanitize_svg('<path d="M 35 15 C 45 25, 55 25, 65 15" fill="none" stroke="#00f0ff" stroke-width="3"/><circle cx="50" cy="40" r="15" fill="none" stroke="#00f0ff" stroke-width="3"/><line x1="50" y1="55" x2="50" y2="85" stroke="#00f0ff" stroke-width="3"/><line x1="35" y1="70" x2="65" y2="70" stroke="#00f0ff" stroke-width="3"/>')
+    })
+    entries.append({
+        "id": "moon_sigil",
+        "title": "طلسم القمر (ملكيئيل)",
+        "source": "أسرار الحكماء",
+        "desc": "مبني على الوفق المتسع 9×9، ينشط الإدراك الحدسي والأحلام الصادقة.",
+        "svg": sanitize_svg('<path d="M 40 20 A 30 30 0 0 0 40 80 A 22 22 0 0 1 40 20 Z" fill="#60a5fa"/>')
+    })
 
-    return ",\n        ".join(js_entries)
+    return ",\n        ".join([json.dumps(e, ensure_ascii=False) for e in entries])
 
 # Read the base template of generate_seals_zouhri_chamber.py to preserve all sections
 with open(TARGET_FILE, 'r', encoding='utf-8') as f:
