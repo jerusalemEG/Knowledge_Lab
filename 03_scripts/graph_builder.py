@@ -1721,18 +1721,103 @@ def generate_unified_html(nodes, links):
             box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
         }}
 
-        /* 5. Matrix Table */
-        .table-wrapper {{
-            background: var(--panel-bg);
+        /* 5. Matrix Table & Multi-Dimensional Console */
+        .matrix-console-box {{
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(14px);
             border: 1px solid var(--border-glass);
-            border-radius: 16px;
-            overflow-x: auto;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
         }}
-        table {{ width: 100%; border-collapse: collapse; text-align: right; min-width: 950px; }}
-        th, td {{ padding: 16px 20px; border-bottom: 1px solid var(--border-glass); font-size: 0.9rem; }}
-        th {{ background: rgba(0, 0, 0, 0.4); color: var(--gold); font-weight: 700; }}
-        tr:hover {{ background: rgba(255, 255, 255, 0.02); }}
+        .matrix-search-wrapper {{
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+        }}
+        .matrix-search-input {{
+            flex: 1;
+            min-width: 260px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 12px;
+            padding: 12px 18px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }}
+        .matrix-search-input:focus {{
+            border-color: var(--cyan);
+            box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
+        }}
+        .matrix-mode-bar {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }}
+        .m-mode-btn {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }}
+        .m-mode-btn:hover, .m-mode-btn.active {{
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(255, 209, 102, 0.2));
+            border-color: var(--cyan);
+            color: #fff;
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.2);
+        }}
+        .matrix-ranks-bar {{
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }}
+        .m-rank-btn {{
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            color: #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }}
+        .m-rank-btn:hover, .m-rank-btn.active {{
+            background: rgba(255, 209, 102, 0.15);
+            border-color: var(--gold);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.25);
+        }}
+        .table-wrapper {{
+            background: rgba(13, 17, 23, 0.9);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            overflow-x: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            margin-top: 25px;
+        }}
+        table {{ width: 100%; border-collapse: collapse; text-align: right; min-width: 1350px; }}
+        th, td {{ padding: 14px 18px; border-bottom: 1px solid var(--border-glass); font-size: 0.88rem; vertical-align: top; }}
+        th {{ background: rgba(0, 0, 0, 0.6); color: var(--gold); font-weight: 700; white-space: nowrap; position: sticky; top: 0; z-index: 10; }}
+        tr.active-matrix-row {{ background: rgba(0, 240, 255, 0.08) !important; border-right: 4px solid var(--cyan); }}
+        tr:hover {{ background: rgba(255, 255, 255, 0.03); cursor: pointer; }}
 
         /* 6. Books Grid */
         .books-grid {{
@@ -3114,22 +3199,120 @@ def generate_unified_html(nodes, links):
         <!-- TAB 5: MASTER MATRIX -->
         <section id="tab-matrix" class="tab-section">
             <div class="hero">
-                <div class="quran-ayah">«وَكُلَّ شَيْءٍ أَحْصَيْنَاهُ كِتَابًا» — «إِنَّا كُلَّ شَيْءٍ خَلَقْنَاهُ بِقَدَرٍ»</div>
-                <h1>المصفوفة المعمارية الشاملة عبر كل المستويات الكونية</h1>
-                <p>جدول المقارنة الشامل يجمع 9 مستويات كونية متطابقة في شاشة واحدة.</p>
+                <div class="quran-ayah">«وَكُلَّ شَيْءٍ أَحْصَيْنَاهُ كِتَابًا» [النبأ: 29] — «إِنَّا كُلَّ شَيْءٍ خَلَقْنَاهُ بِقَدَرٍ» [القمر: 49] — «وَأَحَاطَ بِمَا لَدَيْهِمْ وَأَحْصَىٰ كُلَّ شَيْءٍ عَدَدًا» [الجن: 28]</div>
+                <h1>المصفوفة المعمارية الشاملة والميزان الكوني الموحد (The Grand Unified Matrix)</h1>
+                <p>ملتقى النواميس ونهاية إحكام البنيان؛ الربط الهولوجرامي والمطابقة الكلية بين مراتب الأفلاك السماوية التسعة (من فلك القمر إلى فلك العرش الأطلس وسدرة المنتهى)، المقامات النبوية، الملائكة العلوية الموكلة، اللطائف والشاكرات الإنسانية، الترددات السولفيجية، المعادن الخيميائية، والأنساق الحضارية العالمية (بابل، مصر، الهند الفيدية، والطاوية) في مصفوفة موحدة كبرى.</p>
             </div>
+
+            <!-- 4 MASTER ANALYTICAL TREATISES -->
+            <div class="spheres-compendium">
+                <div class="compendium-header">
+                    <span class="compendium-badge">الموسوعة التحليلية التأسيسية للباب 06</span>
+                    <h2>المباحث الكوزمولوجية الكبرى في علم الميزان والمصفوفة المعمارية الشاملة</h2>
+                    <p>أربعة مباحث عيانية تؤصل لقوانين الميزان الرياضي، تطابق الإنسان الكامل مع الكون الأكبر، تقاطع الناموس السباعي مع الفلك الإثناعشري، والإجماع الحضاري العالمي.</p>
+                </div>
+
+                <div class="compendium-cards-grid">
+                    <!-- Treatise 1 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الأول</span>
+                            <h3>علم «الميزان» وإحصاء مراتب الوجود في القرآن الكريم والتراث الحكمي</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>أقام الحق سبحانه بنيان السماوات والأرض على ناموس الميزان والتقدير الصارم: ﴿وَالسَّمَاءَ رَفَعَهَا وَوَضَعَ الْمِيزَانَ﴾، ﴿وَكُلُّ شَيْءٍ عِندَهُ بِمِقْدَارٍ﴾. وفي التراث العلمي والفلسفي الإسلامي، أسس جابر بن حيان في كتابه <em>الموازين</em> و<em>الخواص الكبير</em> «علم الميزان الطبيعي»، مبرهناً على أن كل مادة وجوهر في الكون مركبة بنسب عددية وهندسية دقيقة تخضع لقاعدة الأوزان الرباعية (1، 3، 5، 8 ومجموعها 17 الحاكم للأكوان). ثم جاء الشيخ الأكبر محيي الدين ابن عربي في <em>عقلة المستوفز</em> و<em>إنشاء الدوائر</em> ليوضح أن هذا الميزان ينعكس في «الحضرات الإلهية الخمس»: حضرة الذات، حضرة الصفات والأسماء، حضرة الأفعال والملكوت، حضرة المثال والبرزخ، وحضرة الحس والشهادة، لتشكل مصفوفة وجودية واحدة لا انفصال فيها.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 2 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الثاني</span>
+                            <h3>الهولوجرام الكوني — سر «الإنسان الكامل والعالم الأكبر» (Microcosm & Macrocosm)</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>لخص أمير المؤمنين علي بن أبي طالب رضي الله عنه الحقيقة الكوزمولوجية الكبرى في بيته الخالد: <em>«أَتَزْعَمُ أَنَّكَ جُرْمٌ صَغِيرٌ ... وَفِيكَ انْطَوَى العَالَمُ الأَكْبَرُ»</em>. فالإنسان ليس كائناً معزولاً، بل هو «نسخة هولوجرامية مصغرة» من الكون الكلي. فكما يحتوي الكون على سبع سماوات ومحيط العرش الأطلس، يحتوي الجسد الإنساني على سبعة مراكز حيوية (شاكرات ولطائف صوفية) تتصل بالغدد الصماء، ويحتوي على سبعة معادن خيميائية في الدم والعظام، وتجري فيه دورة السوائل متطابقة مع دورات الأفلاك ومنازل القمر. وهذا التناظر هو أصل «الميلوثيسيا الطبية» التي تجعل شفاء الروح والجسد متوقفاً على إعادة موازنته مع نغمات الفلك الكوني.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 3 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الثالث</span>
+                            <h3>تقاطع الناموس السباعي مع الفلك الإثناعشري وسر الأعداد 84 و 19 في القرآن</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>تنتظم المصفوفة الكونية في تزاوج رياضي معجز بين <strong>الناموس السباعي (7)</strong> و<strong>الناموس الإثناعشري (12)</strong>. السباعي هو الحركة والزمان: السماوات السبع، الأراضين السبع، الأفلاك السبعة، والشاكرات السبع. والإثناعشري هو المكان والاستقرار: البروج الاثنا عشر، شهور السنة، وأسباط بني إسرائيل. وحاصل ضربهما: $7 \times 12 =$ <strong>84</strong>، وهو الرقم الفلكي لدورة أورانوس حول الشمس والسن القانوني لاكتمال نضج الحكمة في حياة الإنسان. ومجموعهما: $7 + 12 =$ <strong>19</strong>، وهو الميزان الرقمي المحكم الوارد في سورة المدثر: ﴿عَلَيْهَا تِسْعَةَ عَشَرَ﴾، ومفتاح حروف البسملة التسعة عشر، ليدل على أن شفرة الكون والمصحف صيغت بمداد هندسي واحد.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 4 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الرابع</span>
+                            <h3>الإجماع الحضاري العالمي — مضاهاة بابل، مصر، الفيدا، الكابالا، والطاوية</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>تكشف المصفوفة المقارنة عن حقيقة مذهلة: وحدة النبع المعرفي الإنساني الفطري. فعند مقارنة مراتب الأفلاك برؤى الحضارات القديمة نجد تطابقاً تاماً: ففلك الشمس الأوسط يقابله الإله شمش في بابل، وسوريا في الفيدا، ورع في مصر، وميخائيل في النصوص الإبراهيمية، وسيفيرا «تيفيريت» (الجمال والتناغم) في الكابالا. وفلك القمر يقابله الإله سين في بابل، وتشاندرا في الهند، وجبريل في الإسلام. وفي الطاوية الصينية تتنزل طاقة «الداو» عبر سماء تاي تشينغ النقية وعناصر وو شينغ الخمسة بالتوازي مع الأفلاك. هذا الإجماع ليس نقلاً أعمى، بل شهادة حية على أن الحكماء والأنبياء عبر التاريخ كانوا ينظرون إلى نفس الحقيقة الكونية الواحدة: ﴿وَلَقَدْ بَعَثْنَا فِي كُلِّ أُمَّةٍ رَّسُولًا﴾.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE MULTI-DIMENSIONAL CONSOLE & CONTROLS -->
+            <div class="matrix-console-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase;">لوحة التحكم المعمارية</span>
+                        <h3 style="margin: 4px 0 0 0; color: #fff; font-size: 1.25rem;">مفتش المستويات وأبعاد المصفوفة التفاعلية</h3>
+                    </div>
+                    <!-- Real-time Live Search Input -->
+                    <div class="matrix-search-wrapper">
+                        <input type="text" id="matrix-search-input" class="matrix-search-input" placeholder="🔍 ابحث في المصفوفة (نبي، ملاك، معدن، شاكرا، تردد، حضارة)..." oninput="filterMatrixTable()">
+                    </div>
+                </div>
+
+                <!-- Dimension Mode Switcher -->
+                <div class="matrix-mode-bar">
+                    <button class="m-mode-btn active" onclick="setMatrixMode('ALL')">🌐 المصفوفة الكونية الشاملة (جميع المستويات الـ 15)</button>
+                    <button class="m-mode-btn" onclick="setMatrixMode('prophetic')">🕊️ المسار الروحي والنبوي والملائكي (Prophetic & Angelic)</button>
+                    <button class="m-mode-btn" onclick="setMatrixMode('anatomy')">🧘 التشريح الجسدي والشاكرات والترددات (Anatomy & Frequencies)</button>
+                    <button class="m-mode-btn" onclick="setMatrixMode('alchemical')">🧪 الخيمياء والمعادن والطبائع الكونية (Alchemical & Elemental)</button>
+                    <button class="m-mode-btn" onclick="setMatrixMode('civilizations')">🏛️ المقارنة الحضارية العالمية (Veda, Tao, Babylon, Enoch)</button>
+                </div>
+
+                <!-- Quick Rank Selector Pills -->
+                <div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px;">اختر مرتبة كونية لمعاينة ملفها المعماري الكامل:</div>
+                    <div class="matrix-ranks-bar" id="matrix-ranks-bar"></div>
+                </div>
+            </div>
+
+            <!-- MASTER CELESTIAL RANK DOSSIER PANEL -->
+            <div class="chakra-detail-card" id="matrix-detail-card" style="margin-bottom: 30px;">
+                <!-- Injected dynamically by JS -->
+            </div>
+
+            <!-- COMPREHENSIVE 15-COLUMN MASTER MATRIX TABLE -->
             <div class="table-wrapper">
-                <table>
+                <table id="master-unified-matrix-table">
                     <thead>
                         <tr>
-                            <th>المرتبة</th>
-                            <th>الفلك والرمز</th>
-                            <th>المقام النبوي والرسالي</th>
-                            <th>البطريرك في التراث القديم</th>
-                            <th>المبدأ الهرمسي</th>
-                            <th>الشاكرا واللطيفة</th>
-                            <th>المعدن الخيميائي</th>
-                            <th>مستوى التحول الروحي</th>
+                            <th>المرتبة والفلك 🪐</th>
+                            <th class="col-prophetic">المقام النبوي والرسالي 🕊️</th>
+                            <th class="col-prophetic">الملاك العلوي الحاكم 👑</th>
+                            <th class="col-prophetic">البطريرك في التراث 📜</th>
+                            <th class="col-anatomy">الشاكرا واللطيفة 🧘</th>
+                            <th class="col-anatomy">العضو والغدة الحيوية 🩺</th>
+                            <th class="col-alchemical">المعدن الخيميائي 🧪</th>
+                            <th class="col-alchemical">المبدأ الهرمسي ⚖️</th>
+                            <th class="col-anatomy">التردد المقدس والنغمة 🎵</th>
+                            <th class="col-civilizations">عوالم الفيدا (Lokas) 🕉️</th>
+                            <th class="col-civilizations">الطاوية والصين (Tao) ☯️</th>
+                            <th class="col-civilizations">كابالا سفر أخنوخ ✡️</th>
+                            <th class="col-civilizations">بابل والرافدين 🏛️</th>
+                            <th class="col-alchemical">مستوى الارتقاء الروحي 🚀</th>
+                            <th class="col-prophetic">الشاهد القرآني الحاكم 📖</th>
                         </tr>
                     </thead>
                     <tbody id="matrix-tbody"></tbody>
@@ -5496,21 +5679,181 @@ def generate_unified_html(nodes, links):
             selectEra(currentSelectedEraId);
         }}
 
-        // 6. Matrix Renderer
+        // 6. Master Grand Unified Matrix Controller
+        let currentMatrixRankId = 8; // Default: Primum Mobile & Divine Throne
+        let currentMatrixDimension = 'ALL';
+
+        function selectMatrixRank(rankId) {{
+            currentMatrixRankId = rankId;
+            const rank = SPHERES_DATA.find(s => s.id === rankId) || SPHERES_DATA[0];
+
+            // 1. Update Rank Buttons
+            document.querySelectorAll('.m-rank-btn').forEach(btn => {{
+                btn.classList.remove('active');
+            }});
+            const activeBtn = document.getElementById('m-rank-btn-' + rankId);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // 2. Highlight Row in Table
+            document.querySelectorAll('#matrix-tbody tr').forEach(row => {{
+                row.classList.remove('active-matrix-row');
+            }});
+            const activeRow = document.getElementById('matrix-row-' + rankId);
+            if (activeRow) activeRow.classList.add('active-matrix-row');
+
+            // 3. Render Master Rank Dossier Panel
+            const dossier = document.getElementById('matrix-detail-card');
+            if (dossier) {{
+                dossier.innerHTML = `
+                    <div class="c-header">
+                        <div class="c-num" style="background: rgba(255,255,255,0.06); border: 2px solid ${{rank.color}}; color: ${{rank.color}};">${{rank.id}}</div>
+                        <div class="c-title-group">
+                            <span class="c-arabic-name" style="color: ${{rank.color}};">${{rank.name}}</span>
+                            <span class="c-sanskrit-name">${{rank.rank}}</span>
+                        </div>
+                    </div>
+
+                    <div class="c-meta-grid">
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🕊️ المقام النبوي والرسالي</span>
+                            <span class="c-meta-val" style="color: #34d399;">${{rank.prophet}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">👑 الملاك العلوي الحاكم</span>
+                            <span class="c-meta-val" style="color: #fbbf24;">${{rank.angel.split('(')[0].trim()}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🧘 الشاكرا واللطيفة</span>
+                            <span class="c-meta-val" style="color: var(--cyan);">${{rank.chakra}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🩺 العضو والغدة الحيوية</span>
+                            <span class="c-meta-val" style="color: #e2e8f0;">${{rank.gland}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🧪 المعدن الخيميائي</span>
+                            <span class="c-meta-val" style="color: ${{rank.color}};">${{rank.metal}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🎵 التردد والنغمة الحيوية</span>
+                            <span class="c-meta-val" style="color: #a78bfa;">${{rank.freqHz}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">⚖️ المبدأ الهرمسي</span>
+                            <span class="c-meta-val" style="color: #cbd5e1;">${{rank.hermetic}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">📜 البطريرك في التراث القديم</span>
+                            <span class="c-meta-val" style="color: #fca5a5;">${{rank.patriarch}}</span>
+                        </div>
+                    </div>
+
+                    <div class="c-box ayah-box" style="margin-top: 18px;">
+                        <span class="c-box-title" style="color: var(--gold);">📖 الشاهد القرآني المحكم والبرهان المعصوم</span>
+                        <p style="font-size: 0.95rem; line-height: 1.8; color: #fef08a; margin: 0; font-family: 'Amiri', serif;">${{rank.quran}}</p>
+                    </div>
+
+                    <div class="c-box" style="margin-top: 14px; background: rgba(0,0,0,0.35); border-right: 3px solid ${{rank.color}};">
+                        <span class="c-box-title" style="color: ${{rank.color}};">🏛️ الإجماع الحضاري العالمي ومطابقة الأنساق</span>
+                        <div style="font-size: 0.85rem; line-height: 1.7; color: #cbd5e1; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 8px;">
+                            <div><strong style="color: #00f0ff;">🕉️ الفيدا ولوكاس:</strong> ${{rank.vedic_india}}</div>
+                            <div><strong style="color: #34d399;">☯️ الطاوية والصين:</strong> ${{rank.china_tao}}</div>
+                            <div><strong style="color: #fbbf24;">🏛️ بابل والرافدين:</strong> ${{rank.babylon}}</div>
+                            <div><strong style="color: #a78bfa;">✡️ كابالا وأخنوخ:</strong> ${{rank.kabbalah_enoch}}</div>
+                        </div>
+                    </div>
+
+                    <div class="c-box" style="margin-top: 14px; background: rgba(0, 240, 255, 0.05); border-right: 3px solid var(--cyan);">
+                        <span class="c-box-title" style="color: var(--cyan);">✨ سر التحول والارتقاء الروحي الكوني</span>
+                        <p style="font-size: 0.88rem; line-height: 1.7; color: #e2e8f0; margin: 0;">${{rank.secret}} — <em>${{rank.titleDesc}}</em></p>
+                    </div>
+                `;
+            }}
+        }}
+
+        function setMatrixMode(mode) {{
+            currentMatrixDimension = mode;
+            document.querySelectorAll('.m-mode-btn').forEach(btn => {{
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(mode));
+            }});
+
+            const table = document.getElementById('master-unified-matrix-table');
+            if (!table) return;
+
+            const allCols = ['col-prophetic', 'col-anatomy', 'col-alchemical', 'col-civilizations'];
+            
+            if (mode === 'ALL') {{
+                allCols.forEach(col => {{
+                    table.querySelectorAll('.' + col).forEach(el => el.style.display = '');
+                }});
+            }} else {{
+                allCols.forEach(col => {{
+                    const match = (mode === 'prophetic' && col === 'col-prophetic') ||
+                                  (mode === 'anatomy' && col === 'col-anatomy') ||
+                                  (mode === 'alchemical' && col === 'col-alchemical') ||
+                                  (mode === 'civilizations' && col === 'col-civilizations');
+                    table.querySelectorAll('.' + col).forEach(el => {{
+                        el.style.display = match ? '' : 'none';
+                    }});
+                }});
+            }}
+        }}
+
+        function filterMatrixTable() {{
+            const query = (document.getElementById('matrix-search-input')?.value || '').trim().toLowerCase();
+            const rows = document.querySelectorAll('#matrix-tbody tr');
+            rows.forEach(row => {{
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            }});
+        }}
+
         function renderMatrix() {{
+            // 1. Populate Ranks Bar
+            const ranksBar = document.getElementById('matrix-ranks-bar');
+            if (ranksBar) {{
+                ranksBar.innerHTML = SPHERES_DATA.map(s => `
+                    <button class="m-rank-btn ${{s.id === currentMatrixRankId ? 'active' : ''}}" id="m-rank-btn-${{s.id}}" onclick="selectMatrixRank(${{s.id}})">
+                        <span style="color: ${{s.color}};">●</span>
+                        <span>مرتبة ${{s.id}}: ${{s.name.split('(')[0].replace('فلك', '').trim()}}</span>
+                    </button>
+                `).join('');
+            }}
+
+            // 2. Populate 15-Column Master Table
             const tbody = document.getElementById('matrix-tbody');
-            tbody.innerHTML = SPHERES_DATA.map(s => `
-                <tr>
-                    <td><b>${{s.id}}</b></td>
-                    <td><b style="color:${{s.color}}">${{s.name}}</b></td>
-                    <td><b>${{s.prophet}}</b></td>
-                    <td>${{s.patriarch}}</td>
-                    <td>${{s.hermetic.split('(')[0]}}</td>
-                    <td>${{s.chakra}}</td>
-                    <td><b>${{s.metal}}</b></td>
-                    <td>${{s.titleDesc}}</td>
-                </tr>
-            `).join('');
+            if (tbody) {{
+                tbody.innerHTML = SPHERES_DATA.map(s => `
+                    <tr id="matrix-row-${{s.id}}" onclick="selectMatrixRank(${{s.id}})" class="${{s.id === currentMatrixRankId ? 'active-matrix-row' : ''}}">
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 1.1rem; color: ${{s.color}};">●</span>
+                                <div>
+                                    <strong style="color: #fff; display: block;">${{s.name.split('(')[0].trim()}}</strong>
+                                    <small style="color: ${{s.color}};">المرتبة ${{s.id}} • ${{s.rank.slice(0, 25)}}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="col-prophetic"><b style="color: #34d399;">${{s.prophet}}</b></td>
+                        <td class="col-prophetic"><span style="color: #fbbf24;">${{s.angel.split('(')[0].slice(0, 35)}}</span></td>
+                        <td class="col-prophetic"><small style="color: #fca5a5;">${{s.patriarch.slice(0, 40)}}</small></td>
+                        <td class="col-anatomy"><span style="color: var(--cyan); font-weight: 600;">${{s.chakra}}</span></td>
+                        <td class="col-anatomy"><small style="color: #e2e8f0;">${{s.gland}}</small></td>
+                        <td class="col-alchemical"><b style="color: ${{s.color}};">${{s.metal}}</b></td>
+                        <td class="col-alchemical"><small style="color: #cbd5e1;">${{s.hermetic.slice(0, 45)}}</small></td>
+                        <td class="col-anatomy"><span style="color: #a78bfa; font-weight: 600;">${{s.freqHz}}</span></td>
+                        <td class="col-civilizations"><small style="color: #00f0ff;">${{s.vedic_india.slice(0, 50)}}...</small></td>
+                        <td class="col-civilizations"><small style="color: #34d399;">${{s.china_tao.slice(0, 50)}}...</small></td>
+                        <td class="col-civilizations"><small style="color: #a78bfa;">${{s.kabbalah_enoch.slice(0, 50)}}...</small></td>
+                        <td class="col-civilizations"><small style="color: #fbbf24;">${{s.babylon.slice(0, 50)}}...</small></td>
+                        <td class="col-alchemical"><small style="color: #e2e8f0;">${{s.titleDesc}}</small></td>
+                        <td class="col-prophetic"><small style="color: #fef08a; font-family: 'Amiri', serif; line-height: 1.5; display: block; max-width: 220px;">${{s.quran.slice(0, 75)}}...</small></td>
+                    </tr>
+                `).join('');
+            }}
+
+            // 3. Select Default Rank
+            selectMatrixRank(currentMatrixRankId);
         }}
 
         // 7. Manuscripts Renderer
