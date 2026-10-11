@@ -1496,6 +1496,12 @@ def build_luxury_portal():
                 setTimeout(() => { cosmicNetwork.redraw(); cosmicNetwork.fit(); }, 200);
             }
         }
+        if (targetId === 'tab-letters-magic' && typeof renderLetters === 'function') {
+            renderLetters();
+        }
+        if (targetId === 'tab-bodies' && typeof renderBodies === 'function') {
+            renderBodies();
+        }
 
         // 6. Update URL hash and smooth scroll
         window.location.hash = '#' + targetId;

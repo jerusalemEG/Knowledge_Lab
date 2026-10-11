@@ -310,6 +310,182 @@ def generate_codex():
         }
         .wave-mode-btn.active { background: var(--emerald); color: #030508; border-color: var(--emerald); }
 
+
+        /* Tab 13: Letters Magic & Jabir Balance Styles */
+        .letters-workspace-container {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 25px;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 1024px) {
+            .letters-workspace-container { grid-template-columns: 1fr; }
+        }
+        .abjad-calc-card {
+            background: rgba(11, 17, 33, 0.85);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+            margin-bottom: 25px;
+        }
+        .abjad-input-box {
+            width: 100%;
+            background: rgba(4, 8, 19, 0.9);
+            border: 1px solid rgba(244, 180, 26, 0.4);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #fff;
+            font-family: 'Amiri', serif;
+            font-size: 1.25rem;
+            outline: none;
+            transition: all 0.25s ease;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .abjad-input-box:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+        }
+        .calc-sample-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .calc-sample-btn:hover {
+            background: var(--gold);
+            color: #030712;
+            border-color: var(--gold);
+            font-weight: 700;
+        }
+        .abjad-metrics-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .abjad-metric-pill {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+        .abjad-metric-val {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            font-family: 'Amiri', serif;
+            line-height: 1.2;
+        }
+        .abjad-metric-lbl {
+            font-size: 0.76rem;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        .balance-bar-group {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .balance-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+        }
+        .balance-bar-label {
+            min-width: 90px;
+            font-weight: 600;
+        }
+        .balance-bar-track {
+            flex-grow: 1;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+        .balance-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.4s ease;
+        }
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .letter-tile-btn {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 10px 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .letter-tile-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            border-color: currentColor;
+        }
+        .letter-tile-btn.active {
+            transform: translateY(-3px) scale(1.05);
+            border-color: currentColor;
+            box-shadow: 0 0 18px currentColor, inset 0 0 8px currentColor;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .letter-char {
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Amiri', serif;
+            line-height: 1.1;
+        }
+        .letter-val {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+        .letter-filter-btn {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #94a3b8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .letter-filter-btn:hover, .letter-filter-btn.active {
+            background: var(--gold);
+            color: #030712;
+            border-color: var(--gold);
+            font-weight: 700;
+        }
+        .letter-detail-card {
+            background: rgba(11, 17, 33, 0.9);
+            border: 1px solid rgba(244, 180, 26, 0.3);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 16px 45px rgba(0,0,0,0.6);
+            position: sticky;
+            top: 80px;
+        }
+
         /* Bodies & Quran Grid + Holographic Human Silhouette */
         .bodies-cosmos-container {
             display: grid;
@@ -623,66 +799,249 @@ def generate_codex():
         <!-- 5. LETTER NATURES & 4 ELEMENTAL MAGICS (DOOR 13) -->
         <div id="tab-letters-magic" class="tab-content">
             <div class="hero-banner">
-                <h2>🪶 ميزان الحروف الأربعة عند جابر بن حيان وتفكيك الأسحار فيزيائياً</h2>
-                <p>علم الميزان الحرفي؛ تقسيم الحروف على الطبائع الأربعة (حرارة، برودة، رطوبة، يبوسة) بنسبة (1:3:5:8)، مستويات حساب الجمل الثلاثة (الكبير والصغير والأوسط)، والتشريح الفيزيائي الموجي لكيفية عمل أنواع السحر الأربعة وطريقة فك رنينها بالأمواج القرآنية المضادة:</p>
+                <div style="font-size:0.85rem; color:var(--gold); font-family:'Amiri',serif; margin-bottom:6px; letter-spacing:1px;">﴿ كٓهيعٓصٓ ﴾ • ﴿ حم * عٓسٓقٓ ﴾ — ﴿ وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا ﴾ — الباب الثالث عشر: فيزياء الحرف وميزان الطبائع</div>
+                <h2>🪶 هندسة الحروف الكونية، ميزان الحروف الجابري وعلم السيمياء العرفاني</h2>
+                <p>أطلس فيزيائي وكوزمولوجي يفكك البنية الرياضية للحروف العربية الـ 28: الترددات الفونيمية (Acoustic Phonetics)، ميزان الطبائع الأربعة لجابر بن حيان بنسبة (1 : 3 : 5 : 8)، تقسيم الحروف النورانية والظلمانية عند محيي الدين بن عربي والبوني، والمحاكي المباشر لحساب الجُمّل والطبائع الحرفية.</p>
             </div>
 
-            <!-- Jabir Science of Balance Box -->
-            <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,209,102,0.3); border-radius:16px; padding:22px; margin-bottom:25px; line-height:1.8; font-size:0.9rem;">
-                <h3 style="color:var(--gold); margin-bottom:10px; font-family:'Amiri',serif; font-size:1.3rem;"><i class="fa-solid fa-scale-unbalanced"></i> نظرية ميزان الحروف والطبائع لجابر بن حيان (Kitab al-Mizan):</h3>
-                <p style="color:#cbd5e1; margin-bottom:10px;">
-                    بيّن حكيم الكيمياء جابر بن حيان أن كل مادة وجرم في الكون مبني على توازن كمي لدرجات الطبائع الأربع. وحروف الاسم ليست مجرد أصوات، بل هي <strong>مؤشرات قياسية للمعاوقة الأثيرية</strong>؛ فإذا زادت الحروف النارية غلبت الحرارة واليبوسة (طبيعة النار)، وإذا كثرت الحروف الترابية حدث التكثف والثبات. حساب الجمل الكبير يعطي الطاقة الكلية (Total Energy Scalar)، والصغير يعطي زاوية الطور (Phase Modulus 1-9).
-                </p>
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:14px;">
-                    <div style="background:rgba(0,0,0,0.4); padding:10px 14px; border-radius:10px; border-right:3px solid var(--gold);">
-                        <strong style="color:var(--gold);">الجمل الكبير:</strong> الأبجدية كاملة من 1 إلى 1000 (ا=1، ك=20، ق=100، غ=1000).
+            <!-- 4 Master Scientific & Esoteric Treatises -->
+            <div class="spheres-compendium" style="margin-bottom:30px;">
+                <div class="sphere-treatise">
+                    <div class="treatise-header">
+                        <span class="treatise-badge">1. فيزياء الصوت والسايماتكس</span>
+                        <h4>🌊 الميكانيكا الفونيمية والأشكال الهندسية للأمواج (Cymatic Physics)</h4>
                     </div>
-                    <div style="background:rgba(0,0,0,0.4); padding:10px 14px; border-radius:10px; border-right:3px solid var(--cyan);">
-                        <strong style="color:var(--cyan);">الجمل الصغير:</strong> إسقاط الأصفار لاختزال الحرف لمرتبة الآحاد (ا=1، ي=1، ق=1، غ=1).
+                    <p>أثبتت تجارب <em>السيماتكس (Cymatics - Ernst Chladni & Hans Jenny)</em> أن كل صوت منطوق يولد أشكالاً هندسية ثنائية وثلاثية الأبعاد متطابقة في وسائط السيليكا والماء. تتميز الحروف العربية بتوزيع مخارجها الـ 17 الممتدة على طول الجهاز الصوتي البشري من أعماق الجوف والرئتين حتى الشفتين.</p>
+                    <p>تولد الحروف الحلقية (الهمزة، الهاء، العين، الحاء، الغين، الخاء) ترددات تحتية عميقة (Infrasound) تتردد في القفص الصدري ومسارات الطاقة المركزية، بينما تولد الحروف الشفوية (الباء، الميم، الواو، الفاء) نغمات عالية متحدة المركز. الحرف في الحقيقة ليس صوتاً عشوائياً، بل هو <strong>مصفوفة ترددية مستقرة (Standing Resonant Wave)</strong> تؤثر مباشرة في التماسك الجزيئي لخلايا الإنسان.</p>
+                    <div class="treatise-meta">
+                        <span><strong>النطاق الصوتي:</strong> 85 هرتز (الحلقي) إلى 3400 هرتز (الصفيري)</span>
+                        <span><strong>الأثر الحيوي:</strong> إعادة تشكيل الروابط الهيدروجينية لجزيئات الماء</span>
                     </div>
-                    <div style="background:rgba(0,0,0,0.4); padding:10px 14px; border-radius:10px; border-right:3px solid var(--purple);">
-                        <strong style="color:var(--purple);">الجمل الأوسط:</strong> حساب بسط الحروف (حساب حروف اسم الحرف: أ ل ف = 1+30+80 = 111).
+                </div>
+
+                <div class="sphere-treatise">
+                    <div class="treatise-header">
+                        <span class="treatise-badge">2. الرياضيات الجابرية الكونية</span>
+                        <h4>⚖️ ميزان الحروف لجابر بن حيان وقانون النسب (1 : 3 : 5 : 8)</h4>
+                    </div>
+                    <p>أسس شيخ الكيميائيين <em>جابر بن حيان الكوفي</em> في كتبه الشهيرة <em>(كتاب الميزان، والخواص الكبير)</em> مبدأً ثورياً مفاده: أن الأسماء اللغوية للأشياء ليست اعتباطية بل تعكس التوازن الداخلي لطبائعها الأربع (الحرارة، البرودة، الرطوبة، اليبوسة).</p>
+                    <p>قسّم جابر قوى الحروف إلى أربع مراتب متصاعدة هندسياً وفق النسبة الصارمة: <strong>1 درهم (المرتبة الأولى)، 3 دراهم (الثانية)، 5 دراهم (الثالثة)، 8 دراهم (الرابعة)</strong>. ومجموع هذه المراتب = <strong>17 درهماً</strong>، وهو سر الرقم 17 الذي بنى عليه جابر أكسير الحياة، وطابقه العرفاء بعدد الركعات المفروضة وأبواب الوجود الكونية السبعة عشر.</p>
+                    <div class="treatise-meta">
+                        <span><strong>النسبة الجابرية:</strong> 1 + 3 + 5 + 8 = 17 درهماً تامات</span>
+                        <span><strong>القانون:</strong> توازن الجوهر = تطابق الطبائع الظاهرة والباطنة</span>
+                    </div>
+                </div>
+
+                <div class="sphere-treatise">
+                    <div class="treatise-header">
+                        <span class="treatise-badge">3. الإسقاط القرآني الإشراقي</span>
+                        <h4>✨ الحروف النورانية الـ 14 فواتح السور وسر الإنسان الكامل</h4>
+                    </div>
+                    <p>افتُتحت 29 سورة في القرآن الكريم بحروف مقطعة تتألف تحديداً من <strong>14 حرفاً فريداً</strong> تمثل النصف الدقيق للأبجدية العربية، مجمعة في القول المأثور: <em>«نَصٌّ حَكِيمٌ قَاطِعٌ لَهُ سِرٌّ»</em> (ن، ص، ح، ك، ي، م، ق، ا، ط، ع، ل، هـ، س، ر).</p>
+                    <p>يقابل الشيخ الأكبر <em>محيي الدين بن عربي</em> في *الفتوحات المكية* (الباب الثاني) بين هذه الحروف النورانية الـ 14 التي تمثل *عالم الأمر والأرواح العلوية*، وبين الحروف الظلمانية الـ 14 المتبقية التي تمثل *عالم الخلق والأجسام الكثيفة*. فالأولى مفاتيح الفيوضات الإلهية الإيجابية، والثانية أوعية التحقق المادي والتجلي الأرضي.</p>
+                    <div class="treatise-meta">
+                        <span><strong>التوزيع:</strong> 14 نورانية (عالم الأمر) مقابل 14 ظلمانية (عالم الخلق)</span>
+                        <span><strong>المنازل:</strong> تطابق منازل القمر الـ 28 وأفلاك الوجود الـ 28</span>
+                    </div>
+                </div>
+
+                <div class="sphere-treatise">
+                    <div class="treatise-header">
+                        <span class="treatise-badge">4. المعيار البرهاني والتحصين</span>
+                        <h4>🛡️ التمييز القطعي بين الحكمة الحرفية والشعوذة السحرية</h4>
+                    </div>
+                    <p>فرّق علماء الإسلام البرهانيون بين <em>علم خواص الحروف الطبيعي واللساني</em> وبين <em>الطلاسم الشيطانية المنحرفة</em> كالموجودة في شمس المعارف والعهود المكذوبة. في العقيدة التوحيدية، الحرف ليس كائناً مستقلاً يُعبد أو يُدعى من دون الله أو يُسخّر لإيذاء الخلق.</p>
+                    <p>الحرف هو مظهر الكلمة الربانية: ﴿إِنَّمَا أَمْرُهُ إِذَا أَرَادَ شَيْئًا أَن يَقُولَ لَهُ كُن فَيَكُونُ﴾. فقوة الحرف في القرآن تنبع من استناده للوحي والتوحيد الخالص، والتعامل معه يكون بالتدبر والتسبيح المشروع، مع قطع دابر الشرك والتمائم المحرمة واستنزال الشياطين بالأوفاق المعكوسة.</p>
+                    <div class="treatise-meta">
+                        <span><strong>الحد الفاصل:</strong> التوحيد والافتقار لله مقابل الاستحضار والاستخدام الشيطاني</span>
+                        <span><strong>الحكم الشرعي:</strong> التحريم القاطع لأوفاق السحر واستنطاق الحروف لغير الله</span>
                     </div>
                 </div>
             </div>
 
-            <!-- 4 Elements Grid -->
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-bottom:30px;">
-                <div style="background:var(--panel-bg); border:1px solid var(--fire); border-radius:16px; padding:20px;">
-                    <h3 style="color:var(--fire); margin-bottom:8px;"><i class="fa-solid fa-fire"></i> 1. الحروف النارية (أَهْطَمْفَشَذْ)</h3>
-                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>أ (1) • هـ (5) • ط (9) • م (40) • ف (80) • ش (300) • ذ (700)</strong> — حار يابس</p>
+            <!-- LIVE INTERACTIVE ABJAD CALCULATOR & ELEMENTAL BALANCE ENGINE -->
+            <div class="abjad-calc-card">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+                    <div>
+                        <h3 style="color:var(--gold); font-family:'Amiri',serif; margin:0 0 4px 0; font-size:1.35rem; display:flex; align-items:center; gap:8px;">
+                            <span>🔢</span> المولد التفاعلي لحساب الجُمّل وميزان الطبائع الأربعة الحي
+                        </h3>
+                        <p style="font-size:0.83rem; color:#94a3b8; margin:0;">اكتب أي نص أو اسم لتحليله فورياً وحساب قواه العددية وتوزيع طبائعه (نار، هواء، ماء، تراب):</p>
+                    </div>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                        <span style="font-size:0.78rem; color:#94a3b8; align-self:center;">نماذج جاهزة:</span>
+                        <button class="calc-sample-btn" onclick="setSampleText('الله')">الله</button>
+                        <button class="calc-sample-btn" onclick="setSampleText('محمّد')">محمّد</button>
+                        <button class="calc-sample-btn" onclick="setSampleText('القدس')">القدس</button>
+                        <button class="calc-sample-btn" onclick="setSampleText('سلام')">سلام</button>
+                        <button class="calc-sample-btn" onclick="setSampleText('نور')">نور</button>
+                        <button class="calc-sample-btn" onclick="setSampleText('بسم الله الرحمن الرحيم')">البسملة</button>
+                    </div>
+                </div>
+
+                <input type="text" id="abjad-live-input" class="abjad-input-box" placeholder="اكتب هنا أي كلمة أو جملة عربية..." value="بسم الله الرحمن الرحيم" oninput="calculateLettersLive()">
+
+                <!-- Real-Time Metrics Output -->
+                <div class="abjad-metrics-row">
+                    <div class="abjad-metric-pill">
+                        <div class="abjad-metric-val" id="metric-major" style="color:var(--gold);">786</div>
+                        <div class="abjad-metric-lbl">الجُمّل الكبير (المجموع)</div>
+                    </div>
+                    <div class="abjad-metric-pill">
+                        <div class="abjad-metric-val" id="metric-minor" style="color:var(--cyan);">3</div>
+                        <div class="abjad-metric-lbl">الجُمّل الصغير (الجذر 1-9)</div>
+                    </div>
+                    <div class="abjad-metric-pill">
+                        <div class="abjad-metric-val" id="metric-letters-count" style="color:#a78bfa;">19</div>
+                        <div class="abjad-metric-lbl">عدد الحروف الصافية</div>
+                    </div>
+                    <div class="abjad-metric-pill">
+                        <div class="abjad-metric-val" id="metric-luminous-pct" style="color:#34d399;">78.9%</div>
+                        <div class="abjad-metric-lbl">نسبة النورانية (فواتح السور)</div>
+                    </div>
+                </div>
+
+                <!-- Elemental Balance Bars -->
+                <div style="background:rgba(0,0,0,0.3); border-radius:14px; padding:16px; border:1px solid rgba(255,255,255,0.06);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <span style="font-weight:700; color:#fff; font-size:0.9rem;">⚖️ ميزان الطبائع الأربعة الجابري للنص:</span>
+                        <span id="element-diagnosis" style="font-size:0.82rem; color:var(--gold); font-weight:600;">طبيعة مائية ترابية متزنة</span>
+                    </div>
+
+                    <div class="balance-bar-group">
+                        <div class="balance-bar-row">
+                            <span class="balance-bar-label" style="color:#ef4444;">🔥 النار (الحرارة/اليبوسة):</span>
+                            <div class="balance-bar-track">
+                                <div class="balance-bar-fill" id="bar-fire" style="width:25%; background:linear-gradient(90deg, #ef4444, #f87171);"></div>
+                            </div>
+                            <span id="pct-fire" style="min-width:40px; color:#ef4444; font-weight:700;">25%</span>
+                        </div>
+                        <div class="balance-bar-row">
+                            <span class="balance-bar-label" style="color:#06b6d4;">💨 الهواء (الحرارة/الرطوبة):</span>
+                            <div class="balance-bar-track">
+                                <div class="balance-bar-fill" id="bar-air" style="width:20%; background:linear-gradient(90deg, #06b6d4, #67e8f9);"></div>
+                            </div>
+                            <span id="pct-air" style="min-width:40px; color:#06b6d4; font-weight:700;">20%</span>
+                        </div>
+                        <div class="balance-bar-row">
+                            <span class="balance-bar-label" style="color:#3b82f6;">💧 الماء (البرودة/الرطوبة):</span>
+                            <div class="balance-bar-track">
+                                <div class="balance-bar-fill" id="bar-water" style="width:35%; background:linear-gradient(90deg, #3b82f6, #60a5fa);"></div>
+                            </div>
+                            <span id="pct-water" style="min-width:40px; color:#3b82f6; font-weight:700;">35%</span>
+                        </div>
+                        <div class="balance-bar-row">
+                            <span class="balance-bar-label" style="color:#f59e0b;">🏔️ التراب (البرودة/اليبوسة):</span>
+                            <div class="balance-bar-track">
+                                <div class="balance-bar-fill" id="bar-earth" style="width:20%; background:linear-gradient(90deg, #f59e0b, #fbbf24);"></div>
+                            </div>
+                            <span id="pct-earth" style="min-width:40px; color:#f59e0b; font-weight:700;">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE 28 LETTERS GRID & INSPECTOR CARD -->
+            <div class="letters-workspace-container">
+                <!-- Left: 28 Letters Grid with Category Filters -->
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+                        <h3 style="color:#fff; font-family:'Amiri',serif; margin:0; font-size:1.25rem;">
+                            🔤 مصفوفة الحروف العربية الـ 28 التفاعلية:
+                        </h3>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                            <button class="letter-filter-btn active" onclick="filterLetters('all', this)">الكل (28)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('luminous', this)" style="border-color:#ffd166; color:#ffd166;">النورانية (14)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('dark', this)">الظلمانية (14)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('fire', this)" style="border-color:#ef4444; color:#ef4444;">🔥 النار (7)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('air', this)" style="border-color:#06b6d4; color:#06b6d4;">💨 الهواء (7)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('water', this)" style="border-color:#3b82f6; color:#3b82f6;">💧 الماء (7)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('earth', this)" style="border-color:#f59e0b; color:#f59e0b;">🏔️ التراب (7)</button>
+                        </div>
+                    </div>
+
+                    <div class="letters-grid" id="letters-grid">
+                        <!-- Populated dynamically by JS -->
+                    </div>
+                </div>
+
+                <!-- Right: Letter Dossier Inspector Panel -->
+                <div class="letter-detail-card" id="letter-detail-card">
+                    <!-- Populated dynamically by selectLetter(char) -->
+                </div>
+            </div>
+
+            <!-- 4 Element Deep Scientific Analysis Cards -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-bottom:35px;">
+                <div style="background:var(--panel-bg); border:1px solid var(--fire); border-radius:16px; padding:20px; box-shadow:0 8px 25px rgba(239,68,68,0.12);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <h3 style="color:var(--fire); margin:0; font-family:'Amiri',serif; font-size:1.2rem;"><i class="fa-solid fa-fire"></i> 1. الحروف النارية (الأثير والحرارة)</h3>
+                        <span style="background:rgba(239,68,68,0.15); border:1px solid var(--fire); color:#fca5a5; padding:2px 8px; border-radius:8px; font-size:0.75rem; font-weight:700;">أ • هـ • ط • م • ف • ش • ذ</span>
+                    </div>
                     <div style="font-size:0.84rem; line-height:1.7; color:#ffe5ec;">
-                        <strong>السحر الناري (الكهرومغناطيسي الحراري):</strong> يعتمد على تسخين الأثر وحرقه؛ فيحدث اضطراباً في الهرمونات، خفقان القلب، الحميات غير المفسرة، ونوبات الغضب الحارق.<br>
-                        <strong>العلاج المضاد:</strong> تبريد الأثر، الغسل بالماء البارد المقروء عليه آيات الإطفاء: ﴿قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا عَلَىٰ إِبْرَاهِيمَ﴾، وتوليد نغمات الهدوء والسكينة.
+                        <p style="margin-bottom:8px;"><strong>الفيزياء الفونيمية:</strong> موجات طولية سريعة ذات وتيرة اهتزاز عالية تفرز هرمونات النشاط والحركة (الأدرينالين والدوبامين)، وتمثل مبدأ الكبريت الفلسفي المحرك للمادة.</p>
+                        <p style="margin:0;"><strong>التأثير الوجودي:</strong> البدايات القاطعة، الشجاعة، الاحتراق والتجدد، وكسر القيود؛ تناسب استنهاض الهمم ومكافحة الخمول.</p>
                     </div>
                 </div>
 
-                <div style="background:var(--panel-bg); border:1px solid var(--air); border-radius:16px; padding:20px;">
-                    <h3 style="color:var(--air); margin-bottom:8px;"><i class="fa-solid fa-wind"></i> 2. الحروف الهوائية (جَزْكَسَقَثَظْ)</h3>
-                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>ج (3) • ز (7) • ك (20) • س (60) • ق (100) • ث (500) • ظ (900)</strong> — حار رطب</p>
+                <div style="background:var(--panel-bg); border:1px solid var(--air); border-radius:16px; padding:20px; box-shadow:0 8px 25px rgba(6,182,212,0.12);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <h3 style="color:var(--air); margin:0; font-family:'Amiri',serif; font-size:1.2rem;"><i class="fa-solid fa-wind"></i> 2. الحروف الهوائية (الاتصال والانتشار)</h3>
+                        <span style="background:rgba(6,182,212,0.15); border:1px solid var(--air); color:#67e8f9; padding:2px 8px; border-radius:8px; font-size:0.75rem; font-weight:700;">ج • ز • ك • س • ق • ث • ظ</span>
+                    </div>
                     <div style="font-size:0.84rem; line-height:1.7; color:#e0fbfc;">
-                        <strong>السحر الهوائي (الموجات الصوتية والأثيرية):</strong> يُعلق في مهاب الرياح؛ كلما اهتز في مهب الرياح أحدث رنيناً تذبذبياً يسبب الصداع النصفي، الوسواس القهري، والشتات الفكري.<br>
-                        <strong>العلاج المضاد:</strong> قطع الوتر الأثيري المعلق، الاستقرار وتثبيت الجسد بالأرض، وسماع الرقية بترددات هابطة تؤصل السكينة واليقين.
+                        <p style="margin-bottom:8px;"><strong>الفيزياء الفونيمية:</strong> موجات تخلخل وانتشار صوتي تعتمد على انطلاق النفس والصفير والهمس؛ تحفز التبادل الأيوني وشبكات الاتصال العصبية الفكرية.</p>
+                        <p style="margin:0;"><strong>التأثير الوجودي:</strong> نشر المعارف، سلاسة النطق، توارد الأفكار الإلهامية، والتواصل الروحي السريع كحبال الأثير الناقلة.</p>
                     </div>
                 </div>
 
-                <div style="background:var(--panel-bg); border:1px solid var(--water); border-radius:16px; padding:20px;">
-                    <h3 style="color:var(--water); margin-bottom:8px;"><i class="fa-solid fa-water"></i> 3. الحروف المائية (دَحْلَعَرَخَغْ)</h3>
-                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>د (4) • ح (8) • ل (30) • ع (70) • ر (200) • خ (600) • غ (1000)</strong> — بارد رطب</p>
+                <div style="background:var(--panel-bg); border:1px solid var(--water); border-radius:16px; padding:20px; box-shadow:0 8px 25px rgba(59,130,246,0.12);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <h3 style="color:var(--water); margin:0; font-family:'Amiri',serif; font-size:1.2rem;"><i class="fa-solid fa-water"></i> 3. الحروف المائية (السيولة والذاكرة)</h3>
+                        <span style="background:rgba(59,130,246,0.15); border:1px solid var(--water); color:#93c5fd; padding:2px 8px; border-radius:8px; font-size:0.75rem; font-weight:700;">د • ح • ل • ع • ر • خ • غ</span>
+                    </div>
                     <div style="font-size:0.84rem; line-height:1.7; color:#dbeafe;">
-                        <strong>السحر المائي (الرنين الهيدروجيني والذاكرة السائلة):</strong> يلقى في الآبار أو البحار أو يُشرب؛ يؤثر على سوائل الجسد والغدد، مسبباً الخمول، تبلد المشاعر، وبرودة الأطراف.<br>
-                        <strong>العلاج المضاد:</strong> إعادة هيكلة جزيئات الماء الداخلي بالبسملة والقرآن (Hexagonal Water Structured)، والتسخين والتعرق لإخراج السموم الأثيرية.
+                        <p style="margin-bottom:8px;"><strong>الفيزياء الفونيمية:</strong> موجات هيدروديناميكية متدفقة تحاكي رنين الماء الجاري؛ تعزز الروابط الهيدروجينية السداسية وتساعد على امتصاص الصدمات النفسية.</p>
+                        <p style="margin:0;"><strong>التأثير الوجودي:</strong> الشفاء، المحبة والانسجام، التسامح، وغسل الأكدار القلبية؛ تناسب التبريد وتسكين الغضب والحرارة الحارقة.</p>
                     </div>
                 </div>
 
-                <div style="background:var(--panel-bg); border:1px solid var(--earth); border-radius:16px; padding:20px;">
-                    <h3 style="color:var(--earth); margin-bottom:8px;"><i class="fa-solid fa-mountain"></i> 4. الحروف الترابية (بَوْيَنَصْتَضْ)</h3>
-                    <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">الأحرف: <strong>ب (2) • و (6) • ي (10) • ن (50) • ص (90) • ت (400) • ض (800)</strong> — بارد يابس</p>
+                <div style="background:var(--panel-bg); border:1px solid var(--earth); border-radius:16px; padding:20px; box-shadow:0 8px 25px rgba(245,158,11,0.12);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <h3 style="color:var(--earth); margin:0; font-family:'Amiri',serif; font-size:1.2rem;"><i class="fa-solid fa-mountain"></i> 4. الحروف الترابية (التكثيف والتثبيت)</h3>
+                        <span style="background:rgba(245,158,11,0.15); border:1px solid var(--earth); color:#fde68a; padding:2px 8px; border-radius:8px; font-size:0.75rem; font-weight:700;">ب • و • ي • ن • ص • ت • ض</span>
+                    </div>
                     <div style="font-size:0.84rem; line-height:1.7; color:#fef3c7;">
-                        <strong>السحر الترابي (التثبيت المغناطيسي والدفائن):</strong> يدفن في القبور وتحت العتبات؛ يسبب ثقل العظام، آلام المفاصل والظهر، والتعطيل التام للحركة والرزق.<br>
-                        <strong>العلاج المضاد:</strong> استخراج الدفين وفسخه بالملح والخل الصخري والماء المرقى، وقطع التأريض السلبي بنور التسبيح والأذكار الحية.
+                        <p style="margin-bottom:8px;"><strong>الفيزياء الفونيمية:</strong> موجات ضغط صوتية ذات ترددات أرضية رنانة مع رنين شومان (7.83 هرتز)؛ تعزز الثبات والاتزان الجسدي ومناعة الهيكل العظمي.</p>
+                        <p style="margin:0;"><strong>التأثير الوجودي:</strong> ترسيخ القواعد، الصبر، الإصرار، تثبيت المقامات، وحفظ الأمانات والعهود دون تذبذب.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Panoramic 28-Letter Comparative Matrix Table -->
+            <div style="background:rgba(10,16,26,0.85); border:1px solid rgba(0,229,255,0.25); border-radius:16px; padding:24px; overflow-x:auto;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                    <span style="font-size:1.4rem;">📊</span>
+                    <h3 style="color:#fff; font-family:'Amiri',serif; margin:0; font-size:1.3rem;">جدول المقارنة البانورامي الشامل للحروف الـ 28 والطبائع ومخارج الصوت والمنازل الكونية</h3>
+                </div>
+                <table style="width:100%; border-collapse:collapse; font-size:0.84rem; color:#cbd5e1; text-align:right;">
+                    <thead>
+                        <tr style="background:rgba(15,23,42,0.9); border-bottom:2px solid var(--gold); color:var(--gold);">
+                            <th style="padding:10px;">الحرف</th>
+                            <th style="padding:10px;">الجُمّل</th>
+                            <th style="padding:10px;">الطبيعة العنصرية</th>
+                            <th style="padding:10px;">التصنيف</th>
+                            <th style="padding:10px;">المخرج الصوتي</th>
+                            <th style="padding:10px;">الفلك والكوكب</th>
+                            <th style="padding:10px;">منزلة القمر</th>
+                            <th style="padding:10px;">ميزان جابر</th>
+                            <th style="padding:10px;">الاسم الإلهي المفتاح</th>
+                        </tr>
+                    </thead>
+                    <tbody id="panoramic-letters-table">
+                        <!-- Populated dynamically by JS -->
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -1578,6 +1937,529 @@ def generate_codex():
             `).join('');
         }
 
+
+        // DATA: Complete 28 Arabic Letters Matrix
+        const LETTERS_DATA = [
+            {
+                char: "ا", name: "الألف", val: 1, element: "fire", element_ar: "ناري (أثيري حار يابس)", color: "#ef4444",
+                nature: "luminous", nature_ar: "نوراني (من فواتح السور)",
+                makhraj: "الجوف وتجويف الحلق والصدر (مبدأ الأصوات)",
+                hz: "85 - 250 هرتز (التردد الجذري)",
+                celestial: "فلك الشمس وفلك البروج المحيط",
+                mansion: "1. الشرطين (نطح الحمل)",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "الله / الأحد",
+                secret: "الحرف القائم الفرد، سر الألوهية والتوحيد الخالص، لا يقبل الحركة ولا الاتصال بما بعده."
+            },
+            {
+                char: "ب", name: "الباء", val: 2, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "dark", nature_ar: "ظلماني (وعاء الخلق والتركيب)",
+                makhraj: "الشفتان بانطباق تام",
+                hz: "350 - 600 هرتز",
+                celestial: "فلك القمر (الأقرب للأرض)",
+                mansion: "2. البطين (بطن الحمل)",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "البارئ / الباقي",
+                secret: "باء البسملة التي ظهر بها الوجود، ونقطة الباء هي أول تعين للفيض في عالم الكثرة."
+            },
+            {
+                char: "ج", name: "الجيم", val: 3, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "وسط اللسان مع الحنك الأعلى (شديد مجهور)",
+                hz: "1200 - 1800 هرتز",
+                celestial: "فلك المشتري (السعد الأكبر)",
+                mansion: "3. الثريا (النجم)",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "الجامع / الجليل",
+                secret: "سر الجمع والائتلاف، توسط القوى وربط الأضداد في حركة دائرية مستمرة."
+            },
+            {
+                char: "د", name: "الدال", val: 4, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "طرف اللسان مع أصول الثنايا العليا",
+                hz: "400 - 800 هرتز",
+                celestial: "فلك المريخ (الحديد والقوة)",
+                mansion: "4. الدبران (عين الثور)",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "الدائم / الديان",
+                secret: "قاعدة التربيع والدوام، استقرار الأركان الأربعة للطبيعة وثبات العالم المادي."
+            },
+            {
+                char: "هـ", name: "الهاء", val: 5, element: "fire", element_ar: "ناري (حار يابس)", color: "#ef4444",
+                nature: "luminous", nature_ar: "نوراني (كهيعص)",
+                makhraj: "أقصى الحلق (النَفَس الإلهي الصافي)",
+                hz: "90 - 220 هرتز",
+                celestial: "فلك الزهرة (الجمال والتناغم)",
+                mansion: "5. الهقعة (رأس الجوزاء)",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "الهادي / هو",
+                secret: "ضمير الغيب المطلق (هُوَ)، هاء الهوية الذاتية وأصل انبعاث النفس الحي من الصدر."
+            },
+            {
+                char: "و", name: "الواو", val: 6, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "الشفتان بانضمام وتدوير",
+                hz: "300 - 550 هرتز",
+                celestial: "فلك عطارد (العلم والكتابة)",
+                mansion: "6. الهنعة (منكبا الجوزاء)",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "الودود / الواسع",
+                secret: "واو العطف والوصل الكوني، الصلة بين الأرواح والأجساد وبين البداية والنهاية."
+            },
+            {
+                char: "ز", name: "الزاي", val: 7, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "طرف اللسان مع فويق الثنايا السفلى (صفير)",
+                hz: "2400 - 3500 هرتز",
+                celestial: "فلك زحل (الشيخ والميزان)",
+                mansion: "7. الذراع (ذراع الأسد)",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "الزكي",
+                secret: "سر السبعة التامة وأيام الأسبوع وأفلاك السماوات السبع والتطهير الفائق للمعدن."
+            },
+            {
+                char: "ح", name: "الحاء", val: 8, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "luminous", nature_ar: "نوراني (حم)",
+                makhraj: "وسط الحلق (مهموس رخو مائي)",
+                hz: "450 - 950 هرتز",
+                celestial: "فلك المشتري",
+                mansion: "8. النثرة (أنف الأسد)",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "الحي / الحكيم",
+                secret: "حياة الكائنات، سر حملة العرش الثمانية، وانفتاح أبواب الجنان الثمانية."
+            },
+            {
+                char: "ط", name: "الطاء", val: 9, element: "fire", element_ar: "ناري (حار يابس)", color: "#ef4444",
+                nature: "luminous", nature_ar: "نوراني (طه، طسم)",
+                makhraj: "طرف اللسان مع أصول الثنايا (مستعلٍ مطبق)",
+                hz: "200 - 500 هرتز",
+                celestial: "فلك المريخ",
+                mansion: "9. الطرف (عينا الأسد)",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "الطاهر / القدوس",
+                secret: "نهاية الآحاد وأعلى مراتب الأرقام المفردة، سر الطهارة التامة واحتراق الشياطين."
+            },
+            {
+                char: "ي", name: "الياء", val: 10, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "luminous", nature_ar: "نوراني (يس، كهيعص)",
+                makhraj: "وسط اللسان مع الحنك",
+                hz: "1500 - 2400 هرتز",
+                celestial: "فلك الشمس",
+                mansion: "10. الجبهة (جبهة الأسد)",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "يا أحد / الحي القيوم",
+                secret: "مفتاح العشرات، ختام الأبجدية ورجوع المنتهى إلى المبتدأ (الألف والياء)."
+            },
+            {
+                char: "ك", name: "الكاف", val: 20, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "luminous", nature_ar: "نوراني (كهيعص)",
+                makhraj: "أقصى اللسان أسفل القاف قليلاً",
+                hz: "800 - 1400 هرتز",
+                celestial: "فلك الزهرة",
+                mansion: "11. الزبرة (خرات الأسد)",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "الكريم / الكافي",
+                secret: "كاف التكوين: ﴿إِنَّمَا أَمْرُهُ إِذَا أَرَادَ شَيْئًا أَن يَقُولَ لَهُ كُن فَيَكُونُ﴾، سر الأمر النافذ."
+            },
+            {
+                char: "ل", name: "اللام", val: 30, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "luminous", nature_ar: "نوراني (الم، المر)",
+                makhraj: "أدنى حافة اللسان إلى منتهاها",
+                hz: "600 - 1100 هرتز",
+                celestial: "فلك عطارد",
+                mansion: "12. الصرفة (ذنب الأسد)",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "اللطيف",
+                secret: "سر اللطف الإلهي الخفي، واسطة الاتصال بين الألف المبتدئة والميم المنتهية في (الم)."
+            },
+            {
+                char: "م", name: "الميم", val: 40, element: "fire", element_ar: "ناري (حار يابس)", color: "#ef4444",
+                nature: "luminous", nature_ar: "نوراني (الم، حم)",
+                makhraj: "الشفتان مع الغنة الخيشومية",
+                hz: "200 - 450 هرتز",
+                celestial: "فلك القمر",
+                mansion: "13. العواء",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "الملك / المجيد",
+                secret: "ميم الملك والمحمدية، سر الأربعين ليلة لموسى، واستواء الإنسانية في كمال الأربعين."
+            },
+            {
+                char: "ن", name: "النون", val: 50, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "luminous", nature_ar: "نوراني (ن والقلم)",
+                makhraj: "طرف اللسان مع لثة الثنايا والخيشوم",
+                hz: "500 - 900 هرتز",
+                celestial: "فلك زحل",
+                mansion: "14. السماك (الأعزل)",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "النور / النافع",
+                secret: "نون الدواة الكونية، نصف الدائرة الذي يمسك بنقطة الحقيقة، وخمسون ألف سنة من المعارج."
+            },
+            {
+                char: "س", name: "السين", val: 60, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "luminous", nature_ar: "نوراني (يس، طسم)",
+                makhraj: "أسلة اللسان مع أطراف الثنايا (صفير)",
+                hz: "3000 - 4500 هرتز",
+                celestial: "فلك المشتري",
+                mansion: "15. الغفر",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "السلام / السميع",
+                secret: "سر السمع الروحي والسلام الإلهي، والأسنان الثلاث التي تمثل مراتب الشريعة والطريقة والحقيقة."
+            },
+            {
+                char: "ع", name: "العين", val: 70, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "luminous", nature_ar: "نوراني (عسق، كهيعص)",
+                makhraj: "وسط الحلق (حرف عميق مجهور)",
+                hz: "300 - 700 هرتز",
+                celestial: "فلك المريخ",
+                mansion: "16. الزبانى",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "العليم / العلي",
+                secret: "عين البصيرة والشهود، نبع المعارف الإلهية، والسبعون ألف حجاب من نور وظلمة."
+            },
+            {
+                char: "ف", name: "الفاء", val: 80, element: "fire", element_ar: "ناري (حار يابس)", color: "#ef4444",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "بطن الشفة السفلى مع أطراف الثنايا العليا",
+                hz: "1200 - 2200 هرتز",
+                celestial: "فلك الشمس",
+                mansion: "17. الإكليل",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "الفتاح / الفاطر",
+                secret: "سر الفتح المبين وفطر السماوات والأرض وانفلاق الإصباح والبدايات الإعجازية."
+            },
+            {
+                char: "ص", name: "الصاد", val: 90, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "luminous", nature_ar: "نوراني (ص والقرآن)",
+                makhraj: "أسلة اللسان مع استعلاء وإطباق",
+                hz: "1800 - 3200 هرتز",
+                celestial: "فلك الزهرة",
+                mansion: "18. القلب (قلب العقرب)",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "الصمد / الصادق",
+                secret: "سر الصمود الأبدي، صفاء القلب من الأغيار، وثبات الإيمان أمام عواصف الترددات."
+            },
+            {
+                char: "ق", name: "القاف", val: 100, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "luminous", nature_ar: "نوراني (ق والقرآن المجيد)",
+                makhraj: "أقصى اللسان مع الحنك اللحمي (قلقلة)",
+                hz: "400 - 900 هرتز",
+                celestial: "فلك عطارد",
+                mansion: "19. الشولة",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "القدير / القاهر",
+                secret: "جبل قاف المحيط بالأرض، قدرة الحق القاهرة على كل باطل، وسر المائة التامة في الميزان."
+            },
+            {
+                char: "ر", name: "الراء", val: 200, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "luminous", nature_ar: "نوراني (الر، المر)",
+                makhraj: "طرف اللسان مع الحنك (تكرير لطيف)",
+                hz: "500 - 1200 هرتز",
+                celestial: "فلك القمر",
+                mansion: "20. النعائم",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "الرحمن / الرحيم",
+                secret: "رحمة الوجود الواسعة، تكرير الفيض الإلهي على الخلائق وتجدد النعم في كل طرفة عين."
+            },
+            {
+                char: "ش", name: "الشين", val: 300, element: "fire", element_ar: "ناري (حار يابس)", color: "#ef4444",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "وسط اللسان (تفشي الريح والحرارة)",
+                hz: "2200 - 3800 هرتز",
+                celestial: "فلك الكواكب الثابتة (الكرسي الأدنى)",
+                mansion: "21. البلدة",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "الشكور / الشهيد",
+                secret: "تفشي الأنوار واشتعال الشوق الإلهي، والشهود العرفاني للحق في كل ذرة من ذرات الوجود."
+            },
+            {
+                char: "ت", name: "التاء", val: 400, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "طرف اللسان مع أصول الثنايا العليا",
+                hz: "600 - 1000 هرتز",
+                celestial: "فلك البروج (الفلك الأطلس)",
+                mansion: "22. سعد الذابح",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "التواب",
+                secret: "سر التوبة والرجوع إلى الأصل، تقوى القلوب، والأربعمائة عام في مسافات الحجب."
+            },
+            {
+                char: "ث", name: "الثاء", val: 500, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "طرف اللسان مع أطراف الثنايا العليا (لثوي)",
+                hz: "2500 - 4000 هرتز",
+                celestial: "فلك الكرسي الإلهي الواسع",
+                mansion: "23. سعد بلع",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "الثابت",
+                secret: "ثبات الحقائق في الكرسي: ﴿وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ﴾، وخمسة قرون في قياس الأنوار."
+            },
+            {
+                char: "خ", name: "الخاء", val: 600, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "أدنى الحلق مما يلي الفم (استعلاء)",
+                hz: "700 - 1400 هرتز",
+                celestial: "فلك العرش المحيط بالخلائق",
+                mansion: "24. سعد السعود",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "الخبير / الخالق",
+                secret: "سر الخلق من العدم، الإحاطة الخبيرة بالأكوان، وستة أيام من أيام الخلق التكويني."
+            },
+            {
+                char: "ذ", name: "الذال", val: 700, element: "fire", element_ar: "ناري (حار يابس)", color: "#ef4444",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "طرف اللسان مع أطراف الثنايا العليا (مجهور)",
+                hz: "800 - 1600 هرتز",
+                celestial: "سدرة المنتهى وحجاب الجبروت",
+                mansion: "25. سعد الأخبية",
+                jabir: "المرتبة الأولى (1 درهم)",
+                divine_name: "ذو الجلال والإكرام",
+                secret: "سر الذات الإلهية وذروة التجليات، ومقام سدرة المنتهى التي عندها ينتهي علم كل مخلوق."
+            },
+            {
+                char: "ض", name: "الضاد", val: 800, element: "earth", element_ar: "ترابي (بارد يابس)", color: "#f59e0b",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "إحدى حافتي اللسان أو كلاهما مع الأضراس العليا (استطالة)",
+                hz: "300 - 700 هرتز",
+                celestial: "اللوح المحفوظ وعالم الذواكر الكلية",
+                mansion: "26. الفرغ المقدم",
+                jabir: "المرتبة الثانية (3 دراهم)",
+                divine_name: "الضار / النافع",
+                secret: "حرف الضاد المميز للغة القرآن (لغة الضاد)، والاستطالة الصوتية الكونية وثبات ما كُتب في اللوح."
+            },
+            {
+                char: "ظ", name: "الظاء", val: 900, element: "air", element_ar: "هوائي (حار رطب)", color: "#06b6d4",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "طرف اللسان مع أطراف الثنايا مع استعلاء وإطباق",
+                hz: "1000 - 2000 هرتز",
+                celestial: "القلم الأعلى المأمور بالكتابة",
+                mansion: "27. الفرغ المؤخر",
+                jabir: "المرتبة الثالثة (5 دراهم)",
+                divine_name: "الظاهر",
+                secret: "ظهور المعاني الغيبية في خطوط القلم، وحصانة الأوامر الإلهية النافذة في عالم الملكوت."
+            },
+            {
+                char: "غ", name: "الغين", val: 1000, element: "water", element_ar: "مائي (بارد رطب)", color: "#3b82f6",
+                nature: "dark", nature_ar: "ظلماني (وعاء التركيب)",
+                makhraj: "أدنى الحلق مما يلي الفم (رخاوة واستعلاء)",
+                hz: "400 - 850 هرتز",
+                celestial: "العقل الأول الكوني (الروح الأعظم)",
+                mansion: "28. الرشاء (بطن الحوت)",
+                jabir: "المرتبة الرابعة (8 دراهم)",
+                divine_name: "الغني / الغفار",
+                secret: "ختام الألوف التامة (1000)، غنى الحق المطلق عن العالمين، وغفران الذنوب ولو كانت كزبد البحر."
+            }
+        ];
+
+        // CONTROLLERS FOR TAB 13
+        function calculateLettersLive() {
+            const input = document.getElementById('abjad-live-input');
+            const text = input ? input.value : '';
+
+            // Clean Arabic text and calculate
+            let majorTotal = 0;
+            let pureLettersCount = 0;
+            let luminousCount = 0;
+            let countFire = 0, countAir = 0, countWater = 0, countEarth = 0;
+
+            const ABJAD_MAP = {
+                'ا': 1, 'أ': 1, 'إ': 1, 'آ': 1, 'ء': 1, 'ب': 2, 'ج': 3, 'د': 4, 'ه': 5, 'ة': 5, 'هـ': 5,
+                'و': 6, 'ؤ': 6, 'ز': 7, 'ح': 8, 'ط': 9, 'ي': 10, 'ى': 10, 'ئ': 10, 'ك': 20, 'ل': 30,
+                'م': 40, 'ن': 50, 'س': 60, 'ع': 70, 'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200, 'ش': 300,
+                'ت': 400, 'ث': 500, 'خ': 600, 'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
+            };
+
+            const LUMINOUS_SET = new Set(['ا', 'أ', 'إ', 'آ', 'ء', 'ح', 'ر', 'س', 'ص', 'ط', 'ع', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'ة', 'ي', 'ى']);
+            const FIRE_SET = new Set(['ا', 'أ', 'إ', 'آ', 'ء', 'ه', 'ة', 'ط', 'م', 'ف', 'ش', 'ذ']);
+            const AIR_SET = new Set(['ج', 'ز', 'ك', 'س', 'ق', 'ث', 'ظ']);
+            const WATER_SET = new Set(['د', 'ح', 'ل', 'ع', 'ر', 'خ', 'غ']);
+            const EARTH_SET = new Set(['ب', 'و', 'ؤ', 'ي', 'ى', 'ئ', 'ن', 'ص', 'ت', 'ض']);
+
+            for (let ch of text) {
+                if (ABJAD_MAP[ch] !== undefined) {
+                    pureLettersCount++;
+                    majorTotal += ABJAD_MAP[ch];
+
+                    if (LUMINOUS_SET.has(ch)) luminousCount++;
+                    if (FIRE_SET.has(ch)) countFire++;
+                    else if (AIR_SET.has(ch)) countAir++;
+                    else if (WATER_SET.has(ch)) countWater++;
+                    else if (EARTH_SET.has(ch)) countEarth++;
+                }
+            }
+
+            // Digital Root (الجمل الصغير 1-9)
+            let minor = 0;
+            if (majorTotal > 0) {
+                minor = majorTotal % 9;
+                if (minor === 0) minor = 9;
+            }
+
+            // Update UI Numbers
+            const majorEl = document.getElementById('metric-major');
+            if (majorEl) majorEl.innerText = majorTotal.toLocaleString();
+
+            const minorEl = document.getElementById('metric-minor');
+            if (minorEl) minorEl.innerText = minor;
+
+            const countEl = document.getElementById('metric-letters-count');
+            if (countEl) countEl.innerText = pureLettersCount;
+
+            const lumPctEl = document.getElementById('metric-luminous-pct');
+            const lumPct = pureLettersCount > 0 ? ((luminousCount / pureLettersCount) * 100).toFixed(1) : 0;
+            if (lumPctEl) lumPctEl.innerText = lumPct + '%';
+
+            // Calculate Elemental Percentages
+            const totalElements = countFire + countAir + countWater + countEarth;
+            const pctFire = totalElements > 0 ? ((countFire / totalElements) * 100).toFixed(0) : 25;
+            const pctAir = totalElements > 0 ? ((countAir / totalElements) * 100).toFixed(0) : 25;
+            const pctWater = totalElements > 0 ? ((countWater / totalElements) * 100).toFixed(0) : 25;
+            const pctEarth = totalElements > 0 ? ((countEarth / totalElements) * 100).toFixed(0) : 25;
+
+            // Update Bars
+            const barFire = document.getElementById('bar-fire');
+            if (barFire) barFire.style.width = pctFire + '%';
+            const valFire = document.getElementById('pct-fire');
+            if (valFire) valFire.innerText = pctFire + '% (' + countFire + ')';
+
+            const barAir = document.getElementById('bar-air');
+            if (barAir) barAir.style.width = pctAir + '%';
+            const valAir = document.getElementById('pct-air');
+            if (valAir) valAir.innerText = pctAir + '% (' + countAir + ')';
+
+            const barWater = document.getElementById('bar-water');
+            if (barWater) barWater.style.width = pctWater + '%';
+            const valWater = document.getElementById('pct-water');
+            if (valWater) valWater.innerText = pctWater + '% (' + countWater + ')';
+
+            const barEarth = document.getElementById('bar-earth');
+            if (barEarth) barEarth.style.width = pctEarth + '%';
+            const valEarth = document.getElementById('pct-earth');
+            if (valEarth) valEarth.innerText = pctEarth + '% (' + countEarth + ')';
+
+            // Diagnosis
+            const diagEl = document.getElementById('element-diagnosis');
+            if (diagEl) {
+                const maxVal = Math.max(countFire, countAir, countWater, countEarth);
+                let dom = [];
+                if (countFire === maxVal && maxVal > 0) dom.push('نارية حارة يابسة');
+                if (countAir === maxVal && maxVal > 0) dom.push('هوائية حارة رطبة');
+                if (countWater === maxVal && maxVal > 0) dom.push('مائية باردة رطبة');
+                if (countEarth === maxVal && maxVal > 0) dom.push('ترابية باردة يابسة');
+
+                diagEl.innerText = totalElements > 0 ? 'الطبيعة الغالبة: ' + dom.join(' مع ') : 'طبيعة متوازنة';
+            }
+        }
+
+        function setSampleText(sample) {
+            const input = document.getElementById('abjad-live-input');
+            if (input) {
+                input.value = sample;
+                calculateLettersLive();
+            }
+        }
+
+        function selectLetter(char) {
+            const l = LETTERS_DATA.find(x => x.char === char);
+            if (!l) return;
+
+            // Highlight tile
+            document.querySelectorAll('.letter-tile-btn').forEach(btn => btn.classList.remove('active'));
+            const activeTile = document.getElementById('tile-' + char);
+            if (activeTile) activeTile.classList.add('active');
+
+            // Render Inspector Card
+            const card = document.getElementById('letter-detail-card');
+            if (card) {
+                card.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:12px;">
+                        <div>
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <span style="font-size:2.8rem; font-family:'Amiri',serif; color:${l.color}; line-height:1; font-weight:bold;">${l.char}</span>
+                                <div>
+                                    <h3 style="color:${l.color}; font-family:'Amiri',serif; margin:0; font-size:1.35rem; text-shadow:0 0 14px ${l.color}44;">حرف ${l.name}</h3>
+                                    <span style="color:var(--gold); font-size:0.85rem; font-weight:700;">الجُمّل: ${l.val}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align:left;">
+                            <span style="background:${l.color}22; border:1px solid ${l.color}; color:${l.color}; padding:4px 10px; border-radius:8px; font-size:0.75rem; font-weight:700; display:block; margin-bottom:4px;">
+                                ${l.element_ar}
+                            </span>
+                            <span style="background:${l.nature === 'luminous' ? 'rgba(244,180,26,0.15)' : 'rgba(148,163,184,0.1)'}; border:1px solid ${l.nature === 'luminous' ? 'var(--gold)' : '#64748b'}; color:${l.nature === 'luminous' ? 'var(--gold)' : '#94a3b8'}; padding:2px 8px; border-radius:6px; font-size:0.72rem;">
+                                ${l.nature_ar}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.82rem; margin-bottom:14px; background:rgba(0,0,0,0.3); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.05);">
+                        <div><strong style="color:var(--cyan);">المخرج الصوتي:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.makhraj}</span></div>
+                        <div><strong style="color:var(--cyan);">التردد المقدر:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.hz}</span></div>
+                        <div><strong style="color:var(--cyan);">الفلك والكوكب:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.celestial}</span></div>
+                        <div><strong style="color:var(--cyan);">منزلة القمر:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.mansion}</span></div>
+                        <div style="grid-column:span 2;"><strong style="color:var(--gold);">ميزان جابر بن حيان:</strong> <span style="color:#fef08a;">${l.jabir}</span></div>
+                        <div style="grid-column:span 2;"><strong style="color:var(--gold);">الاسم الإلهي المفتاح:</strong> <span style="color:#34d399; font-weight:700;">${l.divine_name}</span></div>
+                    </div>
+
+                    <div style="background:linear-gradient(135deg, rgba(244,180,26,0.08), rgba(0,240,255,0.04)); border:1px solid rgba(244,180,26,0.3); border-radius:10px; padding:12px;">
+                        <strong style="color:var(--gold); display:flex; align-items:center; gap:6px; font-size:0.85rem;">📜 السر العرفاني والحقيقة الكونية:</strong>
+                        <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.6; margin:6px 0 0 0;">${l.secret}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function filterLetters(cat, btn) {
+            document.querySelectorAll('.letter-filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            let filtered = LETTERS_DATA;
+            if (cat === 'luminous') filtered = LETTERS_DATA.filter(l => l.nature === 'luminous');
+            else if (cat === 'dark') filtered = LETTERS_DATA.filter(l => l.nature === 'dark');
+            else if (cat === 'fire') filtered = LETTERS_DATA.filter(l => l.element === 'fire');
+            else if (cat === 'air') filtered = LETTERS_DATA.filter(l => l.element === 'air');
+            else if (cat === 'water') filtered = LETTERS_DATA.filter(l => l.element === 'water');
+            else if (cat === 'earth') filtered = LETTERS_DATA.filter(l => l.element === 'earth');
+
+            const container = document.getElementById('letters-grid');
+            if (!container) return;
+
+            container.innerHTML = filtered.map(l => `
+                <div class="letter-tile-btn" id="tile-${l.char}" style="border-color:${l.color}; color:${l.color};" onclick="selectLetter('${l.char}')">
+                    <span class="letter-char">${l.char}</span>
+                    <span class="letter-val">${l.val}</span>
+                </div>
+            `).join('');
+
+            // Select first from filtered if available
+            if (filtered.length > 0) {
+                selectLetter(filtered[0].char);
+            }
+        }
+
+        function renderLetters() {
+            filterLetters('all');
+            calculateLettersLive();
+            selectLetter('ا');
+
+            // Render Panoramic Table
+            const tableBody = document.getElementById('panoramic-letters-table');
+            if (tableBody) {
+                tableBody.innerHTML = LETTERS_DATA.map((l, idx) => `
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:${idx % 2 === 0 ? 'rgba(15,23,42,0.4)' : 'rgba(10,16,26,0.6)'};">
+                        <td style="padding:10px; font-weight:bold; font-family:'Amiri',serif; font-size:1.2rem; color:${l.color};">${l.char} (${l.name})</td>
+                        <td style="padding:10px; font-weight:700; color:var(--gold);">${l.val}</td>
+                        <td style="padding:10px;"><span style="color:${l.color};">${l.element_ar.split(' ')[0]}</span></td>
+                        <td style="padding:10px;"><span style="color:${l.nature === 'luminous' ? 'var(--gold)' : '#94a3b8'}; font-weight:600;">${l.nature === 'luminous' ? 'نوراني' : 'ظلماني'}</span></td>
+                        <td style="padding:10px; font-size:0.8rem; color:#cbd5e1;">${l.makhraj}</td>
+                        <td style="padding:10px; font-size:0.8rem; color:var(--cyan);">${l.celestial}</td>
+                        <td style="padding:10px; font-size:0.8rem; color:#a78bfa;">${l.mansion}</td>
+                        <td style="padding:10px; font-size:0.8rem; color:#fef08a;">${l.jabir}</td>
+                        <td style="padding:10px; font-size:0.82rem; color:#34d399; font-weight:600;">${l.divine_name}</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
         function renderBodies() {
             filterBodies('all');
             selectBodyLayer('1');
@@ -1788,6 +2670,7 @@ def generate_codex():
             loadDayHours(0);
             renderMansions();
             renderPlanetaryWafqs();
+            renderLetters();
             renderBodies();
             renderQuranic();
             calculateLiveWafq();
