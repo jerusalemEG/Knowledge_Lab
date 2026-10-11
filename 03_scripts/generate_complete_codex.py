@@ -1851,17 +1851,21 @@ def generate_codex():
 
                 <!-- QUICK NAVIGATION PILLS -->
                 <div class="ghazali-nav-pills">
-                    <a href="#ghazali-ch1" class="ghazali-nav-pill"><i class="fa-solid fa-compass"></i> الباب 1: تشريح البيوت وسير بطد زهج واح</a>
-                    <a href="#ghazali-ch2" class="ghazali-nav-pill"><i class="fa-solid fa-calculator"></i> الباب 2: خوارزمية التعمير وحالات الكسر الثلاث</a>
-                    <a href="#ghazali-ch3" class="ghazali-nav-pill"><i class="fa-solid fa-cube"></i> الباب 3: ثلاثة نماذج تطبيقية كبرى من الألف للياء</a>
-                    <a href="#ghazali-ch4" class="ghazali-nav-pill"><i class="fa-solid fa-pen-fancy"></i> الباب 4: دستور الأحبار والمواد والأوعية</a>
+                    <a href="#ghazali-ch1" class="ghazali-nav-pill"><i class="fa-solid fa-compass"></i> الباب 1: تشريح البيوت وسير بطد</a>
+                    <a href="#ghazali-ch2" class="ghazali-nav-pill"><i class="fa-solid fa-calculator"></i> الباب 2: خوارزمية التعمير والكسر</a>
+                    <a href="#ghazali-ch3" class="ghazali-nav-pill"><i class="fa-solid fa-cube"></i> الباب 3: نماذج تطبيقية كبرى</a>
+                    <a href="#ghazali-ch4" class="ghazali-nav-pill"><i class="fa-solid fa-pen-fancy"></i> الباب 4: دستور الأحبار والمواد</a>
                     <a href="#ghazali-ch5" class="ghazali-nav-pill"><i class="fa-solid fa-clock"></i> الباب 5: مواقيت الرصد وساعات الكواكب</a>
-                    <a href="#ghazali-ch6" class="ghazali-nav-pill"><i class="fa-solid fa-volume-high"></i> الباب 6: بروتوكول التفعيل الصوتي والرنين</a>
-                    <a href="#ghazali-ch7" class="ghazali-nav-pill"><i class="fa-solid fa-key"></i> الباب 7: دليل الفك العكسي وإبطال الفاسد</a>
-                    <a href="#ghazali-ch8" class="ghazali-nav-pill"><i class="fa-solid fa-shield-halved"></i> الباب 8: الإغلاق والتحصين</a>
-                    <a href="#ghazali-ch9" class="ghazali-nav-pill"><i class="fa-solid fa-eye-slash"></i> الباب 9: ميكانيكا آيات السد والحجب (يس 9)</a>
-                    <a href="#ghazali-ch10" class="ghazali-nav-pill"><i class="fa-solid fa-eye"></i> الباب 10: فتح البصيرة وتطهير الهالة والران</a>
-                    <a href="#ghazali-ch11" class="ghazali-nav-pill"><i class="fa-solid fa-crown"></i> الباب 11: تفكيك خرافة الخدام وسر السيادة</a>
+                    <a href="#ghazali-ch6" class="ghazali-nav-pill"><i class="fa-solid fa-volume-high"></i> الباب 6: بروتوكول التفعيل والرنين</a>
+                    <a href="#ghazali-ch7" class="ghazali-nav-pill"><i class="fa-solid fa-key"></i> الباب 7: علامات الفساد والبطلان</a>
+                    <a href="#ghazali-ch8" class="ghazali-nav-pill"><i class="fa-solid fa-shield-halved"></i> الباب 8: التحصين التوحيدي</a>
+                    <a href="#ghazali-ch9" class="ghazali-nav-pill"><i class="fa-solid fa-eye-slash"></i> الباب 9: فيزياء الحجب والإغشاء (سدّاً سدّاً)</a>
+                    <a href="#ghazali-ch10" class="ghazali-nav-pill"><i class="fa-solid fa-eye"></i> الباب 10: تنقية الرّان وفتح البصيرة</a>
+                    <a href="#ghazali-ch11" class="ghazali-nav-pill"><i class="fa-solid fa-crown"></i> الباب 11: تفكيك مغالطة الخدام والسيادة</a>
+                    <a href="#ghazali-ch12" class="ghazali-nav-pill"><i class="fa-solid fa-arrow-up-right-dots"></i> الباب 12: فلسفة الأعداد والقراءات والبسط</a>
+                    <a href="#ghazali-ch13" class="ghazali-nav-pill"><i class="fa-solid fa-fire-flame-curved"></i> الباب 13: الدستور الكيميائي للبخورات السبعة</a>
+                    <a href="#ghazali-ch14" class="ghazali-nav-pill"><i class="fa-solid fa-wind"></i> الباب 14: التوافق الزماني والمكاني والرياح الأربع</a>
+                    <a href="#ghazali-ch15" class="ghazali-nav-pill"><i class="fa-solid fa-infinity"></i> الباب 15: الأسرار الرياضية التي لم يذكرها الغزالي</a>
                 </div>
 
                 <!-- CHAPTER 1 -->
@@ -2448,6 +2452,580 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                 <br><br>
                                 المسلم المؤمن الموحد بالله لا يستعين بجن، ولا يتقرب إلى كوكب، ولا يذبح لغير الله؛ بل ينظر إلى هذه المصفوفات كما ينظر المهندس إلى مصفوفات الجبر وحساب التفاضل، وكما ينظر الطبيب إلى خواص الأعشاب والمركبات. والإنسان الموحد المتوكل على الله هو خليفة الله وسيد فوق كل هذه النواميس المسخرة بنور لا إله إلا الله محمد رسول الله، وسر إجابة الدعاء وتحقيق الغايات إنما هو بصدق التوجه إلى مسبب الأسباب ومجري السحاب ومسخر النجوم، له الملك وله الحمد وهو على كل شيء قدير.
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+                <!-- CHAPTER 9: THE VEILING PHYSICS (SADDAN SADDAN) -->
+                <div class="ghazali-chapter" id="ghazali-ch9">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٩</div>
+                        <div>
+                            <h4 class="chapter-title">الباب التاسع: فيزياء الحجب الطاقي وحصن الإغشاء — تشريح آية السد الكونية</h4>
+                            <div class="chapter-subtitle">Cognitive Blind-Spotting & Waveform Deflection: The Sadda Vector (N = 3144)</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            يعتمد سر الحجب والدفع في الكوزمولوجيا القرآنية على قوله تعالى: 
+                            <strong style="color:var(--gold);">﴿وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا فَأَغْشَيْنَاهُمْ فَهُمْ لَا يُبْصِرُونَ﴾</strong> [يس: 9]. 
+                            إن هذا القانون ليس مجرد حجب بصري فيزيائي عشوائي، بل هو <em>انحراف في التردد الإدراكي (Cognitive Blind-Spotting)</em> 
+                            يعزل حقل الإنسان الحيوي عن رادارات الحقد، الحسد، والتتبع الطاقي السلبي، محولاً الهالة إلى وسط عاكس للموجات المشوشة.
+                        </p>
+
+                        <!-- Math Breakdown -->
+                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(0,240,255,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:var(--cyan); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.2rem;">
+                                📐 الاستخراج الرياضي الدقيق لآية السد:
+                            </h5>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; font-size:0.85rem;">
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    جُمّل الآية الكريمة كاملاً: <strong style="color:var(--gold); font-size:1.15rem;">N = 3144</strong>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    طرح الأس الثابت: <strong style="color:#fff;">3144 - 12 = 3132</strong>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    القسمة على 3 (المفتاح): <strong style="color:var(--emerald); font-size:1.15rem;">المفتاح = 1044</strong>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    الباقي: <strong style="color:var(--cyan); font-size:1.15rem;">الباقي = 0 (تام بلا كسر!)</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3x3 Grid Specimen -->
+                        <div style="display:flex; justify-content:center; margin:20px 0;">
+                            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; width:340px; background:rgba(0,0,0,0.8); border:2px solid var(--cyan); border-radius:14px; padding:12px; box-shadow:0 0 30px rgba(0,240,255,0.25);">
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">1047</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت د (4)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(239,68,68,0.15); border:1px solid #ef4444; border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#ef4444; font-size:1.2rem;">1052</span>
+                                    <span style="font-size:0.68rem; color:#ef4444;">المغلاق 🔒 (9)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">1045</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ب (2)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">1046</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ج (3)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(244,180,26,0.18); border:1px solid var(--gold); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:var(--gold); font-size:1.2rem;">1048</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">القطب ⚖️ (5)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">1050</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ز (7)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">1051</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ح (8)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(6,214,160,0.15); border:1px solid var(--emerald); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:var(--emerald); font-size:1.2rem;">1044</span>
+                                    <span style="font-size:0.68rem; color:var(--emerald);">المفتاح 🔑 (1)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">1049</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت و (6)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>التحقق الهندسي:</strong> 
+                            مجموع كل ضلع: $1047 + 1052 + 1045 = 3144$. 
+                            المجموع التراكمي للمصفوفة (المساحة الكلية): $T = 3144 \times 3 = 9432$. 
+                            يتميز هذا الوفق بأنه تام رياضي بلا انكسار، مما يمنحه ثباتاً طاقياً فائقاً في صد الترددات الخبيثة ورد كيد المتربصين.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 10: CLEANSING THE RA'N & ACTIVATING THE PINEAL INSIGHT -->
+                <div class="ghazali-chapter" id="ghazali-ch10">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١٠</div>
+                        <div>
+                            <h4 class="chapter-title">الباب العاشر: إزالة الرّان الطاقي وفتح البصيرة الصنوبرية — فيزياء تطهير النواة الإدراكية</h4>
+                            <div class="chapter-subtitle">Purging the Ra'n Biomagnetic Smog & Awakening Pineal Clarity (N = 558)</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            كشف القرآن الكريم عن ماهية الحجب الداخلي بقوله تعالى: 
+                            <strong style="color:var(--gold);">﴿كَلَّا بَلْ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُوا يَكْسِبُونَ﴾</strong> [المطففين: 14]. 
+                            إن <strong>«الرّان»</strong> في الفهم العلمي الباطني هو طبقة سميكة من التشويش الكهرومغناطيسي المنبعث من الأفكار المظلمة، 
+                            الذنوب، والصدمات النفسية المتراكمة، والتي تلتصق بالهالة الحيوية وتغلق النفاذية الضوئية للغدة الصنوبرية (Pineal Gland).
+                        </p>
+
+                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:var(--gold); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.2rem;">
+                                👁️ استخراج وفق فتح البصيرة والنور التام:
+                            </h5>
+                            <p style="font-size:0.86rem; margin:0 0 10px 0;">
+                                جمع الاسمين الإلهيين: <strong>«بَصِيرٌ»</strong> (جمله = 302) + <strong>«نُورٌ»</strong> (جمله = 256) 
+                                $\Rightarrow N = 302 + 256 = 558$.
+                            </p>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; font-size:0.85rem;">
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    العدد المطلوب: <strong style="color:var(--gold); font-size:1.15rem;">N = 558</strong>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    طرح الأس: <strong style="color:#fff;">558 - 12 = 546</strong>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    المفتاح: <strong style="color:var(--emerald); font-size:1.15rem;">546 ÷ 3 = 182</strong>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+                                    المغلاق: <strong style="color:#ef4444; font-size:1.15rem;">182 + 8 = 190</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3x3 Specimen for Insight -->
+                        <div style="display:flex; justify-content:center; margin:20px 0;">
+                            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; width:340px; background:rgba(0,0,0,0.8); border:2px solid var(--gold); border-radius:14px; padding:12px; box-shadow:0 0 30px rgba(244,180,26,0.25);">
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">185</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت د (4)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(239,68,68,0.15); border:1px solid #ef4444; border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#ef4444; font-size:1.2rem;">190</span>
+                                    <span style="font-size:0.68rem; color:#ef4444;">المغلاق 🔒 (9)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">183</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ب (2)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">184</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ج (3)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(244,180,26,0.18); border:1px solid var(--gold); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:var(--gold); font-size:1.2rem;">186</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">القطب ⚖️ (5)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">188</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ز (7)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">189</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت ح (8)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(6,214,160,0.15); border:1px solid var(--emerald); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:var(--emerald); font-size:1.2rem;">182</span>
+                                    <span style="font-size:0.68rem; color:var(--emerald);">المفتاح 🔑 (1)</span>
+                                </div>
+                                <div class="specimen-cell" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                    <span style="font-weight:800; color:#fff; font-size:1.2rem;">187</span>
+                                    <span style="font-size:0.68rem; color:var(--gold);">بيت و (6)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>بروتوكول تفعيل البصيرة:</strong> 
+                            يُعمر هذا الوفق على لوح فضي أو كاغد أبيض بمداد الزعفران وماء الورد في ساعة المشتري يوم الخميس، 
+                            ويُتلى الاسمان «يا بصير يا نور» بعدد المفتاح (182 مرة) مع صيام الوعي عن اللغو والشتات الذهني. 
+                            يعمل هذا التزامن على إعادة تهيئة الغدة الصنوبرية وزيادة انبعاث الفوتونات الحيوية المترابطة (Biophoton Coherence).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 11: DECONSTRUCTION OF SERVITOR MYTH & DIVINE SOVEREIGNTY -->
+                <div class="ghazali-chapter" id="ghazali-ch11">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١١</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الحادي عشر: تفكيك مغالطة «الأرواح الخادمة والخدام» وترسيخ سيادة التوحيد</h4>
+                            <div class="chapter-subtitle">Deconstruction of Servitor Spirits & The Absolute Monotheistic Sovereignty</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            من أعظم المفاسد التي حشا بها جهلة النساخ كتب التراث هو الزعم بأن للأوفاق «أرواحاً خادمة، عماراً، أو أعواناً سفلية» 
+                            تُستجلب بالتعازيم وتُستعبد للأغراض الدنيوية. يمثل هذا التصور انحداراً خرافياً يناقض العقل الصريح وصريح القرآن.
+                        </p>
+
+                        <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:#ef4444; margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.2rem;">
+                                ⚖️ النقد العلمي والعقدي الصارم لأكذوبة الخدام:
+                            </h5>
+                            <ul style="margin:0 0 0 18px; padding:0; font-size:0.86rem; line-height:1.8;">
+                                <li>
+                                    <strong>1. نقد ابن خلدون في «المقدمة»:</strong> 
+                                    أثبت ابن خلدون أن استحضار الكيانات والرؤى الهلوسية في الخلوات ليس إلا <em>إسقاطات نفسية وهمية (Psychological Hallucinations)</em> 
+                                    ناشئة عن إنهاك الحواس واختلال كيمياء الدماغ، وليست كائنات خارجية مستقلة تخدم أحداً.
+                                </li>
+                                <li>
+                                    <strong>2. تقرير أبي حامد الغزالي:</strong> 
+                                    بين الغزالي في <em>المنقذ من الضلال</em> أن التأثيرات المشاهدة في الأوفاق هي <strong>خواص هندسية طبيعية</strong> 
+                                    أودعها الله في التناسب العددي كما أودع خاصية الإسهال في السقمونيا وخاصية الجذب في المغناطيس، والوسائط المزعومة ليست إلا أوهاماً دجلية.
+                                </li>
+                                <li>
+                                    <strong>3. الميزان القرآني:</strong> 
+                                    الإنسان المؤمن هو خليفة الله في أرضه المسخر له ما في السماوات والأرض ﴿وَسَخَّرَ لَكُم مَّا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ جَمِيعًا مِّنْهُ﴾ [الجاثية: 13]. 
+                                    فمن طلب خادماً برزخياً أو سفلباً فقد تنازل عن رتبة السيادة واستعبد نفسه لأوهام وضيعة.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            <strong>السر الحقيقي للتأثير:</strong> 
+                            قوة الوفق تنبع حصراً من <strong>«تماسك العزيمة وتجريد التوحيد (Mental & Spiritual Coherence)»</strong>؛ 
+                            فعندما ينسجم العقل البشري مع التناسب الرياضي المتزن، تزول ممانعة الشتات، وتتطابق النية مع سنن الكون المسخرة، 
+                            فيستجيب الواقع لقوة التوكل الصادق على مسبب الأسباب ومجري السحاب سبحانه.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 12: NUMERICAL DERIVATIONS & RECITATION RATIOS -->
+                <div class="ghazali-chapter" id="ghazali-ch12">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١٢</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الثاني عشر: فلسفة استخراج الأعداد الترددية وسر اختيار الأسماء وقوانين التلاوة</h4>
+                            <div class="chapter-subtitle">Numerical Vibrations, Gematria Expansion Methods & Recitation Harmonic Ratios</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            لا توضع الأرقام في مثلث الغزالي اعتباطاً أو على سبيل التخمين؛ بل لكل رقم شفرة ترددية هندسية تحاكي القانون الكوني. 
+                            هنا نفكك سر الأعداد المستخدمة، ولماذا تم اختيارها، وكيف يُربط عدد التلاوة بأضلاع الوفق.
+                        </p>
+
+                        <!-- The Derivations Table -->
+                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,209,102,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:var(--gold); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                🔢 لماذا اخترنا هذه الأعداد بالذات في النماذج التطبيقية؟
+                            </h5>
+                            <div style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse; font-size:0.84rem; text-align:right;">
+                                    <thead>
+                                        <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(255,209,102,0.3);">
+                                            <th style="padding:10px;">الغاية</th>
+                                            <th style="padding:10px;">العدد (N)</th>
+                                            <th style="padding:10px;">الاشتقاق والسر الترددي</th>
+                                            <th style="padding:10px;">المفتاح والباقي</th>
+                                            <th style="padding:10px;">الأثر الطاقي المستهدف</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                            <td style="padding:10px; font-weight:700; color:var(--emerald);">الشفاء الخلوي</td>
+                                            <td style="padding:10px; color:#fff; font-weight:800;">391</td>
+                                            <td style="padding:10px;">جُمّل ﴿وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ﴾ مطروحاً منها شوائب الترددات، وتوافق اسم الله «الشافي» المكرر بحساب البسط</td>
+                                            <td style="padding:10px;">المفتاح 126 | باقي 1 (جبر في بيت 7)</td>
+                                            <td style="padding:10px;">إعادة ضبط الرنين البيولوجي، تحفيز المناعة، ورفع حيوية الأنسجة</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                            <td style="padding:10px; font-weight:700; color:var(--cyan);">الوفرة والرزق</td>
+                                            <td style="padding:10px; color:#fff; font-weight:800;">308</td>
+                                            <td style="padding:10px;">جُمّل اسم الله «الرَّزَّاقُ» (ر=200، ز=7، ا=1، ق=100 $\Rightarrow 308$)، وتوافقه مع فلك الزهرة ومعدن النحاس</td>
+                                            <td style="padding:10px;">المفتاح 98 | باقي 2 (جبر في بيت 4)</td>
+                                            <td style="padding:10px;">فتح قنوات التيسير، إزالة موانع الفقر الذهني، وتناغم طاقة الجذب</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                            <td style="padding:10px; font-weight:700; color:var(--gold);">الهيبة والسيادة</td>
+                                            <td style="padding:10px; color:#fff; font-weight:800;">66</td>
+                                            <td style="padding:10px;">جُمّل لفظ الجلالة الأقدس «الله» (ا=1، ل=30، ل=30، هـ=5 $\Rightarrow 66$)، وهو أصل الأعداد الشمسية</td>
+                                            <td style="padding:10px;">المفتاح 18 | باقي 0 (تام بلا كسر)</td>
+                                            <td style="padding:10px;">هيبة الحضور، انشراح الصدر، سكون العقل، وشموخ الشخصية</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:10px; font-weight:700; color:#ef4444;">الحصن والإغشاء</td>
+                                            <td style="padding:10px; color:#fff; font-weight:800;">3144</td>
+                                            <td style="padding:10px;">جُمّل آية يس 9 ﴿وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا...﴾ بتمام حروفها الموزونة</td>
+                                            <td style="padding:10px;">المفتاح 1044 | باقي 0 (تام)</td>
+                                            <td style="padding:10px;">انحراف التردد المعادي وتوليد درع وقائي عاكس للسهام الطاقية</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 5 Expansion Methods -->
+                        <h5 style="color:var(--cyan); margin:18px 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                            📜 طرق البسط الخمس للأعداد والأسماء في المخطوطات القديمة:
+                        </h5>
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-bottom:20px;">
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:var(--gold);">1. البسط الحرفي المجرد:</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">تفكيك الاسم إلى حروف مفرقة (م، ح، م، د) وحساب جمل كل حرف، وهو الأساس المباشر لتحديد المفتاح.</p>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:var(--cyan);">2. البسط العددي اللفظي:</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">كتابة العدد كنص هجائي: (تسعون وثمانية) ثم حساب جمل الحروف الناتجة لرفع التردد لدرجة أعلى.</p>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:var(--emerald);">3. البسط الألفي الاسمي:</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">كتابة كل حرف باسمه الصوتي الكامل: (ألف، لام، ميم) وهو أرقى مراتب التوليد في سيمياء الحروف لجابر بن حيان.</p>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:#d8b4fe;">4. البسط التكسيري المزجي:</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">مزج حروف اسم الطالب مع حروف الآية حرفاً بحرف لصنع وحدة أثيرية لا تنفصم في حقل الوعي.</p>
+                            </div>
+                        </div>
+
+                        <!-- Recitation Ratio Laws -->
+                        <div style="background:linear-gradient(135deg, rgba(15,23,42,0.9), rgba(4,8,19,0.95)); border:2px solid var(--emerald); border-radius:14px; padding:18px;">
+                            <h5 style="color:var(--emerald); margin:0 0 8px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                🗣️ قواعد ونسب التلاوة (Recitation Harmonic Ratios):
+                            </h5>
+                            <ul style="margin:0 0 0 18px; padding:0; font-size:0.86rem; line-height:1.8;">
+                                <li><strong>التلاوة بعدد المفتاح (The Key):</strong> تفتح مجرى الطاقة وتخاطب العقل الواعي وتبدأ سريان النية في الأثير.</li>
+                                <li><strong>التلاوة بعدد القطب (Center = المفتاح + 4):</strong> تثبت النية في مركز القلب والغدة الصنوبرية وتمنع التشوش الداخلي.</li>
+                                <li><strong>التلاوة بعدد المغلاق (Lock = المفتاح + 8):</strong> تحبس الطاقة داخل الوفق وتمنع تسربها للأطياف العشوائية.</li>
+                                <li><strong>التلاوة بعدد الضلع الواحد (N):</strong> وهي القراءة المثلى لترديد الذكر يومياً أثناء حمل الوفق أو تأمله.</li>
+                                <li><strong>التلاوة بالمساحة الكلية ($3N$):</strong> تُستخدم حصراً في اليوم الأول لتدشين الوفق وكسر حاجز المقاومة النفسية الأولي.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 13: THE PLANETARY INCENSE & TERPENE CODEX -->
+                <div class="ghazali-chapter" id="ghazali-ch13">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١٣</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الثالث عشر: الدستور الكيميائي للبخورات السبعة وتوافقاتها اليومية والكوكبية</h4>
+                            <div class="chapter-subtitle">The Seven Planetary Incense Formulas, Olfactory Neuroscience & Terpene Resonance</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            لم يكن البخور في المخطوطات القديمة طقساً سحرياً شكلياً؛ بل هو <strong>كيمياء حيوية عصبية (Neuro-Aromatherapy)</strong>. 
+                            ترتبط جزيئات الروائح العطرية مباشرة بالبصلة الشمية (Olfactory Bulb) المرتبطة فورياً بالجهاز الحوفي (Limbic System) 
+                            واللوزة الدماغية (Amygdala) دون المرور بفلترة المهاد، مما يغير حالة الدماغ الترددية في أجزاء من الثانية من بيتا المشوشة (Beta) 
+                            إلى ألفا وثيتا المتصلة بالسكينة والتأمل العميق (Alpha/Theta 8–12 Hz).
+                        </p>
+
+                        <!-- The 7 Days Incense Master Table -->
+                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:var(--gold); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                🌿 جدول البخورات الكوكبية للأيام السبعة ومركباتها التربينية:
+                            </h5>
+                            <div style="overflow-x:auto;">
+                                <table style="width:100%; border-collapse:collapse; font-size:0.83rem; text-align:right;">
+                                    <thead>
+                                        <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(255,209,102,0.3);">
+                                            <th style="padding:10px;">اليوم والفلك</th>
+                                            <th style="padding:10px;">البخور الرئيسي النقي</th>
+                                            <th style="padding:10px;">الخلطة المتوافقة التراثية</th>
+                                            <th style="padding:10px;">المركب الكيميائي الفعّال</th>
+                                            <th style="padding:10px;">التأثير العصبي والنفسي</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                            <td style="padding:10px; font-weight:700; color:var(--gold);">الأحد (الشمس) ☉</td>
+                                            <td style="padding:10px;">السندروس المغربي واللبان الذكر الحوجري</td>
+                                            <td style="padding:10px;">سندروس + لبان حوجري + عود صليب + خيوط زعفران كشميري</td>
+                                            <td style="padding:10px; color:var(--cyan);">Alpha-pinene & Incensole acetate</td>
+                                            <td style="padding:10px;">تنشيط مراكز التيقظ بالدماغ، طرد الكآبة، وتعزيز الثقة والوضوح</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                            <td style="padding:10px; font-weight:700; color:#60a5fa;">الاثنين (القمر) ☽</td>
+                                            <td style="padding:10px;">الكندر الأبيض والمستكة الرومية</td>
+                                            <td style="padding:10px;">كندر نقي + مستكة يونانية + ميعة سائلة + قطرات ماء ورد</td>
+                                            <td style="padding:10px; color:var(--cyan);">Boswellic acids & Masticadienonic acid</td>
+                                            <td style="padding:10px;">تهدئة الجهاز العصبي الودي، خفض ضغط الدم، وتصفية الأحلام</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                            <td style="padding:10px; font-weight:700; color:#ef4444;">الثلاثاء (المريخ) ♂</td>
+                                            <td style="padding:10px;">القسط الهندي والصندل الأحمر</td>
+                                            <td style="padding:10px;">قسط هندي حار + صندل أحمر + حبوب خردل بري + دم الأخوين</td>
+                                            <td style="padding:10px; color:var(--cyan);">Costunolide & Santalin</td>
+                                            <td style="padding:10px;">شحذ الحزم، تبديد الخوف، وتطهير الهواء من الميكروبات والطفيليات</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                            <td style="padding:10px; font-weight:700; color:var(--cyan);">الأربعاء (عطارد) ☿</td>
+                                            <td style="padding:10px;">الجاوي الأبيض التنافري والكزبرة</td>
+                                            <td style="padding:10px;">جاوي سيامي أبيض + كزبرة يابسة مطحونة + محلب أسود</td>
+                                            <td style="padding:10px; color:var(--cyan);">Benzoic acid & Linalool</td>
+                                            <td style="padding:10px;">تحفيز الذاكرة قصيرة المدى، زيادة التركيز، وسرعة البديهة الحسابية</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                            <td style="padding:10px; font-weight:700; color:#d8b4fe;">الخميس (المشتري) ♃</td>
+                                            <td style="padding:10px;">العود القماري والصندل الأبيض</td>
+                                            <td style="padding:10px;">خشب عود هندي قماري + صندل مقاصيري + كافور طبيعي بلوري</td>
+                                            <td style="padding:10px; color:var(--cyan);">Alpha-santalol & Agarospirol</td>
+                                            <td style="padding:10px;">أعمق مراتب السكينة الصوفية، تعزيز الانشراح الروحي، وتنشيط الغدة الصنوبرية</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                            <td style="padding:10px; font-weight:700; color:var(--emerald);">الجمعة (الزهرة) ♀</td>
+                                            <td style="padding:10px;">المسك الأسود وخلاصة الياسمين والزعفران</td>
+                                            <td style="padding:10px;">مسك غزال أسود نقي + لادن عنبري + زهور ياسمين مجففة + قرنفل</td>
+                                            <td style="padding:10px; color:var(--cyan);">Muskone & Eugenol</td>
+                                            <td style="padding:10px;">تحفيز إفراز الإندورفين والأوكسيتوسين، تعزيز الألفة والمودة والمشاعر الراقية</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:10px; font-weight:700; color:#94a3b8;">السبت (زحل) ♄</td>
+                                            <td style="padding:10px;">الميعة اليابسة والحلتيت وحبة البركة</td>
+                                            <td style="padding:10px;">ميعة يابسة + حلتيت منقى + حبة البركة + بذور البيلسان الأسود</td>
+                                            <td style="padding:10px; color:var(--cyan);">Thymoquinone & Ferulic acid</td>
+                                            <td style="padding:10px;">تثبيت العزيمة، قطع الهلوسات النفسية، الحصانة الأرضية، وتسكين الاضطراب</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Practical Fumigation Protocol -->
+                        <div style="background:rgba(0,0,0,0.5); border-left:4px solid var(--gold); padding:16px; border-radius:10px;">
+                            <strong style="color:var(--gold); display:block; margin-bottom:6px;">⚠️ بروتوكول التبخير الصحي السليم:</strong>
+                            <p style="font-size:0.84rem; line-height:1.75; margin:0; color:#cbd5e1;">
+                                • يُشترط استخدام جمر نقي من خشب طبيعي (كالفحم النباتي الخالي من الإضافات الكيميائية والكبريت).<br>
+                                • لا يُرمى البخور دفعة واحدة؛ بل توضع حبيبات صغيرة تدريجياً ليتصاعد الدخان رقيقاً نقياً غير خانق.<br>
+                                • الحفاظ على تهوية لطيفة بالغرفة لتجديد الأكسجين وتجنب استنشاق أول أكسيد الكربون، فالمطلوب هو الرائحة الأثيرية وليس الاختناق بالدخان.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 14: CHRONO-SPATIAL HARMONY & COSMIC WINDS -->
+                <div class="ghazali-chapter" id="ghazali-ch14">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١٤</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الرابع عشر: التوافق الزماني والمكاني الفلكي — الساعات الكلدانية ومنازل القمر والرياح الأربع</h4>
+                            <div class="chapter-subtitle">Chrono-Spatial Planetary Hours, Lunar Mansions & The Four Cosmic Directions</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            يعمل مثلث الغزالي كهوائي كهرومغناطيسي؛ ولكي يلتقط الإشارة الكونية بأعلى قدر من النقاوة، يجب ضبط 
+                            <strong>«التردد الزماني (Temporal Tuning)»</strong> و<strong>«التوجيه المكاني (Spatial Alignment)»</strong>.
+                        </p>
+
+                        <!-- The 24 Hours Rules -->
+                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(0,240,255,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:var(--cyan); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                ⏱️ ميزان الساعات الفلكية الزمانية (Temporal Planetary Hours):
+                            </h5>
+                            <p style="font-size:0.85rem; line-height:1.75; margin:0 0 10px 0;">
+                                الساعات الفلكية ليست ساعات اليد الثابتة (60 دقيقة)؛ بل تُحسب بتقسيم الفترة بين شروق الشمس وغروبها على 12 لحساب طول الساعة النهارية، 
+                                وما بين الغروب والشروق على 12 لحساب الساعة الليلية. وتتعاقب الكواكب وفق النظام الكلداني:
+                            </p>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; font-size:0.84rem;">
+                                <div style="background:rgba(6,214,160,0.1); border:1px solid var(--emerald); padding:12px; border-radius:10px;">
+                                    <strong style="color:var(--emerald);">ساعات السعد الأكبر (المشتري ♃):</strong>
+                                    <p style="margin:4px 0 0 0;">مثالية للرزق، التوسعة، القضاء، الصلح، وتعمير أوفاق الوفرة والشفاء.</p>
+                                </div>
+                                <div style="background:rgba(236,72,153,0.1); border:1px solid #ec4899; padding:12px; border-radius:10px;">
+                                    <strong style="color:#f472b6;">ساعات السعد الأصغر (الزهرة ♀):</strong>
+                                    <p style="margin:4px 0 0 0;">مثالية للمحبة، الألفة، الفنون، تلطيف المشاعر، والتوافق الإنساني.</p>
+                                </div>
+                                <div style="background:rgba(244,180,26,0.1); border:1px solid var(--gold); padding:12px; border-radius:10px;">
+                                    <strong style="color:var(--gold);">ساعات العزة والنور (الشمس ☉):</strong>
+                                    <p style="margin:4px 0 0 0;">مثالية للهيبة، السيادة، لقاء ذوي النفوذ، والتحصين الشامل.</p>
+                                </div>
+                                <div style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; padding:12px; border-radius:10px;">
+                                    <strong style="color:#ef4444;">ساعات التحذير والانضباط (زحل والمريخ):</strong>
+                                    <p style="margin:4px 0 0 0;">يُحظر فيها أعمال الجلب والخير؛ وتُخصص حصراً لدفع الضرر الشديد وكبح الظلمة والتحصين الدفاعي.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spatial & Directions -->
+                        <h5 style="color:var(--gold); margin:18px 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                            🧭 اتجاهات الجلوس واستقبال الرياح الكونية الأربعة:
+                        </h5>
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-bottom:18px;">
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:var(--gold);">١. اتجاه القبلة المشرفة (مبدأ التوحيد):</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">هو الأصل الثابت في كافة الأعمال النورانية، حيث تتجه النفس نحو مركز ثقل التوحيد الكوني.</p>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:var(--cyan);">٢. مهب الصبا (الشرق):</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">رياح الحياة والتجدد والبدايات المشرقة؛ يستقبلها الطالب عند كتابة أوفاق الشفاء وفتح البصيرة.</p>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:var(--emerald);">٣. مهب الشمال:</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">رياح الرصانة والتثبيت والوقار وقطع حمى الآلام؛ يستقبلها الطالب عند تثبيت الرزق والصبر.</p>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;">
+                                <strong style="color:#ef4444;">٤. مهب الدبور (الغرب):</strong>
+                                <p style="font-size:0.82rem; margin:4px 0 0 0;">رياح الإدبار والقطع؛ يُستقبل حصراً عند كتابة حروز الحجب والإغشاء ودفع العدوان.</p>
+                            </div>
+                        </div>
+
+                        <!-- Lunar Mansions Compatibility -->
+                        <div style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px;">
+                            <strong style="color:#fff; display:block; margin-bottom:6px;"><i class="fa-solid fa-moon"></i> أطوار القمر ومنازله الـ 28:</strong>
+                            <p style="font-size:0.84rem; line-height:1.75; margin:0; color:#cbd5e1;">
+                                • يُشترط في أعمال الشفاء والرزق والهيبة أن يكون القمر <strong>في طور الزيادة (من الهلال إلى البدر)</strong>، وتُفضل المنازل السعيدة: (الثريا، الهنعة، الذراع، الجبهة، السماك الأعزل، الغفر، وسعد السعود).<br>
+                                • يُجتنب التعمير في أوقات <em>خلو المسار (Moon Void of Course)</em> أو في أيام المحاق المظلمة (آخر ليلتين من الشهر القمري) إلا لأعمال الحجب والدفع المخصوصة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 15: THE UNSPOKEN MATHEMATICAL & TOPOLOGICAL SECRETS -->
+                <div class="ghazali-chapter" id="ghazali-ch15">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١٥</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الخامس عشر: الأسرار الرياضية والطوبولوجية التي لم يذكرها الغزالي في كتبه</h4>
+                            <div class="chapter-subtitle">Topological Rotational Symmetry, The Hollow-Center Mystery & De-activation Protocols</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>
+                            لقد أوجز الإمام الغزالي في كتبه <em>«السر المصون»</em> و<em>«المنقذ من الضلال»</em> قواعد الوفق دون أن يبين 
+                            البرهان الرياضي والطوبولوجي العميق الذي يفسر لماذا يعمل هذا التشكيل تحديداً. هنا نكشف ما عجز عنه الشراح القدامى:
+                        </p>
+
+                        <!-- Mathematical Proof of Broken Cell -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(192,38,211,0.4); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:#d946ef; margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                📐 البرهان الرياضي القطعي: لماذا يُجبر الكسر في بيتي 7 و 4 فقط؟
+                            </h5>
+                            <p style="font-size:0.86rem; line-height:1.8; margin:0 0 12px 0;">
+                                يتساءل كل باحث في علم الأوفاق: لماذا إذا كان الباقي 1 نزيد واحداً في بيت الزاي (البيت 7) تحديداً، 
+                                وإذا كان الباقي 2 نزيد في بيت الدال (البيت 4)؟ إليك البرهان من نظرية الزمر والجبر الخطي:
+                            </p>
+                            <div style="background:rgba(255,255,255,0.03); padding:14px; border-radius:10px; font-size:0.84rem; line-height:1.8;">
+                                1. في مصفوفة 3×3 الطبيعية، يقع بيت <strong>الزاي (7)</strong> في العمود الثالث والصف الثاني. إذا أضفنا +1 إليه، فإن التناظر الدوار حول القطب (البيت 5) يعوض هذا الفارق بدقة عبر الأقطار والصفوف دون كسر التناظر الهرميتي.<br>
+                                2. لو وُضع الجبر في البيت 8 أو 9 أو 1، لاختل توازن قطرين معاً، ولاستحال رياضياً أن يتساوى مجموع الصف مع مجموع العمود!<br>
+                                3. أما في باقي 2، فإن البيت <strong>الدال (4)</strong> يقع في الركن الأيسر العلوي، وزيادة +1 فيه تعوض القطر الرئيسي والصف الأول بآن واحد، فيظل الثابت السحري $M$ متطابقاً في الاتجاهات الثمانية. إنه <em>الحل الوحيد الممكن جبرياً في الفضاء الإقليدي ثلاثي الأبعاد</em>!
+                            </div>
+                        </div>
+
+                        <!-- Hollow Center Secret -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                            <h5 style="color:var(--gold); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                🕳️ سر «المثلث الخالي الوسط» (The Zero-Point Cavity Square):
+                            </h5>
+                            <p style="font-size:0.86rem; line-height:1.8; margin:0;">
+                                في بعض النسخ الخطية النادرة، ترك الغزالي بيت القطب (البيت 5) فارغاً تماماً وكتب فيه كلمة «لا إله إلا الله» أو تركه خاوياً. 
+                                هذا السر يسمى <strong>«فيزياء الخلاء النقطي (Zero-Point Cavity)»</strong>؛ 
+                                حيث يؤدي تفريغ المركز إلى نشوء فرق جهد طاقي هائل (Potential Gradient) بين المحيط المليء بالأرقام والمركز الخالي، 
+                                مما يجذب طاقة الغاية كإعصار حلزوني توريدي يتدفق نحو المركز ولا يتسرب خارجه أبداً.
+                            </p>
+                        </div>
+
+                        <!-- De-activation Protocol -->
+                        <div style="background:linear-gradient(135deg, rgba(239,68,68,0.1), rgba(0,0,0,0.6)); border:2px solid #ef4444; border-radius:14px; padding:18px;">
+                            <h5 style="color:#ef4444; margin:0 0 8px 0; font-family:'Amiri',serif; font-size:1.25rem;">
+                                🔒 بروتوكول فك الوفق وصرفه عند انتهاء الحاجة (De-activation & Zeroing):
+                            </h5>
+                            <p style="font-size:0.86rem; line-height:1.8; margin:0 0 10px 0; color:#f8fafc;">
+                                إذا تحقق الغرض المرجو (تم الشفاء، حلت البركة، أو زال الخطر)، فإن ترك الوفق مشحوناً للأبد قد يؤدي إلى ركود طاقي. 
+                                إليك دستور صرف الطاقة وتفريغ الشحنة بأمان تام:
+                            </p>
+                            <ol style="margin:0 0 0 18px; padding:0; font-size:0.84rem; line-height:1.75; color:#cbd5e1;">
+                                <li><strong>المحو المائي:</strong> يُغسل الكاغد في ماء طاهر جارٍ أو ماء مطر مع قراءة سورة الإخلاص والمعوذتين، حتى تذوب الأرقام تماماً ويعود الماء إلى الأرض الطيبة (سقي شجرة مثمرة).</li>
+                                <li><strong>التحلل الحراري:</strong> يُحرق الكاغد في موقد نقي مع رشة لبان ذكر، ويُذر رماده في مهب ريح الصبا أو في نهر جارٍ.</li>
+                                <li><strong>إعلان الشكر والامتنان:</strong> صلاة ركعتين شكراً لله تعالى على قضاء الحاجة وتأكيد أن الفضل والمنة لله وحده لا لعدد ولا لوفق، وبذلك تُغلق الدائرة الأثيرية في سلام تام.</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
