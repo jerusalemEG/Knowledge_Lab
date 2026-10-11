@@ -29,6 +29,10 @@ CODEX_PATH = os.path.join(WEBSITE_DIR, "Grand_Occult_Cosmology_Codex.html")
 ROOT_INDEX = os.path.join(ROOT_DIR, "index.html")
 ROOT_VIEWER = os.path.join(ROOT_DIR, "knowledge_graph_viewer.html")
 
+sys.path.insert(0, os.path.join(ROOT_DIR, "03_scripts"))
+from generate_astrology_chamber import get_astrology_chamber_html, get_astrology_chamber_js
+from generate_seals_zouhri_chamber import get_seals_zouhri_chamber_html, get_seals_zouhri_chamber_js
+
 
 def build_luxury_portal():
     print("[1/5] Rebuilding pristine base files...")
@@ -894,6 +898,51 @@ def build_luxury_portal():
             overflow: visible !important;
         }
     }
+
+    /* CHAMBERS 18 & 19 LUXURY STYLES */
+    .astro-tab-pill, .seals-subnav-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #cbd5e1;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s;
+        white-space: nowrap;
+    }
+    .astro-tab-pill:hover, .seals-subnav-btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+    }
+    .astro-tab-pill.active {
+        background: linear-gradient(135deg, var(--gold), #d49300);
+        color: #030611;
+        border-color: var(--gold);
+        box-shadow: 0 0 16px var(--gold-glow);
+    }
+    .seals-subnav-btn.active {
+        background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+        color: #fff;
+        border-color: #d8b4fe;
+        box-shadow: 0 0 16px rgba(157, 78, 221, 0.4);
+    }
+    .astro-sub-view, .seals-sub-container {
+        display: none;
+        animation: fadeIn 0.35s ease;
+    }
+    .astro-sub-view.active, .seals-sub-container.active {
+        display: block;
+    }
+    .astro-identity-card {
+        transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .astro-identity-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
     """
 
     # --- MASTER LUXURY TOP BAR HTML ---
@@ -902,10 +951,10 @@ def build_luxury_portal():
     <header class="master-luxury-topbar">
         <div class="topbar-inner">
             <!-- RIGHT: HAMBURGER DRAWER TRIGGER -->
-            <button class="topbar-hamburger-btn" onclick="openSidebar()" title="فتح فهرس الأبواب الـ 17">
+            <button class="topbar-hamburger-btn" onclick="openSidebar()" title="فتح فهرس الأبواب الـ 19">
                 <span class="hamburger-icon">☰</span>
                 <span>الأبواب</span>
-                <span class="hamburger-badge">17</span>
+                <span class="hamburger-badge">19</span>
             </button>
 
             <!-- CENTER: BRAND & ACTIVE CHAMBER INDICATOR -->
@@ -934,7 +983,7 @@ def build_luxury_portal():
         </div>
     </header>
 
-    <!-- BACKDROP & SLIDING DRAWER (فهرس الأبواب الـ 17) -->
+    <!-- BACKDROP & SLIDING DRAWER (فهرس الأبواب الـ 19) -->
     <div id="portal-drawer-backdrop" class="portal-drawer-backdrop" onclick="closeSidebar()"></div>
 
     <aside id="portal-drawer" class="portal-drawer" aria-label="فهرس أبواب الحكمة">
@@ -943,14 +992,14 @@ def build_luxury_portal():
                 <span class="drawer-brand-icon">🌌</span>
                 <div>
                     <h3 class="drawer-brand-title">فهرس أبواب الحكمة</h3>
-                    <span class="drawer-brand-sub">17 باباً معرفياً موحداً</span>
+                    <span class="drawer-brand-sub">19 باباً معرفياً موحداً</span>
                 </div>
             </div>
             <button class="drawer-close-btn" onclick="closeSidebar()" aria-label="إغلاق">✕</button>
         </div>
 
         <div class="drawer-search-wrapper">
-            <input type="text" id="drawer-search-input" class="drawer-search-input" placeholder="🔍 ابحث في الأبواب الـ 17..." oninput="filterDrawerDoors(this.value)">
+            <input type="text" id="drawer-search-input" class="drawer-search-input" placeholder="🔍 ابحث في الأبواب الـ 19..." oninput="filterDrawerDoors(this.value)">
         </div>
 
         <div class="drawer-nav-body">
@@ -1018,11 +1067,11 @@ def build_luxury_portal():
                 </div>
             </div>
 
-            <!-- MERGED PILLAR 2: OCCULT CODEX & INTERACTIVE LAB (9 DOORS) -->
+            <!-- MERGED PILLAR 2: OCCULT CODEX & INTERACTIVE LAB (11 DOORS) -->
             <div class="drawer-pillar-group">
                 <div class="drawer-pillar-title" style="color:#d8b4fe;">
                     <span>الركن الثاني: سفر النواميس والمختبر الرياضي التفاعلي</span>
-                    <span style="font-size:0.75rem; color:#94a3b8;">9 أبواب</span>
+                    <span style="font-size:0.75rem; color:#94a3b8;">11 باباً</span>
                 </div>
                 <div class="drawer-pillar-items">
                     <button class="drawer-door-item" data-door="tab-kings" onclick="navigateToChamber('tab-kings')">
@@ -1070,6 +1119,16 @@ def build_luxury_portal():
                         <span class="door-icon">⚖️</span>
                         <span class="door-title">ميزان الشريعة وحصن المرشد</span>
                     </button>
+                    <button class="drawer-door-item" data-door="tab-astrology-calc" onclick="navigateToChamber('tab-astrology-calc')">
+                        <span class="door-num-badge">18</span>
+                        <span class="door-icon">🌌</span>
+                        <span class="door-title">المرصد الفلكي التنجيمي الكوني الشامل</span>
+                    </button>
+                    <button class="drawer-door-item" data-door="tab-seals-zouhri" onclick="navigateToChamber('tab-seals-zouhri')">
+                        <span class="door-num-badge">19</span>
+                        <span class="door-icon">👑</span>
+                        <span class="door-title">ديوان الأختام والزوهرية والسلالات الروحية</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1099,7 +1158,7 @@ def build_luxury_portal():
                         <div class="metric-lbl">عقدة كوزمولوجية مستخلصة</div>
                     </div>
                     <div class="hub-metric-card">
-                        <div class="metric-val">17</div>
+                        <div class="metric-val">19</div>
                         <div class="metric-lbl">باباً علمياً مفهرساً</div>
                     </div>
                     <div class="hub-metric-card">
@@ -1120,12 +1179,12 @@ def build_luxury_portal():
             <!-- CONTROLS & SEARCH BAR -->
             <div class="hub-filter-bar">
                 <div class="hub-filter-pills">
-                    <button class="hub-filter-pill active" onclick="filterHubCategory('ALL')">الكل (17)</button>
+                    <button class="hub-filter-pill active" onclick="filterHubCategory('ALL')">الكل (19)</button>
                     <button class="hub-filter-pill" onclick="filterHubCategory('quran')">الركن الأول: كوزمولوجيا الوحي والنبوات (8)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('occult_lab')">الركن الثاني: سفر النواميس والمختبر الرياضي (9)</button>
+                    <button class="hub-filter-pill" onclick="filterHubCategory('occult_lab')">الركن الثاني: سفر النواميس والمختبر الرياضي (11)</button>
                 </div>
                 <div class="hub-search-box">
-                    <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في الأبواب الـ 17 والمفاهيم..." oninput="filterHubSearch(this.value)">
+                    <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في الأبواب الـ 19 والمفاهيم..." oninput="filterHubSearch(this.value)">
                 </div>
             </div>
 
@@ -1385,6 +1444,36 @@ def build_luxury_portal():
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
+
+                <!-- DOOR 18 -->
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-astrology-calc')" style="--door-accent:var(--cyan-accent);">
+                    <div class="card-top-meta">
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
+                        <span class="card-door-number">الباب 18</span>
+                    </div>
+                    <div class="card-icon-box">🌌</div>
+                    <div class="card-door-title">المرصد الفلكي التنجيمي الكوني الشامل</div>
+                    <div class="card-door-desc">محرك تفاعلي فائق لحساب الطوالع والطبائع عبر 6 حضارات: حساب الجمل والزيج العربي (بالاسم واسم الأم)، التنجيم الغربي، البابلي، الفيدي، الأركان الصينية، والارتباط القبالي.</div>
+                    <div class="card-action-bar">
+                        <span>دخول الباب</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+
+                <!-- DOOR 19 -->
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-seals-zouhri')" style="--door-accent:#d8b4fe;">
+                    <div class="card-top-meta">
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
+                        <span class="card-door-number">الباب 19</span>
+                    </div>
+                    <div class="card-icon-box">👑</div>
+                    <div class="card-door-title">ديوان الأختام والزوهرية والسلالات</div>
+                    <div class="card-door-desc">الهندسة الرمزية لخاتم سليمان الأعظم وأختام الكواكب السبعة (SVG)، والملف الطبي والأنثروبولوجي للإنسان الزوهري وتفكيك نبش الكنوز، وموسوعة السلالات الروحية وبذور النجوم.</div>
+                    <div class="card-action-bar">
+                        <span>دخول الباب</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1413,7 +1502,9 @@ def build_luxury_portal():
         'tab-bodies': 'الباب 14: الأجساد السبعة وميكانيكا الاختراق',
         'tab-numbers': 'الباب 15: شفرة الأرقام والوفق الغزالي 3×3',
         'tab-physics': 'الباب 16: فيزياء الذبذبات والمولد الصوتي',
-        'tab-criterion': 'الباب 17: ميزان الشريعة وحصن المرشد'
+        'tab-criterion': 'الباب 17: ميزان الشريعة وحصن المرشد',
+        'tab-astrology-calc': 'الباب 18: المرصد الفلكي التنجيمي الشامل',
+        'tab-seals-zouhri': 'الباب 19: ديوان الأختام والزوهرية والسلالات'
     };
 
     let activeChamberId = 'tab-hub';
@@ -1451,6 +1542,8 @@ def build_luxury_portal():
         if (targetId === 'matrix') targetId = 'tab-matrix';
         if (targetId === 'manuscripts') targetId = 'tab-manuscripts';
         if (targetId === 'critique') targetId = 'tab-critique';
+        if (targetId === 'astrology' || targetId === 'astro' || targetId === 'astrology-calc') targetId = 'tab-astrology-calc';
+        if (targetId === 'seals' || targetId === 'zouhri' || targetId === 'seals-zouhri') targetId = 'tab-seals-zouhri';
         if (!targetId.startsWith('tab-')) targetId = 'tab-' + targetId;
 
         activeChamberId = targetId;
@@ -1506,6 +1599,12 @@ def build_luxury_portal():
             if (typeof renderPlanetaryMatrixLab === 'function') renderPlanetaryMatrixLab(currentSelectedWafqOrder || 3);
             if (typeof renderPlanetaryWafqs === 'function') renderPlanetaryWafqs();
             if (typeof calculateLiveWafq === 'function') calculateLiveWafq();
+        }
+        if (targetId === 'tab-astrology-calc' && typeof runComprehensiveAstroEngine === 'function') {
+            runComprehensiveAstroEngine();
+        }
+        if (targetId === 'tab-seals-zouhri' && typeof renderInteractiveSigils === 'function') {
+            renderInteractiveSigils();
         }
 
         // 6. Update URL hash and smooth scroll
@@ -1708,12 +1807,17 @@ def build_luxury_portal():
     if main_open_pos != -1 and main_close_pos != -1:
         atlas_main_inner = atlas_with_header[main_open_pos + len('<main>'):main_close_pos]
         
+        astro_chamber_html = get_astrology_chamber_html()
+        seals_chamber_html = get_seals_zouhri_chamber_html()
+
         # Build unified main
         unified_main = f"""
         <main class="master-chambers-wrapper">
             {master_hub_html}
             {atlas_main_inner}
             {codex_main_clean}
+            {astro_chamber_html}
+            {seals_chamber_html}
         </main>
         """
 
@@ -1724,9 +1828,14 @@ def build_luxury_portal():
     # Inject unified scripts right before </body>
     body_end_pos = assembled_html.rfind('</body>')
     if body_end_pos != -1:
+        astro_chamber_js = get_astrology_chamber_js()
+        seals_chamber_js = get_seals_zouhri_chamber_js()
+
         full_js_block = f"""
         <script>
         {codex_js_clean}
+        {astro_chamber_js}
+        {seals_chamber_js}
         {luxury_js}
         </script>
         """
