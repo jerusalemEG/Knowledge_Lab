@@ -310,33 +310,179 @@ def generate_codex():
         }
         .wave-mode-btn.active { background: var(--emerald); color: #030508; border-color: var(--emerald); }
 
-        /* Bodies & Quran Grid */
+        /* Bodies & Quran Grid + Holographic Human Silhouette */
+        .bodies-cosmos-container {
+            display: grid;
+            grid-template-columns: 440px 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 1024px) {
+            .bodies-cosmos-container { grid-template-columns: 1fr; }
+        }
+        .body-silhouette-wrapper {
+            background: radial-gradient(ellipse at center, #0f172a 0%, #030712 100%);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 24px;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 35px rgba(0, 240, 255, 0.12);
+            overflow: hidden;
+        }
+        .body-pills-bar {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            max-width: 100%;
+            padding: 4px 6px 12px 6px;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .b-pill-btn {
+            flex: 0 0 auto;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 7px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+        }
+        .b-pill-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+        .b-pill-btn.active {
+            border-color: currentColor;
+            box-shadow: 0 0 15px currentColor;
+            transform: translateY(-2px);
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .silhouette-canvas {
+            width: 100%;
+            max-width: 340px;
+            height: 540px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .human-figure-svg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.35));
+            pointer-events: none;
+        }
+        .body-point-btn {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255,255,255,0.85);
+            box-shadow: 0 0 20px currentColor;
+            background: rgba(11, 15, 23, 0.9);
+            font-size: 1.15rem;
+            color: #fff;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+        }
+        .body-point-btn:hover, .body-point-btn.active {
+            transform: translate(-50%, -50%) scale(1.35);
+            border-color: #ffffff;
+            box-shadow: 0 0 35px currentColor, inset 0 0 14px currentColor;
+        }
+        .body-point-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            animation: pulse-ring 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.6); opacity: 0; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        .body-detail-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 16px 45px rgba(0,0,0,0.5);
+            transition: all 0.35s ease;
+        }
         .bodies-stack { display: flex; flex-direction: column; gap: 14px; }
         .body-layer {
             background: var(--panel-bg);
             border: 1px solid var(--border-glass);
             border-radius: 14px;
-            padding: 18px 24px;
+            padding: 20px 24px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 20px;
             transition: all 0.25s;
+            position: relative;
         }
-        .body-layer:hover { transform: translateX(-4px); border-color: var(--cyan); }
-        .body-num { font-size: 1.8rem; font-weight: 800; color: var(--cyan); min-width: 45px; }
-
-        .quranic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px; }
-        .quran-proof-card {
-            background: var(--panel-bg);
+        .body-layer:hover { transform: translateX(-4px); border-color: var(--cyan); box-shadow: 0 8px 24px rgba(0,229,255,0.08); }
+        .body-num { font-size: 2rem; font-weight: 800; color: var(--cyan); min-width: 50px; text-align: center; font-family: 'Amiri', serif; }
+        .body-filter-btn {
+            background: rgba(15, 23, 42, 0.7);
             border: 1px solid var(--border-glass);
-            border-right: 4px solid var(--gold);
-            border-radius: 14px;
-            padding: 20px;
+            color: #94a3b8;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
         }
-        .quran-ayah-box { background: rgba(244, 180, 26, 0.08); border-radius: 10px; padding: 12px 16px; color: var(--gold); font-family: 'Amiri', serif; font-size: 1.15rem; margin-bottom: 12px; }
+        .body-filter-btn:hover, .body-filter-btn.active {
+            background: var(--cyan);
+            color: #030508;
+            border-color: var(--cyan);
+            font-weight: 700;
+        }
+        .defense-protocol-box {
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.08), rgba(0, 229, 255, 0.04));
+            border: 1px solid rgba(6, 214, 160, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 10px;
+        }
+        .attack-vulnerability-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(244, 180, 26, 0.04));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 10px;
+        }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 12px; padding: 12px 16px; }
             .cards-grid, .quranic-grid { grid-template-columns: 1fr; }
             main { padding: 15px 10px 60px 10px; }
         }
@@ -608,79 +754,125 @@ def generate_codex():
             </div>
 
             <!-- Interactive 7-Layer Biofield Toroid Resonator -->
-            <div class="toroid-interactive-container">
-                <div class="toroid-svg-box">
-                    <svg viewBox="0 0 500 500" id="toroid-svg">
-                        <defs>
-                            <radialGradient id="toroidCore" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-                                <stop offset="25%" stop-color="#f4b41a" stop-opacity="0.8"/>
-                                <stop offset="60%" stop-color="#00e5ff" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="#0a101a" stop-opacity="0"/>
-                            </radialGradient>
-                            <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="6" result="blur" />
-                                <feMerge>
-                                    <feMergeNode in="blur" />
-                                    <feMergeNode in="SourceGraphic" />
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <!-- Concentric Aura Layer Rings -->
-                        <circle cx="250" cy="250" r="230" fill="none" stroke="#e0e7ff" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.3" class="toroid-ring"/>
-                        <circle cx="250" cy="250" r="200" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.4" class="toroid-ring"/>
-                        <circle cx="250" cy="250" r="170" fill="none" stroke="#3b82f6" stroke-width="1.8" opacity="0.5" class="toroid-ring"/>
-                        <circle cx="250" cy="250" r="140" fill="none" stroke="#06d6a0" stroke-width="2" opacity="0.6" class="toroid-ring"/>
-                        <circle cx="250" cy="250" r="110" fill="none" stroke="#f4b41a" stroke-width="2" opacity="0.7" class="toroid-ring"/>
-                        <circle cx="250" cy="250" r="80"  fill="none" stroke="#ff8c00" stroke-width="2.5" opacity="0.8" class="toroid-ring"/>
-                        <circle cx="250" cy="250" r="50"  fill="none" stroke="#ef4444" stroke-width="3" opacity="0.9" class="toroid-ring"/>
+            <!-- Holographic Meditating Human Silhouette & 7 Subtle Bodies (Microcosm) -->
+            <div class="bodies-cosmos-container">
+                <!-- Human Silhouette Hologram -->
+                <div class="body-silhouette-wrapper">
+                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <span>🧬 المجسم النوراني للأجساد السبعة والأغلفة الحيوية (Koshas & Aura)</span>
+                    </div>
 
-                        <!-- Center Light Source & Human Avatar Silhouette -->
-                        <circle cx="250" cy="250" r="30" fill="url(#toroidCore)" filter="url(#glowEffect)"/>
-                        <path d="M250,225 C256,225 260,229 260,235 C260,241 256,245 250,245 C244,245 240,241 240,235 C240,229 244,225 250,225 Z M250,248 C258,248 266,252 268,262 L232,262 C234,252 242,248 250,248 Z M244,262 L244,278 L248,278 L248,262 Z M252,262 L252,278 L256,278 L256,262 Z" fill="#ffffff" opacity="0.9"/>
+                    <!-- Interactive Quick Selector Pills -->
+                    <div class="body-pills-bar" id="body-pills-bar">
+                        <button class="b-pill-btn active" id="b-pill-1" onclick="selectBodyLayer('1')" style="color:#ef4444;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;"></span>١. المادي</button>
+                        <button class="b-pill-btn" id="b-pill-2" onclick="selectBodyLayer('2')" style="color:#ff8c00;"><span style="width:8px;height:8px;border-radius:50%;background:#ff8c00;"></span>٢. الأثيري</button>
+                        <button class="b-pill-btn" id="b-pill-3" onclick="selectBodyLayer('3')" style="color:#f4b41a;"><span style="width:8px;height:8px;border-radius:50%;background:#f4b41a;"></span>٣. النجمي</button>
+                        <button class="b-pill-btn" id="b-pill-4" onclick="selectBodyLayer('4')" style="color:#06d6a0;"><span style="width:8px;height:8px;border-radius:50%;background:#06d6a0;"></span>٤. العقلي</button>
+                        <button class="b-pill-btn" id="b-pill-5" onclick="selectBodyLayer('5')" style="color:#3b82f6;"><span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;"></span>٥. السببي</button>
+                        <button class="b-pill-btn" id="b-pill-6" onclick="selectBodyLayer('6')" style="color:#8b5cf6;"><span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;"></span>٦. البوذي</button>
+                        <button class="b-pill-btn" id="b-pill-7" onclick="selectBodyLayer('7')" style="color:#e0e7ff;"><span style="width:8px;height:8px;border-radius:50%;background:#e0e7ff;"></span>٧. الروحاني</button>
+                    </div>
 
-                        <!-- Interactive Layer Clickable Nodes -->
-                        <!-- 1. Physical -->
-                        <g class="toroid-node active" id="node-1" onclick="selectBodyLayer('1')">
-                            <circle cx="250" cy="200" r="9" fill="#ef4444" stroke="#fff" stroke-width="2"/>
-                            <text x="250" y="196" fill="#fff" font-size="9" text-anchor="middle" font-family="'Amiri',serif" dy="-4">1. الطيني</text>
-                        </g>
-                        <!-- 2. Etheric -->
-                        <g class="toroid-node" id="node-2" onclick="selectBodyLayer('2')">
-                            <circle cx="295" cy="210" r="9" fill="#ff8c00" stroke="#fff" stroke-width="2"/>
-                            <text x="305" y="206" fill="#fff" font-size="9" text-anchor="start" font-family="'Amiri',serif" dy="-2">2. الأثيري</text>
-                        </g>
-                        <!-- 3. Astral -->
-                        <g class="toroid-node" id="node-3" onclick="selectBodyLayer('3')">
-                            <circle cx="330" cy="250" r="9" fill="#f4b41a" stroke="#fff" stroke-width="2"/>
-                            <text x="342" y="254" fill="#fff" font-size="9" text-anchor="start" font-family="'Amiri',serif">3. النجمي</text>
-                        </g>
-                        <!-- 4. Mental -->
-                        <g class="toroid-node" id="node-4" onclick="selectBodyLayer('4')">
-                            <circle cx="295" cy="305" r="9" fill="#06d6a0" stroke="#fff" stroke-width="2"/>
-                            <text x="305" y="316" fill="#fff" font-size="9" text-anchor="start" font-family="'Amiri',serif" dy="4">4. العقلي</text>
-                        </g>
-                        <!-- 5. Causal -->
-                        <g class="toroid-node" id="node-5" onclick="selectBodyLayer('5')">
-                            <circle cx="205" cy="305" r="9" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-                            <text x="195" y="316" fill="#fff" font-size="9" text-anchor="end" font-family="'Amiri',serif" dy="4">5. السببي</text>
-                        </g>
-                        <!-- 6. Buddhic -->
-                        <g class="toroid-node" id="node-6" onclick="selectBodyLayer('6')">
-                            <circle cx="170" cy="250" r="9" fill="#8b5cf6" stroke="#fff" stroke-width="2"/>
-                            <text x="158" y="254" fill="#fff" font-size="9" text-anchor="end" font-family="'Amiri',serif">6. البوذي</text>
-                        </g>
-                        <!-- 7. Atmic -->
-                        <g class="toroid-node" id="node-7" onclick="selectBodyLayer('7')">
-                            <circle cx="250" cy="20" r="10" fill="#e0e7ff" stroke="#fff" stroke-width="2"/>
-                            <text x="250" y="14" fill="#fff" font-size="9" text-anchor="middle" font-family="'Amiri',serif">7. الإلهي الأسمى</text>
-                        </g>
-                    </svg>
+                    <div class="silhouette-canvas" id="silhouette-canvas">
+                        <!-- High-Tech Sacred Meditating Human Hologram SVG with 7 Auric Sheaths -->
+                        <svg class="human-figure-svg" viewBox="0 0 320 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="540" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35" />
+                                    <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.22" />
+                                    <stop offset="100%" stop-color="#ef4444" stop-opacity="0.35" />
+                                </linearGradient>
+                                <linearGradient id="spineRainbow" x1="0" y1="30" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffffff" />
+                                    <stop offset="16%" stop-color="#8b5cf6" />
+                                    <stop offset="33%" stop-color="#3b82f6" />
+                                    <stop offset="50%" stop-color="#06d6a0" />
+                                    <stop offset="66%" stop-color="#f4b41a" />
+                                    <stop offset="83%" stop-color="#ff8c00" />
+                                    <stop offset="100%" stop-color="#ef4444" />
+                                </linearGradient>
+                                <radialGradient id="auraGlow" cx="160" cy="95" r="90" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.15" />
+                                    <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                                </radialGradient>
+                                <filter id="glowFilt" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+
+                            <!-- Concentric 7 Subtle Auric Kosha Envelopes -->
+                            <!-- 7. Atmic Envelope (Apex Cosmic Field) -->
+                            <ellipse cx="160" cy="270" rx="155" ry="255" stroke="#e0e7ff" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" />
+                            <!-- 6. Buddhic Envelope (Radiant Bliss Oval) -->
+                            <ellipse cx="160" cy="265" rx="135" ry="225" stroke="#8b5cf6" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.45" />
+                            <!-- 5. Causal Envelope (Cosmic Memory Matrix) -->
+                            <ellipse cx="160" cy="260" rx="115" ry="195" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 4" opacity="0.55" />
+                            <!-- 4. Mental Envelope (Intellectual Coherence Field) -->
+                            <ellipse cx="160" cy="255" rx="95" ry="165" stroke="#06d6a0" stroke-width="2" opacity="0.65" />
+                            <!-- 3. Astral Envelope (Emotional Toroidal Field) -->
+                            <ellipse cx="160" cy="250" rx="78" ry="135" stroke="#f4b41a" stroke-width="2.2" opacity="0.75" />
+
+                            <!-- Glowing Aura Background behind Head -->
+                            <circle cx="160" cy="95" r="85" fill="url(#auraGlow)" />
+
+                            <!-- Sacred Geometry Halo behind Head -->
+                            <circle cx="160" cy="95" r="75" stroke="rgba(244, 180, 26, 0.4)" stroke-width="1.5" stroke-dasharray="6 4" />
+                            <circle cx="160" cy="95" r="60" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1" />
+                            <circle cx="160" cy="95" r="45" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+                            <!-- Radiating Rays -->
+                            <line x1="160" y1="15" x2="160" y2="35" stroke="#ffd166" stroke-width="2" />
+                            <line x1="160" y1="155" x2="160" y2="175" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="80" y1="95" x2="100" y2="95" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="220" y1="95" x2="240" y2="95" stroke="#ffd166" stroke-width="1.5" />
+
+                            <!-- Meditating Human Silhouette Contour (Lotus Pose) -->
+                            <!-- 2. Etheric Envelope (Pranic Blueprint hugging skin) -->
+                            <circle cx="160" cy="95" r="34" stroke="#ff8c00" stroke-width="2" stroke-dasharray="3 2" fill="none" opacity="0.8" />
+                            <circle cx="160" cy="95" r="28" fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.8" />
+                            <path d="M152,122 L150,135 L170,135 L168,122" fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.5" />
+                            <path d="M150,135 C138,138 112,148 95,165 C78,182 66,215 62,250 C58,285 64,310 75,325 C84,337 96,335 105,320 C114,305 118,275 125,235 C130,205 136,175 145,160 L145,260 C138,295 132,340 120,370 C108,400 78,430 52,455 C35,472 40,498 70,505 C108,512 140,512 160,512 C180,512 212,512 250,505 C280,498 285,472 268,455 C242,430 212,400 200,370 C188,340 182,295 175,260 L175,160 C184,175 190,205 195,235 C202,275 206,305 215,320 C224,335 236,337 245,325 C256,310 262,285 258,250 C254,215 242,182 225,165 C208,148 182,138 170,135 Z" 
+                                  fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.8" filter="url(#glowFilt)" />
+
+                            <!-- Meditating Hands in Mudra over Lap -->
+                            <ellipse cx="160" cy="425" rx="36" ry="16" fill="rgba(0, 240, 255, 0.12)" stroke="rgba(0, 240, 255, 0.5)" stroke-width="1.5" />
+
+                            <!-- Sacred Heart Geometry (Merkabah) at Heart Center -->
+                            <polygon points="160,230 182,268 138,268" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.2" fill="none" />
+                            <polygon points="160,280 182,242 138,242" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.2" fill="none" />
+                            <circle cx="160" cy="255" r="24" stroke="rgba(244, 180, 26, 0.3)" stroke-width="1" stroke-dasharray="2 2" fill="none" />
+
+                            <!-- Sushumna (Central Spine Rainbow Light Channel) -->
+                            <line x1="160" y1="35" x2="160" y2="480" stroke="url(#spineRainbow)" stroke-width="4.5" stroke-linecap="round" />
+
+                            <!-- Ida (Left Lunar Channel - Cyan) -->
+                            <path d="M160,470 C135,435 135,415 160,395 C185,360 185,345 160,325 C135,290 135,275 160,255 C185,225 185,210 160,195 C135,165 135,155 160,140 C185,110 185,100 160,85" 
+                                  stroke="#00f0ff" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
+
+                            <!-- Pingala (Right Solar Channel - Gold) -->
+                            <path d="M160,470 C185,435 185,415 160,395 C135,360 135,345 160,325 C185,290 185,275 160,255 C135,225 135,210 160,195 C185,165 185,155 160,140 C135,110 135,100 160,85" 
+                                  stroke="#ffd166" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
+                        </svg>
+
+                        <!-- 7 Subtle Bodies Pulsating Interactive Nodes -->
+                        <div class="body-point-btn" id="body-node-7" style="top: 38px; color: #ffffff; border-color: #ffd166; background: radial-gradient(#fff, #f4b41a);" onclick="selectBodyLayer('7')" title="٧. الجسد الروحاني الأسمى (Atmic Spark)">٧</div>
+                        <div class="body-point-btn" id="body-node-6" style="top: 85px; color: #8b5cf6; border-color: #8b5cf6;" onclick="selectBodyLayer('6')" title="٦. الجسد البوذي (Buddhic)">٦</div>
+                        <div class="body-point-btn" id="body-node-5" style="top: 170px; color: #3b82f6; border-color: #3b82f6;" onclick="selectBodyLayer('5')" title="٥. الجسد السببي (Causal)">٥</div>
+                        <div class="body-point-btn" id="body-node-4" style="top: 250px; color: #06d6a0; border-color: #06d6a0;" onclick="selectBodyLayer('4')" title="٤. الجسد العقلي (Mental)">٤</div>
+                        <div class="body-point-btn" id="body-node-3" style="top: 325px; color: #f4b41a; border-color: #f4b41a;" onclick="selectBodyLayer('3')" title="٣. الجسد النجمي (Astral)">٣</div>
+                        <div class="body-point-btn" id="body-node-2" style="top: 395px; color: #ff8c00; border-color: #ff8c00;" onclick="selectBodyLayer('2')" title="٢. الجسد الأثيري (Etheric)">٢</div>
+                        <div class="body-point-btn active" id="body-node-1" style="top: 470px; color: #ef4444; border-color: #ef4444;" onclick="selectBodyLayer('1')" title="١. الجسد المادي الكثيف (Physical)">١</div>
+                    </div>
+
+                    <div style="margin-top: 15px; font-size: 0.8rem; color: #94a3b8; text-align: center;">
+                        ✨ انقر على أي غلاف أو طبقة لعرض الفيزيولوجيا الحيوية وبروتوكول التحصين النبوي
+                    </div>
                 </div>
 
-                <!-- Inspector Card for Clicked Layer -->
+                <!-- Deep Interactive Synthesis Panel -->
                 <div class="body-detail-card" id="body-detail-card">
-                    <!-- Populated dynamically by selectBodyLayer() -->
+                    <!-- Injected dynamically by selectBodyLayer() -->
                 </div>
             </div>
 
@@ -1290,47 +1482,52 @@ def generate_codex():
             const b = BODIES_DATA.find(x => x.num === id);
             if (!b) return;
 
-            // Highlight node in SVG
-            document.querySelectorAll('.toroid-node').forEach(node => {
-                node.classList.remove('active');
-            });
-            const targetNode = document.getElementById('node-' + id);
-            if (targetNode) targetNode.classList.add('active');
+            // Sync Hologram SVG Node Buttons
+            document.querySelectorAll('.body-point-btn').forEach(btn => btn.classList.remove('active'));
+            const activeNode = document.getElementById('body-node-' + id);
+            if (activeNode) activeNode.classList.add('active');
 
-            // Render inspector card
+            // Sync Quick Selector Pills
+            document.querySelectorAll('.b-pill-btn').forEach(btn => btn.classList.remove('active'));
+            const activePill = document.getElementById('b-pill-' + id);
+            if (activePill) activePill.classList.add('active');
+
+            // Render Comprehensive Dossier
             const card = document.getElementById('body-detail-card');
             if (card) {
                 card.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:10px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:14px;">
                         <div>
-                            <span style="background:rgba(0,229,255,0.15); border:1px solid var(--cyan); color:var(--cyan); padding:3px 12px; border-radius:12px; font-size:0.75rem; font-weight:700;">الغلاف رقم ${b.num}</span>
-                            <h3 style="color:#fff; font-family:'Amiri',serif; margin:8px 0 4px 0; font-size:1.35rem;">${b.name}</h3>
-                            <div style="color:var(--gold); font-size:0.88rem; font-family:'Amiri',serif;">${b.nafs}</div>
+                            <span style="background:${b.color}22; border:1px solid ${b.color}; color:${b.color}; padding:3px 12px; border-radius:12px; font-size:0.75rem; font-weight:700;">الغلاف النوراني رقم ${b.num}</span>
+                            <h3 style="color:#fff; font-family:'Amiri',serif; margin:8px 0 4px 0; font-size:1.45rem;">${b.name}</h3>
+                            <div style="color:var(--gold); font-size:0.95rem; font-family:'Amiri',serif;">${b.nafs}</div>
                         </div>
                         <div style="text-align:left;">
-                            <span style="background:${b.color}22; border:1px solid ${b.color}; color:${b.color}; padding:4px 10px; border-radius:8px; font-size:0.8rem; font-weight:700;">${b.dimension}</span>
+                            <span style="background:rgba(244,180,26,0.12); border:1px solid var(--gold); color:var(--gold); padding:4px 12px; border-radius:8px; font-size:0.8rem; font-weight:700;">${b.dimension}</span>
                         </div>
                     </div>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.82rem; margin-bottom:12px; background:rgba(0,0,0,0.25); padding:10px; border-radius:8px;">
-                        <div><strong style="color:var(--cyan);">الشاكرا والمرجع:</strong> <span style="color:#cbd5e1;">${b.chakra}</span></div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.83rem; margin-bottom:14px; background:rgba(0,0,0,0.3); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.05);">
+                        <div><strong style="color:var(--cyan);">الشاكرا والموقع:</strong> <span style="color:#cbd5e1;">${b.chakra}</span></div>
                         <div><strong style="color:var(--cyan);">السُمك والمدى:</strong> <span style="color:#cbd5e1;">${b.thickness}</span></div>
                         <div style="grid-column:span 2;"><strong style="color:var(--cyan);">التردد الحاكم:</strong> <span style="color:#cbd5e1;">${b.frequency}</span></div>
                     </div>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.6; margin-bottom:12px;"><strong>الفيزياء الحيوية:</strong> ${b.physics}</p>
+                    <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.65; margin-bottom:14px;">
+                        <strong style="color:#fff;">الفيزياء الحيوية وميكانيكا الفوتون:</strong> ${b.physics}
+                    </p>
                     <div class="attack-vulnerability-box">
-                        <strong style="color:#f87171; display:flex; align-items:center; gap:6px;">⚠️ آلية الاختراق والطفيليات:</strong>
-                        <p style="font-size:0.82rem; color:#fca5a5; margin:6px 0 0 0; line-height:1.5;">${b.attack}</p>
-                        <div style="font-size:0.8rem; color:#fecaca; margin-top:6px;"><strong>أعراض التمزق:</strong> ${b.symptoms}</div>
+                        <strong style="color:#f87171; display:flex; align-items:center; gap:6px; font-size:0.9rem;">⚠️ آلية الاختراق والطفيليات النجمية (Astral Tears):</strong>
+                        <p style="font-size:0.84rem; color:#fca5a5; margin:6px 0 0 0; line-height:1.5;">${b.attack}</p>
+                        <div style="font-size:0.82rem; color:#fecaca; margin-top:8px; border-top:1px dashed rgba(239,68,68,0.3); padding-top:6px;"><strong>أعراض التمزق في الهالة:</strong> ${b.symptoms}</div>
                     </div>
                     <div class="defense-protocol-box">
-                        <strong style="color:#34d399; display:flex; align-items:center; gap:6px;">🛡️ الحصن النبوي والإغلاق:</strong>
-                        <p style="font-size:0.82rem; color:#a7f3d0; margin:6px 0 0 0; line-height:1.5;">${b.defense}</p>
-                        <div style="margin-top:8px; background:rgba(0,0,0,0.3); padding:8px; border-radius:6px; color:var(--gold); font-family:'Amiri',serif; font-size:0.9rem;">${b.quran_shield}</div>
+                        <strong style="color:#34d399; display:flex; align-items:center; gap:6px; font-size:0.9rem;">🛡️ بروتوكول الإغلاق والحصن النبوي:</strong>
+                        <p style="font-size:0.84rem; color:#a7f3d0; margin:6px 0 0 0; line-height:1.5;">${b.defense}</p>
+                        <div style="margin-top:10px; background:rgba(0,0,0,0.35); padding:10px 14px; border-radius:8px; color:var(--gold); font-family:'Amiri',serif; font-size:0.95rem; border-right:3px solid var(--gold);">${b.quran_shield}</div>
                     </div>
                 `;
             }
 
-            // Highlight in stack
+            // Highlight card in stack
             const stackCard = document.getElementById('body-card-' + id);
             if (stackCard) {
                 document.querySelectorAll('.body-layer').forEach(c => c.style.borderColor = 'var(--border-glass)');
