@@ -448,6 +448,211 @@ def generate_codex():
         .cell-num { font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1; }
         .cell-letter { font-size: 0.75rem; color: var(--gold); margin-top: 4px; }
 
+        
+        /* Al-Ghazali Master Manual (Asrar al-Asrar) Styles */
+        .ghazali-master-handbook {
+            background: linear-gradient(135deg, rgba(11, 17, 33, 0.98), rgba(20, 15, 38, 0.98));
+            border: 2px solid var(--gold);
+            border-radius: 24px;
+            padding: 34px 28px;
+            margin-bottom: 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(244, 180, 26, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .ghazali-handbook-header {
+            text-align: center;
+            border-bottom: 2px solid rgba(244, 180, 26, 0.3);
+            padding-bottom: 24px;
+            margin-bottom: 28px;
+            position: relative;
+        }
+        .ghazali-handbook-header::after {
+            content: '۞';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0d1326;
+            padding: 0 16px;
+            color: var(--gold);
+            font-size: 1.4rem;
+        }
+        .ghazali-handbook-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.1rem;
+            color: var(--gold);
+            margin: 0 0 8px 0;
+            text-shadow: 0 0 15px rgba(244, 180, 26, 0.4);
+        }
+        .ghazali-handbook-subtitle {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .ghazali-nav-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 28px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .ghazali-nav-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(244, 180, 26, 0.2);
+            color: #cbd5e1;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ghazali-nav-pill:hover {
+            background: rgba(244, 180, 26, 0.18);
+            border-color: var(--gold);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .ghazali-chapter {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 26px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+        .ghazali-chapter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gold);
+            border-radius: 0 18px 18px 0;
+        }
+        .chapter-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 12px;
+        }
+        .chapter-num-badge {
+            background: rgba(244, 180, 26, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+        .chapter-title {
+            margin: 0;
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            color: #fff;
+        }
+        .chapter-subtitle {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        .specimen-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 320px;
+            margin: 15px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1.5px solid var(--gold);
+        }
+        .specimen-cell {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(244, 180, 26, 0.25);
+            border-radius: 8px;
+            padding: 10px 4px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .specimen-cell-num {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+        .specimen-cell-label {
+            font-size: 0.72rem;
+            color: var(--gold);
+            margin-top: 4px;
+        }
+        .specimen-cell.key-cell {
+            background: rgba(6, 214, 160, 0.15);
+            border-color: var(--emerald);
+        }
+        .specimen-cell.lock-cell {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+        }
+        .specimen-cell.center-cell {
+            background: rgba(244, 180, 26, 0.18);
+            border-color: var(--gold);
+        }
+        .specimen-cell.broken-cell {
+            background: rgba(192, 38, 211, 0.2);
+            border-color: #c026d3;
+        }
+        .operational-protocol-box {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 18px;
+            margin-top: 16px;
+        }
+        .protocol-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: #cbd5e1;
+        }
+        .step-badge {
+            background: rgba(0, 240, 255, 0.12);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
         /* Treatises Card Grid */
         .wafq-treatise-grid {
             display: grid;
@@ -1626,6 +1831,627 @@ def generate_codex():
                     </div>
                 </div>
             </div>
+
+            
+            <!-- ========================================================
+                 THE AL-GHAZALI MASTER HANDBOOK (ASRAR AL-ASRAR) 3x3
+                 ======================================================== -->
+            <div class="ghazali-master-handbook" id="ghazali-handbook">
+                <div class="ghazali-handbook-header">
+                    <span style="font-size:0.82rem; color:var(--cyan); letter-spacing:1px; text-transform:uppercase; font-weight:700;">
+                        The Definitive Hermetic & Mathematical Manual of Ghazali's 3x3 Magic Square
+                    </span>
+                    <h3 class="ghazali-handbook-title">
+                        📜 كتيب أسرار الأسرار الشريف: الدستور التشغيلي والكتيب الكامل لتعمير وتفعيل وتصريف مثلث الغزالي 3×3 (بطد زهج واح)
+                    </h3>
+                    <p class="ghazali-handbook-subtitle">
+                        دليل تطبيقي تفصيلي شامل من الألف إلى الياء: تشريح البيوت التسعة ومسارات الطاقة، خوارزمية التعمير الجبري بدقة متناهية، ثلاثة نماذج تطبيقية واقعية كاملة (الشفاء، الرزق، والهيبة)، دستور الأحبار والأوعية، مواقيت الرصد الفلكي، بروتوكول التفعيل والرنين، ودليل الفك والتحليل العكسي للأوفاق المجهولة وإبطال الفاسد منها تحت لواء التوحيد القرآني الخالص.
+                    </p>
+                </div>
+
+                <!-- QUICK NAVIGATION PILLS -->
+                <div class="ghazali-nav-pills">
+                    <a href="#ghazali-ch1" class="ghazali-nav-pill"><i class="fa-solid fa-compass"></i> الباب 1: تشريح البيوت وسير بطد زهج واح</a>
+                    <a href="#ghazali-ch2" class="ghazali-nav-pill"><i class="fa-solid fa-calculator"></i> الباب 2: خوارزمية التعمير وحالات الكسر الثلاث</a>
+                    <a href="#ghazali-ch3" class="ghazali-nav-pill"><i class="fa-solid fa-cube"></i> الباب 3: ثلاثة نماذج تطبيقية كبرى من الألف للياء</a>
+                    <a href="#ghazali-ch4" class="ghazali-nav-pill"><i class="fa-solid fa-pen-fancy"></i> الباب 4: دستور الأحبار والمواد والأوعية</a>
+                    <a href="#ghazali-ch5" class="ghazali-nav-pill"><i class="fa-solid fa-clock"></i> الباب 5: مواقيت الرصد وساعات الكواكب</a>
+                    <a href="#ghazali-ch6" class="ghazali-nav-pill"><i class="fa-solid fa-volume-high"></i> الباب 6: بروتوكول التفعيل الصوتي والرنين</a>
+                    <a href="#ghazali-ch7" class="ghazali-nav-pill"><i class="fa-solid fa-key"></i> الباب 7: دليل الفك العكسي وإبطال الفاسد</a>
+                    <a href="#ghazali-ch8" class="ghazali-nav-pill"><i class="fa-solid fa-shield-halved"></i> الباب 8: الإغلاق والتحصين والميزان التوحيدي</a>
+                </div>
+
+                <!-- CHAPTER 1 -->
+                <div class="ghazali-chapter" id="ghazali-ch1">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">١</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الأول: مدخل الأصول وتشريح خارطة البيوت التسعة وسير "بطد زهج واح"</h4>
+                            <div class="chapter-subtitle">The Anatomical Blueprint: The 9 Matrix Cells & Elemental Coordinates</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>سُمّي هذا المثلث بـ <strong>"مثلث الغزالي الشريف"</strong> أو مثلث <strong>"بطد زهج واح"</strong> لأن الإمام أبا حامد الغزالي جعله في كتابيه <em>"المنقذ من الضلال"</em> و<em>"السر المصون"</em> دليلاً عقلياً برهانياً على وجود خواص باطنية طبيعية في الأعداد والنواميس أودعها الله تعالى في خلقه كالأدوية الكيميائية. وتسمية "بطد زهج واح" ليست لفظاً طلسمياً، بل هي اختصار لأرقام الخانات التسعة بحساب الجُمّل الصغير مصفوفة في ثلاثة أسطر:</p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; align-items:center; margin:16px 0;">
+                            <div>
+                                <div class="specimen-grid-container">
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#ef4444;">د (4)</span><span class="specimen-cell-label">بيت الدال</span></div>
+                                    <div class="specimen-cell lock-cell"><span class="specimen-cell-num" style="color:var(--gold);">ط (9)</span><span class="specimen-cell-label">المغلاق 🔒</span></div>
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#00f0ff;">ب (2)</span><span class="specimen-cell-label">بيت الباء</span></div>
+                                    
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#00f0ff;">ج (3)</span><span class="specimen-cell-label">بيت الجيم</span></div>
+                                    <div class="specimen-cell center-cell"><span class="specimen-cell-num" style="color:var(--gold);">هـ (5)</span><span class="specimen-cell-label">القطب ⚖️</span></div>
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#ef4444;">ز (7)</span><span class="specimen-cell-label">بيت الزاي</span></div>
+                                    
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:var(--emerald);">ح (8)</span><span class="specimen-cell-label">بيت الحاء</span></div>
+                                    <div class="specimen-cell key-cell"><span class="specimen-cell-num" style="color:var(--emerald);">أ (1)</span><span class="specimen-cell-label">المفتاح 🔑</span></div>
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#ffd166;">و (6)</span><span class="specimen-cell-label">بيت الواو</span></div>
+                                </div>
+                                <div style="text-align:center; font-size:0.78rem; color:#94a3b8;">توزيع الخانات التسعة الأصلي ومراتب الحروف الأبجدية</div>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                                <strong style="color:var(--gold); display:block; margin-bottom:8px;">وظائف البيوت التسعة ومسار التدفق:</strong>
+                                <ul style="margin:0 0 0 16px; padding:0; font-size:0.84rem; line-height:1.75;">
+                                    <li><strong>بيت 1 (الألف - المفتاح):</strong> أسفل المنتصف. هو مدخل الطاقة وبداية السير، ويجب أن يكون أصغر عدد بالوفق.</li>
+                                    <li><strong>الأركان الأربعة (الزوجية 2، 4، 6، 8):</strong> (ب، د، و، ح) تمثل أوتاد التثبيت والجاذبية الأرضية، وهي أعداد زوجية (طبيعة ين Yin).</li>
+                                    <li><strong>الأطراف المتعامدة (الفردية 1، 3، 7، 9):</strong> (أ، ج، ز، ط) تمثل الصلبان الطاقية المتحركة (طبيعة يانغ Yang) ومسارات نقل الإشارة.</li>
+                                    <li><strong>بيت 5 (الهاء - القطب والقلب):</strong> عين الوفق ومركز الثقل. يتوسط كافة الخطوط ويجب أن يساوي دائماً ثلث المجموع المطلوب في الأوفاق التامة.</li>
+                                    <li><strong>بيت 9 (الطاء - المغلاق):</strong> أعلى المنتصف. هو مخرج الطاقة وصمام الأمان، ويحمل أكبر عدد في الوفق لمنع ارتداد الشحنة.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="wafq-sub-box gold">
+                            <strong>توزيع الطبائع الأربعة (Fire, Earth, Air, Water) داخل المثلث:</strong>
+                            <br>• <strong>المثلث الناري:</strong> الخانات (1، 5، 9) ➔ القطر الصاعد والمحور المركزي (الحرارة، الحيوية، والسيادة).
+                            <br>• <strong>المثلث الترابي:</strong> الخانات (2، 6) ➔ أركان التثبيت والاستقرار المادي والمناعة.
+                            <br>• <strong>المثلث الهوائي:</strong> الخانات (3، 7) ➔ جانبا الوفق (الاتصالات، الفكر، وسرعة السريان).
+                            <br>• <strong>المثلث المائي:</strong> الخانات (4، 8) ➔ الركنان الآخران (المرونة، المحبة، وسريان السوائل والشفاء).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 2 -->
+                <div class="ghazali-chapter" id="ghazali-ch2">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٢</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الثاني: الرياضيات الصارمة وخوارزمية التعمير الجبري وحالات الكسر الثلاث</h4>
+                            <div class="chapter-subtitle">The Exact Algebraic Engine & The 3 Invariant Remainder Cases</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>يقوم تعمير مثلث الغزالي على معادلة جبرية قطعية ثابتة لا تحتمل الخطأ أو التقريب:</p>
+                        
+                        <div style="background:rgba(244,180,26,0.1); border:1.5px solid var(--gold); border-radius:12px; padding:16px; text-align:center; margin:14px 0;">
+                            <span style="font-size:1.15rem; color:#fff; font-family:'Tajawal',sans-serif; font-weight:700;">
+                                القانون الكلي: $	ext{المفتاح} = \lfloor(N - 12) \div 3floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
+                            </span>
+                            <div style="font-size:0.8rem; color:#ffd166; margin-top:6px;">حيث $N$ هو المجموع المطلوب، والرقم 12 هو "الأس" الثابت للمثلث</div>
+                        </div>
+
+                        <p><strong>لماذا نطرح الرقم 12 بالتحديد؟</strong> لأن حاصل جمع الزيادات النسبية بين الخانات التسعة في سيرها الطبيعي (بدءاً من الصفر) يساوي: $0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36$، وحيث أن المثلث له 3 صفوف، فإن نصيب الصف الواحد من الزيادات التراكمية هو $36 \div 3 = 12$. فطرح 12 هو تفريغ للوزن الهندسي للشبكة حتى يتبقى المقدار الخالص القابل للقسمة على 3 بالتساوي.</p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:16px 0;">
+                            <!-- Case 0 -->
+                            <div style="background:rgba(6,214,160,0.08); border:1px solid var(--emerald); border-radius:12px; padding:16px;">
+                                <strong style="color:var(--emerald); font-size:1rem; display:block; margin-bottom:6px;">
+                                    <i class="fa-solid fa-check-double"></i> الحالة الأولى: الباقي = 0 (الوفق التام الصحاح)
+                                </strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block; margin-bottom:8px;">
+                                    يحدث عندما يقبل الناتج $(N - 12)$ القسمة على 3 دون باقٍ (مثل الأعداد 15، 66، 105، 786).
+                                </span>
+                                <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:8px; font-size:0.8rem;">
+                                    <strong>قاعدة التنزيل:</strong> يعمر الوفق تتابعياً بالسير الطبيعي بإضافة 1 في كل بيت دون أي قفزة:
+                                    <br>بيت 1 = المفتاح
+                                    <br>بيت 2 = المفتاح + 1 ... حتى بيت 9 = المفتاح + 8.
+                                    <br><span style="color:var(--emerald);">النتيجة: كل صف، عمود، وقطر = $N$ تماماً!</span>
+                                </div>
+                            </div>
+
+                            <!-- Case 1 -->
+                            <div style="background:rgba(192,38,211,0.08); border:1px solid #c026d3; border-radius:12px; padding:16px;">
+                                <strong style="color:#c026d3; font-size:1rem; display:block; margin-bottom:6px;">
+                                    <i class="fa-solid fa-bolt"></i> الحالة الثانية: الباقي = 1 (كسر 1 ➔ جبر بيت 7)
+                                </strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block; margin-bottom:8px;">
+                                    يحدث عندما يتبقى 1 بعد القسمة (مثل الأعداد 16، 94، 106، 391).
+                                </span>
+                                <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:8px; font-size:0.8rem;">
+                                    <strong>قاعدة التنزيل:</strong> السير طبيعي من بيت 1 إلى 6 (+1 كل خطوة).
+                                    <br><strong>عند بيت 7 (الزاي):</strong> يُزاد 1 إضافي جبري (قفزة بـ +2 عن بيت 6)!
+                                    <br>البيوت 8 و 9: تستمر بزيادة +1 بعد الجبر.
+                                    <br><span style="color:#c026d3;">السر: بيت 7 يعوض النقص في الصف الأوسط والعمود الأيسر.</span>
+                                </div>
+                            </div>
+
+                            <!-- Case 2 -->
+                            <div style="background:rgba(239,68,68,0.08); border:1px solid #ef4444; border-radius:12px; padding:16px;">
+                                <strong style="color:#ef4444; font-size:1rem; display:block; margin-bottom:6px;">
+                                    <i class="fa-solid fa-fire"></i> الحالة الثالثة: الباقي = 2 (كسر 2 ➔ جبر بيت 4)
+                                </strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block; margin-bottom:8px;">
+                                    يحدث عندما يتبقى 2 بعد القسمة (مثل الأعداد 17، 107، 308).
+                                </span>
+                                <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:8px; font-size:0.8rem;">
+                                    <strong>قاعدة التنزيل:</strong> السير طبيعي من بيت 1 إلى 3 (+1 كل خطوة).
+                                    <br><strong>عند بيت 4 (الدال):</strong> يُزاد 1 إضافي جبري (قفزة بـ +2 عن بيت 3)!
+                                    <br>البيوت من 5 إلى 9: تستمر بزيادة +1 تتابعياً.
+                                    <br><span style="color:#ef4444;">السر: بيت 4 في الركن يوزع الزيادة بدقة عبر الصف الأول والعمود الأيمن.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 3: THE 3 COMPLETE OPERATIONAL CASE STUDIES -->
+                <div class="ghazali-chapter" id="ghazali-ch3">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٣</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الثالث: النماذج التطبيقية العملية الكبرى الثلاثة من الألف إلى الياء</h4>
+                            <div class="chapter-subtitle">3 Complete Real-World End-to-End Operational Case Studies</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>لكي لا يبقى هذا العلم نظرياً في بطون المخطوطات، إليك ثلاثة تصاريف حقيقية كاملة لكبرى مطالب الحياة الإنسانية، مشروحة بالحساب الهندسي والشبكة البصرية وبروتوكول الاستخدام الفعلي خطوة بخطوة:</p>
+
+                        <!-- EXAMPLE 1: HEALING & RECOVERY -->
+                        <div style="background:rgba(6,214,160,0.05); border:1.5px solid var(--emerald); border-radius:16px; padding:22px; margin-bottom:24px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; border-bottom:1px solid rgba(6,214,160,0.25); padding-bottom:12px; margin-bottom:14px;">
+                                <div>
+                                    <h5 style="margin:0; font-family:'Amiri',serif; font-size:1.35rem; color:var(--emerald);">
+                                        🌿 النموذج التطبيقي الأول: مثلث الشفاء التام ودفع العلل والأسقام (اسم الله "شافي")
+                                    </h5>
+                                    <span style="font-size:0.8rem; color:#94a3b8;">الغرض: شفاء الأمراض الباثولوجية، رفع المناعة الخلوية، طرد التراكمات الطاقية السامة، وتجديد الحقل الحيوي.</span>
+                                </div>
+                                <span style="background:rgba(6,214,160,0.2); color:var(--emerald); padding:4px 12px; border-radius:20px; font-weight:700; font-size:0.8rem;">حالة كسر 1 (جبر بيت 7)</span>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; align-items:center;">
+                                <div>
+                                    <div class="specimen-grid-container" style="border-color:var(--emerald);">
+                                        <div class="specimen-cell"><span class="specimen-cell-num">129</span><span class="specimen-cell-label">د (4)</span></div>
+                                        <div class="specimen-cell lock-cell"><span class="specimen-cell-num">135</span><span class="specimen-cell-label">ط (9) 🔒</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">127</span><span class="specimen-cell-label">ب (2)</span></div>
+                                        
+                                        <div class="specimen-cell"><span class="specimen-cell-num">128</span><span class="specimen-cell-label">ج (3)</span></div>
+                                        <div class="specimen-cell center-cell"><span class="specimen-cell-num">130</span><span class="specimen-cell-label">هـ (5) ⚖️</span></div>
+                                        <div class="specimen-cell broken-cell"><span class="specimen-cell-num">133</span><span class="specimen-cell-label">ز (7) ⚡ جبر</span></div>
+                                        
+                                        <div class="specimen-cell"><span class="specimen-cell-num">134</span><span class="specimen-cell-label">ح (8)</span></div>
+                                        <div class="specimen-cell key-cell"><span class="specimen-cell-num">126</span><span class="specimen-cell-label">أ (1) 🔑</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">131</span><span class="specimen-cell-label">و (6)</span></div>
+                                    </div>
+                                    <div class="wafq-math-badge-bar">
+                                        <div class="wafq-math-badge verified">صف 1: 129+135+127 = <strong>391</strong> ✓</div>
+                                        <div class="wafq-math-badge verified">صف 2: 128+130+133 = <strong>391</strong> ✓</div>
+                                        <div class="wafq-math-badge verified">صف 3: 134+126+131 = <strong>391</strong> ✓</div>
+                                    </div>
+                                </div>
+
+                                <div style="font-size:0.85rem; line-height:1.75; color:#cbd5e1;">
+                                    <strong style="color:var(--gold);">١. الاستخراج الحسابي الدقيق:</strong>
+                                    <br>• جُمّل "شـافـي": ش (300) + ا (1) + ف (80) + ي (10) = <strong>391</strong>.
+                                    <br>• طرح الأس: $391 - 12 = 379$.
+                                    <br>• القسمة: $379 \div 3 = 126$ والباقي <strong>1</strong>.
+                                    <br>• إذن: المفتاح = <strong>126</strong>، الباقي = 1 ➔ جبر بزيادة +1 في البيت 7.
+                                    <br>• سَير التنزيل: (بيت 1=126، 2=127، 3=128، 4=129، 5=130، 6=131) ➔ <strong>قفزة في بيت 7 = 133</strong> ➔ (بيت 8=134، بيت 9=135).
+                                </div>
+                            </div>
+
+                            <!-- Operational Field Protocol -->
+                            <div class="operational-protocol-box">
+                                <strong style="color:var(--emerald); font-size:0.95rem; display:block; margin-bottom:10px;">
+                                    <i class="fa-solid fa-notes-medical"></i> البروتوكول الميداني الكامل للاستخدام والشفاء:
+                                </strong>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التوقيت</span>
+                                    <span>يوم الأحد عند شروق الشمس (ساعة الشمس الأولى) لطرد الظلمات الحيوية، أو يوم الخميس في ساعة المشتري في النصف الأول من الشهر القمري.</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">المداد والحامل</span>
+                                    <span>يُكتب بمداد طاهر من <strong>ماء الورد والزعفران وقليل من المسك الأبيض</strong> على <strong>صحن صيني أو زجاجي أبيض نقي</strong> لا نقش فيه ولا رسم.</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التعزيم والتفعيل</span>
+                                    <span>أثناء الكتابة يُطلق بخور <strong>اللبان الذكر والسندروس</strong>، وبعد الفراغ تُقرأ سورة الفاتحة 7 مرات، وآية الشفاء ﴿وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ﴾ 70 مرة، وترديد اسم "يا شافي" بعدد الجُمّل (391 مرة).</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التطبيق الجسدي</span>
+                                    <span>يُمحى الوفق بماء زمزم أو ماء نقي، ويشربه المريض على الريق صباحاً لمدة 7 أيام متتالية مع المشي حافياً على التراب 10 دقائق لتفريغ الشحنات السامة (Grounding).</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EXAMPLE 2: WEALTH & ABUNDANCE -->
+                        <div style="background:rgba(244,180,26,0.05); border:1.5px solid var(--gold); border-radius:16px; padding:22px; margin-bottom:24px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; border-bottom:1px solid rgba(244,180,26,0.25); padding-bottom:12px; margin-bottom:14px;">
+                                <div>
+                                    <h5 style="margin:0; font-family:'Amiri',serif; font-size:1.35rem; color:var(--gold);">
+                                        💰 النموذج التطبيقي الثاني: مثلث الرزق وتيسير التجارة والوفرة المالية (اسم الله "رزاق")
+                                    </h5>
+                                    <span style="font-size:0.8rem; color:#94a3b8;">الغرض: فك التعطيل المالي، فتح أبواب البيع والشراء، توسيع هالة القبول والوفرة، وجلب التوفيق في الصفقات.</span>
+                                </div>
+                                <span style="background:rgba(244,180,26,0.2); color:var(--gold); padding:4px 12px; border-radius:20px; font-weight:700; font-size:0.8rem;">حالة كسر 2 (جبر بيت 4)</span>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; align-items:center;">
+                                <div>
+                                    <div class="specimen-grid-container" style="border-color:var(--gold);">
+                                        <div class="specimen-cell broken-cell"><span class="specimen-cell-num">102</span><span class="specimen-cell-label">د (4) ⚡ جبر</span></div>
+                                        <div class="specimen-cell lock-cell"><span class="specimen-cell-num">107</span><span class="specimen-cell-label">ط (9) 🔒</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">99</span><span class="specimen-cell-label">ب (2)</span></div>
+                                        
+                                        <div class="specimen-cell"><span class="specimen-cell-num">100</span><span class="specimen-cell-label">ج (3)</span></div>
+                                        <div class="specimen-cell center-cell"><span class="specimen-cell-num">103</span><span class="specimen-cell-label">هـ (5) ⚖️</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">105</span><span class="specimen-cell-label">ز (7)</span></div>
+                                        
+                                        <div class="specimen-cell"><span class="specimen-cell-num">106</span><span class="specimen-cell-label">ح (8)</span></div>
+                                        <div class="specimen-cell key-cell"><span class="specimen-cell-num">98</span><span class="specimen-cell-label">أ (1) 🔑</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">104</span><span class="specimen-cell-label">و (6)</span></div>
+                                    </div>
+                                    <div class="wafq-math-badge-bar">
+                                        <div class="wafq-math-badge verified">صف 1: 102+107+99 = <strong>308</strong> ✓</div>
+                                        <div class="wafq-math-badge verified">صف 2: 100+103+105 = <strong>308</strong> ✓</div>
+                                        <div class="wafq-math-badge verified">صف 3: 106+98+104 = <strong>308</strong> ✓</div>
+                                    </div>
+                                </div>
+
+                                <div style="font-size:0.85rem; line-height:1.75; color:#cbd5e1;">
+                                    <strong style="color:var(--gold);">١. الاستخراج الحسابي الدقيق:</strong>
+                                    <br>• جُمّل "رزاق": ر (200) + ز (7) + ا (1) + ق (100) = <strong>308</strong>.
+                                    <br>• طرح الأس: $308 - 12 = 296$.
+                                    <br>• القسمة: $296 \div 3 = 98$ والباقي <strong>2</strong>.
+                                    <br>• إذن: المفتاح = <strong>98</strong>، الباقي = 2 ➔ جبر بزيادة +1 في البيت 4.
+                                    <br>• سَير التنزيل: (بيت 1=98، 2=99، 3=100) ➔ <strong>قفزة في بيت 4 = 102</strong> ➔ (بيت 5=103، 6=104، 7=105، 8=106، 9=107).
+                                </div>
+                            </div>
+
+                            <!-- Operational Field Protocol -->
+                            <div class="operational-protocol-box">
+                                <strong style="color:var(--gold); font-size:0.95rem; display:block; margin-bottom:10px;">
+                                    <i class="fa-solid fa-coins"></i> البروتوكول الميداني الكامل لجلب الوفرة والتيسير:
+                                </strong>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التوقيت</span>
+                                    <span>يوم الخميس (فلك المشتري)، ساعة المشتري الأولى بعد الشروق، والقمر في برج ناري أو هوائي (الحمل، الأسد، القوس، أو الجوزاء) خالٍ من النحوس.</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">المداد والحامل</span>
+                                    <span>يُكتب بمداد الزعفران وماء الورد والعنبر على <strong>ورقة كاغد مصقولة فاخرة ذات لون ذهبي/بيج</strong> أو صفيحة رقيقة من القصدير النقي (معدن المشتري).</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التعزيم والتفعيل</span>
+                                    <span>يُطلق بخور <strong>الصندل الأبيض وعلك الروم واللبان الذكر</strong>، وتُتلى آية الرزق ﴿إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ﴾ 27 مرة، ثم تلاوة "يا رزاق" بعدد المفتاح (98 مرة) أو بعدد الاسم (308 مرات).</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">الحفظ والتصريف</span>
+                                    <span>يُطوى الوفق في قماش حريري أخضر أو أصفر طبيعي، ويُوضع في خزينة المال، أو في المحفظة، أو يُعلق في مدخل المحل التجاري في مكان طاهر مرتفع عن الأنظار.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EXAMPLE 3: SOVEREIGNTY & PROTECTION (ALLAH) -->
+                        <div style="background:rgba(0,240,255,0.05); border:1.5px solid var(--cyan); border-radius:16px; padding:22px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:12px; margin-bottom:14px;">
+                                <div>
+                                    <h5 style="margin:0; font-family:'Amiri',serif; font-size:1.35rem; color:var(--cyan);">
+                                        👑 النموذج التطبيقي الثالث: مثلث الهيبة والسيادة المطلقة ودحر الأعداء (اسم الجلالة "الله")
+                                    </h5>
+                                    <span style="font-size:0.8rem; color:#94a3b8;">الغرض: الهيبة في قلوب الخلق، النصر على المعتدين، رباطة الجأش، طرد المخاوف النفسية، والحفظ من كيد السحرة والشياطين.</span>
+                                </div>
+                                <span style="background:rgba(0,240,255,0.2); color:var(--cyan); padding:4px 12px; border-radius:20px; font-weight:700; font-size:0.8rem;">وفق تام صحيح (باقي 0)</span>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; align-items:center;">
+                                <div>
+                                    <div class="specimen-grid-container" style="border-color:var(--cyan);">
+                                        <div class="specimen-cell"><span class="specimen-cell-num">21</span><span class="specimen-cell-label">د (4)</span></div>
+                                        <div class="specimen-cell lock-cell"><span class="specimen-cell-num">26</span><span class="specimen-cell-label">ط (9) 🔒</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">19</span><span class="specimen-cell-label">ب (2)</span></div>
+                                        
+                                        <div class="specimen-cell"><span class="specimen-cell-num">20</span><span class="specimen-cell-label">ج (3)</span></div>
+                                        <div class="specimen-cell center-cell"><span class="specimen-cell-num">22</span><span class="specimen-cell-label">هـ (5) ⚖️</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">24</span><span class="specimen-cell-label">ز (7)</span></div>
+                                        
+                                        <div class="specimen-cell"><span class="specimen-cell-num">25</span><span class="specimen-cell-label">ح (8)</span></div>
+                                        <div class="specimen-cell key-cell"><span class="specimen-cell-num">18</span><span class="specimen-cell-label">أ (1) 🔑</span></div>
+                                        <div class="specimen-cell"><span class="specimen-cell-num">23</span><span class="specimen-cell-label">و (6)</span></div>
+                                    </div>
+                                    <div class="wafq-math-badge-bar">
+                                        <div class="wafq-math-badge verified">صفوف وأعمدة = <strong>66</strong> ✓</div>
+                                        <div class="wafq-math-badge verified">قطر 1: 21+22+23 = <strong>66</strong> ✓</div>
+                                        <div class="wafq-math-badge verified">قطر 2: 19+22+25 = <strong>66</strong> ✓</div>
+                                    </div>
+                                </div>
+
+                                <div style="font-size:0.85rem; line-height:1.75; color:#cbd5e1;">
+                                    <strong style="color:var(--gold);">١. الاستخراج الحسابي الدقيق:</strong>
+                                    <br>• جُمّل "الله": ا (1) + ل (30) + ل (30) + هـ (5) = <strong>66</strong>.
+                                    <br>• طرح الأس: $66 - 12 = 54$.
+                                    <br>• القسمة: $54 \div 3 = 18$ والباقي <strong>0</strong> (تام صحاح!).
+                                    <br>• إذن: المفتاح = <strong>18</strong>، الأس = 12، الباقي = 0 ➔ لا يوجد كسر ولا جبر.
+                                    <br>• سَير التنزيل: تتابعي تام (18، 19، 20، 21، 22، 23، 24، 25، 26).
+                                    <br>• <em>تطابق مطلق:</em> كل صف وعمود وقطر يساوي 66 دون أدنى تفاوت في أي محور!
+                                </div>
+                            </div>
+
+                            <!-- Operational Field Protocol -->
+                            <div class="operational-protocol-box">
+                                <strong style="color:var(--cyan); font-size:0.95rem; display:block; margin-bottom:10px;">
+                                    <i class="fa-solid fa-crown"></i> البروتوكول الميداني الكامل للهيبة والتحصين السيادي:
+                                </strong>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التوقيت</span>
+                                    <span>ليلة الجمعة في الثلث الأخير من الليل (وقت النزول الإلهي والسحر)، أو صبيحة يوم الأحد في شروق الشمس.</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">المداد والحامل</span>
+                                    <span>يُكتب بمداد المسك الأسود والزعفران وماء الورد على <strong>رق غزال طاهر مدبوغ بحسب الشريعة</strong> أو ورقة بيضاء كتانية صافية.</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التطويق والختم</span>
+                                    <span>يُحاط المربع دائرياً بكتابة <strong>آية الكرسي كاملة</strong> دون طمس لحروفها، وتُكتب في أركانه الأربعة الحروف النورانية القرآنية: (كهيعص - حمعسق).</span>
+                                </div>
+                                <div class="protocol-step">
+                                    <span class="step-badge">التفعيل والحمل</span>
+                                    <span>يُبخر بـ <strong>المسك الخام والعود القماري</strong>، ويُقرأ عليه اسم الجلالة "يا الله" 66 مرة مع آية الكرسي 66 مرة. يُطوى ويُحفظ في جراب جلدي طبيعي ويُحمل على العضد الأيمن أو الصدر جهة القلب.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 4 -->
+                <div class="ghazali-chapter" id="ghazali-ch4">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٤</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الرابع: دستور الأحبار والمواد والأوعية الروحانية والفيزيائية</h4>
+                            <div class="chapter-subtitle">Alchemy of Substrates, Organic Inks & Biological Resonance Instruments</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>إن من أكبر أسباب فشل المشتغلين المعاصرين بالأوفاق هو استخدامهم <strong>أدوات صناعية كيميائية ميتة</strong> تعزل الشحنات الكهروستاتيكية وتمنع تشكل الحقل الرنيني الأثيري. إليك الدستور المادي الصحيح كما قعّده أئمة الصنعة:</p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin:16px 0;">
+                            <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                                <strong style="color:var(--gold); display:block; margin-bottom:8px;"><i class="fa-solid fa-flask"></i> ١. سر طبخ "المداد الروحاني الأصلي":</strong>
+                                <ul style="margin:0 0 0 16px; padding:0; font-size:0.84rem;">
+                                    <li><strong>المذيب الأساسي:</strong> ماء ورد طائفي أو دمشقي مقطر ثلاثاً (طبيعي 100% خالٍ من الكحول).</li>
+                                    <li><strong>المادة الصبغية:</strong> خيوط زعفران أصلي قشميري أو إيراني نقي (حوالي 1-2 غرام يُنقع في ماء الورد الدافئ حتى يكتسب لوناً ذهبياً ياقوتياً).</li>
+                                    <li><strong>المثبت الرنيني:</strong> قيراط من المسك الطبيعي المطحون (مسك الغزال الأسود للتحصين والهيبة، أو مسك أبيض للشفاء والمحبة).</li>
+                                    <li><strong>مانع التعفن:</strong> قليل من الكافور الطبيعي البلوري لحفظ المداد وتطييب رائحته.</li>
+                                    <li><em>التحذير الصارم:</em> يُمنع منعاً باتاً استخدام الحبر الجاف التجاري أو أقلام الفلوماستر؛ لأن البلاستيك والمركبات البترولية تعمل كعازل كهروستاتيكي يقتل الإشارة الأثيرية فوراً.</li>
+                                </ul>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                                <strong style="color:var(--cyan); display:block; margin-bottom:8px;"><i class="fa-solid fa-scroll"></i> ٢. علم الأوعية والحوامل (Substrates):</strong>
+                                <ul style="margin:0 0 0 16px; padding:0; font-size:0.84rem;">
+                                    <li><strong>الورق الطبيعي (الكاغد):</strong> ورق مصقول يدوي مصنوع من ألياف القطن أو الكتان أو الحرير الطبيعي، خالٍ من مبيضات الكلور الكيميائية.</li>
+                                    <li><strong>الرقوق الحيوانية:</strong> رق غزال طاهر مدبوغ بالطرق الشرعية (أقوى موصل للشحنات البيولوجية للأعمال السيادية والحفظ).</li>
+                                    <li><strong>الصفائح المعدنية:</strong> النحاس الأحمر النقي لأعمال الزهرة والمحبة، القصدير للمشتري والمال، الذهب للشمس، والفضة للقمر.</li>
+                                    <li><strong>الصحاف الخزفية:</strong> صحون صينية أو زجاجية بيضاء خالية من الشروخ والرسوم لشرب المحو الاستشفائي.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="wafq-sub-box crimson">
+                            <strong>أداة الكتابة (القلم):</strong> يُشترط أن يكون القلم مصنوعاً من <strong>قصب فارسي طبيعي</strong> مبري بشطفة مائلة بزاوية 45 درجة، أو عود سواك أراك مشحوذ. لماذا؟ لأن القصب والألياف النباتية تسمح بسريان <em>الشحنة الكهرومغناطيسية الحيوية من أصابع الكاتب إلى السطح</em> مباشرة دون تشويش معدني أو بلاستيكي عازل.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 5 -->
+                <div class="ghazali-chapter" id="ghazali-ch5">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٥</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الخامس: مواقيت الرصد الفلكي وساعات الكواكب وخلو المسار</h4>
+                            <div class="chapter-subtitle">Astronomical Resonance: Planetary Hours & The Void of Course Curse</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>لا يعمل الوفق في فراغ زمني منعزل؛ بل هو <strong>موجّه موجي يلتقط الترددات الكوكبية المدارية</strong>. فإذا كُتب الوفق في ساعة كوكبية متضاربة، انعدم الرنين وحصل التداخل الهدام. إليك القواعد الزمنية الصارمة:</p>
+
+                        <div style="overflow-x:auto; margin:16px 0;">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.83rem; text-align:right;">
+                                <thead>
+                                    <tr style="background:rgba(15,23,42,0.9); border-bottom:2px solid var(--gold); color:var(--gold);">
+                                        <th style="padding:10px;">اليوم</th>
+                                        <th style="padding:10px;">الكوكب الحاكم</th>
+                                        <th style="padding:10px;">ساعة الشروق الأولى</th>
+                                        <th style="padding:10px;">الطبيعة والغرض الملائم</th>
+                                        <th style="padding:10px;">البخور المناسب</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>الأحد</strong></td>
+                                        <td style="padding:8px; color:#f4b41a;">الشمس ☉</td>
+                                        <td style="padding:8px;">ساعة الشمس</td>
+                                        <td style="padding:8px;">العزة، السيادة، الشفاء الجسدي، طرد الظلمات</td>
+                                        <td style="padding:8px;">سندروس، لبان ذكر، ميعة سائلة</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>الإثنين</strong></td>
+                                        <td style="padding:8px; color:#00f0ff;">القمر ☽</td>
+                                        <td style="padding:8px;">ساعة القمر</td>
+                                        <td style="padding:8px;">الصلح، تليين القلوب، تحريك السوائل، البصيرة</td>
+                                        <td style="padding:8px;">لبان ذكر، كافور، مسك أبيض</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>الثلاثاء</strong></td>
+                                        <td style="padding:8px; color:#ef4444;">المريخ ♂</td>
+                                        <td style="padding:8px;">ساعة المريخ</td>
+                                        <td style="padding:8px;">رد كيد المعتدين، قطع السلاسل، تدمير الأسحار</td>
+                                        <td style="padding:8px;">قسط هندي، صندل أحمر، كبريت</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>الأربعاء</strong></td>
+                                        <td style="padding:8px; color:#9d4edd;">عطارد ☿</td>
+                                        <td style="padding:8px;">ساعة عطارد</td>
+                                        <td style="padding:8px;">الحفظ، الذكاء، الفصاحة، حل المعضلات العقلية</td>
+                                        <td style="padding:8px;">جاوي، مستكة، علك الروم</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>الخميس</strong></td>
+                                        <td style="padding:8px; color:#3b82f6;">المشتري ♃</td>
+                                        <td style="padding:8px;">ساعة المشتري</td>
+                                        <td style="padding:8px;">سعة الأرزاق، التجارة، القبول والجاه، تيسير الأمور</td>
+                                        <td style="padding:8px;">صندل أبيض، عنبر خام، لبان</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>الجمعة</strong></td>
+                                        <td style="padding:8px; color:#06d6a0;">الزهرة ♀</td>
+                                        <td style="padding:8px;">ساعة الزهرة</td>
+                                        <td style="padding:8px;">المحبة الشرعية، الألفة الأسرية، علاج الكليتين</td>
+                                        <td style="padding:8px;">دهن ورد، مسك، ميعة يابسة</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:8px;"><strong>السبت</strong></td>
+                                        <td style="padding:8px; color:#6b7280;">زحل ♄</td>
+                                        <td style="padding:8px;">ساعة زحل</td>
+                                        <td style="padding:8px;">تثبيت الأبنية، عقد الألسن عن الشر، الصبر</td>
+                                        <td style="padding:8px;">حلتيت، قشور رمان، لبان مر</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="wafq-sub-box crimson">
+                            <strong>⚠️ التحذير الصارم من "خلو مسار القمر" (Moon Void of Course):</strong>
+                            خلو المسار هو الفترة التي ينتهي فيها القمر من تشكيل أي اتصال فلكي رئيسي (اقتران، تثليث، تربيع...) مع أي كوكب آخر قبل أن ينتقل إلى البرج التالي. في هذه الفترة، <strong>تكون الطاقة الفلكية معطلة وميتة بنسبة 100%</strong>؛ وأي وفق أو عمل يُكتب أثناء خلو المسار يبوء بالفشل التام والتعطل مهما بلغت دقة الحساب والنية!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 6 -->
+                <div class="ghazali-chapter" id="ghazali-ch6">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٦</div>
+                        <div>
+                            <h4 class="chapter-title">الباب السادس: بروتوكول التفعيل الصوتي والرنين وتوجيه النية</h4>
+                            <div class="chapter-subtitle">Acoustic Entrainment, Mantra Physics & Brainwave Synchronization</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>كتابة الأرقام على الورق هي بمثابة بناء "الدائرة الكهربائية المادية"؛ أما <strong>التفعيل الصوتي وتوجيه النية</strong> فهو تمرير "التيار الكهربائي الحي" في تلك الدائرة. وبدون هذا البروتوكول، يظل الوفق جسداً بلا روح:</p>
+
+                        <div class="operational-protocol-box">
+                            <strong style="color:var(--cyan); font-size:0.95rem; display:block; margin-bottom:12px;">
+                                <i class="fa-solid fa-atom"></i> المراحل الأربع لشحن الوفق بالطاقة الحيوية:
+                            </strong>
+                            <div class="protocol-step">
+                                <span class="step-badge">المرحلة 1: الطهارة والتأريض</span>
+                                <span>الوضوء الكامل بسرد، الجلوس مستقبلاً القبلة الشريفة في مكان طاهر ذي إضاءة خافتة، وإشعال البخور المناسب لطرد الطاقات الهوائية المشوشة.</span>
+                            </div>
+                            <div class="protocol-step">
+                                <span class="step-badge">المرحلة 2: تماسك موجات الدماغ</span>
+                                <span>ممارسة تنفس الحجاب الحاجز البطيء (شهيق 4 ثوانٍ، حبس 4 ثوانٍ، زفير 6 ثوانٍ) لمدة 5 دقائق لإدخال الدماغ في حالة <strong>ثيتا-ألفا (Theta-Alpha Coherence 7-8 Hz)</strong>، وطرد أي تردد أو شك؛ لأن الشك يولد موجات تداخل هدام تلغي شحنة الوفق.</span>
+                            </div>
+                            <div class="protocol-step">
+                                <span class="step-badge">المرحلة 3: الحبس التنفسي عند القطب</span>
+                                <span>أثناء رسم خطوط الوفق وكتابة الأرقام، يتم الشهيق مع البداية بالمفتاح (بيت 1)، وعند الوصول إلى بيت الهاء (القطب 5)، يحبس الكاتب نَفَسَه ويركز كامل نيته في قلبه مستشعراً نزول النور الإلهي، ثم يزفر ببطء عند كتابة المغلاق (بيت 9).</span>
+                            </div>
+                            <div class="protocol-step">
+                                <span class="step-badge">المرحلة 4: الانجرار الصوتي الرنيني</span>
+                                <span>بعد اكتمال الرسم، يُوضع الوفق على كف اليد اليمنى ويُقرّب من الفم، وتُتلى الآية أو الاسم الإلهي المستودع <strong>بالنغمة الصوتية الهادئة المتوافقة مع تردد الكوكب</strong> بعدد المفتاح أو بعدد الجُمّل الكلي، بحيث تصطدم الذبذبات الصوتية والأنفاس مباشرة بسطح الحبر، فتنغرس الشحنة الصوتية في بلورات الزعفران.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 7 -->
+                <div class="ghazali-chapter" id="ghazali-ch7">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٧</div>
+                        <div>
+                            <h4 class="chapter-title">الباب السابع: دليل الفك والتحليل العكسي للأوفاق المجهولة وإبطال الفاسد منها</h4>
+                            <div class="chapter-subtitle">Reverse Engineering Historical Talismans & Safely Neutralizing Corrupted Magic</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>إذا عثرت على وفق تاريخي أو طلسم مجهول في مخطوط أو ورقة قديمة، وأردت معرفة حقيقته وكشف سره خلال دقيقتين دون تخمين، فاتبع <strong>خوارزمية الهندسة العكسية</strong> التالية:</p>
+
+                        <div style="background:rgba(0,0,0,0.35); border-radius:12px; border:1px solid rgba(255,255,255,0.08); padding:18px; margin:14px 0;">
+                            <strong style="color:var(--gold); display:block; margin-bottom:10px;"><i class="fa-solid fa-magnifying-glass"></i> خطوات فك شفرة أي وفق 3×3 مجهول:</strong>
+                            <ol style="margin:0 0 0 20px; padding:0; font-size:0.85rem; line-height:1.8;">
+                                <li><strong>الخطوة 1: تحديد المفتاح:</strong> انظر إلى أصغر رقم موجود في الوفق، وتحقق مما إذا كان يقع في أسفل الوسط (بيت الألف). إذا كان كذلك، فالوفق يعتمد طريقة بطد زهج واح.</li>
+                                <li><strong>الخطوة 2: فحص الزيادة والكسر:</strong> قارن بين الخانات المتتالية:
+                                    <br>• إذا كانت كل خانة تزيد بـ 1 عن سابقتها حتى النهاية ➔ <strong>الباقي = 0</strong>.
+                                    <br>• إذا وجدت قفزة بـ 2 بين البيت 6 و 7 (الزاي وسط اليسار) ➔ <strong>الباقي = 1</strong>.
+                                    <br>• إذا وجدت قفزة بـ 2 بين البيت 3 و 4 (الدال أعلى اليمين) ➔ <strong>الباقي = 2</strong>.
+                                </li>
+                                <li><strong>الخطوة 3: تطبيق المعادلة العكسية لاستخراج الاسم:</strong>
+                                    <div style="background:rgba(0,240,255,0.1); padding:8px 14px; border-radius:6px; margin:6px 0; font-weight:700; color:#fff;">
+                                        $N = (	ext{المفتاح} 	imes 3) + 12 + 	ext{الباقي}$
+                                    </div>
+                                </li>
+                                <li><strong>الخطوة 4: مطابقة الناتج $N$:</strong> ابحث عن العدد $N$ في جداول أسماء الله الحسنى أو الآيات المشهورة؛ فإذا كان 66 فهو "الله"، وإذا كان 129 فهو "لطيف"، وإذا كان 308 فهو "رزاق"، وإذا كان 786 فهو "البسملة". وبذلك تعرف بدقة متناهية ما أودعه الصانع!</li>
+                            </ol>
+                        </div>
+
+                        <div class="wafq-sub-box crimson">
+                            <strong>كشف الأوفاق الخبيثة أو السحرية الشيطانية وإبطالها الآمن:</strong>
+                            <br>• <strong>علامات الفساد والشواش:</strong> إذا جمعت الصفوف والأعمدة ووجدتها غير متساوية، أو وجدت حروفاً مقلوبة، أو رموزاً سريانية طلاسمية غير مفهومة، أو خانات مطموسة عمداً بالسوائل، فهذا <strong>وفق خبيث صُمم لإحداث تداخل هدام وتمزيق الهالة الأثيرية</strong>.
+                            <br>• <strong>بروتوكول الإبطال الآمن التام:</strong>
+                            لا تحرق الوفق أبداً بالنار (لأن الحرق ينشط الكيانات النارية ويفكك الروابط بعنف)؛ بل ضعه في إناء ماء طاهر مذاب فيه <strong>ملح صخري خشن وخل طبيعي</strong>، واقرأ عليه آيات إبطال السحر: ﴿مَا جِئْتُم بِهِ السِّحْرُ إِنَّ اللَّهَ سَيُبْطِلُهُ﴾ [يونس: 81]، ﴿فَوَقَعَ الْحَقُّ وَبَطَلَ مَا كَانُوا يَعْمَلُونَ﴾ [الأعراف: 118]، والمعوذتين. بمجرد ذوبان الحبر في الماء المالح، ينحل التناظر الهندسي فوراً، وينهار الحقل التداخلي وتنقطع التغذية الأثيرية بسلام.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPTER 8 -->
+                <div class="ghazali-chapter" id="ghazali-ch8">
+                    <div class="chapter-heading">
+                        <div class="chapter-num-badge">٨</div>
+                        <div>
+                            <h4 class="chapter-title">الباب الثامن: الإغلاق التام، التحصين بالأحرف النورانية، والميزان التوحيدي الأسمى</h4>
+                            <div class="chapter-subtitle">Hermetic Sealing, The 14 Luminous Letters & Quranic Sovereignty</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                        <p>إن ترك الوفق مفتوحاً دون إغلاق يشبه ترك سلك كهربائي عارٍ متصل بالتيار في بركة ماء؛ حيث يؤدي تسرب الطاقة إلى استنزاف هالة صاحبه واجتذاب الطفيليات واليرقات النجمية. إليك دستور الختم والحصانة الكبرى:</p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin:16px 0;">
+                            <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                                <strong style="color:var(--gold); display:block; margin-bottom:8px;"><i class="fa-solid fa-lock"></i> ١. طوق الحروف النورانية الـ 14:</strong>
+                                <p style="font-size:0.84rem; margin:0;">
+                                    تُحاط جوانب المربع الأربعة بكتابة الحروف النورانية القرآنية الأربعة عشر المفرقة دون طمس: <strong>(ن، ص، ح، ك، ي، م، ق، ا، ط، ع، ل، هـ، س، ر)</strong> التي يجمعها قول العلماء: <em>"نص حكيم قاطع له سر"</em>. تشكل هذه الحروف درعاً كهروديناميكياً يمنع أي كيان من التسلل إلى قلب الوفق.
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                                <strong style="color:var(--emerald); display:block; margin-bottom:8px;"><i class="fa-solid fa-shield-cat"></i> ٢. أقفال الأركان بآيات الإحكام:</strong>
+                                <p style="font-size:0.84rem; margin:0;">
+                                    تُكتب في زوايا المربع الأربعة أواخر سورة الحشر ﴿هُوَ اللَّهُ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ...﴾ أو قوله تعالى: ﴿وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا فَأَغْشَيْنَاهُمْ فَهُمْ لَا يُبْصِرُونَ﴾ [يس: 9]، لتكون أوتاداً مانعة تحبس الطاقة الإيجابية في الداخل وتصد أي اختراق خارجي.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- THE MONOTHEISTIC FORTRESS -->
+                        <div style="background:linear-gradient(135deg, rgba(244,180,26,0.15), rgba(6,214,160,0.1)); border:2px solid var(--gold); border-radius:14px; padding:20px; margin-top:18px;">
+                            <h5 style="margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.3rem; color:var(--gold); text-align:center;">
+                                ⚖️ الميزان التوحيدي والقرآني الأسمى — سيادة المؤمن الموحد
+                            </h5>
+                            <p style="font-size:0.88rem; line-height:1.85; color:#f0f6fc; margin:0;">
+                                <strong>الحقيقة العقدية والبرهانية الصارمة:</strong>
+                                إن الأعداد، الأوفاق، والنجوم والأفلاك ليست آلهة، ولا تملك في ملكوت السماوات والأرض مثقال ذرة من نفع أو ضر بذاتها، بل هي محض <strong>أسباب وقوانين وسنن كونية مسخرة</strong> خلقها الله تعالى بحكمته البالغة وأودع فيها الاتزان ﴿وَأَحْصَىٰ كُلَّ شَيْءٍ عَدَدًا﴾ [الجن: 28].
+                                <br><br>
+                                المسلم المؤمن الموحد بالله لا يستعين بجن، ولا يتقرب إلى كوكب، ولا يذبح لغير الله؛ بل ينظر إلى هذه المصفوفات كما ينظر المهندس إلى مصفوفات الجبر وحساب التفاضل، وكما ينظر الطبيب إلى خواص الأعشاب والمركبات. والإنسان الموحد المتوكل على الله هو خليفة الله وسيد فوق كل هذه النواميس المسخرة بنور لا إله إلا الله محمد رسول الله، وسر إجابة الدعاء وتحقيق الغايات إنما هو بصدق التوجه إلى مسبب الأسباب ومجري السحاب ومسخر النجوم، له الملك وله الحمد وهو على كل شيء قدير.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ========================================================
+                 END OF AL-GHAZALI MASTER HANDBOOK
+                 ======================================================== -->
 
             <!-- 4 MASTER SCHOLARLY TREATISES -->
             <div style="margin-bottom:30px;">
