@@ -1858,7 +1858,10 @@ def generate_codex():
                     <a href="#ghazali-ch5" class="ghazali-nav-pill"><i class="fa-solid fa-clock"></i> الباب 5: مواقيت الرصد وساعات الكواكب</a>
                     <a href="#ghazali-ch6" class="ghazali-nav-pill"><i class="fa-solid fa-volume-high"></i> الباب 6: بروتوكول التفعيل الصوتي والرنين</a>
                     <a href="#ghazali-ch7" class="ghazali-nav-pill"><i class="fa-solid fa-key"></i> الباب 7: دليل الفك العكسي وإبطال الفاسد</a>
-                    <a href="#ghazali-ch8" class="ghazali-nav-pill"><i class="fa-solid fa-shield-halved"></i> الباب 8: الإغلاق والتحصين والميزان التوحيدي</a>
+                    <a href="#ghazali-ch8" class="ghazali-nav-pill"><i class="fa-solid fa-shield-halved"></i> الباب 8: الإغلاق والتحصين</a>
+                    <a href="#ghazali-ch9" class="ghazali-nav-pill"><i class="fa-solid fa-eye-slash"></i> الباب 9: ميكانيكا آيات السد والحجب (يس 9)</a>
+                    <a href="#ghazali-ch10" class="ghazali-nav-pill"><i class="fa-solid fa-eye"></i> الباب 10: فتح البصيرة وتطهير الهالة والران</a>
+                    <a href="#ghazali-ch11" class="ghazali-nav-pill"><i class="fa-solid fa-crown"></i> الباب 11: تفكيك خرافة الخدام وسر السيادة</a>
                 </div>
 
                 <!-- CHAPTER 1 -->
@@ -1927,7 +1930,8 @@ def generate_codex():
                         
                         <div style="background:rgba(244,180,26,0.1); border:1.5px solid var(--gold); border-radius:12px; padding:16px; text-align:center; margin:14px 0;">
                             <span style="font-size:1.15rem; color:#fff; font-family:'Tajawal',sans-serif; font-weight:700;">
-                                القانون الكلي: $	ext{المفتاح} = \lfloor(N - 12) \div 3floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
+                                القانون الكلي: $	ext{المفتاح} = \lfloor(N - 12) \div 3
+floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             </span>
                             <div style="font-size:0.8rem; color:#ffd166; margin-top:6px;">حيث $N$ هو المجموع المطلوب، والرقم 12 هو "الأس" الثابت للمثلث</div>
                         </div>
