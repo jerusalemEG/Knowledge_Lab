@@ -1510,38 +1510,216 @@ def generate_unified_html(nodes, links):
         .z-prop-lbl {{ color: var(--text-muted); }}
         .z-prop-val {{ color: var(--cyan); font-weight: 600; }}
 
-        /* 4. Timeline View */
+        /* 4. Timeline View & Precession Engine */
         .timeline-grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 26px;
         }}
         .age-card {{
-            background: var(--panel-bg);
+            background: rgba(13, 17, 23, 0.88);
+            backdrop-filter: blur(14px);
             border: 1px solid var(--border-glass);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            padding: 26px;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }}
+        .age-card::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
         }}
         .age-card:hover {{
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--cyan);
-            box-shadow: 0 12px 30px rgba(0, 240, 255, 0.15);
+            box-shadow: 0 16px 36px rgba(0, 240, 255, 0.16), 0 0 20px rgba(255, 209, 102, 0.1);
         }}
-        .age-era {{ font-size: 0.8rem; color: var(--gold); font-weight: 700; margin-bottom: 8px; }}
-        .age-title {{ font-size: 1.3rem; color: #fff; margin-bottom: 12px; }}
+        .age-card:hover::before {{
+            opacity: 1;
+            background: linear-gradient(90deg, var(--rose), var(--gold), var(--cyan));
+        }}
+        .age-card.active-era {{
+            border-color: var(--gold);
+            box-shadow: 0 0 25px rgba(255, 209, 102, 0.35);
+        }}
+        .age-card-top {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }}
+        .age-glyph-badge {{
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 209, 102, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.15);
+        }}
+        .age-era {{ font-size: 0.85rem; color: var(--gold); font-weight: 700; letter-spacing: 0.5px; }}
+        .age-title {{ font-size: 1.35rem; color: #fff; margin-bottom: 8px; font-weight: 700; }}
         .polarity-tag {{
             background: rgba(255, 51, 102, 0.12);
-            color: var(--rose);
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            display: inline-block;
+            color: #ff7597;
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             margin-bottom: 14px;
-            border: 1px solid rgba(255, 51, 102, 0.3);
+            border: 1px solid rgba(255, 51, 102, 0.35);
+            font-weight: 600;
         }}
-        .age-desc {{ font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }}
-        .age-symbols {{ border-top: 1px solid var(--border-glass); padding-top: 12px; font-size: 0.8rem; color: #a0aec0; }}
+        .age-meta-pills {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }}
+        .age-pill {{
+            font-size: 0.75rem;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            color: var(--cyan);
+        }}
+        .age-pill.prophet-pill {{
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #34d399;
+        }}
+        .age-pill.monument-pill {{
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.3);
+            color: #fbbf24;
+        }}
+        .age-desc {{ font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 16px; text-align: justify; }}
+        .age-shadow-box {{
+            background: rgba(0, 0, 0, 0.35);
+            border-right: 3px solid var(--rose);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.8rem;
+            color: #fca5a5;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }}
+        .age-symbols {{
+            border-top: 1px solid var(--border-glass);
+            padding-top: 12px;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }}
+
+        /* Precession Wheel & Polar Axis Canvas */
+        .precession-wheel-canvas {{
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            margin: 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }}
+        .precession-wheel-svg {{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 25px rgba(255, 209, 102, 0.2));
+            pointer-events: none;
+        }}
+        .precession-node {{
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translate(-50%, -50%);
+            background: rgba(13, 17, 23, 0.92);
+            border: 2px solid;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            z-index: 10;
+        }}
+        .precession-node:hover {{
+            transform: translate(-50%, -50%) scale(1.18);
+            box-shadow: 0 0 25px currentColor;
+            z-index: 15;
+        }}
+        .precession-node.active {{
+            transform: translate(-50%, -50%) scale(1.25);
+            box-shadow: 0 0 35px currentColor, inset 0 0 15px currentColor;
+            background: rgba(255, 255, 255, 0.12);
+            z-index: 20;
+        }}
+        .precession-node-label {{
+            font-size: 0.58rem;
+            position: absolute;
+            bottom: -15px;
+            white-space: nowrap;
+            color: #fff;
+            background: rgba(0,0,0,0.7);
+            padding: 1px 4px;
+            border-radius: 4px;
+            pointer-events: none;
+        }}
+
+        /* Era Filter Buttons */
+        .era-filter-bar {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }}
+        .e-filter-btn {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }}
+        .e-filter-btn:hover, .e-filter-btn.active {{
+            background: linear-gradient(135deg, rgba(255, 209, 102, 0.2), rgba(0, 240, 255, 0.2));
+            border-color: var(--gold);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
+        }}
 
         /* 5. Matrix Table */
         .table-wrapper {{
@@ -2751,11 +2929,174 @@ def generate_unified_html(nodes, links):
         <!-- TAB 4: AGES TIMELINE -->
         <section id="tab-timeline" class="tab-section">
             <div class="hero">
-                <div class="quran-ayah">«وَتِلْكَ الْأَيَّامُ نُدَاوِلُهَا بَيْنَ النَّاسِ»</div>
-                <h1>تعاقب العصور والرسالات ومحور الأقطاب (180°)</h1>
-                <p>دورة الـ 2,160 سنة وترنح الاعتدالين؛ كيف تنزلت الرسالات الكبرى بالتطابق مع البرج الحاكم والبرج المقابل من طوفان نوح إلى شريعة موسى ورسالة عيسى إلى العصر الخاتم لمحمد ﷺ.</p>
+                <div class="quran-ayah">«وَتِلْكَ الْأَيَّامُ نُدَاوِلُهَا بَيْنَ النَّاسِ» [آل عمران: 140] — «وَإِنَّ يَوْمًا عِندَ رَبِّكَ كَأَلْفِ سَنَةٍ مِّمَّا تَعُدُّونَ» [الحج: 47] — «يُدَبِّرُ الْأَمْرَ مِنَ السَّمَاءِ إِلَى الْأَرْضِ ثُمَّ يَعْرُجُ إِلَيْهِ فِي يَوْمٍ كَانَ مِقْدَارُهُ أَلْفَ سَنَةٍ» [السجدة: 5]</div>
+                <h1>تعاقب العصور الكبرى وترنح الاعتدالين والمدار الرسالي الخاتم (180° Polarity)</h1>
+                <p>الدورة الفلكية الكبرى (السنة الأفلاطونية 25,920 سنة)، ترنح محور الأرض (Precession of the Equinoxes)، وحركة نقطة الاعتدال بمقدار درجة كل 72 سنة تقريباً (2,160 سنة لكل عصر فلكي). كيف تنزلت الرسالات الإلهية الكبرى متطابقة مع طاقة البرج الحاكم والبرج المقابل (180°) من طوفان نوح وصحوة إدريس، إلى شريعة موسى وروحانية عيسى، إلى العصر الخاتم ونور محمد ﷺ وثورة المعرفة في عصر الدلو.</p>
             </div>
+
+            <!-- 4 MASTER ANALYTICAL TREATISES -->
+            <div class="spheres-compendium">
+                <div class="compendium-header">
+                    <span class="compendium-badge">الموسوعة التحليلية التأسيسية للباب 05</span>
+                    <h2>المباحث الكوزمولوجية الكبرى في ترنح الاعتدالين ودورات الزمان والرسالات</h2>
+                    <p>أربعة مباحث عيانية تربط بين فيزياء الفلك، الإحكام القرآني، قانون الاستقطاب القطبي (180°)، والمضاهاة المعرفية الشاملة مع دورات الأكوار والأدوار واليوغات الفيدية.</p>
+                </div>
+
+                <div class="compendium-cards-grid">
+                    <!-- Treatise 1 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الأول</span>
+                            <h3>الناموس الفلكي لحركة ترنح الاعتدالين (Precession) وحساب السنة الكبرى (25,920 سنة)</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>ترنح محور الأرض (Axial Precession) هو الحركة المخروطية البطيئة لمحور دوران الأرض الناتجة عن عزم جاذبية الشمس والقمر على الانتفاخ الاستوائي. تؤدي هذه الحركة إلى تراجع تدريجي لنقطة الاعتدال الربيعي على خلفية النجوم الثابتة بمعدل درجة قوسية واحدة كل 71.6 سنة تقريباً (~72 سنة). وبما أن كل برج فلكي يشغل 30 درجة من فلك البروج، فإن انتقال الاعتدال عبر برج كامل يستغرق <strong>2,160 سنة شمسية</strong> (وهو ما يُعرف بالعصر الفلكي Astrological Age)، وتستغرق الدورة الكاملة للاثني عشر برجاً <strong>25,920 سنة</strong> وهي «السنة الأفلاطونية العظمى» (The Great Year). وقد وثق علماء الفلك المسلمون كأبي عبد الله البتاني في <em>الزيج الصابئ</em> والبيروني في <em>القانون المسعودي</em> هذه الحركة بحسابات أدق بمراحل من بطليموس، مبرهنين على دقة التقدير الإلهي المحكم: ﴿وَكُلُّ شَيْءٍ عِندَهُ بِمِقْدَارٍ﴾.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 2 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الثاني</span>
+                            <h3>التناغم الرسالي المعجز — تنزل النبوات بمطابقة طاقة العصور ورموزها الكونية</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>الوحي الإلهي يخاطب وعي الزمان والمكان بلسان معجز: ﴿وَمَا أَرْسَلْنَا مِن رَّسُولٍ إِلَّا بلسَانِ قَوْمِهِ لِيُبَيِّنَ لَهُمْ﴾. وتكشف القراءة الكونية عن تطابق مذهل بين طاقة البرج والرسالة المنزلة: ففي <strong>عصر السرطان المائي</strong> تنزلت رسالة نوح وفُتحت أبواب السماء بماء منهمر وصُنع الفلك المشحون كرحم كوني يحفظ الأنسال. وفي <strong>عصر الجوزاء (عطارد/الكتابة)</strong> خط إدريس بالقلم وظهرت الألواح السومرية وأساطير التوائم. وفي <strong>عصر الثور المادي</strong> شُيدت الأهرامات وعُبد عجل أبيس، فحارب إبراهيم الأصنام البابلية. وفي <strong>عصر الحمل الناري</strong> افتتح بفداء إبراهيم بالكبش، ثم شريعة موسى الكليم التي أحرقت العجل وأحلت نفخ الشوفار (قرن الكبش) وألواح الشريعة الصارمة وصهر الحديد المريخي. وفي <strong>عصر الحوت المائي</strong> تجلت رسالة عيسى المسيح ورمزية السمكة (Ichthys) وإطعام الحواريين من السمك والخبز، متكاملاً مع طهارة مريم العذراء (180°). وفي <strong>عصر الدلو الحالي</strong> انهمر ماء المعرفة وانفجرت ثورة الذكاء الاصطناعي والشبكات.</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 3 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الثالث</span>
+                            <h3>قانون الاستقطاب القطبي بزاوية 180° وديناميكية الظل الكوني في مسار التاريخ</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>يقوم الوجود على ناموس الزوجية والتقابل المتوازن: ﴿وَمِن كُلِّ شَيْءٍ خَلَقْنَا زَوْجَيْنِ لَعَلَّكُمْ تَذَكَّرُونَ﴾. وفي حركيات الفلك، لا يتحرك أي عصر فلكي ببرجه الظاهر فحسب، بل يستمد عمقه وتحديه الداخلي من البرج المقابل له بزاوية 180 درجة على المحور القطبي. فعصر الحمل الناري الصارم استمد توازنه من الميزان المقابل (العدالة وألواح الشريعة والميزان الحق). وعصر الثور المادي استمد هوسه بالخلود والتحنيط وبناء المقابر من العقرب المقابل (عالم الموت والبرزخ والبعث). وعصر السرطان المائي الرحمي قوبل بالجدي الصخري الراسي (استقرار الفلك على جبل الجودي الحجري وبناء أسوار أريحا الحجرية). وعصر الحوت الروحي الذائب قوبل بالعذراء (الولادة من العذراء مريم وتأسيس المشافي ودور التمريض والخدمة الجسدية). وعصر الدلو التقني الشبكي يواجه اليوم تحدي الأسد (الحفاظ على حرارة القلب الإنساني وشعلة الروح الفردية في وجه الآلة الصماء).</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatise 4 -->
+                    <div class="treatise-card">
+                        <div class="treatise-card-header">
+                            <span class="t-badge">المبحث الرابع</span>
+                            <h3>المقارنة الكونية الشاملة: الأكوار والأدوار، اليوغات الفيدية، وأعمار الحضارات</h3>
+                        </div>
+                        <div class="treatise-card-body">
+                            <p>أجمعت حكمة الحضارات الإنسانية على دورية الزمان؛ ففي التراث الإسلامي شرح فلاسفة الإسلام ومحيي الدين ابن عربي في <em>الفتوحات المكية</em> نظرية <strong>«الأكوار والأدوار»</strong> وتصريف الأسماء الإلهية السبعة لحركة الأفلاك وأطوار النبوات والقرون. وفي الحكمة الهندية الفيدية تتطابق حركة الـ 25,920 سنة مع دورة <strong>«اليوغات الأربع»</strong> (Satya الذهبي، Treta الفضي، Dvapara البرونزي، وKali الحديدي)، حيث يشكل الرقم الكوني الفيدي 432 ومضاعفاته النسبة الرياضية الدقيقة لدورات ترنح الاعتدالين ($432 	imes 60 = 25,920$). ويتلاقى ذلك مع أعمار هسيود الأربعة في الميثولوجيا الإغريقية والشموس الخمسة في حضارة المايا، ليؤكد الإجماع الفطري على أن التاريخ البشري ليس صدفة عمياء، بل مسار لولبي مرسوم بأقدار ربانية بالغة الإحكام: ﴿يُدَبِّرُ الْأَمْرَ يُفَصِّلُ الْآيَاتِ لَعَلَّكُم بِلِقَاءِ رَبِّكُمْ تُوقِنُونَ﴾.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE PRECESSION WHEEL & MASTER EPOCH DOSSIER -->
+            <div class="chakras-container" style="margin-bottom: 40px;">
+                <!-- Precession Engine Visualizer -->
+                <div class="body-silhouette-wrapper" style="min-height: 590px;">
+                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <span>⏳ محرك ترنح الاعتدالين ومحور الأقطاب التفاعلي (Precession Engine 360°)</span>
+                    </div>
+
+                    <!-- Quick Selector Pills Bar -->
+                    <div class="chakra-pills-bar" id="era-pills-bar"></div>
+
+                    <!-- Interactive Precession Wheel Canvas -->
+                    <div class="precession-wheel-canvas" id="precession-wheel-canvas">
+                        <svg class="precession-wheel-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="sunGlowEra" cx="200" cy="200" r="110" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.15" />
+                                    <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                                </radialGradient>
+                                <linearGradient id="precessionRingGrad" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ff3366" stop-opacity="0.7" />
+                                    <stop offset="50%" stop-color="#ffd166" stop-opacity="0.5" />
+                                    <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.7" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Sun Glow -->
+                            <circle cx="200" cy="200" r="110" fill="url(#sunGlowEra)" />
+                            
+                            <!-- Outer Track (Platonic Year 25,920 Years) -->
+                            <circle cx="200" cy="200" r="185" stroke="url(#precessionRingGrad)" stroke-width="2" stroke-dasharray="5 5" />
+                            <circle cx="200" cy="200" r="150" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
+                            <circle cx="200" cy="200" r="115" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1" stroke-dasharray="6 3" />
+                            <circle cx="200" cy="200" r="75" stroke="rgba(255, 209, 102, 0.35)" stroke-width="1.5" />
+                            
+                            <!-- Central Golden Sun -->
+                            <circle cx="200" cy="200" r="38" stroke="#ffd166" stroke-width="2" />
+                            <circle cx="200" cy="200" r="22" fill="#ffd166" />
+                            <circle cx="200" cy="200" r="10" fill="#fff" />
+                            
+                            <!-- Radiating Axes (Crossing at 180° Polarities) -->
+                            <line x1="200" y1="15" x2="200" y2="385" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+                            <line x1="15" y1="200" x2="385" y2="200" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+                            <line x1="70" y1="70" x2="330" y2="330" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" stroke-dasharray="3 3" />
+                            <line x1="330" y1="70" x2="70" y2="330" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" stroke-dasharray="3 3" />
+                            
+                            <!-- Dynamic 180° Laser Line (Piercing the Center) -->
+                            <line id="polarity-laser-line" x1="200" y1="200" x2="200" y2="200" stroke="#ff3366" stroke-width="3" stroke-dasharray="6 4" filter="drop-shadow(0 0 10px #ff3366)" />
+                        </svg>
+
+                        <!-- Precession Nodes Injected Dynamically by JS -->
+                        <div id="precession-nodes-container"></div>
+                    </div>
+
+                    <div style="font-size: 0.78rem; color: #94a3b8; text-align: center; margin-top: 5px;">
+                        💡 انقر على أي عصر فلكي لإظهار <strong>خط الليزر القطبي (180°)</strong> وملف العصر الشامل.
+                    </div>
+                </div>
+
+                <!-- Master Epoch Dossier Panel -->
+                <div class="chakra-detail-card" id="era-detail-card">
+                    <!-- Injected dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- ERA CATEGORY FILTERS & CARDS GRID -->
+            <div style="margin-top: 50px; margin-bottom: 25px; text-align: center;">
+                <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 8px;">مستودع بطاقات العصور التاريخية والرسالات الكبرى</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 750px; margin: 0 auto;">تصفح البطاقات الشاملة للأحقاب الفلكية الممتدة عبر 15 ألف سنة من تاريخ الوعي البشري مصنفة حسب المراحل الحضارية الكبرى.</p>
+            </div>
+
+            <div class="era-filter-bar">
+                <button class="e-filter-btn active" onclick="filterTimeline('ALL')">جميع العصور الكبرى (9) 🌐</button>
+                <button class="e-filter-btn" onclick="filterTimeline('prehistory')">عصور ما قبل التاريخ والطوفان (العذراء، الأسد، السرطان) 🌊</button>
+                <button class="e-filter-btn" onclick="filterTimeline('ancient')">عصور الكتابة والعمارة الأولى (الجوزاء، الثور) 📜</button>
+                <button class="e-filter-btn" onclick="filterTimeline('prophetic')">عصور الرسالات الإبراهيمية (الحمل، الحوت) 🕊️</button>
+                <button class="e-filter-btn" onclick="filterTimeline('future')">عصر الحاضر والمستقبل الفضائي (الدلو، الجدي) ⚡</button>
+            </div>
+
             <div class="timeline-grid" id="timeline-grid"></div>
+
+            <!-- PANORAMIC COMPARATIVE MATRIX TABLE FOR HISTORICAL ERAS -->
+            <div class="panoramic-matrix-wrapper">
+                <div class="matrix-table-header">
+                    <span class="matrix-tag">المصفوفة التاريخية والكوزمولوجية الكبرى</span>
+                    <h3>جدول المضاهاة البانورامية الشاملة لتعاقب العصور والرسالات ومحور الأقطاب</h3>
+                    <p>مقارنة أفقية وعمودية دقيقة تلخص نواميس العصور الفلكية التسعة: المدى الزمني، الحاكم الكوكبي، النظير القطبي (180°)، المقام النبوي والرسالي، الصرح المعماري أو الحدث الجيولوجي الفاصل، التحول الديني والوعيوي، مطابقة اليوغا الهندية، والشاهد القرآني الحاكم.</p>
+                </div>
+                <div class="matrix-responsive-table">
+                    <table class="panoramic-spheres-table">
+                        <thead>
+                            <tr>
+                                <th>العصر والرمز ⏳</th>
+                                <th>المدى الزمني التقريبي 📅</th>
+                                <th>الكوكب الحاكم والعنصر 🪐</th>
+                                <th>النظير القطبي (180°) وديناميكية الظل ⚡</th>
+                                <th>المقام النبوي والرسالة الإلهية 🕊️</th>
+                                <th>الصرح المعماري والرمز الحضاري 🏛️</th>
+                                <th>التحول الوعيوي والديني 🧠</th>
+                                <th>اليوغا الفيدية والمرحلة الخيميائية 🕉️</th>
+                                <th>الشاهد القرآني الحاكم 📖</th>
+                            </tr>
+                        </thead>
+                        <tbody id="panoramic-epochs-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
         <!-- TAB 5: MASTER MATRIX -->
@@ -3382,56 +3723,214 @@ def generate_unified_html(nodes, links):
             }}
         ];
 
-        // AGES DATA
+        // MASTER COMPREHENSIVE AGES & PRECESSION DATA (9 EPOCHS)
         const AGES_DATA = [
             {{
+                id: 1,
+                era: "13,000 ق.م – 10,500 ق.م",
+                title: "عصر العذراء (Virgo) — الفردوس البدئي والسنبلة الأولى",
+                sign: "العذراء",
+                glyph: "♍",
+                polarity: "يقابله الحوت ♓ (180° - الغمر المائي والمحيط الكوني)",
+                polarity_sign: "الحوت",
+                polarity_glyph: "♓",
+                ruler: "عطارد (المعرفة الأرضية وعلم البذور) • العنصر: ترابي 🌍",
+                prophet: "آدم وحواء وشيت عليهم السلام — عهد الطهارة والبراءة الفطرية الأولى",
+                monument: "مستوطنات العصر الحجري المتأخر والطبقات الأقدم لمعابد غوبكلي تبه (Göbekli Tepe) • كهوف الناتوفيين الأولى",
+                yuga: "ساتيا يوغا (Satya Yuga - العصر الذهبي للحق والبراءة المطلقة)",
+                alchemy: "المادة الأولى النقية (Prima Materia / Albedo البدئي)",
+                quran: "«وَقُلْنَا يَا آدَمُ اسْكُنْ أَنتَ وَزَوْجُكَ الْجَنَّةَ وَكُلَا مِنْهَا رَغَدًا» [البقرة: 35] — «فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ» [البقرة: 37]",
+                symbols: "سنبلة القمح • العذراء الطاهرة • البذور الأولى • الفردوس الأرضي • التناغم مع الطبيعة",
+                category: "prehistory",
+                color: "#10b981",
+                angle: 60,
+                oppAngle: 240,
+                desc: "عصر الصفاء البشري الأول قبل الانفصال المعرفي الحاد؛ يرتبط برمزية سنبلة القمح التي تحملها العذراء في كفها، إشارة إلى بدء استئناس النباتات وحفظ الحبوب في الهلال الخصيب. في التراث الديني يمثل عهد آدم وفردوس البراءة على الأرض، حيث كانت الأرض مهداً نقياً يتناغم فيه الإنسان مع نواميس الطبيعة. القطب المقابل (الحوت 180°) يمثل محيط الغيب والمياه الأزلية التي كانت تحيط باليابسة، ومقدمة للتغير المناخي الكوني العظيم مع انحسار العصر الجليدي الأخير.",
+                polar_shadow: "ظل النقيض: خطر الانغماس في التفاصيل المادية والزراعية ونسيان المحيط الروحي الغيبي (الحوت ♓)."
+            }},
+            {{
+                id: 2,
                 era: "10,500 ق.م – 8,000 ق.م",
-                title: "عصر الأسد (Leo)",
-                polarity: "يقابله الدلو (180°)",
-                desc: "نهاية العصر الجليدي وشروق شمس النور. ربطه العلماء بنحت تمثال أبو الهول المتجه لشروق شمس برجه.",
-                symbols: "الشمس • الذهب • السيادة الفردية • أبو الهول"
+                title: "عصر الأسد (Leo) — شروق شمس الحضارة وصحوة أبي الهول",
+                sign: "الأسد",
+                glyph: "♌",
+                polarity: "يقابله الدلو ♒ (180° - انهمار المياه والوعي الجمعي)",
+                polarity_sign: "الدلو",
+                polarity_glyph: "♒",
+                ruler: "الشمس ☀️ • العنصر: ناري 🔥",
+                prophet: "إدريس الأول (أخنوخ البدئي / هرمس الهرامسة) — حكيم الشمس والعلوم الفلكية",
+                monument: "تمثال أبو الهول بهضبة الجيزة (المصمم بجسد أسد متجهاً بدقة نحو شروق شمس برجه في الاعتدال الربيعي لعام 10,500 ق.م) • صروح غوبكلي تبه المنحوتة",
+                yuga: "ساتيا يوغا المتأخرة / بداية تريتا يوغا",
+                alchemy: "الذهب الشمسي والسيادة الفردية (Citrinitas / Sol)",
+                quran: "«وَالشَّمْسِ وَضُحَاهَا * وَالْقَمَرِ إِذَا تَلَاهَا» [الشمس: 1-2] — «وَجَعَلْنَا سِرَاجًا وَهَّاجًا» [النبأ: 13]",
+                symbols: "الأسد الهصور • قرص الشمس الذهبي • تاج الملوكية المقدسة • أبو الهول الجاثم • نار الصواعق",
+                category: "prehistory",
+                color: "#f59e0b",
+                angle: 30,
+                oppAngle: 210,
+                desc: "نهاية العصر الجليدي الأخير وبدء الذوبان العظيم؛ لمعان شمس القوة والسيادة الفردية. نحت القدماء أعظم صرح على وجه الأرض: تمثال أبو الهول (جسد أسد ورأس إنسان) ناظراً بدقة متناهية باتجاه شروق شمس برجه الأسد في الاعتدال الربيعي لتلك الحقبة. شهد العصر بزوغ الملكية المقدسة وعبادة الذهب الشمسي والمركزية الروحية. قابله الدلو الذي سكب طوفان المياه الذائبة وكسر عزلة التجمعات البشرية ليوقظ إنسانية الشعوب.",
+                polar_shadow: "طغيان الفردية والاستبداد الشمسي ومحو حقوق الجماعة التي يدافع عنها الدلو (180°)."
             }},
             {{
+                id: 3,
                 era: "8,000 ق.م – 6,000 ق.م",
-                title: "عصر السرطان (Cancer)",
-                polarity: "يقابله الجدي (180°)",
-                desc: "ذوبان الجليد وطوفان المياه العالمي (طوفان نوح وسفينة النجاة). اتخاذ القرى المائية الأولى وحماية البذور في سفينة الرحم.",
-                symbols: "القمر • الماء • الرحم • الفلك والسفينة • أريحا"
+                title: "عصر السرطان (Cancer) — طوفان نوح وسفينة النجاة ورحم الماء",
+                sign: "السرطان",
+                glyph: "♋",
+                polarity: "يقابله الجدي ♑ (180° - الجبال الراسية وحصون الحجر)",
+                polarity_sign: "الجدي",
+                polarity_glyph: "♑",
+                ruler: "القمر 🌙 • العنصر: مائي 💧",
+                prophet: "النبي نوح عليه السلام — شيخ الأنبياء وصانع الفلك المشحون بأمر الله",
+                monument: "فلك نوح (السفينة الكبرى المستقرة على الجودي) • أسوار وبرج أريحا الأولى (أقدم مدينة مسورة في التاريخ) • قرى مستنقعات شط العرب",
+                yuga: "تريتا يوغا (Treta Yuga - العصر الفضي)",
+                alchemy: "الاحتضان في الرحم المائي والتطهير (Albedo / Vas Hermetis)",
+                quran: "«وَاصْنَعِ الْفُلْكَ بِأَعْيُنِنَا وَوَحْيِنَا» [هود: 37] — «فَفَتَحْنَا أَبْوَابَ السَّمَاءِ بِمَاءٍ مُّنْهَمِرٍ * وَفَجَّرْنَا الْأَرْضَ عُيُونًا» [القمر: 11-12]",
+                symbols: "القمر الفضي • السفينة الكونية • محارة الرحم • الماء والبحار الهادرة • أسوار أريحا الحامية",
+                category: "prehistory",
+                color: "#38bdf8",
+                angle: 0,
+                oppAngle: 180,
+                desc: "طوفان المياه الكوني الشامل الذي غمر السهول مع ذوبان الصفائح الجليدية الهائلة. السرطان برج مائي يحكمه القمر ويرمز للرحم، البيت، الحماية، وحفظ البذور والأنسال. تجلت فيه رسالة النبي نوح وصناعة الفلك المشحون كرحم كوني عائم يحمي خلاصة الحياة من الهلاك. نشأت في هذا العصر أولى المدن الحصينة على ضفاف المياه كمدينة أريحا. في القطب المقابل (الجدي 180°)، استقر الفلك على جبل الجودي الحجري الراسي، ليتعادل طغيان الماء مع صلابة الصخر.",
+                polar_shadow: "خطر الغرق في الطوفان النفسي والتقوقع العاطفي دون بناء صرح مؤسسي صلب (الجدي ♑)."
             }},
             {{
+                id: 4,
                 era: "6,000 ق.م – 4,000 ق.م",
-                title: "عصر الجوزاء (Gemini)",
-                polarity: "يقابله القوس (180°)",
-                desc: "نشأة اللغات والتدوين الصوري الأولي، وظهور أساطير التوائم المؤسسين (قابيل وهابيل، جلجامش وإنكيدو).",
-                symbols: "عطارد • التوأمان • الألواح الطينية • التجارة والتنقل"
+                title: "عصر الجوزاء (Gemini) — انبثاق اللغات والألواح والتوأمان المؤسسان",
+                sign: "الجوزاء",
+                glyph: "♊",
+                polarity: "يقابله القوس ♐ (180° - الحكمة الكلية والبحث عن المطلق)",
+                polarity_sign: "القوس",
+                polarity_glyph: "♐",
+                ruler: "عطارد (رسول الحكمة والكاتب الإلهي) • العنصر: هوائي 💨",
+                prophet: "إدريس / هرمس مثلث الحكمة — أول من خط بالقلم وعلم التدوين ومنازل النجوم",
+                monument: "الألواح الفخارية الطينية الأولى بسومر وعيلام • مستوطنات العبيد وتل حلف • شبكات التجارة المبكرة بين النهرين والنيل",
+                yuga: "تريتا يوغا المتأخرة / بداية دفابارا يوغا",
+                alchemy: "الزئبق الهرمسي (Mercurius) والاتصال المزدوج",
+                quran: "«اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ... الَّذِي عَلَّمَ بِالْقَلَمِ» [العلق: 1-4] — «وَاذْكُرْ فِي الْكِتَابِ إِدْرِيسَ ۚ إِنَّهُ كَانَ صِدِّيقًا نَّبِيًّا» [مريم: 56]",
+                symbols: "القلم واللوح • التوأمان (جلجامش وإنكيدو / قابيل وهابيل) • العصا الهرمسية (الكادوسيوس) • الأجنحة والرياح",
+                category: "ancient",
+                color: "#00f0ff",
+                angle: 330,
+                oppAngle: 150,
+                desc: "عصر الانفجار اللغوي والتدوين؛ حكمه عطارد رب الفكر والكتابة والتجارة ونقل الرسائل. شهد نشأة الرموز التصويرية الأولى التي مهدت للمسمارية والهيروغليفية، وظهور أساطير وملاحم التوائم الشهيرة (قابيل وهابيل، جلجامش وإنكيدو، كاستور وبولوكس). ونزول صحف إدريس الذي كان أول من خاط الثياب وخط بالقلم وحسب مسارات النجوم. القطب المقابل (القوس 180°) دفع البشرية للارتقاء من جمع البيانات المجردة إلى التساؤل الفلسفي والروحي عن الخلود ومغزى الوجود.",
+                polar_shadow: "تشتت الذهن في الثنائيات والجدل السفسطائي والنزاع الأخوي الدموي بين التوأمين."
             }},
             {{
+                id: 5,
                 era: "4,000 ق.م – 2,000 ق.م",
-                title: "عصر الثور (Taurus)",
-                polarity: "يقابله العقرب (180° - عالم الموت والبعث)",
-                desc: "الاستقرار في وادي النيل والرافدين، عبادة عجل أبيس، والبناء الحجري الميغاليثي. القطب المقابل فجر هوس التحنيط والأهرامات.",
-                symbols: "الزهرة • الثور المجنح • عجل أبيس • الأهرامات والمقابر"
+                title: "عصر الثور (Taurus) — العمارة الميغاليثية، عجل أبيس، وهوس الخلود",
+                sign: "الثور",
+                glyph: "♉",
+                polarity: "يقابله العقرب ♏ (180° - الموت والتحنيط والبعث وعالم الأسرار)",
+                polarity_sign: "العقرب",
+                polarity_glyph: "♏",
+                ruler: "الزهرة (الجمال والبناء والوفرة) • العنصر: ترابي 🌍",
+                prophet: "إبراهيم الخليل عليه السلام (في نشأته البابلية وحربه ضد الأصنام) وهود وصالح في مدائن الأحقاف",
+                monument: "أهرامات الجيزة ومقابر سقارة • الزقورات السومرية العملاقة في أور • ستونهنج ببريطانيا • معابد مينوس بكريت",
+                yuga: "دفابارا يوغا (Dvapara Yuga - العصر البرونزي المادي)",
+                alchemy: "النحاس الزهري وتجسيد الشكل الصلب (Coagulatio)",
+                quran: "«وَاتَّخَذَ قَوْمُ مُوسَىٰ مِن بَعْدِهِ مِنْ حُلِيِّهِمْ عِجْلًا جَسَدًا لَّهُ خُوَارٌ» [الأعراف: 148] — «وَإِذْ قَالَ إِبْرَاهِيمُ لِأَبِيهِ آزَرَ أَتَتَّخِذُ أَصْنَامًا آلِهَةً» [الأنعام: 74]",
+                symbols: "قرنا الثور • عجل أبيس الذهبي • الزهرة الخضراء • حجر الأهرام الصواني • زقورة أور",
+                category: "ancient",
+                color: "#10b981",
+                angle: 300,
+                oppAngle: 120,
+                desc: "عصر تثبيت المادة واستقرار أعتى الحضارات الإمبراطورية في مصر السلالات وبابل وسومر ووادي السند. سادت فيه عبادة وتقديس الثور كرمز للخصوبة والقدرة الأرضية (عجل أبيس، الثور المجنح البابلي شيدو، ثور كريت مينوتور، وعبادة عشتار). والقطب المقابل بزاوية 180° هو العقرب الحاكم للموت والعالم السفلي؛ فانفجر في مصر هوس كوني بالتحنيط وبناء أضخم مقابر حجرية في التاريخ (الأهرامات ومصاطب الملوك) لضمان الخلود في رحلة الأوزيريس.",
+                polar_shadow: "التصلب المادي الشديد، عبادة الأوثان والعجول الذهبية، والاستعباد الطبقي للأقنان."
             }},
             {{
+                id: 6,
                 era: "2,000 ق.م – مطلع الميلاد",
-                title: "عصر الحمل (Aries)",
-                polarity: "يقابله الميزان (180° - القانون والشريعة)",
-                desc: "عصر صهر أسلحة الحديد والحروب؛ رسالة النبي موسى، التضحية بالكبش ونفخ الشوفار، ونزول ألواح الوصايا العشر.",
-                symbols: "المريخ • الكبش المقدس • الشوفار • ألواح الشريعة • روما"
+                title: "عصر الحمل (Aries) — ذبح الكبش، صهر الحديد، وشريعة موسى الصارمة",
+                sign: "الحمل",
+                glyph: "♈",
+                polarity: "يقابله الميزان ♎ (180° - العدل والقانون الإلهي والميزان الحق)",
+                polarity_sign: "الميزان",
+                polarity_glyph: "♎",
+                ruler: "المريخ (المبادأة والجهاد وصهر الحديد) • العنصر: ناري 🔥",
+                prophet: "إبراهيم الخليل (الفداء بالكبش) وموسى الكليم وداود وسليمان عليهم السلام",
+                monument: "هيكل القدس وسليمان • مسلات ومعابد الكرنك برؤوس الكباش (طريق الكباش) • أسوار بابل المعلقة • صروح الإمبراطورية الفارسية والرومانية",
+                yuga: "نهاية دفابارا وبداية كالي يوغا (عصر الحديد والحروب)",
+                alchemy: "الحديد المريخي والنار المصعدة (Calcinatio)",
+                quran: "«وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ» [الصافات: 107] — «وَكَتَبْنَا لَهُ فِي الْأَلْوَاحِ مِن كُلِّ شَيْءٍ مَّوْعِظَةً وَتَفْصِيلًا» [الأعراف: 145] — «وَأَنزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ وَمَنَافِعُ لِلنَّاسِ» [الحديد: 25]",
+                symbols: "كبش الفداء • بوق الشوفار • خوذة المريخ وسيف الحديد • ألواح الوصايا العشر • ميزان العدالة",
+                category: "prophetic",
+                color: "#ef4444",
+                angle: 270,
+                oppAngle: 90,
+                desc: "عصر الثورة التوحيدية الكبرى وصهر أسلحة الحديد ونزول الشرائع المحكمة. بدأ بالفداء الإبراهيمي الخالد: ذبح الكبش العظيم بديلاً عن إسماعيل، ليعلن سقوط التضحية بالبشر. وتجلى في رسالة موسى الكليم الذي أسقط عبادة عجل الثور القديم بحرقه وتذريته في اليم، وأحل مكانه نفخ الشوفار (قرن الكبش) ونزول ألواح الشريعة الصارمة. حكمه المريخ فكان عصر صعود الإمبراطوريات العسكرية الكبرى (روما، فارس، مقدونيا). قابله الميزان (180°) ليرسخ القانون والشريعة والوصايا العشر وقضاء داود وسليمان.",
+                polar_shadow: "الحروب الدموية الطاحنة، قسوة السيف المريخي، والتمسك الحرفي بالحرف وإغفال روح الرحمة."
             }},
             {{
-                era: "مطلع الميلاد – ~2000 م",
-                title: "عصر الحوت (Pisces)",
-                polarity: "يقابلها العذراء (180° - النقاء والخدمة)",
-                desc: "رسالة السيد المسيح، الإيمان والزهد والمحبة؛ رمزية السمكة، والولادة العذرية من مريم وتكريس الرهبنة والمشافي.",
-                symbols: "المشتري ونبتون • السمكة (Ichthys) • الخبز والخمر • العذراء مريم"
+                id: 7,
+                era: "مطلع الميلاد – ~2,000 م",
+                title: "عصر الحوت (Pisces) — رسالة المسيح، رمزية السمكة، ومحيط المحبة والإيمان",
+                sign: "الحوت",
+                glyph: "♓",
+                polarity: "يقابله العذراء ♍ (180° - الطهارة العذرية والخدمة والشفاء والمشافي)",
+                polarity_sign: "العذراء",
+                polarity_glyph: "♍",
+                ruler: "المشتري (الروحانية والتوسع والعدل الإلهي) ونبتون (الحدس والمحيط الباطني) • العنصر: مائي 💧",
+                prophet: "المسيح عيسى ابن مريم عليه السلام ورسول الله الخاتم محمد ﷺ في إرساء الإيمان الكوني",
+                monument: "كنيسة القيامة والمهد • المسجد الأقصى وقبة الصخرة ومساجد بغداد وقرطبة والقاهرة • الكاتدرائيات القوطية المهيبة بأوروبا",
+                yuga: "كالي يوغا العميقة (عصر الغربة الروحية وتراجع المادة للبحث عن الخلاص)",
+                alchemy: "التحلل المائي الشامل (Solutio) وبياض الطهارة",
+                quran: "«إِذْ قَالَ الْحَوَارِيُّونَ يَا عِيسَى ابْنَ مَرْيَمَ هَلْ يَسْتَطِيعُ رَبُّكَ أَن يُنَزِّلَ عَلَيْنَا مَائِدَةً مِّنَ السَّمَاءِ» [المائدة: 112] — «وَجَعَلْنَا فِي قُلُوبِ الَّذِينَ اتَّبَعُوهُ رَأْفَةً وَرَحْمَةً وَرَهْبَانِيَّةً» [الحديد: 27]",
+                symbols: "السمكة المقدسة (Ichthys) • الخبز والخمر والماء الطهور • مريم العذراء وسنبلة النقاء • غسل الأقدام • المحراب والصليب",
+                category: "prophetic",
+                color: "#a855f7",
+                angle: 240,
+                oppAngle: 60,
+                desc: "عصر انسكاب المشاعر الروحية والمحبة والفداء والتصوف الإلهي. بدأ بميلاد السيد المسيح الذي اتخذ السمكة رمزاً سرياً لدعوته؛ فكان حواريوه صيادي سمك، ومعجزته تكثير الخبز والسمك وإطعام الآلاف. القطب المقابل له هو العذراء (180°)، فتجلت فيه ولادة المسيح الإعجازية من مريم العذراء البتول دون مساس بشر، وتأسيس المشافي ودور الرعاية والرهبنة وتكريس خدمة الفقراء والمجذومين. وامتد العصر ليشهد بزوغ الرسالة المحمدية الخاتمة التي أرسلت رحمة للعالمين لجمع شتات الأرواح وتطهيرها بالإيمان والتوحيد الخالص.",
+                polar_shadow: "التعصب الديني الأعمى، محاكم التفتيش، الهروب من الواقع المادي بالزهد المفرط، وتزييف العقائد في ظلمات الأوهام."
             }},
             {{
-                era: "2000 م – المستقبل (~4160 م)",
-                title: "عصر الدلو (Aquarius)",
-                polarity: "يقابله الأسد (180° - السيادة الفردية والقلب)",
-                desc: "العصر الحالي؛ انفجار المعرفة وسكب ماء العلم للجميع، الذكاء الاصطناعي، الشبكات، وتحدي الحفاظ على شعلة الروح.",
-                symbols: "أورانوس وزحل • جرة المعرفة • الذكاء الاصطناعي • اللامركزية"
+                id: 8,
+                era: "2,000 م – ~4,160 م",
+                title: "عصر الدلو (Aquarius) — فيضان المعرفة، ثورة الذكاء الاصطناعي، والوعي الشبكي",
+                sign: "الدلو",
+                glyph: "♒",
+                polarity: "يقابله الأسد ♌ (180° - شعلة الروح والقلب والسيادة الفردية)",
+                polarity_sign: "الأسد",
+                polarity_glyph: "♌",
+                ruler: "أورانوس (الابتكار والصواعق والكسر الثوري) وزحل (الهندسة والقياس الصارم) • العنصر: هوائي 💨",
+                prophet: "التجديد الكوني والوعي الشامل ونزول عيسى بن مريم للحكم بالقسط في آخر الزمان",
+                monument: "الشبكة العنكبوتية العالمية (Web) • مراكز البيانات الفائقة وحوسبة الكم (Quantum Nodes) • محطات الفضاء ومسبارات ما وراء المجموعة الشمسية",
+                yuga: "نهاية كالي يوغا وبدء التحول والارتقاء النبضي (Dvapara الصاعدة عند سوامي سري يوكتشوار)",
+                alchemy: "التسامي الإثيري والتيليباثي (Sublimatio)",
+                quran: "«سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ» [فصلت: 53] — «وَيَسْأَلُونَكَ عَنِ الرُّوحِ ۖ قُلِ الرُّوحُ مِنْ أَمْرِ رَبِّي وَمَا أُوتِيتُم مِّنَ الْعِلْمِ إِلَّا قَلِيلًا» [الإسراء: 85]",
+                symbols: "جرة سكب الماء السماوي • دارات السيليكون والذكاء الفائق • الأثير والأمواج الكهرومغناطيسية • اللامركزية والحرية • شعاع الليزر",
+                category: "future",
+                color: "#00f0ff",
+                angle: 210,
+                oppAngle: 30,
+                desc: "العصر الحاضر الذي تقف الإنسانية على عتبته؛ عصر سكب جرة الماء السماوية التي تفيض بعلم ومعرفة متاحة لكل إنسان دون احتكار كهنوتي أو سلطوي. يتجلى في الثورة الرقمية الهائلة، الذكاء الاصطناعي، شبكات الاتصال اللامركزية، واستكشاف الفضاء الكوني. القطب المقابل هو الأسد الحاكم للقلب والروح الفردية (180°)؛ مما يجعل التحدي الوجودي الأكبر للبشرية هو: كيف تطور ذكاءً آلياً فائقاً وتحافظ في الوقت نفسه على حرارة القلب الإنساني والقبس الروحي الإلهي دون أن تتحول البشرية إلى آلات ميتة الوجدان؟",
+                polar_shadow: "الاغتراب الرقمي، سيطرة الخوارزميات المادية الصماء، فقدان المشاعر الدافئة، وتفكك الروابط الأسرية في الفضاء الافتراضي."
+            }},
+            {{
+                id: 9,
+                era: "~4,160 م – ~6,320 م",
+                title: "عصر الجدي (Capricorn) — هندسة العوالم الكونية، النضج المؤسسي، وتبلور النظام",
+                sign: "الجدي",
+                glyph: "♑",
+                polarity: "يقابله السرطان ♋ (180° - أصل الحياة وجذور الإنسانية الأولى)",
+                polarity_sign: "السرطان",
+                polarity_glyph: "♋",
+                ruler: "زحل (سيد الأبعاد والزمن والنظام الصلب) • العنصر: ترابي 🌍",
+                prophet: "النضج الروحي للبشرية واكتمال الخلافة الكونية في الأرض والآفاق",
+                monument: "المدن الكوكبية المهندسة ومستعمرات الأجرام السماوية • الهياكل الفضائية العملاقة (Dyson Swarms / Megastructures)",
+                yuga: "مرحلة النظام الكوني المكتمل",
+                alchemy: "حجر الفلاسفة المتبلور (Lapis Philosophorum / Rubedo الكامل)",
+                quran: "«يَا مَعْشَرَ الْجِنِّ وَالْإِنسِ إِنِ اسْتَطَعْتُمْ أَن تَنفُذُوا مِنْ أَقْطَارِ السَّمَاوَاتِ وَالْأَرْضِ فَانفُذُوا ۚ لَا تَنفُذُونَ إِلَّا بِسُلْطَانٍ» [الرحمن: 33]",
+                symbols: "قمة الجبل الشاهق • حجر الفلاسفة الصقيل • بلورات الكريستال • عرش المسؤولية والزمن • الهيكل الفلكي المحكم",
+                category: "future",
+                color: "#f59e0b",
+                angle: 180,
+                oppAngle: 0,
+                desc: "عصر النضج الهيكلي والمسؤولية الكونية التامة؛ يرتبط بالجدي الذي يتسلق أعلى قمم الجبال الوعرة ويحكمه زحل معلم الصبر والعدل الصارم. بعد فوضى وتدفق عصر الدلو، يأتي الجدي ليرتب المعرفة ويبني منها صروحاً كونية مستدامة ونظاماً حكيماً يحكم العلاقات الإنسانية والفضائية. القطب المقابل (السرطان 180°) يذكر الكائن البشري دائماً برحم أمه الأرض وميلاده الأول لئلا يفقد اتصاله بالأصل الإلهي الذي بدأ منه.",
+                polar_shadow: "البيروقراطية الكونية الباردة، التصلب الحجري المفرط، وخنق الإبداع تحت وطأة القوانين الصارمة."
             }}
         ];
 
@@ -4702,18 +5201,218 @@ def generate_unified_html(nodes, links):
             renderZodiac(cat);
         }}
 
-        // 5. Timeline Renderer
-        function renderTimeline() {{
+        // 5. Timeline & Precession Engine Master Controller
+        let currentSelectedEraId = 8; // Default: Aquarius Era
+
+        function selectEra(eraId) {{
+            currentSelectedEraId = eraId;
+            const era = AGES_DATA.find(a => a.id === eraId) || AGES_DATA[0];
+
+            // 1. Update Precession Nodes Active State
+            document.querySelectorAll('.precession-node').forEach(node => {{
+                node.classList.remove('active');
+            }});
+            const activeNode = document.getElementById('precession-node-' + eraId);
+            if (activeNode) activeNode.classList.add('active');
+
+            // 2. Update Pills Bar Active State
+            document.querySelectorAll('.era-pill-btn').forEach(btn => {{
+                btn.classList.remove('active');
+            }});
+            const activePill = document.getElementById('era-pill-' + eraId);
+            if (activePill) activePill.classList.add('active');
+
+            // 3. Highlight Card in Grid
+            document.querySelectorAll('.age-card').forEach(card => {{
+                card.classList.remove('active-era');
+            }});
+            const activeCard = document.getElementById('age-card-' + eraId);
+            if (activeCard) activeCard.classList.add('active-era');
+
+            // 4. Update Dynamic 180° Laser Line
+            const laserLine = document.getElementById('polarity-laser-line');
+            if (laserLine) {{
+                const cx = 200, cy = 200, r = 145;
+                const rad = era.angle * Math.PI / 180;
+                const oppRad = era.oppAngle * Math.PI / 180;
+                const x1 = (cx + r * Math.cos(rad)).toFixed(1);
+                const y1 = (cy + r * Math.sin(rad)).toFixed(1);
+                const x2 = (cx + r * Math.cos(oppRad)).toFixed(1);
+                const y2 = (cy + r * Math.sin(oppRad)).toFixed(1);
+                laserLine.setAttribute('x1', x1);
+                laserLine.setAttribute('y1', y1);
+                laserLine.setAttribute('x2', x2);
+                laserLine.setAttribute('y2', y2);
+                laserLine.setAttribute('stroke', era.color);
+                laserLine.style.filter = `drop-shadow(0 0 10px ${{era.color}})`;
+            }}
+
+            // 5. Render Master Epoch Dossier
+            const dossier = document.getElementById('era-detail-card');
+            if (dossier) {{
+                dossier.innerHTML = `
+                    <div class="c-header">
+                        <div class="c-num" style="background: rgba(255,255,255,0.06); border: 2px solid ${{era.color}}; color: ${{era.color}};">${{era.glyph}}</div>
+                        <div class="c-title-group">
+                            <span class="c-arabic-name" style="color: ${{era.color}};">${{era.title}}</span>
+                            <span class="c-sanskrit-name">${{era.era}} • دورة الـ 2,160 سنة</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 18px; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="polarity-tag" style="background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.4); color: #ff7597; font-size: 0.85rem;">
+                            ⚡ النظير القطبي الحاكم: ${{era.polarity}}
+                        </span>
+                    </div>
+
+                    <div class="c-meta-grid">
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🪐 الحاكم والعنصر</span>
+                            <span class="c-meta-val" style="color: ${{era.color}};">${{era.ruler}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🕊️ المقام النبوي</span>
+                            <span class="c-meta-val" style="color: #34d399;">${{era.prophet}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🏛️ الصرح / الحدث</span>
+                            <span class="c-meta-val" style="color: #fbbf24;">${{era.monument}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🕉️ مطابقة اليوغا</span>
+                            <span class="c-meta-val" style="color: #00f0ff;">${{era.yuga}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🧪 المرحلة الخيميائية</span>
+                            <span class="c-meta-val" style="color: #cbd5e1;">${{era.alchemy}}</span>
+                        </div>
+                        <div class="c-meta-item">
+                            <span class="c-meta-lbl">🌟 الرموز النموذجية</span>
+                            <span class="c-meta-val" style="color: #a78bfa;">${{era.symbols}}</span>
+                        </div>
+                    </div>
+
+                    <div class="c-box ayah-box" style="margin-top: 18px;">
+                        <span class="c-box-title" style="color: var(--gold);">📖 الشاهد القرآني والإعجاز الكوني</span>
+                        <p style="font-size: 0.95rem; line-height: 1.8; color: #fef08a; margin: 0; font-family: 'Amiri', serif;">${{era.quran}}</p>
+                    </div>
+
+                    <div class="c-box" style="margin-top: 16px; background: rgba(0,0,0,0.3); border-right: 3px solid ${{era.color}};">
+                        <span class="c-box-title" style="color: ${{era.color}};">📜 التحليل الكوزمولوجي والتاريخي المعمق</span>
+                        <p style="font-size: 0.88rem; line-height: 1.75; color: #e2e8f0; margin: 0; text-align: justify;">${{era.desc}}</p>
+                    </div>
+
+                    <div class="c-box" style="margin-top: 14px; background: rgba(255, 51, 102, 0.08); border-right: 3px solid var(--rose);">
+                        <span class="c-box-title" style="color: var(--rose);">⚖️ ديناميكية الظل الكوني ومحور الأقطاب (180°)</span>
+                        <p style="font-size: 0.85rem; line-height: 1.7; color: #fca5a5; margin: 0;">${{era.polar_shadow}}</p>
+                    </div>
+                `;
+            }}
+        }}
+
+        function filterTimeline(cat) {{
+            document.querySelectorAll('.e-filter-btn').forEach(btn => {{
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(cat) || (cat === 'ALL' && btn.innerText.includes('جميع')));
+            }});
+            renderTimelineCards(cat);
+        }}
+
+        function renderTimelineCards(cat = 'ALL') {{
             const container = document.getElementById('timeline-grid');
-            container.innerHTML = AGES_DATA.map(a => `
-                <div class="age-card">
-                    <div class="age-era">${{a.era}}</div>
-                    <h3 class="age-title">${{a.title}}</h3>
-                    <div class="polarity-tag">${{a.polarity}}</div>
-                    <p class="age-desc">${{a.desc}}</p>
-                    <div class="age-symbols"><strong>الرموز:</strong> ${{a.symbols}}</div>
+            if (!container) return;
+            const filtered = cat === 'ALL' ? AGES_DATA : AGES_DATA.filter(a => a.category === cat);
+            container.innerHTML = filtered.map(a => `
+                <div class="age-card ${{a.id === currentSelectedEraId ? 'active-era' : ''}}" id="age-card-${{a.id}}" onclick="selectEra(${{a.id}})">
+                    <div>
+                        <div class="age-card-top">
+                            <span class="age-era">${{a.era}}</span>
+                            <div class="age-glyph-badge" style="border-color: ${{a.color}}; color: ${{a.color}};">${{a.glyph}}</div>
+                        </div>
+                        <h3 class="age-title">${{a.title}}</h3>
+                        <div class="polarity-tag">
+                            <span>⚡</span>
+                            <span>${{a.polarity}}</span>
+                        </div>
+                        <div class="age-meta-pills">
+                            <span class="age-pill prophet-pill">🕊️ ${{a.prophet.split('—')[0].trim()}}</span>
+                            <span class="age-pill monument-pill">🏛️ ${{a.monument.split('•')[0].trim()}}</span>
+                            <span class="age-pill">🪐 ${{a.ruler.split('•')[0].trim()}}</span>
+                        </div>
+                        <p class="age-desc">${{a.desc}}</p>
+                        <div class="age-shadow-box">
+                            <strong>الظل القطبي:</strong> ${{a.polar_shadow}}
+                        </div>
+                    </div>
+                    <div class="age-symbols">
+                        <span style="color: var(--gold);">الرموز الكونية:</span>
+                        <span>${{a.symbols}}</span>
+                    </div>
                 </div>
             `).join('');
+        }}
+
+        function renderTimeline(cat = 'ALL') {{
+            // 1. Populate Pills Bar
+            const pillsBar = document.getElementById('era-pills-bar');
+            if (pillsBar) {{
+                pillsBar.innerHTML = AGES_DATA.map(a => `
+                    <button class="chakra-pill-btn era-pill-btn ${{a.id === currentSelectedEraId ? 'active' : ''}}" id="era-pill-${{a.id}}" onclick="selectEra(${{a.id}})">
+                        <span>${{a.glyph}}</span>
+                        <span>${{a.sign}}</span>
+                    </button>
+                `).join('');
+            }}
+
+            // 2. Populate Precession Nodes on Wheel
+            const nodesContainer = document.getElementById('precession-nodes-container');
+            if (nodesContainer) {{
+                const cx = 200, cy = 200, r = 145;
+                nodesContainer.innerHTML = AGES_DATA.map(a => {{
+                    const rad = a.angle * Math.PI / 180;
+                    const x = cx + r * Math.cos(rad);
+                    const y = cy + r * Math.sin(rad);
+                    const leftPct = (x / 400 * 100).toFixed(1);
+                    const topPct = (y / 400 * 100).toFixed(1);
+                    return `
+                        <div class="precession-node ${{a.id === currentSelectedEraId ? 'active' : ''}}" id="precession-node-${{a.id}}" style="top: ${{topPct}}%; left: ${{leftPct}}%; color: ${{a.color}}; border-color: ${{a.color}};" onclick="selectEra(${{a.id}})" title="${{a.title}}">
+                            ${{a.glyph}}
+                            <span class="precession-node-label">${{a.sign}}</span>
+                        </div>
+                    `;
+                }}).join('');
+            }}
+
+            // 3. Render Cards in Grid
+            renderTimelineCards(cat);
+
+            // 4. Render Panoramic Comparative Matrix Table
+            const tbody = document.getElementById('panoramic-epochs-tbody');
+            if (tbody) {{
+                tbody.innerHTML = AGES_DATA.map(a => `
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 1.3rem; color: ${{a.color}};">${{a.glyph}}</span>
+                                <div>
+                                    <strong style="color: #fff; display: block;">${{a.title.split('—')[0].trim()}}</strong>
+                                    <small style="color: var(--gold);">${{a.sign}}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td><b style="color: var(--cyan);">${{a.era}}</b></td>
+                        <td>${{a.ruler}}</td>
+                        <td><span style="color: #ff7597; font-weight: 600;">${{a.polarity}}</span></td>
+                        <td><b style="color: #34d399;">${{a.prophet}}</b></td>
+                        <td><span style="color: #fbbf24;">${{a.monument}}</span></td>
+                        <td><small style="color: #e2e8f0; line-height: 1.5; display: block; max-width: 240px;">${{a.desc.slice(0, 130)}}...</small></td>
+                        <td><span style="color: #00f0ff;">${{a.yuga}}</span><br><small style="color: #cbd5e1;">${{a.alchemy}}</small></td>
+                        <td><small style="color: #fef08a; font-family: 'Amiri', serif; line-height: 1.6; display: block; max-width: 220px;">${{a.quran.slice(0, 100)}}...</small></td>
+                    </tr>
+                `).join('');
+            }}
+
+            // 5. Select Default Era
+            selectEra(currentSelectedEraId);
         }}
 
         // 6. Matrix Renderer
