@@ -768,9 +768,9 @@ def generate_codex():
                         <button class="b-pill-btn" id="b-pill-2" onclick="selectBodyLayer('2')" style="color:#ff8c00;"><span style="width:8px;height:8px;border-radius:50%;background:#ff8c00;"></span>٢. الأثيري</button>
                         <button class="b-pill-btn" id="b-pill-3" onclick="selectBodyLayer('3')" style="color:#f4b41a;"><span style="width:8px;height:8px;border-radius:50%;background:#f4b41a;"></span>٣. النجمي</button>
                         <button class="b-pill-btn" id="b-pill-4" onclick="selectBodyLayer('4')" style="color:#06d6a0;"><span style="width:8px;height:8px;border-radius:50%;background:#06d6a0;"></span>٤. العقلي</button>
-                        <button class="b-pill-btn" id="b-pill-5" onclick="selectBodyLayer('5')" style="color:#3b82f6;"><span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;"></span>٥. السببي</button>
+                        <button class="b-pill-btn" id="b-pill-5" onclick="selectBodyLayer('5')" style="color:#00f0ff;"><span style="width:8px;height:8px;border-radius:50%;background:#00f0ff;"></span>٥. السببي</button>
                         <button class="b-pill-btn" id="b-pill-6" onclick="selectBodyLayer('6')" style="color:#8b5cf6;"><span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;"></span>٦. البوذي</button>
-                        <button class="b-pill-btn" id="b-pill-7" onclick="selectBodyLayer('7')" style="color:#e0e7ff;"><span style="width:8px;height:8px;border-radius:50%;background:#e0e7ff;"></span>٧. الروحاني</button>
+                        <button class="b-pill-btn" id="b-pill-7" onclick="selectBodyLayer('7')" style="color:#c026d3;"><span style="width:8px;height:8px;border-radius:50%;background:#c026d3;"></span>٧. الروحاني</button>
                     </div>
 
                     <div class="silhouette-canvas" id="silhouette-canvas">
@@ -804,11 +804,11 @@ def generate_codex():
 
                             <!-- Concentric 7 Subtle Auric Kosha Envelopes -->
                             <!-- 7. Atmic Envelope (Apex Cosmic Field) -->
-                            <ellipse cx="160" cy="270" rx="155" ry="255" stroke="#e0e7ff" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35" />
+                            <ellipse cx="160" cy="270" rx="155" ry="255" stroke="#c026d3" stroke-width="2" stroke-dasharray="6 4" opacity="0.65" />
                             <!-- 6. Buddhic Envelope (Radiant Bliss Oval) -->
-                            <ellipse cx="160" cy="265" rx="135" ry="225" stroke="#8b5cf6" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.45" />
+                            <ellipse cx="160" cy="265" rx="135" ry="225" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 3" opacity="0.7" />
                             <!-- 5. Causal Envelope (Cosmic Memory Matrix) -->
-                            <ellipse cx="160" cy="260" rx="115" ry="195" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 4" opacity="0.55" />
+                            <ellipse cx="160" cy="260" rx="115" ry="195" stroke="#00f0ff" stroke-width="2" stroke-dasharray="4 4" opacity="0.75" />
                             <!-- 4. Mental Envelope (Intellectual Coherence Field) -->
                             <ellipse cx="160" cy="255" rx="95" ry="165" stroke="#06d6a0" stroke-width="2" opacity="0.65" />
                             <!-- 3. Astral Envelope (Emotional Toroidal Field) -->
@@ -856,9 +856,9 @@ def generate_codex():
                         </svg>
 
                         <!-- 7 Subtle Bodies Pulsating Interactive Nodes -->
-                        <div class="body-point-btn" id="body-node-7" style="top: 38px; color: #ffffff; border-color: #ffd166; background: radial-gradient(#fff, #f4b41a);" onclick="selectBodyLayer('7')" title="٧. الجسد الروحاني الأسمى (Atmic Spark)">٧</div>
+                        <div class="body-point-btn" id="body-node-7" style="top: 38px; color: #c026d3; border-color: #c026d3; background: rgba(192, 38, 211, 0.3);" onclick="selectBodyLayer('7')" title="٧. الجسد الروحاني الأسمى (Atmic Spark)">٧</div>
                         <div class="body-point-btn" id="body-node-6" style="top: 85px; color: #8b5cf6; border-color: #8b5cf6;" onclick="selectBodyLayer('6')" title="٦. الجسد البوذي (Buddhic)">٦</div>
-                        <div class="body-point-btn" id="body-node-5" style="top: 170px; color: #3b82f6; border-color: #3b82f6;" onclick="selectBodyLayer('5')" title="٥. الجسد السببي (Causal)">٥</div>
+                        <div class="body-point-btn" id="body-node-5" style="top: 170px; color: #00f0ff; border-color: #00f0ff;" onclick="selectBodyLayer('5')" title="٥. الجسد السببي (Causal)">٥</div>
                         <div class="body-point-btn" id="body-node-4" style="top: 250px; color: #06d6a0; border-color: #06d6a0;" onclick="selectBodyLayer('4')" title="٤. الجسد العقلي (Mental)">٤</div>
                         <div class="body-point-btn" id="body-node-3" style="top: 325px; color: #f4b41a; border-color: #f4b41a;" onclick="selectBodyLayer('3')" title="٣. الجسد النجمي (Astral)">٣</div>
                         <div class="body-point-btn" id="body-node-2" style="top: 395px; color: #ff8c00; border-color: #ff8c00;" onclick="selectBodyLayer('2')" title="٢. الجسد الأثيري (Etheric)">٢</div>
@@ -1262,7 +1262,7 @@ def generate_codex():
                 name: "الجسد السببي / مخزن الذواكر (Causal Vijnanamaya)",
                 nafs: "النفس الراضية ﴿ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً﴾",
                 chakra: "شاكرا التاج العليا (Sahasrara) وشاكرا العين الباطنة العرفانية",
-                color: "#3b82f6",
+                color: "#00f0ff",
                 dimension: "عالم الجبروت واللوح المحفوظ الجزئي وسجلات الكارما والأعمال",
                 thickness: "يمتد من 1 متر إلى عدة أمتار، كروي بيضاوي الشكل",
                 frequency: "موجات غاما الفوقية (Gamma Waves > 40-100 Hz)",
@@ -1294,7 +1294,7 @@ def generate_codex():
                 name: "الجسد الروحاني الأسمى (Atmic Divine Spark)",
                 nafs: "النفس الكاملة الصافية ﴿وَأَدْخُلِي جَنَّتِي﴾ — سر الحقيقة المحمدية",
                 chakra: "نقطة الوصل اللاهوتية الكونية — سر الروح المنسوب للحق",
-                color: "#e0e7ff",
+                color: "#c026d3",
                 dimension: "عالم الأمر الإلهي ﴿قُلِ الرُّوحُ مِنْ أَمْرِ رَبِّي﴾",
                 thickness: "حقل لامتناهٍ مندمج مع الفيض الإلهي الأزلي الأبدي",
                 frequency: "نور الأنوار الأزلي — النقطة الصفرية الكونية (Zero Point Field)",
@@ -1499,7 +1499,7 @@ def generate_codex():
                     <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:10px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:14px;">
                         <div>
                             <span style="background:${b.color}22; border:1px solid ${b.color}; color:${b.color}; padding:3px 12px; border-radius:12px; font-size:0.75rem; font-weight:700;">الغلاف النوراني رقم ${b.num}</span>
-                            <h3 style="color:#fff; font-family:'Amiri',serif; margin:8px 0 4px 0; font-size:1.45rem;">${b.name}</h3>
+                            <h3 style="color:${b.color}; font-family:'Amiri',serif; margin:8px 0 4px 0; font-size:1.5rem; text-shadow:0 0 18px ${b.color}55;">${b.name}</h3>
                             <div style="color:var(--gold); font-size:0.95rem; font-family:'Amiri',serif;">${b.nafs}</div>
                         </div>
                         <div style="text-align:left;">
@@ -1549,7 +1549,7 @@ def generate_codex():
                     <div style="flex-grow:1;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
-                                <h3 style="color:#fff; font-family:'Amiri',serif; font-size:1.25rem; margin:0 0 4px 0;">${b.name}</h3>
+                                <h3 style="color:${b.color}; font-family:'Amiri',serif; font-size:1.3rem; margin:0 0 4px 0; text-shadow:0 0 15px ${b.color}44;">${b.name}</h3>
                                 <span style="color:var(--gold); font-family:'Amiri',serif; font-size:0.88rem;">${b.nafs}</span>
                             </div>
                             <div style="display:flex; gap:6px; flex-wrap:wrap;">
@@ -1588,7 +1588,7 @@ def generate_codex():
                 tableBody.innerHTML = BODIES_DATA.map((b, idx) => `
                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:${idx % 2 === 0 ? 'rgba(15,23,42,0.4)' : 'rgba(10,16,26,0.6)'};">
                         <td style="padding:10px; font-weight:bold; color:${b.color};">${b.num}</td>
-                        <td style="padding:10px; font-weight:600; color:#fff;">${b.name}</td>
+                        <td style="padding:10px; font-weight:700; color:${b.color};">${b.name}</td>
                         <td style="padding:10px; color:var(--gold); font-family:'Amiri',serif;">${b.nafs}</td>
                         <td style="padding:10px; font-size:0.8rem; color:#94a3b8;">${b.frequency}</td>
                         <td style="padding:10px; font-size:0.8rem; color:#cbd5e1;">${b.thickness}</td>

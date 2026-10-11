@@ -2768,7 +2768,7 @@ def generate_unified_html(nodes, links):
                         </svg>
 
                         <!-- 8 Chakra Pulsating Interactive Nodes on Body -->
-                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #ffffff; border-color: #ffd166; background: radial-gradient(#fff, #f4b41a);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
+                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #ffd166; border-color: #ffd166; background: rgba(255, 209, 102, 0.3);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
                         <div class="chakra-point-btn" id="chakra-node-7" style="top: 85px; color: #a855f7; border-color: #a855f7;" onclick="selectChakra(7)" title="شاكرا التاج — إبراهيم الخليل">🟣</div>
                         <div class="chakra-point-btn" id="chakra-node-6" style="top: 140px; color: #3b82f6; border-color: #3b82f6;" onclick="selectChakra(6)" title="شاكرا العين الثالثة — موسى وهارون">👁️</div>
                         <div class="chakra-point-btn" id="chakra-node-5" style="top: 195px; color: #00f0ff; border-color: #00f0ff;" onclick="selectChakra(5)" title="شاكرا الحنجرة — داود وسليمان">🗣️</div>

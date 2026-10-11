@@ -744,16 +744,11 @@ def build_luxury_portal():
         border-color: rgba(255, 209, 102, 0.3);
     }
 
-    .tag-occult-lab-lab {
-        background: rgba(157, 78, 221, 0.15);
-        color: #d8b4fe;
-        border-color: rgba(157, 78, 221, 0.35);
-    }
-
-    .tag-occult-lab-lab {
-        background: rgba(0, 240, 255, 0.12);
-        color: var(--cyan-accent);
-        border-color: rgba(0, 240, 255, 0.35);
+    .tag-occult-lab {
+        background: linear-gradient(135deg, rgba(157, 78, 221, 0.22), rgba(0, 240, 255, 0.16));
+        color: #e9d5ff;
+        border-color: rgba(157, 78, 221, 0.5);
+        box-shadow: 0 0 12px rgba(157, 78, 221, 0.25);
     }
 
     .card-door-number {
