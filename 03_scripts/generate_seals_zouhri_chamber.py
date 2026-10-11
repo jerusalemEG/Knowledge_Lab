@@ -565,9 +565,9 @@ def get_seals_zouhri_chamber_html():
                         </div>
                     </div>
 
-                    <!-- SECTION 2: THE 4 MAJOR PALM SEALS -->
+                    <!-- SECTION 2: THE 10 MAJOR PALM SEALS -->
                     <h3 style="font-family:'Amiri', serif; font-size:1.4rem; color:var(--gold); margin-bottom:14px;">
-                        <i class="fa-solid fa-hand-sparkles"></i> 2. الأختام الكفية الأربعة الكبرى وعلامات "الكف الزوهري"
+                        <i class="fa-solid fa-hand-sparkles"></i> 2. الأختام الكفية العشرة الكبرى وعلامات "الكف الزوهري" في المخطوطات
                     </h3>
 
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:28px;">
@@ -662,7 +662,6 @@ def get_seals_zouhri_chamber_html():
                             <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
                                 <svg width="140" height="90" viewBox="0 0 140 90">
                                     <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-                                    <!-- Grille lines in Mount of Moon area (x=80..105, y=55..75) -->
                                     <line x1="85" y1="55" x2="85" y2="75" stroke="#f4b41a" stroke-width="2"/>
                                     <line x1="95" y1="55" x2="95" y2="75" stroke="#f4b41a" stroke-width="2"/>
                                     <line x1="80" y1="62" x2="100" y2="62" stroke="#f4b41a" stroke-width="2"/>
@@ -673,6 +672,106 @@ def get_seals_zouhri_chamber_html():
                                 • <strong>الوصف المخطوطي:</strong> شبكة دقيقة من الخطوط المتقاطعة رأسياً وأفقياً تشبه المربعات المتداخلة عند أسفل الكف (تل القمر).<br>
                                 • <strong>الرمزية التراثية:</strong> نسبت لها كتب الفولكلور استشعار المياه الجوفية والمعادن في باطن الأرض والاتصال بالأثير السفلي.<br>
                                 • <strong>التشريح العلمي:</strong> تداخل طبيعي في خطوط تمدد أدمة الجلد ناتج عن مرونة النسيج الضام وحركة انقباض راحة اليد.
+                            </p>
+                        </div>
+
+                        <!-- Seal 6: The Palmar Hexagram -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--gold); font-size:1.05rem;">⑥ النجمة السداسية الكفية (The Hexagram)</strong>
+                                <span style="font-size:0.75rem; background:rgba(244,180,26,0.15); color:var(--gold); padding:2px 8px; border-radius:6px;">خاتم داود الكفي</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <polygon points="68,36 78,54 58,54" fill="none" stroke="#f4b41a" stroke-width="2"/>
+                                    <polygon points="68,58 78,40 58,40" fill="none" stroke="#00f0ff" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> تقاطع مثلثين متطابقين يشكلان نجمة سداسية متقنة على تل المشتري أو في سهل المريخ الأوسط.<br>
+                                • <strong>الرمزية التراثية:</strong> تعتبر في كتب السيمياء والمخطوطات الهرمسية أعلى أختام الحماية الروحية والاتصال بين العوالم العلوية والسفلية (As Above, So Below).<br>
+                                • <strong>التشريح العلمي:</strong> تقاطع تشريحي نادر بين خطوط الأنسجة الثانوية لراحة اليد نتيجة توزيع الأوتار السطحية.
+                            </p>
+                        </div>
+
+                        <!-- Seal 7: The Mystic Eye of Buddha -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(0,240,255,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--cyan); font-size:1.05rem;">⑦ عين الصقر وبصيرة الإبهام (Mystic Eye)</strong>
+                                <span style="font-size:0.75rem; background:rgba(0,240,255,0.15); color:var(--cyan); padding:2px 8px; border-radius:6px;">يافا ريخا (Yavarekha)</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <path d="M 22 55 Q 32 45 42 55 Q 32 65 22 55 Z" fill="none" stroke="#00f0ff" stroke-width="2"/>
+                                    <circle cx="32" cy="55" r="3" fill="#f4b41a"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> خطان مقوسان يلتقيان عند الطرفين مشكلين حبة قمح أو عيناً بشرية مغلقة عند مفصل إبهام اليد الأول.<br>
+                                • <strong>الرمزية التراثية:</strong> تُسمى في الفراسة الشرقية (Samudrika) والتراث الصوفي "عين البصيرة"؛ وتدل على صدق الرؤى والمنامات، والحاسة السادسة الفطرية.<br>
+                                • <strong>التشريح العلمي:</strong> ثنية جلدية حلقية بيضاوية حول المفصل السنعي لإبهام اليد ناتجة عن حركة الثني المحورية للإبهام.
+                            </p>
+                        </div>
+
+                        <!-- Seal 8: The Trident (Trishula) -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(168,85,247,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:#d8b4fe; font-size:1.05rem;">⑧ رمح ثلاثي الشعب والتاج (The Trident)</strong>
+                                <span style="font-size:0.75rem; background:rgba(168,85,247,0.15); color:#d8b4fe; padding:2px 8px; border-radius:6px;">تاج خط المصير</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <line x1="68" y1="45" x2="68" y2="22" stroke="#d8b4fe" stroke-width="3"/>
+                                    <path d="M 58 28 Q 68 38 68 38 Q 68 38 78 28" fill="none" stroke="#d8b4fe" stroke-width="2.5"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> تفرع خط المصير أو خط الشمس في نهايته العليا إلى ثلاثة فروع رمحية تصعد نحو تلال المشتري، زحل، والشمس.<br>
+                                • <strong>الرمزية التراثية:</strong> رمز للملك، المجد، والسيادة؛ يجمع في رمزيته بين الحكمة (زحل)، الهيبة (المشتري)، والتألق الإبداعي (الشمس).<br>
+                                • <strong>التشريح العلمي:</strong> تشعب طبيعي في تفرعات الألياف العصبية والجلدية السطحية عند قاعدة الأصابع.
+                            </p>
+                        </div>
+
+                        <!-- Seal 9: The Fish Sign -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(6,214,160,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--emerald); font-size:1.05rem;">⑨ علامة السمكة والحوت (The Fish Sign)</strong>
+                                <span style="font-size:0.75rem; background:rgba(6,214,160,0.15); color:var(--emerald); padding:2px 8px; border-radius:6px;">قاعدة خط الحياة</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <path d="M 45 68 Q 55 62 65 72 Q 55 82 45 76 Z" fill="none" stroke="#06d6a0" stroke-width="2"/>
+                                    <line x1="65" y1="72" x2="75" y2="65" stroke="#06d6a0" stroke-width="2"/>
+                                    <line x1="65" y1="72" x2="75" y2="79" stroke="#06d6a0" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> خطان منحنيان يتقاطعان في نهايتهما ليشكلا جسماً وذيلاً يشبهان السمكة عند أسفل خط الحياة قرب الرسغ.<br>
+                                • <strong>الرمزية التراثية:</strong> رمز للبركة الأزلية والفيض والنجاة من المهالك؛ ودلالة على سعة المعرفة والغنى الروحي المفاجئ.<br>
+                                • <strong>التشريح العلمي:</strong> تشعب انقسامي في الثنية الرسغية السفلية عند تلاقيها مع خط الحياة.
+                            </p>
+                        </div>
+
+                        <!-- Seal 10: Girdle of Venus -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--gold); font-size:1.05rem;">⑩ نطاق الزهرة والهلال الأثيري (Girdle of Venus)</strong>
+                                <span style="font-size:0.75rem; background:rgba(244,180,26,0.15); color:var(--gold); padding:2px 8px; border-radius:6px;">بين السبابة والخنصر</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <path d="M 45 28 Q 75 48 105 30" fill="none" stroke="#f4b41a" stroke-width="3"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> قوس هلالي نصف دائري يمتد أعلى خط القلب، معلقاً بين ما بين السبابة والوسطى إلى ما بين البنصر والخنصر.<br>
+                                • <strong>الرمزية التراثية:</strong> دلالة فرط الحساسية الوجدانية، الذائقة الفنية والأدبية النادرة، والقدرة الفائقة على استشعار مشاعر ونوايا الآخرين بدقة مذهلة.<br>
+                                • <strong>التشريح العلمي:</strong> ثنية جلدية ثانوية ناتجة عن حركة ضم الأصابع الوسطى والبنصر.
                             </p>
                         </div>
 
@@ -946,6 +1045,11 @@ def get_seals_zouhri_chamber_js():
         { id: 'ghazali_3x3', title: 'مثلث الغزالي (بطد زهج واح)', source: 'المنقذ من الضلال والأوفاق', desc: 'المربع السحري 3×3 ذو المجموع 15 ومحور التوازن 5. أقدم مصفوفة توازن رياضي في المخطوطات.', svg: '<rect x="15" y="15" width="70" height="70" fill="none" stroke="#f4b41a" stroke-width="3"/><line x1="38" y1="15" x2="38" y2="85" stroke="#00f0ff" stroke-width="2"/><line x1="62" y1="15" x2="62" y2="85" stroke="#00f0ff" stroke-width="2"/><line x1="15" y1="38" x2="85" y2="38" stroke="#00f0ff" stroke-width="2"/><line x1="15" y1="62" x2="85" y2="62" stroke="#00f0ff" stroke-width="2"/><circle cx="50" cy="50" r="5" fill="#ef4444"/>' },
         { id: 'simian_crease', title: 'الخط القاطع الملكي (الكف الزوهري)', source: 'علم الأسارير والفراسة', desc: 'اندماج خط القلب مع خط الرأس في طية كف عرضية واحدة تامة. رمز الإرادة المركزة وتشريح جنيني طبيعي.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><line x1="26" y1="48" x2="114" y2="48" stroke="#f4b41a" stroke-width="5" stroke-linecap="round"/><circle cx="70" cy="48" r="4" fill="#00f0ff"/>' },
         { id: 'mystic_triangle', title: 'مثلث الكف الباطني (The Mystic Triangle)', source: 'فراسة الرازي والمخطوطات', desc: 'مثلث الحكمة المتشكل في سهل المريخ بين خطوط العقل والجسد والحدس، دلالة الفطنة والبديهة الحاضرة.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><polygon points="45,45 85,38 65,70" fill="rgba(0,240,255,0.25)" stroke="#00f0ff" stroke-width="3"/>' },
+        { id: 'palmar_hexagram', title: 'النجمة السداسية الكفية (خاتم داود)', source: 'المخطوطات الهرمسية والأسارير', desc: 'تقاطع مثلثين متطابقين في راحة اليد؛ أعلى أختام الحماية الروحية والاتصال بين العوالم العلوية والسفلية.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><polygon points="68,36 78,54 58,54" fill="none" stroke="#f4b41a" stroke-width="3"/><polygon points="68,58 78,40 58,40" fill="none" stroke="#00f0ff" stroke-width="3"/>' },
+        { id: 'mystic_eye', title: 'عين الصقر وبصيرة الإبهام (يافا ريخا)', source: 'الفراسة الشرقية والصوفية', desc: 'عين بيضاوية عند مفصل الإبهام الأول؛ تدل على صدق الرؤى والمنامات والاستبصار الحدسي الفطري.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><path d="M 22 55 Q 32 45 42 55 Q 32 65 22 55 Z" fill="none" stroke="#00f0ff" stroke-width="3"/><circle cx="32" cy="55" r="3" fill="#f4b41a"/>' },
+        { id: 'trident_seal', title: 'رمح ثلاثي الشعب والتاج (Trident)', source: 'الفراسة والأسارير المخطوطية', desc: 'تشعب ثلاثي لخط المصير؛ رمز التتويج والمجد والسيادة واجتماع الحكمة والهيبة والإبداع.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><line x1="68" y1="45" x2="68" y2="22" stroke="#d8b4fe" stroke-width="3"/><path d="M 58 28 Q 68 38 68 38 Q 68 38 78 28" fill="none" stroke="#d8b4fe" stroke-width="3"/>' },
+        { id: 'fish_seal', title: 'علامة السمكة والحوت (The Fish Sign)', source: 'سامودريكا وتراث الحكماء', desc: 'رمز الحوت عند قاعدة خط الحياة؛ دلالة البركة الأزلية والغنى الروحي والنجاة من المهالك.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><path d="M 45 68 Q 55 62 65 72 Q 55 82 45 76 Z" fill="none" stroke="#06d6a0" stroke-width="3"/><line x1="65" y1="72" x2="75" y2="65" stroke="#06d6a0" stroke-width="2"/><line x1="65" y1="72" x2="75" y2="79" stroke="#06d6a0" stroke-width="2"/>' },
+        { id: 'girdle_venus', title: 'نطاق الزهرة والهلال الأثيري (Girdle of Venus)', source: 'تراث الفراسة والأسارير', desc: 'قوس هلالي فوق خط القلب؛ علامة فرط الإحساس الجمالي والوجداني والتقاط مشاعر الآخرين بحدس مذهل.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><path d="M 45 28 Q 75 48 105 30" fill="none" stroke="#f4b41a" stroke-width="4"/>' },
         { id: 'saturn_sigil', title: 'طلسم زحل (أجيئيل)', source: 'Agrippa - De Occulta Philosophia', desc: 'مبني على الوفق المثلث 3×3، يستجلب طاقة التثبيت والانضباط الصارم.', svg: '<line x1="20" y1="20" x2="80" y2="20" stroke="#94a3b8" stroke-width="4"/><line x1="50" y1="20" x2="50" y2="80" stroke="#94a3b8" stroke-width="4"/><circle cx="50" cy="80" r="5" fill="#94a3b8"/>' },
         { id: 'jupiter_sigil', title: 'طلسم المشتري (يوفائيل)', source: 'Picatrix / غاية الحكيم', desc: 'مبني على الوفق المربع 4×4، يجذب طاقة التوسع والهيبة وسعة الرزق.', svg: '<path d="M 25 25 L 50 75 L 75 25" fill="none" stroke="#d8b4fe" stroke-width="4"/><line x1="35" y1="50" x2="65" y2="50" stroke="#d8b4fe" stroke-width="4"/>' },
         { id: 'mars_sigil', title: 'طلسم المريخ (غرافائيل)', source: 'Agrippa Lib. II', desc: 'مبني على الوفق المخمس 5×5، يركز طاقة الحسم والشجاعة ودحر العدوان.', svg: '<line x1="20" y1="50" x2="80" y2="50" stroke="#ef4444" stroke-width="4"/><line x1="50" y1="20" x2="50" y2="80" stroke="#ef4444" stroke-width="4"/><polygon points="80,50 65,40 65,60" fill="#ef4444"/>' },
