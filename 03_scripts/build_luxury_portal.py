@@ -1023,11 +1023,11 @@ def build_luxury_portal():
                 </div>
             </div>
 
-            <!-- PILLAR 2: OCCULT CODEX & PLANETARY SCIENCES (6 DOORS) -->
+            <!-- MERGED PILLAR 2: OCCULT CODEX & INTERACTIVE LAB (9 DOORS) -->
             <div class="drawer-pillar-group">
                 <div class="drawer-pillar-title" style="color:#d8b4fe;">
-                    <span>الركن الثاني: سفر النواميس الباطنية والأفلاك</span>
-                    <span style="font-size:0.75rem; color:#94a3b8;">6 أبواب</span>
+                    <span>الركن الثاني: سفر النواميس والمختبر الرياضي التفاعلي</span>
+                    <span style="font-size:0.75rem; color:#94a3b8;">9 أبواب</span>
                 </div>
                 <div class="drawer-pillar-items">
                     <button class="drawer-door-item" data-door="tab-kings" onclick="navigateToChamber('tab-kings')">
@@ -1060,16 +1060,6 @@ def build_luxury_portal():
                         <span class="door-icon">🧬</span>
                         <span class="door-title">الأجساد السبعة وميكانيكا الاختراق</span>
                     </button>
-                </div>
-            </div>
-
-            <!-- PILLAR 3: INTERACTIVE RESONANCE & MATH LAB (3 DOORS) -->
-            <div class="drawer-pillar-group">
-                <div class="drawer-pillar-title" style="color:var(--cyan-accent);">
-                    <span>الركن الثالث: المختبر التفاعلي والمولد الرياضي</span>
-                    <span style="font-size:0.75rem; color:#94a3b8;">3 أبواب</span>
-                </div>
-                <div class="drawer-pillar-items">
                     <button class="drawer-door-item" data-door="tab-numbers" onclick="navigateToChamber('tab-numbers')">
                         <span class="door-num-badge">15</span>
                         <span class="door-icon">🔢</span>
@@ -1083,7 +1073,7 @@ def build_luxury_portal():
                     <button class="drawer-door-item" data-door="tab-criterion" onclick="navigateToChamber('tab-criterion')">
                         <span class="door-num-badge">17</span>
                         <span class="door-icon">⚖️</span>
-                        <span class="door-title">ميزان الشريعة والمرشد الباطني</span>
+                        <span class="door-title">ميزان الشريعة وحصن المرشد</span>
                     </button>
                 </div>
             </div>
