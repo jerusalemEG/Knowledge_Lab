@@ -1058,7 +1058,7 @@ def build_luxury_portal():
                     <button class="drawer-door-item" data-door="tab-numbers" onclick="navigateToChamber('tab-numbers')">
                         <span class="door-num-badge">15</span>
                         <span class="door-icon">🔢</span>
-                        <span class="door-title">شفرة الأرقام والوفق الغزالي 3×3</span>
+                        <span class="door-title">الأوفاق الكونية والمربعات السحرية (3×3 إلى 9×9)</span>
                     </button>
                     <button class="drawer-door-item" data-door="tab-physics" onclick="navigateToChamber('tab-physics')">
                         <span class="door-num-badge">16</span>
@@ -1348,8 +1348,8 @@ def build_luxury_portal():
                         <span class="card-door-number">الباب 15</span>
                     </div>
                     <div class="card-icon-box">🔢</div>
-                    <div class="card-door-title">شفرة الأرقام والوفق الغزالي 3×3</div>
-                    <div class="card-door-desc">أسرار المربعات السحرية المتوازنة ذات الثابت 15، مراتب الحساب الأثيرية، وتفسير كيف تعمل الهندسة الرقمية كموجّه موجي للتردد.</div>
+                    <div class="card-door-title">الأوفاق الكونية والمربعات السحرية (3×3 حتى 9×9)</div>
+                    <div class="card-door-desc">الهندسة الرياضية للأوفاق السحرية كلغة كونية وموجات أثيرية واقفة، مقارنة الحضارات (لو شو، الفيدا، أغريبا، والغزالي)، ودستور البناء والتفعيل والإغلاق.</div>
                     <div class="card-action-bar">
                         <span>دخول الباب</span>
                         <i class="fa-solid fa-arrow-left"></i>
@@ -1501,6 +1501,11 @@ def build_luxury_portal():
         }
         if (targetId === 'tab-bodies' && typeof renderBodies === 'function') {
             renderBodies();
+        }
+        if (targetId === 'tab-numbers') {
+            if (typeof renderPlanetaryMatrixLab === 'function') renderPlanetaryMatrixLab(currentSelectedWafqOrder || 3);
+            if (typeof renderPlanetaryWafqs === 'function') renderPlanetaryWafqs();
+            if (typeof calculateLiveWafq === 'function') calculateLiveWafq();
         }
 
         // 6. Update URL hash and smooth scroll

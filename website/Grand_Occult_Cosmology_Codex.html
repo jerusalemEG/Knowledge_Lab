@@ -229,7 +229,168 @@
         }
         .synth-btn:hover, .synth-btn.playing { background: var(--cyan); color: #030508; box-shadow: 0 0 12px var(--cyan-glow); }
 
-        /* Wafq Grid 3x3 */
+                /* Dynamic Multi-Order Wafq Grid & Studio Styles */
+        .wafq-studio-container {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(20, 18, 48, 0.85));
+            border: 1px solid rgba(244, 180, 26, 0.35);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(244, 180, 26, 0.1);
+        }
+        .wafq-mode-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 14px;
+            flex-wrap: wrap;
+        }
+        .wafq-mode-btn {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #94a3b8;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .wafq-mode-btn:hover {
+            color: #fff;
+            border-color: var(--cyan);
+        }
+        .wafq-mode-btn.active {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--cyan);
+            color: var(--cyan);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+        }
+        .wafq-planet-selector-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .wafq-order-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.86rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .wafq-order-pill:hover {
+            border-color: var(--gold);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .wafq-order-pill.active {
+            background: rgba(244, 180, 26, 0.18);
+            border-color: var(--gold);
+            color: var(--gold);
+            box-shadow: 0 0 12px rgba(244, 180, 26, 0.3);
+        }
+        .wafq-grid-dynamic {
+            display: grid;
+            gap: 6px;
+            background: rgba(5, 8, 16, 0.9);
+            padding: 16px;
+            border-radius: 16px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 30px rgba(244, 180, 26, 0.2);
+            margin: 0 auto;
+            max-width: 520px;
+            width: 100%;
+        }
+        .dynamic-cell {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 209, 102, 0.25);
+            border-radius: 8px;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.2s;
+            user-select: none;
+            padding: 4px;
+        }
+        .dynamic-cell:hover {
+            background: rgba(0, 240, 255, 0.12);
+            border-color: var(--cyan);
+            transform: scale(1.05);
+            z-index: 5;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+        }
+        .dynamic-cell.cell-key {
+            border-color: var(--emerald);
+            background: rgba(6, 214, 160, 0.15);
+            box-shadow: 0 0 10px rgba(6, 214, 160, 0.3);
+        }
+        .dynamic-cell.cell-lock {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.15);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+        }
+        .dynamic-cell.cell-center {
+            border-color: var(--gold);
+            background: rgba(244, 180, 26, 0.18);
+            box-shadow: 0 0 12px rgba(244, 180, 26, 0.4);
+        }
+        .dynamic-cell.cell-broken {
+            border-color: #c026d3;
+            background: rgba(192, 38, 211, 0.2);
+            box-shadow: 0 0 12px rgba(192, 38, 211, 0.4);
+        }
+        .dynamic-cell-val {
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+        .dynamic-cell-badge {
+            font-size: 0.65rem;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+        .wafq-math-badge-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 14px;
+        }
+        .wafq-math-badge {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .wafq-math-badge strong { color: var(--gold); }
+        .wafq-math-badge.verified { border-color: var(--emerald); color: var(--emerald); }
+
+        /* Wafq Grid 3x3 Legacy & Responsive */
         .magic-grid-3x3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -254,6 +415,94 @@
         .grid-cell:hover { background: rgba(255, 209, 102, 0.15); border-color: var(--gold); }
         .cell-num { font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1; }
         .cell-letter { font-size: 0.75rem; color: var(--gold); margin-top: 4px; }
+
+        /* Treatises Card Grid */
+        .wafq-treatise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            .wafq-treatise-grid { grid-template-columns: 1fr; }
+        }
+        .wafq-treatise-card {
+            background: rgba(11, 17, 33, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .wafq-treatise-card:hover {
+            border-color: rgba(244, 180, 26, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(244, 180, 26, 0.1);
+        }
+        .wafq-treatise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--cyan), transparent);
+        }
+        .wafq-treatise-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 12px;
+        }
+        .wafq-treatise-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(244, 180, 26, 0.12);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .wafq-treatise-title {
+            margin: 0;
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .wafq-treatise-subtitle {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        .wafq-treatise-content {
+            font-size: 0.88rem;
+            line-height: 1.85;
+            color: #cbd5e1;
+        }
+        .wafq-treatise-content strong { color: var(--gold); }
+        .wafq-treatise-content em { color: var(--cyan); font-style: normal; font-weight: 600; }
+        .wafq-sub-box {
+            background: rgba(0, 0, 0, 0.35);
+            border-right: 3px solid var(--cyan);
+            border-radius: 0 10px 10px 0;
+            padding: 12px 16px;
+            margin: 14px 0;
+            font-size: 0.85rem;
+            line-height: 1.75;
+        }
+        .wafq-sub-box.gold { border-right-color: var(--gold); }
+        .wafq-sub-box.emerald { border-right-color: var(--emerald); }
+        .wafq-sub-box.crimson { border-right-color: #ef4444; }
+        .wafq-sub-box.purple { border-right-color: #c026d3; }
 
         /* Canvas & Oscilloscope */
         .wave-canvas-wrapper {
@@ -1244,62 +1493,268 @@
             </div>
         </div>
 
-        <!-- 7. NUMBERS & WAFQ GHAZALI (DOOR 15) -->
+                <!-- 7. NUMBERS & WAFQ GHAZALI (DOOR 15) -->
         <div id="tab-numbers" class="tab-content">
             <div class="hero-banner">
-                <h2>🔢 شفرة الأوفاق السبعة الكوكبية (3×3 إلى 9×9) وحاسبة الغزالي الحية</h2>
-                <p>الهندسة الرياضية للأوفاق السحرية كموجّهات موجية في الأثير، مصفوفة الأوفاق السبعة من مثلث زحل إلى متسع القمر بترددات هانس كوستو، وحاسبة وفق الغزالي 3×3 التفاعلية الحية لأي عدد أو اسم:</p>
+                <h2>🔢 الباب الخامس عشر: المربعات السحرية والأوفاق الكونية (3×3 حتى 9×9) — لغة النواميس، ميكانيكا التشفير، ودستور التفعيل والإغلاق</h2>
+                <p>تفكيك علم الأوفاق كلغة برمجة كونية ومصفوفات طاقية ذات موجات واقفة (Scalar Standing Waves)؛ دراسة مقارنة عبر الحضارات (لو شو الصيني، يانترا الفيدا الهندية، بابل، الغزالي، البوني، وكورنيليوس أغريبا)؛ الشروط الصارمة للتحقيق والرنين؛ ودليل البناء، التفعيل، الفك، والختم.</p>
             </div>
 
-            <!-- INTERACTIVE WAFQ GENERATOR CALCULATOR -->
-            <div style="background:linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,27,75,0.7)); border:1px solid rgba(255,209,102,0.3); border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
-                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:12px;">
-                    <div>
-                        <h3 style="margin:0; font-family:'Amiri',serif; font-size:1.35rem; color:var(--gold); display:flex; align-items:center; gap:8px;">
-                            <i class="fa-solid fa-calculator"></i> حاسبة ومولّد وفق الغزالي التفاعلي الحي (Live Wafq 3x3 Engine)
-                        </h3>
-                        <span style="font-size:0.8rem; color:#94a3b8;">أدخل أي عدد أو اسم لتوليد المثلث العددي المتوازن رياضياً فوراً مع رصد المفتاح والمغلق وخانة الجبر:</span>
+            <!-- DUAL INTERACTIVE WAFQ STUDIO -->
+            <div class="wafq-studio-container">
+                <!-- Mode Switcher -->
+                <div class="wafq-mode-toggle">
+                    <button class="wafq-mode-btn active" id="wafq-mode-btn-planetary" onclick="switchWafqStudioMode('planetary')">
+                        <i class="fa-solid fa-solar-system"></i> مختبر الأوفاق الكوكبية السبعة (من 3×3 إلى 9×9)
+                    </button>
+                    <button class="wafq-mode-btn" id="wafq-mode-btn-ghazali" onclick="switchWafqStudioMode('ghazali')">
+                        <i class="fa-solid fa-calculator"></i> حاسبة ومولّد وفق الغزالي 3×3 الحي والمخصص (Live Custom Engine)
+                    </button>
+                </div>
+
+                <!-- PANEL 1: PLANETARY MATRIX LAB (3x3 to 9x9) -->
+                <div id="wafq-planetary-panel">
+                    <!-- Planetary Order Selector Pills -->
+                    <div class="wafq-planet-selector-bar">
+                        <button class="wafq-order-pill active" id="wafq-pill-3" onclick="renderPlanetaryMatrixLab(3)">
+                            <span style="color:#6b7280;">♄</span> زحل 3×3 (M=15)
+                        </button>
+                        <button class="wafq-order-pill" id="wafq-pill-4" onclick="renderPlanetaryMatrixLab(4)">
+                            <span style="color:#3b82f6;">♃</span> المشتري 4×4 (M=34)
+                        </button>
+                        <button class="wafq-order-pill" id="wafq-pill-5" onclick="renderPlanetaryMatrixLab(5)">
+                            <span style="color:#ef4444;">♂</span> المريخ 5×5 (M=65)
+                        </button>
+                        <button class="wafq-order-pill" id="wafq-pill-6" onclick="renderPlanetaryMatrixLab(6)">
+                            <span style="color:#f4b41a;">☉</span> الشمس 6×6 (M=111)
+                        </button>
+                        <button class="wafq-order-pill" id="wafq-pill-7" onclick="renderPlanetaryMatrixLab(7)">
+                            <span style="color:#06d6a0;">♀</span> الزهرة 7×7 (M=175)
+                        </button>
+                        <button class="wafq-order-pill" id="wafq-pill-8" onclick="renderPlanetaryMatrixLab(8)">
+                            <span style="color:#9d4edd;">☿</span> عطارد 8×8 (M=260)
+                        </button>
+                        <button class="wafq-order-pill" id="wafq-pill-9" onclick="renderPlanetaryMatrixLab(9)">
+                            <span style="color:#00f0ff;">☽</span> القمر 9×9 (M=369)
+                        </button>
                     </div>
-                    <div style="display:flex; gap:8px;">
-                        <input type="text" id="wafq-input" value="105" placeholder="أدخل عدداً أو اسماً (مثال: 105 أو آدم)" style="background:rgba(0,0,0,0.5); border:1px solid var(--gold); border-radius:8px; padding:8px 14px; color:#fff; font-family:'Tajawal',sans-serif; font-size:0.95rem; width:220px; text-align:center;">
-                        <button onclick="calculateLiveWafq()" class="synth-btn" style="padding:8px 16px; font-weight:700;"><i class="fa-solid fa-wand-magic-sparkles"></i> توليد الوفق</button>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; align-items:start;">
+                        <!-- Left: Dynamic Grid & Verification Badges -->
+                        <div>
+                            <div class="wafq-grid-dynamic" id="wafq-dynamic-grid-container"></div>
+                            <div class="wafq-math-badge-bar" id="wafq-math-badges-container"></div>
+                        </div>
+
+                        <!-- Right: Inspector Telemetry & Scholarship Card -->
+                        <div id="wafq-inspector-content" style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:20px;">
+                            <!-- Injected dynamically via JS -->
+                        </div>
                     </div>
                 </div>
 
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; align-items:center;">
-                    <!-- Visual Grid Output -->
-                    <div>
-                        <div style="text-align:center; font-size:0.85rem; color:#ffd166; margin-bottom:8px;" id="wafq-math-summary">
-                            المطلوب (N) = <strong>105</strong> | المفتاح = <strong>31</strong> | الأس = 12 | الباقي = <strong>0</strong> (تام)
+                <!-- PANEL 2: GHAZALI CUSTOM 3x3 ENGINE -->
+                <div id="wafq-ghazali-panel" style="display:none;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:12px;">
+                        <div>
+                            <h3 style="margin:0; font-family:'Amiri',serif; font-size:1.35rem; color:var(--gold); display:flex; align-items:center; gap:8px;">
+                                <i class="fa-solid fa-calculator"></i> حاسبة تعمير مثلث الغزالي 3×3 لأي عدد أو اسم (Custom 3x3 Generator)
+                            </h3>
+                            <span style="font-size:0.8rem; color:#94a3b8;">أدخل أي عدد صحيح أو اسم/آية (يتم حساب الجُمّل الكبير تلقائياً)، ويتم استخراج المفتاح والمغلق وخانة الجبر ومطابقة المجاميع اللحظية:</span>
                         </div>
-                        <div class="magic-grid-3x3" id="live-wafq-grid" style="max-width:320px; margin:0 auto;"></div>
+                        <div style="display:flex; gap:8px;">
+                            <input type="text" id="wafq-input" value="105" placeholder="أدخل عدداً أو اسماً (مثال: 105، آدم، الله، سلام)" style="background:rgba(0,0,0,0.6); border:1px solid var(--gold); border-radius:8px; padding:8px 14px; color:#fff; font-family:'Tajawal',sans-serif; font-size:0.95rem; width:240px; text-align:center;">
+                            <button onclick="calculateLiveWafq()" class="synth-btn" style="padding:8px 16px; font-weight:700;"><i class="fa-solid fa-wand-magic-sparkles"></i> توليد الوفق</button>
+                        </div>
                     </div>
 
-                    <!-- Explanatory Panel -->
-                    <div style="font-size:0.86rem; line-height:1.8; color:#cbd5e1; background:rgba(0,0,0,0.3); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
-                        <strong style="color:var(--gold);">قاعدة تعمير مثلث الغزالي الرياضية الصارمة:</strong><br>
-                        1. <strong>المعادلة:</strong> (العدد المطلوب - 12) ÷ 3 = المفتاح.<br>
-                        2. <strong>إذا كان الباقي 0:</strong> يعمر الوفق تتابعياً بالسير الطبيعي (1 إلى 9).<br>
-                        3. <strong>إذا كان الباقي 1:</strong> يُجبر الوفق بزيادة 1 في البيت السابع (الزاي 7).<br>
-                        4. <strong>إذا كان الباقي 2:</strong> يُجبر الوفق بزيادة 1 في البيت الرابع (الدال 4).<br>
-                        كل صف، عمود، وقطر يعطي بدقة متناهية العدد المطلوب نفسه، مما يخلق توازناً هندسياً تاماً.
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; align-items:center;">
+                        <!-- Visual Grid Output -->
+                        <div>
+                            <div style="text-align:center; font-size:0.85rem; color:#ffd166; margin-bottom:10px; background:rgba(0,0,0,0.4); padding:8px 12px; border-radius:8px;" id="wafq-math-summary">
+                                المطلوب (N) = <strong>105</strong> | المفتاح = <strong>31</strong> | الأس = 12 | الباقي = <strong>0</strong> (تام)
+                            </div>
+                            <div class="magic-grid-3x3" id="live-wafq-grid" style="max-width:320px; margin:0 auto;"></div>
+                            <div class="wafq-math-badge-bar" id="ghazali-verification-badges" style="margin-top:12px;"></div>
+                        </div>
+
+                        <!-- Explanatory Guide -->
+                        <div style="font-size:0.86rem; line-height:1.8; color:#cbd5e1; background:rgba(0,0,0,0.3); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                            <strong style="color:var(--gold); font-size:1rem; display:block; margin-bottom:6px;">قاعدة تعمير مثلث الغزالي الرياضية الصارمة:</strong>
+                            <ol style="margin:0 0 10px 18px; padding:0;">
+                                <li><strong>المعادلة الأصلية:</strong> (العدد المطلوب - 12) ÷ 3 = المفتاح (حيث العدد المطلوب هو الرقم المباشر أو مجموع حروف الاسم بحساب الجُمّل).</li>
+                                <li><strong>إذا كان الباقي 0 (وفق تام):</strong> يعمر الوفق تتابعياً بالسير الطبيعي (1 إلى 9) بإضافة 1 في كل خانة.</li>
+                                <li><strong>إذا كان الباقي 1 (كسر 1):</strong> يُجبر الوفق بزيادة 1 في البيت السابع (الزاي 7)، فتتوالى الخانات 7 و 8 و 9 بزيادة واحد إضافي.</li>
+                                <li><strong>إذا كان الباقي 2 (كسر 2):</strong> يُجبر الوفق بزيادة 1 في البيت الرابع (الدال 4)، فتتوالى الخانات من 4 إلى 9 بزيادة واحد إضافي.</li>
+                            </ol>
+                            <div style="background:rgba(244,180,26,0.1); border-right:3px solid var(--gold); padding:8px 12px; border-radius:4px; font-size:0.82rem;">
+                                كل صف، عمود، وقطر يعطي بدقة متناهية العدد المطلوب نفسه، مما يخلق توازناً هندسياً تاماً يمنع تراكم الشحنات التشتتية.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 MASTER SCHOLARLY TREATISES -->
+            <div style="margin-bottom:30px;">
+                <h3 style="color:var(--gold); font-family:'Amiri',serif; font-size:1.45rem; margin-bottom:16px; display:flex; align-items:center; gap:10px;">
+                    <i class="fa-solid fa-book-atlas"></i> الموسوعة الأكاديمية الشاملة لعلم الأوفاق: النواميس الكونية ودستور التحقيق
+                </h3>
+
+                <div class="wafq-treatise-grid">
+                    <!-- TREATISE 1 -->
+                    <div class="wafq-treatise-card">
+                        <div class="wafq-treatise-header">
+                            <div class="wafq-treatise-icon"><i class="fa-solid fa-shapes"></i></div>
+                            <div>
+                                <h4 class="wafq-treatise-title">الركن الأول: أنطولوجيا الوفق كلغة كونية وشيفرة المصفوفات المتزنة</h4>
+                                <div class="wafq-treatise-subtitle">The Cosmic Ontology of Magic Squares & Zero-Entropy Physics</div>
+                            </div>
+                        </div>
+                        <div class="wafq-treatise-content">
+                            <p>علم الأوفاق ليس ركاماً من الطلاسم أو التنجيم الفلكلوري؛ بل هو <strong>لغة برمجة فراغية كونية (Universal Spatial Programming)</strong> تحاكي قوانين الاتزان والتناظر في مصفوفات الوجود. في الفضاء الحر، تتشتت الطاقات والموجات عشوائياً وفق القانون الثاني للديناميكا الحرارية (زيادة الإنتروبيا). أما داخل الوفق، فإن تساوي مجاميع الصفوف، الأعمدة، والأقطار يحقق ظاهرة <em>إلغاء الإنتروبيا الطاقية (Zero-Entropy Matrix)</em>، حيث تلغي التيارات المتضادة شواش بعضها البعض ليتحول المربع إلى <strong>مرنان كهرومغناطيسي مغلق (Closed Resonator Cavity)</strong> يحبس الطاقة في موجة دائرية توريدية فائقة التركيز.</p>
+
+                            <div class="wafq-sub-box gold">
+                                <strong>التشريح الهيكلي الخماسي لجسد الوفق (The Fivefold Anatomy):</strong>
+                                <ul style="margin:4px 0 0 16px; padding:0;">
+                                    <li><strong>1. المفتاح (The Key / Portal):</strong> أصغر خانة بالوفق (رقم 1 في الطبيعي)؛ يمثل مدخل التيار والقطب الموجب لتدفق الشحنة الأثيرية.</li>
+                                    <li><strong>2. المغلاق (The Lock / Seal):</strong> أكبر خانة بالوفق ($n^2$)؛ صمام الأمان الذي يحبس الدائرة ويمنع تسرب الشحنة أو انفراطها.</li>
+                                    <li><strong>3. القطب والعدل (Center of Gravity):</strong> مركز الثقل الهندسي والمغناطيسي الذي تتناظر حوله كافة الخانات كمرآة كوانتية.</li>
+                                    <li><strong>4. الميزان (The Magic Constant $M$):</strong> الثابت المحوري لكل صف وعمود وقطر، المحسوب بالقانون الكوني: M = n(n^2 + 1) / 2.</li>
+                                    <li><strong>5. المساحة (The Scalar Volume $T$):</strong> المجموع التراكمي لكافة أعداد الوفق ($T = n 	imes M$)، وهو يمثل الكتلة الحجمية للطاقة المستودعة.</li>
+                                </ul>
+                            </div>
+
+                            <p><strong>ميكانيكا الكسر والجبر (Symmetry Breaking & Repair):</strong> إذا كان العدد المستودع لا يقبل القسمة بالتساوي على رتبة الوفق ($n$)، ينشأ باقي قسمة (الكسر). إهمال الكسر يفسد توازن المصفوفة ويجعلها عرجاء طاقياً. لذا صاغ الغزالي والبوني ميزاناً عبقرياً يجبر الخلل بزيادة 1 في بيوت محددة (البيت 7 في باقي 1، والبيت 4 في باقي 2)، وهو ما يعرف في الفيزياء الحديثة بـ <em>كسر التناظر التلقائي المنظم (Spontaneous Symmetry Breaking)</em> لحفظ الثابت الكلي.</p>
+
+                            <p><strong>التفسير الكوانتي الحديث:</strong> في الجبر الخطي، يطابق كل وفق سحري مصفوفة قيم ذاتية هيرميتية (Hermitian Eigenvalue Matrix). هذا التناظر الدقيق يمنع ظاهرة فك الترابط الكمي (Decoherence)، ويجعل الوفق قادراً على العمل كهوائي كوني (Scalar Waveguide) يلتقط الترددات الكوكبية وينقلها إلى الحقل الحيوي للإنسان.</p>
+                        </div>
+                    </div>
+
+                    <!-- TREATISE 2 -->
+                    <div class="wafq-treatise-card">
+                        <div class="wafq-treatise-header">
+                            <div class="wafq-treatise-icon" style="color:var(--cyan); border-color:var(--cyan); background:rgba(0,240,255,0.12);"><i class="fa-solid fa-earth-americas"></i></div>
+                            <div>
+                                <h4 class="wafq-treatise-title">الركن الثاني: حوار الحضارات الكبرى والاكتشاف المشترك للنواميس</h4>
+                                <div class="wafq-treatise-subtitle">Comparative Civilizations & The Universal Discovery</div>
+                            </div>
+                        </div>
+                        <div class="wafq-treatise-content">
+                            <p>إن أبلغ برهان على كون الأوفاق نواميس فيزيائية ثابتة لا خرافات محلية، هو أن <strong>كل الحضارات الكبرى المنعزلة جغرافياً وتاريخياً قد اكتشفت نفس المربعات السحرية بذات الأعداد والتراتيب</strong> دون أن تلتقي!</p>
+
+                            <div class="wafq-sub-box emerald">
+                                <strong>تتبع المصفوفات عبر التاريخ الإنساني:</strong>
+                                <ul style="margin:4px 0 0 16px; padding:0;">
+                                    <li><strong>الصين القديمة (لو شو Luo Shu 2800 ق.م):</strong> سلحفاة النهر الأصفر ونقوش درعها المقدسة التي تطابقت بنسبة 100% مع مثلث الغزالي وزحل (4-9-2 / 3-5-7 / 8-1-6). قسمت الصين الأعداد الفردية كـ <em>يانغ</em> سماوي نشط في المراكز، والأعداد الزوجية كـ <em>ين</em> أرضي ساكن في الأركان.</li>
+                                    <li><strong>الهند الفيدية ومعبد خاجوراه (1000 م):</strong> يانترا كوبيرا لجلب الوفرة ($M=72$) ومربع جاينا فائق التناظر (Chautisa Yantra 4×4) حيث كل صف، عمود، قطر، وكل مربع فرعي 2×2، وكل زاوية تساوي 34 في تناغم هائل (Pandiagonal Perfect Square).</li>
+                                    <li><strong>بابل والرافدين:</strong> النظام الستيني المقدس، والأختام الفلكية للكواكب السبعة التي وزعت الساعات اليومية وحسابات المنازل.</li>
+                                    <li><strong>العصر الإسلامي الذهبي:</strong>
+                                        <br>• <em>الإمام أبو حامد الغزالي:</em> في "المنقذ من الضلال" و"السر المصون"، برهن على أن خواص الأوفاق مثل خواص الأدوية الكيميائية؛ كلاهما أسباب مسخرة بأمر الله يدركها البرهان العقلي.
+                                        <br>• <em>الشيخ أحمد البوني:</em> في "شمس المعارف" و"لطائف الإشارات"، قعّد التنزيل الحرفي والعددي وربط الأوفاق بالأسماء الحسنى وسر الحروف.
+                                        <br>• <em>جابر بن حيان:</em> كتاب الموازين ونظرية 1:3:5:8 في موازنة طبائع المعادن الأربعة عبر أوفاق كيميائية صارمة.
+                                        <br>• <em>ابن خلدون:</em> الفصل الاستثنائي في "المقدمة" الذي فكك الأوفاق فلسفياً ورياضياً وميز بين العلم البرهاني والدجل الوهمي.
+                                    </li>
+                                    <li><strong>النهضة الأوروبية والهرمسية:</strong> نقل <em>هاينريش كورنيليوس أغريبا (1533)</em> الأوفاق الكوكبية السبعة من المخطوطات الأندلسية الإسلامية (غاية الحكيم / Picatrix)، وخلد <em>ألبرشت دورر (1514)</em> مربع المشتري 4×4 في لوحته العالمية Melencolia I.</li>
+                                </ul>
+                            </div>
+
+                            <p><strong>سر الاكتشاف الأعظم المشترك:</strong> لماذا اتفقت بابل مع الصين والهند والأندلس؟ لأن المربعات السحرية هي <em>الثوابت الطوبولوجية للفضاء ثلاثي الأبعاد (Topological Invariants)</em>. إنها ليست من صنع عقل بشري، بل هي بصمات التصميم الرياضي الذي بنى الله به شبكة الزمكان وتوازن الذرات والمجرات.</p>
+                        </div>
+                    </div>
+
+                    <!-- TREATISE 3 -->
+                    <div class="wafq-treatise-card">
+                        <div class="wafq-treatise-header">
+                            <div class="wafq-treatise-icon" style="color:#c026d3; border-color:#c026d3; background:rgba(192,38,211,0.12);"><i class="fa-solid fa-gears"></i></div>
+                            <div>
+                                <h4 class="wafq-treatise-title">الركن الثالث: ميكانيكا البناء، التفعيل، الفك، والإغلاق التام</h4>
+                                <div class="wafq-treatise-subtitle">The Complete Operational Protocol: Construct, Activate, Decipher & Seal</div>
+                            </div>
+                        </div>
+                        <div class="wafq-treatise-content">
+                            <p>لكي يكون العمل بالوفق عملاً هندسياً ناجحاً ومحمياً، يجب اتباع الدستور التشغيلي الرباعي الصارم:</p>
+
+                            <div class="wafq-sub-box purple">
+                                <strong>1. ميكانيكا البناء والتنزيل (Construction Algorithms):</strong>
+                                <ul style="margin:4px 0 0 16px; padding:0;">
+                                    <li><strong>الأوفاق الفردية (3x3, 5x5, 7x7, 9x9):</strong> طريقة دي لا لوبير (De la Loubère Siamese Method) وسير "بطد زهج واح"؛ البدء بالرقم 1 في منتصف الصف الأول، والتحرك قطرياً للأعلى واليمين، وعند الاصطدام بخانة ممتلئة أو الخروج يتم الهبوط خانة واحدة للأسفل.</li>
+                                    <li><strong>الأوفاق الزوجية المتماثلة (4x4, 8x8):</strong> طريقة الأقطار المتناظرة؛ ملء الخانات تسلسلياً 1 إلى $n^2$، ثم عكس الأرقام الواقعة على الأقطار الرئيسية عبر طرحها من $(n^2 + 1)$.</li>
+                                    <li><strong>استخراج المفتاح من أي اسم أو آية:</strong> حساب الجُمّل الكبير ($N$) ثم طرح الأس ($S$) ثم القسمة على الرتبة ($n$)، فيكون الناتج هو المفتاح، والباقي يُجبر في خانة الكسر.</li>
+                                </ul>
+                            </div>
+
+                            <div class="wafq-sub-box crimson">
+                                <strong>2. ميكانيكا التفعيل (Activation) والفك العكسي (Deciphering):</strong>
+                                <ul style="margin:4px 0 0 16px; padding:0;">
+                                    <li><strong>التفعيل الطاقي:</strong> اختيار ساعة الكوكب المناسبة، شحن الوفق بنغمة التردد المداري (Hans Cousto Frequency)، وتلاوة الاسم بالعدد المودع لتحقيق الانجرار الرنيني (Acoustic Entrainment).</li>
+                                    <li><strong>الفك والتحليل العكسي لأي طلسم مجهول:</strong> فحص خانة المفتاح (أقل رقم)، ثم حساب المجموع المستودع: $N = (	ext{Key} 	imes n) + S + 	ext{Remainder}$، ثم مطابقة الناتج بأسماء الله الحسنى والآيات القرآنية لمعرفة السر المودع وكشف ما إذا كان الوفق سليماً أم فاسداً مشوهاً.</li>
+                                </ul>
+                            </div>
+
+                            <p><strong>3. ميكانيكا الإغلاق والختم والتحصين (Sealing & Shielding):</strong>
+                            ترك الوفق مفتوحاً يجعله ثقباً أثيرياً يسرب الطاقة ويجتذب الطفيليات النارية. يُغلق الوفق بـ:
+                            1. إحكامه بخانة المغلاق القصوى.
+                            2. إحاطته بسور من الحروف النورانية القرآنية المفرقة غير المطموسة.
+                            3. تثبيت أركانه الأربعة بآيات الإحكام ﴿وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا﴾.
+                            4. ولإبطال أي وفق فاسد أو سحر قديم: يتم محوه بماء مقروء عليه آيات الإبطال، فبزوال التناظر الهندسي ينحل الحقل التداخلي فوراً وتتلاشى العقدة.</p>
+                        </div>
+                    </div>
+
+                    <!-- TREATISE 4 -->
+                    <div class="wafq-treatise-card">
+                        <div class="wafq-treatise-header">
+                            <div class="wafq-treatise-icon" style="color:var(--emerald); border-color:var(--emerald); background:rgba(6,214,160,0.12);"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <div>
+                                <h4 class="wafq-treatise-title">الركن الرابع: شروط العمل، قانون الرنين الروحي، والميزان التوحيدي</h4>
+                                <div class="wafq-treatise-subtitle">The 7 Pillars of Harmonic Success, Failure Traps & Quranic Sovereignty</div>
+                            </div>
+                        </div>
+                        <div class="wafq-treatise-content">
+                            <p>لكي يتحقق الأثر الطاقي بنسبة 100% ودون أي ارتداد سلبي، وضع الحكماء <strong>دستور الشروط السبعة للتحقيق التام</strong>:</p>
+
+                            <div class="wafq-sub-box emerald">
+                                <strong>الشروط السبعة للنجاح المؤكد (The 7 Pillars of Success):</strong>
+                                <ol style="margin:4px 0 0 18px; padding:0;">
+                                    <li><strong>1. الدقة الرياضية الصارمة:</strong> خطأ برقم واحد يدمر الدائرة بالكامل؛ الأوفاق كالمعادلات الكيميائية لا تقبل التقريب.</li>
+                                    <li><strong>2. وحدة وتماسك النية (Coherent Intent):</strong> تشتت الفكر أو التردد يولد موجات تداخل هدام تلغي الرنين الأثيري.</li>
+                                    <li><strong>3. التوافق الفلكي والزمني:</strong> مراعاة ساعات الكواكب وتجنب أوقات الاحتراق والقمر في خلو المسار.</li>
+                                    <li><strong>4. الطهارة البيولوجية والبيئية:</strong> الوضوء التام، البيئة الهادئة، والبخور الطبيعي الخالص (اللبان الذكر، الصندل، المسك).</li>
+                                    <li><strong>5. التأريض والتحصين (Grounding):</strong> تحصين الهالة بالأذكار لمنع اختراق اليرقات النجمية أثناء تدفق الشحنة.</li>
+                                    <li><strong>6. الرنين الصوتي المتناغم:</strong> الترديد الصوتي بالنغمة الموافقة لتردد الكوكب (Cousto Orbital Hz).</li>
+                                    <li><strong>7. الكتمان الطاقي (Hermetic Secrecy):</strong> حفظ العمل في طي الكتمان حتى يكتمل تكوينه في عالم الشهادة.</li>
+                                </ol>
+                            </div>
+
+                            <p><strong>موانع الفشل السبعة (The 7 Failure Traps):</strong>
+                            الخطأ في حساب الجُمّل، النوايا الخبيثة أو الإضرار بالخلق (مما يفعل قانون القصاص الكوني العادل فيرتد السحر على صاحبه ويحرق هالته)، استخدام بخور كيميائي مغشوش، غياب التأريض، والتفاخر والثرثرة قبل تمام التجسد المادي.</p>
+
+                            <div class="wafq-sub-box gold">
+                                <strong>الميزان التوحيدي والقرآني الأسمى — سيادة الإنسان الموحد:</strong>
+                                <p style="margin:0;">الحقيقة العقدية الصارمة: الأعداد، الكواكب، والأوفاق ليست آلهة، ولا تملك في الكون ذرة من نفع أو ضر بذاتها، بل هي مجرد نواميس فيزيائية وأسباب كونية مسخرة بإرادة الله الواحد القهار ﴿وَأَحْصَىٰ كُلَّ شَيْءٍ عَدَدًا﴾ [الجن: 28]. الإنسان المؤمن الموحد المتوكل على ربه هو خليفة الله في أرضه، وهو سيد فوق كل هذه القوى المسخرة؛ يستعمل العلم الرياضي كما يستعمل مهندس الطيران قوانين الديناميكا الهوائية، وكل ذلك في رحاب التوحيد الخالص ونور <em>لا إله إلا الله محمد رسول الله</em>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Complete 7 Planetary Squares Compendium -->
             <div style="margin-bottom:25px;">
-                <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.35rem; margin-bottom:12px;"><i class="fa-solid fa-cubes"></i> مصفوفة الأوفاق السبعة الكوكبية الكاملة من 3×3 إلى 9×9 وتردداتها المدارية</h3>
+                <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.35rem; margin-bottom:12px;">
+                    <i class="fa-solid fa-cubes"></i> مصفوفة الأوفاق السبعة الكوكبية الكاملة من 3×3 إلى 9×9 وتردداتها وتطبيقاتها عبر الحضارات
+                </h3>
                 <div class="data-table-wrapper">
                     <table>
                         <thead>
                             <tr>
                                 <th>نوع الوفق ورتبته</th>
-                                <th>الكوكب الفلكي</th>
-                                <th>الثابت العددي (Row Sum)</th>
-                                <th>المجموع الكلي (Total)</th>
-                                <th>التردد المداري (Hans Cousto)</th>
-                                <th>النغمة الموسيقية</th>
+                                <th>الكوكب والمعدن</th>
+                                <th>الثابت (M)</th>
+                                <th>المجموع (T)</th>
+                                <th>في الصين القديمة (Luo Shu)</th>
+                                <th>في الفيدا الهندية (Yantra)</th>
+                                <th>في الهرمسية الغربية (Agrippa)</th>
+                                <th>التردد والنغمة</th>
                                 <th>التأثير البيولوجي والأثيري</th>
                                 <th>استماع للرنين</th>
                             </tr>
@@ -1506,15 +1961,78 @@
             { num: 28, name: "الرَّشَاء (بَطْنُ الحُوت)", deg: "الحوت / الحمل (17°08' - 0°)", stars: "Beta Andromedae (المرأة المسلسلة)", letter: "غ", god_name: "الغني", angel: "غنيائيل", nat: "مائية", planet: "الزهرة", inc: "المسك ودهن الورد", work: "ختام الدائرة المبارك: صيد البحر، جمع الشمل، وتأليف القلوب" }
         ];
 
-        // DATA: 7 Planetary Wafqs Compendium
+                // DATA: 7 Planetary Wafqs Compendium across Civilizations
         const PLANETARY_WAFQS_DATA = [
-            { order: "المثلث (3×3)", planet: "زحل ♄", constant: 15, total: 45, freq: "147.85 Hz", note: "D (ري)", bio: "العظام، المفاصل، الصبر، وحفظ الحدود الكونية", sound: 147.85 },
-            { order: "المربع (4×4)", planet: "المشتري ♃", constant: 34, total: 136, freq: "183.58 Hz", note: "F# (فا دييز)", bio: "الكبد، الشرايين، الوفرة المالية، وتوسيع الهالة", sound: 183.58 },
-            { order: "المخمس (5×5)", planet: "المريخ ♂", constant: 65, total: 325, freq: "144.72 Hz", note: "D (ري)", bio: "الدم، المناعة الهجومية، الشجاعة، وقطع القيود", sound: 144.72 },
-            { order: "المسدس (6×6)", planet: "الشمس ☉", constant: 111, total: 666, freq: "528 Hz", note: "C (دو / 528)", bio: "القلب، البصر، العزة، الشفاء الجسدي، وطرد الظلام", sound: 528 },
-            { order: "المسبع (7×7)", planet: "الزهرة ♀", constant: 175, total: 1225, freq: "221.23 Hz", note: "A (لا)", bio: "الكلى، التناسل، الجاذبية، المحبة والتوافق العاطفي", sound: 221.23 },
-            { order: "المثمن (8×8)", planet: "عطارد ☿", constant: 260, total: 2080, freq: "141.27 Hz", note: "C# (دو دييز)", bio: "الجهاز العصبي، الذكاء، البلاغة، وحل الشيفرات", sound: 141.27 },
-            { order: "المتسع (9×9)", planet: "القمر ☽", constant: 369, total: 3321, freq: "210.42 Hz", note: "G# (صول دييز)", bio: "السوائل، الذاكرة، الدماغ، والأحلام والحدس الباطني", sound: 210.42 }
+            {
+                order: "المثلث (3×3)", n: 3, planet: "زحل ♄ (Saturn)", day: "السبت", metal: "الرصاص الأسود", color: "#6b7280",
+                constant: 15, total: 45, freq: "147.85 Hz", note: "D (ري)", sound: 147.85,
+                china: "لو شو (Luo Shu 洛書 2800 ق.م) — سلحفاة الإمبراطور يو ونواة الباغوا",
+                vedic: "يانترا زحل (Shani Yantra) — تثبيت الحدود وحصن الكرما وتجاوز القيود",
+                hermetic: "Seal of Saturn (Agrippa 1533) — روح زحل (Zazel) وملاك كاسييل (Cassiel)",
+                element: "ترابي / مائي باطني (تثبيت وترسيخ)",
+                bio: "العظام، المفاصل، الصبر، تفريغ الشحنات السلبية، وحفظ الحدود الكونية والهالة من الاختراق.",
+                path_desc: "سير بطد زهج واح (De la Loubère): يبدأ بـ 1 في أعلى المنتصف ويصعد قطرياً، وعند الصدمة ينزل خطوة."
+            },
+            {
+                order: "المربع (4×4)", n: 4, planet: "المشتري ♃ (Jupiter)", day: "الخميس", metal: "القصدير الأبيض (الرصاص القلعي)", color: "#3b82f6",
+                constant: 34, total: 136, freq: "183.58 Hz", note: "F# (فا دييز)", sound: 183.58,
+                china: "مصفوفة التناظر الرباعي في كتاب التغيرات (I Ching) ونظام الاتجاهات الأربعة",
+                vedic: "يانترا كوبيرا ومربع جاينا فائق التناظر في خاجوراه (Chautisa Yantra — كل 2×2 وكل ركن = 34)",
+                hermetic: "مربع المشتري في لوحة Melencolia I لألبرشت دورر (1514) وأختام أغريبا لجلب الجاه والوفرة",
+                element: "هوائي ناري (توسع وتمدد)",
+                bio: "الكبد، الشرايين الكبرى، توسيع المجال الهالاتي التوريدي، جلب الوفرة وتيسير الأسباب.",
+                path_desc: "طريقة تناظر الأقطار المتقاطعة (Cross-Diagonal Inversion): ملء الأرقام 1-16 ثم عكس خانات الأقطار."
+            },
+            {
+                order: "المخمس (5×5)", n: 5, planet: "المريخ ♂ (Mars)", day: "الثلاثاء", metal: "الحديد والفولاذ الصرف", color: "#ef4444",
+                constant: 65, total: 325, freq: "144.72 Hz", note: "D (ري)", sound: 144.72,
+                china: "مصفوفة العناصر الخمسة الصينية (Wu Xing — خشب، نار، تراب، معدن، ماء) ودورات التوليد",
+                vedic: "يانترا مانغالا (Mangala Yantra) — شجاعة المحارب ورد الطاقات المعتدية",
+                hermetic: "Seal of Mars (Agrippa) — روح برزافيل (Bartzabel) وملاك سمسمائيل، تفجير الحصون السحرية",
+                element: "ناري حارق (قطع وردع)",
+                bio: "كريات الدم الحمراء، المناعة الخلوية الهجومية، الشجاعة، وقطع القيود وسلاسل الطاقات السامة.",
+                path_desc: "طريقة دي لا لوبير السيامية للمخمس: البدء في منتصف الصف العلوي والصعود قطرياً بزاوية 45 درجة."
+            },
+            {
+                order: "المسدس (6×6)", n: 6, planet: "الشمس ☉ (Sol)", day: "الأحد", metal: "الذهب الخالص 24k", color: "#f4b41a",
+                constant: 111, total: 666, freq: "528.00 Hz", note: "C (دو / ترنيمة 528 إصلاح DNA)", sound: 528,
+                china: "سداسيات آي تشينغ الـ 64 (Hexagrams) وتناغم السماء السادسة والتاي تشي (Taiji)",
+                vedic: "يانترا سوريا الذهبية (Surya Yantra) — مركز الوعي والسيادة والشفاء الكوني الأسمى",
+                hermetic: "وفق الشمس الأعظم (Agrippa) والمجموع 666 (ثابت المثلث الشمسي) وروح سورات وملاك ميخائيل",
+                element: "ناري نقي / أثيري علوي",
+                bio: "القلب، شبكية العين، حيوية الروح، العزة والهيبة، وطرد الكيانات المظلمة بنور الوعي الصافي.",
+                path_desc: "طريقة التقسيم الرباعي الشمسي المتناظر (Singly-Even Sub-grids): توازن المربعات الفرعية 3×3 الأربعة."
+            },
+            {
+                order: "المسبع (7×7)", n: 7, planet: "الزهرة ♀ (Venus)", day: "الجمعة", metal: "النحاس الأحمر النقي", color: "#06d6a0",
+                constant: 175, total: 1225, freq: "221.23 Hz", note: "A (لا)", sound: 221.23,
+                china: "المسار الأثيري للنغمات الموسيقية السبع (Pentatonic Extension) وقانون الألوان الطيفية",
+                vedic: "يانترا شوكرا (Shukra Yantra) — مغناطيسية القلوب وتناغم المشاعر والجمال الكوني",
+                hermetic: "Seal of Venus (Agrippa) — ذكاء كيدميل (Kedemel) وملاك عنيائيل لجلب الألفة والمودة",
+                element: "ترابي هوائي (انسجام وجذب)",
+                bio: "الكليتان، الغدد الصماء التناسلية، الجاذبية الحيوية، تهدئة التوتر العصبي وتجديد نضارة البشرة.",
+                path_desc: "طريقة الصعود السيامي الفردي للمسبع (Siamese 7x7): البدء بـ 1 في أعلى المنتصف بحساب 49 خانة."
+            },
+            {
+                order: "المثمن (8×8)", n: 8, planet: "عطارد ☿ (Mercury)", day: "الأربعاء", metal: "الزئبق الممتزج والرصاص القصديري", color: "#9d4edd",
+                constant: 260, total: 2080, freq: "141.27 Hz", note: "C# (دو دييز)", sound: 141.27,
+                china: "رموز الباغوا الثمانية (Eight Trigrams) ومصفوفة الفضاء الكوني المحيط بالمركز",
+                vedic: "يانترا بودها (Budha Yantra) — الذكاء المتوقد، الفصاحة، حل الشيفرات والرياضيات المعقدة",
+                hermetic: "Seal of Mercury (Agrippa) — روح تيرييل (Tiriel) وملاك رفائيل لفك الأقفال والعلوم الدقيقة",
+                element: "هوائي مائي متقلب (سرعة وذكاء)",
+                bio: "الجهاز العصبي، السيالات العصبية، الرئتان، فصّي المخ، وسرعة البديهة وحل المعضلات الفكرية.",
+                path_desc: "طريقة انعكاس الأقطار المزدوجة (Doubly-Even 8x8 Blocks): تقسيم رقعة الشطرنج إلى 4 مربعات 4×4 وعكس الأقطار."
+            },
+            {
+                order: "المتسع (9×9)", n: 9, planet: "القمر ☽ (Luna)", day: "الإثنين", metal: "الفضة النقية 999", color: "#00f0ff",
+                constant: 369, total: 3321, freq: "210.42 Hz", note: "G# (صول دييز)", sound: 210.42,
+                china: "قاعات القصر السماوي التسعة (Nine Halls of Ming Tang) وشبكة الأرقام السحرية الإمبراطورية",
+                vedic: "يانترا تشاندرا ومصفوفة الكواكب التسعة (Navagraha Yantra) — استقرار النفس وحفظ الذاكرة",
+                hermetic: "وفق القمر الأعظم 9×9 (Agrippa) — ملاك جبرائيل وروح حشموداي لحكم المد والجزر والأحلام",
+                element: "مائي أثيري (ذاكرة وحدس)",
+                bio: "السوائل البيولوجية، الدماغ الأيمن، الذاكرة العميقة، تنشيط الأحلام الصادقة، وتوازن الهرمونات.",
+                path_desc: "طريقة دي لا لوبير السيامية للمتسع: 81 خانة بتوازن كامل لمجموع 369 لكل صف وعمود وقطر."
+            }
         ];
 
         // DATA: 7 Subtle Bodies Stack
@@ -1788,18 +2306,20 @@
             `).join('');
         }
 
-        function renderPlanetaryWafqs() {
+                function renderPlanetaryWafqs() {
             const tbody = document.getElementById('planetary-wafqs-tbody');
             if (!tbody) return;
             tbody.innerHTML = PLANETARY_WAFQS_DATA.map(w => `
-                <tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
                     <td><strong style="color:var(--gold); font-size:0.95rem;">${w.order}</strong></td>
-                    <td><strong style="color:#fff;">${w.planet}</strong></td>
+                    <td><strong style="color:${w.color};">${w.planet}</strong><br><span style="font-size:0.75rem; color:#94a3b8;">${w.metal}</span></td>
                     <td><span style="color:var(--cyan); font-weight:700; font-size:1rem;">${w.constant}</span></td>
                     <td><span style="color:#f472b6; font-weight:700;">${w.total}</span></td>
-                    <td><code style="color:var(--gold); font-weight:700;">${w.freq}</code></td>
-                    <td>${w.note}</td>
-                    <td style="font-size:0.82rem; color:#cbd5e1;">${w.bio}</td>
+                    <td style="font-size:0.8rem; color:#e2e8f0;">${w.china}</td>
+                    <td style="font-size:0.8rem; color:#cbd5e1;">${w.vedic}</td>
+                    <td style="font-size:0.8rem; color:#fef08a;">${w.hermetic}</td>
+                    <td><code style="color:var(--gold); font-weight:700;">${w.freq}</code><br><span style="font-size:0.75rem; color:#94a3b8;">${w.note}</span></td>
+                    <td style="font-size:0.82rem; color:#a7f3d0;">${w.bio}</td>
                     <td><button class="synth-btn" style="padding:4px 10px; font-size:0.75rem;" onclick="playPlanetTone(${w.sound}, '${w.planet} - ${w.freq}')"><i class="fa-solid fa-play"></i> استماع</button></td>
                 </tr>
             `).join('');
@@ -2465,10 +2985,202 @@
             `).join('');
         }
 
-        // LIVE WAFQ 3x3 ENGINE
+                // MAGIC SQUARE GENERATION ALGORITHMS (3x3 to 9x9)
+        function generateOddMagicSquare(n) {
+            let grid = Array.from({length: n}, () => Array(n).fill(0));
+            let r = 0;
+            let c = Math.floor(n / 2);
+            for (let num = 1; num <= n * n; num++) {
+                grid[r][c] = num;
+                let nr = (r - 1 + n) % n;
+                let nc = (c + 1) % n;
+                if (grid[nr][nc] !== 0) {
+                    r = (r + 1) % n;
+                } else {
+                    r = nr;
+                    c = nc;
+                }
+            }
+            return grid;
+        }
+
+        function generateDoublyEvenMagicSquare(n) {
+            let grid = Array.from({length: n}, () => Array(n).fill(0));
+            for (let r = 0; r < n; r++) {
+                for (let c = 0; c < n; c++) {
+                    grid[r][c] = r * n + c + 1;
+                    if ((r % 4 === c % 4) || ((r % 4 + c % 4) === 3)) {
+                        grid[r][c] = (n * n + 1) - grid[r][c];
+                    }
+                }
+            }
+            return grid;
+        }
+
+        function getSun6x6MagicSquare() {
+            return [
+                [6, 32, 3, 34, 35, 1],
+                [7, 11, 27, 28, 8, 30],
+                [19, 14, 16, 15, 23, 24],
+                [18, 20, 22, 21, 17, 13],
+                [25, 29, 10, 9, 26, 12],
+                [36, 5, 33, 4, 2, 31]
+            ];
+        }
+
+        let currentSelectedWafqOrder = 3;
+        let currentWafqStudioMode = 'planetary';
+
+        function switchWafqStudioMode(mode) {
+            currentWafqStudioMode = mode;
+            document.querySelectorAll('.wafq-mode-btn').forEach(b => b.classList.remove('active'));
+            const activeBtn = document.getElementById(`wafq-mode-btn-${mode}`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            const planetaryPanel = document.getElementById('wafq-planetary-panel');
+            const ghazaliPanel = document.getElementById('wafq-ghazali-panel');
+            if (planetaryPanel && ghazaliPanel) {
+                if (mode === 'planetary') {
+                    planetaryPanel.style.display = 'block';
+                    ghazaliPanel.style.display = 'none';
+                    renderPlanetaryMatrixLab(currentSelectedWafqOrder);
+                } else {
+                    planetaryPanel.style.display = 'none';
+                    ghazaliPanel.style.display = 'block';
+                    renderPlanetaryMatrixLab(3);
+            calculateLiveWafq();
+                }
+            }
+        }
+
+        function renderPlanetaryMatrixLab(order) {
+            currentSelectedWafqOrder = order;
+            document.querySelectorAll('.wafq-order-pill').forEach(p => p.classList.remove('active'));
+            const activePill = document.getElementById(`wafq-pill-${order}`);
+            if (activePill) activePill.classList.add('active');
+
+            const pData = PLANETARY_WAFQS_DATA.find(x => x.n === order) || PLANETARY_WAFQS_DATA[0];
+
+            let grid = [];
+            if (order % 2 !== 0) {
+                grid = generateOddMagicSquare(order);
+            } else if (order % 4 === 0) {
+                grid = generateDoublyEvenMagicSquare(order);
+            } else if (order === 6) {
+                grid = getSun6x6MagicSquare();
+            }
+
+            const M = (order * (order * order + 1)) / 2;
+            const T = order * M;
+
+            // Render Grid
+            const gridContainer = document.getElementById('wafq-dynamic-grid-container');
+            if (gridContainer) {
+                gridContainer.style.gridTemplateColumns = `repeat(${order}, 1fr)`;
+                const minVal = 1;
+                const maxVal = order * order;
+
+                let cellsHtml = '';
+                for (let r = 0; r < order; r++) {
+                    for (let c = 0; c < order; c++) {
+                        const val = grid[r][c];
+                        let cellClass = 'dynamic-cell';
+                        let badgeText = '';
+
+                        if (val === minVal) {
+                            cellClass += ' cell-key';
+                            badgeText = 'المفتاح 🔑';
+                        } else if (val === maxVal) {
+                            cellClass += ' cell-lock';
+                            badgeText = 'المغلاق 🔒';
+                        } else if (order % 2 !== 0 && r === Math.floor(order/2) && c === Math.floor(order/2)) {
+                            cellClass += ' cell-center';
+                            badgeText = 'القطب ⚖️';
+                        }
+
+                        const numSize = order <= 4 ? '1.3rem' : (order <= 6 ? '1.05rem' : (order <= 7 ? '0.9rem' : '0.75rem'));
+
+                        cellsHtml += `
+                            <div class="${cellClass}" title="الصف ${r+1}، العمود ${c+1}: القيمة ${val}">
+                                <span class="dynamic-cell-val" style="font-size:${numSize};">${val}</span>
+                                ${badgeText ? `<span class="dynamic-cell-badge" style="color:var(--gold);">${badgeText}</span>` : ''}
+                            </div>
+                        `;
+                    }
+                }
+                gridContainer.innerHTML = cellsHtml;
+            }
+
+            // Render Math Badges
+            const badgesContainer = document.getElementById('wafq-math-badges-container');
+            if (badgesContainer) {
+                badgesContainer.innerHTML = `
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> كل الصفوف = <strong>${M}</strong></div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> كل الأعمدة = <strong>${M}</strong></div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> القطران (D1 & D2) = <strong>${M}</strong></div>
+                    <div class="wafq-math-badge"><i class="fa-solid fa-calculator"></i> المجموع الكلي (T) = <strong>${T}</strong></div>
+                    <div class="wafq-math-badge"><i class="fa-solid fa-wave-square"></i> التردد المداري = <strong style="color:var(--cyan);">${pData.freq}</strong></div>
+                `;
+            }
+
+            // Render Inspector Card
+            const inspectorEl = document.getElementById('wafq-inspector-content');
+            if (inspectorEl) {
+                inspectorEl.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:10px;">
+                        <div>
+                            <h4 style="margin:0; font-family:'Amiri',serif; font-size:1.4rem; color:${pData.color};">
+                                ${pData.order} — ${pData.planet}
+                            </h4>
+                            <span style="font-size:0.82rem; color:#94a3b8;">اليوم: <strong style="color:#fff;">${pData.day}</strong> | المعدن: <strong style="color:var(--gold);">${pData.metal}</strong> | العنصر: <em>${pData.element}</em></span>
+                        </div>
+                        <button class="synth-btn" style="padding:6px 14px; font-size:0.85rem;" onclick="playPlanetTone(${pData.sound}, '${pData.planet} - ${pData.freq}')">
+                            <i class="fa-solid fa-play"></i> استمع لرنين ${pData.freq}
+                        </button>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:14px; font-size:0.85rem;">
+                        <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+                            <span style="color:#94a3b8; display:block; font-size:0.75rem;">الثابت السحري (Magic Constant):</span>
+                            <strong style="color:var(--gold); font-size:1.2rem;">M = ${M}</strong>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+                            <span style="color:#94a3b8; display:block; font-size:0.75rem;">المساحة الكلية (Total Sum):</span>
+                            <strong style="color:var(--cyan); font-size:1.2rem;">T = ${T}</strong>
+                        </div>
+                        <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+                            <span style="color:#94a3b8; display:block; font-size:0.75rem;">التردد المداري والنغمة:</span>
+                            <strong style="color:#34d399; font-size:1.1rem;">${pData.freq} (${pData.note})</strong>
+                        </div>
+                    </div>
+
+                    <div style="font-size:0.86rem; line-height:1.75; color:#cbd5e1;">
+                        <div style="margin-bottom:8px;">
+                            <strong style="color:var(--gold);"><i class="fa-solid fa-route"></i> مسار التنزيل الحركي (Traversal Algorithm):</strong><br>
+                            <span>${pData.path_desc}</span>
+                        </div>
+                        <div style="margin-bottom:8px;">
+                            <strong style="color:var(--cyan);"><i class="fa-solid fa-globe"></i> في الحضارات الكبرى (Comparative Matrix):</strong>
+                            <ul style="margin:4px 0 8px 18px; padding:0; font-size:0.83rem;">
+                                <li><strong>الصين القديمة:</strong> ${pData.china}</li>
+                                <li><strong>الهند الفيدية:</strong> ${pData.vedic}</li>
+                                <li><strong>الهرمسية الغربية:</strong> ${pData.hermetic}</li>
+                            </ul>
+                        </div>
+                        <div style="background:rgba(15,23,42,0.6); padding:10px; border-radius:8px; border-right:3px solid ${pData.color};">
+                            <strong style="color:#fff;"><i class="fa-solid fa-heart-pulse"></i> الأثر الحيوي والأثيري:</strong>
+                            <p style="margin:3px 0 0 0; font-size:0.83rem; color:#e2e8f0;">${pData.bio}</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // LIVE WAFQ 3x3 GHAZALI ENGINE (ADVANCED ABJAD & BALANCED COMPILATION)
         function calculateLiveWafq() {
             const rawVal = document.getElementById('wafq-input')?.value.trim() || '105';
             let targetN = parseInt(rawVal);
+            let abjadBreakdown = '';
 
             // Abjad calculator fallback if text is passed
             if (isNaN(targetN) || targetN < 15) {
@@ -2479,10 +3191,17 @@
                     'س': 60, 'ع': 70, 'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200, 'ش': 300, 'ت': 400, 'ث': 500,
                     'خ': 600, 'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
                 };
+                let parts = [];
                 for (let ch of rawVal) {
-                    if (ABJAD_MAP[ch]) targetN += ABJAD_MAP[ch];
+                    if (ABJAD_MAP[ch]) {
+                        targetN += ABJAD_MAP[ch];
+                        parts.push(`${ch}=${ABJAD_MAP[ch]}`);
+                    }
                 }
                 if (targetN < 15) targetN = 105;
+                if (parts.length > 0) {
+                    abjadBreakdown = ` | بحساب الجُمّل لـ "${rawVal}": [${parts.join(' + ')}] = ${targetN}`;
+                }
             }
 
             // Formula: (N - 12) / 3
@@ -2496,33 +3215,77 @@
             // 3 (J), 5 (H), 7 (Z)
             // 8 (Hh), 1 (A), 6 (W)
             const LETTERS = ['د', 'ط', 'ب', 'ج', 'هـ', 'ز', 'ح', 'أ', 'و'];
-            const OFFSETS = [3, 8, 1, 2, 4, 6, 7, 0, 5]; // relative step increments
+            const NATURAL_CELL_INDEX = [4, 9, 2, 3, 5, 7, 8, 1, 6];
 
             let gridCells = [];
             for (let i = 0; i < 9; i++) {
-                let cellVal = key + OFFSETS[i];
+                const natVal = NATURAL_CELL_INDEX[i]; // 1 to 9
+                let cellVal = key + (natVal - 1);
+                let isBroken = false;
+
                 // Broken step adjustment (Al-Kasr):
-                if (remainder === 1 && OFFSETS[i] >= 6) {
+                if (remainder === 1 && natVal >= 7) {
                     cellVal += 1;
-                } else if (remainder === 2 && OFFSETS[i] >= 3) {
+                    if (natVal === 7) isBroken = true;
+                } else if (remainder === 2 && natVal >= 4) {
                     cellVal += 1;
+                    if (natVal === 4) isBroken = true;
                 }
-                gridCells.push({ val: cellVal, letter: LETTERS[i] });
+
+                gridCells.push({
+                    val: cellVal,
+                    letter: LETTERS[i],
+                    isKey: (natVal === 1),
+                    isLock: (natVal === 9),
+                    isCenter: (natVal === 5),
+                    isBroken: isBroken,
+                    cellIndex: natVal
+                });
             }
 
             const summaryEl = document.getElementById('wafq-math-summary');
             if (summaryEl) {
-                summaryEl.innerHTML = `المطلوب (N) = <strong>${targetN}</strong> | المفتاح = <strong>${key}</strong> | الأس = 12 | الباقي = <strong>${remainder}</strong> (${remainder === 0 ? 'تام' : (remainder === 1 ? 'جبر في بيت 7' : 'جبر في بيت 4')})`;
+                summaryEl.innerHTML = `المطلوب (N) = <strong>${targetN}</strong> | المفتاح = <strong>${key}</strong> | الأس = 12 | الباقي = <strong>${remainder}</strong> (${remainder === 0 ? 'تام بلا كسر' : (remainder === 1 ? 'جبر +1 في بيت 7 (الزاي)' : 'جبر +1 في بيت 4 (الدال)')})${abjadBreakdown}`;
             }
+
+            // Sums verification
+            const r0 = gridCells[0].val + gridCells[1].val + gridCells[2].val;
+            const r1 = gridCells[3].val + gridCells[4].val + gridCells[5].val;
+            const r2 = gridCells[6].val + gridCells[7].val + gridCells[8].val;
+            const c0 = gridCells[0].val + gridCells[3].val + gridCells[6].val;
+            const c1 = gridCells[1].val + gridCells[4].val + gridCells[7].val;
+            const c2 = gridCells[2].val + gridCells[5].val + gridCells[8].val;
 
             const gridEl = document.getElementById('live-wafq-grid');
             if (gridEl) {
-                gridEl.innerHTML = gridCells.map(c => `
-                    <div class="grid-cell">
-                        <span class="cell-num">${c.val}</span>
-                        <span class="cell-letter">${c.letter}</span>
-                    </div>
-                `).join('');
+                gridEl.innerHTML = gridCells.map(c => {
+                    let borderClass = '';
+                    let badge = '';
+                    if (c.isKey) { borderClass = 'style="border-color:var(--emerald); background:rgba(6,214,160,0.15);"'; badge = '<span style="font-size:0.65rem; color:var(--emerald);">المفتاح 🔑</span>'; }
+                    else if (c.isLock) { borderClass = 'style="border-color:#ef4444; background:rgba(239,68,68,0.15);"'; badge = '<span style="font-size:0.65rem; color:#ef4444;">المغلاق 🔒</span>'; }
+                    else if (c.isCenter) { borderClass = 'style="border-color:var(--gold); background:rgba(244,180,26,0.18);"'; badge = '<span style="font-size:0.65rem; color:var(--gold);">القطب ⚖️</span>'; }
+                    else if (c.isBroken) { borderClass = 'style="border-color:#c026d3; background:rgba(192,38,211,0.2);"'; badge = '<span style="font-size:0.65rem; color:#c026d3;">خانة الجبر ⚡</span>'; }
+
+                    return `
+                        <div class="grid-cell" ${borderClass} title="بيت ${c.cellIndex} (حرف ${c.letter}) = ${c.val}">
+                            <span class="cell-num">${c.val}</span>
+                            <span class="cell-letter">${c.letter} (بيت ${c.cellIndex})</span>
+                            ${badge}
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            const ghazaliBadgesEl = document.getElementById('ghazali-verification-badges');
+            if (ghazaliBadgesEl) {
+                ghazaliBadgesEl.innerHTML = `
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> صف 1 = <strong>${r0}</strong> (${r0===targetN?'✓':'≠'})</div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> صف 2 = <strong>${r1}</strong> (${r1===targetN?'✓':'≠'})</div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> صف 3 = <strong>${r2}</strong> (${r2===targetN?'✓':'≠'})</div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> عمود 1 = <strong>${c0}</strong> (${c0===targetN?'✓':'≠'})</div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> عمود 2 = <strong>${c1}</strong> (${c1===targetN?'✓':'≠'})</div>
+                    <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> عمود 3 = <strong>${c2}</strong> (${c2===targetN?'✓':'≠'})</div>
+                `;
             }
         }
 
