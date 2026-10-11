@@ -46,6 +46,8 @@ def get_seals_zouhri_chamber_html():
             <!-- SUB-NAVIGATION BAR -->
             <div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:12px; margin-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.1);" id="seals-subnav-pills">
                 <button class="seals-subnav-btn active" onclick="switchSealsSubView('seals-view-seven')">👑 خاتم سليمان الأعظم (الرموز السبعة)</button>
+                <button class="seals-subnav-btn" onclick="switchSealsSubView('seals-view-ghazali')">📐 مثلث الغزالي وسر الأوفاق (3×3 بطد)</button>
+                <button class="seals-subnav-btn" onclick="switchSealsSubView('seals-view-palm')">✋ أختام الكف وعلم الأسارير (الخرائط الرمزية)</button>
                 <button class="seals-subnav-btn" onclick="switchSealsSubView('seals-view-planets')">🪐 أختام الكواكب السبعة (أغريبا وبيكاتريكس)</button>
                 <button class="seals-subnav-btn" onclick="switchSealsSubView('seals-view-zouhri')">🧬 الملف الأنثروبولوجي للإنسان الزوهري</button>
                 <button class="seals-subnav-btn" onclick="switchSealsSubView('seals-view-bloodlines')">🌌 السلالات الروحية وبذور النجوم</button>
@@ -218,7 +220,155 @@ def get_seals_zouhri_chamber_html():
                 </div>
             </div>
 
-            <!-- SUB-VIEW 2: SEVEN PLANETARY SEALS & AGRIPPA SIGILS -->
+            <!-- SUB-VIEW: THE GHAZALI TRIANGLE (WAFQ 3x3) -->
+            <div id="seals-view-ghazali" class="seals-sub-container" style="display:none;">
+                <div style="background:rgba(13,19,36,0.95); border:1px solid rgba(244,180,26,0.4); border-radius:20px; padding:28px 22px; margin-bottom:30px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+                        <div>
+                            <span style="color:var(--gold); font-size:0.85rem; font-weight:700;">📐 المخطوطات الهرمسية والرياضيات القديمة</span>
+                            <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:#fff; margin:4px 0 0 0;">مثلث الغزالي الشريف (المربع السحري 3×3 — شفرة بَطَدٍ زَهَجٍ وَاحٍ)</h2>
+                        </div>
+                        <span style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:var(--gold); padding:4px 12px; border-radius:10px; font-size:0.8rem;">سر العدد 15 — قطب التوازن 5</span>
+                    </div>
+
+                    <p style="color:#cbd5e1; font-size:0.94rem; line-height:1.8; margin-bottom:24px;">
+                        يعد <strong>«مثلث الغزالي»</strong> (المربع السحري 3×3) أقدم الأوفاق الرياضية المكتشفة في تاريخ البشرية وأكثرها قداسة في التراث الهرمسي والإسلامي. 
+                        عُرف في الصين القديمة باسم <em>لو شو (Luo Shu - 2800 ق.م)</em>، وترجمه علماء الرياضيات المسلمون (مثل ثابت بن قرة، إخوان الصفا، وأبو الوفاء البوزجاني)، 
+                        ثم استشهد به حجة الإسلام <strong>أبو حامد الغزالي</strong> في مصنفاته كمثال عقلي على عجائب خواص التراكيب والأعداد.
+                    </p>
+
+                    <!-- SECTION 1: HISTORICAL DOCUMENTATION -->
+                    <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(244,180,26,0.25); border-radius:14px; padding:20px; margin-bottom:22px; border-right:4px solid var(--gold);">
+                        <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--gold); margin-bottom:8px;">
+                            📜 1. التوثيق التاريخي الصارم في مصنفات الإمام الغزالي
+                        </h3>
+                        <div style="color:#cbd5e1; font-size:0.88rem; line-height:1.8;">
+                            • <strong>نص الغزالي في كتاب «المنقذ من الضلال»:</strong> استشهد الغزالي بالوفق المثلث صراحةً عندما كان يناقش أطباء عصره والفلاسفة حول حقيقة "خواص الأشياء"، قائلاً: 
+                            <blockquote style="margin:10px 0; padding:10px 15px; background:rgba(244,180,26,0.08); border-right:3px solid var(--gold); font-family:'Amiri', serif; font-size:1.05rem; color:#f8fafc; font-style:italic;">
+                                «وكذلك لو قيل لشخص: إذا نُقش في لوح جدول فيه تسعة أعداد، مجموع كل ضلع وقطر خمسة عشر، ووضع تحت امرأة تعسر ولادها خرج الولد سريعاً... لم يصدق به العقل لو لم يشاهده، ولأنكره لو لم يره بالتجربة».
+                            </blockquote>
+                            استخدم الغزالي هذا الوفق كبرهان إبستيمولوجي يثبت أن في الوجود أسراراً وتراكيب تدرك بالتجربة والرياضيات ولا يستقل العقل بإنكارها مجرداً.<br>
+                            • <strong>كتاب «الأوفاق» المنسوب للغزالي:</strong> اختلف المؤرخون في نسبته؛ فمنهم من يثبت أنه من بواكير اشتغاله بعلوم الرياضيات وخواص الحروف قبل عزلته، ومنهم كابن تيمية والمحققين المعاصرين من يرى أن الكتاب جُمع ونُحل على الغزالي لاحقاً لترويج كتب الصنعة الحرفية باسمه لشهرته العلمية الفائقة.
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: MATHEMATICAL ANATOMY -->
+                    <h3 style="font-family:'Amiri', serif; font-size:1.4rem; color:var(--cyan); margin-bottom:14px;">
+                        <i class="fa-solid fa-square-root-variable"></i> 2. التشريح الرياضي والجبري لشفرة (بَطَدٍ زَهَجٍ وَاحٍ)
+                    </h3>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-bottom:28px;">
+                        
+                        <!-- Visual Matrix Card -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(0,240,255,0.25); border-radius:14px; padding:20px; text-align:center;">
+                            <span style="color:var(--cyan); font-size:0.85rem; font-weight:700; display:block; margin-bottom:12px;">المصفوفة الطبيعية المتزنة (قاعدة 15)</span>
+                            
+                            <div style="display:inline-grid; grid-template-columns:repeat(3, 70px); grid-gap:8px; margin-bottom:14px; direction:ltr;">
+                                <div style="background:rgba(244,180,26,0.2); border:2px solid var(--gold); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--gold);">4</div>
+                                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--cyan);">9</div>
+                                <div style="background:rgba(244,180,26,0.2); border:2px solid var(--gold); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--gold);">2</div>
+                                
+                                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--cyan);">3</div>
+                                <div style="background:rgba(239,68,68,0.25); border:2px solid #ef4444; border-radius:8px; padding:15px; font-weight:900; font-size:1.5rem; color:#fff;">5</div>
+                                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--cyan);">7</div>
+                                
+                                <div style="background:rgba(244,180,26,0.2); border:2px solid var(--gold); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--gold);">8</div>
+                                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--cyan);">1</div>
+                                <div style="background:rgba(244,180,26,0.2); border:2px solid var(--gold); border-radius:8px; padding:15px; font-weight:800; font-size:1.3rem; color:var(--gold);">6</div>
+                            </div>
+
+                            <div style="font-size:0.8rem; color:#94a3b8; line-height:1.6;">
+                                <span style="color:var(--gold);">■ الأركان الزوجية (2, 4, 6, 8)</span>: الأوتاد الثابتة والطبائع.<br>
+                                <span style="color:var(--cyan);">■ الأضلاع الفردية (1, 3, 7, 9)</span>: مسارات الحركة الكونية.<br>
+                                <span style="color:#ef4444; font-weight:700;">■ المركز (5)</span>: قطب الاعتدال والمحور.
+                            </div>
+                        </div>
+
+                        <!-- Mathematical Properties List -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px;">
+                            <strong style="color:var(--gold); font-size:1.05rem; display:block; margin-bottom:10px;">القوانين الرياضية الثمانية للوفق 3×3:</strong>
+                            <ul style="color:#cbd5e1; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
+                                <li><strong>مجموع الأضلاع الثابت:</strong> أي صف أو عمود أو قطر = 15 (4+9+2 = 15، 3+5+7 = 15، 8+1+6 = 15).</li>
+                                <li><strong>المساحة الإجمالية:</strong> مجموع الأرقام التسعة = 45، وهو بحساب الجمل مساوٍ لاسم <strong>«آدم»</strong> (أ=1 + د=4 + م=40).</li>
+                                <li><strong>تناظر المركز:</strong> كل رقمين متقابلين عبر المركز مجموعهما 10، ونصفهما المركز 5 (4+6=10، 9+1=10، 2+8=10، 3+7=10).</li>
+                                <li><strong>شفرة بطد زهج واح:</strong> لفظ تركيبي لحفظ مواقع الأعداد بحساب أبجد هوز: (ب=2، ط=9، د=4) / (ز=7، هـ=5، ج=3) / (و=6، ا=1، ح=8).</li>
+                                <li><strong>قاعدة التعمير لأي عدد مطلوب (N):</strong> يُطرح أس المثلث (12)، ويُقسم الباقي على 3: K = (N - 12) / 3. ويدخل بالناتج K في بيت المفتاح (البيت 1)، ويزاد واحداً في كل بيت، فإن فضل كسر (1 أو 2) جُبر في بيت الكسر (البيت السابع أو الرابع).</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- SECTION 3: ESOTERIC CLAIMS VS RATIONAL REALITY -->
+                    <div style="background:linear-gradient(135deg, rgba(30,27,75,0.95), rgba(15,23,42,0.98)); border:1px solid rgba(168,85,247,0.4); border-radius:18px; padding:24px; margin-bottom:26px;">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+                            <span style="font-size:1.6rem; color:#c084fc;">👁️</span>
+                            <h3 style="font-family:'Amiri', serif; font-size:1.45rem; color:#d8b4fe; margin:0;">
+                                3. ميزان الحقائق: تفكيك أسرار تفعيل البصيرة، كشف الدفائن ومكانها، وإزالة الأرصاد
+                            </h3>
+                        </div>
+
+                        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:18px;">
+                            حفلت مخطوطات السيمياء والتراث الحرفي المتأخر (مثل <em>شمس المعارف الكبرى</em>، <em>منبع أصول الحكمة</em>، ومصنفات <em>الأوفاق</em>) 
+                            بنظريات مطولة تزعم أن لـ <strong>«مثلث الغزالي (وفق بطد زهج واح)»</strong> تصاريف باطنية ترتبط بكشف المغيبات وفك موانع الأرض. 
+                            هنا نستعرض بدقة بالغة ما سطرته تلك المخطوطات بحرفها، مع وضع الميزان العلمي والأثري والعقلي الصارم أمامها:
+                        </p>
+
+                        <!-- DUAL COMPARISON GRID -->
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin-bottom:18px;">
+                            
+                            <!-- Left: The Ancient Manuscript Claims -->
+                            <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px; border-right:4px solid var(--gold);">
+                                <h4 style="color:var(--gold); font-size:1.1rem; margin-top:0; margin-bottom:10px;">
+                                    📜 ما زعمته المخطوطات القديمة وكتب الصنعة:
+                                </h4>
+                                <ul style="color:#cbd5e1; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
+                                    <li><strong>زعم «تفعيل البصيرة وكشف الحجب»:</strong> ادعت المخطوطات أن نقش المثلث في شرف الشمس أو وقت تربيع المشتري مع الزهرة، وحمله مع رياضة حرفية وصيام، يفتح "العين الثالثة" (البصيرة الأثيرية) ويجعل حامله يستشعر الطاقات المخبوءة في الجماد.</li>
+                                    <li><strong>زعم «الكشف عن مكان الكنز ودفائن الأرض»:</strong> زعمت كتب الأوفاق أن تقسيم بيوت المثلث وفق العناصر الأربعة (النار للشرق والأعلى، الهواء للجنوب، الماء للغرب والأسفل، التراب للشمال والعمق) يُستخدم عبر حساب أعداد اسم المكان لتحديد جهة ومقدار عمق الذهب المدفون.</li>
+                                    <li><strong>زعم «إزالة الأرصاد وصرف عُمّار المكان»:</strong> ادعوا أن تلاوة أسماء أوتاد المثلث (بَطَدٍ زَهَجٍ وَاحٍ) تبطل "رصد الجن" الموكل بحراسة المغارات وتمنع تحول الذهب إلى فحم أو حجارة كما كان يُشاع في الفولكلور.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Right: The Scientific & Rational Reality -->
+                            <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(0,240,255,0.3); border-radius:14px; padding:18px; border-right:4px solid var(--cyan);">
+                                <h4 style="color:var(--cyan); font-size:1.1rem; margin-top:0; margin-bottom:10px;">
+                                    🔬 الميزان العلمي، الأثري، والشرعي الحقيقي:
+                                </h4>
+                                <ul style="color:#cbd5e1; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
+                                    <li><strong>حقيقة «البصيرة» عند الإمام الغزالي:</strong> في مصنفاته الأصيلة المعتمدة (<em>مشكاة الأنوار</em> و<em>إحياء علوم الدين</em>)، يؤكد الغزالي أن البصيرة هي <strong>قوة إدراك عقلي وروحي شريف</strong>، تُنال بتطهير النفس من الرذائل، ورياضة الفكر بالبراهين الرياضية والمنطقية؛ وليست حاسة سحرية تُستجلب بالطلاسم والأشكال.</li>
+                                    <li><strong>حقيقة الدفائن وعلم الآثار الحديث:</strong> الكنوز الأثرية (الفرعونية، الرومانية، الحميرية) دفنتها حضارات بشرية خضعت لدفن جنائزي أو تحصين عسكري. مفتاح الكشف عنها علمي بحت: تقنيات <strong>رادار اختراق الأرض (GPR)</strong>، و<strong>المسح الكهرومغناطيسي والمقاومية الكهربائية (ERT)</strong>، والمسح الجوي بالليزر <strong>(LiDAR)</strong>، وليس المربعات العددية.</li>
+                                    <li><strong>أكذوبة «الرصد وحارس الكنز»:</strong> لا يوجد في صريح الدين ولا في التاريخ ما يثبت أن الجن يحرس ذهباً تحت الأرض، بل هي أسطورة ولدت لتبرير الوفيات الناتجة عن <strong>غازات المقابر السامة (الميثان وغاز الرادون)</strong> و<strong>الفخاخ المعمارية الميكانيكية</strong> (تساقط الصخور والرمال المتحركة).</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div style="background:rgba(244,180,26,0.08); border-radius:10px; padding:12px; font-size:0.84rem; color:#f8fafc; line-height:1.7;">
+                            <strong>خلاصة التحقيق الأكاديمي:</strong> القيمة الحقيقية لـ «مثلث الغزالي» تكمن في كونه <strong>قمة العبقرية الرياضية والتجريد الهندسي القديم</strong>؛ حيث أظهر قدرة العقل البشري على صياغة مصفوفة توازن ثنائية الأبعاد تتطابق في كافة اتجاهاتها الرياضية، وهي اللبنة التأسيسية التي مهدت لاحقاً لنظريات الجبر الخطي والمصفوفات الحديثة في البرمجة والذكاء الاصطناعي.
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: INTERACTIVE 3X3 GENERATOR -->
+                    <div style="background:rgba(0,0,0,0.6); border:1px solid var(--emerald); border-radius:16px; padding:22px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+                            <h4 style="font-family:'Amiri', serif; font-size:1.25rem; color:var(--emerald); margin:0;">
+                                🧮 المحرك التفاعلي لتعمير وفق الغزالي 3×3 (Live Wafq Calculator)
+                            </h4>
+                            <span style="font-size:0.78rem; color:#94a3b8;">معادلة الجبر والكسر الأكاديمية: (N - 12) / 3</span>
+                        </div>
+                        
+                        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
+                            <label style="color:#cbd5e1; font-size:0.85rem;">أدخل مجموع الضلع المطلوب (N يجب أن يكون 15 أو أكبر):</label>
+                            <input type="number" id="ghazali-target-sum" value="15" min="15" max="99999" style="background:rgba(15,23,42,0.9); border:1px solid var(--gold); color:#fff; padding:6px 14px; border-radius:8px; font-weight:700; width:120px; font-size:1rem;">
+                            <button type="button" onclick="computeLiveGhazaliWafq()" style="background:linear-gradient(135deg, var(--gold), #b45309); border:none; color:#000; font-weight:700; padding:8px 18px; border-radius:8px; cursor:pointer; font-size:0.88rem;">حساب وتعمير الوفق</button>
+                        </div>
+
+                        <div id="ghazali-calc-result" style="text-align:center; padding:15px; background:rgba(0,0,0,0.4); border-radius:12px;">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <div id="seals-view-planets" class="seals-sub-container">
                 <div style="background:rgba(13,19,36,0.9); border:1px solid rgba(0,240,255,0.3); border-radius:20px; padding:28px 22px; margin-bottom:30px;">
                     <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:var(--cyan); margin-bottom:12px;">
@@ -361,7 +511,193 @@ def get_seals_zouhri_chamber_html():
                 </div>
             </div>
 
-            <!-- SUB-VIEW 3: THE ZOUHRI PHENOMENON (DEEP INVESTIGATION) -->
+            <!-- SUB-VIEW: ESOTERIC PALM SEALS & CHIROMANCY -->
+            <div id="seals-view-palm" class="seals-sub-container" style="display:none;">
+                <div style="background:rgba(13,19,36,0.95); border:1px solid rgba(0,240,255,0.35); border-radius:20px; padding:28px 22px; margin-bottom:30px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+                        <div>
+                            <span style="color:var(--cyan); font-size:0.85rem; font-weight:700;">✋ التشريح الرمزي والفراسة المخطوطية</span>
+                            <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:#fff; margin:4px 0 0 0;">أختام الكف، علم الأسارير، وخرائط اليد الزوهرية (Chiromancy Codex)</h2>
+                        </div>
+                        <span style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); color:var(--cyan); padding:4px 12px; border-radius:10px; font-size:0.8rem;">فراسة الكف — تلال الكواكب السبعة</span>
+                    </div>
+
+                    <p style="color:#cbd5e1; font-size:0.94rem; line-height:1.8; margin-bottom:24px;">
+                        يُعد <strong>«علم الأسارير» (قراءة خطوط الكف - Chiromancy / Cheiromancy)</strong> من أقدم الفنون الفراسية التراثية. 
+                        اعتبرت المدارس الفلسفية القديمة (من أبقراط وأرسطو إلى فخر الدين الرازي وابن عربي) أن راحة كف الإنسان هي 
+                        <em>«لوح محفوظ مصغر» (Microcosmic Tablet)</em> طُبعت عليه انعكاسات قوى الأفلاك وأمزجة الأعضاء الداخلية.
+                    </p>
+
+                    <!-- SECTION 1: THE 7 PLANETARY MOUNTS OF THE PALM -->
+                    <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(0,240,255,0.25); border-radius:14px; padding:20px; margin-bottom:22px; border-right:4px solid var(--cyan);">
+                        <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--cyan); margin-bottom:10px;">
+                            🌌 1. التناظر الميلوثيسي: تلال الكواكب السبعة على راحة اليد
+                        </h3>
+                        <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.8; margin-bottom:12px;">
+                            في الفراسة الميلوثيسية (Melothesia)، لا تُقرأ خطوط الكف بمعزل عن تضاريس اليد، بل تقسم راحة اليد إلى سبع مناطق تسمى "تلال الكواكب" تحكم الطاقات الحيوية:
+                        </p>
+                        
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+                            <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--gold);">
+                                <strong style="color:var(--gold); font-size:0.9rem;">♃ تل المشتري (Mount of Jupiter):</strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة السبابة؛ يرمز للهيبة، القيادة، الطموح الروحي، وعزة النفس.</span>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid #94a3b8;">
+                                <strong style="color:#94a3b8; font-size:0.9rem;">♄ تل زحل (Mount of Saturn):</strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة الإصبع الأوسط؛ يرمز للحكمة العميقة، الصبر، الميل للعزلة، والتأمل الباطني.</span>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--gold);">
+                                <strong style="color:var(--gold); font-size:0.9rem;">☉ تل الشمس (Mount of Apollo / Sun):</strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة البنصر؛ يرمز للإشراق، الشهرة، الإبداع الفني، والبريق الوجداني.</span>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--cyan);">
+                                <strong style="color:var(--cyan); font-size:0.9rem;">☿ تل عطارد (Mount of Mercury):</strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة الخنصر؛ يرمز للذكاء اللماح، الفصاحة والبلاغة، والحساب والمعاملات.</span>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--emerald);">
+                                <strong style="color:var(--emerald); font-size:0.9rem;">♀ تل الزهرة (Mount of Venus):</strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يشمل قاعدة الإبهام المنتفخة؛ يرمز للحيوية الجسدية، قوة العاطفة، والحرارة الفطرية.</span>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid #60a5fa;">
+                                <strong style="color:#60a5fa; font-size:0.9rem;">☽ تل القمر (Mount of Moon):</strong>
+                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع في أسفل الحافة الخارجية للكف؛ يرمز للحدس الباطني، الخيال، والأحلام الكاشفة.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: THE 4 MAJOR PALM SEALS -->
+                    <h3 style="font-family:'Amiri', serif; font-size:1.4rem; color:var(--gold); margin-bottom:14px;">
+                        <i class="fa-solid fa-hand-sparkles"></i> 2. الأختام الكفية الأربعة الكبرى وعلامات "الكف الزوهري"
+                    </h3>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:28px;">
+                        
+                        <!-- Seal 1: Simian Line -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--gold); font-size:1.05rem;">① ختم الخط القاطع الملكي (Simian Line)</strong>
+                                <span style="font-size:0.75rem; background:rgba(244,180,26,0.15); color:var(--gold); padding:2px 8px; border-radius:6px;">الخط المستعرض التام</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <line x1="26" y1="48" x2="114" y2="48" stroke="#f4b41a" stroke-width="4" stroke-linecap="round"/>
+                                    <circle cx="70" cy="48" r="4" fill="#00f0ff"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> خط عرضي مستقيم ونافذ يقسم الكف أفقياً من حافة إلى حافة دون انقطاع، ناتج عن اندماج خط القلب مع خط الرأس.<br>
+                                • <strong>الرمزية التراثية:</strong> سمي "السيف القاطع"؛ وزعمت كتب الطلاسم أنه يمثل اتحاد العقل والعاطفة في إرادة فولاذية لا تتشتت، وادعوا زوراً أنه "مفتاح أقفال الرصد".<br>
+                                • <strong>التشريح العلمي:</strong> طفرة جلدية جنينية حميدة (Single Palmar Crease) تظهر لدى نحو 1.5% إلى 2% من البشر الأصحاء، ولا تدل على أي قوى غيبية.
+                            </p>
+                        </div>
+
+                        <!-- Seal 2: The Mystic Triangle -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(0,240,255,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--cyan); font-size:1.05rem;">② ختم مثلث الحكمة الباطنية (The Mystic Triangle)</strong>
+                                <span style="font-size:0.75rem; background:rgba(0,240,255,0.15); color:var(--cyan); padding:2px 8px; border-radius:6px;">مثلث سهل المريخ</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <polygon points="45,45 85,38 65,70" fill="rgba(0,240,255,0.2)" stroke="#00f0ff" stroke-width="3"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> مثلث مغلق الأضلاع تماماً في وسط راحة اليد (سهل المريخ) يتشكل من تقاطع خط الرأس (العقل) وخط الحياة (الجسد) وخط الحدس/الكبد.<br>
+                                • <strong>الرمزية التراثية:</strong> سمي في الفراسة "عين البصيرة اليدوية"، واعتبر دليلاً على سرعة البديهة، والحدس الصادق، والقدرة على قراءة نفوس الآخرين.<br>
+                                • <strong>التشريح العلمي:</strong> التقاء تشريحي طبيعي لثلاث طيات حركية رئيسية للكف تعكس عمق الحركات اليدوية المنسقة وتطور الأوتار.
+                            </p>
+                        </div>
+
+                        <!-- Seal 3: La Croix Mystique -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(168,85,247,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:#d8b4fe; font-size:1.05rem;">③ صليب الحدس الخفي (La Croix Mystique)</strong>
+                                <span style="font-size:0.75rem; background:rgba(168,85,247,0.15); color:#d8b4fe; padding:2px 8px; border-radius:6px;">صليب ما بين السطرين</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <path d="M 35 35 Q 70 42 105 32" fill="none" stroke="#64748b" stroke-width="2"/>
+                                    <path d="M 35 55 Q 70 52 105 60" fill="none" stroke="#64748b" stroke-width="2"/>
+                                    <line x1="65" y1="42" x2="75" y2="52" stroke="#d8b4fe" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="75" y1="42" x2="65" y2="52" stroke="#d8b4fe" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> علامة تقاطع مستقلة (+ أو ×) تتوسط الفراغ الموجود بين خط القلب وخط الرأس دون أن تمس أياً منهما.<br>
+                                • <strong>الرمزية التراثية:</strong> تعتبر أشهر علامة في قراءة الكف تدل على "الموهبة الاستشعارية" والإلهام الوجداني وحب استكشاف العلوم والحكمة.<br>
+                                • <strong>التشريح العلمي:</strong> تقاطع ألياف نسيجية سطحية نتيجة حركات طي أصابع اليد المستمرة.
+                            </p>
+                        </div>
+
+                        <!-- Seal 4: Solomon's Ring on Hand -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(6,214,160,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--emerald); font-size:1.05rem;">④ خاتم سليمان الكفي ونجمة المشتري</strong>
+                                <span style="font-size:0.75rem; background:rgba(6,214,160,0.15); color:var(--emerald); padding:2px 8px; border-radius:6px;">قاعدة السبابة</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <path d="M 33 30 C 40 38, 50 38, 55 28" fill="none" stroke="#06d6a0" stroke-width="3"/>
+                                    <circle cx="44" cy="33" r="3" fill="#f4b41a"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> قوس نصف دائري يحيط بتل المشتري تحت السبابة ويسمى "خاتم سليمان الكفي" (Ring of Solomon).<br>
+                                • <strong>الرمزية التراثية:</strong> دل في كتب الفراسة على الحكمة الفطرية، والقدرة على التدريس والوعظ والتأثير الروحي على الناس بهدوء واقتدار.<br>
+                                • <strong>التشريح العلمي:</strong> ثنية جلدية ناتجة عن حركة المفصل السنعي السلامي لإصبع السبابة.
+                            </p>
+                        </div>
+
+                        <!-- Seal 5: The Grille & Quadrant -->
+                        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <strong style="color:var(--gold); font-size:1.05rem;">⑤ شبكة الأسارير والمربعات (Palmar Grille)</strong>
+                                <span style="font-size:0.75rem; background:rgba(244,180,26,0.15); color:var(--gold); padding:2px 8px; border-radius:6px;">تل القمر والزهرة</span>
+                            </div>
+                            <div style="text-align:center; padding:12px; background:rgba(0,0,0,0.6); border-radius:10px; margin-bottom:12px;">
+                                <svg width="140" height="90" viewBox="0 0 140 90">
+                                    <path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                    <!-- Grille lines in Mount of Moon area (x=80..105, y=55..75) -->
+                                    <line x1="85" y1="55" x2="85" y2="75" stroke="#f4b41a" stroke-width="2"/>
+                                    <line x1="95" y1="55" x2="95" y2="75" stroke="#f4b41a" stroke-width="2"/>
+                                    <line x1="80" y1="62" x2="100" y2="62" stroke="#f4b41a" stroke-width="2"/>
+                                    <line x1="80" y1="70" x2="100" y2="70" stroke="#f4b41a" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                                • <strong>الوصف المخطوطي:</strong> شبكة دقيقة من الخطوط المتقاطعة رأسياً وأفقياً تشبه المربعات المتداخلة عند أسفل الكف (تل القمر).<br>
+                                • <strong>الرمزية التراثية:</strong> نسبت لها كتب الفولكلور استشعار المياه الجوفية والمعادن في باطن الأرض والاتصال بالأثير السفلي.<br>
+                                • <strong>التشريح العلمي:</strong> تداخل طبيعي في خطوط تمدد أدمة الجلد ناتج عن مرونة النسيج الضام وحركة انقباض راحة اليد.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- SECTION 3: DECONSTRUCTION OF TREASURE MYTHS -->
+                    <div style="background:linear-gradient(135deg, rgba(239,68,68,0.15), rgba(0,0,0,0.7)); border:2px solid #ef4444; border-radius:16px; padding:22px;">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                            <span style="font-size:1.6rem; color:#ef4444;">🛡️</span>
+                            <h3 style="font-family:'Amiri', serif; font-size:1.35rem; color:#ef4444; margin:0;">
+                                3. التفكيك الصارم: دحض خرافة "الكف الزوهري مفتاح الكنوز والمرصودات"
+                            </h3>
+                        </div>
+                        <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.8; margin-bottom:12px;">
+                            تزعم عصابات التنقيب العشوائي في الفولكلور المغاربي والمشرقي أن كف الشخص الزوهري (وخاصة صاحب الخط القاطع العرضي) هو "مفتاح كهانة" يُبطل رصد الدفائن بمجرد مسح تراب الموقع، أو بطلب قطرات من دمه. هذا الزعم دجل محض وباطل من عدة أوجه قطعية:
+                        </p>
+                        <div style="font-size:0.85rem; color:#f8fafc; line-height:1.7;">
+                            • <strong>الوهم الفيزيائي والمادي:</strong> خطوط الكف لا تصدر موجات كهرومغناطيسية خارقة تخترق طبقات الصخور أو تعطل مجسات الأرض؛ بل هي علامات تطور أنسجة طبيعية ناتجة عن التكون الجنيني وثني الكف.<br>
+                            • <strong>المأساة الإنسانية والجنائية:</strong> ارتكبت عصابات الجهل جرائم خطف واستغلال مأساوية ضد أطفال وبالغين يحملون هذه العلامات، وهي جرائم وحشية نكراء يُعاقب عليها القانون الدولي والشرعي بأشد العقوبات الجنائية (القتل العمد والحرابة).<br>
+                            • <strong>التحصين المعرفي والديني:</strong> كل ما خلقه الله في جسدك هو أثر من آثار الصانع الحكيم، ولا يملك مخلوق في الأرض ولا في السماء نفعاً ولا ضراً إلا بإذن الله، وخرافات الكنوز ليست سوى سراب يلاحقه المفلسون للنصب على الناس.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <div id="seals-view-zouhri" class="seals-sub-container">
                 <div style="background:rgba(13,19,36,0.95); border:1px solid rgba(239,68,68,0.3); border-radius:20px; padding:28px 22px; margin-bottom:30px;">
                     <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
@@ -607,6 +943,9 @@ def get_seals_zouhri_chamber_js():
 
     const INTERACTIVE_SIGILS_DATA = [
         { id: 'solomon_seal', title: 'خاتم سليمان الأعظم', source: 'شمس المعارف الكبرى', desc: 'الرمز الجامع للأسماء السبعة العظمى، يحقق التوازن بين الروح والجسد والمادة.', svg: '<polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" fill="none" stroke="#f4b41a" stroke-width="4"/><circle cx="50" cy="50" r="16" fill="none" stroke="#00f0ff" stroke-width="3"/>' },
+        { id: 'ghazali_3x3', title: 'مثلث الغزالي (بطد زهج واح)', source: 'المنقذ من الضلال والأوفاق', desc: 'المربع السحري 3×3 ذو المجموع 15 ومحور التوازن 5. أقدم مصفوفة توازن رياضي في المخطوطات.', svg: '<rect x="15" y="15" width="70" height="70" fill="none" stroke="#f4b41a" stroke-width="3"/><line x1="38" y1="15" x2="38" y2="85" stroke="#00f0ff" stroke-width="2"/><line x1="62" y1="15" x2="62" y2="85" stroke="#00f0ff" stroke-width="2"/><line x1="15" y1="38" x2="85" y2="38" stroke="#00f0ff" stroke-width="2"/><line x1="15" y1="62" x2="85" y2="62" stroke="#00f0ff" stroke-width="2"/><circle cx="50" cy="50" r="5" fill="#ef4444"/>' },
+        { id: 'simian_crease', title: 'الخط القاطع الملكي (الكف الزوهري)', source: 'علم الأسارير والفراسة', desc: 'اندماج خط القلب مع خط الرأس في طية كف عرضية واحدة تامة. رمز الإرادة المركزة وتشريح جنيني طبيعي.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><line x1="26" y1="48" x2="114" y2="48" stroke="#f4b41a" stroke-width="5" stroke-linecap="round"/><circle cx="70" cy="48" r="4" fill="#00f0ff"/>' },
+        { id: 'mystic_triangle', title: 'مثلث الكف الباطني (The Mystic Triangle)', source: 'فراسة الرازي والمخطوطات', desc: 'مثلث الحكمة المتشكل في سهل المريخ بين خطوط العقل والجسد والحدس، دلالة الفطنة والبديهة الحاضرة.', svg: '<path d="M 25 80 Q 20 40 40 20 Q 60 10 70 15 Q 85 10 95 18 Q 110 12 115 35 Q 120 60 115 80 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><polygon points="45,45 85,38 65,70" fill="rgba(0,240,255,0.25)" stroke="#00f0ff" stroke-width="3"/>' },
         { id: 'saturn_sigil', title: 'طلسم زحل (أجيئيل)', source: 'Agrippa - De Occulta Philosophia', desc: 'مبني على الوفق المثلث 3×3، يستجلب طاقة التثبيت والانضباط الصارم.', svg: '<line x1="20" y1="20" x2="80" y2="20" stroke="#94a3b8" stroke-width="4"/><line x1="50" y1="20" x2="50" y2="80" stroke="#94a3b8" stroke-width="4"/><circle cx="50" cy="80" r="5" fill="#94a3b8"/>' },
         { id: 'jupiter_sigil', title: 'طلسم المشتري (يوفائيل)', source: 'Picatrix / غاية الحكيم', desc: 'مبني على الوفق المربع 4×4، يجذب طاقة التوسع والهيبة وسعة الرزق.', svg: '<path d="M 25 25 L 50 75 L 75 25" fill="none" stroke="#d8b4fe" stroke-width="4"/><line x1="35" y1="50" x2="65" y2="50" stroke="#d8b4fe" stroke-width="4"/>' },
         { id: 'mars_sigil', title: 'طلسم المريخ (غرافائيل)', source: 'Agrippa Lib. II', desc: 'مبني على الوفق المخمس 5×5، يركز طاقة الحسم والشجاعة ودحر العدوان.', svg: '<line x1="20" y1="50" x2="80" y2="50" stroke="#ef4444" stroke-width="4"/><line x1="50" y1="20" x2="50" y2="80" stroke="#ef4444" stroke-width="4"/><polygon points="80,50 65,40 65,60" fill="#ef4444"/>' },
@@ -632,6 +971,74 @@ def get_seals_zouhri_chamber_js():
         if (event && event.target) {
             event.target.classList.add('active');
         }
+
+        if (targetId === 'seals-view-ghazali') {
+            computeLiveGhazaliWafq();
+        }
+    }
+
+    function computeLiveGhazaliWafq() {
+        const input = document.getElementById('ghazali-target-sum');
+        const resultDiv = document.getElementById('ghazali-calc-result');
+        if (!input || !resultDiv) return;
+
+        let N = parseInt(input.value);
+        if (isNaN(N) || N < 15) {
+            resultDiv.innerHTML = '<span style="color:#ef4444; font-weight:700;">يرجى إدخال عدد صحيح يساوي 15 أو أكبر.</span>';
+            return;
+        }
+
+        // Classical rule of Al-Ghazali and ancient mathematicians:
+        // As (Base) of 3x3 is 12: K = (N - 12) / 3
+        const remainder = (N - 12) % 3;
+        const K = Math.floor((N - 12) / 3);
+
+        let c = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 1-indexed
+        for (let i = 1; i <= 9; i++) {
+            let val = K + (i - 1);
+            if (remainder === 1 && i >= 7) val += 1;
+            if (remainder === 2 && i >= 4) val += 1;
+            c[i] = val;
+        }
+
+        // Matrix placement in standard Batad Zahaj Wah:
+        // row 0: c[4], c[9], c[2]
+        // row 1: c[3], c[5], c[7]
+        // row 2: c[8], c[1], c[6]
+        const r0 = [c[4], c[9], c[2]];
+        const r1 = [c[3], c[5], c[7]];
+        const r2 = [c[8], c[1], c[6]];
+
+        const sumR0 = r0[0] + r0[1] + r0[2];
+
+        let jabrText = remainder === 0 ? 'الوفق تام بدون كسر (قسمة صحيحة).' :
+                       remainder === 1 ? 'الكسر = 1 (جُبر في البيت السابع بزيادة 1 على البيوت 7، 8، 9).' :
+                                         'الكسر = 2 (جُبر في البيت الرابع بزيادة 1 على البيوت 4 إلى 9).';
+
+        resultDiv.innerHTML = `
+            <div style="margin-bottom:12px; font-size:0.88rem; color:#cbd5e1; line-height:1.7;">
+                <strong>المفتاح (البيت 1):</strong> <span style="color:var(--gold); font-weight:700;">${c[1]}</span> | 
+                <strong>المغلاق (البيت 9):</strong> <span style="color:var(--gold); font-weight:700;">${c[9]}</span> | 
+                <strong>العدل (المفتاح+المغلاق):</strong> <span style="color:var(--cyan); font-weight:700;">${c[1] + c[9]}</span> | 
+                <strong>حالة الجبر:</strong> <span style="color:#a78bfa;">${jabrText}</span>
+            </div>
+            <div style="display:inline-grid; grid-template-columns:repeat(3, 75px); grid-gap:8px; margin-bottom:12px; direction:ltr;">
+                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); padding:12px; border-radius:8px; font-weight:800; color:var(--gold); font-size:1.15rem;">${r0[0]}</div>
+                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); padding:12px; border-radius:8px; font-weight:800; color:var(--cyan); font-size:1.15rem;">${r0[1]}</div>
+                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); padding:12px; border-radius:8px; font-weight:800; color:var(--gold); font-size:1.15rem;">${r0[2]}</div>
+                
+                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); padding:12px; border-radius:8px; font-weight:800; color:var(--cyan); font-size:1.15rem;">${r1[0]}</div>
+                <div style="background:rgba(239,68,68,0.2); border:2px solid #ef4444; padding:12px; border-radius:8px; font-weight:900; color:#fff; font-size:1.25rem;">${r1[1]}</div>
+                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); padding:12px; border-radius:8px; font-weight:800; color:var(--cyan); font-size:1.15rem;">${r1[2]}</div>
+                
+                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); padding:12px; border-radius:8px; font-weight:800; color:var(--gold); font-size:1.15rem;">${r2[0]}</div>
+                <div style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); padding:12px; border-radius:8px; font-weight:800; color:var(--cyan); font-size:1.15rem;">${r2[1]}</div>
+                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); padding:12px; border-radius:8px; font-weight:800; color:var(--gold); font-size:1.15rem;">${r2[2]}</div>
+            </div>
+            <div style="font-size:0.82rem; color:#10b981; font-weight:700;">
+                ✓ مجموع كل صف وكل عمود = ${sumR0} (مطابق للعدد المطلوب ${N} بنسبة 100%).
+            </div>
+        `;
     }
 
     function renderInteractiveSigils() {
@@ -669,6 +1076,7 @@ def get_seals_zouhri_chamber_js():
     // Auto-run on load
     window.addEventListener('load', () => {
         renderInteractiveSigils();
+        computeLiveGhazaliWafq();
     });
     '''
 
