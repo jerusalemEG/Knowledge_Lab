@@ -81,8 +81,11 @@ def build_luxury_portal():
        KNOWLEDGE LAB — MASTER LUXURY ARCHITECTURE STYLING (v6.0)
        ======================================================== */
     :root {
+        color-scheme: dark !important;
         --void-black: #030611;
-        --card-glass: rgba(11, 17, 33, 0.75);
+        --bg-space: #030611;
+        --bg-void: #030611;
+        --card-glass: rgba(11, 17, 33, 0.85);
         --border-gold: rgba(255, 209, 102, 0.28);
         --gold-glow: rgba(255, 209, 102, 0.45);
         --purple-accent: #9d4edd;
@@ -92,20 +95,93 @@ def build_luxury_portal():
         --emerald-accent: #06d6a0;
     }
 
-    html, body {
+    html {
+        background-color: #030611 !important;
+        background: #030611 !important;
+        color-scheme: dark !important;
+        color: #f1f5f9 !important;
+        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+    }
+
+    body {
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden !important;
         position: relative;
-        background-color: var(--void-black);
+        background-color: #030611 !important;
+        background-image: 
+            radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 45%),
+            radial-gradient(circle at 90% 85%, rgba(244, 180, 26, 0.05) 0%, transparent 45%),
+            radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 60%) !important;
+        background-attachment: fixed !important;
+        color-scheme: dark !important;
         font-family: 'Tajawal', sans-serif;
-        color: #f1f5f9;
+        color: #f1f5f9 !important;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
+        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
     }
 
     * {
         box-sizing: border-box;
+        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+    }
+
+    /* Universal Dark Scrollbars Across Entire Site (Never Light/White) */
+    ::-webkit-scrollbar {
+        width: 8px !important;
+        height: 8px !important;
+    }
+    ::-webkit-scrollbar-track {
+        background: #030611 !important;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 209, 102, 0.3) !important;
+        border-radius: 6px !important;
+        border: 2px solid #030611 !important;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 209, 102, 0.6) !important;
+    }
+
+    /* Universal Master Chambers Dark Void Enforcement */
+    .master-chambers-wrapper,
+    .chamber-view,
+    .tab-section,
+    .tab-content,
+    #tab-hub,
+    #tab-graph,
+    #tab-spheres,
+    #tab-chakras,
+    #tab-zodiac,
+    #tab-timeline,
+    #tab-matrix,
+    #tab-manuscripts,
+    #tab-mizan,
+    #tab-kings,
+    #tab-decans,
+    #tab-hours,
+    #tab-mansions,
+    #tab-letters-magic,
+    #tab-bodies,
+    #tab-numbers,
+    #tab-cymatics,
+    #tab-murshid,
+    #tab-astrology-calc,
+    #tab-seals-zouhri,
+    main {
+        background-color: #030611 !important;
+        color: #f1f5f9 !important;
+    }
+
+    /* Universal Form & Input Dark Enforcement */
+    input, select, textarea, button {
+        color-scheme: dark !important;
+    }
+    input[type="date"], input[type="time"] {
+        color-scheme: dark !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        color: #f1f5f9 !important;
     }
 
     body.drawer-open-lock {
@@ -206,7 +282,7 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.15rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #ffffff 10%, var(--gold) 70%, #d8b4fe 100%);
+        background: linear-gradient(135deg, #ffd166 10%, var(--gold) 70%, #d8b4fe 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
@@ -558,7 +634,7 @@ def build_luxury_portal():
         font-size: 2.4rem;
         font-weight: 800;
         margin: 0 0 12px 0;
-        background: linear-gradient(135deg, #ffffff 20%, var(--gold) 65%, #c77dff 100%);
+        background: linear-gradient(135deg, #ffd166 20%, var(--gold) 65%, #c77dff 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         line-height: 1.25;
@@ -1781,6 +1857,19 @@ def build_luxury_portal():
         atlas_with_css = atlas_clean[:head_end_pos] + combined_css + atlas_clean[head_end_pos:]
     else:
         atlas_with_css = atlas_clean + combined_css
+
+    # Inject dark mode & theme color meta tags
+    dark_meta = """
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#030611">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    """
+    if "color-scheme" not in atlas_with_css:
+        atlas_with_css = atlas_with_css.replace('<head>', f'<head>\n{dark_meta}')
+
+    # Enforce dark inline style on html tag if missing
+    if 'style="background-color: #030611;' not in atlas_with_css:
+        atlas_with_css = atlas_with_css.replace('<html lang="ar" dir="rtl">', '<html lang="ar" dir="rtl" style="background-color: #030611; color-scheme: dark;">')
 
     # Inject font-awesome if not present
     if "font-awesome" not in atlas_with_css:

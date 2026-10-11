@@ -202,16 +202,21 @@ def generate_unified_html(nodes, links):
     graph_data_json = json.dumps({"nodes": nodes_list, "edges": edges_list}, ensure_ascii=False)
 
     html_template = f"""<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" style="background-color: #030611; color-scheme: dark;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#030611">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>أطلس الكوزمولوجيا القرآنية وشبكة المعرفة الشاملة — Quranic Cosmic Atlas</title>
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         :root {{
-            --bg-space: #05070b;
+            color-scheme: dark !important;
+            --bg-space: #030611;
+            --void-black: #030611;
             --panel-bg: rgba(11, 15, 23, 0.94);
             --border-glass: rgba(255, 255, 255, 0.12);
             --text-main: #f0f6fc;
@@ -228,15 +233,36 @@ def generate_unified_html(nodes, links):
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        }}
+        html {{
+            background-color: #030611 !important;
+            color-scheme: dark !important;
         }}
         body {{
-            background-color: var(--bg-space);
+            background-color: #030611 !important;
             color: var(--text-main);
             overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 45%),
                 radial-gradient(circle at 90% 80%, rgba(244, 180, 26, 0.05) 0%, transparent 45%);
             min-height: 100vh;
+            color-scheme: dark !important;
+        }}
+        ::-webkit-scrollbar {{
+            width: 8px !important;
+            height: 8px !important;
+        }}
+        ::-webkit-scrollbar-track {{
+            background: #030611 !important;
+        }}
+        ::-webkit-scrollbar-thumb {{
+            background: rgba(255, 209, 102, 0.3) !important;
+            border-radius: 6px !important;
+            border: 2px solid #030611 !important;
+        }}
+        ::-webkit-scrollbar-thumb:hover {{
+            background: rgba(255, 209, 102, 0.6) !important;
         }}
         
         /* Master Header */

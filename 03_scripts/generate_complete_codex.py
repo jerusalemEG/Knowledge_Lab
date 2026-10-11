@@ -31,15 +31,20 @@ def generate_codex():
 
     # We read template chunks or build the complete HTML directly
     html_code = '''<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" style="background-color: #030611; color-scheme: dark;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#030611">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>سفر النواميس الباطنية والأفلاك الكبرى — الموسوعة الأكاديمية الشاملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-void: #030508;
+            color-scheme: dark !important;
+            --bg-void: #030611;
+            --void-black: #030611;
             --panel-bg: rgba(10, 14, 26, 0.94);
             --border-glass: rgba(255, 255, 255, 0.12);
             --text-main: #f0f6fc;
@@ -62,10 +67,16 @@ def generate_codex():
             margin: 0;
             padding: 0;
             font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+            scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        }
+
+        html {
+            background-color: #030611 !important;
+            color-scheme: dark !important;
         }
 
         body {
-            background-color: var(--bg-void);
+            background-color: #030611 !important;
             color: var(--text-main);
             overflow-x: hidden;
             background-image: 
@@ -73,6 +84,23 @@ def generate_codex():
                 radial-gradient(circle at 90% 85%, rgba(244, 180, 26, 0.04) 0%, transparent 40%),
                 radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 50%);
             min-height: 100vh;
+            color-scheme: dark !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px !important;
+            height: 8px !important;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030611 !important;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 209, 102, 0.3) !important;
+            border-radius: 6px !important;
+            border: 2px solid #030611 !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 209, 102, 0.6) !important;
         }
 
         /* Gate */
