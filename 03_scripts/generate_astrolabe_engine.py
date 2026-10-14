@@ -19,10 +19,10 @@ def get_astrolabe_css():
         justify-content: center;
         gap: 32px;
         padding: 30px 20px;
-        background: radial-gradient(circle at 50% 50%, rgba(15, 23, 48, 0.95) 0%, rgba(2, 4, 10, 0.98) 100%);
+        background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f5f9 100%);
         border: 2px solid var(--border-gold-strong);
         border-radius: 28px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), inset 0 0 40px rgba(212, 175, 55, 0.12);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), inset 0 0 40px rgba(180, 138, 40, 0.06);
         margin: 28px auto 40px auto;
         max-width: 1300px;
         position: relative;
@@ -46,7 +46,7 @@ def get_astrolabe_css():
         border: 3px solid #d4af37;
         border-radius: 50%;
         box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 25px rgba(212, 175, 55, 0.2);
-        background: radial-gradient(circle, rgba(10, 16, 36, 0.9) 0%, rgba(2, 4, 10, 0.95) 100%);
+        background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);
         animation: astrolabeRotateSlow 160s linear infinite;
         cursor: grab;
     }
@@ -115,11 +115,11 @@ def get_astrolabe_css():
     /* Interactive Gilded Parchment Folio (لوح البردي المذهب التفاعلي) */
     .gilded-parchment-display {
         flex-grow: 1;
-        background: rgba(6, 11, 26, 0.92);
+        background: #ffffff;
         border: 1.5px solid var(--border-gold-strong);
         border-radius: 20px;
         padding: 26px 28px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 25px rgba(212, 175, 55, 0.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 0 25px rgba(180, 138, 40, 0.05);
         position: relative;
         min-width: 320px;
     }
@@ -146,7 +146,7 @@ def get_astrolabe_css():
         font-family: 'Amiri', serif;
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--gold-light);
+        color: #967117;
         margin: 0;
         text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
@@ -163,7 +163,7 @@ def get_astrolabe_css():
 
     .parchment-body-text {
         font-size: 0.95rem;
-        color: #cbd5e1;
+        color: #334155;
         line-height: 1.85;
         margin-bottom: 20px;
         font-family: 'Tajawal', sans-serif;
@@ -177,8 +177,8 @@ def get_astrolabe_css():
     }
 
     .parchment-attr-pill {
-        background: rgba(2, 5, 14, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #f8fafc;
+        border: 1px solid rgba(203, 213, 225, 0.8);
         border-radius: 10px;
         padding: 10px 12px;
         text-align: center;
@@ -202,7 +202,7 @@ def get_astrolabe_css():
         border: 1.5px solid var(--border-gold);
         border-radius: 12px;
         padding: 10px 20px;
-        color: #fef08a;
+        color: #967117;
         font-family: 'Tajawal', sans-serif;
         font-size: 0.9rem;
         font-weight: 700;
