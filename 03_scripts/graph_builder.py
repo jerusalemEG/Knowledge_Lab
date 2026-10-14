@@ -63,7 +63,7 @@ def parse_frontmatter(content):
 def categorize_node(nd_type, relpath):
     path_lower = relpath.lower()
     if "prophet" in path_lower or "ulul_azm" in path_lower or nd_type in ["prophet_archetype", "master_sphere"]:
-        return "أولو العزم من الرسل", "prophets", "#ffd166"
+        return "أولو العزم من الرسل", "prophets", "#94a3b8"
     elif "00_index" in path_lower or "quranic" in path_lower or nd_type in ["index", "master_blueprint"]:
         return "الهيكل القرآني والمصفوفات", "index", "#ff4d6d"
     elif "09_zodiac" in path_lower or nd_type == "zodiac_sign":
@@ -71,7 +71,7 @@ def categorize_node(nd_type, relpath):
     elif "01_cycles" in path_lower or nd_type == "cycle":
         return "الدورات الكونية والفلك", "astronomy", "#00b4d8"
     elif "02_eras" in path_lower or nd_type == "era":
-        return "العصور والرسالات التاريخية", "eras", "#ffb703"
+        return "العصور والرسالات التاريخية", "eras", "#64748b"
     elif "03_esoteric" in path_lower or nd_type == "system":
         return "الميلوثيسيا وتصريف القوى", "esoteric", "#9d4edd"
     elif "07_hermetic" in path_lower or "alchemy" in path_lower:
@@ -222,7 +222,7 @@ def generate_unified_html(nodes, links):
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.35);
+            --gold-glow: rgba(148, 163, 184, 0.35);
             --cyan: #38bdf8;
             --rose: #fb7185;
             --purple: #c084fc;
@@ -233,7 +233,7 @@ def generate_unified_html(nodes, links):
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
+            scrollbar-color: rgba(148, 163, 184, 0.35) #111823 !important;
         }}
         html {{
             background-color: #111823 !important;
@@ -245,7 +245,7 @@ def generate_unified_html(nodes, links):
             overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
+                radial-gradient(circle at 90% 80%, rgba(148, 163, 184, 0.05) 0%, transparent 45%);
             min-height: 100vh;
             color-scheme: dark !important;
         }}
@@ -257,12 +257,12 @@ def generate_unified_html(nodes, links):
             background: #111823 !important;
         }}
         ::-webkit-scrollbar-thumb {{
-            background: rgba(212, 175, 55, 0.35) !important;
+            background: rgba(148, 163, 184, 0.35) !important;
             border-radius: 6px !important;
             border: 2px solid #111823 !important;
         }}
         ::-webkit-scrollbar-thumb:hover {{
-            background: rgba(212, 175, 55, 0.65) !important;
+            background: rgba(148, 163, 184, 0.65) !important;
         }}
         
         /* Master Header */
@@ -501,7 +501,7 @@ def generate_unified_html(nodes, links):
             background: rgba(7, 11, 20, 0.96);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 209, 102, 0.35);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             border-radius: 16px;
             z-index: 1500;
             box-shadow: 0 16px 50px rgba(0,0,0,0.85);
@@ -613,7 +613,7 @@ def generate_unified_html(nodes, links):
             justify-content: space-between;
         }}
         .theory-node-card:hover {{
-            border-color: rgba(255, 209, 102, 0.4);
+            border-color: rgba(148, 163, 184, 0.4);
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }}
@@ -894,13 +894,13 @@ def generate_unified_html(nodes, links):
         }}
         .compendium-badge {{
             display: inline-block;
-            background: rgba(255, 209, 102, 0.15);
+            background: rgba(148, 163, 184, 0.15);
             color: var(--gold);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(255, 209, 102, 0.35);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             margin-bottom: 12px;
         }}
         .compendium-header h2 {{
@@ -929,7 +929,7 @@ def generate_unified_html(nodes, links):
             gap: 12px;
         }}
         .treatise-card:hover {{
-            border-color: rgba(255, 209, 102, 0.4);
+            border-color: rgba(148, 163, 184, 0.4);
             transform: translateY(-3px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }}
@@ -951,7 +951,7 @@ def generate_unified_html(nodes, links):
         }}
         .treatise-card-header h3 {{
             font-size: 1.15rem;
-            color: #ffd166;
+            color: #94a3b8;
             margin: 0;
         }}
         .treatise-card-body {{
@@ -1032,8 +1032,8 @@ def generate_unified_html(nodes, links):
             margin-bottom: 8px;
         }}
         .quran-box {{
-            background: rgba(255, 209, 102, 0.06);
-            border: 1px dashed rgba(255, 209, 102, 0.35);
+            background: rgba(148, 163, 184, 0.06);
+            border: 1px dashed rgba(148, 163, 184, 0.35);
             padding: 16px 20px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -1046,7 +1046,7 @@ def generate_unified_html(nodes, links):
         /* Global Civilizational Consensus Box */
         .global-consensus-box {{
             background: rgba(15, 23, 42, 0.75);
-            border: 1px solid rgba(255, 209, 102, 0.35);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             border-radius: 14px;
             padding: 22px;
             margin-bottom: 25px;
@@ -1160,7 +1160,7 @@ def generate_unified_html(nodes, links):
             background: rgba(15, 23, 42, 0.95);
             color: var(--gold);
             padding: 14px 16px;
-            border-bottom: 1px solid rgba(255, 209, 102, 0.3);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
             font-weight: 700;
             position: sticky;
             top: 0;
@@ -1206,7 +1206,7 @@ def generate_unified_html(nodes, links):
             font-size: 1.85rem;
             color: #fff;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #ffd166, #fff, #00f0ff);
+            background: linear-gradient(135deg, #94a3b8, #fff, #00f0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }}
@@ -1570,7 +1570,7 @@ def generate_unified_html(nodes, links):
         .age-card:hover {{
             transform: translateY(-6px);
             border-color: var(--cyan);
-            box-shadow: 0 16px 36px rgba(0, 240, 255, 0.16), 0 0 20px rgba(255, 209, 102, 0.1);
+            box-shadow: 0 16px 36px rgba(0, 240, 255, 0.16), 0 0 20px rgba(148, 163, 184, 0.1);
         }}
         .age-card:hover::before {{
             opacity: 1;
@@ -1578,7 +1578,7 @@ def generate_unified_html(nodes, links):
         }}
         .age-card.active-era {{
             border-color: var(--gold);
-            box-shadow: 0 0 25px rgba(255, 209, 102, 0.35);
+            box-shadow: 0 0 25px rgba(148, 163, 184, 0.35);
         }}
         .age-card-top {{
             display: flex;
@@ -1591,13 +1591,13 @@ def generate_unified_html(nodes, links):
             height: 44px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 209, 102, 0.4);
+            border: 1px solid rgba(148, 163, 184, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
             color: var(--gold);
-            box-shadow: 0 0 15px rgba(255, 209, 102, 0.15);
+            box-shadow: 0 0 15px rgba(148, 163, 184, 0.15);
         }}
         .age-era {{ font-size: 0.85rem; color: var(--gold); font-weight: 700; letter-spacing: 0.5px; }}
         .age-title {{ font-size: 1.35rem; color: #fff; margin-bottom: 8px; font-weight: 700; }}
@@ -1676,7 +1676,7 @@ def generate_unified_html(nodes, links):
             left: 0;
             width: 100%;
             height: 100%;
-            filter: drop-shadow(0 0 25px rgba(255, 209, 102, 0.2));
+            filter: drop-shadow(0 0 25px rgba(148, 163, 184, 0.2));
             pointer-events: none;
         }}
         .precession-node {{
@@ -1741,10 +1741,10 @@ def generate_unified_html(nodes, links):
             transition: all 0.25s ease;
         }}
         .e-filter-btn:hover, .e-filter-btn.active {{
-            background: linear-gradient(135deg, rgba(255, 209, 102, 0.2), rgba(0, 240, 255, 0.2));
+            background: linear-gradient(135deg, rgba(148, 163, 184, 0.2), rgba(0, 240, 255, 0.2));
             border-color: var(--gold);
             color: #fff;
-            box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
+            box-shadow: 0 0 20px rgba(148, 163, 184, 0.25);
         }}
 
         /* 5. Matrix Table & Multi-Dimensional Console */
@@ -1799,7 +1799,7 @@ def generate_unified_html(nodes, links):
             transition: all 0.25s ease;
         }}
         .m-mode-btn:hover, .m-mode-btn.active {{
-            background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(255, 209, 102, 0.2));
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(148, 163, 184, 0.2));
             border-color: var(--cyan);
             color: #fff;
             box-shadow: 0 0 16px rgba(0, 240, 255, 0.2);
@@ -1826,10 +1826,10 @@ def generate_unified_html(nodes, links):
             gap: 6px;
         }}
         .m-rank-btn:hover, .m-rank-btn.active {{
-            background: rgba(255, 209, 102, 0.15);
+            background: rgba(148, 163, 184, 0.15);
             border-color: var(--gold);
             color: #fff;
-            box-shadow: 0 0 15px rgba(255, 209, 102, 0.25);
+            box-shadow: 0 0 15px rgba(148, 163, 184, 0.25);
         }}
         .table-wrapper {{
             background: rgba(13, 17, 23, 0.9);
@@ -1952,7 +1952,7 @@ def generate_unified_html(nodes, links):
             border-right: 4px solid var(--gold);
             padding: 18px 20px;
             border-radius: 12px;
-            color: #ffd166;
+            color: #94a3b8;
             font-size: 0.92rem;
             line-height: 1.8;
         }}
@@ -2253,7 +2253,7 @@ def generate_unified_html(nodes, links):
         }}
         .auth-submit-btn {{
             width: 100%;
-            background: linear-gradient(135deg, var(--gold), #ffb703);
+            background: linear-gradient(135deg, var(--gold), #64748b);
             border: none;
             color: #05070b;
             padding: 14px;
@@ -2427,7 +2427,7 @@ def generate_unified_html(nodes, links):
                 <div class="graph-top-filters">
                     <div class="pills-container">
                         <button class="filter-pill active" onclick="filterGraphCategory('ALL')">الكل 🌐</button>
-                        <button class="filter-pill" style="border-color:#ffd166; color:#ffd166;" onclick="filterGraphCategory('أولو العزم من الرسل')">أولو العزم من الرسل 👑</button>
+                        <button class="filter-pill" style="border-color:#94a3b8; color:#94a3b8;" onclick="filterGraphCategory('أولو العزم من الرسل')">أولو العزم من الرسل 👑</button>
                         <button class="filter-pill" onclick="filterGraphCategory('دائرة البروج الاثني عشر')">دائرة البروج (12) ♈</button>
                         <button class="filter-pill" onclick="filterGraphCategory('الهيكل القرآني والمصفوفات')">الهيكل القرآني والمصفوفات 🔴</button>
                         <button class="filter-pill" onclick="filterGraphCategory('الدورات الكونية والفلك')">الدورات الفلكية 🔵</button>
@@ -2742,7 +2742,7 @@ def generate_unified_html(nodes, links):
                                     <stop offset="100%" stop-color="#ef4444" />
                                 </linearGradient>
                                 <radialGradient id="auraGlow" cx="160" cy="95" r="90" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.45" />
                                     <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.15" />
                                     <stop offset="100%" stop-color="#000000" stop-opacity="0" />
                                 </radialGradient>
@@ -2760,10 +2760,10 @@ def generate_unified_html(nodes, links):
                             <circle cx="160" cy="95" r="60" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1" />
                             <circle cx="160" cy="95" r="45" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
                             <!-- Radiating Rays -->
-                            <line x1="160" y1="15" x2="160" y2="35" stroke="#ffd166" stroke-width="2" />
-                            <line x1="160" y1="155" x2="160" y2="175" stroke="#ffd166" stroke-width="1.5" />
-                            <line x1="80" y1="95" x2="100" y2="95" stroke="#ffd166" stroke-width="1.5" />
-                            <line x1="220" y1="95" x2="240" y2="95" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="160" y1="15" x2="160" y2="35" stroke="#94a3b8" stroke-width="2" />
+                            <line x1="160" y1="155" x2="160" y2="175" stroke="#94a3b8" stroke-width="1.5" />
+                            <line x1="80" y1="95" x2="100" y2="95" stroke="#94a3b8" stroke-width="1.5" />
+                            <line x1="220" y1="95" x2="240" y2="95" stroke="#94a3b8" stroke-width="1.5" />
                             <line x1="105" y1="40" x2="118" y2="53" stroke="rgba(244,180,26,0.6)" stroke-width="1.5" />
                             <line x1="215" y1="40" x2="202" y2="53" stroke="rgba(244,180,26,0.6)" stroke-width="1.5" />
 
@@ -2790,11 +2790,11 @@ def generate_unified_html(nodes, links):
 
                             <!-- Pingala (Right Solar Channel - Gold) -->
                             <path d="M160,470 C185,435 185,415 160,395 C135,360 135,345 160,325 C185,290 185,275 160,255 C135,225 135,210 160,195 C185,165 185,155 160,140 C135,110 135,100 160,85" 
-                                  stroke="#ffd166" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
+                                  stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
                         </svg>
 
                         <!-- 8 Chakra Pulsating Interactive Nodes on Body -->
-                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #ffd166; border-color: #ffd166; background: rgba(255, 209, 102, 0.3);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
+                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #94a3b8; border-color: #94a3b8; background: rgba(148, 163, 184, 0.3);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
                         <div class="chakra-point-btn" id="chakra-node-7" style="top: 85px; color: #a855f7; border-color: #a855f7;" onclick="selectChakra(7)" title="شاكرا التاج — إبراهيم الخليل">🟣</div>
                         <div class="chakra-point-btn" id="chakra-node-6" style="top: 140px; color: #3b82f6; border-color: #3b82f6;" onclick="selectChakra(6)" title="شاكرا العين الثالثة — موسى وهارون">👁️</div>
                         <div class="chakra-point-btn" id="chakra-node-5" style="top: 195px; color: #00f0ff; border-color: #00f0ff;" onclick="selectChakra(5)" title="شاكرا الحنجرة — داود وسليمان">🗣️</div>
@@ -2924,13 +2924,13 @@ def generate_unified_html(nodes, links):
                         <svg class="zodiac-wheel-svg" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <radialGradient id="sunGlowZod" cx="190" cy="190" r="100" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.45" />
                                     <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.12" />
                                     <stop offset="100%" stop-color="#000000" stop-opacity="0" />
                                 </radialGradient>
                                 <linearGradient id="wheelRingGrad" x1="0" y1="0" x2="380" y2="380" gradientUnits="userSpaceOnUse">
                                     <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.6" />
-                                    <stop offset="50%" stop-color="#ffd166" stop-opacity="0.4" />
+                                    <stop offset="50%" stop-color="#94a3b8" stop-opacity="0.4" />
                                     <stop offset="100%" stop-color="#a855f7" stop-opacity="0.6" />
                                 </linearGradient>
                             </defs>
@@ -2942,15 +2942,15 @@ def generate_unified_html(nodes, links):
                             <circle cx="190" cy="190" r="145" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
                             <circle cx="190" cy="190" r="115" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1" stroke-dasharray="6 3" />
                             <circle cx="190" cy="190" r="75" stroke="rgba(244, 180, 26, 0.4)" stroke-width="1.5" />
-                            <circle cx="190" cy="190" r="38" stroke="#ffd166" stroke-width="2" />
+                            <circle cx="190" cy="190" r="38" stroke="#94a3b8" stroke-width="2" />
                             
                             <!-- Central Golden Sun -->
-                            <circle cx="190" cy="190" r="22" fill="#ffd166" />
+                            <circle cx="190" cy="190" r="22" fill="#94a3b8" />
                             <circle cx="190" cy="190" r="10" fill="#fff" />
                             
                             <!-- 12 Harmonic Radiating Axes (Crossing at 180° Polarities) -->
-                            <line x1="190" y1="15" x2="190" y2="365" stroke="rgba(255, 209, 102, 0.25)" stroke-width="1" />
-                            <line x1="15" y1="190" x2="365" y2="190" stroke="rgba(255, 209, 102, 0.25)" stroke-width="1" />
+                            <line x1="190" y1="15" x2="190" y2="365" stroke="rgba(148, 163, 184, 0.25)" stroke-width="1" />
+                            <line x1="15" y1="190" x2="365" y2="190" stroke="rgba(148, 163, 184, 0.25)" stroke-width="1" />
                             <line x1="66" y1="66" x2="314" y2="314" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" stroke-dasharray="3 3" />
                             <line x1="314" y1="66" x2="66" y2="314" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" stroke-dasharray="3 3" />
                             <line x1="102" y1="38" x2="278" y2="342" stroke="rgba(168, 85, 247, 0.2)" stroke-width="1" stroke-dasharray="2 2" />
@@ -2959,7 +2959,7 @@ def generate_unified_html(nodes, links):
                             <line x1="38" y1="278" x2="342" y2="102" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1" stroke-dasharray="2 2" />
                             
                             <!-- Sacred Merkabah / Triplicities in Center -->
-                            <polygon points="190,125 246,222 134,222" stroke="rgba(255,209,102,0.35)" stroke-width="1" fill="none" />
+                            <polygon points="190,125 246,222 134,222" stroke="rgba(148, 163, 184,0.35)" stroke-width="1" fill="none" />
                             <polygon points="190,255 246,158 134,158" stroke="rgba(0,240,255,0.35)" stroke-width="1" fill="none" />
                         </svg>
 
@@ -3116,13 +3116,13 @@ def generate_unified_html(nodes, links):
                         <svg class="precession-wheel-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <radialGradient id="sunGlowEra" cx="200" cy="200" r="110" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.45" />
                                     <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.15" />
                                     <stop offset="100%" stop-color="#000000" stop-opacity="0" />
                                 </radialGradient>
                                 <linearGradient id="precessionRingGrad" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
                                     <stop offset="0%" stop-color="#ff3366" stop-opacity="0.7" />
-                                    <stop offset="50%" stop-color="#ffd166" stop-opacity="0.5" />
+                                    <stop offset="50%" stop-color="#94a3b8" stop-opacity="0.5" />
                                     <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.7" />
                                 </linearGradient>
                             </defs>
@@ -3134,11 +3134,11 @@ def generate_unified_html(nodes, links):
                             <circle cx="200" cy="200" r="185" stroke="url(#precessionRingGrad)" stroke-width="2" stroke-dasharray="5 5" />
                             <circle cx="200" cy="200" r="150" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
                             <circle cx="200" cy="200" r="115" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1" stroke-dasharray="6 3" />
-                            <circle cx="200" cy="200" r="75" stroke="rgba(255, 209, 102, 0.35)" stroke-width="1.5" />
+                            <circle cx="200" cy="200" r="75" stroke="rgba(148, 163, 184, 0.35)" stroke-width="1.5" />
                             
                             <!-- Central Golden Sun -->
-                            <circle cx="200" cy="200" r="38" stroke="#ffd166" stroke-width="2" />
-                            <circle cx="200" cy="200" r="22" fill="#ffd166" />
+                            <circle cx="200" cy="200" r="38" stroke="#94a3b8" stroke-width="2" />
+                            <circle cx="200" cy="200" r="22" fill="#94a3b8" />
                             <circle cx="200" cy="200" r="10" fill="#fff" />
                             
                             <!-- Radiating Axes (Crossing at 180° Polarities) -->
@@ -4846,7 +4846,7 @@ def generate_unified_html(nodes, links):
                         <td><b style="color:#fff;">${{c.sufiLatifa.split('•')[0].trim()}}</b></td>
                         <td><span style="color:var(--gold); font-weight:700;">${{c.prophet.split('(')[0].trim()}}</span></td>
                         <td>${{c.sphere.split('(')[0].trim()}}</td>
-                        <td><span class="badge-hz" style="background:rgba(255,209,102,0.12); color:var(--gold); border:1px solid rgba(255,209,102,0.3); padding:2px 8px; border-radius:10px; font-weight:700;">${{c.freqHz}}</span></td>
+                        <td><span class="badge-hz" style="background:rgba(148, 163, 184,0.12); color:var(--gold); border:1px solid rgba(148, 163, 184,0.3); padding:2px 8px; border-radius:10px; font-weight:700;">${{c.freqHz}}</span></td>
                         <td><b>${{c.gland.split('•')[0].trim()}}</b></td>
                         <td>${{c.plexus.split('(')[0].trim()}}</td>
                         <td>${{c.dantian.split('(')[0].trim()}}</td>
@@ -5025,7 +5025,7 @@ def generate_unified_html(nodes, links):
                 </div>
 
                 <div class="prophet-banner">
-                    <div class="prophet-avatar" style="background: linear-gradient(135deg, ${{s.color}}, #ffd166);">👑</div>
+                    <div class="prophet-avatar" style="background: linear-gradient(135deg, ${{s.color}}, #94a3b8);">👑</div>
                     <div class="prophet-desc">
                         <h4>${{s.prophet}}</h4>
                         <p>${{s.titleDesc}}</p>
@@ -5168,7 +5168,7 @@ def generate_unified_html(nodes, links):
                 name: "البوابة الرابعة: بوابة قلب العالم وسراج النور وسماء إدريس",
                 badge: "السماء الرابعة • فلك الشمس • شاكرا القلب (Anahata) • الذهب الخالص • 126.22 Hz",
                 icon: "☉",
-                color: "#ffd166",
+                color: "#94a3b8",
                 essence: "قلب المنظومة الكونية ومحور الاتزان الأكبر. تتوسط السماء الرابعة السماوات السبع (ثلاث تحتها وثلاث فوقها)، تماماً كما تتوسط الشمس المجموعة الشمسية، وكما يتوسط القلب قفص الصدر. هنا النبي إدريس (هرمس الأول)، أول من خط بالقلم وعلّم الحكمة، الذي رفعه الله مكاناً علياً.",
                 propheticScene: "لقي النبي ﷺ في السماء الرابعة إدريس عليه السلام، مصداقاً لقوله تعالى: ﴿وَرَفَعْنَاهُ مَكَانًا عَلِيًّا﴾. توسطه في سماء الشمس يطابق رتبته العرفانية كقطب للأرواح التعليمية؛ فمن الشمس تقتبس كل الكواكب السفلى والعليا ضياءها، ومن إدريس تفرعت أصول الحكمة النبوية والفلكية.",
                 easternVeda: "في الطاوية، الشمس هي جوهر 'اليانغ' (Yang) الأعظم ومصدر الطاقة الحيوية الشاملة (Qi). وفي الكونيات الفيدية، هي 'ماهار-لوكا' (Mahar-loka) وسكنى الحكماء والريشي (Rishis)، المقابلة لشاكرا القلب 'أناهاتا' (Anahata)، مركز الرنين الصوتي النقي (Anahata Nada) الذي لا يصحبه قرع ولا اصطدام.",
@@ -5494,7 +5494,7 @@ def generate_unified_html(nodes, links):
                         </div>
                     </div>
                     <div style="margin-top:12px; padding-top:10px; border-top:1px dashed rgba(168,85,247,0.25); font-size:0.85rem; color:#cbd5e1; line-height:1.7;">
-                        <strong style="color:#ffd166;">السر الحرفي والطلسمي في كتب الحكمة:</strong> ${{z.talisman_invocation}}
+                        <strong style="color:#94a3b8;">السر الحرفي والطلسمي في كتب الحكمة:</strong> ${{z.talisman_invocation}}
                     </div>
                 </div>
 

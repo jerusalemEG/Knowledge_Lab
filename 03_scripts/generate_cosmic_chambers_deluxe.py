@@ -371,22 +371,22 @@ def get_deluxe_chambers_css():
         font-size: 0.85rem;
         font-weight: 700;
         color: var(--gold);
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(184, 134, 11, 0.35);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.35);
         padding: 3px 10px;
         border-radius: 8px;
     }
 
     .card-sub-badge {
         font-size: 0.78rem;
-        color: #64748b;
+        color: #94a3b8;
     }
 
     .card-main-title {
         font-family: 'Amiri', serif;
         font-size: 1.35rem;
         font-weight: 700;
-        color: #0f172a;
+        color: #334155;
         margin: 0 0 10px 0;
         line-height: 1.3;
     }
@@ -396,7 +396,7 @@ def get_deluxe_chambers_css():
         flex-direction: column;
         gap: 6px;
         font-size: 0.84rem;
-        color: #334155;
+        color: #475569;
         margin: 12px 0;
         border-top: 1px solid #e2e8f0;
         padding-top: 10px;
@@ -408,22 +408,22 @@ def get_deluxe_chambers_css():
     }
 
     .card-meta-lbl {
-        color: #64748b;
+        color: #94a3b8;
     }
 
     .card-meta-val {
-        color: #0f172a;
+        color: #334155;
         font-weight: 600;
     }
 
     .card-verse-quote {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(254, 240, 138, 0.25));
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(226, 232, 240, 0.45));
         border-right: 3px solid var(--gold);
         border-radius: 6px;
         padding: 8px 12px;
         font-family: 'Amiri', serif;
         font-size: 0.95rem;
-        color: #854d0e;
+        color: #334155;
         margin-top: 10px;
         line-height: 1.5;
         font-weight: 600;
@@ -447,7 +447,7 @@ def get_deluxe_chambers_css():
         font-family: 'Amiri', serif;
         font-size: 1.4rem;
         font-weight: 700;
-        color: #0f172a;
+        color: #334155;
         box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
         transition: all 0.2s;
     }
@@ -549,7 +549,7 @@ def get_deluxe_chambers_css():
         border: 1.5px solid #cbd5e1;
         border-radius: 20px;
         padding: 8px 18px;
-        color: #334155;
+        color: #475569;
         font-family: 'Amiri', serif;
         font-size: 0.95rem;
         font-weight: 700;
@@ -562,18 +562,18 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-cat-pill:hover {
-        border-color: var(--gold);
-        color: #0f172a;
+        border-color: #64748b;
+        color: #1e293b;
         background: #f8fafc;
         transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 4px 15px rgba(100, 116, 139, 0.15);
     }
 
     .atlas-cat-pill.active {
-        background: linear-gradient(135deg, var(--gold), #d4af37);
-        border-color: var(--gold);
+        background: linear-gradient(135deg, #475569, #64748b);
+        border-color: #475569;
         color: #ffffff;
-        box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+        box-shadow: 0 2px 12px rgba(71, 85, 105, 0.3);
     }
 
     .atlas-search-box {
@@ -584,7 +584,7 @@ def get_deluxe_chambers_css():
         border: 1.5px solid #cbd5e1;
         border-radius: 25px;
         padding: 12px 24px;
-        color: #0f172a;
+        color: #334155;
         font-size: 1rem;
         font-family: 'Tajawal', sans-serif;
         outline: none;
@@ -595,8 +595,8 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-search-box:focus {
-        border-color: var(--gold);
-        box-shadow: 0 0 15px rgba(184, 134, 11, 0.3);
+        border-color: #64748b;
+        box-shadow: 0 0 15px rgba(100, 116, 139, 0.25);
     }
 
     .atlas-workspace-grid {
@@ -632,17 +632,17 @@ def get_deluxe_chambers_css():
     .atlas-sidebar-title {
         font-family: 'Amiri', serif;
         font-size: 1.15rem;
-        color: var(--gold);
+        color: #475569;
         font-weight: 700;
     }
 
     .atlas-cat-count {
-        background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(184, 134, 11, 0.35);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.35);
         border-radius: 12px;
         padding: 2px 10px;
         font-size: 0.8rem;
-        color: var(--gold);
+        color: #475569;
         font-weight: 700;
     }
 
@@ -659,7 +659,7 @@ def get_deluxe_chambers_css():
         width: 6px;
     }
     .atlas-nodes-list::-webkit-scrollbar-thumb {
-        background: rgba(184, 134, 11, 0.35);
+        background: rgba(100, 116, 139, 0.35);
         border-radius: 3px;
     }
 
@@ -676,28 +676,28 @@ def get_deluxe_chambers_css():
 
     .atlas-node-card:hover {
         background: #f8fafc;
-        border-color: var(--gold);
+        border-color: #64748b;
         transform: translateX(-4px);
-        box-shadow: 0 4px 12px rgba(184, 134, 11, 0.12);
+        box-shadow: 0 4px 12px rgba(100, 116, 139, 0.12);
     }
 
     .atlas-node-card.active {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(254, 240, 138, 0.3));
-        border: 1.5px solid var(--gold);
-        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.2);
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.15), rgba(226, 232, 240, 0.45));
+        border: 1.5px solid #64748b;
+        box-shadow: 0 2px 10px rgba(100, 116, 139, 0.15);
     }
 
     .atlas-node-card-title {
         font-family: 'Amiri', serif;
         font-size: 1.05rem;
         font-weight: 700;
-        color: #0f172a;
+        color: #334155;
         margin-bottom: 6px;
         line-height: 1.4;
     }
 
     .atlas-node-card.active .atlas-node-card-title {
-        color: #854d0e;
+        color: #1e293b;
     }
 
     .atlas-node-card-meta {
@@ -705,7 +705,7 @@ def get_deluxe_chambers_css():
         justify-content: space-between;
         align-items: center;
         font-size: 0.78rem;
-        color: #64748b;
+        color: #94a3b8;
     }
 
     .atlas-dossier-panel {
@@ -718,7 +718,7 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-dossier-header {
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
+        border-bottom: 1.5px solid rgba(148, 163, 184, 0.25);
         padding-bottom: 20px;
         margin-bottom: 24px;
     }
@@ -727,7 +727,7 @@ def get_deluxe_chambers_css():
         font-family: 'Amiri', serif;
         font-size: 1.85rem;
         font-weight: 700;
-        color: #0f172a;
+        color: #334155;
         margin: 0 0 12px 0;
         line-height: 1.35;
     }
@@ -740,25 +740,25 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-tag-pill {
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(184, 134, 11, 0.35);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.35);
         border-radius: 12px;
         padding: 3px 10px;
         font-size: 0.8rem;
-        color: var(--gold);
+        color: #475569;
         font-weight: 600;
     }
 
     .atlas-dossier-body {
         font-size: 1.05rem;
         line-height: 1.9;
-        color: #1e293b;
+        color: #475569;
         font-family: 'Tajawal', sans-serif;
     }
 
     .atlas-dossier-body h1, .atlas-dossier-body h2, .atlas-dossier-body h3 {
         font-family: 'Amiri', serif;
-        color: #0f172a;
+        color: #334155;
         margin-top: 24px;
         margin-bottom: 12px;
         border-bottom: 1.5px solid #e2e8f0;
@@ -766,12 +766,12 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-dossier-body blockquote {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(254, 240, 138, 0.25));
-        border-right: 4px solid var(--gold);
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(226, 232, 240, 0.45));
+        border-right: 4px solid #64748b;
         border-radius: 12px;
         padding: 14px 20px;
         margin: 18px 0;
-        color: #854d0e;
+        color: #334155;
         font-family: 'Amiri', serif;
         font-size: 1.15rem;
         font-weight: 700;
@@ -837,13 +837,13 @@ def generate_graph_chamber_html():
     meta = CHAMBER_METADATA["tab-graph"]
 
     categories = [
-        {"name": "ALL", "label": "🌐 الكل", "color": "#ffd700"},
-        {"name": "أولو العزم من الرسل", "label": "👑 أولو العزم من الرسل", "color": "#ffd166"},
+        {"name": "ALL", "label": "🌐 الكل", "color": "#64748b"},
+        {"name": "أولو العزم من الرسل", "label": "👑 أولو العزم من الرسل", "color": "#475569"},
         {"name": "الهيكل القرآني والمصفوفات", "label": "🔴 الهيكل القرآني والمصفوفات", "color": "#ff4d6d"},
         {"name": "دائرة البروج الاثني عشر", "label": "♈ دائرة البروج (12)", "color": "#ff9f1c"},
         {"name": "الميلوثيسيا وتصريف القوى", "label": "🟣 الميلوثيسيا وتصريف القوى", "color": "#9d4edd"},
         {"name": "المخطوطات والحكماء", "label": "🌿 أمهات المخطوطات والحكماء", "color": "#70e000"},
-        {"name": "العصور والرسالات التاريخية", "label": "🟡 العصور والرسالات", "color": "#ffb703"},
+        {"name": "العصور والرسالات التاريخية", "label": "🔘 العصور والرسالات", "color": "#94a3b8"},
         {"name": "الدورات الكونية والفلك", "label": "🔵 الدورات الفلكية", "color": "#00b4d8"},
         {"name": "الهرمسية والكيمياء القديمة", "label": "⚗️ الخيمياء والهرمسية", "color": "#06d6a0"},
         {"name": "مفاهيم عامة", "label": "🌌 مفاهيم كوزمولوجية", "color": "#3a86ff"}

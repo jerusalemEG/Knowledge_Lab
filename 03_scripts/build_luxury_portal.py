@@ -105,19 +105,19 @@ def build_luxury_portal():
         --card-glass-hover: #ffffff;
         --panel-bg: rgba(255, 255, 255, 0.96);
         
-        /* MYSTIC & GOLD BORDER HIERARCHY */
-        --border-slate-subtle: rgba(212, 175, 55, 0.22);
-        --border-slate: rgba(212, 175, 55, 0.4);
-        --border-slate-strong: rgba(212, 175, 55, 0.85);
+        /* MYSTIC & SILVER BORDER HIERARCHY */
+        --border-slate-subtle: rgba(148, 163, 184, 0.25);
+        --border-slate: rgba(148, 163, 184, 0.45);
+        --border-slate-strong: rgba(100, 116, 139, 0.85);
         
-        /* 24K IMPERIAL GOLD FOIL & ILLUMINATION */
-        --gold: #b8860b;
-        --gold-bright: #d4af37;
-        --gold-light: #fef08a;
-        --gold-foil: linear-gradient(135deg, #8a6408 0%, #d4af37 35%, #996515 70%, #d4af37 100%);
-        --border-gold: rgba(184, 134, 11, 0.38);
-        --border-gold-strong: rgba(184, 134, 11, 0.85);
-        --gold-glow: rgba(212, 175, 55, 0.35);
+        /* ROYAL STERLING SILVER & PLATINUM ILLUMINATION (TRANSFORMED FROM GOLD) */
+        --gold: #64748b;
+        --gold-bright: #94a3b8;
+        --gold-light: #cbd5e1;
+        --gold-foil: linear-gradient(135deg, #475569 0%, #94a3b8 35%, #64748b 70%, #cbd5e1 100%);
+        --border-gold: rgba(100, 116, 139, 0.4);
+        --border-gold-strong: rgba(71, 85, 105, 0.85);
+        --gold-glow: rgba(148, 163, 184, 0.35);
         
         /* PARADISE EMERALD & MALACHITE */
         --emerald-accent: #059669;
@@ -138,20 +138,20 @@ def build_luxury_portal():
         --ruby-accent: #e11d48;
         --ruby-glow: rgba(225, 29, 72, 0.3);
         
-        /* SCHOLARLY INK READABILITY TYPOGRAPHY */
-        --text-pure: #090d16;
-        --text-silver: #1e293b;
-        --text-body: #334155;
-        --text-gold: #854d0e;
-        --text-muted: #64748b;
+        /* REFINED GREY TYPOGRAPHY HIERARCHY */
+        --text-pure: #334155;
+        --text-silver: #475569;
+        --text-body: #64748b;
+        --text-gold: #475569;
+        --text-muted: #94a3b8;
     }
 
     html {
         background-color: #f1f5f9 !important;
         background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 40%, #e2e8f0 75%, #f1f5f9 100%) !important;
         color-scheme: light !important;
-        color: #0f172a !important;
-        scrollbar-color: rgba(184, 134, 11, 0.45) #edf2f7 !important;
+        color: #334155 !important;
+        scrollbar-color: rgba(100, 116, 139, 0.45) #edf2f7 !important;
     }
 
     body {
@@ -162,21 +162,21 @@ def build_luxury_portal():
         background-color: #f1f5f9 !important;
         background-image: 
             radial-gradient(circle at 12% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
-            radial-gradient(circle at 88% 18%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 50% 50%, rgba(148, 163, 184, 0.12) 0%, transparent 60%),
+            radial-gradient(circle at 88% 18%, rgba(148, 163, 184, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(148, 163, 184, 0.14) 0%, transparent 60%),
             radial-gradient(circle at 20% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 50%) !important;
         background-attachment: fixed !important;
         color-scheme: light !important;
         font-family: 'Tajawal', sans-serif;
-        color: #1e293b !important;
+        color: #334155 !important;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
-        scrollbar-color: rgba(184, 134, 11, 0.45) #edf2f7 !important;
+        scrollbar-color: rgba(100, 116, 139, 0.45) #edf2f7 !important;
     }
 
     * {
         box-sizing: border-box;
-        scrollbar-color: rgba(184, 134, 11, 0.4) #edf2f7 !important;
+        scrollbar-color: rgba(100, 116, 139, 0.4) #edf2f7 !important;
     }
 
     /* Universal Silver Manuscript Scrollbars Across Entire Site */
@@ -188,13 +188,13 @@ def build_luxury_portal():
         background: #f1f5f9 !important;
     }
     ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #d4af37, #94a3b8) !important;
+        background: linear-gradient(180deg, #94a3b8, #64748b) !important;
         border-radius: 6px !important;
         border: 2px solid #f1f5f9 !important;
-        box-shadow: 0 0 6px rgba(184, 134, 11, 0.25) !important;
+        box-shadow: 0 0 6px rgba(100, 116, 139, 0.25) !important;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #b8860b, #64748b) !important;
+        background: linear-gradient(180deg, #64748b, #475569) !important;
     }
 
     /* Universal Master Chambers Silver Parchment Enforcement */
@@ -248,7 +248,7 @@ def build_luxury_portal():
     }
     input:focus, select:focus, textarea:focus {
         border-color: var(--gold) !important;
-        box-shadow: 0 0 12px rgba(184, 134, 11, 0.3) !important;
+        box-shadow: 0 0 12px rgba(100, 116, 139, 0.3) !important;
         outline: none !important;
     }
 
@@ -265,7 +265,7 @@ def build_luxury_portal():
         background: rgba(248, 250, 252, 0.94) !important;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.35) !important;
+        border-bottom: 1.5px solid rgba(100, 116, 139, 0.35) !important;
         box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         width: 100%;
     }
@@ -274,14 +274,14 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.2rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 30%, #b38728 70%, #ffd700 100%);
+        background: linear-gradient(135deg, #334155 0%, #64748b 35%, #475569 70%, #94a3b8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 1.25;
-        filter: drop-shadow(0 1px 4px rgba(212, 175, 55, 0.3));
+        filter: drop-shadow(0 1px 3px rgba(100, 116, 139, 0.25));
     }
 
     .topbar-inner {
@@ -300,25 +300,25 @@ def build_luxury_portal():
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        background: linear-gradient(135deg, rgba(255, 209, 102, 0.18), rgba(255, 209, 102, 0.04));
-        border: 1px solid rgba(255, 209, 102, 0.45);
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.18), rgba(148, 163, 184, 0.04));
+        border: 1px solid rgba(148, 163, 184, 0.45);
         border-radius: 12px;
         padding: 8px 16px;
-        color: var(--gold);
+        color: #475569;
         font-family: 'Tajawal', sans-serif;
         font-size: 0.92rem;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: 0 0 16px rgba(255, 209, 102, 0.18);
+        box-shadow: 0 0 16px rgba(148, 163, 184, 0.15);
         flex-shrink: 0;
         height: 42px;
     }
 
     .topbar-hamburger-btn:hover {
-        background: var(--gold);
-        color: #030712;
-        box-shadow: 0 0 24px var(--gold-glow);
+        background: #475569;
+        color: #ffffff;
+        box-shadow: 0 0 24px rgba(100, 116, 139, 0.35);
         transform: translateY(-1px);
     }
 
@@ -328,12 +328,12 @@ def build_luxury_portal():
     }
 
     .hamburger-badge {
-        background: rgba(255, 209, 102, 0.25);
+        background: rgba(148, 163, 184, 0.25);
         padding: 2px 7px;
         border-radius: 10px;
         font-size: 0.74rem;
         color: inherit;
-        border: 1px solid rgba(255, 209, 102, 0.4);
+        border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     /* CENTER BRAND INFO */
@@ -364,7 +364,7 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.15rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #ffd166 10%, var(--gold) 70%, #d8b4fe 100%);
+        background: linear-gradient(135deg, #334155 10%, #64748b 60%, #94a3b8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
@@ -474,8 +474,8 @@ def build_luxury_portal():
         width: 390px;
         max-width: 90vw;
         background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%) !important;
-        border-left: 1.5px solid rgba(184, 134, 11, 0.35) !important;
-        box-shadow: -15px 0 45px rgba(15, 23, 42, 0.12), -2px 0 15px rgba(184, 134, 11, 0.08);
+        border-left: 1.5px solid rgba(100, 116, 139, 0.35) !important;
+        box-shadow: -15px 0 45px rgba(15, 23, 42, 0.12), -2px 0 15px rgba(100, 116, 139, 0.08);
         z-index: 9999;
         display: flex;
         flex-direction: column;
@@ -492,7 +492,7 @@ def build_luxury_portal():
         align-items: center;
         justify-content: space-between;
         padding: 18px 20px;
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
+        border-bottom: 1.5px solid rgba(100, 116, 139, 0.25);
         background: rgba(248, 250, 252, 0.98);
     }
 
@@ -526,7 +526,7 @@ def build_luxury_portal():
         height: 38px;
         border-radius: 10px;
         background: rgba(0, 0, 0, 0.04);
-        border: 1px solid rgba(184, 134, 11, 0.25);
+        border: 1px solid rgba(100, 116, 139, 0.25);
         color: #475569;
         font-size: 1.3rem;
         display: flex;
@@ -544,7 +544,7 @@ def build_luxury_portal():
 
     .drawer-search-wrapper {
         padding: 12px 18px;
-        border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+        border-bottom: 1px solid rgba(100, 116, 139, 0.2);
         background: #f8fafc;
     }
 
@@ -584,7 +584,7 @@ def build_luxury_portal():
         font-weight: 700;
         margin-bottom: 10px;
         padding-bottom: 6px;
-        border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+        border-bottom: 1px solid rgba(100, 116, 139, 0.2);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -619,15 +619,15 @@ def build_luxury_portal():
         background: #f8fafc;
         color: #0f172a;
         border-color: var(--gold);
-        box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 4px 12px rgba(100, 116, 139, 0.15);
         transform: translateX(-3px);
     }
 
     .drawer-door-item.active {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(254, 240, 138, 0.3)) !important;
-        border-color: var(--gold) !important;
-        color: #854d0e !important;
-        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.18) !important;
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.18), rgba(226, 232, 240, 0.45)) !important;
+        border-color: #64748b !important;
+        color: #1e293b !important;
+        box-shadow: 0 2px 10px rgba(100, 116, 139, 0.18) !important;
     }
 
     .door-num-badge {
@@ -642,8 +642,8 @@ def build_luxury_portal():
     }
 
     .drawer-door-item.active .door-num-badge {
-        border-color: var(--gold);
-        color: #854d0e;
+        border-color: #64748b;
+        color: #1e293b;
         background: #ffffff;
     }
 
@@ -681,13 +681,13 @@ def build_luxury_portal():
     }
 
     .hub-hero-banner {
-        background: radial-gradient(circle at 50% 20%, rgba(255, 209, 102, 0.12) 0%, rgba(157, 78, 221, 0.08) 50%, rgba(3, 7, 18, 0.95) 100%);
-        border: 1px solid var(--border-gold);
+        background: radial-gradient(circle at 50% 20%, rgba(148, 163, 184, 0.15) 0%, rgba(203, 213, 225, 0.1) 50%, rgba(248, 250, 252, 0.95) 100%);
+        border: 1.5px solid var(--border-gold);
         border-radius: 24px;
         padding: 40px 30px;
         text-align: center;
         margin-bottom: 30px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
         position: relative;
         overflow: hidden;
     }
@@ -699,21 +699,22 @@ def build_luxury_portal():
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(255, 209, 102, 0.05) 0%, transparent 60%);
+        background: radial-gradient(circle, rgba(148, 163, 184, 0.08) 0%, transparent 60%);
         pointer-events: none;
     }
 
     .hub-quran-verse {
         display: inline-block;
-        background: rgba(255, 209, 102, 0.1);
-        border: 1px solid rgba(255, 209, 102, 0.35);
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(226, 232, 240, 0.45));
+        border: 1.5px solid rgba(100, 116, 139, 0.35);
         border-radius: 16px;
         padding: 10px 24px;
-        color: var(--gold);
+        color: #334155;
         font-family: 'Amiri', serif;
         font-size: 1.25rem;
         margin-bottom: 18px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 20px rgba(100, 116, 139, 0.1);
+        font-weight: 700;
     }
 
     .hub-main-title {
@@ -721,7 +722,7 @@ def build_luxury_portal():
         font-size: 2.4rem;
         font-weight: 800;
         margin: 0 0 12px 0;
-        background: linear-gradient(135deg, #ffd166 20%, var(--gold) 65%, #c77dff 100%);
+        background: linear-gradient(135deg, #334155 10%, #64748b 60%, #94a3b8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         line-height: 1.25;
@@ -757,7 +758,7 @@ def build_luxury_portal():
     .hub-metric-card:hover {
         border-color: var(--gold);
         transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 8px 24px rgba(100, 116, 139, 0.15);
     }
 
     .metric-val {
@@ -819,7 +820,7 @@ def build_luxury_portal():
         color: #ffffff;
         border-color: var(--gold);
         font-weight: 700;
-        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.3);
+        box-shadow: 0 2px 10px rgba(100, 116, 139, 0.3);
     }
 
     .hub-search-box {
@@ -1184,7 +1185,7 @@ def build_luxury_portal():
         max-width: 1050px;
         max-height: 88vh;
         overflow-y: auto;
-        box-shadow: 0 25px 70px rgba(15, 23, 42, 0.2), 0 0 40px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 25px 70px rgba(15, 23, 42, 0.2), 0 0 40px rgba(100, 116, 139, 0.15);
         padding: 30px;
         position: relative;
     }
@@ -1232,7 +1233,7 @@ def build_luxury_portal():
     .library-book-item:hover {
         border-color: var(--gold);
         transform: translateY(-4px);
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1), 0 0 15px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1), 0 0 15px rgba(100, 116, 139, 0.15);
     }
 
     .book-item-badge {
@@ -1240,8 +1241,8 @@ def build_luxury_portal():
         font-size: 0.82rem;
         font-weight: 700;
         color: var(--gold);
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(184, 134, 11, 0.35);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.35);
         padding: 2px 8px;
         border-radius: 6px;
         align-self: flex-start;
@@ -1252,21 +1253,21 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.15rem;
         font-weight: 700;
-        color: #0f172a;
+        color: #334155;
         margin: 0 0 8px 0;
         line-height: 1.4;
     }
 
     .book-item-desc {
         font-size: 0.82rem;
-        color: #94a3b8;
+        color: #64748b;
         line-height: 1.6;
         margin-bottom: 14px;
         flex-grow: 1;
     }
 
     .book-item-link-btn {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.18), rgba(148, 163, 184, 0.05));
         border: 1px solid var(--border-gold);
         border-radius: 8px;
         padding: 6px 12px;
@@ -1282,7 +1283,7 @@ def build_luxury_portal():
 
     .book-item-link-btn:hover {
         background: var(--gold);
-        color: #0f172a;
+        color: #ffffff;
     }
 
     /* ========================================================
@@ -1292,13 +1293,13 @@ def build_luxury_portal():
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(135deg, rgba(14, 20, 44, 0.95), rgba(8, 12, 28, 0.98));
-        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        border: 1px solid rgba(148, 163, 184, 0.35);
         border-right: 4px solid var(--gold);
         border-radius: 18px;
         padding: 16px 22px;
         margin-bottom: 24px;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.65), 0 0 15px rgba(212, 175, 55, 0.12);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35), 0 0 15px rgba(148, 163, 184, 0.12);
         gap: 16px;
         flex-wrap: wrap;
     }
@@ -1311,11 +1312,11 @@ def build_luxury_portal():
     }
 
     .cuh-back-hub-btn {
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.35);
         border-radius: 8px;
         padding: 6px 14px;
-        color: var(--gold);
+        color: #cbd5e1;
         font-family: 'Tajawal', sans-serif;
         font-size: 0.84rem;
         font-weight: 700;
@@ -1328,7 +1329,7 @@ def build_luxury_portal():
 
     .cuh-back-hub-btn:hover {
         background: var(--gold);
-        color: #0f172a;
+        color: #ffffff;
         box-shadow: 0 0 14px var(--gold-glow);
     }
 
@@ -1357,8 +1358,8 @@ def build_luxury_portal():
     }
 
     .cuh-nav-btn {
-        background: rgba(18, 24, 50, 0.85);
-        border: 1px solid rgba(212, 175, 55, 0.25);
+        background: rgba(30, 41, 59, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.3);
         border-radius: 8px;
         padding: 6px 14px;
         color: #cbd5e1;
@@ -1396,7 +1397,7 @@ def build_luxury_portal():
     }
 
     .manuscript-border-inner {
-        border: 1px dashed rgba(184, 134, 11, 0.45);
+        border: 1px dashed rgba(100, 116, 139, 0.45);
         border-radius: 20px;
         position: relative;
         padding: 34px 28px;
@@ -1435,15 +1436,16 @@ def build_luxury_portal():
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(254, 240, 138, 0.25));
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.15), rgba(226, 232, 240, 0.45));
         border: 1px solid var(--border-gold);
         border-radius: 30px;
         padding: 6px 24px;
-        color: var(--gold);
+        color: #475569;
         font-family: 'Amiri', serif;
         font-size: 1.05rem;
         margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 2px 10px rgba(100, 116, 139, 0.12);
+        font-weight: 700;
     }
 
     .manuscript-main-heading {
@@ -1451,28 +1453,28 @@ def build_luxury_portal():
         font-size: clamp(2rem, 4.5vw, 3.2rem);
         font-weight: 800;
         margin: 0 0 16px 0;
-        color: #0f172a;
+        color: #334155;
         line-height: 1.3;
-        text-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
+        text-shadow: 0 1px 2px rgba(100, 116, 139, 0.15);
     }
 
     .hub-quran-verse {
         display: inline-block;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(254, 240, 138, 0.3));
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(226, 232, 240, 0.45));
         border: 1.5px solid var(--border-gold-strong);
         border-radius: 20px;
         padding: 12px 28px;
-        color: #854d0e;
+        color: #334155;
         font-family: 'Amiri', serif;
         font-size: 1.3rem;
         margin-bottom: 20px;
-        box-shadow: 0 4px 20px rgba(184, 134, 11, 0.12);
+        box-shadow: 0 4px 20px rgba(100, 116, 139, 0.12);
         font-weight: 700;
     }
 
     .manuscript-intro-folio {
         font-size: 1.05rem;
-        color: #334155;
+        color: #475569;
         max-width: 950px;
         margin: 0 auto 30px auto;
         line-height: 1.9;
@@ -1496,7 +1498,7 @@ def build_luxury_portal():
         justify-content: space-between;
         padding-bottom: 20px;
         margin-bottom: 26px;
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
+        border-bottom: 1.5px solid rgba(100, 116, 139, 0.25);
         flex-wrap: wrap;
         gap: 16px;
     }
@@ -1537,8 +1539,8 @@ def build_luxury_portal():
     }
 
     .tome-badge-count {
-        background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(184, 134, 11, 0.4);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(100, 116, 139, 0.4);
         border-radius: 20px;
         padding: 6px 16px;
         color: var(--gold);
@@ -1572,7 +1574,7 @@ def build_luxury_portal():
     .manuscript-folio-card:hover {
         transform: translateY(-6px);
         border-color: var(--card-accent, var(--gold));
-        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1), 0 0 20px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1), 0 0 20px rgba(148, 163, 184, 0.25);
         background: #fafbfc;
     }
 
@@ -1605,8 +1607,8 @@ def build_luxury_portal():
         font-size: 0.86rem;
         font-weight: 700;
         color: var(--gold);
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(184, 134, 11, 0.35);
+        background: rgba(148, 163, 184, 0.12);
+        border: 1px solid rgba(100, 116, 139, 0.35);
         padding: 3px 10px;
         border-radius: 8px;
     }
@@ -1663,13 +1665,13 @@ def build_luxury_portal():
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1.5px solid rgba(184, 134, 11, 0.45);
+        border: 1.5px solid rgba(100, 116, 139, 0.45);
         border-radius: 40px;
         padding: 8px 18px;
         display: flex;
         align-items: center;
         gap: 12px;
-        box-shadow: 0 10px 35px rgba(15, 23, 42, 0.15), 0 0 20px rgba(184, 134, 11, 0.12);
+        box-shadow: 0 10px 35px rgba(15, 23, 42, 0.15), 0 0 20px rgba(100, 116, 139, 0.12);
         max-width: 92vw;
     }
 
@@ -1752,7 +1754,7 @@ def build_luxury_portal():
     .realm-card:hover {
         background: #f8fafc !important;
         border-color: var(--gold) !important;
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 0 15px rgba(184, 134, 11, 0.15) !important;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 0 15px rgba(100, 116, 139, 0.15) !important;
         transform: translateY(-4px) !important;
     }
 
@@ -1765,13 +1767,14 @@ def build_luxury_portal():
     table td, table th, .matrix-table td, .matrix-table th {
         background: #ffffff !important;
         border: 1px solid #e2e8f0 !important;
-        color: #1e293b !important;
+        color: #475569 !important;
     }
 
     table th, .matrix-table th {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(254, 240, 138, 0.25)) !important;
-        color: #854d0e !important;
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+        color: #334155 !important;
         font-weight: 700 !important;
+        border-bottom: 2px solid #cbd5e1 !important;
     }
 
     #graph-fullscreen-wrapper,
