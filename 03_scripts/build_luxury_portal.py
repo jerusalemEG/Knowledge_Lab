@@ -33,6 +33,7 @@ sys.path.insert(0, os.path.join(ROOT_DIR, "03_scripts"))
 from generate_astrology_chamber import get_astrology_chamber_html, get_astrology_chamber_js
 from generate_seals_zouhri_chamber import get_seals_zouhri_chamber_html, get_seals_zouhri_chamber_js
 from generate_inner_realms_chamber import get_inner_realms_chamber_html, get_inner_realms_chamber_js
+from generate_astrolabe_engine import get_astrolabe_css, get_astrolabe_html, get_astrolabe_js
 
 
 def build_luxury_portal():
@@ -1107,6 +1108,7 @@ def build_luxury_portal():
     .inner-sub-view.active {
         display: block;
     }
+    """ + get_astrolabe_css() + """
 
     /* ========================================================
        GRAND ESOTERIC EDUCATIONAL LIBRARY MODAL STYLES
@@ -1862,6 +1864,7 @@ def build_luxury_portal():
                         </div>
                     </div>
 
+                    """ + get_astrolabe_html() + """
                     <!-- 5 PAVILIONS FILTER BAR & SEARCH -->
                     <div class="hub-filter-bar">
                         <div class="hub-filter-pills">
@@ -2275,6 +2278,7 @@ def build_luxury_portal():
 
     # --- MASTER LUXURY JAVASCRIPT CONTROLLER ---
     luxury_js = """
+    """ + get_astrolabe_js() + """
     // ========================================================
     // KNOWLEDGE LAB — MASTER UNIFIED ROUTER & AUDIO CONTROLLER
     // ========================================================
@@ -2335,6 +2339,7 @@ def build_luxury_portal():
         } else if (curIdx === 0) {
             navigateToChamber('tab-hub');
         }
+        if (typeof applyAstrolabeFolio === 'function') applyAstrolabeFolio(3);
     }
 
     function navigateToNextDoor() {
@@ -2608,6 +2613,7 @@ def build_luxury_portal():
         } else {
             navigateToChamber('tab-hub');
         }
+        if (typeof applyAstrolabeFolio === 'function') applyAstrolabeFolio(3);
 
         // Check password memory
         if (localStorage.getItem('knowledge_lab_auth') === 'granted') {
