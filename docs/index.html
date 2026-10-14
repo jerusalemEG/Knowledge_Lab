@@ -5198,7 +5198,9 @@
         border-right: 5px solid var(--gold, #d4af37);
         border-radius: 14px;
         padding: 12px 20px;
-        margin-bottom: 24px;
+        margin: 15px auto 20px auto;
+        max-width: 1400px;
+        width: calc(100% - 30px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.15);
         gap: 16px;
         flex-wrap: wrap;
@@ -15873,6 +15875,16 @@
         const countBadge = document.getElementById('atlas-nodes-count-badge');
         if (countBadge) countBadge.innerText = `${filtered.length} مفهوم`;
 
+        if (filtered.length === 0) {
+            listContainer.innerHTML = `
+                <div style="text-align:center; padding:36px 14px; color:#94a3b8; font-family:'Tajawal',sans-serif;">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:1.8rem; margin-bottom:12px; display:block; opacity:0.5; color:var(--gold);"></i>
+                    <p style="margin:0; font-size:0.92rem;">لا توجد مفاهيم مطابقة لمعايير البحث الحالية.</p>
+                </div>
+            `;
+            return;
+        }
+
         listContainer.innerHTML = filtered.map(n => `
             <div class="atlas-node-card ${n.id === window.currentAtlasNodeId ? 'active' : ''}" 
                  id="atlas-card-${n.id}" 
@@ -15891,10 +15903,13 @@
         window.currentAtlasNodeId = nodeId;
         const node = window.VAULT_NODES_DATA[nodeId];
 
-        // Highlight card
+        // Highlight card & smooth scroll to it in sidebar
         document.querySelectorAll('.atlas-node-card').forEach(c => c.classList.remove('active'));
         const activeCard = document.getElementById('atlas-card-' + nodeId);
-        if (activeCard) activeCard.classList.add('active');
+        if (activeCard) {
+            activeCard.classList.add('active');
+            activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
 
         // Update Title
         const titleEl = document.getElementById('atlas-dossier-title');
@@ -19624,6 +19639,17 @@
         if (localStorage.getItem('knowledge_lab_auth') === 'granted') {
             const gate = document.getElementById('portal-auth-gate');
             if (gate) gate.classList.add('unlocked');
+        }
+    });
+
+    // LISTEN FOR BROWSER HASH CHANGES (BACK / FORWARD)
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash && (CHAMBER_NAMES[hash] || CHAMBER_NAMES['tab-' + hash])) {
+            const normalized = hash.startsWith('tab-') ? hash : 'tab-' + hash;
+            if (activeChamberId !== normalized) {
+                navigateToChamber(normalized);
+            }
         }
     });
 
