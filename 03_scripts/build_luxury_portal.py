@@ -79,29 +79,52 @@ def build_luxury_portal():
     # --- MASTER LUXURY STYLESHEET ---
     luxury_css = """
     /* ========================================================
-       KNOWLEDGE LAB — MASTER LUXURY ARCHITECTURE STYLING (v6.0)
+       KNOWLEDGE LAB — GRAND ESOTERIC ENCYCLOPEDIA (v7.0 PREMIUM)
+       موسوعة باطنية حكيمة — Architecture Upgrade
        ======================================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;600;700;800;900&display=swap');
+
     :root {
         color-scheme: dark !important;
         --void-black: #030611;
         --bg-space: #030611;
         --bg-void: #030611;
-        --card-glass: rgba(11, 17, 33, 0.85);
-        --border-gold: rgba(255, 209, 102, 0.28);
-        --gold-glow: rgba(255, 209, 102, 0.45);
-        --purple-accent: #9d4edd;
-        --purple-glow: rgba(157, 78, 221, 0.4);
-        --cyan-accent: #00f0ff;
-        --cyan-glow: rgba(0, 240, 255, 0.4);
-        --emerald-accent: #06d6a0;
+        --card-glass: rgba(8, 13, 28, 0.92);
+        --card-glass-2: rgba(12, 18, 38, 0.88);
+        --border-gold: rgba(212, 170, 55, 0.3);
+        --border-gold-strong: rgba(212, 170, 55, 0.55);
+        --gold: #d4aa37;
+        --gold-light: #f0c84a;
+        --gold-dim: rgba(212, 170, 55, 0.15);
+        --gold-glow: rgba(212, 170, 55, 0.5);
+        --purple-accent: #8b5cf6;
+        --purple-light: #c4b5fd;
+        --purple-glow: rgba(139, 92, 246, 0.45);
+        --cyan-accent: #22d3ee;
+        --cyan-glow: rgba(34, 211, 238, 0.4);
+        --emerald-accent: #10b981;
+        --emerald-glow: rgba(16, 185, 129, 0.4);
+        --rose-accent: #fb7185;
+        --text-primary: #f0f4ff;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --section-max: 1480px;
+        --radius-sm: 10px;
+        --radius-md: 16px;
+        --radius-lg: 22px;
+        --radius-xl: 30px;
+        --shadow-card: 0 8px 32px rgba(0,0,0,0.6);
+        --shadow-deep: 0 20px 60px rgba(0,0,0,0.8);
+        --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     html {
         background-color: #030611 !important;
         background: #030611 !important;
         color-scheme: dark !important;
-        color: #f1f5f9 !important;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        color: var(--text-primary) !important;
+        scrollbar-color: rgba(212, 170, 55, 0.3) #030611 !important;
+        font-size: 16px;
     }
 
     body {
@@ -111,38 +134,44 @@ def build_luxury_portal():
         position: relative;
         background-color: #030611 !important;
         background-image: 
-            radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 45%),
-            radial-gradient(circle at 90% 85%, rgba(244, 180, 26, 0.05) 0%, transparent 45%),
-            radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 60%) !important;
+            radial-gradient(ellipse at 15% 10%, rgba(34, 211, 238, 0.04) 0%, transparent 55%),
+            radial-gradient(ellipse at 85% 90%, rgba(212, 170, 55, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 65%),
+            radial-gradient(ellipse at 78% 18%, rgba(16, 185, 129, 0.025) 0%, transparent 40%) !important;
         background-attachment: fixed !important;
         color-scheme: dark !important;
         font-family: 'Tajawal', sans-serif;
-        color: #f1f5f9 !important;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-primary) !important;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
         scroll-behavior: smooth;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        scrollbar-color: rgba(212, 170, 55, 0.3) #030611 !important;
     }
 
     * {
         box-sizing: border-box;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        scrollbar-color: rgba(212, 170, 55, 0.3) #030611 !important;
     }
 
-    /* Universal Dark Scrollbars Across Entire Site (Never Light/White) */
+    /* Premium Dark Scrollbars */
     ::-webkit-scrollbar {
-        width: 8px !important;
-        height: 8px !important;
+        width: 7px !important;
+        height: 7px !important;
     }
     ::-webkit-scrollbar-track {
-        background: #030611 !important;
+        background: rgba(2, 4, 14, 0.95) !important;
+        border-radius: 8px !important;
     }
     ::-webkit-scrollbar-thumb {
-        background: rgba(255, 209, 102, 0.3) !important;
-        border-radius: 6px !important;
-        border: 2px solid #030611 !important;
+        background: linear-gradient(180deg, rgba(212, 170, 55, 0.45), rgba(212, 170, 55, 0.18)) !important;
+        border-radius: 8px !important;
+        border: 1.5px solid #030611 !important;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 209, 102, 0.6) !important;
+        background: linear-gradient(180deg, rgba(212, 170, 55, 0.75), rgba(212, 170, 55, 0.45)) !important;
     }
 
     /* Universal Master Chambers Dark Void Enforcement */
@@ -173,7 +202,7 @@ def build_luxury_portal():
     #tab-inner-realms,
     main {
         background-color: #030611 !important;
-        color: #f1f5f9 !important;
+        color: var(--text-primary) !important;
     }
 
     /* Universal Form & Input Dark Enforcement */
@@ -191,28 +220,32 @@ def build_luxury_portal():
         touch-action: none;
     }
 
-    /* TOP BAR — SINGLE LUXURY ROW */
+    /* =====================================================
+       PREMIUM TOPBAR — ESOTERIC ENCYCLOPEDIA v7
+       ===================================================== */
     .master-luxury-topbar {
         position: sticky;
         top: 0;
         z-index: 5000;
-        background: rgba(4, 8, 19, 0.94);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-gold);
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+        background: rgba(3, 5, 16, 0.97);
+        backdrop-filter: blur(32px) saturate(1.5);
+        -webkit-backdrop-filter: blur(32px) saturate(1.5);
+        border-bottom: 1px solid rgba(212, 170, 55, 0.15);
+        box-shadow: 
+            inset 0 -1px 0 rgba(212, 170, 55, 0.08),
+            0 20px 60px rgba(0, 0, 0, 0.98);
         width: 100%;
     }
 
     .topbar-inner {
-        max-width: 1600px;
+        max-width: var(--section-max);
         margin: 0 auto;
-        padding: 8px 18px;
+        padding: 10px 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
-        height: 60px;
+        gap: 14px;
+        height: 64px;
     }
 
     /* HAMBURGER TRIGGER BUTTON */
@@ -282,15 +315,17 @@ def build_luxury_portal():
 
     .topbar-main-title {
         font-family: 'Amiri', serif;
-        font-size: 1.15rem;
+        font-size: 1.18rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #ffd166 10%, var(--gold) 70%, #d8b4fe 100%);
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, var(--purple-light) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-clip: text;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        line-height: 1.25;
+        line-height: 1.3;
+        letter-spacing: 0.02em;
     }
 
     .topbar-chamber-badge {
@@ -390,16 +425,16 @@ def build_luxury_portal():
         top: 0;
         right: 0;
         bottom: 0;
-        width: 380px;
-        max-width: 88vw;
-        background: rgba(6, 10, 22, 0.98);
-        border-left: 1px solid var(--border-gold);
-        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.95);
+        width: 390px;
+        max-width: 90vw;
+        background: rgba(4, 7, 20, 0.99);
+        border-left: 1px solid rgba(212, 170, 55, 0.18);
+        box-shadow: -24px 0 80px rgba(0, 0, 0, 0.98), inset 1px 0 0 rgba(212, 170, 55, 0.08);
         z-index: 9999;
         display: flex;
         flex-direction: column;
         transform: translateX(100%);
-        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .portal-drawer.open {
@@ -520,30 +555,30 @@ def build_luxury_portal():
         gap: 12px;
         width: 100%;
         text-align: right;
-        padding: 10px 14px;
+        padding: 11px 14px;
         background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 10px;
-        color: #cbd5e1;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-sm);
+        color: var(--text-secondary);
         font-family: 'Tajawal', sans-serif;
         font-size: 0.86rem;
-        font-weight: 600;
+        font-weight: 500;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.22s ease;
     }
 
     .drawer-door-item:hover {
-        background: rgba(255, 255, 255, 0.08);
-        color: #fff;
-        border-color: rgba(255, 209, 102, 0.35);
-        transform: translateX(-3px);
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--text-primary);
+        border-color: rgba(212, 170, 55, 0.3);
+        transform: translateX(-4px);
     }
 
     .drawer-door-item.active {
-        background: linear-gradient(135deg, rgba(255, 209, 102, 0.22), rgba(255, 209, 102, 0.05));
-        border-color: var(--gold);
-        color: var(--gold);
-        box-shadow: 0 0 16px rgba(255, 209, 102, 0.22);
+        background: linear-gradient(135deg, rgba(212, 170, 55, 0.18), rgba(212, 170, 55, 0.04));
+        border-color: rgba(212, 170, 55, 0.5);
+        color: var(--gold-light);
+        box-shadow: 0 0 16px rgba(212, 170, 55, 0.15);
     }
 
     .door-num-badge {
@@ -590,19 +625,26 @@ def build_luxury_portal():
     }
 
     .hub-container {
-        max-width: 1500px;
+        max-width: var(--section-max);
         margin: 0 auto;
-        padding: 24px 20px 80px 20px;
+        padding: 32px 24px 100px 24px;
     }
 
     .hub-hero-banner {
-        background: radial-gradient(circle at 50% 20%, rgba(255, 209, 102, 0.12) 0%, rgba(157, 78, 221, 0.08) 50%, rgba(3, 7, 18, 0.95) 100%);
-        border: 1px solid var(--border-gold);
-        border-radius: 24px;
-        padding: 40px 30px;
+        background: 
+            radial-gradient(ellipse at 50% 0%, rgba(212, 170, 55, 0.1) 0%, transparent 55%),
+            radial-gradient(ellipse at 15% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+            radial-gradient(ellipse at 85% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 45%),
+            rgba(6, 10, 24, 0.96);
+        border: 1px solid rgba(212, 170, 55, 0.2);
+        border-radius: var(--radius-xl);
+        padding: 52px 36px 44px;
         text-align: center;
-        margin-bottom: 30px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        margin-bottom: 32px;
+        box-shadow: 
+            var(--shadow-deep),
+            inset 0 1px 0 rgba(212, 170, 55, 0.15),
+            inset 0 0 60px rgba(139, 92, 246, 0.04);
         position: relative;
         overflow: hidden;
     }
@@ -610,44 +652,57 @@ def build_luxury_portal():
     .hub-hero-banner::before {
         content: '';
         position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255, 209, 102, 0.05) 0%, transparent 60%);
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(212, 170, 55, 0.5), rgba(139, 92, 246, 0.4), transparent);
+        pointer-events: none;
+    }
+
+    .hub-hero-banner::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.2), transparent);
         pointer-events: none;
     }
 
     .hub-quran-verse {
         display: inline-block;
-        background: rgba(255, 209, 102, 0.1);
-        border: 1px solid rgba(255, 209, 102, 0.35);
-        border-radius: 16px;
-        padding: 10px 24px;
-        color: var(--gold);
+        background: linear-gradient(135deg, rgba(212, 170, 55, 0.12), rgba(212, 170, 55, 0.05));
+        border: 1px solid rgba(212, 170, 55, 0.35);
+        border-radius: 20px;
+        padding: 12px 28px;
+        color: var(--gold-light);
         font-family: 'Amiri', serif;
-        font-size: 1.25rem;
-        margin-bottom: 18px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        font-size: 1.3rem;
+        line-height: 1.8;
+        margin-bottom: 22px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 170, 55, 0.08);
+        letter-spacing: 0.02em;
     }
 
     .hub-main-title {
         font-family: 'Amiri', serif;
-        font-size: 2.4rem;
-        font-weight: 800;
-        margin: 0 0 12px 0;
-        background: linear-gradient(135deg, #ffd166 20%, var(--gold) 65%, #c77dff 100%);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 45%, var(--purple-light) 80%, var(--cyan-accent) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        line-height: 1.25;
+        background-clip: text;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
     }
 
     .hub-sub-title {
         font-size: 1.05rem;
-        color: #cbd5e1;
-        max-width: 900px;
-        margin: 0 auto 26px auto;
-        line-height: 1.8;
+        color: rgba(203, 213, 225, 0.85);
+        max-width: 820px;
+        margin: 0 auto 32px auto;
+        line-height: 1.9;
+        font-weight: 300;
+        letter-spacing: 0.01em;
     }
 
     /* COSMIC METRICS ROW */
@@ -660,47 +715,67 @@ def build_luxury_portal():
     }
 
     .hub-metric-card {
-        background: rgba(15, 23, 42, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
-        padding: 16px 12px;
+        background: rgba(10, 15, 35, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: var(--radius-md);
+        padding: 20px 14px;
         text-align: center;
-        backdrop-filter: blur(10px);
-        transition: all 0.25s;
+        backdrop-filter: blur(14px);
+        transition: var(--transition-smooth);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hub-metric-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        transition: opacity 0.3s;
+        opacity: 0;
     }
 
     .hub-metric-card:hover {
-        border-color: var(--gold);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        border-color: rgba(212, 170, 55, 0.35);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 170, 55, 0.06);
+    }
+
+    .hub-metric-card:hover::before {
+        opacity: 1;
     }
 
     .metric-val {
         font-family: 'Amiri', serif;
-        font-size: 1.8rem;
-        font-weight: 800;
+        font-size: 2rem;
+        font-weight: 700;
         color: var(--gold);
         line-height: 1;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
+        text-shadow: 0 0 20px rgba(212, 170, 55, 0.3);
     }
 
     .metric-lbl {
-        font-size: 0.8rem;
-        color: #94a3b8;
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+        line-height: 1.4;
     }
 
     /* HUB CONTROLS & FILTER */
     .hub-filter-bar {
-        background: rgba(15, 23, 42, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 18px;
-        padding: 14px 20px;
-        margin-bottom: 25px;
+        background: rgba(8, 12, 30, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: var(--radius-lg);
+        padding: 16px 22px;
+        margin-bottom: 28px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
         flex-wrap: wrap;
+        backdrop-filter: blur(12px);
     }
 
     .hub-filter-pills {
@@ -763,23 +838,24 @@ def build_luxury_portal():
     /* 17 CHAPTER CARDS GRID */
     .hub-doors-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 22px;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 24px;
     }
 
     .hub-door-card {
-        background: rgba(13, 19, 36, 0.82);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 24px;
+        background: var(--card-glass);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius-lg);
+        padding: 26px 24px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: var(--transition-smooth);
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow-card);
     }
 
     .hub-door-card::before {
@@ -788,20 +864,20 @@ def build_luxury_portal():
         top: 0;
         right: 0;
         left: 0;
-        height: 3px;
-        background: var(--door-accent, var(--gold));
-        opacity: 0.6;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--door-accent, var(--gold)) 40%, var(--door-accent, var(--gold)) 60%, transparent 100%);
+        opacity: 0.5;
         transition: height 0.3s ease, opacity 0.3s ease;
     }
 
     .hub-door-card:hover {
-        transform: translateY(-6px);
+        transform: translateY(-7px);
         border-color: var(--door-accent, var(--gold));
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0,0,0,0.2);
     }
 
     .hub-door-card:hover::before {
-        height: 5px;
+        height: 3px;
         opacity: 1;
     }
 
@@ -821,16 +897,16 @@ def build_luxury_portal():
     }
 
     .tag-quran {
-        background: rgba(255, 209, 102, 0.12);
-        color: var(--gold);
-        border-color: rgba(255, 209, 102, 0.3);
+        background: rgba(212, 170, 55, 0.1);
+        color: var(--gold-light);
+        border-color: rgba(212, 170, 55, 0.28);
     }
 
     .tag-occult-lab {
-        background: linear-gradient(135deg, rgba(157, 78, 221, 0.22), rgba(0, 240, 255, 0.16));
-        color: #e9d5ff;
-        border-color: rgba(157, 78, 221, 0.5);
-        box-shadow: 0 0 12px rgba(157, 78, 221, 0.25);
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(34, 211, 238, 0.12));
+        color: var(--purple-light);
+        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
     }
 
     .card-door-number {
@@ -848,19 +924,21 @@ def build_luxury_portal():
 
     .card-door-title {
         font-family: 'Amiri', serif;
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         font-weight: 700;
-        color: #fff;
-        margin-bottom: 8px;
-        line-height: 1.3;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        line-height: 1.35;
+        letter-spacing: 0.01em;
     }
 
     .card-door-desc {
-        font-size: 0.88rem;
-        color: #94a3b8;
-        line-height: 1.7;
-        margin-bottom: 20px;
+        font-size: 0.87rem;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        margin-bottom: 22px;
         flex-grow: 1;
+        font-weight: 400;
     }
 
     .card-action-bar {
@@ -905,7 +983,107 @@ def build_luxury_portal():
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* RESPONSIVE REFINEMENTS & TOUCH SAFETY */
+
+    /* =====================================================
+       ENCYCLOPEDIC TYPOGRAPHY SYSTEM — GLOBAL HEADINGS
+       ===================================================== */
+    .enc-chapter-header {
+        background: linear-gradient(135deg, rgba(10, 15, 35, 0.98), rgba(6, 10, 22, 0.95));
+        border-bottom: 1px solid rgba(212, 170, 55, 0.2);
+        padding: 36px 32px 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .enc-chapter-header::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--purple-accent) 70%, transparent 100%);
+    }
+
+    .enc-chapter-eyebrow {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--cyan-accent);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .enc-chapter-eyebrow::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(34, 211, 238, 0.3), transparent);
+    }
+
+    .enc-chapter-title {
+        font-family: 'Amiri', serif;
+        font-size: clamp(1.6rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .enc-chapter-subtitle {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        max-width: 700px;
+    }
+
+    /* Global table improvements */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        font-family: 'Amiri', serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--gold-light);
+        background: rgba(10, 15, 35, 0.9);
+        padding: 12px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        text-align: right;
+    }
+
+    td {
+        padding: 11px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        background: rgba(6, 10, 22, 0.6);
+    }
+
+    tr:hover td {
+        background: rgba(10, 16, 36, 0.9);
+        color: var(--text-primary);
+    }
+
+    /* Selection highlight */
+    ::selection {
+        background: rgba(212, 170, 55, 0.25);
+        color: var(--gold-light);
+    }
+
+    /* Premium section dividers */
+    .enc-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(212, 170, 55, 0.25), rgba(139, 92, 246, 0.2), transparent);
+        margin: 36px 0;
+        border: none;
+    }
+
+    /* Responsive grid */
     @media (max-width: 860px) {
         .topbar-inner {
             padding: 6px 12px;
@@ -1073,10 +1251,10 @@ def build_luxury_portal():
     <header class="master-luxury-topbar">
         <div class="topbar-inner">
             <!-- RIGHT: HAMBURGER DRAWER TRIGGER -->
-            <button class="topbar-hamburger-btn" onclick="openSidebar()" title="فتح فهرس الأبواب الـ 19">
+            <button class="topbar-hamburger-btn" onclick="openSidebar()" title="فتح فهرس الأبواب الـ 20">
                 <span class="hamburger-icon">☰</span>
                 <span>الأبواب</span>
-                <span class="hamburger-badge">19</span>
+                <span class="hamburger-badge">20</span>
             </button>
 
             <!-- CENTER: BRAND & ACTIVE CHAMBER INDICATOR -->
@@ -1105,7 +1283,7 @@ def build_luxury_portal():
         </div>
     </header>
 
-    <!-- BACKDROP & SLIDING DRAWER (فهرس الأبواب الـ 19) -->
+    <!-- BACKDROP & SLIDING DRAWER (فهرس الأبواب الـ 20) -->
     <div id="portal-drawer-backdrop" class="portal-drawer-backdrop" onclick="closeSidebar()"></div>
 
     <aside id="portal-drawer" class="portal-drawer" aria-label="فهرس أبواب الحكمة">
@@ -1114,7 +1292,7 @@ def build_luxury_portal():
                 <span class="drawer-brand-icon">🌌</span>
                 <div>
                     <h3 class="drawer-brand-title">فهرس أبواب الحكمة</h3>
-                    <span class="drawer-brand-sub">19 باباً معرفياً موحداً</span>
+                    <span class="drawer-brand-sub">20 باباً معرفياً موحداً</span>
                 </div>
             </div>
             <button class="drawer-close-btn" onclick="closeSidebar()" aria-label="إغلاق">✕</button>
@@ -1285,7 +1463,7 @@ def build_luxury_portal():
                         <div class="metric-lbl">عقدة كوزمولوجية مستخلصة</div>
                     </div>
                     <div class="hub-metric-card">
-                        <div class="metric-val">19</div>
+                        <div class="metric-val">20</div>
                         <div class="metric-lbl">باباً علمياً مفهرساً</div>
                     </div>
                     <div class="hub-metric-card">
@@ -1306,12 +1484,12 @@ def build_luxury_portal():
             <!-- CONTROLS & SEARCH BAR -->
             <div class="hub-filter-bar">
                 <div class="hub-filter-pills">
-                    <button class="hub-filter-pill active" onclick="filterHubCategory('ALL')">الكل (19)</button>
+                    <button class="hub-filter-pill active" onclick="filterHubCategory('ALL')">الكل (20)</button>
                     <button class="hub-filter-pill" onclick="filterHubCategory('quran')">الركن الأول: كوزمولوجيا الوحي والنبوات (8)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('occult_lab')">الركن الثاني: سفر النواميس والمختبر الرياضي (11)</button>
+                    <button class="hub-filter-pill" onclick="filterHubCategory('occult_lab')">الركن الثاني: سفر النواميس والمختبر الرياضي (12)</button>
                 </div>
                 <div class="hub-search-box">
-                    <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في الأبواب الـ 19 والمفاهيم..." oninput="filterHubSearch(this.value)">
+                    <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في الأبواب الـ 20 والمفاهيم..." oninput="filterHubSearch(this.value)">
                 </div>
             </div>
 
