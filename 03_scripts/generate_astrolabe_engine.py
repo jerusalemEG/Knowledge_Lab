@@ -19,10 +19,10 @@ def get_astrolabe_css():
         justify-content: center;
         gap: 32px;
         padding: 30px 20px;
-        background: radial-gradient(circle at 50% 50%, rgba(15, 23, 48, 0.95) 0%, rgba(2, 4, 10, 0.98) 100%);
+        background: radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.95) 0%, rgba(17, 24, 35, 0.98) 100%);
         border: 2px solid var(--border-gold-strong);
         border-radius: 28px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), inset 0 0 40px rgba(212, 175, 55, 0.12);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(212, 175, 55, 0.12);
         margin: 28px auto 40px auto;
         max-width: 1300px;
         position: relative;
@@ -46,7 +46,7 @@ def get_astrolabe_css():
         border: 3px solid #d4af37;
         border-radius: 50%;
         box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 25px rgba(212, 175, 55, 0.2);
-        background: radial-gradient(circle, rgba(10, 16, 36, 0.9) 0%, rgba(2, 4, 10, 0.95) 100%);
+        background: radial-gradient(circle, rgba(30, 41, 59, 0.9) 0%, rgba(17, 24, 35, 0.95) 100%);
         animation: astrolabeRotateSlow 160s linear infinite;
         cursor: grab;
     }
@@ -96,7 +96,7 @@ def get_astrolabe_css():
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #02040a;
+        color: #0f172a;
         font-size: 1.2rem;
         z-index: 20;
         user-select: none;
@@ -115,11 +115,11 @@ def get_astrolabe_css():
     /* Interactive Gilded Parchment Folio (لوح البردي المذهب التفاعلي) */
     .gilded-parchment-display {
         flex-grow: 1;
-        background: rgba(6, 11, 26, 0.92);
+        background: rgba(30, 41, 59, 0.92);
         border: 1.5px solid var(--border-gold-strong);
         border-radius: 20px;
         padding: 26px 28px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 25px rgba(212, 175, 55, 0.08);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(212, 175, 55, 0.08);
         position: relative;
         min-width: 320px;
     }
@@ -177,8 +177,8 @@ def get_astrolabe_css():
     }
 
     .parchment-attr-pill {
-        background: rgba(2, 5, 14, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(22, 31, 46, 0.85);
+        border: 1px solid #334155;
         border-radius: 10px;
         padding: 10px 12px;
         text-align: center;
@@ -215,7 +215,7 @@ def get_astrolabe_css():
 
     .parchment-action-btn:hover {
         background: var(--gold);
-        color: #02040a;
+        color: #0f172a;
         box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
         transform: translateY(-2px);
     }

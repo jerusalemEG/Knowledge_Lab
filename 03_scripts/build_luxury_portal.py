@@ -80,15 +80,25 @@ def build_luxury_portal():
     # --- MASTER LUXURY STYLESHEET ---
     luxury_css = """
     /* ========================================================
-       KNOWLEDGE LAB — MASTER LUXURY ARCHITECTURE STYLING (v6.0)
+       KNOWLEDGE LAB — MASTER LUXURY SLATE-GREY ARCHITECTURE STYLING (v7.0)
        ======================================================== */
     :root {
         color-scheme: dark !important;
-        --void-black: #02040a;
-        --bg-space: #02040a;
-        --bg-void: #02040a;
-        --card-glass: rgba(7, 12, 28, 0.9);
-        --card-glass-hover: rgba(10, 18, 42, 0.95);
+        --void-black: #111823;
+        --bg-space: #111823;
+        --bg-void: #111823;
+        --bg-slate-deep: #111823;
+        --bg-slate-panel: #182232;
+        --bg-slate-card: #1e293b;
+        --bg-slate-elevated: #243347;
+        --card-glass: rgba(30, 41, 59, 0.92);
+        --card-glass-hover: rgba(36, 51, 71, 0.98);
+        --panel-bg: rgba(24, 34, 50, 0.95);
+        
+        /* SLATE BORDER HIERARCHY */
+        --border-slate-subtle: rgba(148, 163, 184, 0.16);
+        --border-slate: #334155;
+        --border-slate-strong: #475569;
         
         /* 24K IMPERIAL GOLD FOIL & JEWEL PALETTE */
         --gold: #d4af37;
@@ -97,37 +107,40 @@ def build_luxury_portal():
         --gold-foil: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
         --border-gold: rgba(212, 175, 55, 0.38);
         --border-gold-strong: rgba(212, 175, 55, 0.75);
-        --gold-glow: rgba(212, 175, 55, 0.55);
+        --gold-glow: rgba(212, 175, 55, 0.45);
         
         /* ROYAL VELVET AMETHYST & VIOLET */
-        --purple-accent: #a855f7;
-        --purple-light: #d8b4fe;
-        --purple-glow: rgba(168, 85, 247, 0.45);
+        --purple-accent: #c084fc;
+        --purple-light: #e9d5ff;
+        --purple-glow: rgba(192, 132, 252, 0.4);
         
         /* ASTRAL LAPIS LAZULI & CYAN */
-        --cyan-accent: #00f0ff;
-        --cyan-light: #7dd3fc;
-        --cyan-glow: rgba(0, 240, 255, 0.45);
+        --cyan-accent: #38bdf8;
+        --cyan-light: #bae6fd;
+        --cyan-glow: rgba(56, 189, 248, 0.4);
         
         /* HOLY MALACHITE & EMERALD */
-        --emerald-accent: #10b981;
-        --emerald-glow: rgba(16, 185, 129, 0.45);
+        --emerald-accent: #34d399;
+        --emerald-glow: rgba(52, 211, 153, 0.4);
         
         /* CELESTIAL RUBY */
-        --ruby-accent: #f43f5e;
-        --ruby-glow: rgba(244, 63, 94, 0.45);
+        --ruby-accent: #fb7185;
+        --ruby-glow: rgba(251, 113, 133, 0.4);
         
+        /* HIGH-CONTRAST READABILITY TYPOGRAPHY */
         --text-pure: #f8fafc;
+        --text-silver: #e2e8f0;
+        --text-body: #cbd5e1;
         --text-gold: #fef08a;
         --text-muted: #94a3b8;
     }
 
     html {
-        background-color: #02040a !important;
-        background: #02040a !important;
+        background-color: #111823 !important;
+        background: #111823 !important;
         color-scheme: dark !important;
-        color: #f1f5f9 !important;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #02040a !important;
+        color: #f8fafc !important;
+        scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
     }
 
     body {
@@ -135,46 +148,45 @@ def build_luxury_portal():
         max-width: 100vw;
         overflow-x: hidden !important;
         position: relative;
-        background-color: #02040a !important;
+        background-color: #111823 !important;
         background-image: 
-            radial-gradient(ellipse at 15% 15%, rgba(0, 240, 255, 0.07) 0%, transparent 50%),
-            radial-gradient(ellipse at 85% 85%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 45%) !important;
+            radial-gradient(ellipse at 15% 15%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 85% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 50%, rgba(192, 132, 252, 0.04) 0%, transparent 60%) !important;
         background-attachment: fixed !important;
         color-scheme: dark !important;
         font-family: 'Tajawal', sans-serif;
         color: #f8fafc !important;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
-        scrollbar-color: rgba(212, 175, 55, 0.45) #02040a !important;
+        scrollbar-color: rgba(212, 175, 55, 0.4) #111823 !important;
     }
 
     * {
         box-sizing: border-box;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #02040a !important;
+        scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
     }
 
-    /* Universal Dark Scrollbars Across Entire Site (Never Light/White) */
+    /* Universal Slate Dark Scrollbars Across Entire Site */
     ::-webkit-scrollbar {
         width: 8px !important;
         height: 8px !important;
     }
     ::-webkit-scrollbar-track {
-        background: #02040a !important;
+        background: #111823 !important;
     }
     ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #d4af37, #937322) !important;
+        background: linear-gradient(180deg, #d4af37, #64748b) !important;
         border-radius: 6px !important;
-        border: 2px solid #02040a !important;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+        border: 2px solid #111823 !important;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.35) !important;
     }
     ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(180deg, #ffd700, #d4af37) !important;
-        box-shadow: 0 0 14px rgba(255, 215, 0, 0.7) !important;
+        box-shadow: 0 0 14px rgba(255, 215, 0, 0.6) !important;
     }
 
-    /* Universal Master Chambers Dark Void Enforcement */
+    /* Universal Master Chambers Slate-Grey Enforcement */
     .master-chambers-wrapper,
     .chamber-view,
     .tab-section,
@@ -182,37 +194,49 @@ def build_luxury_portal():
     #tab-hub,
     #tab-graph,
     #tab-spheres,
-    #tab-chakras,
-    #tab-zodiac,
-    #tab-timeline,
     #tab-matrix,
     #tab-manuscripts,
-    #tab-mizan,
-    #tab-kings,
-    #tab-decans,
-    #tab-hours,
+    #tab-timeline,
+    #tab-zodiac,
     #tab-mansions,
-    #tab-letters-magic,
-    #tab-bodies,
-    #tab-numbers,
-    #tab-cymatics,
-    #tab-murshid,
+    #tab-hours,
+    #tab-kings,
     #tab-astrology-calc,
+    #tab-letters-magic,
+    #tab-numbers,
+    #tab-physics,
+    #tab-chakras,
+    #tab-bodies,
+    #tab-zodiac-angels,
     #tab-seals-zouhri,
     #tab-inner-realms,
+    #tab-critique,
+    #tab-criterion,
     main {
-        background-color: #02040a !important;
-        color: #f1f5f9 !important;
+        background-color: #111823 !important;
+        background: #111823 !important;
+        color: #f8fafc !important;
     }
 
-    /* Universal Form & Input Dark Enforcement */
+    /* Universal Form & Input Slate Enforcement */
     input, select, textarea, button {
         color-scheme: dark !important;
     }
+    input[type="text"], input[type="password"], input[type="number"], select, textarea {
+        background: #161f2e !important;
+        border: 1px solid #334155 !important;
+        color: #f8fafc !important;
+    }
     input[type="date"], input[type="time"] {
         color-scheme: dark !important;
-        background: rgba(0, 0, 0, 0.6) !important;
-        color: #f1f5f9 !important;
+        background: #161f2e !important;
+        border: 1px solid #334155 !important;
+        color: #f8fafc !important;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: var(--gold) !important;
+        box-shadow: 0 0 12px var(--gold-glow) !important;
+        outline: none !important;
     }
 
     body.drawer-open-lock {
@@ -225,11 +249,11 @@ def build_luxury_portal():
         position: sticky;
         top: 0;
         z-index: 5000;
-        background: rgba(2, 5, 14, 0.96);
+        background: rgba(17, 24, 35, 0.96) !important;
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
-        border-bottom: 1px solid var(--border-gold);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), inset 0 -1px 0 rgba(212, 175, 55, 0.2);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6), inset 0 -1px 0 rgba(212, 175, 55, 0.15);
         width: 100%;
     }
 
@@ -389,7 +413,7 @@ def build_luxury_portal():
 
     .topbar-action-btn.tone-btn.playing {
         background: var(--cyan-accent);
-        color: #030611;
+        color: #0f172a;
         box-shadow: 0 0 16px var(--cyan-glow);
     }
 
@@ -407,12 +431,12 @@ def build_luxury_portal():
     }
 
     /* ========================================================
-       MUSEUM-GRADE SIDEBAR DRAWER (فهرس الأبواب الـ 17)
+       MUSEUM-GRADE SIDEBAR DRAWER (فهرس الأبواب الـ 20)
        ======================================================== */
     .portal-drawer-backdrop {
         position: fixed;
         inset: 0;
-        background: rgba(1, 3, 8, 0.82);
+        background: rgba(15, 23, 42, 0.78);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         z-index: 9998;
@@ -433,11 +457,11 @@ def build_luxury_portal():
         top: 0;
         right: 0;
         bottom: 0;
-        width: 380px;
-        max-width: 88vw;
-        background: rgba(6, 10, 22, 0.98);
-        border-left: 1px solid var(--border-gold);
-        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.95);
+        width: 390px;
+        max-width: 90vw;
+        background: #141d2b !important;
+        border-left: 1px solid #334155 !important;
+        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.75);
         z-index: 9999;
         display: flex;
         flex-direction: column;
@@ -454,8 +478,8 @@ def build_luxury_portal():
         align-items: center;
         justify-content: space-between;
         padding: 18px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(15, 23, 42, 0.8);
+        border-bottom: 1px solid #334155;
+        background: #182232;
     }
 
     .drawer-brand {
@@ -470,7 +494,7 @@ def build_luxury_portal():
 
     .drawer-brand-title {
         font-family: 'Amiri', serif;
-        font-size: 1.22rem;
+        font-size: 1.25rem;
         font-weight: 700;
         color: var(--gold);
         margin: 0;
@@ -478,7 +502,7 @@ def build_luxury_portal():
     }
 
     .drawer-brand-sub {
-        font-size: 0.72rem;
+        font-size: 0.74rem;
         color: #94a3b8;
         display: block;
     }
@@ -488,7 +512,7 @@ def build_luxury_portal():
         height: 38px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid #334155;
         color: #cbd5e1;
         font-size: 1.3rem;
         display: flex;
@@ -506,14 +530,14 @@ def build_luxury_portal():
 
     .drawer-search-wrapper {
         padding: 12px 18px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        background: rgba(3, 7, 18, 0.5);
+        border-bottom: 1px solid #334155;
+        background: #161f2e;
     }
 
     .drawer-search-input {
         width: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: #111823;
+        border: 1px solid #334155;
         border-radius: 10px;
         padding: 10px 14px;
         color: #fff;
@@ -533,6 +557,7 @@ def build_luxury_portal():
         overflow-y: auto;
         padding: 16px 18px 40px 18px;
         -webkit-overflow-scrolling: touch;
+        background: #141d2b;
     }
 
     .drawer-pillar-group {
@@ -545,7 +570,7 @@ def build_luxury_portal():
         font-weight: 700;
         margin-bottom: 10px;
         padding-bottom: 6px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid #334155;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -564,8 +589,8 @@ def build_luxury_portal():
         width: 100%;
         text-align: right;
         padding: 10px 14px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: #1e293b;
+        border: 1px solid #334155;
         border-radius: 10px;
         color: #cbd5e1;
         font-family: 'Tajawal', sans-serif;
@@ -576,24 +601,24 @@ def build_luxury_portal():
     }
 
     .drawer-door-item:hover {
-        background: rgba(255, 255, 255, 0.08);
+        background: #283850;
         color: #fff;
-        border-color: rgba(255, 209, 102, 0.35);
+        border-color: rgba(212, 175, 55, 0.45);
         transform: translateX(-3px);
     }
 
     .drawer-door-item.active {
-        background: linear-gradient(135deg, rgba(255, 209, 102, 0.22), rgba(255, 209, 102, 0.05));
-        border-color: var(--gold);
-        color: var(--gold);
-        box-shadow: 0 0 16px rgba(255, 209, 102, 0.22);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.22), rgba(30, 41, 59, 0.95)) !important;
+        border-color: var(--gold) !important;
+        color: var(--gold) !important;
+        box-shadow: 0 0 16px rgba(212, 175, 55, 0.22) !important;
     }
 
     .door-num-badge {
         font-size: 0.72rem;
         font-weight: 800;
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #111823;
+        border: 1px solid #334155;
         padding: 2px 6px;
         border-radius: 6px;
         color: #94a3b8;
@@ -772,7 +797,7 @@ def build_luxury_portal():
 
     .hub-filter-pill.active {
         background: linear-gradient(135deg, var(--gold), #d49300);
-        color: #030611;
+        color: #0f172a;
         border-color: var(--gold);
         font-weight: 700;
         box-shadow: 0 0 14px var(--gold-glow);
@@ -1040,7 +1065,7 @@ def build_luxury_portal():
     }
     .astro-tab-pill.active {
         background: linear-gradient(135deg, var(--gold), #d49300);
-        color: #030611;
+        color: #0f172a;
         border-color: var(--gold);
         box-shadow: 0 0 16px var(--gold-glow);
     }
@@ -1239,9 +1264,101 @@ def build_luxury_portal():
 
     .book-item-link-btn:hover {
         background: var(--gold);
-        color: #02040a;
+        color: #0f172a;
     }
 
+    /* ========================================================
+       CHAMBER UNIVERSAL BREADCRUMB & HEADER FRAMEWORK
+       ======================================================== */
+    .chamber-universal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #182232;
+        border: 1px solid #334155;
+        border-right: 4px solid var(--gold);
+        border-radius: 16px;
+        padding: 14px 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .cuh-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .cuh-back-hub-btn {
+        background: rgba(212, 175, 55, 0.12);
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        border-radius: 8px;
+        padding: 6px 14px;
+        color: var(--gold);
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.84rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .cuh-back-hub-btn:hover {
+        background: var(--gold);
+        color: #0f172a;
+        box-shadow: 0 0 14px var(--gold-glow);
+    }
+
+    .cuh-separator {
+        color: #64748b;
+        font-weight: 300;
+    }
+
+    .cuh-pavilion-tag {
+        font-size: 0.82rem;
+        color: #94a3b8;
+        font-weight: 600;
+    }
+
+    .cuh-door-badge {
+        font-family: 'Amiri', serif;
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #f8fafc;
+    }
+
+    .cuh-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .cuh-nav-btn {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        padding: 6px 14px;
+        color: #cbd5e1;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .cuh-nav-btn:hover {
+        background: #283850;
+        border-color: var(--gold);
+        color: var(--gold);
+    }
 
     /* ========================================================
        GRAND ESOTERIC CODEX & ANCIENT MANUSCRIPT PORTAL STYLES
@@ -1250,20 +1367,20 @@ def build_luxury_portal():
 
     /* Ornate Manuscript Border Frame */
     .manuscript-border-outer {
-        border: 2px solid var(--border-gold);
+        border: 2px solid rgba(212, 175, 55, 0.4);
         border-radius: 20px;
         position: relative;
         padding: 4px;
-        background: rgba(3, 6, 17, 0.7);
-        box-shadow: 0 0 35px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(255, 209, 102, 0.05);
+        background: #141d2b;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(212, 175, 55, 0.05);
     }
 
     .manuscript-border-inner {
-        border: 1px dashed rgba(255, 209, 102, 0.35);
+        border: 1px dashed rgba(212, 175, 55, 0.35);
         border-radius: 16px;
         position: relative;
         padding: 30px 24px;
-        background: radial-gradient(circle at 50% 20%, rgba(255, 209, 102, 0.08) 0%, rgba(157, 78, 221, 0.05) 50%, rgba(3, 6, 17, 0.95) 100%);
+        background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, rgba(30, 41, 59, 0.8) 50%, #161f2e 100%);
     }
 
     /* Manuscript Corner Ornaments */
@@ -1297,7 +1414,7 @@ def build_luxury_portal():
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        background: linear-gradient(135deg, rgba(255, 209, 102, 0.18), rgba(157, 78, 221, 0.15));
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(30, 41, 59, 0.6));
         border: 1px solid var(--border-gold);
         border-radius: 30px;
         padding: 6px 24px;
@@ -1305,7 +1422,7 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.05rem;
         margin-bottom: 20px;
-        box-shadow: 0 0 20px rgba(255, 209, 102, 0.2);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
     }
 
     .manuscript-main-heading {
@@ -1322,7 +1439,7 @@ def build_luxury_portal():
 
     .hub-quran-verse {
         display: inline-block;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(168, 85, 247, 0.08));
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(30, 41, 59, 0.6));
         border: 1.5px solid var(--border-gold-strong);
         border-radius: 20px;
         padding: 12px 28px;
@@ -1330,7 +1447,7 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.3rem;
         margin-bottom: 20px;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.2);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
         text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
     }
 
@@ -1343,14 +1460,14 @@ def build_luxury_portal():
         font-family: 'Tajawal', sans-serif;
     }
 
-    /* Tome Section Blocks (الأسفار الثلاثة الكبرى) */
+    /* Tome Section Blocks (الأجنحة الخمسة الكبرى) */
     .tome-section-block {
         margin-bottom: 50px;
-        background: rgba(8, 14, 30, 0.7);
-        border: 1px solid rgba(255, 209, 102, 0.2);
+        background: #161f2e;
+        border: 1px solid #334155;
         border-radius: 24px;
         padding: 30px 24px;
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
         position: relative;
     }
 
@@ -1360,7 +1477,7 @@ def build_luxury_portal():
         justify-content: space-between;
         padding-bottom: 20px;
         margin-bottom: 26px;
-        border-bottom: 1px solid rgba(255, 209, 102, 0.2);
+        border-bottom: 1px solid #334155;
         flex-wrap: wrap;
         gap: 16px;
     }
@@ -1375,13 +1492,13 @@ def build_luxury_portal():
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(255, 209, 102, 0.2) 0%, rgba(3, 7, 18, 0.9) 75%);
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(30, 41, 59, 0.9) 75%);
         border: 1.5px solid var(--border-gold);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.8rem;
-        box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
         flex-shrink: 0;
     }
 
@@ -1401,8 +1518,8 @@ def build_luxury_portal():
     }
 
     .tome-badge-count {
-        background: rgba(255, 209, 102, 0.12);
-        border: 1px solid rgba(255, 209, 102, 0.35);
+        background: rgba(212, 175, 55, 0.12);
+        border: 1px solid rgba(212, 175, 55, 0.35);
         border-radius: 20px;
         padding: 6px 16px;
         color: var(--gold);
@@ -1419,8 +1536,8 @@ def build_luxury_portal():
     }
 
     .manuscript-folio-card {
-        background: rgba(6, 11, 26, 0.92);
-        border: 1px solid rgba(212, 175, 55, 0.22);
+        background: #1e293b;
+        border: 1px solid #334155;
         border-radius: 18px;
         padding: 22px;
         cursor: pointer;
@@ -1431,14 +1548,14 @@ def build_luxury_portal():
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
         backdrop-filter: blur(12px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }
 
     .manuscript-folio-card:hover {
-        transform: translateY(-6px);
+        transform: translateY(-5px);
         border-color: var(--card-accent, var(--gold));
-        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.25);
-        background: rgba(9, 16, 36, 0.96);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.25);
+        background: #243347;
     }
 
     .manuscript-folio-card::before {
@@ -1451,12 +1568,6 @@ def build_luxury_portal():
         background: var(--card-accent, var(--gold));
         opacity: 0.6;
         transition: all 0.25s ease;
-    }
-
-    .manuscript-folio-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--card-accent, var(--gold));
-        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 209, 102, 0.15);
     }
 
     .manuscript-folio-card:hover::before {
@@ -1476,8 +1587,8 @@ def build_luxury_portal():
         font-size: 0.86rem;
         font-weight: 700;
         color: var(--gold);
-        background: rgba(255, 209, 102, 0.1);
-        border: 1px solid rgba(255, 209, 102, 0.3);
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(212, 175, 55, 0.3);
         padding: 3px 10px;
         border-radius: 8px;
     }
@@ -1511,7 +1622,7 @@ def build_luxury_portal():
         align-items: center;
         justify-content: space-between;
         padding-top: 14px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-top: 1px solid #334155;
         font-size: 0.84rem;
         font-weight: 700;
         color: var(--card-accent, var(--gold));
@@ -1532,22 +1643,22 @@ def build_luxury_portal():
         left: 50%;
         transform: translateX(-50%);
         z-index: 4500;
-        background: rgba(4, 8, 20, 0.94);
+        background: rgba(20, 29, 43, 0.95);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid var(--border-gold);
+        border: 1px solid #334155;
         border-radius: 40px;
         padding: 8px 18px;
         display: flex;
         align-items: center;
         gap: 12px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 209, 102, 0.15);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
         max-width: 92vw;
     }
 
     .dock-btn {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #1e293b;
+        border: 1px solid #334155;
         border-radius: 30px;
         padding: 7px 14px;
         color: #e2e8f0;
@@ -1563,7 +1674,7 @@ def build_luxury_portal():
     }
 
     .dock-btn:hover {
-        background: rgba(255, 209, 102, 0.2);
+        background: #283850;
         border-color: var(--gold);
         color: var(--gold);
     }
@@ -1580,6 +1691,73 @@ def build_luxury_portal():
         max-width: 220px;
     }
 
+    /* ========================================================
+       UNIVERSAL SUB-GENERATOR SLATE-GREY OVERRIDES
+       ======================================================== */
+    .theory-node-card,
+    .concept-card,
+    .node-card,
+    .treatise-card,
+    .spheres-compendium,
+    .codex-card,
+    .mansion-card,
+    .hours-card,
+    .letters-card,
+    .body-card,
+    .wafq-card,
+    .critique-card,
+    .astro-identity-card,
+    .seal-card,
+    .zouhri-card,
+    .realm-card,
+    .hero,
+    .compendium-header,
+    .matrix-container,
+    .manuscript-card,
+    .zodiac-wheel-wrapper,
+    .timeline-container {
+        background-color: #1e293b !important;
+        border-color: #334155 !important;
+        color: #cbd5e1 !important;
+    }
+
+    .theory-node-card:hover,
+    .concept-card:hover,
+    .treatise-card:hover,
+    .codex-card:hover,
+    .mansion-card:hover,
+    .hours-card:hover,
+    .astro-identity-card:hover,
+    .seal-card:hover,
+    .zouhri-card:hover,
+    .realm-card:hover {
+        background-color: #243347 !important;
+        border-color: rgba(212, 175, 55, 0.45) !important;
+    }
+
+    table, .matrix-table, .hours-table, .mansion-table {
+        background: #182232 !important;
+        border: 1px solid #334155 !important;
+    }
+
+    table td, table th, .matrix-table td, .matrix-table th {
+        background: #1e293b !important;
+        border: 1px solid #334155 !important;
+        color: #cbd5e1 !important;
+    }
+
+    table th, .matrix-table th {
+        background: #243347 !important;
+        color: #fef08a !important;
+        font-weight: 700 !important;
+    }
+
+    #graph-fullscreen-wrapper,
+    #cy-container,
+    #network-container,
+    .vis-network {
+        background-color: #111823 !important;
+    }
     """
 
     # --- MASTER LUXURY TOP BAR HTML ---
@@ -1588,10 +1766,10 @@ def build_luxury_portal():
     <header class="master-luxury-topbar">
         <div class="topbar-inner">
             <!-- RIGHT: HAMBURGER DRAWER TRIGGER -->
-            <button class="topbar-hamburger-btn" onclick="openSidebar()" title="فتح فهرس الأبواب الـ 19">
+            <button class="topbar-hamburger-btn" onclick="openSidebar()" title="فتح فهرس الأبواب الـ 20">
                 <span class="hamburger-icon">☰</span>
                 <span>الأبواب</span>
-                <span class="hamburger-badge">19</span>
+                <span class="hamburger-badge">20</span>
             </button>
 
             <!-- CENTER: BRAND & ACTIVE CHAMBER INDICATOR -->
@@ -1624,7 +1802,7 @@ def build_luxury_portal():
         </div>
     </header>
 
-    <!-- BACKDROP & SLIDING DRAWER (فهرس الأبواب الـ 19) -->
+    <!-- BACKDROP & SLIDING DRAWER (فهرس الأبواب الـ 20) -->
     <div id="portal-drawer-backdrop" class="portal-drawer-backdrop" onclick="closeSidebar()"></div>
 
     <aside id="portal-drawer" class="portal-drawer" aria-label="فهرس أبواب الحكمة">
@@ -1633,7 +1811,7 @@ def build_luxury_portal():
                 <span class="drawer-brand-icon">🌌</span>
                 <div>
                     <h3 class="drawer-brand-title">فهرس أبواب الحكمة</h3>
-                    <span class="drawer-brand-sub">19 باباً معرفياً موحداً</span>
+                    <span class="drawer-brand-sub">20 باباً معرفياً موحداً</span>
                 </div>
             </div>
             <button class="drawer-close-btn" onclick="closeSidebar()" aria-label="إغلاق">✕</button>
@@ -1768,7 +1946,7 @@ def build_luxury_portal():
                     <button class="drawer-door-item" data-door="tab-bodies" onclick="navigateToChamber('tab-bodies')">
                         <span class="door-num-badge">15</span>
                         <span class="door-icon">🧬</span>
-                        <span class="drawer-door-title">الأجساد السبعة وميكانيكا اختراق الهالة</span>
+                        <span class="door-title">الأجساد السبعة وميكانيكا اختراق الهالة</span>
                     </button>
                     <button class="drawer-door-item" data-door="tab-zodiac-angels" onclick="navigateToChamber('tab-zodiac-angels')">
                         <span class="door-num-badge">16</span>
@@ -2286,50 +2464,73 @@ def build_luxury_portal():
         'tab-hub': '🏛️ لوحة الفهرس الشامل',
         'tab-graph': 'الباب 01: أطلس المفاهيم والشبكة الكونية',
         'tab-spheres': 'الباب 02: سلم الأفلاك السبعة وعرش الرحمن',
-        'tab-chakras': 'الباب 03: مجسم التشاكرات والأنبياء',
-        'tab-zodiac': 'الباب 04: دائرة البروج الاثني عشر',
-        'tab-timeline': 'الباب 05: تعاقب العصور (2,160 سنة)',
-        'tab-matrix': 'الباب 06: مصفوفة البناء المعماري الكوني',
-        'tab-manuscripts': 'الباب 07: أمهات المخطوطات والكتب النادرة',
-        'tab-critique': 'الباب 08: ميزان القرآن ودحض التناقضات',
-        'tab-kings': 'الباب 09: ملوك الأفلاك والأيام السبعة',
-        'tab-zodiac-angels': 'الباب 10: ملائكة الأبراج والـ 36 وجهاً',
-        'tab-hours': 'الباب 11: ساعات الأيام الـ 24 الكلدانية',
-        'tab-mansions': 'الباب 12: منازل القمر الـ 28 والتوافقات',
-        'tab-letters-magic': 'الباب 13: طبائع الحروف والأسحار الأربعة',
-        'tab-bodies': 'الباب 14: الأجساد السبعة وميكانيكا الاختراق',
-        'tab-numbers': 'الباب 15: شفرة الأرقام والوفق الغزالي 3×3',
-        'tab-physics': 'الباب 16: فيزياء الذبذبات والمولد الصوتي',
-        'tab-criterion': 'الباب 17: ميزان الشريعة وحصن المرشد',
-        'tab-astrology-calc': 'الباب 18: المرصد الفلكي التنجيمي الشامل',
-        'tab-seals-zouhri': 'الباب 19: ديوان الأختام والزوهرية والسلالات',
-        'tab-inner-realms': 'الباب 20: سفر العوالم الباطنية وأسرار الوعي'
+        'tab-matrix': 'الباب 03: مصفوفة البناء المعماري الكوني',
+        'tab-manuscripts': 'الباب 04: أمهات المخطوطات والوثائق النادرة',
+        'tab-timeline': 'الباب 05: تعاقب العصور والمبادرة المحورية (2,160 سنة)',
+        'tab-zodiac': 'الباب 06: دائرة البروج الاثني عشر والطبائع',
+        'tab-mansions': 'الباب 07: منازل القمر الـ 28 والتوافقات الأثيرية',
+        'tab-hours': 'الباب 08: ساعات الأيام الـ 24 الكلدانية وحكامها',
+        'tab-kings': 'الباب 09: ملوك الأفلاك والأيام السبعة الكبرى',
+        'tab-astrology-calc': 'الباب 10: المرصد الفلكي التنجيمي الكوني الشامل',
+        'tab-letters-magic': 'الباب 11: طبائع الحروف الـ 28 والعناصر الأربعة',
+        'tab-numbers': 'الباب 12: ديوان الأوفاق والمربعات الرياضية (3×3 إلى 9×9)',
+        'tab-physics': 'الباب 13: فيزياء الرنين المداري والمولد الصوتي الحي',
+        'tab-chakras': 'الباب 14: مجسم الشاكرات والغدد ومقامات الرسل',
+        'tab-bodies': 'الباب 15: الأجساد السبعة وميكانيكا اختراق الهالة',
+        'tab-zodiac-angels': 'الباب 16: ملائكة الأبراج والوجوه العشرية الـ 36',
+        'tab-seals-zouhri': 'الباب 17: ديوان الأختام الرمزية والإنسان الزوهري',
+        'tab-inner-realms': 'الباب 18: سفر العوالم الباطنية وموجات الدماغ',
+        'tab-critique': 'الباب 19: ميزان القرآن ودحض التناقضات والخرافات',
+        'tab-criterion': 'الباب 20: معيار الشريعة وحصن المرشد الباطني'
+    };
+
+    const CHAMBER_PAVILIONS = {
+        'tab-graph': 'الجناح 1: كوزمولوجيا التنزيل وعوالم الملكوت',
+        'tab-spheres': 'الجناح 1: كوزمولوجيا التنزيل وعوالم الملكوت',
+        'tab-matrix': 'الجناح 1: كوزمولوجيا التنزيل وعوالم الملكوت',
+        'tab-manuscripts': 'الجناح 1: كوزمولوجيا التنزيل وعوالم الملكوت',
+        'tab-timeline': 'الجناح 2: الفلك الكوني ودورات الزمان والأنواء',
+        'tab-zodiac': 'الجناح 2: الفلك الكوني ودورات الزمان والأنواء',
+        'tab-mansions': 'الجناح 2: الفلك الكوني ودورات الزمان والأنواء',
+        'tab-hours': 'الجناح 2: الفلك الكوني ودورات الزمان والأنواء',
+        'tab-kings': 'الجناح 2: الفلك الكوني ودورات الزمان والأنواء',
+        'tab-astrology-calc': 'الجناح 2: الفلك الكوني ودورات الزمان والأنواء',
+        'tab-letters-magic': 'الجناح 3: الأوفاق والرياضيات المقدسة والفيزياء',
+        'tab-numbers': 'الجناح 3: الأوفاق والرياضيات المقدسة والفيزياء',
+        'tab-physics': 'الجناح 3: الأوفاق والرياضيات المقدسة والفيزياء',
+        'tab-chakras': 'الجناح 4: الهيكل الإنساني، الطاقات الباطنية والوعي',
+        'tab-bodies': 'الجناح 4: الهيكل الإنساني، الطاقات الباطنية والوعي',
+        'tab-zodiac-angels': 'الجناح 4: الهيكل الإنساني، الطاقات الباطنية والوعي',
+        'tab-seals-zouhri': 'الجناح 4: الهيكل الإنساني، الطاقات الباطنية والوعي',
+        'tab-inner-realms': 'الجناح 4: الهيكل الإنساني، الطاقات الباطنية والوعي',
+        'tab-critique': 'الجناح 5: ميزان النقد والبرهان وحصن المرشد',
+        'tab-criterion': 'الجناح 5: ميزان النقد والبرهان وحصن المرشد'
     };
 
     let activeChamberId = 'tab-hub';
 
-    // LIST OF ORDERED DOORS FOR SEQUENTIAL CODEX TURNING
+    // CANONICAL ORDERED DOORS (01 to 20) FOR SEQUENTIAL CODEX TURNING
     const CODEX_DOORS_SEQUENCE = [
         'tab-graph',
         'tab-spheres',
-        'tab-chakras',
-        'tab-zodiac',
-        'tab-timeline',
         'tab-matrix',
         'tab-manuscripts',
-        'tab-critique',
-        'tab-kings',
-        'tab-zodiac-angels',
-        'tab-hours',
+        'tab-timeline',
+        'tab-zodiac',
         'tab-mansions',
+        'tab-hours',
+        'tab-kings',
+        'tab-astrology-calc',
         'tab-letters-magic',
-        'tab-bodies',
         'tab-numbers',
         'tab-physics',
-        'tab-criterion',
-        'tab-astrology-calc',
+        'tab-chakras',
+        'tab-bodies',
+        'tab-zodiac-angels',
         'tab-seals-zouhri',
-        'tab-inner-realms'
+        'tab-inner-realms',
+        'tab-critique',
+        'tab-criterion'
     ];
 
     function navigateToPrevDoor() {
@@ -2365,6 +2566,46 @@ def build_luxury_portal():
         }
     }
 
+    // DYNAMIC UNIVERSAL CHAMBER BREADCRUMB
+    function updateChamberBreadcrumb(targetId) {
+        if (targetId === 'tab-hub') return;
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+
+        let bcrumb = targetEl.querySelector('.chamber-universal-header');
+        if (!bcrumb) {
+            bcrumb = document.createElement('div');
+            bcrumb.className = 'chamber-universal-header';
+            targetEl.insertBefore(bcrumb, targetEl.firstChild);
+        }
+
+        const curIdx = CODEX_DOORS_SEQUENCE.indexOf(targetId);
+        const prevDoor = curIdx > 0 ? CODEX_DOORS_SEQUENCE[curIdx - 1] : null;
+        const nextDoor = curIdx < CODEX_DOORS_SEQUENCE.length - 1 ? CODEX_DOORS_SEQUENCE[curIdx + 1] : null;
+        const pavilionName = CHAMBER_PAVILIONS[targetId] || 'الأبواب المعرفية';
+        const doorNum = (curIdx + 1).toString().padStart(2, '0');
+        const titleText = CHAMBER_NAMES[targetId] || 'باب الحكمة';
+
+        bcrumb.innerHTML = `
+            <div class="cuh-nav-left">
+                <button class="cuh-hub-btn" onclick="navigateToChamber('tab-hub')" title="العودة للفهرس الشامل">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>الفهرس الشامل</span>
+                </button>
+                <div class="cuh-breadcrumbs">
+                    <span class="cuh-pavilion">${pavilionName}</span>
+                    <span class="cuh-sep">/</span>
+                    <span class="cuh-door-badge">الباب ${doorNum}</span>
+                    <span class="cuh-sep">/</span>
+                    <span class="cuh-title">${titleText}</span>
+                </div>
+            </div>
+            <div class="cuh-nav-actions">
+                ${prevDoor ? `<button class="cuh-door-nav-btn" onclick="navigateToChamber('${prevDoor}')" title="الباب السابق"><i class="fa-solid fa-chevron-right"></i> الباب السابق</button>` : `<button class="cuh-door-nav-btn" onclick="navigateToChamber('tab-hub')" title="الفهرس الشامل"><i class="fa-solid fa-house"></i> الفهرس</button>`}
+                ${nextDoor ? `<button class="cuh-door-nav-btn" onclick="navigateToChamber('${nextDoor}')" title="الباب التالي">الباب التالي <i class="fa-solid fa-chevron-left"></i></button>` : `<button class="cuh-door-nav-btn" onclick="navigateToChamber('tab-hub')" title="الفهرس الشامل">الفهرس <i class="fa-solid fa-house"></i></button>`}
+            </div>
+        `;
+    }
 
     function openSidebar() {
         const drawer = document.getElementById('portal-drawer');
@@ -2437,7 +2678,10 @@ def build_luxury_portal():
             }
         });
 
-        // 5. Special handlers per chamber
+        // 5. Inject / update universal breadcrumb header
+        updateChamberBreadcrumb(targetId);
+
+        // 6. Special handlers per chamber
         if (targetId === 'tab-graph') {
             // Auto-trigger mobile theory mode if screen is narrow
             if (window.innerWidth <= 860 && typeof switchGraphMode === 'function') {
@@ -2468,7 +2712,7 @@ def build_luxury_portal():
             setTimeout(initBrainwaveCanvas, 100);
         }
 
-        // 6. Update URL hash and smooth scroll
+        // 7. Update URL hash, floating dock, and smooth scroll
         window.location.hash = '#' + targetId;
         updateCodexDock(targetId);
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2491,9 +2735,9 @@ def build_luxury_portal():
         });
     }
 
-    // HUB FILTER & SEARCH
-    function filterHubCategory(cat, evt) {
-        document.querySelectorAll('.hub-filter-pill').forEach(pill => {
+    // HUB FILTER & SEARCH (5 PAVILIONS)
+    function filterPavilionCategory(cat, evt) {
+        document.querySelectorAll('.hub-filter-pills .hub-filter-pill').forEach(pill => {
             pill.classList.remove('active');
         });
         const clicked = evt ? evt.currentTarget || evt.target : (window.event ? window.event.target : null);
@@ -2501,19 +2745,15 @@ def build_luxury_portal():
 
         const q = (document.getElementById('hub-search-input')?.value || '').trim().toLowerCase();
 
-        // 1. Filter Tome Sections
-        const tomeBlocks = [
-            { el: document.getElementById('tome-block-1'), cat: 'tome1' },
-            { el: document.getElementById('tome-block-2'), cat: 'tome2' },
-            { el: document.getElementById('tome-block-3'), cat: 'tome3' }
-        ];
-
-        tomeBlocks.forEach(t => {
-            if (!t.el) return;
-            if (cat === 'ALL' || cat === t.cat) {
-                t.el.style.display = 'block';
+        // 1. Filter Pavilion Section Blocks (1 to 5)
+        ['pavilion-block-1', 'pavilion-block-2', 'pavilion-block-3', 'pavilion-block-4', 'pavilion-block-5'].forEach((id, idx) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const blockCat = 'p' + (idx + 1);
+            if (cat === 'ALL' || cat === blockCat) {
+                el.style.display = 'block';
             } else {
-                t.el.style.display = 'none';
+                el.style.display = 'none';
             }
         });
 
@@ -2532,7 +2772,10 @@ def build_luxury_portal():
         });
     }
 
-    function filterHubSearch(query) {
+    // Aliases
+    window.filterHubCategory = filterPavilionCategory;
+
+    function filterPavilionSearch(query) {
         const q = (query || '').trim().toLowerCase();
         document.querySelectorAll('.manuscript-folio-card').forEach(card => {
             const cardText = card.innerText.toLowerCase();
@@ -2543,12 +2786,15 @@ def build_luxury_portal():
             }
         });
 
-        // If searching, show all tome blocks so matched cards are visible
-        ['tome-block-1', 'tome-block-2', 'tome-block-3'].forEach(id => {
+        // If searching, show all pavilion blocks so matched cards are visible
+        ['pavilion-block-1', 'pavilion-block-2', 'pavilion-block-3', 'pavilion-block-4', 'pavilion-block-5'].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.style.display = 'block';
         });
     }
+
+    // Aliases
+    window.filterHubSearch = filterPavilionSearch;
 
     // QUICK AUDIO TONE TOGGLE (Web Audio API)
     let quickAudioCtx = null;
@@ -2658,18 +2904,21 @@ def build_luxury_portal():
     else:
         atlas_with_css = atlas_clean + combined_css
 
-    # Inject dark mode & theme color meta tags
+    # Inject dark mode & theme color meta tags (Slate-Grey #111823)
     dark_meta = """
     <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#030611">
+    <meta name="theme-color" content="#111823">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     """
     if "color-scheme" not in atlas_with_css:
         atlas_with_css = atlas_with_css.replace('<head>', f'<head>\n{dark_meta}')
 
-    # Enforce dark inline style on html tag if missing
-    if 'style="background-color: #030611;' not in atlas_with_css:
-        atlas_with_css = atlas_with_css.replace('<html lang="ar" dir="rtl">', '<html lang="ar" dir="rtl" style="background-color: #030611; color-scheme: dark;">')
+    # Enforce dark inline style on html tag if missing (Slate-Grey #111823)
+    if 'style="background-color: #111823;' not in atlas_with_css:
+        atlas_with_css = atlas_with_css.replace('<html lang="ar" dir="rtl">', '<html lang="ar" dir="rtl" style="background-color: #111823; color-scheme: dark;">')
+        # Also replace any legacy #030611 or #02040a if already present on html tag
+        atlas_with_css = atlas_with_css.replace('style="background-color: #030611;', 'style="background-color: #111823;')
+        atlas_with_css = atlas_with_css.replace('style="background-color: #02040a;', 'style="background-color: #111823;')
 
     # Inject font-awesome if not present
     if "font-awesome" not in atlas_with_css:
@@ -2716,7 +2965,27 @@ def build_luxury_portal():
     else:
         assembled_html = atlas_with_header
 
-    # Inject unified scripts right before </body>
+    # Floating dock HTML component
+    floating_dock_html = """
+    <!-- UNIVERSAL FLOATING CODEX NAVIGATION DOCK -->
+    <div id="codex-floating-dock" class="codex-floating-dock" style="display:none;">
+        <button class="dock-btn" onclick="navigateToPrevDoor()" title="الباب السابق">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>السابق</span>
+        </button>
+        <span id="dock-active-title" class="dock-current-label">باب الحكمة</span>
+        <button class="dock-btn" onclick="navigateToChamber('tab-hub')" title="الفهرس الشامل">
+            <i class="fa-solid fa-compass"></i>
+            <span>الفهرس</span>
+        </button>
+        <button class="dock-btn" onclick="navigateToNextDoor()" title="الباب التالي">
+            <span>التالي</span>
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+    </div>
+    """
+
+    # Inject unified scripts and floating dock right before </body>
     body_end_pos = assembled_html.rfind('</body>')
     if body_end_pos != -1:
         astro_chamber_js = get_astrology_chamber_js()
@@ -2724,6 +2993,7 @@ def build_luxury_portal():
         inner_realms_chamber_js = get_inner_realms_chamber_js()
 
         full_js_block = f"""
+        {floating_dock_html}
         <script>
         {codex_js_clean}
         {astro_chamber_js}

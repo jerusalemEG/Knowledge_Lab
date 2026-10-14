@@ -202,12 +202,12 @@ def generate_unified_html(nodes, links):
     graph_data_json = json.dumps({"nodes": nodes_list, "edges": edges_list}, ensure_ascii=False)
 
     html_template = f"""<!DOCTYPE html>
-<html lang="ar" dir="rtl" style="background-color: #030611; color-scheme: dark;">
+<html lang="ar" dir="rtl" style="background-color: #111823; color-scheme: dark;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#030611">
+    <meta name="theme-color" content="#111823">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>أطلس الكوزمولوجيا القرآنية وشبكة المعرفة الشاملة — Quranic Cosmic Atlas</title>
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
@@ -215,37 +215,37 @@ def generate_unified_html(nodes, links):
     <style>
         :root {{
             color-scheme: dark !important;
-            --bg-space: #030611;
-            --void-black: #030611;
-            --panel-bg: rgba(11, 15, 23, 0.94);
-            --border-glass: rgba(255, 255, 255, 0.12);
-            --text-main: #f0f6fc;
-            --text-muted: #8b949e;
-            --gold: #f4b41a;
-            --gold-glow: rgba(244, 180, 26, 0.3);
-            --cyan: #00f0ff;
-            --rose: #ff3366;
-            --purple: #9d4edd;
-            --emerald: #06d6a0;
+            --bg-space: #111823;
+            --void-black: #111823;
+            --panel-bg: rgba(30, 41, 59, 0.95);
+            --border-glass: rgba(148, 163, 184, 0.2);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.35);
+            --cyan: #38bdf8;
+            --rose: #fb7185;
+            --purple: #c084fc;
+            --emerald: #34d399;
         }}
         * {{
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+            scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
         }}
         html {{
-            background-color: #030611 !important;
+            background-color: #111823 !important;
             color-scheme: dark !important;
         }}
         body {{
-            background-color: #030611 !important;
+            background-color: #111823 !important;
             color: var(--text-main);
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 45%),
-                radial-gradient(circle at 90% 80%, rgba(244, 180, 26, 0.05) 0%, transparent 45%);
+                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
             min-height: 100vh;
             color-scheme: dark !important;
         }}
@@ -254,15 +254,15 @@ def generate_unified_html(nodes, links):
             height: 8px !important;
         }}
         ::-webkit-scrollbar-track {{
-            background: #030611 !important;
+            background: #111823 !important;
         }}
         ::-webkit-scrollbar-thumb {{
-            background: rgba(255, 209, 102, 0.3) !important;
+            background: rgba(212, 175, 55, 0.35) !important;
             border-radius: 6px !important;
-            border: 2px solid #030611 !important;
+            border: 2px solid #111823 !important;
         }}
         ::-webkit-scrollbar-thumb:hover {{
-            background: rgba(255, 209, 102, 0.6) !important;
+            background: rgba(212, 175, 55, 0.65) !important;
         }}
         
         /* Master Header */

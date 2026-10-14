@@ -31,31 +31,31 @@ def generate_codex():
 
     # We read template chunks or build the complete HTML directly
     html_code = '''<!DOCTYPE html>
-<html lang="ar" dir="rtl" style="background-color: #030611; color-scheme: dark;">
+<html lang="ar" dir="rtl" style="background-color: #111823; color-scheme: dark;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#030611">
+    <meta name="theme-color" content="#111823">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>سفر النواميس الباطنية والأفلاك الكبرى — الموسوعة الأكاديمية الشاملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             color-scheme: dark !important;
-            --bg-void: #030611;
-            --void-black: #030611;
-            --panel-bg: rgba(10, 14, 26, 0.94);
-            --border-glass: rgba(255, 255, 255, 0.12);
-            --text-main: #f0f6fc;
+            --bg-void: #111823;
+            --void-black: #111823;
+            --panel-bg: rgba(30, 41, 59, 0.95);
+            --border-glass: rgba(148, 163, 184, 0.2);
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --gold: #f4b41a;
-            --gold-glow: rgba(244, 180, 26, 0.35);
-            --cyan: #00f0ff;
-            --cyan-glow: rgba(0, 240, 255, 0.3);
-            --rose: #ff3366;
-            --purple: #9d4edd;
-            --emerald: #06d6a0;
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.35);
+            --cyan: #38bdf8;
+            --cyan-glow: rgba(56, 189, 248, 0.3);
+            --rose: #fb7185;
+            --purple: #c084fc;
+            --emerald: #34d399;
             --fire: #ef4444;
             --water: #3b82f6;
             --air: #06b6d4;
@@ -67,22 +67,22 @@ def generate_codex():
             margin: 0;
             padding: 0;
             font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
-            scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+            scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
         }
 
         html {
-            background-color: #030611 !important;
+            background-color: #111823 !important;
             color-scheme: dark !important;
         }
 
         body {
-            background-color: #030611 !important;
+            background-color: #111823 !important;
             color: var(--text-main);
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 90% 85%, rgba(244, 180, 26, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 85%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.03) 0%, transparent 50%);
             min-height: 100vh;
             color-scheme: dark !important;
         }
@@ -92,15 +92,15 @@ def generate_codex():
             height: 8px !important;
         }
         ::-webkit-scrollbar-track {
-            background: #030611 !important;
+            background: #111823 !important;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(255, 209, 102, 0.3) !important;
+            background: rgba(212, 175, 55, 0.35) !important;
             border-radius: 6px !important;
-            border: 2px solid #030611 !important;
+            border: 2px solid #111823 !important;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 209, 102, 0.6) !important;
+            background: rgba(212, 175, 55, 0.65) !important;
         }
 
         /* Gate */

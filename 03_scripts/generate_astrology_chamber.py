@@ -96,7 +96,7 @@ def get_astrology_chamber_html():
                 </div>
 
                 <div style="display:flex; justify-content:center;">
-                    <button type="button" onclick="runComprehensiveAstroEngine()" style="background:linear-gradient(135deg, var(--gold), #d49300); color:#030611; border:none; border-radius:14px; padding:12px 35px; font-size:1.05rem; font-weight:800; cursor:pointer; box-shadow:0 0 25px var(--gold-glow); transition:all 0.25s; display:inline-flex; align-items:center; gap:10px;">
+                    <button type="button" onclick="runComprehensiveAstroEngine()" style="background:linear-gradient(135deg, var(--gold), #d49300); color:#0f172a; border:none; border-radius:14px; padding:12px 35px; font-size:1.05rem; font-weight:800; cursor:pointer; box-shadow:0 0 25px var(--gold-glow); transition:all 0.25s; display:inline-flex; align-items:center; gap:10px;">
                         <i class="fa-solid fa-wand-magic-sparkles"></i> تشغيل المحرك واستخراج الأسرار الفلكية الشاملة
                     </button>
                 </div>
