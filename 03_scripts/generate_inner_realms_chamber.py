@@ -292,59 +292,335 @@ def get_inner_realms_chamber_html():
             <!-- SECTION 4: THE METAPHYSICS OF WAFQ & MUHAMMADAN REALITY -->
             <!-- ========================================== -->
             <div id="inner-sub-prophetic-wafq" class="inner-sub-view">
-                <div style="background:rgba(11,17,33,0.85); border:1px solid rgba(244,180,26,0.3); border-radius:20px; padding:30px; margin-bottom:30px;">
-                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px;">
-                        <span style="font-size:2rem;">⚖️</span>
+                <div style="background:rgba(11,17,33,0.92); border:1px solid rgba(244,180,26,0.35); border-radius:24px; padding:35px 25px; margin-bottom:30px; box-shadow:0 15px 45px rgba(0,0,0,0.6);">
+                    
+                    <!-- SECTION HERO -->
+                    <div style="display:flex; align-items:center; gap:14px; margin-bottom:20px; flex-wrap:wrap;">
+                        <span style="font-size:2.2rem;">⚖️</span>
                         <div>
-                            <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:var(--gold); margin:0;">
-                                سر الأوفاق العددية وتنزيه الحقيقة المحمدية عن الحصر الرياضي
+                            <h2 style="font-family:'Amiri', serif; font-size:2rem; color:var(--gold); margin:0;">
+                                الموسوعة الرياضية والفلسفية الكبرى للأوفاق: فك ألغاز المربعات وتنزيه الحقيقة المحمدية
                             </h2>
-                            <span style="color:#94a3b8; font-size:0.9rem;">لماذا رسمت كتب المخطوطات أوفاقاً للمقامات المحدودة وامتنعت عن صياغة وفق للحقيقة الجامعة؟</span>
+                            <span style="color:#94a3b8; font-size:0.95rem;">تشريح مثلث الغزالي (3×3)، خوارزميات الأوفاق من 4×4 إلى 9×9، وتفكيك أوهام الفاعلية بالبراهين العلمية</span>
                         </div>
                     </div>
 
-                    <p style="color:#cbd5e1; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
-                        سؤال جوهري يطرحه الباحث في كتب التراث الباطني والأوفاق: <em>"إذا كانت المخطوطات قد نسبت أوفاقاً ومثلثات لطبائع الرسل والمقامات الجزئية، فلماذا لا يوجد وفق رياضي عددي يمثل الحقيقة المحمدية؟"</em>. يكمن الجواب في صلب الفلسفة العرفانية ونظرية الوجود وتنزيه التوحيد المطلق.
+                    <p style="color:#cbd5e1; line-height:1.9; font-size:1.05rem; margin-bottom:30px;">
+                        تعتبر <strong>الأوفاق والمربعات السحرية (Magic Squares)</strong> من أعظم النماذج التي التقى فيها التفكير الرياضي الجبري بالتأويل الفلسفي والرمزية الباطنية عبر تاريخ الحضارات. يقدم هذا القسم تشريحاً علمياً وتاريخياً دقيقاً لقوانين بناء الأوفاق (من 3×3 إلى 9×9)، وتفكيكاً موضوعياً لـ "الشواهد وتجارب النجاح" التي ادعاها القدماء، مع إيضاح البرهان العقلي والعرفاني في تنزيه الحقيقة المحمدية عن أي حصر عددي أو هندسي.
                     </p>
 
-                    <!-- METAPHYSICAL PROOFS -->
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-bottom:25px;">
-                        
-                        <div style="background:rgba(15,23,42,0.7); border:1px solid rgba(244,180,26,0.2); border-radius:16px; padding:22px;">
-                            <h3 style="color:var(--gold); font-family:'Amiri',serif; font-size:1.25rem; margin-top:0;">
-                                ١. طبيعة الوفق: انحباس في المتناهي (Finite Containment)
-                            </h3>
-                            <p style="color:#94a3b8; font-size:0.92rem; line-height:1.8; margin:0;">
-                                أي وفق رياضي (سواء كان مثلثاً $3 \times 3$ أو مسدساً $6 \times 6$) يعتمد رياضياً على رقم ثابت ومحدود (مجموع الصفوف والأعمدة والأقطار $S$). هذا يعني أن الوفق بالضرورة شكل هندسي مقيد بقانون الأضلاع والزوايا، وله كمية عددية مغلقة لا تتجاوز حدود جدولها.
-                            </p>
+                    <!-- CHAPTER 1: THE MATHEMATICAL ANATOMY OF GHAZALI 3X3 -->
+                    <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(244,180,26,0.25); border-radius:18px; padding:25px; margin-bottom:28px;">
+                        <h3 style="color:#ffd166; font-family:'Amiri',serif; font-size:1.45rem; margin-top:0; margin-bottom:15px; border-bottom:1px solid rgba(244,180,26,0.2); padding-bottom:10px;">
+                            📐 الفصل الأول: التشريح الرياضي الصارم لمثلث الغزالي (3×3) وكشف لغز ثوابته
+                        </h3>
+
+                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.85;">
+                            يُطلق على المربع السحري ذي الرتبة 3 اسم "مثلث الغزالي" في التراث العربي والإسلامي، نسبة إلى الفيلسوف حجة الإسلام أبي حامد الغزالي الذي ذكره في مقدمة كتاب <em>المنقذ من الضلال</em> وفي كتاب <em>النفخ والتسوية</em> كمثال رياضي بديع على خواص الأعداد وانسجامها الطبيعي.
+                        </p>
+
+                        <!-- 3 COLUMNS OF ALGEBRAIC PROOFS -->
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:18px; margin:20px 0;">
+                            
+                            <div style="background:rgba(0,0,0,0.35); border-radius:12px; padding:18px; border-right:3px solid var(--gold);">
+                                <h4 style="color:var(--gold); margin:0 0 8px 0; font-size:1.1rem; font-family:'Amiri',serif;">١. برهان الخانة المركزية ($C = S / 3$)</h4>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
+                                    إذا كان مجموع كل صف وعمود وقطر يساوي $S$، فإن مجموع الضلع الأوسط والعمود الأوسط والقطرين الأربعة التي تلتقي في المركز يعطي:
+                                    <br><code style="color:#38bdf8; background:rgba(0,0,0,0.5); padding:2px 6px; border-radius:4px;">4S = (مجموع الـ 9 خانات) + 3C = 3S + 3C</code>
+                                    <br>بطرح $3S$ من الطرفين ينتج حتماً: <strong>$C = S / 3$</strong>.
+                                    لهذا السبب الرياضي البحت، يجب أن تكون الخانة الوسطى دائماً ثلث مجموع الأضلاع، ولا يمكن للوفق أن يستقيم بدون هذه الحتمية الجبرية.
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.35); border-radius:12px; padding:18px; border-right:3px solid #38bdf8;">
+                                <h4 style="color:#38bdf8; margin:0 0 8px 0; font-size:1.1rem; font-family:'Amiri',serif;">٢. سر ثنائيات التناظر (بطد زهج واح)</h4>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
+                                    في الوفق الطبيعي (الأعداد من 1 إلى 9، والمجموع $S=15$ والمركز $C=5$):
+                                    تكون كل خانتين متقابلتين عبر المركز مجموعهما $2C = 10$:
+                                    <br>• $2 + 8 = 10$ (القطر الأول)
+                                    <br>• $4 + 6 = 10$ (القطر الثاني)
+                                    <br>• $9 + 1 = 10$ (العمود الأوسط)
+                                    <br>• $7 + 3 = 10$ (الصف الأوسط)
+                                    هذه الثنائيات الأربعة المتكاملة هندسياً تفسر لماذا يبدو المربع متزناً بشكل مطلق من كل اتجاه.
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.35); border-radius:12px; padding:18px; border-right:3px solid #06d6a0;">
+                                <h4 style="color:#06d6a0; margin:0 0 8px 0; font-size:1.1rem; font-family:'Amiri',serif;">٣. خوارزمية التعمير لأي عدد مطلوب ($N$)</h4>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
+                                    لإسقاط أي عدد كلي $N$ في المثلث، وُضعت المعادلة الجبرية:
+                                    <br><code style="color:#ffd166; background:rgba(0,0,0,0.5); padding:2px 6px; border-radius:4px;">(N - 12) / 3 = المفتاح (Base)</code>
+                                    <br><strong>حالات الكسر الحسابي:</strong>
+                                    <br>• إذا كان الباقي $R=0$: يعمر بزيادة 1 مطردة.
+                                    <br>• إذا كان الباقي $R=1$: تزاد 1 في الخانة السابعة (بيت الزاي).
+                                    <br>• إذا كان الباقي $R=2$: تزاد 1 في الخانة الرابعة (بيت الدال).
+                                </p>
+                            </div>
                         </div>
 
-                        <div style="background:rgba(15,23,42,0.7); border:1px solid rgba(168,85,247,0.25); border-radius:16px; padding:22px;">
-                            <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.25rem; margin-top:0;">
-                                ٢. الحقيقة المحمدية: أصل الفيض الكلي اللامتناهي
-                            </h3>
-                            <p style="color:#94a3b8; font-size:0.92rem; line-height:1.8; margin:0;">
-                                في فلسفة ابن عربي في *الفتوحات المكية* وعبد الكريم الجيلي في *الإنسان الكامل*، تُعرّف الحقيقة المحمدية بأنها "البرزخ الجامع والفيض الأول" الذي تنبثق منه سائر المراتب الكونية. وما كان أصلاً جامعاً للكل يستحيل عقلاً وعرفانياً أن يُحصر في جزء من أجزائه؛ لأن حصر الكلي في مربع جزئي إخلال بتوازنه.
-                            </p>
-                        </div>
-
-                        <div style="background:rgba(15,23,42,0.7); border:1px solid rgba(6,214,160,0.25); border-radius:16px; padding:22px;">
-                            <h3 style="color:#06d6a0; font-family:'Amiri',serif; font-size:1.25rem; margin-top:0;">
-                                ٣. عصمة التوحيد وتجاوز الطلاسم المادية
-                            </h3>
-                            <p style="color:#94a3b8; font-size:0.92rem; line-height:1.8; margin:0;">
-                                النبوة الخاتمة جاءت بالبساطة والتوحيد المنزه الصريح: ﴿قُلْ إِنَّمَا أَنَا بَشَرٌ مِّثْلُكُمْ يُوحَىٰ إِلَيَّ أَنَّمَا إِلَٰهُكُمْ إِلَٰهٌ وَاحِدٌ﴾. مقامها مقام شهود روحي ودعوة عملية للأخلاق والعلم والعمل، بعيداً عن تقييد الأنوار الإلهية في جداول حبرية أو جداول حسابية مقيدة.
-                            </p>
+                        <!-- VISUAL SVG OF GHAZALI 3X3 MATRIX -->
+                        <div style="background:#030712; border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:20px; text-align:center; margin-top:20px;">
+                            <div style="color:var(--gold); font-size:1rem; font-weight:700; margin-bottom:12px;">مصفوفة مثلث الغزالي الطبيعي 3×3 (ثابت المجموع = 15)</div>
+                            <div style="display:inline-grid; grid-template-columns:repeat(3, 75px); gap:6px; margin:0 auto;">
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">4</div>
+                                <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">9</div>
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">2</div>
+                                
+                                <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">3</div>
+                                <div style="background:rgba(168,85,247,0.25); border:2px solid #a855f7; color:#fff; font-size:1.6rem; font-weight:800; padding:16px 0; border-radius:8px; box-shadow:0 0 15px rgba(168,85,247,0.4);">5</div>
+                                <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">7</div>
+                                
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">8</div>
+                                <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">1</div>
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">6</div>
+                            </div>
+                            <div style="color:#94a3b8; font-size:0.85rem; margin-top:12px;">لاحظ: كل صف وعمود وقطر يعطي 15 • الخانات الزوجية بالأركان (4, 2, 8, 6) والفردية بالصلبان (9, 3, 7, 1) والمركز (5)</div>
                         </div>
                     </div>
 
-                    <!-- SUMMARY QUOTE -->
-                    <div style="background:rgba(0,0,0,0.4); border-right:4px solid var(--gold); border-radius:12px; padding:18px 22px;">
-                        <div style="font-family:'Amiri',serif; font-size:1.15rem; color:#f1f5f9; line-height:1.9;">
-                            «إن الأوفاق للمتفرقات من عوالم الطبيعة والأفلاك المحدودة، أما حقيقة الروح الكلي فلا يحصرها جدول ولا يحيط بها عدد، لأنها واسطة الأعداد كلها ومبدؤها النوراني.»
+                    <!-- CHAPTER 2: DECONSTRUCTING TESTIMONIALS & SUCCESS CLAIMS -->
+                    <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:18px; padding:25px; margin-bottom:28px;">
+                        <h3 style="color:#38bdf8; font-family:'Amiri',serif; font-size:1.45rem; margin-top:0; margin-bottom:15px; border-bottom:1px solid rgba(56,189,248,0.2); padding-bottom:10px;">
+                            🔬 الفصل الثاني: تفكيك "الشواهد وتجربة النجاح" وسيكولوجيا الإيمان بفاعلية الأوفاق
+                        </h3>
+
+                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.85;">
+                            كثيراً ما نقرأ في المخطوطات القديمة عبارات مثل: <em>"وهذا المثلث سر الأسرار وقد شوهد نجاحه بالتجربة القطعية"</em>، ويزعم مروجوها أن المربع كفيل بجلب الأرزاق أو كشف الكنوز أو تيسير الصعاب. فكيف نفسر هذه الشواهد وتلك المزاعم من منظور التحليل العلمي والنفسي؟
+                        </p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-top:20px;">
+                            
+                            <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:18px;">
+                                <div style="color:var(--gold); font-weight:700; font-size:1.05rem; margin-bottom:6px;">١. الانبهار بالتناظر (Symmetry Awe)</div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin:0;">
+                                    في العصور القديمة وقبل نشوء الجبر الحديث ونظرية المصفوفات، كان التناغم الرياضي الصارم للمربعات يبدو وكأنه "معجزة خارقة". فاعتقد الإنسان القديم أن شكلاً يتساوى فيه الجمع في كل الاتجاهات لا بد وأن يكون صلة وصل سرية بالطبيعة، فجرى إسقاط القداسة والقدرة الغيبية على مصفوفة هي في الأصل حقيقة جبرية بحتة.
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:18px;">
+                                <div style="color:#38bdf8; font-weight:700; font-size:1.05rem; margin-bottom:6px;">٢. الانحياز التأكيدي (Confirmation Bias)</div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin:0;">
+                                    الآلية النفسية الكلاسيكية: إذا رسم الشخص الوفق وحصل له أمر إيجابي مصادفةً، سارع إلى تخليده وكتابته في الهوامش باعتباره "مجرباً قاطعاً". أما المئات من الحالات التي لم يحدث فيها شيء، فيتم نسيانها أو تبريرها بالقول: "أخطأت في ساعة الرصد، أو نوع البخور، أو كان الحبر غير نقي".
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); border-radius:12px; padding:18px;">
+                                <div style="color:#06d6a0; font-weight:700; font-size:1.05rem; margin-bottom:6px;">٣. الدواء الوهمي والتركيز التأملي (Placebo & Focus)</div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin:0;">
+                                    عملية حساب الوفق، ورسم خاناته، وكتابة الأرقام بتأنٍّ في عزلة، تُدخل الممارس في حالة من التركيز الذهني الشديد والهدوء العصبي الشبيه بالتأمل (Zen Meditation). هذا الهدوء يخفف هرمونات التوتر ويمنح الإنسان شعوراً بالسيطرة والأمان النفسي، فيتوهم أن الورقة هي التي أحدثت التغيير.
+                                </p>
+                            </div>
                         </div>
-                        <div style="color:var(--gold); font-size:0.85rem; margin-top:6px;">— استنتاج محقق من مبادئ الفلسفة الإشراقية والتصوف النظري</div>
                     </div>
+
+                    <!-- CHAPTER 3: EXPANDED ENCYCLOPEDIA OF HIGHER-ORDER SQUARES (4X4 TO 9X9) -->
+                    <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(168,85,247,0.3); border-radius:18px; padding:25px; margin-bottom:28px;">
+                        <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.45rem; margin-top:0; margin-bottom:15px; border-bottom:1px solid rgba(168,85,247,0.2); padding-bottom:10px;">
+                            🏛️ الفصل الثالث: الأطلس الشامل للأوفاق الكبرى من 4×4 إلى 9×9 وقوانين تعميرها
+                        </h3>
+
+                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.85;">
+                            تنقسم الأوفاق في علم الرياضيات التوافقية إلى ثلاثة أصناف أساسية لكل صنف منها خوارزمية هندسية مستقلة تماماً لحساب الثابت السحري الطبيعي:
+                            <br><code style="color:var(--gold); background:rgba(0,0,0,0.5); padding:3px 8px; border-radius:4px; font-size:1rem;">M = [ n × (n² + 1) ] / 2</code>
+                        </p>
+
+                        <!-- GRID OF HIGHER ORDER SQUARES -->
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-top:20px;">
+                            
+                            <!-- 4x4 SQUARE -->
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(56,189,248,0.2); border-radius:14px; padding:18px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <strong style="color:#38bdf8; font-size:1.15rem;">المربع الرباعي (4×4 - كوكب المشتري)</strong>
+                                    <span style="background:rgba(56,189,248,0.2); color:#38bdf8; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 34</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
+                                    <strong>الخوارزمية (عكس الأقطار):</strong> تُكتب الأرقام من 1 إلى 16 بالتتابع، ثم تُعكس فقط الأرقام الواقعة على الأقطار الرئيسية في أماكنها التناظرية ($1 \leftrightarrow 16, 4 \leftrightarrow 13, 6 \leftrightarrow 11, 7 \leftrightarrow 10$).
+                                    <br><strong>الإعجاز التناغمي:</strong> المجموع 34 يتحقق في 86 تشكيلة مختلفة (الأركان الأربعة، المربع المركزي 2×2، الأرباع الأربعة المقسمة).
+                                </p>
+                            </div>
+
+                            <!-- 5x5 SQUARE -->
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(244,180,26,0.2); border-radius:14px; padding:18px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <strong style="color:var(--gold); font-size:1.15rem;">المربع المخمس (5×5 - كوكب المريخ)</strong>
+                                    <span style="background:rgba(244,180,26,0.2); color:var(--gold); padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 65</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
+                                    <strong>الخوارزمية (القفز الفردي - De la Loubère):</strong> نبدأ بالرقم 1 في منتصف الصف العلوي، ثم نتحرك قطرياً خطوة للأعلى وخطوة لليمين (مع الدوران الدوري كسطح كروي)، وإذا كانت الخانة مشغولة ننزل خطوة رأسية واحدة لأسفل.
+                                    <br><strong>الخانة المركزية:</strong> دائماً $C = 13$ (نصف الثابت الطبيعي لخانة المنتصف).
+                                </p>
+                            </div>
+
+                            <!-- 6x6 SQUARE -->
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(239,68,68,0.2); border-radius:14px; padding:18px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <strong style="color:#f87171; font-size:1.15rem;">المربع المسدس (6×6 - كوكب الشمس)</strong>
+                                    <span style="background:rgba(239,68,68,0.2); color:#f87171; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 111</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
+                                    <strong>معضلة زوج الفرد (Singly Even):</strong> أصعب أنواع الأوفاق؛ يُبنى بطريقة "ستراشي" (Strachey Method) بتقسيم المربع إلى 4 أرباع كل منها 3×3 (A, B, C, D)، ثم تعميرها بخوارزمية الفردي وتبديل أعمدة محددة بين الربعين A وD لضبط الأقطار.
+                                </p>
+                            </div>
+
+                            <!-- 7x7 SQUARE -->
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(6,214,160,0.2); border-radius:14px; padding:18px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <strong style="color:#06d6a0; font-size:1.15rem;">المربع المسبع (7×7 - كوكب الزهرة)</strong>
+                                    <span style="background:rgba(6,214,160,0.2); color:#06d6a0; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 175</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
+                                    <strong>الخوارزمية:</strong> 49 خانة تُعمر بقانون القفز الفردي للبوزجاني، حيث تقع الخانة 25 في المركز الحقيقي، وكل حلقتين متداخلتين تشكلان مصفوفة فرعية متناغمة الأضلاع.
+                                </p>
+                            </div>
+
+                            <!-- 8x8 SQUARE -->
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(168,85,247,0.2); border-radius:14px; padding:18px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <strong style="color:#d8b4fe; font-size:1.15rem;">المربع المثمن (8×8 - كوكب عطارد)</strong>
+                                    <span style="background:rgba(168,85,247,0.2); color:#d8b4fe; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 260</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
+                                    <strong>الخوارزمية (زوجي الزوج):</strong> يُقسم إلى 4 مربعات 4×4 مع تطبيق قلب الأقطار المزدوج للأرقام من 1 إلى 64. يشتهر بتطابقه مع مسألة جولة الحصان في الشطرنج (Knight's Tour).
+                                </p>
+                            </div>
+
+                            <!-- 9x9 SQUARE -->
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,209,102,0.2); border-radius:14px; padding:18px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <strong style="color:#ffd166; font-size:1.15rem;">المربع المتسع (9×9 - كوكب القمر)</strong>
+                                    <span style="background:rgba(255,209,102,0.2); color:#ffd166; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 369</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
+                                    <strong>كمال المراتب (81 خانة):</strong> أعلى الأوفاق الكلاسيكية في التراث، خانته المركزية $C = 41$، ويمثل تمام تسلسل الآحاد التسعة متكررة في تسع مجموعات متراكبة بقمة التناغم التناظري.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- MASTER SYNOPSIS TABLE (3x3 to 9x9) -->
+                        <div style="margin-top:25px; overflow-x:auto;">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.88rem; text-align:center;">
+                                <thead>
+                                    <tr style="background:rgba(0,0,0,0.6); color:var(--gold); border-bottom:1px solid rgba(244,180,26,0.3);">
+                                        <th style="padding:10px;">الرتبة ($n$)</th>
+                                        <th style="padding:10px;">الاسم التراثي</th>
+                                        <th style="padding:10px;">عدد الخانات ($n²$)</th>
+                                        <th style="padding:10px;">الثابت السحري ($M$)</th>
+                                        <th style="padding:10px;">الخانة المركزية ($C$)</th>
+                                        <th style="padding:10px;">نوع الصنف الرياضي</th>
+                                        <th style="padding:10px;">الخوارزمية المعتمدة</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">3×3</td>
+                                        <td style="padding:9px;">المثلث (الغزالي)</td>
+                                        <td style="padding:9px;">9</td>
+                                        <td style="padding:9px; color:#38bdf8;">15</td>
+                                        <td style="padding:9px; color:#06d6a0;">5</td>
+                                        <td style="padding:9px;">فردي (Odd)</td>
+                                        <td style="padding:9px;">بطد زهج واح / قطري</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">4×4</td>
+                                        <td style="padding:9px;">المربع (المشتري)</td>
+                                        <td style="padding:9px;">16</td>
+                                        <td style="padding:9px; color:#38bdf8;">34</td>
+                                        <td style="padding:9px; color:#94a3b8;">— (مزدوج)</td>
+                                        <td style="padding:9px;">زوجي الزوج (Doubly Even)</td>
+                                        <td style="padding:9px;">عكس الأقطار المتصالبة</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">5×5</td>
+                                        <td style="padding:9px;">المخمس (المريخ)</td>
+                                        <td style="padding:9px;">25</td>
+                                        <td style="padding:9px; color:#38bdf8;">65</td>
+                                        <td style="padding:9px; color:#06d6a0;">13</td>
+                                        <td style="padding:9px;">فردي (Odd)</td>
+                                        <td style="padding:9px;">دي لا لوبير (القفز الفردي)</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">6×6</td>
+                                        <td style="padding:9px;">المسدس (الشمس)</td>
+                                        <td style="padding:9px;">36</td>
+                                        <td style="padding:9px; color:#38bdf8;">111</td>
+                                        <td style="padding:9px; color:#94a3b8;">— (مزدوج)</td>
+                                        <td style="padding:9px;">زوجي الفرد (Singly Even)</td>
+                                        <td style="padding:9px;">لوكس وستراشي (LUX)</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">7×7</td>
+                                        <td style="padding:9px;">المسبع (الزهرة)</td>
+                                        <td style="padding:9px;">49</td>
+                                        <td style="padding:9px; color:#38bdf8;">175</td>
+                                        <td style="padding:9px; color:#06d6a0;">25</td>
+                                        <td style="padding:9px;">فردي (Odd)</td>
+                                        <td style="padding:9px;">البوزجاني التبادلي</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">8×8</td>
+                                        <td style="padding:9px;">المثمن (عطارد)</td>
+                                        <td style="padding:9px;">64</td>
+                                        <td style="padding:9px; color:#38bdf8;">260</td>
+                                        <td style="padding:9px; color:#94a3b8;">— (مزدوج)</td>
+                                        <td style="padding:9px;">زوجي الزوج (Doubly Even)</td>
+                                        <td style="padding:9px;">الانعكاس المزدوج الرباعي</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:9px; color:#ffd166; font-weight:700;">9×9</td>
+                                        <td style="padding:9px;">المتسع (القمر)</td>
+                                        <td style="padding:9px;">81</td>
+                                        <td style="padding:9px; color:#38bdf8;">369</td>
+                                        <td style="padding:9px; color:#06d6a0;">41</td>
+                                        <td style="padding:9px;">فردي (Odd)</td>
+                                        <td style="padding:9px;">كمال المراتب الآحادية</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER 4: WHY THE MUHAMMADAN REALITY TRANSCENDS FINITE MATRICES -->
+                    <div style="background:linear-gradient(135deg, rgba(20,14,35,0.9), rgba(8,12,28,0.95)); border:1px solid rgba(244,180,26,0.35); border-radius:18px; padding:25px;">
+                        <h3 style="color:var(--gold); font-family:'Amiri',serif; font-size:1.45rem; margin-top:0; margin-bottom:15px; border-bottom:1px solid rgba(244,180,26,0.2); padding-bottom:10px;">
+                            👑 الفصل الرابع: البرهان العرفاني والتنزيهي — لماذا لا يوجد وفق للحقيقة المحمدية؟
+                        </h3>
+
+                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.9;">
+                            إذا كانت كتب المخطوطات والرموز قد وضعت أوفاقاً للمقامات الكونية والطبائع الأربعة وعزت لكل نبي من أولي العزم نسبة فلكية جزئية، فلماذا أجمعت الدوائر الفلسفية والعرفانية الرصينة على امتناع وضع وفق يمثل "الحقيقة المحمدية"؟
+                        </p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:18px; margin:20px 0;">
+                            
+                            <div style="background:rgba(0,0,0,0.4); border-radius:12px; padding:18px; border-top:3px solid var(--gold);">
+                                <h4 style="color:var(--gold); margin:0 0 8px 0; font-family:'Amiri',serif; font-size:1.15rem;">١. استحالة حصر الكلي في جزئياته</h4>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
+                                    في فلسفة ابن عربي في <em>الفتوحات المكية</em> وعبد الكريم الجيلي في <em>الإنسان الكامل</em>، تُعد الحقيقة المحمدية أصل الوجود الكلي ومرآة الفيض الأول التي انبثقت منها سائر المراتب (من عقل كلي ونفس كلية وهيولى وأفلاك). والوفق بحكم تعريفه الرياضي هو مصفوفة جزئية مقيدة بقيمة عددية مغلقة ($N$). واستحالة حصر اللامتناهي في المتناهي تمنع عقلاً أن يُصاغ للأصل المطلق جدول محصور.
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.4); border-radius:12px; padding:18px; border-top:3px solid #38bdf8;">
+                                <h4 style="color:#38bdf8; margin:0 0 8px 0; font-family:'Amiri',serif; font-size:1.15rem;">٢. الجمع بين الأضداد ونفي التحيز</h4>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
+                                    كل وفق ينحاز بطبيعته لطبيعة عنصرية معينة (نار، ماء، هواء، تراب) أو فلك محدد (زحل، مشتري، مريخ). أما الحقيقة المحمدية فمقامها هو "مقام الجمع والوجود الأكمل" المحيط بجميع الطبائع دون أن يستغرقه طبع، والمتجاوز لكل الأفلاك دون أن يحده فلك؛ ولذا فإن حبسها في وفق يعني قسرها على عنصر دون سواه، وهو نقص يتنافى مع كمال الجمع.
+                                </p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.4); border-radius:12px; padding:18px; border-top:3px solid #06d6a0;">
+                                <h4 style="color:#06d6a0; margin:0 0 8px 0; font-family:'Amiri',serif; font-size:1.15rem;">٣. التوحيد المنزه وبساطة الرسالة</h4>
+                                <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
+                                    الرسالة المحمدية بُنيت على هدم الطلاسم والوثنية الحسابية والتقديس الرمزي للأشكال، وجاءت بالدعوة المباشرة للتوحيد الخالص: ﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾. شريعتها شريعة عمل وسلوك وقلب سليم، لا شريعة أوفاق وجداول، مما يجعل التنزيه واجباً دينياً وعقلياً وعرفانياً.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- GOLDEN CONCLUSION -->
+                        <div style="background:rgba(0,0,0,0.5); border-right:4px solid var(--gold); border-radius:10px; padding:16px 20px; margin-top:10px;">
+                            <span style="font-family:'Amiri',serif; font-size:1.1rem; color:#f1f5f9; line-height:1.8;">
+                                «إن الأوفاق خُلقت للمقادير المحدودة في عالم الحساب، أما النور المحمدي فهو سر التجلي الأعظم الذي لا يحيط به خط ولا يحصره رسم؛ وما عجزت الأرقام عن عده، امتنع على الجداول حده.»
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
