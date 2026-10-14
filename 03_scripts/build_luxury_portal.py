@@ -2759,6 +2759,12 @@ def build_luxury_portal():
     window.switchTab = navigateToChamber;
     window.switchCodexTab = navigateToChamber;
 
+    // Open Library Modal / Chamber
+    function openLibraryModal() {
+        navigateToChamber('tab-manuscripts');
+    }
+    window.openLibraryModal = openLibraryModal;
+
     // DRAWER SEARCH FILTER
     function filterDrawerDoors(query) {
         const q = (query || '').trim().toLowerCase();
@@ -3059,12 +3065,14 @@ def build_luxury_portal():
     else:
         final_html = assembled_html
 
-    # Inject anti-cache meta tags right after <head>
+    # Inject anti-cache meta tags and favicon right after <head>
     cache_meta = """
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="version" content="8.5-esoteric-paradise">
+    <meta name="version" content="8.6-esoteric-paradise">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     """
     if '<head>' in final_html:
         final_html = final_html.replace('<head>', '<head>' + cache_meta, 1)

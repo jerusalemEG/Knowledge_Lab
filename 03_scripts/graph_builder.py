@@ -5964,20 +5964,21 @@ def generate_unified_html(nodes, links):
             if (gate) gate.classList.add('unlocked');
         }}
 
-        // Initialize All Systems
-        renderSpheres();
-        renderOdyssey();
-        renderChakras();
-        renderZodiac('ALL');
-        renderTimeline();
-        renderMatrix();
-        renderManuscripts();
-        renderCritique();
+        // Safe System Initialization
+        try {{ if (typeof renderSpheres === 'function') renderSpheres(); }} catch(e) {{ console.warn("renderSpheres deferred:", e); }}
+        try {{ if (typeof renderOdyssey === 'function') renderOdyssey(); }} catch(e) {{}}
+        try {{ if (typeof renderChakras === 'function') renderChakras(); }} catch(e) {{}}
+        try {{ if (typeof renderZodiac === 'function') renderZodiac('ALL'); }} catch(e) {{}}
+        try {{ if (typeof renderTimeline === 'function') renderTimeline(); }} catch(e) {{}}
+        try {{ if (typeof renderMatrix === 'function') renderMatrix(); }} catch(e) {{}}
+        try {{ if (typeof renderManuscripts === 'function') renderManuscripts(); }} catch(e) {{}}
+        try {{ if (typeof renderCritique === 'function') renderCritique(); }} catch(e) {{}}
     
         // ========================================================
         // GRAPH DUAL MODE: THEORY ATLAS & ZERO-LAG CONTROLLER
         // ========================================================
-        let currentGraphMode = 'theory';
+        var currentGraphMode = 'theory';
+        window.currentGraphMode = 'theory';
 
         function switchGraphMode(mode) {{
             currentGraphMode = mode;
