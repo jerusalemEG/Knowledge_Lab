@@ -1109,6 +1109,139 @@ def build_luxury_portal():
     }
 
     /* ========================================================
+       GRAND ESOTERIC EDUCATIONAL LIBRARY MODAL STYLES
+       المكتبة الباطنية التعليمية الشاملة
+       ======================================================== */
+    .library-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(1, 3, 10, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 99990;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .library-modal-backdrop.open {
+        display: flex;
+    }
+
+    .library-modal-container {
+        background: rgba(5, 9, 22, 0.98);
+        border: 2px solid var(--border-gold-strong);
+        border-radius: 24px;
+        width: 100%;
+        max-width: 1050px;
+        max-height: 88vh;
+        overflow-y: auto;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.2);
+        padding: 30px;
+        position: relative;
+    }
+
+    .library-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-gold);
+        margin-bottom: 24px;
+    }
+
+    .library-modal-title-group {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .library-modal-title-group h2 {
+        font-family: 'Amiri', serif;
+        font-size: 1.8rem;
+        margin: 0;
+        background: var(--gold-foil);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .library-books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 18px;
+    }
+
+    .library-book-item {
+        background: rgba(9, 15, 34, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 16px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.25s ease;
+    }
+
+    .library-book-item:hover {
+        border-color: var(--gold);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .book-item-badge {
+        font-family: 'Amiri', serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--gold);
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        padding: 2px 8px;
+        border-radius: 6px;
+        align-self: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .book-item-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 8px 0;
+        line-height: 1.4;
+    }
+
+    .book-item-desc {
+        font-size: 0.82rem;
+        color: #94a3b8;
+        line-height: 1.6;
+        margin-bottom: 14px;
+        flex-grow: 1;
+    }
+
+    .book-item-link-btn {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+        border: 1px solid var(--border-gold);
+        border-radius: 8px;
+        padding: 6px 12px;
+        color: var(--gold-bright);
+        font-size: 0.82rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.2s;
+    }
+
+    .book-item-link-btn:hover {
+        background: var(--gold);
+        color: #02040a;
+    }
+
+
+    /* ========================================================
        GRAND ESOTERIC CODEX & ANCIENT MANUSCRIPT PORTAL STYLES
        هيكل ديوان المخطوطات والنواميس الكونية
        ======================================================== */
@@ -1470,6 +1603,10 @@ def build_luxury_portal():
 
             <!-- LEFT: QUICK ACTIONS -->
             <div class="topbar-actions">
+                <button class="topbar-action-btn" onclick="openLibraryModal()" title="المكتبة الباطنية التعليمية الشاملة (9 كتب)" style="color:var(--gold); border-color:var(--border-gold);">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <span class="hide-mobile">المكتبة التعليمية</span>
+                </button>
                 <button class="topbar-action-btn" onclick="navigateToChamber('tab-hub')" title="البوابة الرئيسية">
                     <i class="fa-solid fa-house"></i>
                     <span class="hide-mobile">الرئيسية</span>
