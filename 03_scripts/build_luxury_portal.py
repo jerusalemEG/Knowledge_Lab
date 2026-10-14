@@ -83,25 +83,50 @@ def build_luxury_portal():
        ======================================================== */
     :root {
         color-scheme: dark !important;
-        --void-black: #030611;
-        --bg-space: #030611;
-        --bg-void: #030611;
-        --card-glass: rgba(11, 17, 33, 0.85);
-        --border-gold: rgba(255, 209, 102, 0.28);
-        --gold-glow: rgba(255, 209, 102, 0.45);
-        --purple-accent: #9d4edd;
-        --purple-glow: rgba(157, 78, 221, 0.4);
+        --void-black: #02040a;
+        --bg-space: #02040a;
+        --bg-void: #02040a;
+        --card-glass: rgba(7, 12, 28, 0.9);
+        --card-glass-hover: rgba(10, 18, 42, 0.95);
+        
+        /* 24K IMPERIAL GOLD FOIL & JEWEL PALETTE */
+        --gold: #d4af37;
+        --gold-bright: #ffd700;
+        --gold-light: #fef08a;
+        --gold-foil: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+        --border-gold: rgba(212, 175, 55, 0.38);
+        --border-gold-strong: rgba(212, 175, 55, 0.75);
+        --gold-glow: rgba(212, 175, 55, 0.55);
+        
+        /* ROYAL VELVET AMETHYST & VIOLET */
+        --purple-accent: #a855f7;
+        --purple-light: #d8b4fe;
+        --purple-glow: rgba(168, 85, 247, 0.45);
+        
+        /* ASTRAL LAPIS LAZULI & CYAN */
         --cyan-accent: #00f0ff;
-        --cyan-glow: rgba(0, 240, 255, 0.4);
-        --emerald-accent: #06d6a0;
+        --cyan-light: #7dd3fc;
+        --cyan-glow: rgba(0, 240, 255, 0.45);
+        
+        /* HOLY MALACHITE & EMERALD */
+        --emerald-accent: #10b981;
+        --emerald-glow: rgba(16, 185, 129, 0.45);
+        
+        /* CELESTIAL RUBY */
+        --ruby-accent: #f43f5e;
+        --ruby-glow: rgba(244, 63, 94, 0.45);
+        
+        --text-pure: #f8fafc;
+        --text-gold: #fef08a;
+        --text-muted: #94a3b8;
     }
 
     html {
-        background-color: #030611 !important;
-        background: #030611 !important;
+        background-color: #02040a !important;
+        background: #02040a !important;
         color-scheme: dark !important;
         color: #f1f5f9 !important;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        scrollbar-color: rgba(255, 209, 102, 0.3) #02040a !important;
     }
 
     body {
@@ -109,23 +134,24 @@ def build_luxury_portal():
         max-width: 100vw;
         overflow-x: hidden !important;
         position: relative;
-        background-color: #030611 !important;
+        background-color: #02040a !important;
         background-image: 
-            radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 45%),
-            radial-gradient(circle at 90% 85%, rgba(244, 180, 26, 0.05) 0%, transparent 45%),
-            radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 60%) !important;
+            radial-gradient(ellipse at 15% 15%, rgba(0, 240, 255, 0.07) 0%, transparent 50%),
+            radial-gradient(ellipse at 85% 85%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 45%) !important;
         background-attachment: fixed !important;
         color-scheme: dark !important;
         font-family: 'Tajawal', sans-serif;
-        color: #f1f5f9 !important;
+        color: #f8fafc !important;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        scrollbar-color: rgba(212, 175, 55, 0.45) #02040a !important;
     }
 
     * {
         box-sizing: border-box;
-        scrollbar-color: rgba(255, 209, 102, 0.3) #030611 !important;
+        scrollbar-color: rgba(255, 209, 102, 0.3) #02040a !important;
     }
 
     /* Universal Dark Scrollbars Across Entire Site (Never Light/White) */
@@ -134,15 +160,17 @@ def build_luxury_portal():
         height: 8px !important;
     }
     ::-webkit-scrollbar-track {
-        background: #030611 !important;
+        background: #02040a !important;
     }
     ::-webkit-scrollbar-thumb {
-        background: rgba(255, 209, 102, 0.3) !important;
+        background: linear-gradient(180deg, #d4af37, #937322) !important;
         border-radius: 6px !important;
-        border: 2px solid #030611 !important;
+        border: 2px solid #02040a !important;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 209, 102, 0.6) !important;
+        background: linear-gradient(180deg, #ffd700, #d4af37) !important;
+        box-shadow: 0 0 14px rgba(255, 215, 0, 0.7) !important;
     }
 
     /* Universal Master Chambers Dark Void Enforcement */
@@ -172,7 +200,7 @@ def build_luxury_portal():
     #tab-seals-zouhri,
     #tab-inner-realms,
     main {
-        background-color: #030611 !important;
+        background-color: #02040a !important;
         color: #f1f5f9 !important;
     }
 
@@ -196,12 +224,26 @@ def build_luxury_portal():
         position: sticky;
         top: 0;
         z-index: 5000;
-        background: rgba(4, 8, 19, 0.94);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(2, 5, 14, 0.96);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         border-bottom: 1px solid var(--border-gold);
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), inset 0 -1px 0 rgba(212, 175, 55, 0.2);
         width: 100%;
+    }
+
+    .topbar-main-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 30%, #b38728 70%, #ffd700 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.25;
+        filter: drop-shadow(0 1px 4px rgba(212, 175, 55, 0.3));
     }
 
     .topbar-inner {
@@ -1136,11 +1178,25 @@ def build_luxury_portal():
         font-size: clamp(2rem, 4.5vw, 3.2rem);
         font-weight: 800;
         margin: 0 0 16px 0;
-        background: linear-gradient(135deg, #ffd166 15%, var(--gold) 55%, #d8b4fe 100%);
+        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         line-height: 1.3;
-        text-shadow: 0 0 30px rgba(255, 209, 102, 0.25);
+        filter: drop-shadow(0 2px 12px rgba(212, 175, 55, 0.45));
+    }
+
+    .hub-quran-verse {
+        display: inline-block;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(168, 85, 247, 0.08));
+        border: 1.5px solid var(--border-gold-strong);
+        border-radius: 20px;
+        padding: 12px 28px;
+        color: #fef08a;
+        font-family: 'Amiri', serif;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.2);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
     }
 
     .manuscript-intro-folio {
@@ -1228,8 +1284,8 @@ def build_luxury_portal():
     }
 
     .manuscript-folio-card {
-        background: rgba(11, 18, 38, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 11, 26, 0.92);
+        border: 1px solid rgba(212, 175, 55, 0.22);
         border-radius: 18px;
         padding: 22px;
         cursor: pointer;
@@ -1237,9 +1293,17 @@ def build_luxury_portal():
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .manuscript-folio-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--card-accent, var(--gold));
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.25);
+        background: rgba(9, 16, 36, 0.96);
     }
 
     .manuscript-folio-card::before {
