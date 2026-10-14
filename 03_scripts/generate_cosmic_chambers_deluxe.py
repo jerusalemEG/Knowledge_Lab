@@ -775,6 +775,177 @@ def generate_wafqs_chamber_html():
         </div>
         """
 
+    treatises_html = """
+    <!-- 4 MASTER SCHOLARLY TREATISES -->
+    <div style="margin-top:40px; margin-bottom:30px;">
+        <h3 style="color:var(--gold); font-family:'Amiri',serif; font-size:1.45rem; margin-bottom:16px; display:flex; align-items:center; gap:10px;">
+            <i class="fa-solid fa-book-atlas"></i> الموسوعة الأكاديمية الشاملة لعلم الأوفاق: النواميس الكونية ودستور التحقيق
+        </h3>
+
+        <div class="wafq-treatise-grid">
+            <!-- TREATISE 1 -->
+            <div class="wafq-treatise-card">
+                <div class="wafq-treatise-header">
+                    <div class="wafq-treatise-icon"><i class="fa-solid fa-shapes"></i></div>
+                    <div>
+                        <h4 class="wafq-treatise-title">الركن الأول: أنطولوجيا الوفق كلغة كونية وشيفرة المصفوفات المتزنة</h4>
+                        <div class="wafq-treatise-subtitle">The Cosmic Ontology of Magic Squares & Zero-Entropy Physics</div>
+                    </div>
+                </div>
+                <div class="wafq-treatise-content">
+                    <p>علم الأوفاق ليس ركاماً من الطلاسم أو التنجيم الفلكلوري؛ بل هو <strong>لغة برمجة فراغية كونية (Universal Spatial Programming)</strong> تحاكي قوانين الاتزان والتناظر في مصفوفات الوجود. في الفضاء الحر، تتشتت الطاقات والموجات عشوائياً وفق القانون الثاني للديناميكا الحرارية (زيادة الإنتروبيا). أما داخل الوفق، فإن تساوي مجاميع الصفوف، الأعمدة، والأقطار يحقق ظاهرة <em>إلغاء الإنتروبيا الطاقية (Zero-Entropy Matrix)</em>، حيث تلغي التيارات المتضادة شواش بعضها البعض ليتحول المربع إلى <strong>مرنان كهرومغناطيسي مغلق (Closed Resonator Cavity)</strong> يحبس الطاقة في موجة دائرية توريدية فائقة التركيز.</p>
+
+                    <div class="wafq-sub-box gold">
+                        <strong>التشريح الهيكلي الخماسي لجسد الوفق (The Fivefold Anatomy):</strong>
+                        <ul style="margin:4px 0 0 16px; padding:0;">
+                            <li><strong>1. المفتاح (The Key / Portal):</strong> أصغر خانة بالوفق (رقم 1 في الطبيعي)؛ يمثل مدخل التيار والقطب الموجب لتدفق الشحنة الأثيرية.</li>
+                            <li><strong>2. المغلاق (The Lock / Seal):</strong> أكبر خانة بالوفق ($n^2$)؛ صمام الأمان الذي يحبس الدائرة ويمنع تسرب الشحنة أو انفراطها.</li>
+                            <li><strong>3. القطب والعدل (Center of Gravity):</strong> مركز الثقل الهندسي والمغناطيسي الذي تتناظر حوله كافة الخانات كمرآة كوانتية.</li>
+                            <li><strong>4. الميزان (The Magic Constant $M$):</strong> الثابت المحوري لكل صف وعمود وقطر، المحسوب بالقانون الكوني: M = n(n^2 + 1) / 2.</li>
+                            <li><strong>5. المساحة (The Scalar Volume $T$):</strong> المجموع التراكمي لكافة أعداد الوفق ($T = n \\times M$)، وهو يمثل الكتلة الحجمية للطاقة المستودعة.</li>
+                        </ul>
+                    </div>
+
+                    <p><strong>ميكانيكا الكسر والجبر (Symmetry Breaking & Repair):</strong> إذا كان العدد المستودع لا يقبل القسمة بالتساوي على رتبة الوفق ($n$)، ينشأ باقي قسمة (الكسر). إهمال الكسر يفسد توازن المصفوفة ويجعلها عرجاء طاقياً. لذا صاغ الغزالي والبوني ميزاناً عبقرياً يجبر الخلل بزيادة 1 في بيوت محددة (البيت 7 في باقي 1، والبيت 4 في باقي 2)، وهو ما يعرف في الفيزياء الحديثة بـ <em>كسر التناظر التلقائي المنظم (Spontaneous Symmetry Breaking)</em> لحفظ الثابت الكلي.</p>
+
+                    <p><strong>التفسير الكوانتي الحديث:</strong> في الجبر الخطي، يطابق كل وفق سحري مصفوفة قيم ذاتية هيرميتية (Hermitian Eigenvalue Matrix). هذا التناظر الدقيق يمنع ظاهرة فك الترابط الكمي (Decoherence)، ويجعل الوفق قادراً على العمل كهوائي كوني (Scalar Waveguide) يلتقط الترددات الكوكبية وينقلها إلى الحقل الحيوي للإنسان.</p>
+                </div>
+            </div>
+
+            <!-- TREATISE 2 -->
+            <div class="wafq-treatise-card">
+                <div class="wafq-treatise-header">
+                    <div class="wafq-treatise-icon" style="color:var(--cyan); border-color:var(--cyan); background:rgba(0,240,255,0.12);"><i class="fa-solid fa-earth-americas"></i></div>
+                    <div>
+                        <h4 class="wafq-treatise-title">الركن الثاني: حوار الحضارات الكبرى والاكتشاف المشترك للنواميس</h4>
+                        <div class="wafq-treatise-subtitle">Comparative Civilizations & The Universal Discovery</div>
+                    </div>
+                </div>
+                <div class="wafq-treatise-content">
+                    <p>إن أبلغ برهان على كون الأوفاق نواميس فيزيائية ثابتة لا خرافات محلية، هو أن <strong>كل الحضارات الكبرى المنعزلة جغرافياً وتاريخياً قد اكتشفت نفس المربعات السحرية بذات الأعداد والتراتيب</strong> دون أن تلتقي!</p>
+
+                    <div class="wafq-sub-box emerald">
+                        <strong>تتبع المصفوفات عبر التاريخ الإنساني:</strong>
+                        <ul style="margin:4px 0 0 16px; padding:0;">
+                            <li><strong>الصين القديمة (لو شو Luo Shu 2800 ق.م):</strong> سلحفاة النهر الأصفر ونقوش درعها المقدسة التي تطابقت بنسبة 100% مع مثلث الغزالي وزحل (4-9-2 / 3-5-7 / 8-1-6). قسمت الصين الأعداد الفردية كـ <em>يانغ</em> سماوي نشط في المراكز، والأعداد الزوجية كـ <em>ين</em> أرضي ساكن في الأركان.</li>
+                            <li><strong>الهند الفيدية ومعبد خاجوراه (1000 م):</strong> يانترا كوبيرا لجلب الوفرة ($M=72$) ومربع جاينا فائق التناظر (Chautisa Yantra 4×4) حيث كل صف، عمود، قطر، وكل مربع فرعي 2×2، وكل زاوية تساوي 34 في تناغم هائل (Pandiagonal Perfect Square).</li>
+                            <li><strong>بابل والرافدين:</strong> النظام الستيني المقدس، والأختام الفلكية للكواكب السبعة التي وزعت الساعات اليومية وحسابات المنازل.</li>
+                            <li><strong>العصر الإسلامي الذهبي:</strong>
+                                <br>• <em>الإمام أبو حامد الغزالي:</em> في "المنقذ من الضلال" و"السر المصون"، برهن على أن خواص الأوفاق مثل خواص الأدوية الكيميائية؛ كلاهما أسباب مسخرة بأمر الله يدركها البرهان العقلي.
+                                <br>• <em>الشيخ أحمد البوني:</em> في "شمس المعارف" و"لطائف الإشارات"، قعّد التنزيل الحرفي والعددي وربط الأوفاق بالأسماء الحسنى وسر الحروف.
+                                <br>• <em>جابر بن حيان:</em> كتاب الموازين ونظرية 1:3:5:8 في موازنة طبائع المعادن الأربعة عبر أوفاق كيميائية صارمة.
+                                <br>• <em>ابن خلدون:</em> الفصل الاستثنائي في "المقدمة" الذي فكك الأوفاق فلسفياً ورياضياً وميز بين العلم البرهاني والدجل الوهمي.
+                            </li>
+                            <li><strong>النهضة الأوروبية والهرمسية:</strong> نقل <em>هاينريش كورنيليوس أغريبا (1533)</em> الأوفاق الكوكبية السبعة من المخطوطات الأندلسية الإسلامية (غاية الحكيم / Picatrix)، وخلد <em>ألبرشت دورر (1514)</em> مربع المشتري 4×4 في لوحته العالمية Melencolia I.</li>
+                        </ul>
+                    </div>
+
+                    <p><strong>سر الاكتشاف الأعظم المشترك:</strong> لماذا اتفقت بابل مع الصين والهند والأندلس؟ لأن المربعات السحرية هي <em>الثوابت الطوبولوجية للفضاء ثلاثي الأبعاد (Topological Invariants)</em>. إنها ليست من صنع عقل بشري، بل هي بصمات التصميم الرياضي الذي بنى الله به شبكة الزمكان وتوازن الذرات والمجرات.</p>
+                </div>
+            </div>
+
+            <!-- TREATISE 3 -->
+            <div class="wafq-treatise-card">
+                <div class="wafq-treatise-header">
+                    <div class="wafq-treatise-icon" style="color:#c026d3; border-color:#c026d3; background:rgba(192,38,211,0.12);"><i class="fa-solid fa-gears"></i></div>
+                    <div>
+                        <h4 class="wafq-treatise-title">الركن الثالث: ميكانيكا البناء، التفعيل، الفك، والإغلاق التام</h4>
+                        <div class="wafq-treatise-subtitle">The Complete Operational Protocol: Construct, Activate, Decipher & Seal</div>
+                    </div>
+                </div>
+                <div class="wafq-treatise-content">
+                    <p>لكي يكون العمل بالوفق عملاً هندسياً ناجحاً ومحمياً، يجب اتباع الدستور التشغيلي الرباعي الصارم:</p>
+
+                    <div class="wafq-sub-box purple">
+                        <strong>1. ميكانيكا البناء والتنزيل (Construction Algorithms):</strong>
+                        <ul style="margin:4px 0 0 16px; padding:0;">
+                            <li><strong>الأوفاق الفردية (3x3, 5x5, 7x7, 9x9):</strong> طريقة دي لا لوبير (De la Loubère Siamese Method) وسير "بطد زهج واح"؛ البدء بالرقم 1 في منتصف الصف الأول، والتحرك قطرياً للأعلى واليمين، وعند الاصطدام بخانة ممتلئة أو الخروج يتم الهبوط خانة واحدة للأسفل.</li>
+                            <li><strong>الأوفاق الزوجية المتماثلة (4x4, 8x8):</strong> طريقة الأقطار المتناظرة؛ ملء الخانات تسلسلياً 1 إلى $n^2$، ثم عكس الأرقام الواقعة على الأقطار الرئيسية عبر طرحها من $(n^2 + 1)$.</li>
+                            <li><strong>استخراج المفتاح من أي اسم أو آية:</strong> حساب الجُمّل الكبير ($N$) ثم طرح الأس ($S$) ثم القسمة على الرتبة ($n$)، فيكون الناتج هو المفتاح، والباقي يُجبر في خانة الكسر.</li>
+                        </ul>
+                    </div>
+
+                    <div class="wafq-sub-box crimson">
+                        <strong>2. ميكانيكا التفعيل (Activation) والفك العكسي (Deciphering):</strong>
+                        <ul style="margin:4px 0 0 16px; padding:0;">
+                            <li><strong>التفعيل الطاقي:</strong> اختيار ساعة الكوكب المناسبة، شحن الوفق بنغمة التردد المداري (Hans Cousto Frequency)، وتلاوة الاسم بالعدد المودع لتحقيق الانجرار الرنيني (Acoustic Entrainment).</li>
+                            <li><strong>الفك والتحليل العكسي لأي طلسم مجهول:</strong> فحص خانة المفتاح (أقل رقم)، ثم حساب المجموع المستودع: $N = (\\text{Key} \\times n) + S + \\text{Remainder}$، ثم مطابقة الناتج بأسماء الله الحسنى والآيات القرآنية لمعرفة السر المودع وكشف ما إذا كان الوفق سليماً أم فاسداً مشوهاً.</li>
+                        </ul>
+                    </div>
+
+                    <p><strong>3. ميكانيكا الإغلاق والختم والتحصين (Sealing & Shielding):</strong>
+                    ترك الوفق مفتوحاً يجعله ثقباً أثيرياً يسرب الطاقة ويجتذب الطفيليات النارية. يُغلق الوفق بـ:
+                    1. إحكامه بخانة المغلاق القصوى.
+                    2. إحاطته بسور من الحروف النورانية القرآنية المفرقة غير المطموسة.
+                    3. تثبيت أركانه الأربعة بآيات الإحكام ﴿وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا﴾.
+                    4. ولإبطال أي وفق فاسد أو سحر قديم: يتم محوه بماء مقروء عليه آيات الإبطال، فبزوال التناظر الهندسي ينحل الحقل التداخلي فوراً وتتلاشى العقدة.</p>
+                </div>
+            </div>
+
+            <!-- TREATISE 4 -->
+            <div class="wafq-treatise-card">
+                <div class="wafq-treatise-header">
+                    <div class="wafq-treatise-icon" style="color:var(--emerald); border-color:var(--emerald); background:rgba(6,214,160,0.12);"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div>
+                        <h4 class="wafq-treatise-title">الركن الرابع: شروط العمل، قانون الرنين الروحي، والميزان التوحيدي</h4>
+                        <div class="wafq-treatise-subtitle">The 7 Pillars of Harmonic Success, Failure Traps & Quranic Sovereignty</div>
+                    </div>
+                </div>
+                <div class="wafq-treatise-content">
+                    <p>لكي يتحقق الأثر الطاقي بنسبة 100% ودون أي ارتداد سلبي، وضع الحكماء <strong>دستور الشروط السبعة للتحقيق التام</strong>:</p>
+
+                    <div class="wafq-sub-box emerald">
+                        <strong>الشروط السبعة للنجاح المؤكد (The 7 Pillars of Success):</strong>
+                        <ol style="margin:4px 0 0 18px; padding:0;">
+                            <li><strong>1. الدقة الرياضية الصارمة:</strong> خطأ برقم واحد يدمر الدائرة بالكامل؛ الأوفاق كالمعادلات الكيميائية لا تقبل التقريب.</li>
+                            <li><strong>2. وحدة وتماسك النية (Coherent Intent):</strong> تشتت الفكر أو التردد يولد موجات تداخل هدام تلغي الرنين الأثيري.</li>
+                            <li><strong>3. التوافق الفلكي والزمني:</strong> مراعاة ساعات الكواكب وتجنب أوقات الاحتراق والقمر في خلو المسار.</li>
+                            <li><strong>4. الطهارة البيولوجية والبيئية:</strong> الوضوء التام، البيئة الهادئة، والبخور الطبيعي الخالص (اللبان الذكر، الصندل، المسك).</li>
+                            <li><strong>5. التأريض والتحصين (Grounding):</strong> تحصين الهالة بالأذكار لمنع اختراق اليرقات النجمية أثناء تدفق الشحنة.</li>
+                            <li><strong>6. الرنين الصوتي المتناغم:</strong> الترديد الصوتي بالنغمة الموافقة لتردد الكوكب (Cousto Orbital Hz).</li>
+                            <li><strong>7. الكتمان الطاقي (Hermetic Secrecy):</strong> حفظ العمل في طي الكتمان حتى يكتمل تكوينه في عالم الشهادة.</li>
+                        </ol>
+                    </div>
+
+                    <p><strong>موانع الفشل السبعة (The 7 Failure Traps):</strong>
+                    الخطأ في حساب الجُمّل، النوايا الخبيثة أو الإضرار بالخلق (مما يفعل قانون القصاص الكوني العادل فيرتد السحر على صاحبه ويحرق هالته)، استخدام بخور كيميائي مغشوش، غياب التأريض، والتفاخر والثرثرة قبل تمام التجسد المادي.</p>
+
+                    <div class="wafq-sub-box gold">
+                        <strong>الميزان التوحيدي والقرآني الأسمى — سيادة الإنسان الموحد:</strong>
+                        <p style="margin:0;">الحقيقة العقدية الصارمة: الأعداد، الكواكب، والأوفاق ليست آلهة، ولا تملك في الكون ذرة من نفع أو ضر بذاتها، بل هي مجرد نواميس فيزيائية وأسباب كونية مسخرة بإرادة الله الواحد القهار ﴿وَأَحْصَىٰ كُلَّ شَيْءٍ عَدَدًا﴾ [الجن: 28]. الإنسان المؤمن الموحد المتوكل على ربه هو خليفة الله في أرضه، وهو سيد فوق كل هذه القوى المسخرة؛ يستعمل العلم الرياضي كما يستعمل مهندس الطيران قوانين الديناميكا الهوائية، وكل ذلك في رحاب التوحيد الخالص ونور <em>لا إله إلا الله محمد رسول الله</em>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complete 7 Planetary Squares Compendium Table -->
+    <div style="margin-bottom:25px;">
+        <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.35rem; margin-bottom:12px;">
+            <i class="fa-solid fa-cubes"></i> مصفوفة الأوفاق السبعة الكوكبية الكاملة من 3×3 إلى 9×9 وتردداتها وتطبيقاتها عبر الحضارات
+        </h3>
+        <div class="data-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>نوع الوفق ورتبته</th>
+                        <th>الكوكب والمعدن</th>
+                        <th>الثابت (M)</th>
+                        <th>المجموع (T)</th>
+                        <th>في الصين القديمة (Luo Shu)</th>
+                        <th>في الفيدا الهندية (Yantra)</th>
+                        <th>في الهرمسية الغربية (Agrippa)</th>
+                        <th>التردد والنغمة</th>
+                        <th>التأثير البيولوجي والأثيري</th>
+                        <th>استماع للرنين</th>
+                    </tr>
+                </thead>
+                <tbody id="planetary-wafqs-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    """
+
     meta = CHAMBER_METADATA["tab-numbers"]
     return wrap_chamber_in_royal_manuscript(
         chamber_id="tab-numbers",
@@ -784,7 +955,7 @@ def generate_wafqs_chamber_html():
         quran_verse=meta["verse"],
         intro_folio=meta["intro"],
         visual_html="",
-        content_html=f'<div class="cosmic-cards-grid">{wafq_cards}</div>'
+        content_html=f'<div class="cosmic-cards-grid">{wafq_cards}</div>{treatises_html}'
     )
 
 

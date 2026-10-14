@@ -40,7 +40,8 @@ from generate_cosmic_chambers_deluxe import (
     get_deluxe_chambers_html,
     get_cosmic_database_js,
     get_chambers_visual_js,
-    wrap_all_raw_chambers
+    wrap_all_raw_chambers,
+    extract_tag_content
 )
 
 
@@ -2988,12 +2989,34 @@ def build_luxury_portal():
     if main_open_pos != -1 and main_close_pos != -1:
         atlas_main_inner = atlas_with_header[main_open_pos + len('<main>'):main_close_pos]
         
-        # Remove old chambers superseded by deluxe versions
-        for tab_id in ["tab-spheres", "tab-zodiac", "tab-mansions"]:
-            atlas_main_inner = re.sub(rf'<section\s+id="{tab_id}"[^>]*>.*?</section>', '', atlas_main_inner, flags=re.DOTALL)
+        # Thoroughly purge old chambers superseded by deluxe versions from both atlas and codex
+        superseded_chambers = ["tab-spheres", "tab-zodiac", "tab-mansions", "tab-kings", "tab-letters-magic", "tab-numbers"]
+        
+        for tab_id in superseded_chambers:
+            while True:
+                found = False
+                for tag in ["section", "div"]:
+                    res = extract_tag_content(atlas_main_inner, tag, tab_id)
+                    if res:
+                        s, e, _ = res
+                        atlas_main_inner = atlas_main_inner[:s] + atlas_main_inner[e:]
+                        found = True
+                        break
+                if not found:
+                    break
 
-        for tab_id in ["tab-kings", "tab-letters-magic", "tab-numbers"]:
-            codex_main_clean = re.sub(rf'<section\s+id="{tab_id}"[^>]*>.*?</section>', '', codex_main_clean, flags=re.DOTALL)
+        for tab_id in superseded_chambers:
+            while True:
+                found = False
+                for tag in ["section", "div"]:
+                    res = extract_tag_content(codex_main_clean, tag, tab_id)
+                    if res:
+                        s, e, _ = res
+                        codex_main_clean = codex_main_clean[:s] + codex_main_clean[e:]
+                        found = True
+                        break
+                if not found:
+                    break
 
         deluxe_chambers_html = get_deluxe_chambers_html()
         astro_chamber_html = get_astrology_chamber_html()
