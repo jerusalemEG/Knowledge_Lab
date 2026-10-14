@@ -7,6 +7,18 @@ illuminated manuscript styling, embedded JSON data, and rich interactive visual 
 
 import json
 import re
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+GRAPH_JSON_PATH = os.path.join(SCRIPT_DIR, "knowledge_graph.json")
+VAULT_NODES_DATA = {}
+if os.path.exists(GRAPH_JSON_PATH):
+    try:
+        with open(GRAPH_JSON_PATH, "r", encoding="utf-8") as f:
+            raw_g = json.load(f)
+            VAULT_NODES_DATA = raw_g.get("nodes", {})
+    except Exception as e:
+        print(f"Warning loading {GRAPH_JSON_PATH}: {e}")
 
 # Comprehensive JSON Database for all Esoteric & Cosmological Chambers
 COSMIC_DATABASE = {
@@ -512,7 +524,388 @@ def get_deluxe_chambers_css():
         border-radius: 4px;
         transition: width 0.4s ease;
     }
+
+    /* ========================================================
+       CHAMBER 01: ATLAS OF CONCEPTS (أطلس الأقسام والشروح المنظمة)
+       ======================================================== */
+    .atlas-controls-bar {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .atlas-pills-scroll {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .atlas-cat-pill {
+        background: rgba(13, 18, 38, 0.85);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 20px;
+        padding: 8px 18px;
+        color: #cbd5e1;
+        font-family: 'Amiri', serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .atlas-cat-pill:hover {
+        border-color: var(--gold);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .atlas-cat-pill.active {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.28), rgba(13, 18, 38, 0.95));
+        border-color: var(--gold-bright);
+        color: #fef08a;
+        box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+    }
+
+    .atlas-search-box {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+        background: rgba(8, 12, 26, 0.95);
+        border: 1.5px solid rgba(212, 175, 55, 0.4);
+        border-radius: 25px;
+        padding: 12px 24px;
+        color: #fff;
+        font-size: 1rem;
+        font-family: 'Tajawal', sans-serif;
+        outline: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.05);
+        transition: all 0.3s ease;
+        text-align: right;
+        display: block;
+    }
+
+    .atlas-search-box:focus {
+        border-color: var(--gold-bright);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+    }
+
+    .atlas-workspace-grid {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 24px;
+        align-items: start;
+    }
+
+    @media (max-width: 992px) {
+        .atlas-workspace-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .atlas-sidebar-panel {
+        background: linear-gradient(135deg, rgba(13, 18, 38, 0.9), rgba(8, 12, 26, 0.95));
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .atlas-sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+    }
+
+    .atlas-sidebar-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.15rem;
+        color: var(--gold);
+        font-weight: 700;
+    }
+
+    .atlas-cat-count {
+        background: rgba(212, 175, 55, 0.15);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 12px;
+        padding: 2px 10px;
+        font-size: 0.8rem;
+        color: var(--gold-bright);
+        font-weight: 700;
+    }
+
+    .atlas-nodes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-height: 720px;
+        overflow-y: auto;
+        padding-left: 4px;
+    }
+
+    .atlas-nodes-list::-webkit-scrollbar {
+        width: 6px;
+    }
+    .atlas-nodes-list::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.4);
+        border-radius: 3px;
+    }
+
+    .atlas-node-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 14px;
+        padding: 14px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        position: relative;
+    }
+
+    .atlas-node-card:hover {
+        background: rgba(212, 175, 55, 0.08);
+        border-color: rgba(212, 175, 55, 0.4);
+        transform: translateX(-4px);
+    }
+
+    .atlas-node-card.active {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(20, 26, 50, 0.8));
+        border: 1.5px solid var(--gold-bright);
+        box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
+    }
+
+    .atlas-node-card-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 6px;
+        line-height: 1.4;
+    }
+
+    .atlas-node-card.active .atlas-node-card-title {
+        color: var(--gold-bright);
+    }
+
+    .atlas-node-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.78rem;
+        color: #94a3b8;
+    }
+
+    .atlas-dossier-panel {
+        background: linear-gradient(135deg, rgba(13, 18, 38, 0.95), rgba(8, 12, 26, 0.98));
+        border: 1.5px solid rgba(212, 175, 55, 0.35);
+        border-radius: 24px;
+        padding: 32px 28px;
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.7), inset 0 0 35px rgba(212, 175, 55, 0.03);
+        min-height: 500px;
+    }
+
+    .atlas-dossier-header {
+        border-bottom: 1.5px solid rgba(212, 175, 55, 0.25);
+        padding-bottom: 20px;
+        margin-bottom: 24px;
+    }
+
+    .atlas-dossier-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.85rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 12px 0;
+        line-height: 1.35;
+    }
+
+    .atlas-dossier-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .atlas-tag-pill {
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 12px;
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        color: var(--gold);
+    }
+
+    .atlas-dossier-body {
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: #e2e8f0;
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .atlas-dossier-body h1, .atlas-dossier-body h2, .atlas-dossier-body h3 {
+        font-family: 'Amiri', serif;
+        color: var(--gold-bright);
+        margin-top: 24px;
+        margin-bottom: 12px;
+        border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
+        padding-bottom: 6px;
+    }
+
+    .atlas-dossier-body blockquote {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(13, 18, 38, 0.7));
+        border-right: 4px solid var(--gold);
+        border-radius: 12px;
+        padding: 14px 20px;
+        margin: 18px 0;
+        color: #fef08a;
+        font-family: 'Amiri', serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .atlas-dossier-body ul, .atlas-dossier-body ol {
+        margin: 14px 0 14px 24px;
+        padding: 0;
+    }
+
+    .atlas-dossier-body li {
+        margin-bottom: 8px;
+    }
+
+    .atlas-conns-box {
+        margin-top: 36px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .atlas-conns-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.15rem;
+        color: var(--gold);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .atlas-conns-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .atlas-conn-item {
+        background: rgba(0, 240, 255, 0.08);
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        border-radius: 16px;
+        padding: 6px 14px;
+        color: #38bdf8;
+        font-size: 0.88rem;
+        font-family: 'Amiri', serif;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .atlas-conn-item:hover {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #38bdf8;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 240, 255, 0.3);
+    }
     """
+
+
+def generate_graph_chamber_html():
+    meta = CHAMBER_METADATA["tab-graph"]
+
+    categories = [
+        {"name": "ALL", "label": "🌐 الكل", "color": "#ffd700"},
+        {"name": "أولو العزم من الرسل", "label": "👑 أولو العزم من الرسل", "color": "#ffd166"},
+        {"name": "الهيكل القرآني والمصفوفات", "label": "🔴 الهيكل القرآني والمصفوفات", "color": "#ff4d6d"},
+        {"name": "دائرة البروج الاثني عشر", "label": "♈ دائرة البروج (12)", "color": "#ff9f1c"},
+        {"name": "الميلوثيسيا وتصريف القوى", "label": "🟣 الميلوثيسيا وتصريف القوى", "color": "#9d4edd"},
+        {"name": "المخطوطات والحكماء", "label": "🌿 أمهات المخطوطات والحكماء", "color": "#70e000"},
+        {"name": "العصور والرسالات التاريخية", "label": "🟡 العصور والرسالات", "color": "#ffb703"},
+        {"name": "الدورات الكونية والفلك", "label": "🔵 الدورات الفلكية", "color": "#00b4d8"},
+        {"name": "الهرمسية والكيمياء القديمة", "label": "⚗️ الخيمياء والهرمسية", "color": "#06d6a0"},
+        {"name": "مفاهيم عامة", "label": "🌌 مفاهيم كوزمولوجية", "color": "#3a86ff"}
+    ]
+
+    cat_pills_html = ""
+    for c in categories:
+        active_cls = " active" if c["name"] == "ALL" else ""
+        cat_pills_html += f'<button class="atlas-cat-pill{active_cls}" data-cat="{c["name"]}" onclick="filterAtlasCategory(\'{c["name"]}\')" style="--pill-color:{c["color"]};"><span>{c["label"]}</span></button>'
+
+    content_html = f"""
+    <div class="atlas-controls-bar">
+        <div class="atlas-pills-scroll">
+            {cat_pills_html}
+        </div>
+        <input type="text" id="atlas-search-input" class="atlas-search-box" placeholder="🔍 ابحث في عناوين وشروح ومصطلحات الشبكة المعرفية..." oninput="handleAtlasSearch(this.value)">
+    </div>
+
+    <div class="atlas-workspace-grid">
+        <!-- SIDEBAR: CONCEPTS DIRECTORY -->
+        <div class="atlas-sidebar-panel">
+            <div class="atlas-sidebar-header">
+                <span id="atlas-sidebar-cat-label" class="atlas-sidebar-title">🌐 كافة مفاهيم الشبكة الكونية</span>
+                <span id="atlas-nodes-count-badge" class="atlas-cat-count">جاري التحميل...</span>
+            </div>
+            <div id="atlas-nodes-list" class="atlas-nodes-list">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+
+        <!-- MAIN: FULL EXPLANATION DOSSIER IN-PAGE -->
+        <div class="atlas-dossier-panel" id="atlas-dossier-panel">
+            <div id="atlas-dossier-header" class="atlas-dossier-header">
+                <h2 id="atlas-dossier-title" class="atlas-dossier-title">جاري تحميل المعارف الكونية...</h2>
+                <div id="atlas-dossier-meta" class="atlas-dossier-meta-row"></div>
+            </div>
+
+            <div id="atlas-dossier-body" class="atlas-dossier-body">
+                <!-- Formatted full explanation -->
+            </div>
+
+            <div id="atlas-conns-box" class="atlas-conns-box">
+                <div class="atlas-conns-title">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                    <span>المفاهيم والعقد المتصلة بهذا الأصل في شبكة المعرفة:</span>
+                </div>
+                <div id="atlas-dossier-connections" class="atlas-conns-grid">
+                    <!-- Connected pills -->
+                </div>
+            </div>
+        </div>
+    </div>
+    """
+
+    return wrap_chamber_in_royal_manuscript(
+        chamber_id="tab-graph",
+        chamber_num=meta["num"],
+        chamber_title=meta["title"],
+        pavilion_badge=meta["pavilion"],
+        quran_verse=meta["verse"],
+        intro_folio=meta["intro"],
+        visual_html="",
+        content_html=content_html
+    )
 
 
 def generate_spheres_chamber_html():
@@ -962,6 +1355,7 @@ def generate_wafqs_chamber_html():
 def get_deluxe_chambers_html():
     """Generates and combines all deluxe manuscript chambers."""
     return (
+        generate_graph_chamber_html() +
         generate_spheres_chamber_html() +
         generate_zodiac_chamber_html() +
         generate_mansions_chamber_html() +
@@ -1013,7 +1407,7 @@ def wrap_all_raw_chambers(html_content):
     """
     for chamber_id, meta in CHAMBER_METADATA.items():
         # Skip chambers that are already replaced by deluxe versions
-        if chamber_id in ["tab-spheres", "tab-zodiac", "tab-mansions", "tab-kings", "tab-letters-magic", "tab-numbers"]:
+        if chamber_id in ["tab-graph", "tab-spheres", "tab-zodiac", "tab-mansions", "tab-kings", "tab-letters-magic", "tab-numbers"]:
             continue
 
         for tag in ["section", "div"]:
@@ -1068,12 +1462,14 @@ def wrap_all_raw_chambers(html_content):
 def get_cosmic_database_js():
     """Returns the complete JavaScript database injection for the client-side engine."""
     db_json = json.dumps(COSMIC_DATABASE, ensure_ascii=False)
+    nodes_json = json.dumps(VAULT_NODES_DATA, ensure_ascii=False)
     return f"""
     // ========================================================
     // KNOWLEDGE LAB — CLIENT-SIDE MASTER COSMIC DATABASE
     // ========================================================
     window.COSMIC_DATABASE = {db_json};
-    console.log("🌌 [COSMIC_DATABASE] Loaded successfully with", Object.keys(window.COSMIC_DATABASE).length, "master catalogs.");
+    window.VAULT_NODES_DATA = {nodes_json};
+    console.log("🌌 [COSMIC_DATABASE] Loaded successfully with", Object.keys(window.COSMIC_DATABASE).length, "catalogs and", Object.keys(window.VAULT_NODES_DATA).length, "vault concepts.");
     """
 
 
@@ -1083,6 +1479,147 @@ def get_chambers_visual_js():
     // ========================================================
     // KNOWLEDGE LAB — INTERACTIVE CANVAS & CALCULATION SCRIPTS
     // ========================================================
+
+    // 0. ATLAS OF CONCEPTS (CHAMBER 01) CONTROLLER
+    window.activeAtlasCategory = 'ALL';
+    window.currentAtlasNodeId = 'Islamic_Cosmological_Prophetic_Master_Index';
+    window.currentGraphMode = 'theory';
+
+    // Stubs for legacy hooks
+    function switchGraphMode(mode) {
+        window.currentGraphMode = 'theory';
+    }
+
+    function renderAtlasNodesList() {
+        const listContainer = document.getElementById('atlas-nodes-list');
+        if (!listContainer || !window.VAULT_NODES_DATA) return;
+        
+        const searchInput = document.getElementById('atlas-search-input');
+        const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+        const cat = window.activeAtlasCategory || 'ALL';
+        
+        const nodes = Object.values(window.VAULT_NODES_DATA);
+        const filtered = nodes.filter(n => {
+            const matchCat = (cat === 'ALL' || n.category === cat);
+            const matchQuery = (!query || 
+                (n.label && n.label.toLowerCase().includes(query)) ||
+                (n.snippet && n.snippet.toLowerCase().includes(query)) ||
+                (n.body_markdown && n.body_markdown.toLowerCase().includes(query)) ||
+                (n.tags && n.tags.some(t => t.toLowerCase().includes(query)))
+            );
+            return matchCat && matchQuery;
+        });
+
+        const countBadge = document.getElementById('atlas-nodes-count-badge');
+        if (countBadge) countBadge.innerText = `${filtered.length} مفهوم`;
+
+        listContainer.innerHTML = filtered.map(n => `
+            <div class="atlas-node-card ${n.id === window.currentAtlasNodeId ? 'active' : ''}" 
+                 id="atlas-card-${n.id}" 
+                 onclick="selectAtlasNode('${n.id}')">
+                <div class="atlas-node-card-title">${n.label || n.id}</div>
+                <div class="atlas-node-card-meta">
+                    <span style="color:${n.color || 'var(--gold)'}; font-weight:700;">${n.category}</span>
+                    <span>🔗 ${(n.connections || []).length} روابط</span>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function selectAtlasNode(nodeId) {
+        if (!window.VAULT_NODES_DATA || !window.VAULT_NODES_DATA[nodeId]) return;
+        window.currentAtlasNodeId = nodeId;
+        const node = window.VAULT_NODES_DATA[nodeId];
+
+        // Highlight card
+        document.querySelectorAll('.atlas-node-card').forEach(c => c.classList.remove('active'));
+        const activeCard = document.getElementById('atlas-card-' + nodeId);
+        if (activeCard) activeCard.classList.add('active');
+
+        // Update Title
+        const titleEl = document.getElementById('atlas-dossier-title');
+        if (titleEl) titleEl.innerText = node.label || node.id;
+
+        // Update Meta Row
+        const metaEl = document.getElementById('atlas-dossier-meta');
+        if (metaEl) {
+            const tagsHtml = (node.tags || []).map(t => `<span class="atlas-tag-pill">#${t}</span>`).join('');
+            metaEl.innerHTML = `
+                <span class="atlas-tag-pill" style="background:${node.color || '#ffd700'}22; color:${node.color || '#ffd700'}; border-color:${node.color || '#ffd700'}55; font-weight:700;">
+                    ${node.category}
+                </span>
+                <span class="atlas-tag-pill">🔗 ${(node.connections || []).length} روابط متصلة</span>
+                ${tagsHtml}
+            `;
+        }
+
+        // Render Full Markdown Body
+        const bodyEl = document.getElementById('atlas-dossier-body');
+        if (bodyEl) {
+            const mdText = node.body_markdown || node.raw_content || node.snippet || 'لا يوجد شرح مفصل.';
+            if (typeof marked !== 'undefined' && marked.parse) {
+                bodyEl.innerHTML = marked.parse(mdText);
+            } else {
+                bodyEl.innerHTML = `<p style="white-space:pre-wrap;">${mdText}</p>`;
+            }
+        }
+
+        // Render Connected Nodes Pills
+        const connsEl = document.getElementById('atlas-dossier-connections');
+        if (connsEl) {
+            const conns = node.connections || [];
+            if (conns.length > 0) {
+                connsEl.innerHTML = conns.map(cid => {
+                    const target = window.VAULT_NODES_DATA[cid];
+                    const lbl = target ? (target.label || target.id) : cid;
+                    return `<span class="atlas-conn-item" onclick="selectAtlasNode('${cid}')"><i class="fa-solid fa-link"></i> ${lbl}</span>`;
+                }).join('');
+            } else {
+                connsEl.innerHTML = '<span style="font-size:0.85rem; color:#94a3b8;">هذا المفهوم يمثل أصلاً كلياً لا يتفرع عنه روابط مباشرة.</span>';
+            }
+        }
+
+        // Smooth scroll to dossier on mobile
+        if (window.innerWidth <= 992) {
+            const dossierPanel = document.getElementById('atlas-dossier-panel');
+            if (dossierPanel) {
+                dossierPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+
+    function filterAtlasCategory(catName) {
+        window.activeAtlasCategory = catName;
+        document.querySelectorAll('.atlas-cat-pill').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-cat') === catName);
+        });
+
+        const labelEl = document.getElementById('atlas-sidebar-cat-label');
+        if (labelEl) {
+            labelEl.innerText = catName === 'ALL' ? '🌐 كافة مفاهيم الشبكة الكونية' : catName;
+        }
+
+        renderAtlasNodesList();
+    }
+
+    function handleAtlasSearch(query) {
+        renderAtlasNodesList();
+    }
+
+    function initAtlasChamber() {
+        if (window.VAULT_NODES_DATA && Object.keys(window.VAULT_NODES_DATA).length > 0) {
+            renderAtlasNodesList();
+            const firstId = window.currentAtlasNodeId || Object.keys(window.VAULT_NODES_DATA)[0];
+            selectAtlasNode(firstId);
+        }
+    }
+
+    // Auto-initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAtlasChamber);
+    } else {
+        setTimeout(initAtlasChamber, 100);
+    }
 
     // 1. SPHERES CONCENTRIC ORBITS CANVAS
     function renderSpheresOrbits() {

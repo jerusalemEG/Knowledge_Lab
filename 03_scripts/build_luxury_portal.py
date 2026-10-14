@@ -2707,12 +2707,8 @@ def build_luxury_portal():
 
         // 6. Special handlers per chamber
         if (targetId === 'tab-graph') {
-            // Auto-trigger mobile theory mode if screen is narrow
-            if (window.innerWidth <= 860 && typeof switchGraphMode === 'function') {
-                switchGraphMode('theory');
-            }
-            if (typeof cosmicNetwork !== 'undefined' && cosmicNetwork) {
-                setTimeout(() => { cosmicNetwork.redraw(); cosmicNetwork.fit(); }, 200);
+            if (typeof initAtlasChamber === 'function') {
+                initAtlasChamber();
             }
         }
         if (targetId === 'tab-spheres' && typeof renderSpheresOrbits === 'function') {
@@ -2990,7 +2986,7 @@ def build_luxury_portal():
         atlas_main_inner = atlas_with_header[main_open_pos + len('<main>'):main_close_pos]
         
         # Thoroughly purge old chambers superseded by deluxe versions from both atlas and codex
-        superseded_chambers = ["tab-spheres", "tab-zodiac", "tab-mansions", "tab-kings", "tab-letters-magic", "tab-numbers"]
+        superseded_chambers = ["tab-graph", "tab-spheres", "tab-zodiac", "tab-mansions", "tab-kings", "tab-letters-magic", "tab-numbers"]
         
         for tab_id in superseded_chambers:
             while True:
