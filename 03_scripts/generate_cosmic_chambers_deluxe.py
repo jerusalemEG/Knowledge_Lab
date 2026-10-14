@@ -295,13 +295,13 @@ def get_deluxe_chambers_css():
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: radial-gradient(circle at 50% 50%, rgba(14, 20, 44, 0.95) 0%, rgba(6, 8, 20, 0.98) 100%);
+        background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f8fafc 60%, #edf2f7 100%);
         border: 2px solid var(--border-gold);
         border-radius: 24px;
         padding: 24px;
         margin: 20px auto 35px auto;
         max-width: 850px;
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 25px rgba(184, 134, 11, 0.12);
         position: relative;
     }
 
@@ -310,7 +310,7 @@ def get_deluxe_chambers_css():
         max-width: 520px;
         height: auto;
         aspect-ratio: 1 / 1;
-        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.25));
+        filter: drop-shadow(0 4px 15px rgba(184, 134, 11, 0.15));
     }
 
     .canvas-legend-row {
@@ -321,7 +321,7 @@ def get_deluxe_chambers_css():
         flex-wrap: wrap;
         margin-top: 14px;
         font-size: 0.85rem;
-        color: #cbd5e1;
+        color: #475569;
     }
 
     .canvas-legend-item {
@@ -339,8 +339,8 @@ def get_deluxe_chambers_css():
     }
 
     .cosmic-gilded-card {
-        background: linear-gradient(135deg, rgba(16, 22, 46, 0.9), rgba(9, 13, 28, 0.96));
-        border: 1px solid rgba(212, 175, 55, 0.25);
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
         border-radius: 20px;
         padding: 22px;
         display: flex;
@@ -348,15 +348,15 @@ def get_deluxe_chambers_css():
         justify-content: space-between;
         position: relative;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
         overflow: hidden;
     }
 
     .cosmic-gilded-card:hover {
         transform: translateY(-5px);
         border-color: var(--card-accent, var(--gold));
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.25);
-        background: linear-gradient(135deg, rgba(24, 34, 68, 0.94), rgba(13, 18, 40, 0.98));
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08), 0 0 20px rgba(184, 134, 11, 0.15);
+        background: #fafbfc;
     }
 
     .card-top-header {
@@ -370,23 +370,23 @@ def get_deluxe_chambers_css():
         font-family: 'Amiri', serif;
         font-size: 0.85rem;
         font-weight: 700;
-        color: var(--gold-bright);
+        color: var(--gold);
         background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        border: 1px solid rgba(184, 134, 11, 0.35);
         padding: 3px 10px;
         border-radius: 8px;
     }
 
     .card-sub-badge {
         font-size: 0.78rem;
-        color: #94a3b8;
+        color: #64748b;
     }
 
     .card-main-title {
         font-family: 'Amiri', serif;
         font-size: 1.35rem;
         font-weight: 700;
-        color: #fff;
+        color: #0f172a;
         margin: 0 0 10px 0;
         line-height: 1.3;
     }
@@ -396,9 +396,9 @@ def get_deluxe_chambers_css():
         flex-direction: column;
         gap: 6px;
         font-size: 0.84rem;
-        color: #cbd5e1;
+        color: #334155;
         margin: 12px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1px solid #e2e8f0;
         padding-top: 10px;
     }
 
@@ -408,24 +408,25 @@ def get_deluxe_chambers_css():
     }
 
     .card-meta-lbl {
-        color: #94a3b8;
+        color: #64748b;
     }
 
     .card-meta-val {
-        color: #f8fafc;
+        color: #0f172a;
         font-weight: 600;
     }
 
     .card-verse-quote {
-        background: rgba(212, 175, 55, 0.08);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(254, 240, 138, 0.25));
         border-right: 3px solid var(--gold);
         border-radius: 6px;
         padding: 8px 12px;
         font-family: 'Amiri', serif;
         font-size: 0.95rem;
-        color: var(--gold-light);
+        color: #854d0e;
         margin-top: 10px;
         line-height: 1.5;
+        font-weight: 600;
     }
 
     /* Live Wafq Interactive Grid Display */
@@ -438,7 +439,7 @@ def get_deluxe_chambers_css():
     .wafq-cell {
         width: 52px;
         height: 52px;
-        background: rgba(14, 20, 44, 0.9);
+        background: #ffffff;
         border: 1.5px solid var(--border-gold);
         border-radius: 10px;
         text-align: center;
@@ -446,38 +447,38 @@ def get_deluxe_chambers_css():
         font-family: 'Amiri', serif;
         font-size: 1.4rem;
         font-weight: 700;
-        color: var(--gold-bright);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(212, 175, 55, 0.1);
+        color: #0f172a;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
         transition: all 0.2s;
     }
 
     .wafq-cell:hover {
         background: var(--gold);
-        color: #070a14;
-        box-shadow: 0 0 20px var(--gold-glow);
+        color: #ffffff;
+        box-shadow: 0 0 15px var(--gold-glow);
         transform: scale(1.08);
     }
 
     /* Abjad Live Interactive Box */
     .abjad-calc-box {
-        background: rgba(11, 16, 36, 0.92);
+        background: #ffffff;
         border: 2px solid var(--border-gold);
         border-radius: 22px;
         padding: 24px;
         max-width: 820px;
         margin: 0 auto 30px auto;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
     }
 
     .abjad-input {
         width: 100%;
-        background: #060816;
-        border: 1.5px solid rgba(212, 175, 55, 0.35);
+        background: #f8fafc;
+        border: 1.5px solid #cbd5e1;
         border-radius: 12px;
         padding: 12px 18px;
         font-family: 'Amiri', serif;
         font-size: 1.35rem;
-        color: #fff;
+        color: #0f172a;
         text-align: center;
         margin-bottom: 20px;
         transition: all 0.2s;
@@ -486,7 +487,7 @@ def get_deluxe_chambers_css():
     .abjad-input:focus {
         outline: none;
         border-color: var(--gold);
-        box-shadow: 0 0 20px var(--gold-glow);
+        box-shadow: 0 0 15px var(--gold-glow);
     }
 
     .abjad-results-row {
@@ -497,8 +498,8 @@ def get_deluxe_chambers_css():
     }
 
     .abjad-result-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
         border-radius: 14px;
         padding: 14px;
     }
@@ -507,13 +508,13 @@ def get_deluxe_chambers_css():
         font-family: 'Amiri', serif;
         font-size: 2.2rem;
         font-weight: 800;
-        color: var(--gold-bright);
+        color: var(--gold);
         line-height: 1.1;
     }
 
     .elem-progress-bar {
         height: 8px;
-        background: rgba(255, 255, 255, 0.08);
+        background: #e2e8f0;
         border-radius: 4px;
         overflow: hidden;
         margin-top: 6px;
@@ -544,11 +545,11 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-cat-pill {
-        background: rgba(13, 18, 38, 0.85);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
         border-radius: 20px;
         padding: 8px 18px;
-        color: #cbd5e1;
+        color: #334155;
         font-family: 'Amiri', serif;
         font-size: 0.95rem;
         font-weight: 700;
@@ -557,43 +558,45 @@ def get_deluxe_chambers_css():
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
     }
 
     .atlas-cat-pill:hover {
         border-color: var(--gold);
-        color: #fff;
+        color: #0f172a;
+        background: #f8fafc;
         transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.15);
     }
 
     .atlas-cat-pill.active {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.28), rgba(13, 18, 38, 0.95));
-        border-color: var(--gold-bright);
-        color: #fef08a;
-        box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+        background: linear-gradient(135deg, var(--gold), #d4af37);
+        border-color: var(--gold);
+        color: #ffffff;
+        box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
     }
 
     .atlas-search-box {
         width: 100%;
         max-width: 650px;
         margin: 0 auto;
-        background: rgba(8, 12, 26, 0.95);
-        border: 1.5px solid rgba(212, 175, 55, 0.4);
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
         border-radius: 25px;
         padding: 12px 24px;
-        color: #fff;
+        color: #0f172a;
         font-size: 1rem;
         font-family: 'Tajawal', sans-serif;
         outline: none;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.05);
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
         transition: all 0.3s ease;
         text-align: right;
         display: block;
     }
 
     .atlas-search-box:focus {
-        border-color: var(--gold-bright);
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+        border-color: var(--gold);
+        box-shadow: 0 0 15px rgba(184, 134, 11, 0.3);
     }
 
     .atlas-workspace-grid {
@@ -610,18 +613,18 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-sidebar-panel {
-        background: linear-gradient(135deg, rgba(13, 18, 38, 0.9), rgba(8, 12, 26, 0.95));
-        border: 1px solid rgba(212, 175, 55, 0.25);
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1.5px solid #cbd5e1;
         border-radius: 20px;
         padding: 18px;
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 6px 25px rgba(15, 23, 42, 0.05);
     }
 
     .atlas-sidebar-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
         padding-bottom: 12px;
         margin-bottom: 14px;
     }
@@ -635,11 +638,11 @@ def get_deluxe_chambers_css():
 
     .atlas-cat-count {
         background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        border: 1px solid rgba(184, 134, 11, 0.35);
         border-radius: 12px;
         padding: 2px 10px;
         font-size: 0.8rem;
-        color: var(--gold-bright);
+        color: var(--gold);
         font-weight: 700;
     }
 
@@ -656,43 +659,45 @@ def get_deluxe_chambers_css():
         width: 6px;
     }
     .atlas-nodes-list::-webkit-scrollbar-thumb {
-        background: rgba(212, 175, 55, 0.4);
+        background: rgba(184, 134, 11, 0.35);
         border-radius: 3px;
     }
 
     .atlas-node-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
         border-radius: 14px;
         padding: 14px;
         cursor: pointer;
         transition: all 0.25s ease;
         position: relative;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
     }
 
     .atlas-node-card:hover {
-        background: rgba(212, 175, 55, 0.08);
-        border-color: rgba(212, 175, 55, 0.4);
+        background: #f8fafc;
+        border-color: var(--gold);
         transform: translateX(-4px);
+        box-shadow: 0 4px 12px rgba(184, 134, 11, 0.12);
     }
 
     .atlas-node-card.active {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(20, 26, 50, 0.8));
-        border: 1.5px solid var(--gold-bright);
-        box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(254, 240, 138, 0.3));
+        border: 1.5px solid var(--gold);
+        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.2);
     }
 
     .atlas-node-card-title {
         font-family: 'Amiri', serif;
         font-size: 1.05rem;
         font-weight: 700;
-        color: #fff;
+        color: #0f172a;
         margin-bottom: 6px;
         line-height: 1.4;
     }
 
     .atlas-node-card.active .atlas-node-card-title {
-        color: var(--gold-bright);
+        color: #854d0e;
     }
 
     .atlas-node-card-meta {
@@ -700,20 +705,20 @@ def get_deluxe_chambers_css():
         justify-content: space-between;
         align-items: center;
         font-size: 0.78rem;
-        color: #94a3b8;
+        color: #64748b;
     }
 
     .atlas-dossier-panel {
-        background: linear-gradient(135deg, rgba(13, 18, 38, 0.95), rgba(8, 12, 26, 0.98));
-        border: 1.5px solid rgba(212, 175, 55, 0.35);
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
         border-radius: 24px;
         padding: 32px 28px;
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.7), inset 0 0 35px rgba(212, 175, 55, 0.03);
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
         min-height: 500px;
     }
 
     .atlas-dossier-header {
-        border-bottom: 1.5px solid rgba(212, 175, 55, 0.25);
+        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
         padding-bottom: 20px;
         margin-bottom: 24px;
     }
@@ -722,9 +727,7 @@ def get_deluxe_chambers_css():
         font-family: 'Amiri', serif;
         font-size: 1.85rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #0f172a;
         margin: 0 0 12px 0;
         line-height: 1.35;
     }
@@ -737,41 +740,42 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-tag-pill {
-        background: rgba(212, 175, 55, 0.1);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: rgba(212, 175, 55, 0.12);
+        border: 1px solid rgba(184, 134, 11, 0.35);
         border-radius: 12px;
         padding: 3px 10px;
         font-size: 0.8rem;
         color: var(--gold);
+        font-weight: 600;
     }
 
     .atlas-dossier-body {
         font-size: 1.05rem;
         line-height: 1.9;
-        color: #e2e8f0;
+        color: #1e293b;
         font-family: 'Tajawal', sans-serif;
     }
 
     .atlas-dossier-body h1, .atlas-dossier-body h2, .atlas-dossier-body h3 {
         font-family: 'Amiri', serif;
-        color: var(--gold-bright);
+        color: #0f172a;
         margin-top: 24px;
         margin-bottom: 12px;
-        border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
+        border-bottom: 1.5px solid #e2e8f0;
         padding-bottom: 6px;
     }
 
     .atlas-dossier-body blockquote {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(13, 18, 38, 0.7));
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(254, 240, 138, 0.25));
         border-right: 4px solid var(--gold);
         border-radius: 12px;
         padding: 14px 20px;
         margin: 18px 0;
-        color: #fef08a;
+        color: #854d0e;
         font-family: 'Amiri', serif;
         font-size: 1.15rem;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
     }
 
     .atlas-dossier-body ul, .atlas-dossier-body ol {
@@ -786,7 +790,7 @@ def get_deluxe_chambers_css():
     .atlas-conns-box {
         margin-top: 36px;
         padding-top: 20px;
-        border-top: 1px solid rgba(212, 175, 55, 0.25);
+        border-top: 1.5px solid #e2e8f0;
     }
 
     .atlas-conns-title {
@@ -806,11 +810,11 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-conn-item {
-        background: rgba(0, 240, 255, 0.08);
-        border: 1px solid rgba(0, 240, 255, 0.3);
+        background: rgba(2, 132, 199, 0.08);
+        border: 1px solid rgba(2, 132, 199, 0.3);
         border-radius: 16px;
         padding: 6px 14px;
-        color: #38bdf8;
+        color: #0284c7;
         font-size: 0.88rem;
         font-family: 'Amiri', serif;
         font-weight: 700;
@@ -822,11 +826,9 @@ def get_deluxe_chambers_css():
     }
 
     .atlas-conn-item:hover {
-        background: rgba(0, 240, 255, 0.2);
-        border-color: #38bdf8;
-        color: #fff;
+        background: rgba(2, 132, 199, 0.18);
+        border-color: #0284c7;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 240, 255, 0.3);
     }
     """
 

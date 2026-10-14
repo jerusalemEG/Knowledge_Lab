@@ -17,11 +17,11 @@ def get_esoteric_charts_css():
     .esoteric-observatory-wrapper {
         margin: 35px auto 45px auto;
         max-width: 1350px;
-        background: linear-gradient(135deg, rgba(13, 17, 34, 0.95) 0%, rgba(7, 10, 22, 0.98) 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #edf2f7 100%);
         border: 2px solid var(--border-gold-strong);
         border-radius: 28px;
         padding: 30px 24px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 45px rgba(212, 175, 55, 0.15), inset 0 0 30px rgba(16, 185, 129, 0.05);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(184, 134, 11, 0.12);
         position: relative;
         overflow: hidden;
     }
@@ -30,9 +30,9 @@ def get_esoteric_charts_css():
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 15%, rgba(212, 175, 55, 0.1) 0%, transparent 45%),
-                    radial-gradient(circle at 50% 85%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+        background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 15%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+                    radial-gradient(circle at 50% 85%, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
         pointer-events: none;
     }
 
@@ -47,15 +47,15 @@ def get_esoteric_charts_css():
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.15));
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(254, 240, 138, 0.25));
         border: 1px solid var(--border-gold);
         border-radius: 24px;
         padding: 5px 20px;
-        color: var(--gold-light);
+        color: var(--gold);
         font-family: 'Amiri', serif;
         font-size: 0.95rem;
         margin-bottom: 12px;
-        box-shadow: 0 0 16px rgba(212, 175, 55, 0.2);
+        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.15);
     }
 
     .observatory-title {
@@ -63,16 +63,13 @@ def get_esoteric_charts_css():
         font-size: clamp(1.8rem, 3.8vw, 2.6rem);
         font-weight: 800;
         margin: 0 0 10px 0;
-        background: linear-gradient(135deg, #ffd700 0%, #fcf6ba 25%, #34d399 55%, #bf953f 80%, #ffd700 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.35));
+        color: #0f172a;
         line-height: 1.3;
     }
 
     .observatory-desc {
         font-size: 0.96rem;
-        color: #cbd5e1;
+        color: #334155;
         max-width: 820px;
         margin: 0 auto 22px auto;
         line-height: 1.7;
@@ -90,9 +87,9 @@ def get_esoteric_charts_css():
     }
 
     .obs-tab-btn {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(212, 175, 55, 0.25);
-        color: #e2e8f0;
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
+        color: #334155;
         border-radius: 14px;
         padding: 10px 18px;
         font-family: 'Tajawal', sans-serif;
@@ -103,23 +100,23 @@ def get_esoteric_charts_css():
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        backdrop-filter: blur(8px);
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
     }
 
     .obs-tab-btn:hover {
-        background: rgba(212, 175, 55, 0.14);
-        border-color: var(--gold-bright);
-        color: #fff;
+        background: #f8fafc;
+        border-color: var(--gold);
+        color: #0f172a;
         transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(212, 175, 55, 0.2);
+        box-shadow: 0 6px 18px rgba(184, 134, 11, 0.15);
     }
 
     .obs-tab-btn.active {
-        background: linear-gradient(135deg, #d4af37, #10b981);
-        border-color: #ffd700;
-        color: #070a14;
+        background: linear-gradient(135deg, var(--gold), #d4af37);
+        border-color: var(--gold);
+        color: #ffffff;
         font-weight: 800;
-        box-shadow: 0 0 22px rgba(16, 185, 129, 0.4), 0 0 15px rgba(212, 175, 55, 0.5);
+        box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
     }
 
     /* CHARTS CONTAINER */
@@ -158,11 +155,11 @@ def get_esoteric_charts_css():
     }
 
     .obs-visual-card {
-        background: rgba(8, 12, 26, 0.88);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
         border-radius: 22px;
         padding: 24px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(212, 175, 55, 0.04);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -172,11 +169,11 @@ def get_esoteric_charts_css():
     }
 
     .obs-info-card {
-        background: rgba(13, 18, 38, 0.85);
-        border: 1px solid rgba(16, 185, 129, 0.3);
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
         border-radius: 22px;
         padding: 26px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -186,12 +183,12 @@ def get_esoteric_charts_css():
         font-family: 'Amiri', serif;
         font-size: 1.45rem;
         font-weight: 700;
-        color: var(--gold-bright);
+        color: #0f172a;
         margin: 0;
         display: flex;
         align-items: center;
         gap: 10px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        border-bottom: 1.5px solid #e2e8f0;
         padding-bottom: 12px;
     }
 
@@ -202,8 +199,8 @@ def get_esoteric_charts_css():
     }
 
     .obs-metric-item {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
         border-radius: 12px;
         padding: 10px 14px;
         display: flex;
@@ -213,8 +210,8 @@ def get_esoteric_charts_css():
     }
 
     .obs-metric-item:hover {
-        background: rgba(212, 175, 55, 0.08);
-        border-color: rgba(212, 175, 55, 0.35);
+        background: #edf2f7;
+        border-color: var(--gold);
         transform: translateX(-4px);
     }
 
