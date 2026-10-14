@@ -2452,7 +2452,7 @@ def generate_unified_html(nodes, links):
                 <div id="graph-canvas-container" style="display:none; position:relative; width:100%; height:100%;">
                     <div id="cosmic-network-canvas"></div>
                     <div class="graph-bottom-controls">
-                        <button class="g-btn" onclick="cosmicNetwork.fit({{animation: {{duration: 700}}}})">🔍 ضبط المشهد</button>
+                        <button class="g-btn" onclick="if (cosmicNetwork) cosmicNetwork.fit({{animation: {{duration: 700}}}})">🔍 ضبط المشهد</button>
                         <button class="g-btn" id="physics-toggle-btn" onclick="toggleCosmicPhysics()">⏸ تثبيت / تحريك</button>
                         <button class="g-btn" onclick="resetFocus()">✨ إعادة تركيز</button>
                     </div>
