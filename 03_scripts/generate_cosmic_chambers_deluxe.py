@@ -295,14 +295,19 @@ def get_deluxe_chambers_css():
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f8fafc 60%, #edf2f7 100%);
-        border: 2px solid var(--border-gold);
+        background: radial-gradient(circle at 50% 50%, #0d1527 0%, #090d16 65%, #030712 100%);
+        border: 2px solid #475569;
         border-radius: 24px;
-        padding: 24px;
+        padding: 28px 24px;
         margin: 20px auto 35px auto;
         max-width: 850px;
-        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 25px rgba(184, 134, 11, 0.12);
+        box-shadow: 0 16px 50px rgba(15, 23, 42, 0.25), 0 0 35px rgba(56, 189, 248, 0.15);
         position: relative;
+    }
+
+    .chamber-canvas-box h3 {
+        color: #f1f5f9 !important;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
     }
 
     .chamber-canvas-box canvas {
@@ -310,7 +315,7 @@ def get_deluxe_chambers_css():
         max-width: 520px;
         height: auto;
         aspect-ratio: 1 / 1;
-        filter: drop-shadow(0 4px 15px rgba(184, 134, 11, 0.15));
+        filter: drop-shadow(0 6px 25px rgba(0, 240, 255, 0.2));
     }
 
     .canvas-legend-row {
@@ -320,8 +325,8 @@ def get_deluxe_chambers_css():
         gap: 18px;
         flex-wrap: wrap;
         margin-top: 14px;
-        font-size: 0.85rem;
-        color: #475569;
+        font-size: 0.88rem;
+        color: #cbd5e1;
     }
 
     .canvas-legend-item {
@@ -837,16 +842,16 @@ def generate_graph_chamber_html():
     meta = CHAMBER_METADATA["tab-graph"]
 
     categories = [
-        {"name": "ALL", "label": "🌐 الكل", "color": "#64748b"},
-        {"name": "أولو العزم من الرسل", "label": "👑 أولو العزم من الرسل", "color": "#475569"},
-        {"name": "الهيكل القرآني والمصفوفات", "label": "🔴 الهيكل القرآني والمصفوفات", "color": "#ff4d6d"},
-        {"name": "دائرة البروج الاثني عشر", "label": "♈ دائرة البروج (12)", "color": "#ff9f1c"},
-        {"name": "الميلوثيسيا وتصريف القوى", "label": "🟣 الميلوثيسيا وتصريف القوى", "color": "#9d4edd"},
-        {"name": "المخطوطات والحكماء", "label": "🌿 أمهات المخطوطات والحكماء", "color": "#70e000"},
-        {"name": "العصور والرسالات التاريخية", "label": "🔘 العصور والرسالات", "color": "#94a3b8"},
-        {"name": "الدورات الكونية والفلك", "label": "🔵 الدورات الفلكية", "color": "#00b4d8"},
-        {"name": "الهرمسية والكيمياء القديمة", "label": "⚗️ الخيمياء والهرمسية", "color": "#06d6a0"},
-        {"name": "مفاهيم عامة", "label": "🌌 مفاهيم كوزمولوجية", "color": "#3a86ff"}
+        {"name": "ALL", "label": "🌐 الكل", "color": "#0284c7"},
+        {"name": "أولو العزم من الرسل", "label": "👑 أولو العزم من الرسل", "color": "#f59e0b"},
+        {"name": "الهيكل القرآني والمصفوفات", "label": "🔴 الهيكل القرآني والمصفوفات", "color": "#ef4444"},
+        {"name": "دائرة البروج الاثني عشر", "label": "♈ دائرة البروج (12)", "color": "#f97316"},
+        {"name": "الميلوثيسيا وتصريف القوى", "label": "🟣 الميلوثيسيا وتصريف القوى", "color": "#a855f7"},
+        {"name": "المخطوطات والحكماء", "label": "🌿 أمهات المخطوطات والحكماء", "color": "#10b981"},
+        {"name": "العصور والرسالات التاريخية", "label": "🔘 العصور والرسالات", "color": "#e11d48"},
+        {"name": "الدورات الكونية والفلك", "label": "🔵 الدورات الفلكية", "color": "#06b6d4"},
+        {"name": "الهرمسية والكيمياء القديمة", "label": "⚗️ الخيمياء والهرمسية", "color": "#14b8a6"},
+        {"name": "مفاهيم عامة", "label": "🌌 مفاهيم كوزمولوجية", "color": "#6366f1"}
     ]
 
     cat_pills_html = ""
@@ -1644,22 +1649,25 @@ def get_chambers_visual_js():
         ctx.arc(cx, cy, 22, 0, Math.PI * 2);
         ctx.fillStyle = centerGrad;
         ctx.fill();
-        ctx.strokeStyle = '#10b981';
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#34d399';
+        ctx.lineWidth = 2.5;
         ctx.stroke();
 
-        ctx.fillStyle = '#fff';
-        ctx.font = 'bold 11px Amiri';
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 12px Amiri';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
+        ctx.shadowColor = '#000000';
+        ctx.shadowBlur = 4;
         ctx.fillText('الأرض', cx, cy);
+        ctx.shadowBlur = 0;
 
-        // 7 Spheres + Throne
+        // 7 Spheres + Throne with vibrant jewel tones
         const spheresData = (window.COSMIC_DATABASE && window.COSMIC_DATABASE.spheres) ? window.COSMIC_DATABASE.spheres : [
-            {name: 'القمر', color: '#f8fafc', r: 45},
+            {name: 'القمر', color: '#e0f2fe', r: 45},
             {name: 'عطارد', color: '#38bdf8', r: 70},
             {name: 'الزهرة', color: '#10b981', r: 95},
-            {name: 'الشمس', color: '#ffd700', r: 125},
+            {name: 'الشمس', color: '#fbbf24', r: 125},
             {name: 'المريخ', color: '#ef4444', r: 155},
             {name: 'المشتري', color: '#06b6d4', r: 185},
             {name: 'زحل', color: '#c084fc', r: 215},
@@ -1669,12 +1677,12 @@ def get_chambers_visual_js():
         spheresData.forEach((s, idx) => {
             const radius = 45 + (idx * 28);
             
-            // Orbit Ring
+            // Orbit Ring - high visibility vibrant luminous line
             ctx.beginPath();
             ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-            ctx.strokeStyle = (s.color || '#d4af37') + '55';
-            ctx.lineWidth = 1.5;
-            ctx.setLineDash([4, 4]);
+            ctx.strokeStyle = (s.color || '#38bdf8') + '77';
+            ctx.lineWidth = 1.8;
+            ctx.setLineDash([5, 4]);
             ctx.stroke();
             ctx.setLineDash([]);
 
@@ -1684,17 +1692,20 @@ def get_chambers_visual_js():
             const py = cy + Math.sin(angle) * radius;
 
             ctx.beginPath();
-            ctx.arc(px, py, 6, 0, Math.PI * 2);
-            ctx.fillStyle = s.color || '#ffd700';
-            ctx.shadowColor = s.color || '#ffd700';
-            ctx.shadowBlur = 10;
+            ctx.arc(px, py, 7.5, 0, Math.PI * 2);
+            ctx.fillStyle = s.color || '#38bdf8';
+            ctx.shadowColor = s.color || '#38bdf8';
+            ctx.shadowBlur = 14;
             ctx.fill();
             ctx.shadowBlur = 0;
 
-            // Name Label
-            ctx.fillStyle = s.color || '#fff';
-            ctx.font = '10px Amiri';
-            ctx.fillText(s.planet || s.name, px, py - 10);
+            // Name Label - sharp and crisp with backdrop glow
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 11px Amiri';
+            ctx.shadowColor = '#000000';
+            ctx.shadowBlur = 6;
+            ctx.fillText(s.planet || s.name, px, py - 12);
+            ctx.shadowBlur = 0;
         });
     }
 
@@ -1723,15 +1734,15 @@ def get_chambers_visual_js():
             const endA = startA + slice;
             const midA = startA + (slice / 2);
 
-            // Sector
+            // Sector with vibrant jewel glow
             ctx.beginPath();
             ctx.moveTo(cx, cy);
             ctx.arc(cx, cy, outerR, startA, endA);
             ctx.closePath();
-            ctx.fillStyle = (z.color || '#d4af37') + '22';
+            ctx.fillStyle = (z.color || '#38bdf8') + '35';
             ctx.fill();
-            ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.45)';
+            ctx.lineWidth = 1.2;
             ctx.stroke();
 
             // Symbol and Name
@@ -1739,15 +1750,21 @@ def get_chambers_visual_js():
             const tx = cx + Math.cos(midA) * textR;
             const ty = cy + Math.sin(midA) * textR;
 
-            ctx.fillStyle = z.color || '#ffd700';
-            ctx.font = 'bold 15px Arial';
+            ctx.fillStyle = z.color || '#fbbf24';
+            ctx.font = 'bold 18px Arial';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
+            ctx.shadowColor = z.color || '#fbbf24';
+            ctx.shadowBlur = 10;
             ctx.fillText(z.symbol, tx, ty - 6);
+            ctx.shadowBlur = 0;
 
-            ctx.font = 'bold 11px Amiri';
-            ctx.fillStyle = '#f8fafc';
-            ctx.fillText(z.name, tx, ty + 10);
+            ctx.font = 'bold 12px Amiri';
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = '#000000';
+            ctx.shadowBlur = 5;
+            ctx.fillText(z.name, tx, ty + 12);
+            ctx.shadowBlur = 0;
         });
 
         // Opposite Polarity Axes (6 lines across center)
@@ -1761,26 +1778,29 @@ def get_chambers_visual_js():
             ctx.moveTo(x1, y1);
             ctx.lineTo(x2, y2);
         }
-        ctx.strokeStyle = 'rgba(212, 175, 55, 0.25)';
-        ctx.lineWidth = 1;
-        ctx.setLineDash([2, 4]);
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([3, 4]);
         ctx.stroke();
         ctx.setLineDash([]);
 
         // Center Sun Hub
         const hubGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, innerR);
-        hubGrad.addColorStop(0, '#ffd700');
-        hubGrad.addColorStop(1, '#92400e');
+        hubGrad.addColorStop(0, '#fbbf24');
+        hubGrad.addColorStop(1, '#b45309');
         ctx.beginPath();
         ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
         ctx.fillStyle = hubGrad;
+        ctx.shadowColor = '#f59e0b';
+        ctx.shadowBlur = 15;
         ctx.fill();
-        ctx.strokeStyle = '#d4af37';
-        ctx.lineWidth = 2;
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = '#fde68a';
+        ctx.lineWidth = 2.5;
         ctx.stroke();
 
-        ctx.fillStyle = '#070a14';
-        ctx.font = 'bold 12px Amiri';
+        ctx.fillStyle = '#0f172a';
+        ctx.font = 'bold 13px Amiri';
         ctx.fillText('ميزان الفلك', cx, cy);
     }
 
@@ -1814,16 +1834,16 @@ def get_chambers_visual_js():
         // Outer Ring
         ctx.beginPath();
         ctx.arc(cx, cy, r, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.5)';
         ctx.lineWidth = 2;
         ctx.stroke();
 
         // 7-Pointed Star Connections (step of 2)
         ctx.beginPath();
-        ctx.strokeStyle = 'rgba(212, 175, 55, 0.85)';
-        ctx.lineWidth = 1.8;
-        ctx.shadowColor = 'rgba(212, 175, 55, 0.6)';
-        ctx.shadowBlur = 8;
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 2.2;
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 12;
         for (let i = 0; i < 7; i++) {
             const nextIdx = (i * 2) % 7;
             if (i === 0) ctx.moveTo(points[nextIdx].x, points[nextIdx].y);
@@ -1836,37 +1856,46 @@ def get_chambers_visual_js():
         // Draw Vertex Badges
         points.forEach(p => {
             ctx.beginPath();
-            ctx.arc(p.x, p.y, 22, 0, Math.PI * 2);
-            ctx.fillStyle = '#080c1d';
+            ctx.arc(p.x, p.y, 24, 0, Math.PI * 2);
+            ctx.fillStyle = '#0f172a';
             ctx.fill();
-            ctx.strokeStyle = p.king.color || '#d4af37';
-            ctx.lineWidth = 2;
+            ctx.strokeStyle = p.king.color || '#38bdf8';
+            ctx.lineWidth = 2.5;
+            ctx.shadowColor = p.king.color || '#38bdf8';
+            ctx.shadowBlur = 10;
             ctx.stroke();
+            ctx.shadowBlur = 0;
 
-            ctx.fillStyle = p.king.color || '#ffd700';
-            ctx.font = 'bold 10px Amiri';
+            ctx.fillStyle = p.king.color || '#fbbf24';
+            ctx.font = 'bold 12px Amiri';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(p.king.day, p.x, p.y - 5);
-            ctx.fillStyle = '#cbd5e1';
-            ctx.font = '9px Tajawal';
-            ctx.fillText(p.king.planet, p.x, p.y + 7);
+            ctx.shadowColor = '#000000';
+            ctx.shadowBlur = 4;
+            ctx.fillText(p.king.day, p.x, p.y - 6);
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 10px Tajawal';
+            ctx.fillText(p.king.planet, p.x, p.y + 8);
+            ctx.shadowBlur = 0;
         });
 
         // Center Seal
         ctx.beginPath();
-        ctx.arc(cx, cy, 30, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(16, 185, 129, 0.2)';
+        ctx.arc(cx, cy, 32, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.3)';
         ctx.fill();
         ctx.strokeStyle = '#10b981';
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 2;
+        ctx.shadowColor = '#10b981';
+        ctx.shadowBlur = 12;
         ctx.stroke();
+        ctx.shadowBlur = 0;
 
-        ctx.fillStyle = '#34d399';
-        ctx.font = 'bold 12px Amiri';
+        ctx.fillStyle = '#6ee7b7';
+        ctx.font = 'bold 13px Amiri';
         ctx.fillText('المسبع', cx, cy - 6);
-        ctx.font = '9px Tajawal';
-        ctx.fillText('الحكام السبعة', cx, cy + 8);
+        ctx.font = '10px Tajawal';
+        ctx.fillText('الحكام السبعة', cx, cy + 9);
     }
 
     // 4. LIVE ABJAD & 4 ELEMENTS CALCULATOR

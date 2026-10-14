@@ -63,7 +63,7 @@ def parse_frontmatter(content):
 def categorize_node(nd_type, relpath):
     path_lower = relpath.lower()
     if "prophet" in path_lower or "ulul_azm" in path_lower or nd_type in ["prophet_archetype", "master_sphere"]:
-        return "أولو العزم من الرسل", "prophets", "#94a3b8"
+        return "أولو العزم من الرسل", "prophets", "#f59e0b"
     elif "00_index" in path_lower or "quranic" in path_lower or nd_type in ["index", "master_blueprint"]:
         return "الهيكل القرآني والمصفوفات", "index", "#ff4d6d"
     elif "09_zodiac" in path_lower or nd_type == "zodiac_sign":
@@ -71,7 +71,7 @@ def categorize_node(nd_type, relpath):
     elif "01_cycles" in path_lower or nd_type == "cycle":
         return "الدورات الكونية والفلك", "astronomy", "#00b4d8"
     elif "02_eras" in path_lower or nd_type == "era":
-        return "العصور والرسالات التاريخية", "eras", "#64748b"
+        return "العصور والرسالات التاريخية", "eras", "#e11d48"
     elif "03_esoteric" in path_lower or nd_type == "system":
         return "الميلوثيسيا وتصريف القوى", "esoteric", "#9d4edd"
     elif "07_hermetic" in path_lower or "alchemy" in path_lower:
@@ -2742,8 +2742,8 @@ def generate_unified_html(nodes, links):
                                     <stop offset="100%" stop-color="#ef4444" />
                                 </linearGradient>
                                 <radialGradient id="auraGlow" cx="160" cy="95" r="90" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.45" />
-                                    <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.15" />
+                                    <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.65" />
+                                    <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.25" />
                                     <stop offset="100%" stop-color="#000000" stop-opacity="0" />
                                 </radialGradient>
                                 <filter id="glowFilt" x="-20%" y="-20%" width="140%" height="140%">
@@ -2756,16 +2756,16 @@ def generate_unified_html(nodes, links):
                             <circle cx="160" cy="95" r="85" fill="url(#auraGlow)" />
                             
                             <!-- Sacred Geometry Halo behind Head -->
-                            <circle cx="160" cy="95" r="75" stroke="rgba(244, 180, 26, 0.4)" stroke-width="1.5" stroke-dasharray="6 4" />
-                            <circle cx="160" cy="95" r="60" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1" />
-                            <circle cx="160" cy="95" r="45" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+                            <circle cx="160" cy="95" r="75" stroke="rgba(251, 191, 36, 0.7)" stroke-width="1.8" stroke-dasharray="6 4" />
+                            <circle cx="160" cy="95" r="60" stroke="rgba(0, 240, 255, 0.5)" stroke-width="1.2" />
+                            <circle cx="160" cy="95" r="45" stroke="rgba(168, 85, 247, 0.6)" stroke-width="1.2" stroke-dasharray="3 3" />
                             <!-- Radiating Rays -->
-                            <line x1="160" y1="15" x2="160" y2="35" stroke="#94a3b8" stroke-width="2" />
-                            <line x1="160" y1="155" x2="160" y2="175" stroke="#94a3b8" stroke-width="1.5" />
-                            <line x1="80" y1="95" x2="100" y2="95" stroke="#94a3b8" stroke-width="1.5" />
-                            <line x1="220" y1="95" x2="240" y2="95" stroke="#94a3b8" stroke-width="1.5" />
-                            <line x1="105" y1="40" x2="118" y2="53" stroke="rgba(244,180,26,0.6)" stroke-width="1.5" />
-                            <line x1="215" y1="40" x2="202" y2="53" stroke="rgba(244,180,26,0.6)" stroke-width="1.5" />
+                            <line x1="160" y1="15" x2="160" y2="35" stroke="#fbbf24" stroke-width="2.5" />
+                            <line x1="160" y1="155" x2="160" y2="175" stroke="#fbbf24" stroke-width="2" />
+                            <line x1="80" y1="95" x2="100" y2="95" stroke="#fbbf24" stroke-width="2" />
+                            <line x1="220" y1="95" x2="240" y2="95" stroke="#fbbf24" stroke-width="2" />
+                            <line x1="105" y1="40" x2="118" y2="53" stroke="rgba(251, 191, 36, 0.8)" stroke-width="1.8" />
+                            <line x1="215" y1="40" x2="202" y2="53" stroke="rgba(251, 191, 36, 0.8)" stroke-width="1.8" />
 
                             <!-- Meditating Human Silhouette Contour (Lotus Pose) -->
                             <circle cx="160" cy="95" r="28" fill="url(#bodyGrad)" stroke="#00f0ff" stroke-width="1.8" />
@@ -2788,13 +2788,13 @@ def generate_unified_html(nodes, links):
                             <path d="M160,470 C135,435 135,415 160,395 C185,360 185,345 160,325 C135,290 135,275 160,255 C185,225 185,210 160,195 C135,165 135,155 160,140 C185,110 185,100 160,85" 
                                   stroke="#00f0ff" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
 
-                            <!-- Pingala (Right Solar Channel - Gold) -->
+                            <!-- Pingala (Right Solar Channel - Radiant Luminous Gold) -->
                             <path d="M160,470 C185,435 185,415 160,395 C135,360 135,345 160,325 C185,290 185,275 160,255 C135,225 135,210 160,195 C185,165 185,155 160,140 C135,110 135,100 160,85" 
-                                  stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
+                                  stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="4 3" fill="none" opacity="0.9" />
                         </svg>
 
                         <!-- 8 Chakra Pulsating Interactive Nodes on Body -->
-                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #94a3b8; border-color: #94a3b8; background: rgba(148, 163, 184, 0.3);" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
+                        <div class="chakra-point-btn" id="chakra-node-8" style="top: 38px; color: #fbbf24; border-color: #fbbf24; background: rgba(251, 191, 36, 0.35); box-shadow: 0 0 25px #fbbf24;" onclick="selectChakra(8)" title="الهالة المحيطة — النبي محمد ﷺ">👑</div>
                         <div class="chakra-point-btn" id="chakra-node-7" style="top: 85px; color: #a855f7; border-color: #a855f7;" onclick="selectChakra(7)" title="شاكرا التاج — إبراهيم الخليل">🟣</div>
                         <div class="chakra-point-btn" id="chakra-node-6" style="top: 140px; color: #3b82f6; border-color: #3b82f6;" onclick="selectChakra(6)" title="شاكرا العين الثالثة — موسى وهارون">👁️</div>
                         <div class="chakra-point-btn" id="chakra-node-5" style="top: 195px; color: #00f0ff; border-color: #00f0ff;" onclick="selectChakra(5)" title="شاكرا الحنجرة — داود وسليمان">🗣️</div>
@@ -2941,11 +2941,11 @@ def generate_unified_html(nodes, links):
                             <circle cx="190" cy="190" r="175" stroke="url(#wheelRingGrad)" stroke-width="2" stroke-dasharray="4 4" />
                             <circle cx="190" cy="190" r="145" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
                             <circle cx="190" cy="190" r="115" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1" stroke-dasharray="6 3" />
-                            <circle cx="190" cy="190" r="75" stroke="rgba(244, 180, 26, 0.4)" stroke-width="1.5" />
-                            <circle cx="190" cy="190" r="38" stroke="#94a3b8" stroke-width="2" />
+                            <circle cx="190" cy="190" r="75" stroke="rgba(251, 191, 36, 0.6)" stroke-width="1.8" />
+                            <circle cx="190" cy="190" r="38" stroke="#fbbf24" stroke-width="2.5" />
                             
                             <!-- Central Golden Sun -->
-                            <circle cx="190" cy="190" r="22" fill="#94a3b8" />
+                            <circle cx="190" cy="190" r="22" fill="#f59e0b" />
                             <circle cx="190" cy="190" r="10" fill="#fff" />
                             
                             <!-- 12 Harmonic Radiating Axes (Crossing at 180° Polarities) -->
@@ -3137,8 +3137,8 @@ def generate_unified_html(nodes, links):
                             <circle cx="200" cy="200" r="75" stroke="rgba(148, 163, 184, 0.35)" stroke-width="1.5" />
                             
                             <!-- Central Golden Sun -->
-                            <circle cx="200" cy="200" r="38" stroke="#94a3b8" stroke-width="2" />
-                            <circle cx="200" cy="200" r="22" fill="#94a3b8" />
+                            <circle cx="200" cy="200" r="38" stroke="#fbbf24" stroke-width="2.5" />
+                            <circle cx="200" cy="200" r="22" fill="#f59e0b" />
                             <circle cx="200" cy="200" r="10" fill="#fff" />
                             
                             <!-- Radiating Axes (Crossing at 180° Polarities) -->
