@@ -2593,13 +2593,15 @@ def build_luxury_portal():
     function updateChamberBreadcrumb(targetId) {
         if (targetId === 'tab-hub') return;
         const targetEl = document.getElementById(targetId);
-        if (!targetEl) return;
+        if (!targetEl || typeof targetEl.querySelector !== 'function') return;
 
         let bcrumb = targetEl.querySelector('.chamber-universal-header');
-        if (!bcrumb) {
+        if (!bcrumb && typeof document.createElement === 'function') {
             bcrumb = document.createElement('div');
             bcrumb.className = 'chamber-universal-header';
-            targetEl.insertBefore(bcrumb, targetEl.firstChild);
+            if (typeof targetEl.insertBefore === 'function') {
+                targetEl.insertBefore(bcrumb, targetEl.firstChild);
+            }
         }
 
         const curIdx = CODEX_DOORS_SEQUENCE.indexOf(targetId);
@@ -2746,9 +2748,11 @@ def build_luxury_portal():
         } catch(e) {}
 
         // 7. Update URL hash, floating dock, and smooth scroll
-        window.location.hash = '#' + targetId;
+        if (window.location) window.location.hash = '#' + targetId;
         updateCodexDock(targetId);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (typeof window.scrollTo === 'function') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     }
 
     // Legacy Routing Aliases

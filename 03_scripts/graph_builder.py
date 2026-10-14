@@ -3369,11 +3369,12 @@ def generate_unified_html(nodes, links):
     </main>
 
     <script>
-        // Master Graph Data Injected from Vault
+        // Master Graph State & Data Injected from Vault
+        var currentGraphMode = window.currentGraphMode = 'theory';
         const rawGraphData = {graph_data_json};
 
         // SPHERES DATA - MASTER ENCYCLOPEDIC DOSSIERS (7 SPHERES & UNIVERSAL THRONE)
-        const SPHERES_DATA = [
+        var SPHERES_DATA = window.SPHERES_DATA = [
             {{
                 id: 8,
                 name: "فلك العرش الأطلس وسدرة المنتهى (Primum Mobile & Divine Throne)",
@@ -3593,7 +3594,7 @@ def generate_unified_html(nodes, links):
         ];
 
         // 12 ZODIAC SIGNS DATA (GLOBAL CIVILIZATIONAL, ANGELIC RULERS, OCCULT SERVANTS & MELOTHESIA)
-        const ZODIAC_12_DATA = [
+        var ZODIAC_12_DATA = window.ZODIAC_12_DATA = [
             {{
                 id: 1,
                 name: "برج الحمل (Aries ♈ — رأس النور والمبادأة النارية)",
@@ -3945,7 +3946,7 @@ def generate_unified_html(nodes, links):
         ];
 
         // MASTER COMPREHENSIVE AGES & PRECESSION DATA (ALL 12 EPOCHS • 25,920 YEARS)
-        const AGES_DATA = [
+        var AGES_DATA = window.AGES_DATA = [
             {{
                 id: 1,
                 era: "12,960 ق.م – 10,800 ق.م",
@@ -4422,77 +4423,113 @@ def generate_unified_html(nodes, links):
             }}
         }}
 
-        // 2. Interactive Force Network (Vis.js Engine)
-        const container = document.getElementById('cosmic-network-canvas');
-        const nodesDataSet = new vis.DataSet(rawGraphData.nodes);
-        const edgesDataSet = new vis.DataSet(rawGraphData.edges);
+        // 2. Interactive Force Network (Vis.js Engine) - Defensive Initialization
+        var nodesDataSet = null;
+        var edgesDataSet = null;
+        var cosmicNetwork = null;
+        var activeGraphCategory = 'ALL';
+        var drawer = null;
+        var drawerTitle = null;
+        var drawerMeta = null;
+        var drawerBody = null;
+        var drawerConns = null;
 
-        const networkOptions = {{
-            nodes: {{
-                shape: 'dot',
-                font: {{
-                    size: 11,
-                    color: '#f0f6fc',
-                    face: 'Segoe UI, Tahoma',
-                    strokeWidth: 3,
-                    strokeColor: '#05070b'
-                }},
-                borderWidth: 2,
-                shadow: {{ enabled: true, color: 'rgba(0,0,0,0.8)', size: 10 }}
-            }},
-            edges: {{
-                arrows: {{ to: {{ enabled: true, scaleFactor: 0.55 }} }},
-                smooth: {{ type: 'continuous', roundness: 0.4 }},
-                selectionWidth: 3
-            }},
-            physics: {{
-                solver: 'barnesHut',
-                barnesHut: {{
-                    gravitationalConstant: -8500,
-                    centralGravity: 0.015,
-                    springLength: 220,
-                    springConstant: 0.03,
-                    damping: 0.28,
-                    avoidOverlap: 1
-                }},
-                stabilization: {{ iterations: 200 }}
-            }},
-            interaction: {{ hover: true, tooltipDelay: 150, zoomView: true }}
-        }};
+        try {{
+            drawer = document.getElementById('reader-drawer');
+            drawerTitle = document.getElementById('drawer-title');
+            drawerMeta = document.getElementById('drawer-meta');
+            drawerBody = document.getElementById('drawer-body');
+            drawerConns = document.getElementById('drawer-connections-pills');
 
-        const cosmicNetwork = new vis.Network(container, {{ nodes: nodesDataSet, edges: edgesDataSet }}, networkOptions);
+            const container = document.getElementById('cosmic-network-canvas');
+            if (container && typeof vis !== 'undefined' && typeof rawGraphData !== 'undefined') {{
+                nodesDataSet = new vis.DataSet(rawGraphData.nodes || []);
+                edgesDataSet = new vis.DataSet(rawGraphData.edges || []);
 
-        let activeGraphCategory = 'ALL';
-        const drawer = document.getElementById('reader-drawer');
-        const drawerTitle = document.getElementById('drawer-title');
-        const drawerMeta = document.getElementById('drawer-meta');
-        const drawerBody = document.getElementById('drawer-body');
-        const drawerConns = document.getElementById('drawer-connections-pills');
+                const networkOptions = {{
+                    nodes: {{
+                        shape: 'dot',
+                        font: {{
+                            size: 11,
+                            color: '#f0f6fc',
+                            face: 'Segoe UI, Tahoma',
+                            strokeWidth: 3,
+                            strokeColor: '#05070b'
+                        }},
+                        borderWidth: 2,
+                        shadow: {{ enabled: true, color: 'rgba(0,0,0,0.8)', size: 10 }}
+                    }},
+                    edges: {{
+                        arrows: {{ to: {{ enabled: true, scaleFactor: 0.55 }} }},
+                        smooth: {{ type: 'continuous', roundness: 0.4 }},
+                        selectionWidth: 3
+                    }},
+                    physics: {{
+                        solver: 'barnesHut',
+                        barnesHut: {{
+                            gravitationalConstant: -8500,
+                            centralGravity: 0.015,
+                            springLength: 220,
+                            springConstant: 0.03,
+                            damping: 0.28,
+                            avoidOverlap: 1
+                        }},
+                        stabilization: {{ iterations: 200 }}
+                    }},
+                    interaction: {{ hover: true, tooltipDelay: 150, zoomView: true }}
+                }};
+
+                cosmicNetwork = new vis.Network(container, {{ nodes: nodesDataSet, edges: edgesDataSet }}, networkOptions);
+
+                cosmicNetwork.on("click", function (params) {{
+                    if (params && params.nodes && params.nodes.length > 0) {{
+                        const nodeData = (rawGraphData.nodes || []).find(n => n.id === params.nodes[0]);
+                        if (nodeData) openDrawer(nodeData);
+                    }} else {{
+                        closeDrawer();
+                    }}
+                }});
+            }}
+        }} catch(eNet) {{
+            console.warn("cosmicNetwork initialization deferred or non-critical:", eNet);
+        }}
 
         function openDrawer(nodeData) {{
-            drawerTitle.innerText = nodeData.label;
-            drawerMeta.innerHTML = `
-                <span class="meta-tag">🏷️ ${{nodeData.category}}</span>
-                <span class="meta-tag">🔗 ${{nodeData.degree}} روابط</span>
-                ${{(nodeData.tags || []).map(t => `<span class="meta-tag">#${{t}}</span>`).join('')}}
-            `;
-            drawerBody.innerHTML = marked.parse(nodeData.body || nodeData.snippet || 'لا يوجد محتوى.');
-            const connectedIds = cosmicNetwork.getConnectedNodes(nodeData.id);
-            drawerConns.innerHTML = connectedIds.map(cid => {{
-                const targetNode = rawGraphData.nodes.find(n => n.id === cid);
-                const lbl = targetNode ? targetNode.label : cid;
-                return `<span class="conn-pill" onclick="focusOnNode('${{cid}}')">${{lbl}}</span>`;
-            }}).join('');
+            if (!drawer || !nodeData) return;
+            if (drawerTitle) drawerTitle.innerText = nodeData.label || '';
+            if (drawerMeta) {{
+                drawerMeta.innerHTML = `
+                    <span class="meta-tag">🏷️ ${{nodeData.category || ''}}</span>
+                    <span class="meta-tag">🔗 ${{nodeData.degree || 0}} روابط</span>
+                    ${{((nodeData.tags || [])).map(t => `<span class="meta-tag">#${{t}}</span>`).join('')}}
+                `;
+            }}
+            if (drawerBody) {{
+                if (typeof marked !== 'undefined') {{
+                    drawerBody.innerHTML = marked.parse(nodeData.body || nodeData.snippet || 'لا يوجد محتوى.');
+                }} else {{
+                    drawerBody.innerText = nodeData.body || nodeData.snippet || 'لا يوجد محتوى.';
+                }}
+            }}
+            if (drawerConns) {{
+                const connectedIds = cosmicNetwork ? cosmicNetwork.getConnectedNodes(nodeData.id) : [];
+                drawerConns.innerHTML = connectedIds.map(cid => {{
+                    const targetNode = (rawGraphData.nodes || []).find(n => n.id === cid);
+                    const lbl = targetNode ? targetNode.label : cid;
+                    return `<span class="conn-pill" onclick="focusOnNode('${{cid}}')">${{lbl}}</span>`;
+                }}).join('');
+            }}
             drawer.classList.add('open');
             highlightNeighborhood(nodeData.id);
         }}
 
         function closeDrawer() {{
-            drawer.classList.remove('open');
+            if (drawer) drawer.classList.remove('open');
             resetFocus();
         }}
 
         function highlightNeighborhood(nodeId) {{
+            if (!cosmicNetwork || !nodesDataSet || !edgesDataSet) return;
             const connectedNodes = new Set(cosmicNetwork.getConnectedNodes(nodeId));
             connectedNodes.add(nodeId);
             const connectedEdges = new Set(cosmicNetwork.getConnectedEdges(nodeId));
@@ -4514,25 +4551,17 @@ def generate_unified_html(nodes, links):
         }}
 
         function resetFocus() {{
+            if (!nodesDataSet || !edgesDataSet) return;
             nodesDataSet.forEach(node => nodesDataSet.update({{ id: node.id, opacity: 1, font: {{ color: '#f0f6fc' }} }}));
             edgesDataSet.forEach(edge => edgesDataSet.update({{ id: edge.id, color: {{ color: 'rgba(90, 105, 120, 0.35)' }}, width: 1.3 }}));
         }}
 
         function focusOnNode(nodeId) {{
-            const nodeData = rawGraphData.nodes.find(n => n.id === nodeId);
+            const nodeData = (rawGraphData.nodes || []).find(n => n.id === nodeId);
             if (!nodeData) return;
-            cosmicNetwork.focus(nodeId, {{ scale: 1.25, animation: {{ duration: 600 }} }});
+            if (cosmicNetwork) cosmicNetwork.focus(nodeId, {{ scale: 1.25, animation: {{ duration: 600 }} }});
             openDrawer(nodeData);
         }}
-
-        cosmicNetwork.on("click", function (params) {{
-            if (params.nodes.length > 0) {{
-                const nodeData = rawGraphData.nodes.find(n => n.id === params.nodes[0]);
-                if (nodeData) openDrawer(nodeData);
-            }} else {{
-                closeDrawer();
-            }}
-        }});
 
         function filterGraphCategory(catName) {{
             activeGraphCategory = catName;
@@ -4540,6 +4569,7 @@ def generate_unified_html(nodes, links):
                 btn.classList.toggle('active', btn.innerText.includes(catName) || (catName === 'ALL' && btn.innerText.includes('الكل')));
             }});
 
+            if (!nodesDataSet) return;
             if (catName === 'ALL') {{
                 nodesDataSet.forEach(n => nodesDataSet.update({{ id: n.id, hidden: false }}));
             }} else {{
@@ -4547,41 +4577,50 @@ def generate_unified_html(nodes, links):
                     nodesDataSet.update({{ id: n.id, hidden: (n.category !== catName) }});
                 }});
             }}
-            cosmicNetwork.fit({{ animation: true }});
+            if (cosmicNetwork) cosmicNetwork.fit({{ animation: true }});
         }}
 
-        document.getElementById('graph-search-input').addEventListener('input', function(e) {{
-            const query = e.target.value.toLowerCase().trim();
-            if (!query) {{
-                if (activeGraphCategory === 'ALL') {{
-                    nodesDataSet.forEach(n => nodesDataSet.update({{ id: n.id, hidden: false }}));
-                }} else {{
-                    filterGraphCategory(activeGraphCategory);
-                }}
-                return;
+        try {{
+            const searchInput = document.getElementById('graph-search-input');
+            if (searchInput) {{
+                searchInput.addEventListener('input', function(e) {{
+                    const query = e.target.value.toLowerCase().trim();
+                    if (!nodesDataSet) return;
+                    if (!query) {{
+                        if (activeGraphCategory === 'ALL') {{
+                            nodesDataSet.forEach(n => nodesDataSet.update({{ id: n.id, hidden: false }}));
+                        }} else {{
+                            filterGraphCategory(activeGraphCategory);
+                        }}
+                        return;
+                    }}
+                    let firstMatch = null;
+                    nodesDataSet.forEach(node => {{
+                        const match = (node.label && node.label.toLowerCase().includes(query)) || 
+                                      (node.id && node.id.toLowerCase().includes(query)) ||
+                                      (node.tags && node.tags.some(t => t.toLowerCase().includes(query))) ||
+                                      (node.category && node.category.toLowerCase().includes(query));
+                        nodesDataSet.update({{ id: node.id, hidden: !match }});
+                        if (match && !firstMatch) firstMatch = node.id;
+                    }});
+                    if (firstMatch && cosmicNetwork) cosmicNetwork.focus(firstMatch, {{ scale: 1.1, animation: true }});
+                }});
             }}
-            let firstMatch = null;
-            nodesDataSet.forEach(node => {{
-                const match = node.label.toLowerCase().includes(query) || 
-                              node.id.toLowerCase().includes(query) ||
-                              (node.tags && node.tags.some(t => t.toLowerCase().includes(query))) ||
-                              node.category.toLowerCase().includes(query);
-                nodesDataSet.update({{ id: node.id, hidden: !match }});
-                if (match && !firstMatch) firstMatch = node.id;
-            }});
-            if (firstMatch) cosmicNetwork.focus(firstMatch, {{ scale: 1.1, animation: true }});
-        }});
+        }} catch(eSearch) {{
+            console.warn("graph-search-input listener non-critical:", eSearch);
+        }}
 
         let cosmicPhysicsRunning = true;
         function toggleCosmicPhysics() {{
+            if (!cosmicNetwork) return;
             cosmicPhysicsRunning = !cosmicPhysicsRunning;
             cosmicNetwork.setOptions({{ physics: {{ enabled: cosmicPhysicsRunning }} }});
             const btn = document.getElementById('physics-toggle-btn');
-            btn.innerHTML = cosmicPhysicsRunning ? '⏸ تثبيت الحركة' : '▶ تحريك الأجرام';
+            if (btn) btn.innerHTML = cosmicPhysicsRunning ? '⏸ تثبيت الحركة' : '▶ تحريك الأجرام';
         }}
 
         // CHAKRAS & PROPHETIC BODILY CENTRES DATA (GLOBAL CIVILIZATIONAL SYNTHESIS)
-        const CHAKRAS_DATA = [
+        var CHAKRAS_DATA = window.CHAKRAS_DATA = [
             {{
                 id: 8,
                 name: "الهالة المحيطة الكبرى (The Auric Field / الحقيقة المحمدية)",
@@ -4785,10 +4824,13 @@ def generate_unified_html(nodes, links):
         ];
 
         function renderChakras() {{
+            const data = (typeof CHAKRAS_DATA !== 'undefined' && Array.isArray(CHAKRAS_DATA)) ? CHAKRAS_DATA : (window.CHAKRAS_DATA || []);
+            if (!data || !data.length) return;
+
             // Populate Quick Selector Pills Bar
             const pillsBar = document.getElementById('chakra-pills-bar');
             if (pillsBar) {{
-                pillsBar.innerHTML = CHAKRAS_DATA.map(c => `
+                pillsBar.innerHTML = data.map(c => `
                     <button class="c-pill-btn ${{c.id === 8 ? 'active' : ''}}" id="c-pill-${{c.id}}" onclick="selectChakra(${{c.id}})">
                         <span style="color:${{c.colorHex}};">●</span> ${{c.name.split('(')[0].trim()}}
                     </button>
@@ -4798,7 +4840,7 @@ def generate_unified_html(nodes, links):
             // Populate Panoramic Comparative Matrix Table
             const tableBody = document.getElementById('panoramic-chakras-tbody');
             if (tableBody) {{
-                tableBody.innerHTML = CHAKRAS_DATA.map(c => `
+                tableBody.innerHTML = data.map(c => `
                     <tr>
                         <td><b style="color:${{c.colorHex}};">${{c.name.split('(')[0].trim()}}</b><br><span style="font-size:0.75rem; color:var(--text-muted);">${{c.sanskrit.split('•')[0].trim()}}</span></td>
                         <td><b style="color:#fff;">${{c.sufiLatifa.split('•')[0].trim()}}</b></td>
@@ -4819,7 +4861,8 @@ def generate_unified_html(nodes, links):
         }}
 
         function selectChakra(id) {{
-            const c = CHAKRAS_DATA.find(x => x.id === id);
+            const data = (typeof CHAKRAS_DATA !== 'undefined' && Array.isArray(CHAKRAS_DATA)) ? CHAKRAS_DATA : (window.CHAKRAS_DATA || []);
+            const c = data.find(x => x.id === id);
             if (!c) return;
 
             // Sync Hologram SVG Node Buttons
@@ -4916,24 +4959,28 @@ def generate_unified_html(nodes, links):
 
         // 3. Spheres Ladder Renderer & Dossier Generator
         function renderSpheres() {{
+            const data = (typeof SPHERES_DATA !== 'undefined' && Array.isArray(SPHERES_DATA)) ? SPHERES_DATA : (window.SPHERES_DATA || []);
+            if (!data || !data.length) return;
+
             const listContainer = document.getElementById('spheres-list');
-            if (!listContainer) return;
-            listContainer.innerHTML = SPHERES_DATA.map((s, idx) => `
-                <div class="sphere-card ${{idx === 0 ? 'active' : ''}}" 
-                     style="--sphere-color: ${{s.color}}" 
-                     onclick="selectSphere(${{s.id}})">
-                    <div class="sphere-rank">${{s.id}}</div>
-                    <div class="sphere-info">
-                        <h3>${{s.name}}</h3>
-                        <span>${{s.prophet}} • ${{s.metal}} • <b style="color:var(--gold);">${{s.freqHz ? s.freqHz.split(' ')[0] + ' Hz' : ''}}</b></span>
+            if (listContainer) {{
+                listContainer.innerHTML = data.map((s, idx) => `
+                    <div class="sphere-card ${{idx === 0 ? 'active' : ''}}" 
+                         style="--sphere-color: ${{s.color}}" 
+                         onclick="selectSphere(${{s.id}})">
+                        <div class="sphere-rank">${{s.id}}</div>
+                        <div class="sphere-info">
+                            <h3>${{s.name}}</h3>
+                            <span>${{s.prophet}} • ${{s.metal}} • <b style="color:var(--gold);">${{s.freqHz ? s.freqHz.split(' ')[0] + ' Hz' : ''}}</b></span>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
+            }}
 
             // Also render the panoramic matrix table
             const tableBody = document.getElementById('panoramic-spheres-tbody');
             if (tableBody) {{
-                tableBody.innerHTML = SPHERES_DATA.map(s => `
+                tableBody.innerHTML = data.map(s => `
                     <tr>
                         <td><b style="color:${{s.color}}">${{s.name}}</b></td>
                         <td>${{s.rank}}</td>
@@ -4956,10 +5003,12 @@ def generate_unified_html(nodes, links):
         }}
 
         function selectSphere(id) {{
-            const s = SPHERES_DATA.find(x => x.id === id);
+            const data = (typeof SPHERES_DATA !== 'undefined' && Array.isArray(SPHERES_DATA)) ? SPHERES_DATA : (window.SPHERES_DATA || []);
+            const s = data.find(x => x.id === id);
             if (!s) return;
             document.querySelectorAll('.sphere-card').forEach(c => {{
-                c.classList.toggle('active', c.querySelector('.sphere-rank').innerText == id);
+                const r = c.querySelector('.sphere-rank');
+                if (r) c.classList.toggle('active', r.innerText == id);
             }});
             const detailContainer = document.getElementById('sphere-detail');
             if (!detailContainer) return;

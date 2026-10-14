@@ -1626,8 +1626,9 @@ def get_chambers_visual_js():
     // 1. SPHERES CONCENTRIC ORBITS CANVAS
     function renderSpheresOrbits() {
         const canvas = document.getElementById('spheresOrbitsCanvas');
-        if (!canvas) return;
+        if (!canvas || typeof canvas.getContext !== 'function') return;
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
         const w = canvas.width;
         const h = canvas.height;
         const cx = w / 2;
@@ -1700,8 +1701,9 @@ def get_chambers_visual_js():
     // 2. ZODIAC POLARITY WHEEL CANVAS
     function renderZodiacWheel() {
         const canvas = document.getElementById('zodiacWheelCanvas');
-        if (!canvas) return;
+        if (!canvas || typeof canvas.getContext !== 'function') return;
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
         const w = canvas.width;
         const h = canvas.height;
         const cx = w / 2;
@@ -1785,8 +1787,9 @@ def get_chambers_visual_js():
     // 3. HEPTAGRAM PLANETARY KINGS CANVAS
     function renderHeptagramKings() {
         const canvas = document.getElementById('heptagramCanvas');
-        if (!canvas) return;
+        if (!canvas || typeof canvas.getContext !== 'function') return;
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
         const w = canvas.width;
         const h = canvas.height;
         const cx = w / 2;
