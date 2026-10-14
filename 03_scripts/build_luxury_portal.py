@@ -32,6 +32,7 @@ ROOT_VIEWER = os.path.join(ROOT_DIR, "knowledge_graph_viewer.html")
 sys.path.insert(0, os.path.join(ROOT_DIR, "03_scripts"))
 from generate_astrology_chamber import get_astrology_chamber_html, get_astrology_chamber_js
 from generate_seals_zouhri_chamber import get_seals_zouhri_chamber_html, get_seals_zouhri_chamber_js
+from generate_inner_realms_chamber import get_inner_realms_chamber_html, get_inner_realms_chamber_js
 
 
 def build_luxury_portal():
@@ -169,6 +170,7 @@ def build_luxury_portal():
     #tab-murshid,
     #tab-astrology-calc,
     #tab-seals-zouhri,
+    #tab-inner-realms,
     main {
         background-color: #030611 !important;
         color: #f1f5f9 !important;
@@ -1019,6 +1021,50 @@ def build_luxury_portal():
         transform: translateY(-4px);
         box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     }
+
+    /* CHAMBER 20 LUXURY STYLES */
+    .inner-tab-pill, .layer-pill-btn, .brain-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #cbd5e1;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s;
+        white-space: nowrap;
+    }
+    .inner-tab-pill:hover, .layer-pill-btn:hover, .brain-btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+    }
+    .inner-tab-pill.active {
+        background: linear-gradient(135deg, #0284c7, #0369a1);
+        color: #fff;
+        border-color: #38bdf8;
+        box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+    }
+    .layer-pill-btn.active {
+        background: linear-gradient(135deg, #059669, #047857);
+        color: #fff;
+        border-color: #06d6a0;
+        box-shadow: 0 0 16px rgba(6, 214, 160, 0.4);
+    }
+    .brain-btn.active {
+        background: linear-gradient(135deg, #7c3aed, #6d28d9);
+        color: #fff;
+        border-color: #a855f7;
+        box-shadow: 0 0 16px rgba(168, 85, 247, 0.4);
+    }
+    .inner-sub-view {
+        display: none;
+        animation: fadeIn 0.35s ease;
+    }
+    .inner-sub-view.active {
+        display: block;
+    }
     """
 
     # --- MASTER LUXURY TOP BAR HTML ---
@@ -1075,7 +1121,7 @@ def build_luxury_portal():
         </div>
 
         <div class="drawer-search-wrapper">
-            <input type="text" id="drawer-search-input" class="drawer-search-input" placeholder="🔍 ابحث في الأبواب الـ 19..." oninput="filterDrawerDoors(this.value)">
+            <input type="text" id="drawer-search-input" class="drawer-search-input" placeholder="🔍 ابحث في الأبواب الـ 20..." oninput="filterDrawerDoors(this.value)">
         </div>
 
         <div class="drawer-nav-body">
@@ -1147,7 +1193,7 @@ def build_luxury_portal():
             <div class="drawer-pillar-group">
                 <div class="drawer-pillar-title" style="color:#d8b4fe;">
                     <span>الركن الثاني: سفر النواميس والمختبر الرياضي التفاعلي</span>
-                    <span style="font-size:0.75rem; color:#94a3b8;">11 باباً</span>
+                    <span style="font-size:0.75rem; color:#94a3b8;">12 باباً</span>
                 </div>
                 <div class="drawer-pillar-items">
                     <button class="drawer-door-item" data-door="tab-kings" onclick="navigateToChamber('tab-kings')">
@@ -1204,6 +1250,11 @@ def build_luxury_portal():
                         <span class="door-num-badge">19</span>
                         <span class="door-icon">👑</span>
                         <span class="door-title">ديوان الأختام والزوهرية والسلالات الروحية</span>
+                    </button>
+                    <button class="drawer-door-item" data-door="tab-inner-realms" onclick="navigateToChamber('tab-inner-realms')">
+                        <span class="door-num-badge">20</span>
+                        <span class="door-icon">🪐</span>
+                        <span class="door-title">سفر العوالم الباطنية، الجسد الأثيري، وأسرار الوعي</span>
                     </button>
                 </div>
             </div>
@@ -1550,6 +1601,21 @@ def build_luxury_portal():
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>
+
+                <!-- DOOR 20 -->
+                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-inner-realms')" style="--door-accent:#38bdf8;">
+                    <div class="card-top-meta">
+                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
+                        <span class="card-door-number">الباب 20</span>
+                    </div>
+                    <div class="card-icon-box">🪐</div>
+                    <div class="card-door-title">سفر العوالم الباطنية وأسرار الوعي</div>
+                    <div class="card-door-desc">أساطير الأراضي الباطنية وأغارثا وعوالم المثال، تشريح الهالة والقرين والتنقية الإدراكية، تاريخ ومراحل الإسقاط النجمي وعلومه العصبية، وسر الأوفاق وتنزيه الحقيقة المحمدية، مع مختبر محاكاة موجات الدماغ.</div>
+                    <div class="card-action-bar">
+                        <span>دخول الباب</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1580,7 +1646,8 @@ def build_luxury_portal():
         'tab-physics': 'الباب 16: فيزياء الذبذبات والمولد الصوتي',
         'tab-criterion': 'الباب 17: ميزان الشريعة وحصن المرشد',
         'tab-astrology-calc': 'الباب 18: المرصد الفلكي التنجيمي الشامل',
-        'tab-seals-zouhri': 'الباب 19: ديوان الأختام والزوهرية والسلالات'
+        'tab-seals-zouhri': 'الباب 19: ديوان الأختام والزوهرية والسلالات',
+        'tab-inner-realms': 'الباب 20: سفر العوالم الباطنية وأسرار الوعي'
     };
 
     let activeChamberId = 'tab-hub';
@@ -1620,6 +1687,7 @@ def build_luxury_portal():
         if (targetId === 'critique') targetId = 'tab-critique';
         if (targetId === 'astrology' || targetId === 'astro' || targetId === 'astrology-calc') targetId = 'tab-astrology-calc';
         if (targetId === 'seals' || targetId === 'zouhri' || targetId === 'seals-zouhri') targetId = 'tab-seals-zouhri';
+        if (targetId === 'inner-realms' || targetId === 'realms' || targetId === 'inner') targetId = 'tab-inner-realms';
         if (!targetId.startsWith('tab-')) targetId = 'tab-' + targetId;
 
         activeChamberId = targetId;
@@ -1681,6 +1749,9 @@ def build_luxury_portal():
         }
         if (targetId === 'tab-seals-zouhri' && typeof renderInteractiveSigils === 'function') {
             renderInteractiveSigils();
+        }
+        if (targetId === 'tab-inner-realms' && typeof initBrainwaveCanvas === 'function') {
+            setTimeout(initBrainwaveCanvas, 100);
         }
 
         // 6. Update URL hash and smooth scroll
@@ -1898,6 +1969,7 @@ def build_luxury_portal():
         
         astro_chamber_html = get_astrology_chamber_html()
         seals_chamber_html = get_seals_zouhri_chamber_html()
+        inner_realms_chamber_html = get_inner_realms_chamber_html()
 
         # Build unified main
         unified_main = f"""
@@ -1907,6 +1979,7 @@ def build_luxury_portal():
             {codex_main_clean}
             {astro_chamber_html}
             {seals_chamber_html}
+            {inner_realms_chamber_html}
         </main>
         """
 
@@ -1919,12 +1992,14 @@ def build_luxury_portal():
     if body_end_pos != -1:
         astro_chamber_js = get_astrology_chamber_js()
         seals_chamber_js = get_seals_zouhri_chamber_js()
+        inner_realms_chamber_js = get_inner_realms_chamber_js()
 
         full_js_block = f"""
         <script>
         {codex_js_clean}
         {astro_chamber_js}
         {seals_chamber_js}
+        {inner_realms_chamber_js}
         {luxury_js}
         </script>
         """
