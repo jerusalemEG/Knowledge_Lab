@@ -4834,6 +4834,7 @@ def generate_unified_html(nodes, links):
 
             // Render Comprehensive Dossier
             const container = document.getElementById('chakra-detail-card');
+            if (!container) return;
             container.innerHTML = `
                 <div class="chakra-main-header">
                     <div class="chakra-names">
@@ -4916,6 +4917,7 @@ def generate_unified_html(nodes, links):
         // 3. Spheres Ladder Renderer & Dossier Generator
         function renderSpheres() {{
             const listContainer = document.getElementById('spheres-list');
+            if (!listContainer) return;
             listContainer.innerHTML = SPHERES_DATA.map((s, idx) => `
                 <div class="sphere-card ${{idx === 0 ? 'active' : ''}}" 
                      style="--sphere-color: ${{s.color}}" 
@@ -4960,6 +4962,7 @@ def generate_unified_html(nodes, links):
                 c.classList.toggle('active', c.querySelector('.sphere-rank').innerText == id);
             }});
             const detailContainer = document.getElementById('sphere-detail');
+            if (!detailContainer) return;
             detailContainer.innerHTML = `
                 <div class="detail-header">
                     <div>

@@ -553,6 +553,7 @@ def generate_spheres_chamber_html():
     """
 
     meta = CHAMBER_METADATA["tab-spheres"]
+    legacy_dom_safety = '<div id="spheres-list" style="display:none;"></div><div id="sphere-detail" style="display:none;"></div><table style="display:none;"><tbody id="panoramic-spheres-tbody"></tbody></table>'
     return wrap_chamber_in_royal_manuscript(
         chamber_id="tab-spheres",
         chamber_num=meta["num"],
@@ -561,7 +562,7 @@ def generate_spheres_chamber_html():
         quran_verse=meta["verse"],
         intro_folio=meta["intro"],
         visual_html=visual_html,
-        content_html=f'<div class="cosmic-cards-grid">{cards_html}</div>'
+        content_html=f'<div class="cosmic-cards-grid">{cards_html}</div>{legacy_dom_safety}'
     )
 
 
@@ -602,6 +603,7 @@ def generate_zodiac_chamber_html():
     """
 
     meta = CHAMBER_METADATA["tab-zodiac"]
+    legacy_zodiac_safety = '<div id="zodiac-grid" style="display:none;"></div><div id="zodiac-detail-card" style="display:none;"></div><table style="display:none;"><tbody id="panoramic-zodiac-tbody"></tbody></table>'
     return wrap_chamber_in_royal_manuscript(
         chamber_id="tab-zodiac",
         chamber_num=meta["num"],
@@ -610,7 +612,7 @@ def generate_zodiac_chamber_html():
         quran_verse=meta["verse"],
         intro_folio=meta["intro"],
         visual_html=visual_html,
-        content_html=f'<div class="cosmic-cards-grid">{cards_html}</div>'
+        content_html=f'<div class="cosmic-cards-grid">{cards_html}</div>{legacy_zodiac_safety}'
     )
 
 
