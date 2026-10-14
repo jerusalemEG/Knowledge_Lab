@@ -5193,90 +5193,138 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(135deg, rgba(14, 20, 44, 0.95), rgba(8, 12, 28, 0.98));
-        border: 1px solid rgba(212, 175, 55, 0.35);
-        border-right: 4px solid var(--gold);
-        border-radius: 18px;
-        padding: 16px 22px;
+        background: linear-gradient(135deg, rgba(14, 20, 44, 0.98), rgba(8, 12, 28, 0.99));
+        border: 1px solid rgba(212, 175, 55, 0.45);
+        border-right: 5px solid var(--gold, #d4af37);
+        border-radius: 14px;
+        padding: 12px 20px;
         margin-bottom: 24px;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.65), 0 0 15px rgba(212, 175, 55, 0.12);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.15);
         gap: 16px;
         flex-wrap: wrap;
+        direction: rtl;
+        box-sizing: border-box;
     }
 
+    .cuh-nav-left,
     .cuh-breadcrumb {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 14px;
         flex-wrap: wrap;
+        flex: 1;
+        min-width: 280px;
     }
 
+    .cuh-hub-btn,
     .cuh-back-hub-btn {
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: rgba(212, 175, 55, 0.15);
+        border: 1px solid rgba(212, 175, 55, 0.5);
         border-radius: 8px;
-        padding: 6px 14px;
-        color: var(--gold);
+        padding: 7px 16px;
+        color: #ffd700 !important;
         font-family: 'Tajawal', sans-serif;
-        font-size: 0.84rem;
+        font-size: 0.86rem;
         font-weight: 700;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.25s ease;
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
     }
 
+    .cuh-hub-btn:hover,
     .cuh-back-hub-btn:hover {
-        background: var(--gold);
-        color: #0f172a;
-        box-shadow: 0 0 14px var(--gold-glow);
+        background: var(--gold, #d4af37);
+        color: #0b1120 !important;
+        box-shadow: 0 0 16px rgba(212, 175, 55, 0.5);
+        transform: translateY(-1px);
     }
 
+    .cuh-breadcrumbs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .cuh-sep,
     .cuh-separator {
-        color: #64748b;
+        color: rgba(212, 175, 55, 0.6) !important;
         font-weight: 300;
+        font-size: 0.95rem;
     }
 
+    .cuh-pavilion,
     .cuh-pavilion-tag {
-        font-size: 0.82rem;
-        color: #94a3b8;
+        font-size: 0.84rem;
+        color: #38bdf8 !important;
         font-weight: 600;
+        background: rgba(56, 189, 248, 0.1);
+        padding: 3px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        white-space: nowrap;
     }
 
     .cuh-door-badge {
-        font-family: 'Amiri', serif;
-        font-size: 1.08rem;
+        font-family: 'Tajawal', 'Amiri', serif;
+        font-size: 0.9rem;
         font-weight: 700;
-        color: #f8fafc;
+        color: #ffd700 !important;
+        background: rgba(212, 175, 55, 0.12);
+        padding: 3px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        white-space: nowrap;
     }
 
+    .cuh-title {
+        font-family: 'Amiri', 'Tajawal', serif;
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #f8fafc !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    }
+
+    .cuh-nav-actions,
     .cuh-actions {
         display: flex;
         align-items: center;
         gap: 8px;
+        flex-wrap: nowrap;
     }
 
+    .cuh-door-nav-btn,
     .cuh-nav-btn {
-        background: rgba(18, 24, 50, 0.85);
-        border: 1px solid rgba(212, 175, 55, 0.25);
+        background: rgba(18, 24, 52, 0.9);
+        border: 1px solid rgba(212, 175, 55, 0.35);
         border-radius: 8px;
-        padding: 6px 14px;
-        color: #cbd5e1;
+        padding: 7px 15px;
+        color: #e2e8f0 !important;
         font-family: 'Tajawal', sans-serif;
-        font-size: 0.82rem;
+        font-size: 0.84rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.25s ease;
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        white-space: nowrap;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
+    .cuh-door-nav-btn:hover,
     .cuh-nav-btn:hover {
-        background: rgba(30, 42, 80, 0.95);
-        border-color: var(--gold);
-        color: var(--gold);
+        background: rgba(30, 44, 90, 0.95);
+        border-color: #ffd700;
+        color: #ffd700 !important;
+        box-shadow: 0 0 14px rgba(212, 175, 55, 0.35);
+        transform: translateY(-1px);
     }
 
 
@@ -5997,32 +6045,49 @@
 
     .atlas-workspace-grid {
         display: grid;
-        grid-template-columns: 360px 1fr;
-        gap: 24px;
+        grid-template-columns: 390px minmax(0, 1fr);
+        gap: 28px;
         align-items: start;
+        margin-top: 10px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1080px) {
         .atlas-workspace-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
         }
     }
 
     .atlas-sidebar-panel {
-        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        position: sticky;
+        top: 80px;
+        max-height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(145deg, #ffffff 0%, #fbfbfc 100%);
         border: 1.5px solid #cbd5e1;
         border-radius: 20px;
-        padding: 18px;
-        box-shadow: 0 6px 25px rgba(15, 23, 42, 0.05);
+        padding: 18px 16px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+        z-index: 20;
+    }
+
+    @media (max-width: 1080px) {
+        .atlas-sidebar-panel {
+            position: relative;
+            top: 0;
+            max-height: 480px;
+        }
     }
 
     .atlas-sidebar-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
+        border-bottom: 2px solid rgba(184, 134, 11, 0.2);
         padding-bottom: 12px;
         margin-bottom: 14px;
+        flex-shrink: 0;
     }
 
     .atlas-sidebar-title {
@@ -6030,15 +6095,18 @@
         font-size: 1.15rem;
         color: var(--gold);
         font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
     }
 
     .atlas-cat-count {
-        background: rgba(212, 175, 55, 0.15);
+        background: rgba(212, 175, 55, 0.12);
         border: 1px solid rgba(184, 134, 11, 0.35);
         border-radius: 12px;
-        padding: 2px 10px;
+        padding: 3px 12px;
         font-size: 0.8rem;
-        color: var(--gold);
+        color: #854d0e;
         font-weight: 700;
     }
 
@@ -6046,41 +6114,53 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        max-height: 720px;
+        flex: 1;
         overflow-y: auto;
-        padding-left: 4px;
+        overflow-x: hidden;
+        padding: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(184, 134, 11, 0.4) transparent;
     }
 
     .atlas-nodes-list::-webkit-scrollbar {
         width: 6px;
     }
+    .atlas-nodes-list::-webkit-scrollbar-track {
+        background: transparent;
+    }
     .atlas-nodes-list::-webkit-scrollbar-thumb {
         background: rgba(184, 134, 11, 0.35);
-        border-radius: 3px;
+        border-radius: 4px;
+    }
+    .atlas-nodes-list::-webkit-scrollbar-thumb:hover {
+        background: var(--gold);
     }
 
     .atlas-node-card {
         background: #ffffff;
-        border: 1px solid #cbd5e1;
+        border: 1px solid #e2e8f0;
+        border-right: 4px solid transparent;
         border-radius: 14px;
-        padding: 14px;
+        padding: 13px 15px;
         cursor: pointer;
-        transition: all 0.25s ease;
+        transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
     }
 
     .atlas-node-card:hover {
         background: #f8fafc;
-        border-color: var(--gold);
-        transform: translateX(-4px);
-        box-shadow: 0 4px 12px rgba(184, 134, 11, 0.12);
+        border-color: rgba(184, 134, 11, 0.45);
+        border-right-color: var(--gold);
+        transform: translateX(-3px);
+        box-shadow: 0 4px 14px rgba(184, 134, 11, 0.12);
     }
 
     .atlas-node-card.active {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(254, 240, 138, 0.3));
-        border: 1.5px solid var(--gold);
-        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.2);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(254, 240, 138, 0.22) 100%);
+        border-color: var(--gold);
+        border-right: 4px solid var(--gold);
+        box-shadow: 0 3px 12px rgba(184, 134, 11, 0.18);
     }
 
     .atlas-node-card-title {
@@ -6088,8 +6168,10 @@
         font-size: 1.05rem;
         font-weight: 700;
         color: #0f172a;
-        margin-bottom: 6px;
-        line-height: 1.4;
+        margin-bottom: 7px;
+        line-height: 1.45;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .atlas-node-card.active .atlas-node-card-title {
@@ -6100,78 +6182,122 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 8px;
         font-size: 0.78rem;
         color: #64748b;
+    }
+
+    .atlas-card-cat-badge {
+        font-weight: 700;
+        font-size: 0.75rem;
+        padding: 2px 8px;
+        border-radius: 6px;
+        background: rgba(15, 23, 42, 0.04);
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 190px;
     }
 
     .atlas-dossier-panel {
         background: #ffffff;
         border: 1.5px solid #cbd5e1;
         border-radius: 24px;
-        padding: 32px 28px;
-        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
-        min-height: 500px;
+        padding: 34px 30px;
+        box-shadow: 0 10px 35px rgba(15, 23, 42, 0.05);
+        min-height: 600px;
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+        .atlas-dossier-panel {
+            padding: 20px 16px;
+        }
     }
 
     .atlas-dossier-header {
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
+        border-bottom: 2px solid rgba(184, 134, 11, 0.2);
         padding-bottom: 20px;
         margin-bottom: 24px;
     }
 
     .atlas-dossier-title {
         font-family: 'Amiri', serif;
-        font-size: 1.85rem;
+        font-size: 2rem;
         font-weight: 700;
         color: #0f172a;
-        margin: 0 0 12px 0;
+        margin: 0 0 14px 0;
         line-height: 1.35;
+        letter-spacing: -0.3px;
     }
 
     .atlas-dossier-meta-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
     }
 
     .atlas-tag-pill {
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid rgba(184, 134, 11, 0.35);
-        border-radius: 12px;
-        padding: 3px 10px;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(184, 134, 11, 0.3);
+        border-radius: 999px;
+        padding: 3px 12px;
         font-size: 0.8rem;
-        color: var(--gold);
+        color: #854d0e;
         font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.2s ease;
+    }
+
+    .atlas-tag-pill:hover {
+        background: rgba(212, 175, 55, 0.18);
+        border-color: var(--gold);
     }
 
     .atlas-dossier-body {
-        font-size: 1.05rem;
-        line-height: 1.9;
+        font-size: 1.08rem;
+        line-height: 2;
         color: #1e293b;
         font-family: 'Tajawal', sans-serif;
+        word-break: break-word;
     }
 
-    .atlas-dossier-body h1, .atlas-dossier-body h2, .atlas-dossier-body h3 {
+    .atlas-dossier-body h1, .atlas-dossier-body h2, .atlas-dossier-body h3, .atlas-dossier-body h4 {
         font-family: 'Amiri', serif;
         color: #0f172a;
-        margin-top: 24px;
-        margin-bottom: 12px;
-        border-bottom: 1.5px solid #e2e8f0;
-        padding-bottom: 6px;
+        margin-top: 32px;
+        margin-bottom: 14px;
+        border-bottom: 1.5px solid rgba(184, 134, 11, 0.2);
+        padding-bottom: 8px;
+        line-height: 1.4;
+    }
+    .atlas-dossier-body h1 { font-size: 1.65rem; }
+    .atlas-dossier-body h2 { font-size: 1.45rem; }
+    .atlas-dossier-body h3 { font-size: 1.25rem; }
+
+    .atlas-dossier-body hr {
+        border: none;
+        height: 1.5px;
+        background: linear-gradient(to right, transparent, rgba(184, 134, 11, 0.4), transparent);
+        margin: 28px 0;
     }
 
     .atlas-dossier-body blockquote {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(254, 240, 138, 0.25));
-        border-right: 4px solid var(--gold);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(254, 240, 138, 0.25) 100%);
+        border-right: 5px solid var(--gold);
         border-radius: 12px;
-        padding: 14px 20px;
-        margin: 18px 0;
+        padding: 16px 24px;
+        margin: 22px 0;
         color: #854d0e;
         font-family: 'Amiri', serif;
-        font-size: 1.15rem;
+        font-size: 1.25rem;
+        line-height: 1.9;
         font-weight: 700;
-        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.08);
     }
 
     .atlas-dossier-body ul, .atlas-dossier-body ol {
@@ -6181,6 +6307,81 @@
 
     .atlas-dossier-body li {
         margin-bottom: 8px;
+    }
+
+    /* Table Luxury Wrapper & High-Precision Typography */
+    .atlas-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        margin: 24px 0;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+        border: 1.5px solid #cbd5e1;
+        background: #ffffff;
+        -webkit-overflow-scrolling: touch;
+    }
+    .atlas-table-wrapper::-webkit-scrollbar {
+        height: 7px;
+    }
+    .atlas-table-wrapper::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 3px;
+    }
+    .atlas-table-wrapper::-webkit-scrollbar-thumb {
+        background: rgba(184, 134, 11, 0.4);
+        border-radius: 3px;
+    }
+    .atlas-table-wrapper::-webkit-scrollbar-thumb:hover {
+        background: var(--gold);
+    }
+
+    .atlas-dossier-body table {
+        width: 100%;
+        min-width: 680px;
+        border-collapse: collapse;
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.65;
+        background: #ffffff;
+        border: none;
+    }
+
+    .atlas-dossier-body thead {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        color: #ffd700;
+    }
+
+    .atlas-dossier-body th {
+        padding: 14px 16px;
+        font-family: 'Amiri', serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-align: right;
+        border-bottom: 2px solid var(--gold);
+        white-space: nowrap;
+        letter-spacing: 0.2px;
+    }
+
+    .atlas-dossier-body td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #e2e8f0;
+        border-left: 1px solid #f1f5f9;
+        color: #1e293b;
+        vertical-align: top;
+        text-align: right;
+        unicode-bidi: plaintext;
+    }
+
+    .atlas-dossier-body tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .atlas-dossier-body tbody tr:nth-child(even) {
+        background: #f8fafc;
+    }
+
+    .atlas-dossier-body tbody tr:hover {
+        background: rgba(212, 175, 55, 0.08);
     }
 
     .atlas-conns-box {
@@ -15678,7 +15879,7 @@
                  onclick="selectAtlasNode('${n.id}')">
                 <div class="atlas-node-card-title">${n.label || n.id}</div>
                 <div class="atlas-node-card-meta">
-                    <span style="color:${n.color || 'var(--gold)'}; font-weight:700;">${n.category}</span>
+                    <span class="atlas-card-cat-badge" style="color:${n.color || 'var(--gold)'}; border:1px solid ${n.color || 'var(--gold)'}44;">${n.category}</span>
                     <span>🔗 ${(n.connections || []).length} روابط</span>
                 </div>
             </div>
@@ -15702,9 +15903,13 @@
         // Update Meta Row
         const metaEl = document.getElementById('atlas-dossier-meta');
         if (metaEl) {
-            const tagsHtml = (node.tags || []).map(t => `<span class="atlas-tag-pill">#${t}</span>`).join('');
+            const tagsHtml = (node.tags || []).map(t => {
+                const cleanTag = String(t).replace(/^#+|#+$/g, '').trim();
+                if (!cleanTag) return '';
+                return `<span class="atlas-tag-pill"><i class="fa-solid fa-hashtag" style="font-size:0.7em; opacity:0.7;"></i> ${cleanTag}</span>`;
+            }).join('');
             metaEl.innerHTML = `
-                <span class="atlas-tag-pill" style="background:${node.color || '#ffd700'}22; color:${node.color || '#ffd700'}; border-color:${node.color || '#ffd700'}55; font-weight:700;">
+                <span class="atlas-tag-pill" style="background:${node.color || '#ffd700'}22; color:${node.color || '#854d0e'}; border-color:${node.color || '#ffd700'}66; font-weight:700;">
                     ${node.category}
                 </span>
                 <span class="atlas-tag-pill">🔗 ${(node.connections || []).length} روابط متصلة</span>
@@ -15721,6 +15926,15 @@
             } else {
                 bodyEl.innerHTML = `<p style="white-space:pre-wrap;">${mdText}</p>`;
             }
+            // Auto wrap tables in responsive scroll wrapper
+            bodyEl.querySelectorAll('table').forEach(tbl => {
+                if (!tbl.parentElement.classList.contains('atlas-table-wrapper')) {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'atlas-table-wrapper';
+                    tbl.parentNode.insertBefore(wrap, tbl);
+                    wrap.appendChild(tbl);
+                }
+            });
         }
 
         // Render Connected Nodes Pills
@@ -15739,7 +15953,7 @@
         }
 
         // Smooth scroll to dossier on mobile
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 1080) {
             const dossierPanel = document.getElementById('atlas-dossier-panel');
             if (dossierPanel) {
                 dossierPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -19117,21 +19331,21 @@
 
         bcrumb.innerHTML = `
             <div class="cuh-nav-left">
-                <button class="cuh-hub-btn" onclick="navigateToChamber('tab-hub')" title="العودة للفهرس الشامل">
-                    <i class="fa-solid fa-arrow-right"></i>
+                <button class="cuh-hub-btn" onclick="navigateToChamber('tab-hub')" title="العودة للوحة الفهرس الشامل">
+                    <i class="fa-solid fa-house"></i>
                     <span>الفهرس الشامل</span>
                 </button>
                 <div class="cuh-breadcrumbs">
                     <span class="cuh-pavilion">${pavilionName}</span>
-                    <span class="cuh-sep">/</span>
+                    <span class="cuh-sep">‹</span>
                     <span class="cuh-door-badge">الباب ${doorNum}</span>
-                    <span class="cuh-sep">/</span>
+                    <span class="cuh-sep">‹</span>
                     <span class="cuh-title">${titleText}</span>
                 </div>
             </div>
             <div class="cuh-nav-actions">
-                ${prevDoor ? `<button class="cuh-door-nav-btn" onclick="navigateToChamber('${prevDoor}')" title="الباب السابق"><i class="fa-solid fa-chevron-right"></i> الباب السابق</button>` : `<button class="cuh-door-nav-btn" onclick="navigateToChamber('tab-hub')" title="الفهرس الشامل"><i class="fa-solid fa-house"></i> الفهرس</button>`}
-                ${nextDoor ? `<button class="cuh-door-nav-btn" onclick="navigateToChamber('${nextDoor}')" title="الباب التالي">الباب التالي <i class="fa-solid fa-chevron-left"></i></button>` : `<button class="cuh-door-nav-btn" onclick="navigateToChamber('tab-hub')" title="الفهرس الشامل">الفهرس <i class="fa-solid fa-house"></i></button>`}
+                ${prevDoor ? `<button class="cuh-door-nav-btn" onclick="navigateToChamber('${prevDoor}')" title="الانتقال إلى الباب السابق"><i class="fa-solid fa-chevron-right"></i> الباب السابق</button>` : ''}
+                ${nextDoor ? `<button class="cuh-door-nav-btn" onclick="navigateToChamber('${nextDoor}')" title="الانتقال إلى الباب التالي">الباب التالي <i class="fa-solid fa-chevron-left"></i></button>` : ''}
             </div>
         `;
     }
