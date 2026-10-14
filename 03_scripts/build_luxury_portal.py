@@ -1065,6 +1065,322 @@ def build_luxury_portal():
     .inner-sub-view.active {
         display: block;
     }
+
+    /* ========================================================
+       GRAND ESOTERIC CODEX & ANCIENT MANUSCRIPT PORTAL STYLES
+       هيكل ديوان المخطوطات والنواميس الكونية
+       ======================================================== */
+
+    /* Ornate Manuscript Border Frame */
+    .manuscript-border-outer {
+        border: 2px solid var(--border-gold);
+        border-radius: 20px;
+        position: relative;
+        padding: 4px;
+        background: rgba(3, 6, 17, 0.7);
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(255, 209, 102, 0.05);
+    }
+
+    .manuscript-border-inner {
+        border: 1px dashed rgba(255, 209, 102, 0.35);
+        border-radius: 16px;
+        position: relative;
+        padding: 30px 24px;
+        background: radial-gradient(circle at 50% 20%, rgba(255, 209, 102, 0.08) 0%, rgba(157, 78, 221, 0.05) 50%, rgba(3, 6, 17, 0.95) 100%);
+    }
+
+    /* Manuscript Corner Ornaments */
+    .corner-ornament {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        color: var(--gold);
+        font-size: 1.1rem;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        user-select: none;
+        text-shadow: 0 0 10px var(--gold-glow);
+    }
+    .corner-tl { top: 6px; right: 6px; }
+    .corner-tr { top: 6px; left: 6px; }
+    .corner-bl { bottom: 6px; right: 6px; }
+    .corner-br { bottom: 6px; left: 6px; }
+
+    /* Grand Frontispiece (فاتحة وديوان المخطوط) */
+    .manuscript-frontispiece {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .manuscript-tughra-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(135deg, rgba(255, 209, 102, 0.18), rgba(157, 78, 221, 0.15));
+        border: 1px solid var(--border-gold);
+        border-radius: 30px;
+        padding: 6px 24px;
+        color: var(--gold);
+        font-family: 'Amiri', serif;
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+        box-shadow: 0 0 20px rgba(255, 209, 102, 0.2);
+    }
+
+    .manuscript-main-heading {
+        font-family: 'Amiri', serif;
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        font-weight: 800;
+        margin: 0 0 16px 0;
+        background: linear-gradient(135deg, #ffd166 15%, var(--gold) 55%, #d8b4fe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.3;
+        text-shadow: 0 0 30px rgba(255, 209, 102, 0.25);
+    }
+
+    .manuscript-intro-folio {
+        font-size: 1.05rem;
+        color: #cbd5e1;
+        max-width: 950px;
+        margin: 0 auto 30px auto;
+        line-height: 1.9;
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    /* Tome Section Blocks (الأسفار الثلاثة الكبرى) */
+    .tome-section-block {
+        margin-bottom: 50px;
+        background: rgba(8, 14, 30, 0.7);
+        border: 1px solid rgba(255, 209, 102, 0.2);
+        border-radius: 24px;
+        padding: 30px 24px;
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8);
+        position: relative;
+    }
+
+    .tome-header-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        margin-bottom: 26px;
+        border-bottom: 1px solid rgba(255, 209, 102, 0.2);
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .tome-identity {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .tome-icon-seal {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 209, 102, 0.2) 0%, rgba(3, 7, 18, 0.9) 75%);
+        border: 1.5px solid var(--border-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
+        flex-shrink: 0;
+    }
+
+    .tome-title-group h2 {
+        font-family: 'Amiri', serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+        color: #fff;
+    }
+
+    .tome-title-group p {
+        font-size: 0.88rem;
+        color: #94a3b8;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .tome-badge-count {
+        background: rgba(255, 209, 102, 0.12);
+        border: 1px solid rgba(255, 209, 102, 0.35);
+        border-radius: 20px;
+        padding: 6px 16px;
+        color: var(--gold);
+        font-family: 'Amiri', serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+
+    /* Manuscript Folio Cards Grid (ألواح المخطوط) */
+    .manuscript-folios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        gap: 22px;
+    }
+
+    .manuscript-folio-card {
+        background: rgba(11, 18, 38, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 22px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+
+    .manuscript-folio-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 3px;
+        background: var(--card-accent, var(--gold));
+        opacity: 0.6;
+        transition: all 0.25s ease;
+    }
+
+    .manuscript-folio-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--card-accent, var(--gold));
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 209, 102, 0.15);
+    }
+
+    .manuscript-folio-card:hover::before {
+        height: 4px;
+        opacity: 1;
+    }
+
+    .folio-top-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+
+    .folio-number-ribbon {
+        font-family: 'Amiri', serif;
+        font-size: 0.86rem;
+        font-weight: 700;
+        color: var(--gold);
+        background: rgba(255, 209, 102, 0.1);
+        border: 1px solid rgba(255, 209, 102, 0.3);
+        padding: 3px 10px;
+        border-radius: 8px;
+    }
+
+    .folio-icon-seal {
+        font-size: 2rem;
+        margin-bottom: 12px;
+        display: inline-block;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+    }
+
+    .folio-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 10px 0;
+        line-height: 1.35;
+    }
+
+    .folio-excerpt {
+        font-size: 0.86rem;
+        color: #94a3b8;
+        line-height: 1.7;
+        margin-bottom: 18px;
+        flex-grow: 1;
+    }
+
+    .folio-action-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.84rem;
+        font-weight: 700;
+        color: var(--card-accent, var(--gold));
+    }
+
+    .folio-action-bar i {
+        transition: transform 0.2s;
+    }
+
+    .manuscript-folio-card:hover .folio-action-bar i {
+        transform: translateX(-6px);
+    }
+
+    /* Universal Floating Codex Navigation Dock (مسرد التقليب الفوري بين الأبواب) */
+    .codex-floating-dock {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4500;
+        background: rgba(4, 8, 20, 0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border-gold);
+        border-radius: 40px;
+        padding: 8px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 209, 102, 0.15);
+        max-width: 92vw;
+    }
+
+    .dock-btn {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 30px;
+        padding: 7px 14px;
+        color: #e2e8f0;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+
+    .dock-btn:hover {
+        background: rgba(255, 209, 102, 0.2);
+        border-color: var(--gold);
+        color: var(--gold);
+    }
+
+    .dock-current-label {
+        font-family: 'Amiri', serif;
+        font-size: 0.92rem;
+        color: var(--gold);
+        font-weight: 700;
+        padding: 0 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 220px;
+    }
+
     """
 
     # --- MASTER LUXURY TOP BAR HTML ---
@@ -1264,357 +1580,425 @@ def build_luxury_portal():
 
     # --- MASTER LANDING DASHBOARD HTML (#tab-hub) ---
     master_hub_html = """
-    <!-- MASTER LANDING DASHBOARD (#tab-hub) -->
+    <!-- MASTER ESOTERIC MANUSCRIPT CODEX PORTAL (#tab-hub) -->
     <section id="tab-hub" class="chamber-view active">
         <div class="hub-container">
-            <!-- HERO BANNER -->
-            <div class="hub-hero-banner">
-                <div class="hub-quran-verse">
-                    ﴿وَالشَّمْسُ وَالْقَمَرُ بِحُسْبَانٍ ۝ وَالنَّجْمُ وَالشَّجَرُ يَسْجُدَانِ ۝ وَالسَّمَاءَ رَفَعَهَا وَوَضَعَ الْمِيزَانَ﴾
-                </div>
-                <h1 class="hub-main-title">مختبر المعرفة الكونية والنواميس الأزلية</h1>
-                <p class="hub-sub-title">
-                    الموسوعة الموحدة الكبرى التي تصهر كوزمولوجيا الوحي القرآني، شبكة النبوات، علوم الأفلاك، 
-                    الأوفاق الهندسية، منازل القمر، الساعات الكلدانية، وفيزياء الرنين الترددي في صرح معرفي واحد لا نظير له.
-                </p>
+            <!-- ORNATE MANUSCRIPT BORDER WRAPPER -->
+            <div class="manuscript-border-outer">
+                <span class="corner-ornament corner-tl">۞</span>
+                <span class="corner-ornament corner-tr">۞</span>
+                <span class="corner-ornament corner-bl">۞</span>
+                <span class="corner-ornament corner-br">۞</span>
 
-                <!-- LIVE METRICS -->
-                <div class="hub-metrics-row">
-                    <div class="hub-metric-card">
-                        <div class="metric-val">73</div>
-                        <div class="metric-lbl">عقدة كوزمولوجية مستخلصة</div>
-                    </div>
-                    <div class="hub-metric-card">
-                        <div class="metric-val">19</div>
-                        <div class="metric-lbl">باباً علمياً مفهرساً</div>
-                    </div>
-                    <div class="hub-metric-card">
-                        <div class="metric-val">7</div>
-                        <div class="metric-lbl">أفلاك وترددات مدارية</div>
-                    </div>
-                    <div class="hub-metric-card">
-                        <div class="metric-val">28</div>
-                        <div class="metric-lbl">منزلة قمرية كوكبية</div>
-                    </div>
-                    <div class="hub-metric-card">
-                        <div class="metric-val">24</div>
-                        <div class="metric-lbl">ساعة كلدانية فلكية</div>
-                    </div>
-                </div>
-            </div>
+                <div class="manuscript-border-inner">
+                    <!-- FRONTISPIECE & ILLUMINATED HEAD -->
+                    <div class="manuscript-frontispiece">
+                        <div class="manuscript-tughra-badge">
+                            <span>✦</span>
+                            <span>فاتحة ديوان الحكمة والنواميس الكونية</span>
+                            <span>✦</span>
+                        </div>
+                        <div class="hub-quran-verse">
+                            ﴿وَالشَّمْسُ وَالْقَمَرُ بِحُسْبَانٍ ۝ وَالنَّجْمُ وَالشَّجَرُ يَسْجُدَانِ ۝ وَالسَّمَاءَ رَفَعَهَا وَوَضَعَ الْمِيزَانَ﴾
+                        </div>
+                        <h1 class="manuscript-main-heading">صرح المعرفة الكونية والأسرار الباطنية</h1>
+                        <p class="manuscript-intro-folio">
+                            الموسوعة الكبرى الموحدة الجامعة لكوزمولوجيا الوحي والعرش، شبكة النبوات، منازل القمر،
+                            الساعات الكلدانية، أوفاق الأعداد الهندسية، ديوان الأختام والزوهرية، وسفر العوالم الباطنية والإسقاط النجمي في ثلاثة أسفار عظمى متصلة.
+                        </p>
 
-            <!-- CONTROLS & SEARCH BAR -->
-            <div class="hub-filter-bar">
-                <div class="hub-filter-pills">
-                    <button class="hub-filter-pill active" onclick="filterHubCategory('ALL')">الكل (19)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('quran')">الركن الأول: كوزمولوجيا الوحي والنبوات (8)</button>
-                    <button class="hub-filter-pill" onclick="filterHubCategory('occult_lab')">الركن الثاني: سفر النواميس والمختبر الرياضي (11)</button>
-                </div>
-                <div class="hub-search-box">
-                    <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في الأبواب الـ 19 والمفاهيم..." oninput="filterHubSearch(this.value)">
-                </div>
-            </div>
+                        <!-- LIVE METRICS FOLIO -->
+                        <div class="hub-metrics-row">
+                            <div class="hub-metric-card">
+                                <div class="metric-val">3</div>
+                                <div class="metric-lbl">أسفار عظمى جامعة</div>
+                            </div>
+                            <div class="hub-metric-card">
+                                <div class="metric-val">20</div>
+                                <div class="metric-lbl">باباً علمياً مفهرساً</div>
+                            </div>
+                            <div class="hub-metric-card">
+                                <div class="metric-val">73</div>
+                                <div class="metric-lbl">عقدة كوزمولوجية مستخلصة</div>
+                            </div>
+                            <div class="hub-metric-card">
+                                <div class="metric-val">28</div>
+                                <div class="metric-lbl">منزلة قمرية كوكبية</div>
+                            </div>
+                            <div class="hub-metric-card">
+                                <div class="metric-val">24</div>
+                                <div class="metric-lbl">ساعة كلدانية فلكية</div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- 17 CHAPTER CARDS GRID -->
-            <div class="hub-doors-grid" id="hub-doors-grid">
-                <!-- DOOR 1 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-graph')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 01</span>
+                    <!-- CODEX TOME FILTER & SEARCH -->
+                    <div class="hub-filter-bar">
+                        <div class="hub-filter-pills">
+                            <button class="hub-filter-pill active" onclick="filterHubCategory('ALL', event)">كافة الأسفار (20 باباً)</button>
+                            <button class="hub-filter-pill" onclick="filterHubCategory('tome1', event)">📜 السفر الأول: التنزيل والملكوت (8)</button>
+                            <button class="hub-filter-pill" onclick="filterHubCategory('tome2', event)">🪐 السفر الثاني: النواميس والأوفاق (9)</button>
+                            <button class="hub-filter-pill" onclick="filterHubCategory('tome3', event)">🔮 السفر الثالث: الخفايا والباطن (3)</button>
+                        </div>
+                        <div class="hub-search-box">
+                            <input type="text" id="hub-search-input" class="hub-search-input" placeholder="🔍 ابحث في ديوان الأبواب الـ 20 والمفاهيم..." oninput="filterHubSearch(this.value)">
+                        </div>
                     </div>
-                    <div class="card-icon-box">🕸️</div>
-                    <div class="card-door-title">أطلس المفاهيم والشبكة الكونية</div>
-                    <div class="card-door-desc">خريطة تفاعلية شاملة وأطلس نظري يضم 73 عقدة معرفية ومئات الروابط الفكرية مع نظام تصفية وبحث فوري فائق السرعة للهواتف والحواسيب.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
 
-                <!-- DOOR 2 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-spheres')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 02</span>
-                    </div>
-                    <div class="card-icon-box">🪐</div>
-                    <div class="card-door-title">سلم الأفلاك السبعة وعرش الرحمن</div>
-                    <div class="card-door-desc">مطابقة بصرية تفاعلية بين السماوات السبع، الأفلاك، والأنبياء (من فلك القمر لآدم إلى فلك زحل لإبراهيم) مع شواهد المعراج النبوي.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                    <!-- ========================================================
+                         السِفر الأول: عوالم التنزيل والكوزمولوجيا العلوية (الأبواب 01 - 08)
+                         ======================================================== -->
+                    <div class="tome-section-block" id="tome-block-1" data-tome="tome1">
+                        <div class="tome-header-banner">
+                            <div class="tome-identity">
+                                <div class="tome-icon-seal">📜</div>
+                                <div class="tome-title-group">
+                                    <h2 style="color:var(--gold);">السفر الأول: كوزمولوجيا التنزيل وعوالم الملكوت</h2>
+                                    <p>سلم السماوات السبع، شبكة النبوات، الأفلاك، طبائع البروج، أمهات المخطوطات، وميزان الوحي القاطع</p>
+                                </div>
+                            </div>
+                            <span class="tome-badge-count">8 فصول وأبواب</span>
+                        </div>
 
-                <!-- DOOR 3 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-chakras')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 03</span>
-                    </div>
-                    <div class="card-icon-box">🧘</div>
-                    <div class="card-door-title">مجسم التشاكرات والأنبياء</div>
-                    <div class="card-door-desc">تشريح مراكز الطاقة الحيوية السبعة في الهيكل الإنساني، الغدد الصماء المقابلة، ومقارنتها بمقامات الأنبياء ونقد التحريف الفيدانتي.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                        <div class="manuscript-folios-grid">
+                            <!-- FOLIO 01 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-graph')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الأول ۞ 01</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">أطلس المفاهيم</span>
+                                </div>
+                                <div class="folio-icon-seal">🕸️</div>
+                                <div class="folio-title">أطلس المفاهيم والشبكة الكونية</div>
+                                <div class="folio-excerpt">خريطة تفاعلية كبرى تضم 73 عقدة معرفية ومئات الروابط الفكرية مع نظام تصفية وبحث فوري فائق الدقة.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 4 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-zodiac')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 04</span>
-                    </div>
-                    <div class="card-icon-box">♈</div>
-                    <div class="card-door-title">دائرة البروج الاثني عشر</div>
-                    <div class="card-door-desc">قبة فلكية تفاعلية للبروج ومنازلها وأربابها، طبائعها الأربعة، وموقع البروج في الذكر الحكيم كآيات وقوانين كونية مسخرة.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 02 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-spheres')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الثاني ۞ 02</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">سلم الأفلاك</span>
+                                </div>
+                                <div class="folio-icon-seal">🪐</div>
+                                <div class="folio-title">سلم الأفلاك السبعة وعرش الرحمن</div>
+                                <div class="folio-excerpt">مطابقة بصرية تفاعلية بين السماوات السبع، الأفلاك، والأنبياء (من فلك القمر لآدم إلى فلك زحل لإبراهيم) مع شواهد المعراج.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 5 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-timeline')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 05</span>
-                    </div>
-                    <div class="card-icon-box">⏳</div>
-                    <div class="card-door-title">تعاقب العصور الكبرى (2,160 سنة)</div>
-                    <div class="card-door-desc">خط زمني بانورامي لحركة المبادرة المحورية (2,160 سنة لكل عصر فلكي) وتطابقها مع نزول الشرائع الكبرى من الثور إلى الحوت والدلو.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 03 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-chakras')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الثالث ۞ 03</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الهيكل الإنساني</span>
+                                </div>
+                                <div class="folio-icon-seal">🧘</div>
+                                <div class="folio-title">مجسم التشاكرات والأنبياء</div>
+                                <div class="folio-excerpt">تشريح مراكز الطاقة الحيوية السبعة في جسد الإنسان، الغدد المقابلة، ومقارنتها بمقامات الأنبياء ونقد التحريف الفيدانتي.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 6 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-matrix')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 06</span>
-                    </div>
-                    <div class="card-icon-box">🏛️</div>
-                    <div class="card-door-title">المصفوفة المعمارية الشاملة</div>
-                    <div class="card-door-desc">جدول توازني ضخم يربط كل فلك بصفته القرآنية، نبيه، معدنه، شاكرته، لونه، والحكمة الباطنية المنسوبة له في التراث المعتبر.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 04 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-zodiac')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الرابع ۞ 04</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">البروج الاثنا عشر</span>
+                                </div>
+                                <div class="folio-icon-seal">♈</div>
+                                <div class="folio-title">دائرة البروج الاثني عشر</div>
+                                <div class="folio-excerpt">قبة فلكية تفاعلية للبروج ومنازلها وأربابها، طبائعها الأربعة، وموقع البروج في الذكر الحكيم كآيات وقوانين مسخرة.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 7 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-manuscripts')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 07</span>
-                    </div>
-                    <div class="card-icon-box">📜</div>
-                    <div class="card-door-title">أمهات المخطوطات والوثائق النادرة</div>
-                    <div class="card-door-desc">مستودع المخطوطات الكبرى (ابن عربي، البوني، السهروردي، جابر بن حيان، هرمس) مع تحليل نقدي معماري لكل كتاب ومصدر.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 05 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-timeline')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الخامس ۞ 05</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">المبادرة المحورية</span>
+                                </div>
+                                <div class="folio-icon-seal">⏳</div>
+                                <div class="folio-title">تعاقب العصور الكبرى (2,160 سنة)</div>
+                                <div class="folio-excerpt">خط زمني بانورامي لحركة المبادرة المحورية (2,160 سنة لكل عصر فلكي) وتطابقها مع نزول الشرائع الكبرى عبر التاريخ.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 8 -->
-                <div class="hub-door-card" data-cat="quran" onclick="navigateToChamber('tab-critique')" style="--door-accent:var(--gold);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-quran">كوزمولوجيا الوحي</span>
-                        <span class="card-door-number">الباب 08</span>
-                    </div>
-                    <div class="card-icon-box">⚖️</div>
-                    <div class="card-door-title">ميزان القرآن ودحض التناقضات</div>
-                    <div class="card-door-desc">المسطرة النقدية الصارمة للمرشد: رصد التحريفات في المخطوطات، وتفكيك الإسرائيليات والخرافات بالدليل القرآني القاطع.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 06 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-matrix')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب السادس ۞ 06</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">المصفوفة الجامعة</span>
+                                </div>
+                                <div class="folio-icon-seal">🏛️</div>
+                                <div class="folio-title">المصفوفة المعمارية الشاملة</div>
+                                <div class="folio-excerpt">جدول توازني ضخم يربط كل فلك بصفته القرآنية، نبيه، معدنه، شاكرته، لونه، والحكمة الباطنية المنسوبة له بالتراث.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 9 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-kings')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 09</span>
-                    </div>
-                    <div class="card-icon-box">👑</div>
-                    <div class="card-door-title">ملوك الأفلاك والأيام السبعة</div>
-                    <div class="card-door-desc">مصفوفة ملوك الأفلاك والأيام السبعة عبر بابل، مصر، اليونان، النورد، والقبالاه، مع خوادمهم السفلية وتوافقات البخور والمعادن.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 07 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-manuscripts')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب السابع ۞ 07</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الكتب النادرة</span>
+                                </div>
+                                <div class="folio-icon-seal">📜</div>
+                                <div class="folio-title">أمهات المخطوطات والوثائق النادرة</div>
+                                <div class="folio-excerpt">مستودع المخطوطات الكبرى (ابن عربي، البوني، السهروردي، جابر بن حيان، هرمس) مع تحليل نقدي معماري لكل مصدر.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 10 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-zodiac-angels')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 10</span>
+                            <!-- FOLIO 08 -->
+                            <div class="manuscript-folio-card" data-cat="tome1" onclick="navigateToChamber('tab-critique')" style="--card-accent:var(--gold);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الثامن ۞ 08</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">معيار التنزيل</span>
+                                </div>
+                                <div class="folio-icon-seal">⚖️</div>
+                                <div class="folio-title">ميزان القرآن ودحض التناقضات</div>
+                                <div class="folio-excerpt">المسطرة النقدية الصارمة للمرشد: رصد التحريفات في المخطوطات وتفكيك الإسرائيليات والخرافات بالبرهان القرآني.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-icon-box">🌟</div>
-                    <div class="card-door-title">ملائكة الأبراج والوجوه الـ 36</div>
-                    <div class="card-door-desc">التشريح الباطني لملوك الأبراج الـ 12 مع أرواح الوجوه العشرية الـ 36 (Decans - باكيو) وتقسيماتها الطاقية والعلاجية عبر الحضارات.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
 
-                <!-- DOOR 11 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-hours')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 11</span>
-                    </div>
-                    <div class="card-icon-box">⏱️</div>
-                    <div class="card-door-title">ساعات الأيام الـ 24 الكلدانية</div>
-                    <div class="card-door-desc">النظام الكلداني البابلي لتعاقب الساعات الفلكية (12 نهارية و12 ليلية) وحاكم كل ساعة وأفضل الأعمال الروحانية المتناغمة معها.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                    <!-- ========================================================
+                         السِفر الثاني: نواميس الأفلاك وموازين الأوفاق والطبائع (الأبواب 09 - 17)
+                         ======================================================== -->
+                    <div class="tome-section-block" id="tome-block-2" data-tome="tome2">
+                        <div class="tome-header-banner">
+                            <div class="tome-identity">
+                                <div class="tome-icon-seal" style="border-color:var(--purple-accent); box-shadow:0 0 20px var(--purple-glow);">🪐</div>
+                                <div class="tome-title-group">
+                                    <h2 style="color:#d8b4fe;">السفر الثاني: نواميس الأفلاك وموازين الأوفاق والطبائع</h2>
+                                    <p>ملوك الأيام السبعة، وجوه البروج، الساعات الكلدانية، منازل القمر، طبائع الحروف، الأوفاق الهندسية، وفيزياء الذبذبات</p>
+                                </div>
+                            </div>
+                            <span class="tome-badge-count" style="border-color:var(--purple-accent); color:#d8b4fe;">9 فصول وأبواب</span>
+                        </div>
 
-                <!-- DOOR 12 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-mansions')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 12</span>
-                    </div>
-                    <div class="card-icon-box">🌙</div>
-                    <div class="card-door-title">منازل القمر الـ 28 والتوافقات</div>
-                    <div class="card-door-desc">الدائرة القمرية الكاملة من الشرطين إلى الرشاء، درجاتها الفلكية (12° 51' 26")، طبائعها، وخواصها الأثيرية في كتب الأقدمين.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                        <div class="manuscript-folios-grid">
+                            <!-- FOLIO 09 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-kings')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب التاسع ۞ 09</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">ملوك الأيام</span>
+                                </div>
+                                <div class="folio-icon-seal">👑</div>
+                                <div class="folio-title">ملوك الأفلاك والأيام السبعة</div>
+                                <div class="folio-excerpt">مصفوفة ملوك الأفلاك والأيام السبعة عبر بابل، مصر، اليونان، النورد، والقبالاه، مع خوادمهم وتوافقات المعادن.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 13 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-letters-magic')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 13</span>
-                    </div>
-                    <div class="card-icon-box">🪶</div>
-                    <div class="card-door-title">طبائع الحروف والأسحار الأربعة</div>
-                    <div class="card-door-desc">توزيع الحروف الـ 28 على العناصر الأربعة (ناري، هوائي، مائي، ترابي) وتصنيف الأسحار وتطابقها الطاقي مع الأمزجة البشرية.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 10 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-zodiac-angels')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب العاشر ۞ 10</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الوجوه الـ 36</span>
+                                </div>
+                                <div class="folio-icon-seal">🌟</div>
+                                <div class="folio-title">ملائكة الأبراج والوجوه الـ 36</div>
+                                <div class="folio-excerpt">التشريح الباطني لملوك الأبراج الـ 12 مع أرواح الوجوه العشرية الـ 36 (Decans) وتقسيماتها الطاقية والعلاجية.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 14 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-bodies')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 14</span>
-                    </div>
-                    <div class="card-icon-box">🧬</div>
-                    <div class="card-door-title">الأجساد السبعة وميكانيكا الاختراق</div>
-                    <div class="card-door-desc">تشريح طبقات الوعي البشري السبع (المادي، الأثيري، النجمي، العقلي، السببي، الروحي، الإلهي) وكيف يخترق التردد السلبي الهالة.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 11 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-hours')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الحادي عشر ۞ 11</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الساعات الكلدانية</span>
+                                </div>
+                                <div class="folio-icon-seal">⏱️</div>
+                                <div class="folio-title">ساعات الأيام الـ 24 الكلدانية</div>
+                                <div class="folio-excerpt">النظام البابلي الكلداني لتعاقب الساعات الفلكية (12 نهارية و12 ليلية) وحاكم كل ساعة وتوافقها الطاقي.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 15 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-numbers')" style="--door-accent:var(--cyan-accent);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 15</span>
-                    </div>
-                    <div class="card-icon-box">🔢</div>
-                    <div class="card-door-title">الأوفاق الكونية والمربعات السحرية (3×3 حتى 9×9)</div>
-                    <div class="card-door-desc">الهندسة الرياضية للأوفاق السحرية كلغة كونية وموجات أثيرية واقفة، مقارنة الحضارات (لو شو، الفيدا، أغريبا، والغزالي)، ودستور البناء والتفعيل والإغلاق.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 12 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-mansions')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الثاني عشر ۞ 12</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">منازل القمر</span>
+                                </div>
+                                <div class="folio-icon-seal">🌙</div>
+                                <div class="folio-title">منازل القمر الـ 28 والتوافقات</div>
+                                <div class="folio-excerpt">الدائرة القمرية الكاملة من الشرطين إلى الرشاء، درجاتها الفلكية (12° 51' 26")، طبائعها، وخواصها الأثيرية.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 16 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-physics')" style="--door-accent:var(--cyan-accent);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 16</span>
-                    </div>
-                    <div class="card-icon-box">🔊</div>
-                    <div class="card-door-title">فيزياء الذبذبات والمولد الصوتي</div>
-                    <div class="card-door-desc">مختبر تفاعلي حي بمولد صوتي حقيقي (Web Audio API) يولد ترددات الكواكب المدارية مع شاشة راسم إشارة (Canvas) لتحليل الموجات.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 13 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-letters-magic')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الثالث عشر ۞ 13</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">طبائع الحروف</span>
+                                </div>
+                                <div class="folio-icon-seal">🪶</div>
+                                <div class="folio-title">طبائع الحروف والأسحار الأربعة</div>
+                                <div class="folio-excerpt">توزيع الحروف الـ 28 على العناصر الأربعة (ناري، هوائي، مائي، ترابي) وتطابقها الطاقي مع الأمزجة البشرية.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 17 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-criterion')" style="--door-accent:var(--cyan-accent);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 17</span>
-                    </div>
-                    <div class="card-icon-box">⚖️</div>
-                    <div class="card-door-title">ميزان الشريعة والمرشد الباطني</div>
-                    <div class="card-door-desc">المسطرة الإيمانية الصارمة: الفرق بين دراسة سنن الكون الفلكية وبين الشرك والعبودية لغير الله، وحماية النفس بوحي الخالق.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 14 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-bodies')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الرابع عشر ۞ 14</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الأجساد السبعة</span>
+                                </div>
+                                <div class="folio-icon-seal">🧬</div>
+                                <div class="folio-title">الأجساد السبعة وميكانيكا الاختراق</div>
+                                <div class="folio-excerpt">تشريح طبقات الوعي البشري السبع (المادي، الأثيري، النجمي، العقلي، السببي، الروحي، الإلهي) وميكانيكا اختراق الهالة.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 18 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-astrology-calc')" style="--door-accent:var(--cyan-accent);">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 18</span>
-                    </div>
-                    <div class="card-icon-box">🌌</div>
-                    <div class="card-door-title">المرصد الفلكي التنجيمي الكوني الشامل</div>
-                    <div class="card-door-desc">محرك تفاعلي فائق لحساب الطوالع والطبائع عبر 6 حضارات: حساب الجمل والزيج العربي (بالاسم واسم الأم)، التنجيم الغربي، البابلي، الفيدي، الأركان الصينية، والارتباط القبالي.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 15 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-numbers')" style="--card-accent:var(--cyan-accent);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الخامس عشر ۞ 15</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الأوفاق الهندسية</span>
+                                </div>
+                                <div class="folio-icon-seal">🔢</div>
+                                <div class="folio-title">الأوفاق الكونية والمربعات السحرية (3×3 حتى 9×9)</div>
+                                <div class="folio-excerpt">الهندسة الرياضية للأوفاق السحرية كلغة كونية وموجات أثيرية واقفة، مقارنة الحضارات (لو شو، الفيدا، أغريبا، والغزالي)، ودستور البناء والإغلاق.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 19 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-seals-zouhri')" style="--door-accent:#d8b4fe;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 19</span>
-                    </div>
-                    <div class="card-icon-box">👑</div>
-                    <div class="card-door-title">ديوان الأختام والزوهرية والسلالات</div>
-                    <div class="card-door-desc">الهندسة الرمزية لخاتم سليمان الأعظم وأختام الكواكب السبعة (SVG)، والملف الطبي والأنثروبولوجي للإنسان الزوهري وتفكيك نبش الكنوز، وموسوعة السلالات الروحية وبذور النجوم.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                </div>
+                            <!-- FOLIO 16 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-physics')" style="--card-accent:var(--cyan-accent);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب السادس عشر ۞ 16</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الرنين المداري</span>
+                                </div>
+                                <div class="folio-icon-seal">🔊</div>
+                                <div class="folio-title">فيزياء الذبذبات والمولد الصوتي الحي</div>
+                                <div class="folio-excerpt">مختبر تفاعلي حي بمولد صوتي حقيقي (Web Audio API) يولد ترددات الكواكب المدارية مع راسم إشارة مباشر لتحليل الموجات.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
 
-                <!-- DOOR 20 -->
-                <div class="hub-door-card" data-cat="occult_lab" onclick="navigateToChamber('tab-inner-realms')" style="--door-accent:#38bdf8;">
-                    <div class="card-top-meta">
-                        <span class="card-pillar-tag tag-occult-lab">سفر النواميس والمختبر</span>
-                        <span class="card-door-number">الباب 20</span>
+                            <!-- FOLIO 17 -->
+                            <div class="manuscript-folio-card" data-cat="tome2" onclick="navigateToChamber('tab-criterion')" style="--card-accent:var(--cyan-accent);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب السابع عشر ۞ 17</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">معيار المرشد</span>
+                                </div>
+                                <div class="folio-icon-seal">⚖️</div>
+                                <div class="folio-title">ميزان الشريعة وحصن المرشد</div>
+                                <div class="folio-excerpt">المسطرة الإيمانية الصارمة: الفرق بين دراسة سنن الكون الفلكية وبين الشرك والعبودية لغير الله، وحصانة النفس.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-icon-box">🪐</div>
-                    <div class="card-door-title">سفر العوالم الباطنية وأسرار الوعي</div>
-                    <div class="card-door-desc">أساطير الأراضي الباطنية وأغارثا وعوالم المثال، تشريح الهالة والقرين والتنقية الإدراكية، تاريخ ومراحل الإسقاط النجمي وعلومه العصبية، وسر الأوفاق وتنزيه الحقيقة المحمدية، مع مختبر محاكاة موجات الدماغ.</div>
-                    <div class="card-action-bar">
-                        <span>دخول الباب</span>
-                        <i class="fa-solid fa-arrow-left"></i>
+
+                    <!-- ========================================================
+                         السِفر الثالث: خفايا الباطن، الجسد الأثيري ومراقي الوعي (الأبواب 18 - 20)
+                         ======================================================== -->
+                    <div class="tome-section-block" id="tome-block-3" data-tome="tome3">
+                        <div class="tome-header-banner">
+                            <div class="tome-identity">
+                                <div class="tome-icon-seal" style="border-color:var(--cyan-accent); box-shadow:0 0 20px var(--cyan-glow);">🔮</div>
+                                <div class="tome-title-group">
+                                    <h2 style="color:var(--cyan-accent);">السفر الثالث: خفايا الباطن، الجسد الأثيري ومراقي الوعي</h2>
+                                    <p>المرصد الفلكي التنجيمي، ديوان الأختام والزوهرية، سفر الأراضي الباطنية المحجوبة، الإسقاط النجمي ومحاكاة موجات الدماغ</p>
+                                </div>
+                            </div>
+                            <span class="tome-badge-count" style="border-color:var(--cyan-accent); color:var(--cyan-accent);">3 فصول وأبواب</span>
+                        </div>
+
+                        <div class="manuscript-folios-grid">
+                            <!-- FOLIO 18 -->
+                            <div class="manuscript-folio-card" data-cat="tome3" onclick="navigateToChamber('tab-astrology-calc')" style="--card-accent:var(--cyan-accent);">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب الثامن عشر ۞ 18</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">المرصد الفلكي</span>
+                                </div>
+                                <div class="folio-icon-seal">🌌</div>
+                                <div class="folio-title">المرصد الفلكي التنجيمي الكوني الشامل</div>
+                                <div class="folio-excerpt">محرك تفاعلي شامل لحساب الطوالع والطبائع عبر 6 حضارات: حساب الجمل والزيج العربي، التنجيم الغربي، البابلي، الفيدي، والصيني.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
+
+                            <!-- FOLIO 19 -->
+                            <div class="manuscript-folio-card" data-cat="tome3" onclick="navigateToChamber('tab-seals-zouhri')" style="--card-accent:#d8b4fe;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب التاسع عشر ۞ 19</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">الأختام والزوهرية</span>
+                                </div>
+                                <div class="folio-icon-seal">👑</div>
+                                <div class="folio-title">ديوان الأختام والزوهرية والسلالات</div>
+                                <div class="folio-excerpt">الهندسة الرمزية لخاتم سليمان الأعظم وأختام الكواكب السبعة (SVG)، والملف الشامل للإنسان الزوهري وتفكيك نبش الكنوز وموسوعة السلالات.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
+
+                            <!-- FOLIO 20 -->
+                            <div class="manuscript-folio-card" data-cat="tome3" onclick="navigateToChamber('tab-inner-realms')" style="--card-accent:#38bdf8;">
+                                <div class="folio-top-meta">
+                                    <span class="folio-number-ribbon">الباب العشرون ۞ 20</span>
+                                    <span style="font-size:0.75rem; color:#94a3b8;">العوالم الباطنية</span>
+                                </div>
+                                <div class="folio-icon-seal">🪐</div>
+                                <div class="folio-title">سفر العوالم الباطنية، الجسد الأثيري وأسرار الوعي</div>
+                                <div class="folio-excerpt">أساطير الأراضي الباطنية المحجوبة (أغارثا وعوالم المثال)، تنظيف القرين والهالة، مراحل الإسقاط النجمي (Astral Projection)، تفكيك أوفاق الغزالي، ومحاكي موجات الدماغ الحي.</div>
+                                <div class="folio-action-bar">
+                                    <span>فك الختم ودخول الباب</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -1651,6 +2035,63 @@ def build_luxury_portal():
     };
 
     let activeChamberId = 'tab-hub';
+
+    // LIST OF ORDERED DOORS FOR SEQUENTIAL CODEX TURNING
+    const CODEX_DOORS_SEQUENCE = [
+        'tab-graph',
+        'tab-spheres',
+        'tab-chakras',
+        'tab-zodiac',
+        'tab-timeline',
+        'tab-matrix',
+        'tab-manuscripts',
+        'tab-critique',
+        'tab-kings',
+        'tab-zodiac-angels',
+        'tab-hours',
+        'tab-mansions',
+        'tab-letters-magic',
+        'tab-bodies',
+        'tab-numbers',
+        'tab-physics',
+        'tab-criterion',
+        'tab-astrology-calc',
+        'tab-seals-zouhri',
+        'tab-inner-realms'
+    ];
+
+    function navigateToPrevDoor() {
+        const curIdx = CODEX_DOORS_SEQUENCE.indexOf(activeChamberId);
+        if (curIdx > 0) {
+            navigateToChamber(CODEX_DOORS_SEQUENCE[curIdx - 1]);
+        } else if (curIdx === 0) {
+            navigateToChamber('tab-hub');
+        }
+    }
+
+    function navigateToNextDoor() {
+        const curIdx = CODEX_DOORS_SEQUENCE.indexOf(activeChamberId);
+        if (curIdx !== -1 && curIdx < CODEX_DOORS_SEQUENCE.length - 1) {
+            navigateToChamber(CODEX_DOORS_SEQUENCE[curIdx + 1]);
+        } else if (activeChamberId === 'tab-hub') {
+            navigateToChamber(CODEX_DOORS_SEQUENCE[0]);
+        }
+    }
+
+    // UPDATE DOCK VISIBILITY & TEXT ON CHAMBER SWITCH
+    function updateCodexDock(targetId) {
+        const dock = document.getElementById('codex-floating-dock');
+        const label = document.getElementById('dock-active-title');
+        if (!dock) return;
+
+        if (targetId === 'tab-hub') {
+            dock.style.display = 'none';
+        } else {
+            dock.style.display = 'flex';
+            if (label) label.innerText = CHAMBER_NAMES[targetId] || 'باب الحكمة';
+        }
+    }
+
 
     function openSidebar() {
         const drawer = document.getElementById('portal-drawer');
@@ -1756,6 +2197,7 @@ def build_luxury_portal():
 
         // 6. Update URL hash and smooth scroll
         window.location.hash = '#' + targetId;
+        updateCodexDock(targetId);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1781,12 +2223,29 @@ def build_luxury_portal():
         document.querySelectorAll('.hub-filter-pill').forEach(pill => {
             pill.classList.remove('active');
         });
-        const clicked = evt ? evt.target : (window.event ? window.event.target : null);
+        const clicked = evt ? evt.currentTarget || evt.target : (window.event ? window.event.target : null);
         if (clicked) clicked.classList.add('active');
 
         const q = (document.getElementById('hub-search-input')?.value || '').trim().toLowerCase();
 
-        document.querySelectorAll('.hub-door-card').forEach(card => {
+        // 1. Filter Tome Sections
+        const tomeBlocks = [
+            { el: document.getElementById('tome-block-1'), cat: 'tome1' },
+            { el: document.getElementById('tome-block-2'), cat: 'tome2' },
+            { el: document.getElementById('tome-block-3'), cat: 'tome3' }
+        ];
+
+        tomeBlocks.forEach(t => {
+            if (!t.el) return;
+            if (cat === 'ALL' || cat === t.cat) {
+                t.el.style.display = 'block';
+            } else {
+                t.el.style.display = 'none';
+            }
+        });
+
+        // 2. Filter individual folio cards
+        document.querySelectorAll('.manuscript-folio-card').forEach(card => {
             const cardCat = card.getAttribute('data-cat');
             const cardText = card.innerText.toLowerCase();
             const matchesCat = (cat === 'ALL' || cardCat === cat);
@@ -1802,23 +2261,19 @@ def build_luxury_portal():
 
     function filterHubSearch(query) {
         const q = (query || '').trim().toLowerCase();
-        const activePill = document.querySelector('.hub-filter-pill.active');
-        const activeText = activePill ? activePill.innerText : '';
-        let currentCat = 'ALL';
-        if (activeText.includes('الوحي')) currentCat = 'quran';
-        if (activeText.includes('النواميس') || activeText.includes('المختبر')) currentCat = 'occult_lab';
-
-        document.querySelectorAll('.hub-door-card').forEach(card => {
-            const cardCat = card.getAttribute('data-cat');
+        document.querySelectorAll('.manuscript-folio-card').forEach(card => {
             const cardText = card.innerText.toLowerCase();
-            const matchesCat = (currentCat === 'ALL' || cardCat === currentCat);
-            const matchesQuery = (!q || cardText.includes(q));
-
-            if (matchesCat && matchesQuery) {
+            if (!q || cardText.includes(q)) {
                 card.style.display = 'flex';
             } else {
                 card.style.display = 'none';
             }
+        });
+
+        // If searching, show all tome blocks so matched cards are visible
+        ['tome-block-1', 'tome-block-2', 'tome-block-3'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'block';
         });
     }
 
