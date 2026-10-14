@@ -1702,7 +1702,7 @@ def build_luxury_portal():
     }
 
     /* ========================================================
-       UNIVERSAL SUB-GENERATOR SLATE-GREY OVERRIDES
+       UNIVERSAL SUB-GENERATOR CELESTIAL PARADISE & GOLD OVERRIDES
        ======================================================== */
     .theory-node-card,
     .concept-card,
@@ -1726,9 +1726,11 @@ def build_luxury_portal():
     .manuscript-card,
     .zodiac-wheel-wrapper,
     .timeline-container {
-        background-color: #1e293b !important;
-        border-color: #334155 !important;
-        color: #cbd5e1 !important;
+        background: linear-gradient(135deg, rgba(14, 20, 44, 0.92), rgba(8, 12, 28, 0.96)) !important;
+        border: 1px solid rgba(212, 175, 55, 0.25) !important;
+        color: #e2e8f0 !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(212, 175, 55, 0.03) !important;
+        border-radius: 18px !important;
     }
 
     .theory-node-card:hover,
@@ -1741,23 +1743,26 @@ def build_luxury_portal():
     .seal-card:hover,
     .zouhri-card:hover,
     .realm-card:hover {
-        background-color: #243347 !important;
-        border-color: rgba(212, 175, 55, 0.45) !important;
+        background: linear-gradient(135deg, rgba(22, 32, 68, 0.95), rgba(12, 18, 42, 0.98)) !important;
+        border-color: rgba(212, 175, 55, 0.7) !important;
+        box-shadow: 0 14px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 175, 55, 0.25) !important;
+        transform: translateY(-4px) !important;
     }
 
     table, .matrix-table, .hours-table, .mansion-table {
-        background: #182232 !important;
-        border: 1px solid #334155 !important;
+        background: rgba(10, 15, 34, 0.95) !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
+        border-radius: 14px !important;
     }
 
     table td, table th, .matrix-table td, .matrix-table th {
-        background: #1e293b !important;
-        border: 1px solid #334155 !important;
-        color: #cbd5e1 !important;
+        background: rgba(14, 20, 44, 0.85) !important;
+        border: 1px solid rgba(212, 175, 55, 0.2) !important;
+        color: #e2e8f0 !important;
     }
 
     table th, .matrix-table th {
-        background: #243347 !important;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(16, 185, 129, 0.15)) !important;
         color: #fef08a !important;
         font-weight: 700 !important;
     }
@@ -1766,8 +1771,9 @@ def build_luxury_portal():
     #cy-container,
     #network-container,
     .vis-network {
-        background-color: #111823 !important;
+        background-color: #060713 !important;
     }
+
     """
 
     # --- MASTER LUXURY TOP BAR HTML ---
@@ -3016,19 +3022,49 @@ def build_luxury_portal():
     else:
         final_html = assembled_html
 
-    print("[4/5] Writing to destination files...")
-    # Write website/index.html
+    # Inject anti-cache meta tags right after <head>
+    cache_meta = """
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="version" content="8.5-esoteric-paradise">
+    """
+    if '<head>' in final_html:
+        final_html = final_html.replace('<head>', '<head>' + cache_meta, 1)
+
+    print("[4/5] Writing to destination files across all entry points...")
+    # 1. Write website/index.html
     with open(INDEX_PATH, 'w', encoding='utf-8') as f:
         f.write(final_html)
 
-    # Sync to root files
-    shutil.copyfile(INDEX_PATH, ROOT_INDEX)
-    shutil.copyfile(INDEX_PATH, ROOT_VIEWER)
+    def safe_write_portal(dst_path):
+        try:
+            with open(dst_path, 'w', encoding='utf-8') as df:
+                df.write(final_html)
+            print(f"  + Updated: {dst_path}")
+        except Exception as e:
+            print(f"  ! Warning updating {dst_path}: {e}")
 
-    print("[5/5] Success! Verified files updated:")
-    print(f"  - {INDEX_PATH} ({len(final_html):,} bytes)")
-    print(f"  - {ROOT_INDEX}")
-    print(f"  - {ROOT_VIEWER}")
+    # 2. Sync to root files
+    safe_write_portal(ROOT_INDEX)
+    safe_write_portal(ROOT_VIEWER)
+
+    # 3. Sync to Codex & Atlas entry points so opening ANY file gives the unified luxury portal
+    root_codex = os.path.join(ROOT_DIR, "Grand_Occult_Cosmology_Codex.html")
+    web_codex = os.path.join(WEBSITE_DIR, "Grand_Occult_Cosmology_Codex.html")
+    root_atlas = os.path.join(ROOT_DIR, "Prophetic_Cosmic_Atlas.html")
+    safe_write_portal(root_codex)
+    safe_write_portal(web_codex)
+    safe_write_portal(root_atlas)
+
+    # 4. Create and sync docs/ folder in case GitHub Pages is configured to /docs
+    docs_dir = os.path.join(ROOT_DIR, "docs")
+    os.makedirs(docs_dir, exist_ok=True)
+    safe_write_portal(os.path.join(docs_dir, "index.html"))
+
+    print("[5/5] Success! All entry points synchronized and verified.")
+
+
 
 
 if __name__ == "__main__":
