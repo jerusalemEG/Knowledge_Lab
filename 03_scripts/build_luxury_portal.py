@@ -35,6 +35,13 @@ from generate_seals_zouhri_chamber import get_seals_zouhri_chamber_html, get_sea
 from generate_inner_realms_chamber import get_inner_realms_chamber_html, get_inner_realms_chamber_js
 from generate_astrolabe_engine import get_astrolabe_css, get_astrolabe_html, get_astrolabe_js
 from generate_esoteric_charts import get_esoteric_charts_css, get_esoteric_charts_html, get_esoteric_charts_js
+from generate_cosmic_chambers_deluxe import (
+    get_deluxe_chambers_css,
+    get_deluxe_chambers_html,
+    get_cosmic_database_js,
+    get_chambers_visual_js,
+    wrap_all_raw_chambers
+)
 
 
 def build_luxury_portal():
@@ -1774,7 +1781,7 @@ def build_luxury_portal():
         background-color: #060713 !important;
     }
 
-    """
+    """ + get_deluxe_chambers_css()
 
     # --- MASTER LUXURY TOP BAR HTML ---
     master_topbar_html = """
@@ -2707,8 +2714,18 @@ def build_luxury_portal():
                 setTimeout(() => { cosmicNetwork.redraw(); cosmicNetwork.fit(); }, 200);
             }
         }
-        if (targetId === 'tab-letters-magic' && typeof renderLetters === 'function') {
-            renderLetters();
+        if (targetId === 'tab-spheres' && typeof renderSpheresOrbits === 'function') {
+            setTimeout(renderSpheresOrbits, 60);
+        }
+        if (targetId === 'tab-zodiac' && typeof renderZodiacWheel === 'function') {
+            setTimeout(renderZodiacWheel, 60);
+        }
+        if (targetId === 'tab-kings' && typeof renderHeptagramKings === 'function') {
+            setTimeout(renderHeptagramKings, 60);
+        }
+        if (targetId === 'tab-letters-magic') {
+            if (typeof calculateLiveAbjad === 'function') setTimeout(calculateLiveAbjad, 60);
+            if (typeof renderLetters === 'function') renderLetters();
         }
         if (targetId === 'tab-bodies' && typeof renderBodies === 'function') {
             renderBodies();
@@ -2727,6 +2744,10 @@ def build_luxury_portal():
         if (targetId === 'tab-inner-realms' && typeof initBrainwaveCanvas === 'function') {
             setTimeout(initBrainwaveCanvas, 100);
         }
+
+        try {
+            window.dispatchEvent(new CustomEvent('chamberSwitched', { detail: { chamberId: targetId } }));
+        } catch(e) {}
 
         // 7. Update URL hash, floating dock, and smooth scroll
         window.location.hash = '#' + targetId;
@@ -2961,6 +2982,14 @@ def build_luxury_portal():
     if main_open_pos != -1 and main_close_pos != -1:
         atlas_main_inner = atlas_with_header[main_open_pos + len('<main>'):main_close_pos]
         
+        # Remove old chambers superseded by deluxe versions
+        for tab_id in ["tab-spheres", "tab-zodiac", "tab-mansions"]:
+            atlas_main_inner = re.sub(rf'<section\s+id="{tab_id}"[^>]*>.*?</section>', '', atlas_main_inner, flags=re.DOTALL)
+
+        for tab_id in ["tab-kings", "tab-letters-magic", "tab-numbers"]:
+            codex_main_clean = re.sub(rf'<section\s+id="{tab_id}"[^>]*>.*?</section>', '', codex_main_clean, flags=re.DOTALL)
+
+        deluxe_chambers_html = get_deluxe_chambers_html()
         astro_chamber_html = get_astrology_chamber_html()
         seals_chamber_html = get_seals_zouhri_chamber_html()
         inner_realms_chamber_html = get_inner_realms_chamber_html()
@@ -2969,6 +2998,7 @@ def build_luxury_portal():
         unified_main = f"""
         <main class="master-chambers-wrapper">
             {master_hub_html}
+            {deluxe_chambers_html}
             {atlas_main_inner}
             {codex_main_clean}
             {astro_chamber_html}
@@ -2977,7 +3007,10 @@ def build_luxury_portal():
         </main>
         """
 
-        assembled_html = atlas_with_header[:main_open_pos] + unified_main + atlas_with_header[main_close_pos + len('</main>'):]
+        raw_assembled_html = atlas_with_header[:main_open_pos] + unified_main + atlas_with_header[main_close_pos + len('</main>'):]
+        
+        # Wrap EVERY remaining raw chamber into the royal manuscript architecture
+        assembled_html = wrap_all_raw_chambers(raw_assembled_html)
     else:
         assembled_html = atlas_with_header
 
@@ -3007,10 +3040,14 @@ def build_luxury_portal():
         astro_chamber_js = get_astrology_chamber_js()
         seals_chamber_js = get_seals_zouhri_chamber_js()
         inner_realms_chamber_js = get_inner_realms_chamber_js()
+        cosmic_db_js = get_cosmic_database_js()
+        visual_canvas_js = get_chambers_visual_js()
 
         full_js_block = f"""
         {floating_dock_html}
         <script>
+        {cosmic_db_js}
+        {visual_canvas_js}
         {codex_js_clean}
         {astro_chamber_js}
         {seals_chamber_js}
