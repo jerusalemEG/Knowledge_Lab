@@ -34,6 +34,7 @@ from generate_astrology_chamber import get_astrology_chamber_html, get_astrology
 from generate_seals_zouhri_chamber import get_seals_zouhri_chamber_html, get_seals_zouhri_chamber_js
 from generate_inner_realms_chamber import get_inner_realms_chamber_html, get_inner_realms_chamber_js
 from generate_astrolabe_engine import get_astrolabe_css, get_astrolabe_html, get_astrolabe_js
+from generate_esoteric_charts import get_esoteric_charts_css, get_esoteric_charts_html, get_esoteric_charts_js
 
 
 def build_luxury_portal():
@@ -80,67 +81,69 @@ def build_luxury_portal():
     # --- MASTER LUXURY STYLESHEET ---
     luxury_css = """
     /* ========================================================
-       KNOWLEDGE LAB — MASTER LUXURY SLATE-GREY ARCHITECTURE STYLING (v7.0)
+       KNOWLEDGE LAB — THE CELESTIAL PARADISE OF ESOTERIC SCIENCES
+       جنة العلوم الباطنية والنواميس الكونية الملوكية (v8.0 Master Luxury)
        ======================================================== */
     :root {
         color-scheme: dark !important;
-        --void-black: #111823;
-        --bg-space: #111823;
-        --bg-void: #111823;
-        --bg-slate-deep: #111823;
-        --bg-slate-panel: #182232;
-        --bg-slate-card: #1e293b;
-        --bg-slate-elevated: #243347;
-        --card-glass: rgba(30, 41, 59, 0.92);
-        --card-glass-hover: rgba(36, 51, 71, 0.98);
-        --panel-bg: rgba(24, 34, 50, 0.95);
+        --void-black: #060713;
+        --bg-space: #060713;
+        --bg-void: #060713;
+        --bg-slate-deep: #080b18;
+        --bg-slate-panel: #0d1226;
+        --bg-slate-card: #121832;
+        --bg-slate-elevated: #182042;
+        --card-glass: rgba(14, 19, 40, 0.88);
+        --card-glass-hover: rgba(22, 30, 60, 0.96);
+        --panel-bg: rgba(10, 14, 30, 0.95);
         
-        /* SLATE BORDER HIERARCHY */
-        --border-slate-subtle: rgba(148, 163, 184, 0.16);
-        --border-slate: #334155;
-        --border-slate-strong: #475569;
+        /* MYSTIC & GOLD BORDER HIERARCHY */
+        --border-slate-subtle: rgba(212, 175, 55, 0.16);
+        --border-slate: rgba(212, 175, 55, 0.28);
+        --border-slate-strong: rgba(212, 175, 55, 0.65);
         
-        /* 24K IMPERIAL GOLD FOIL & JEWEL PALETTE */
+        /* 24K IMPERIAL GOLD FOIL & ILLUMINATION */
         --gold: #d4af37;
         --gold-bright: #ffd700;
         --gold-light: #fef08a;
         --gold-foil: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
         --border-gold: rgba(212, 175, 55, 0.38);
-        --border-gold-strong: rgba(212, 175, 55, 0.75);
-        --gold-glow: rgba(212, 175, 55, 0.45);
+        --border-gold-strong: rgba(212, 175, 55, 0.85);
+        --gold-glow: rgba(212, 175, 55, 0.5);
         
-        /* ROYAL VELVET AMETHYST & VIOLET */
+        /* PARADISE EMERALD & MALACHITE (الزمرد الباطني النوراني) */
+        --emerald-accent: #10b981;
+        --emerald-bright: #34d399;
+        --emerald-glow: rgba(16, 185, 129, 0.45);
+        
+        /* ROYAL VELVET AMETHYST & VIOLET (الجمشت الملكي) */
         --purple-accent: #c084fc;
         --purple-light: #e9d5ff;
-        --purple-glow: rgba(192, 132, 252, 0.4);
+        --purple-glow: rgba(192, 132, 252, 0.45);
         
-        /* ASTRAL LAPIS LAZULI & CYAN */
+        /* ASTRAL LAPIS LAZULI & CYAN (الياقوت الأزرق والأكوامارين) */
         --cyan-accent: #38bdf8;
         --cyan-light: #bae6fd;
-        --cyan-glow: rgba(56, 189, 248, 0.4);
+        --cyan-glow: rgba(56, 189, 248, 0.45);
         
-        /* HOLY MALACHITE & EMERALD */
-        --emerald-accent: #34d399;
-        --emerald-glow: rgba(52, 211, 153, 0.4);
-        
-        /* CELESTIAL RUBY */
+        /* CELESTIAL RUBY (العقيق الياقوتي) */
         --ruby-accent: #fb7185;
-        --ruby-glow: rgba(251, 113, 133, 0.4);
+        --ruby-glow: rgba(251, 113, 133, 0.45);
         
         /* HIGH-CONTRAST READABILITY TYPOGRAPHY */
-        --text-pure: #f8fafc;
-        --text-silver: #e2e8f0;
-        --text-body: #cbd5e1;
+        --text-pure: #ffffff;
+        --text-silver: #f1f5f9;
+        --text-body: #e2e8f0;
         --text-gold: #fef08a;
         --text-muted: #94a3b8;
     }
 
     html {
-        background-color: #111823 !important;
-        background: #111823 !important;
+        background-color: #060713 !important;
+        background: #060713 !important;
         color-scheme: dark !important;
         color: #f8fafc !important;
-        scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
+        scrollbar-color: rgba(212, 175, 55, 0.4) #060713 !important;
     }
 
     body {
@@ -148,45 +151,46 @@ def build_luxury_portal():
         max-width: 100vw;
         overflow-x: hidden !important;
         position: relative;
-        background-color: #111823 !important;
+        background-color: #060713 !important;
         background-image: 
-            radial-gradient(ellipse at 15% 15%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse at 85% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-            radial-gradient(ellipse at 50% 50%, rgba(192, 132, 252, 0.04) 0%, transparent 60%) !important;
+            radial-gradient(circle at 12% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+            radial-gradient(circle at 88% 18%, rgba(212, 175, 55, 0.14) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.09) 0%, transparent 60%),
+            radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 50%) !important;
         background-attachment: fixed !important;
         color-scheme: dark !important;
         font-family: 'Tajawal', sans-serif;
         color: #f8fafc !important;
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
-        scrollbar-color: rgba(212, 175, 55, 0.4) #111823 !important;
+        scrollbar-color: rgba(212, 175, 55, 0.4) #060713 !important;
     }
 
     * {
         box-sizing: border-box;
-        scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
+        scrollbar-color: rgba(212, 175, 55, 0.35) #060713 !important;
     }
 
-    /* Universal Slate Dark Scrollbars Across Entire Site */
+    /* Universal Celestial Scrollbars Across Entire Site */
     ::-webkit-scrollbar {
         width: 8px !important;
         height: 8px !important;
     }
     ::-webkit-scrollbar-track {
-        background: #111823 !important;
+        background: #060713 !important;
     }
     ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #d4af37, #64748b) !important;
+        background: linear-gradient(180deg, #d4af37, #10b981) !important;
         border-radius: 6px !important;
-        border: 2px solid #111823 !important;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.35) !important;
+        border: 2px solid #060713 !important;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #ffd700, #d4af37) !important;
-        box-shadow: 0 0 14px rgba(255, 215, 0, 0.6) !important;
+        background: linear-gradient(180deg, #ffd700, #34d399) !important;
+        box-shadow: 0 0 14px rgba(255, 215, 0, 0.7) !important;
     }
 
-    /* Universal Master Chambers Slate-Grey Enforcement */
+    /* Universal Master Chambers Cosmic Void Enforcement */
     .master-chambers-wrapper,
     .chamber-view,
     .tab-section,
@@ -213,31 +217,32 @@ def build_luxury_portal():
     #tab-critique,
     #tab-criterion,
     main {
-        background-color: #111823 !important;
-        background: #111823 !important;
+        background-color: #060713 !important;
+        background: #060713 !important;
         color: #f8fafc !important;
     }
 
-    /* Universal Form & Input Slate Enforcement */
+    /* Universal Form & Input Mystical Obsidian Enforcement */
     input, select, textarea, button {
         color-scheme: dark !important;
     }
     input[type="text"], input[type="password"], input[type="number"], select, textarea {
-        background: #161f2e !important;
-        border: 1px solid #334155 !important;
+        background: #0d1226 !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
         color: #f8fafc !important;
     }
     input[type="date"], input[type="time"] {
         color-scheme: dark !important;
-        background: #161f2e !important;
-        border: 1px solid #334155 !important;
+        background: #0d1226 !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
         color: #f8fafc !important;
     }
     input:focus, select:focus, textarea:focus {
         border-color: var(--gold) !important;
-        box-shadow: 0 0 12px var(--gold-glow) !important;
+        box-shadow: 0 0 14px var(--gold-glow), 0 0 8px rgba(16, 185, 129, 0.3) !important;
         outline: none !important;
     }
+
 
     body.drawer-open-lock {
         overflow: hidden !important;
@@ -249,11 +254,11 @@ def build_luxury_portal():
         position: sticky;
         top: 0;
         z-index: 5000;
-        background: rgba(17, 24, 35, 0.96) !important;
+        background: rgba(8, 12, 28, 0.95) !important;
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6), inset 0 -1px 0 rgba(212, 175, 55, 0.15);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.35) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(212, 175, 55, 0.15);
         width: 100%;
     }
 
@@ -459,9 +464,9 @@ def build_luxury_portal():
         bottom: 0;
         width: 390px;
         max-width: 90vw;
-        background: #141d2b !important;
-        border-left: 1px solid #334155 !important;
-        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.75);
+        background: linear-gradient(180deg, #0d1226 0%, #070a14 100%) !important;
+        border-left: 1px solid rgba(212, 175, 55, 0.35) !important;
+        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.85), -5px 0 25px rgba(212, 175, 55, 0.12);
         z-index: 9999;
         display: flex;
         flex-direction: column;
@@ -478,8 +483,8 @@ def build_luxury_portal():
         align-items: center;
         justify-content: space-between;
         padding: 18px 20px;
-        border-bottom: 1px solid #334155;
-        background: #182232;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+        background: rgba(14, 19, 42, 0.95);
     }
 
     .drawer-brand {
@@ -512,7 +517,7 @@ def build_luxury_portal():
         height: 38px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.05);
-        border: 1px solid #334155;
+        border: 1px solid rgba(212, 175, 55, 0.25);
         color: #cbd5e1;
         font-size: 1.3rem;
         display: flex;
@@ -530,14 +535,14 @@ def build_luxury_portal():
 
     .drawer-search-wrapper {
         padding: 12px 18px;
-        border-bottom: 1px solid #334155;
-        background: #161f2e;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        background: rgba(10, 14, 30, 0.9);
     }
 
     .drawer-search-input {
         width: 100%;
-        background: #111823;
-        border: 1px solid #334155;
+        background: #060713;
+        border: 1px solid rgba(212, 175, 55, 0.25);
         border-radius: 10px;
         padding: 10px 14px;
         color: #fff;
@@ -549,7 +554,7 @@ def build_luxury_portal():
     .drawer-search-input:focus {
         outline: none;
         border-color: var(--gold);
-        box-shadow: 0 0 12px var(--gold-glow);
+        box-shadow: 0 0 14px var(--gold-glow);
     }
 
     .drawer-nav-body {
@@ -557,7 +562,7 @@ def build_luxury_portal():
         overflow-y: auto;
         padding: 16px 18px 40px 18px;
         -webkit-overflow-scrolling: touch;
-        background: #141d2b;
+        background: transparent;
     }
 
     .drawer-pillar-group {
@@ -570,7 +575,7 @@ def build_luxury_portal():
         font-weight: 700;
         margin-bottom: 10px;
         padding-bottom: 6px;
-        border-bottom: 1px solid #334155;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -589,8 +594,8 @@ def build_luxury_portal():
         width: 100%;
         text-align: right;
         padding: 10px 14px;
-        background: #1e293b;
-        border: 1px solid #334155;
+        background: rgba(18, 24, 48, 0.7);
+        border: 1px solid rgba(212, 175, 55, 0.2);
         border-radius: 10px;
         color: #cbd5e1;
         font-family: 'Tajawal', sans-serif;
@@ -601,13 +606,15 @@ def build_luxury_portal():
     }
 
     .drawer-door-item:hover {
-        background: #283850;
+        background: rgba(30, 42, 80, 0.9);
         color: #fff;
-        border-color: rgba(212, 175, 55, 0.45);
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
         transform: translateX(-3px);
     }
 
     .drawer-door-item.active {
+
         background: linear-gradient(135deg, rgba(212, 175, 55, 0.22), rgba(30, 41, 59, 0.95)) !important;
         border-color: var(--gold) !important;
         color: var(--gold) !important;
@@ -1133,7 +1140,7 @@ def build_luxury_portal():
     .inner-sub-view.active {
         display: block;
     }
-    """ + get_astrolabe_css() + """
+    """ + get_astrolabe_css() + get_esoteric_charts_css() + """
 
     /* ========================================================
        GRAND ESOTERIC EDUCATIONAL LIBRARY MODAL STYLES
@@ -1274,13 +1281,13 @@ def build_luxury_portal():
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #182232;
-        border: 1px solid #334155;
+        background: linear-gradient(135deg, rgba(14, 20, 44, 0.95), rgba(8, 12, 28, 0.98));
+        border: 1px solid rgba(212, 175, 55, 0.35);
         border-right: 4px solid var(--gold);
-        border-radius: 16px;
-        padding: 14px 20px;
+        border-radius: 18px;
+        padding: 16px 22px;
         margin-bottom: 24px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.65), 0 0 15px rgba(212, 175, 55, 0.12);
         gap: 16px;
         flex-wrap: wrap;
     }
@@ -1339,8 +1346,8 @@ def build_luxury_portal():
     }
 
     .cuh-nav-btn {
-        background: #1e293b;
-        border: 1px solid #334155;
+        background: rgba(18, 24, 50, 0.85);
+        border: 1px solid rgba(212, 175, 55, 0.25);
         border-radius: 8px;
         padding: 6px 14px;
         color: #cbd5e1;
@@ -1355,10 +1362,11 @@ def build_luxury_portal():
     }
 
     .cuh-nav-btn:hover {
-        background: #283850;
+        background: rgba(30, 42, 80, 0.95);
         border-color: var(--gold);
         color: var(--gold);
     }
+
 
     /* ========================================================
        GRAND ESOTERIC CODEX & ANCIENT MANUSCRIPT PORTAL STYLES
@@ -1367,21 +1375,22 @@ def build_luxury_portal():
 
     /* Ornate Manuscript Border Frame */
     .manuscript-border-outer {
-        border: 2px solid rgba(212, 175, 55, 0.4);
-        border-radius: 20px;
+        border: 2px solid rgba(212, 175, 55, 0.45);
+        border-radius: 24px;
         position: relative;
-        padding: 4px;
-        background: #141d2b;
-        box-shadow: 0 0 35px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(212, 175, 55, 0.05);
+        padding: 5px;
+        background: linear-gradient(135deg, rgba(14, 19, 40, 0.95), rgba(7, 10, 24, 0.98));
+        box-shadow: 0 0 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15), inset 0 0 30px rgba(16, 185, 129, 0.06);
     }
 
     .manuscript-border-inner {
-        border: 1px dashed rgba(212, 175, 55, 0.35);
-        border-radius: 16px;
+        border: 1px dashed rgba(212, 175, 55, 0.4);
+        border-radius: 20px;
         position: relative;
-        padding: 30px 24px;
-        background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, rgba(30, 41, 59, 0.8) 50%, #161f2e 100%);
+        padding: 34px 28px;
+        background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.12) 0%, rgba(14, 20, 44, 0.85) 50%, #080c1c 100%);
     }
+
 
     /* Manuscript Corner Ornaments */
     .corner-ornament {
@@ -1463,11 +1472,11 @@ def build_luxury_portal():
     /* Tome Section Blocks (الأجنحة الخمسة الكبرى) */
     .tome-section-block {
         margin-bottom: 50px;
-        background: #161f2e;
-        border: 1px solid #334155;
+        background: linear-gradient(135deg, rgba(13, 18, 38, 0.9), rgba(8, 12, 26, 0.95));
+        border: 1px solid rgba(212, 175, 55, 0.28);
         border-radius: 24px;
-        padding: 30px 24px;
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+        padding: 32px 26px;
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.65), inset 0 0 30px rgba(16, 185, 129, 0.04);
         position: relative;
     }
 
@@ -1477,7 +1486,7 @@ def build_luxury_portal():
         justify-content: space-between;
         padding-bottom: 20px;
         margin-bottom: 26px;
-        border-bottom: 1px solid #334155;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         flex-wrap: wrap;
         gap: 16px;
     }
@@ -1492,13 +1501,13 @@ def build_luxury_portal():
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(30, 41, 59, 0.9) 75%);
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(13, 18, 38, 0.95) 75%);
         border: 1.5px solid var(--border-gold);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.8rem;
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
         flex-shrink: 0;
     }
 
@@ -1536,27 +1545,28 @@ def build_luxury_portal():
     }
 
     .manuscript-folio-card {
-        background: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 18px;
-        padding: 22px;
+        background: linear-gradient(135deg, rgba(18, 24, 48, 0.88), rgba(10, 14, 30, 0.94));
+        border: 1px solid rgba(212, 175, 55, 0.22);
+        border-radius: 20px;
+        padding: 24px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
-        backdrop-filter: blur(12px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
     .manuscript-folio-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
         border-color: var(--card-accent, var(--gold));
-        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.25);
-        background: #243347;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 55, 0.3), inset 0 0 20px rgba(212, 175, 55, 0.1);
+        background: linear-gradient(135deg, rgba(26, 36, 70, 0.94), rgba(14, 20, 44, 0.98));
     }
+
 
     .manuscript-folio-card::before {
         content: '';
@@ -2042,7 +2052,7 @@ def build_luxury_portal():
                         </div>
                     </div>
 
-                    """ + get_astrolabe_html() + """
+                    """ + get_astrolabe_html() + get_esoteric_charts_html() + """
                     <!-- 5 PAVILIONS FILTER BAR & SEARCH -->
                     <div class="hub-filter-bar">
                         <div class="hub-filter-pills">
@@ -2456,7 +2466,7 @@ def build_luxury_portal():
 
     # --- MASTER LUXURY JAVASCRIPT CONTROLLER ---
     luxury_js = """
-    """ + get_astrolabe_js() + """
+    """ + get_astrolabe_js() + get_esoteric_charts_js() + """
     // ========================================================
     // KNOWLEDGE LAB — MASTER UNIFIED ROUTER & AUDIO CONTROLLER
     // ========================================================
