@@ -1469,7 +1469,18 @@ def wrap_all_raw_chambers(html_content):
 def get_cosmic_database_js():
     """Returns the complete JavaScript database injection for the client-side engine."""
     db_json = json.dumps(COSMIC_DATABASE, ensure_ascii=False)
-    nodes_json = json.dumps(VAULT_NODES_DATA, ensure_ascii=False)
+    vault_data = {}
+    if os.path.exists(GRAPH_JSON_PATH):
+        try:
+            with open(GRAPH_JSON_PATH, "r", encoding="utf-8") as f:
+                raw_g = json.load(f)
+                vault_data = raw_g.get("nodes", {})
+        except Exception as e:
+            print(f"Warning reloading {GRAPH_JSON_PATH}: {e}")
+            vault_data = VAULT_NODES_DATA
+    else:
+        vault_data = VAULT_NODES_DATA
+    nodes_json = json.dumps(vault_data, ensure_ascii=False)
     return f"""
     // ========================================================
     // KNOWLEDGE LAB — CLIENT-SIDE MASTER COSMIC DATABASE
