@@ -62,7 +62,9 @@ def parse_frontmatter(content):
 
 def categorize_node(nd_type, relpath):
     path_lower = relpath.lower()
-    if "prophet" in path_lower or "ulul_azm" in path_lower or nd_type in ["prophet_archetype", "master_sphere"]:
+    if "11_aura" in path_lower or "qareen" in path_lower or "aura" in path_lower or "astral" in path_lower or "lataif" in path_lower:
+        return "القرين والهالة والجسد النجمي", "astral_aura", "#ec4899"
+    elif "prophet" in path_lower or "ulul_azm" in path_lower or nd_type in ["prophet_archetype", "master_sphere"]:
         return "أولو العزم من الرسل", "prophets", "#f59e0b"
     elif "00_index" in path_lower or "quranic" in path_lower or nd_type in ["index", "master_blueprint"]:
         return "الهيكل القرآني والمصفوفات", "index", "#ff4d6d"
@@ -78,8 +80,8 @@ def categorize_node(nd_type, relpath):
         return "الهرمسية والكيمياء القديمة", "alchemy", "#06d6a0"
     elif "08_sacred" in path_lower or "geometry" in path_lower:
         return "الهندسة المقدسة والرياضيات", "geometry", "#fb8500"
-    elif "04_sources" in path_lower or "06_extracted" in path_lower or nd_type in ["scholar", "text", "school", "source_manuscript"]:
-        return "المخطوطات والحكماء", "sources", "#70e000"
+    elif "04_sources" in path_lower or "06_extracted" in path_lower or "12_master" in path_lower or nd_type in ["scholar", "text", "school", "source_manuscript", "library_compendium"]:
+        return "المخطوطات والحكماء", "sources", "#10b981"
     elif "05_synthesis" in path_lower or nd_type in ["matrix", "master_matrix"]:
         return "الهيكل القرآني والمصفوفات", "matrix", "#ff4d6d"
     else:
