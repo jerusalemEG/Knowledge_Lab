@@ -730,7 +730,7 @@ def build_luxury_portal():
 
     .hub-sub-title {
         font-size: 1.05rem;
-        color: #cbd5e1;
+        color: #475569;
         max-width: 900px;
         margin: 0 auto 26px auto;
         line-height: 1.8;
@@ -816,7 +816,7 @@ def build_luxury_portal():
     }
 
     .hub-filter-pill.active {
-        background: linear-gradient(135deg, var(--gold), #d4af37);
+        background: linear-gradient(135deg, var(--gold), #64748b);
         color: #ffffff;
         border-color: var(--gold);
         font-weight: 700;
@@ -1067,9 +1067,9 @@ def build_luxury_portal():
 
     /* CHAMBERS 18 & 19 LUXURY STYLES */
     .astro-tab-pill, .seals-subnav-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #cbd5e1;
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+        color: #475569;
         padding: 8px 16px;
         border-radius: 10px;
         font-family: 'Tajawal', sans-serif;
@@ -1080,13 +1080,13 @@ def build_luxury_portal():
         white-space: nowrap;
     }
     .astro-tab-pill:hover, .seals-subnav-btn:hover {
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
+        background: #e2e8f0;
+        color: #1e293b;
     }
     .astro-tab-pill.active {
-        background: linear-gradient(135deg, var(--gold), #d49300);
-        color: #0f172a;
-        border-color: var(--gold);
+        background: linear-gradient(135deg, #475569, #64748b);
+        color: #ffffff;
+        border-color: #475569;
         box-shadow: 0 0 16px var(--gold-glow);
     }
     .seals-subnav-btn.active {
@@ -1112,9 +1112,9 @@ def build_luxury_portal():
 
     /* CHAMBER 20 LUXURY STYLES */
     .inner-tab-pill, .layer-pill-btn, .brain-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #cbd5e1;
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+        color: #475569;
         padding: 8px 16px;
         border-radius: 10px;
         font-family: 'Tajawal', sans-serif;
@@ -1312,11 +1312,11 @@ def build_luxury_portal():
     }
 
     .cuh-back-hub-btn {
-        background: rgba(148, 163, 184, 0.15);
-        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
         border-radius: 8px;
         padding: 6px 14px;
-        color: #cbd5e1;
+        color: #334155;
         font-family: 'Tajawal', sans-serif;
         font-size: 0.84rem;
         font-weight: 700;
@@ -1340,7 +1340,7 @@ def build_luxury_portal():
 
     .cuh-pavilion-tag {
         font-size: 0.82rem;
-        color: #94a3b8;
+        color: #64748b;
         font-weight: 600;
     }
 
@@ -1348,7 +1348,7 @@ def build_luxury_portal():
         font-family: 'Amiri', serif;
         font-size: 1.08rem;
         font-weight: 700;
-        color: #f8fafc;
+        color: #1e293b;
     }
 
     .cuh-actions {
@@ -1358,11 +1358,11 @@ def build_luxury_portal():
     }
 
     .cuh-nav-btn {
-        background: rgba(30, 41, 59, 0.85);
-        border: 1px solid rgba(148, 163, 184, 0.3);
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
         border-radius: 8px;
         padding: 6px 14px;
-        color: #cbd5e1;
+        color: #334155;
         font-family: 'Tajawal', sans-serif;
         font-size: 0.82rem;
         font-weight: 600;
@@ -1387,7 +1387,7 @@ def build_luxury_portal():
 
     /* Ornate Manuscript Border Frame */
     .manuscript-border-outer {
-        border: 2px solid #b8860b;
+        border: 2px solid #475569;
         outline: 1px solid #cbd5e1;
         border-radius: 24px;
         position: relative;

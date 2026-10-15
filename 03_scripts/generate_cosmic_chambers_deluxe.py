@@ -26,7 +26,7 @@ COSMIC_DATABASE = {
         {"id": "sphere_1", "num": 1, "name": "فلك القمر (السماء الدنيا)", "planet": "القمر", "prophet": "آدم عليه السلام", "gem": "اللؤلؤ والفضة", "color": "#f8fafc", "freq": "174 Hz", "angel": "إسماعيل / رقيائيل", "metal": "الفضة", "quran": "﴿وَلَقَدْ زَيَّنَّا السَّمَاءَ الدُّنْيَا بِمَصَابِيحَ﴾", "desc": "مجمع الطينات السفلية، وعالم الكون والفساد، والمدخل الأول لاختراق حجب المادة."},
         {"id": "sphere_2", "num": 2, "name": "فلك عطارد (السماء الثانية)", "planet": "عطارد", "prophet": "يحيى وعيسى عليهما السلام", "gem": "الزبرجد والفيروزج", "color": "#38bdf8", "freq": "285 Hz", "angel": "ميخائيل", "metal": "الزئبق", "quran": "﴿فَقَضَاهُنَّ سَبْعَ سَمَاوَاتٍ فِي يَوْمَيْنِ﴾", "desc": "مستقر العلوم العقلية، النطق، الفصاحة، والكتابة بالقلم."},
         {"id": "sphere_3", "num": 3, "name": "فلك الزهرة (السماء الثالثة)", "planet": "الزهرة", "prophet": "يوسف الصديق عليه السلام", "gem": "الزمرد الأخضر", "color": "#10b981", "freq": "396 Hz", "angel": "عنيائيل", "metal": "النحاس", "quran": "﴿وَزَيَّنَّاهَا لِلنَّاظِرِينَ﴾", "desc": "فلك الجمال الباهر، الفنون، التناغم الموسيقي، وتسخير القلوب بالمحبة."},
-        {"id": "sphere_4", "num": 4, "name": "فلك الشمس (السماء الرابعة)", "planet": "الشمس", "prophet": "إدريس عليه السلام (هرمس)", "gem": "الياقوت الأصفر والذهب", "color": "#ffd700", "freq": "528 Hz", "angel": "صلصائيل", "metal": "الذهب الخالص", "quran": "﴿وَجَعَلَ الشَّمْسَ سِرَاجًا﴾", "desc": "قلب الوجود الكوني، ومستقر الروح الحيوي، وميزان الاعتدال بين السماوات السبع."},
+        {"id": "sphere_4", "num": 4, "name": "فلك الشمس (السماء الرابعة)", "planet": "الشمس", "prophet": "إدريس عليه السلام (هرمس)", "gem": "الياقوت الأصفر والذهب", "color": "#38bdf8", "freq": "528 Hz", "angel": "صلصائيل", "metal": "الذهب الخالص", "quran": "﴿وَجَعَلَ الشَّمْسَ سِرَاجًا﴾", "desc": "قلب الوجود الكوني، ومستقر الروح الحيوي، وميزان الاعتدال بين السماوات السبع."},
         {"id": "sphere_5", "num": 5, "name": "فلك المريخ (السماء الخامسة)", "planet": "المريخ", "prophet": "هارون عليه السلام", "gem": "العقيق الأحمر والياقوت", "color": "#ef4444", "freq": "639 Hz", "angel": "سمسمائيل", "metal": "الحديد", "quran": "﴿وَأَنزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ﴾", "desc": "فلك القوة الدافعة، البأس الصارم، وتصفية الأكدار بنار الصهر والتطهير."},
         {"id": "sphere_6", "num": 6, "name": "فلك المشتري (السماء السادسة)", "planet": "المشتري", "prophet": "موسى الكليم عليه السلام", "gem": "الياقوت الأزرق واللازورد", "color": "#06b6d4", "freq": "741 Hz", "angel": "صرفيائيل", "metal": "القصدير", "quran": "﴿وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا﴾", "desc": "فلك الحكمة والعدل، التوسع في الخير، وتنزيل ألواح الشرائع الربانية."},
         {"id": "sphere_7", "num": 7, "name": "فلك زحل (السماء السابعة)", "planet": "زحل", "prophet": "إبراهيم الخليل عليه السلام", "gem": "الجزع الأسود والياقوت الأشهب", "color": "#c084fc", "freq": "852 Hz", "angel": "كسفيائيل", "metal": "الرصاص", "quran": "﴿عِندَ الْبَيْتِ الْمَعْمُورِ﴾", "desc": "فلك التوحيد الصرف، الصمت الأبدي، وبوابة الخروج من عالم الزمان إلى الأبد."},
@@ -77,7 +77,7 @@ COSMIC_DATABASE = {
         {"num": 28, "name": "الرشاء (بطن الحوت)", "deg": "17°8' الحوت - 0° الحمل", "element": "ماء", "letter": "غ", "virtue": "تمام الأمور والختام الميمون"}
     ],
     "kings": [
-        {"day": "الأحد", "planet": "الشمس", "upper": "روقيائيل", "lower": "المذهب أبا عبد الله", "metal": "الذهب", "color": "#ffd700", "incense": "السندروس والعود", "char": "ف"},
+        {"day": "الأحد", "planet": "الشمس", "upper": "روقيائيل", "lower": "المذهب أبا عبد الله", "metal": "الذهب", "color": "#38bdf8", "incense": "السندروس والعود", "char": "ف"},
         {"day": "الإثنين", "planet": "القمر", "upper": "جبرائيل", "lower": "مُرة أبا النور", "metal": "الفضة", "color": "#f8fafc", "incense": "اللبان والجاوي", "char": "ج"},
         {"day": "الثلاثاء", "planet": "المريخ", "upper": "سمسمائيل", "lower": "الأحمر أبا محرز", "metal": "الحديد", "color": "#ef4444", "incense": "القسط والمقل", "char": "ش"},
         {"day": "الأربعاء", "planet": "عطارد", "upper": "ميكائيل", "lower": "برقان أبا العجائب", "metal": "الزئبق", "color": "#38bdf8", "incense": "المستكة والقرنفل", "char": "ث"},
@@ -89,7 +89,7 @@ COSMIC_DATABASE = {
         {"order": 3, "planet": "زحل", "constant": 15, "total": 45, "elements": "مثلث الغزالي الأقدس (بطد زهج واح)", "color": "#c084fc", "grid": [[4, 9, 2], [3, 5, 7], [8, 1, 6]]},
         {"order": 4, "planet": "المشتري", "constant": 34, "total": 136, "elements": "مربع الحكمة والعدل والتوسع", "color": "#06b6d4", "grid": [[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12], [4, 15, 14, 1]]},
         {"order": 5, "planet": "المريخ", "constant": 65, "total": 325, "elements": "مخمس القوة والصهر والنصر", "color": "#ef4444", "grid": [[11, 24, 7, 20, 3], [4, 12, 25, 8, 16], [17, 5, 13, 21, 9], [10, 18, 1, 14, 22], [23, 6, 19, 2, 15]]},
-        {"order": 6, "planet": "الشمس", "constant": 111, "total": 666, "elements": "مسدس الذهب ونور الروح والسيادة", "color": "#ffd700", "grid": [[35, 1, 6, 26, 19, 24], [3, 32, 7, 21, 23, 25], [31, 9, 2, 22, 27, 20], [8, 28, 33, 17, 10, 15], [30, 5, 34, 12, 14, 16], [4, 36, 29, 13, 18, 11]]},
+        {"order": 6, "planet": "الشمس", "constant": 111, "total": 666, "elements": "مسدس الذهب ونور الروح والسيادة", "color": "#38bdf8", "grid": [[35, 1, 6, 26, 19, 24], [3, 32, 7, 21, 23, 25], [31, 9, 2, 22, 27, 20], [8, 28, 33, 17, 10, 15], [30, 5, 34, 12, 14, 16], [4, 36, 29, 13, 18, 11]]},
         {"order": 7, "planet": "الزهرة", "constant": 175, "total": 1225, "elements": "مسبع الجمال والمحبة والتأليف", "color": "#10b981", "grid": "مصفوفة سباعية متناظرة الأقطار"},
         {"order": 8, "planet": "عطارد", "constant": 260, "total": 2080, "elements": "مثمن النطق والعلوم العقلية", "color": "#38bdf8", "grid": "مصفوفة ثمانية تامة الاتزان"},
         {"order": 9, "planet": "القمر", "constant": 369, "total": 3321, "elements": "متسع الفيض وتصريف الطينات السفلية", "color": "#f8fafc", "grid": "مصفوفة تساعية جامعة لفيوضات القمر"}
@@ -326,7 +326,7 @@ def get_deluxe_chambers_css():
         flex-wrap: wrap;
         margin-top: 14px;
         font-size: 0.88rem;
-        color: #cbd5e1;
+        color: #475569;
     }
 
     .canvas-legend-item {
@@ -360,7 +360,7 @@ def get_deluxe_chambers_css():
     .cosmic-gilded-card:hover {
         transform: translateY(-5px);
         border-color: var(--card-accent, var(--gold));
-        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08), 0 0 20px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08), 0 0 20px rgba(100, 116, 139, 0.15);
         background: #fafbfc;
     }
 
@@ -629,7 +629,7 @@ def get_deluxe_chambers_css():
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1.5px solid rgba(184, 134, 11, 0.25);
+        border-bottom: 1.5px solid rgba(100, 116, 139, 0.25);
         padding-bottom: 12px;
         margin-bottom: 14px;
     }
@@ -932,7 +932,7 @@ def generate_spheres_chamber_html():
                 <div class="card-meta-row"><span class="card-meta-lbl">الملاك الموكل:</span><span class="card-meta-val">{s['angel']}</span></div>
                 <div class="card-meta-row"><span class="card-meta-lbl">تردد النغمة:</span><span class="card-meta-val" style="color:{s['color']};">{s['freq']}</span></div>
             </div>
-            <p style="font-size:0.86rem; color:#cbd5e1; line-height:1.6; margin:6px 0;">{s['desc']}</p>
+            <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin:6px 0;">{s['desc']}</p>
             <div class="card-verse-quote">{s['quran']}</div>
         </div>
         """
@@ -945,7 +945,7 @@ def generate_spheres_chamber_html():
         <canvas id="spheresOrbitsCanvas" width="550" height="550"></canvas>
         <div class="canvas-legend-row">
             <span class="canvas-legend-item"><i class="fa-solid fa-circle" style="color:#10b981; font-size:0.6rem;"></i> مركز الأرض (الطين)</span>
-            <span class="canvas-legend-item"><i class="fa-solid fa-circle" style="color:#ffd700; font-size:0.6rem;"></i> المدارات السبعة</span>
+            <span class="canvas-legend-item"><i class="fa-solid fa-circle" style="color:#fbbf24; font-size:0.6rem;"></i> المدارات السبعة</span>
             <span class="canvas-legend-item"><i class="fa-solid fa-circle" style="color:#c084fc; font-size:0.6rem;"></i> فلك الثوابت وزحل</span>
             <span class="canvas-legend-item"><i class="fa-solid fa-circle" style="color:#fef08a; font-size:0.6rem;"></i> سدرة المنتهى والعرش المحيط</span>
         </div>
@@ -983,7 +983,7 @@ def generate_zodiac_chamber_html():
                 <div class="card-meta-row"><span class="card-meta-lbl">العضو في الجسد (ميلوثيسيا):</span><span class="card-meta-val">{z['body']}</span></div>
                 <div class="card-meta-row"><span class="card-meta-lbl">القطب المتقابل (180°):</span><span class="card-meta-val" style="color:var(--gold);">{z['opposite']}</span></div>
             </div>
-            <p style="font-size:0.86rem; color:#cbd5e1; line-height:1.6; margin:6px 0;">{z['secrets']}</p>
+            <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin:6px 0;">{z['secrets']}</p>
         </div>
         """
 
@@ -1099,33 +1099,33 @@ def generate_letters_chamber_html():
         <h3 style="font-family:'Amiri',serif; font-size:1.5rem; color:var(--gold-bright); text-align:center; margin-bottom:12px;">
             🔢 حاسبة الجمل الكبير وميزان الطبائع الأربعة التفاعلية
         </h3>
-        <p style="text-align:center; font-size:0.88rem; color:#cbd5e1; margin-bottom:18px;">
+        <p style="text-align:center; font-size:0.92rem; color:#475569; margin-bottom:18px;">
             اكتب أي اسم أو عبارة أو نص لحسابه بحساب الجمل الكبير، وفك توزيعه بين عناصر (النار، التراب، الهواء، الماء):
         </p>
         <input type="text" id="abjadInputText" class="abjad-input" placeholder="اكتب هنا مثلاً: الله نور السماوات والأرض..." oninput="calculateLiveAbjad()">
         
         <div class="abjad-results-row">
             <div class="abjad-result-card">
-                <div style="font-size:0.8rem; color:#94a3b8;">القيمة الإجمالية (الجمل)</div>
+                <div style="font-size:0.8rem; color:#64748b;">القيمة الإجمالية (الجمل)</div>
                 <div id="abjadTotalValue" class="abjad-val-big">0</div>
             </div>
             <div class="abjad-result-card">
-                <div style="font-size:0.8rem; color:#94a3b8;">الطبع الغالب</div>
+                <div style="font-size:0.8rem; color:#64748b;">الطبع الغالب</div>
                 <div id="abjadDominantNature" style="font-family:'Amiri',serif; font-size:1.3rem; font-weight:700; color:var(--emerald-accent); margin-top:8px;">متوازن</div>
             </div>
         </div>
 
         <div style="margin-top:20px; display:flex; flex-direction:column; gap:8px;">
-            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#cbd5e1;"><span>🔥 النار (أ هـ ط م ف ش ذ)</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#334155; font-weight:600;"><span>🔥 النار (أ هـ ط م ف ش ذ)</span></div>
             <div class="elem-progress-bar"><div id="elemBarFire" class="elem-progress-fill" style="width:25%; background:#ef4444;"></div></div>
 
-            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#cbd5e1;"><span>⛰️ التراب (ب و ي ن ص ت ض)</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#334155; font-weight:600;"><span>⛰️ التراب (ب و ي ن ص ت ض)</span></div>
             <div class="elem-progress-bar"><div id="elemBarEarth" class="elem-progress-fill" style="width:25%; background:#d97706;"></div></div>
 
-            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#cbd5e1;"><span>💨 الهواء (ج ز ك س ق ث ظ)</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#334155; font-weight:600;"><span>💨 الهواء (ج ز ك س ق ث ظ)</span></div>
             <div class="elem-progress-bar"><div id="elemBarAir" class="elem-progress-fill" style="width:25%; background:#38bdf8;"></div></div>
 
-            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#cbd5e1;"><span>💧 الماء (د ح ل ع ر خ غ)</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#334155; font-weight:600;"><span>💧 الماء (د ح ل ع ر خ غ)</span></div>
             <div class="elem-progress-bar"><div id="elemBarWater" class="elem-progress-fill" style="width:25%; background:#3b82f6;"></div></div>
         </div>
     </div>
@@ -1552,7 +1552,7 @@ def get_chambers_visual_js():
         if (metaEl) {
             const tagsHtml = (node.tags || []).map(t => `<span class="atlas-tag-pill">#${t}</span>`).join('');
             metaEl.innerHTML = `
-                <span class="atlas-tag-pill" style="background:${node.color || '#ffd700'}22; color:${node.color || '#ffd700'}; border-color:${node.color || '#ffd700'}55; font-weight:700;">
+                <span class="atlas-tag-pill" style="background:${node.color || '#38bdf8'}22; color:${node.color || '#38bdf8'}; border-color:${node.color || '#38bdf8'}55; font-weight:700;">
                     ${node.category}
                 </span>
                 <span class="atlas-tag-pill">🔗 ${(node.connections || []).length} روابط متصلة</span>

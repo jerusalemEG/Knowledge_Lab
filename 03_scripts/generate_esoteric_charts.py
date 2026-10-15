@@ -21,7 +21,7 @@ def get_esoteric_charts_css():
         border: 2px solid var(--border-gold-strong);
         border-radius: 28px;
         padding: 30px 24px;
-        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(184, 134, 11, 0.12);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(100, 116, 139, 0.12);
         position: relative;
         overflow: hidden;
     }
@@ -31,7 +31,7 @@ def get_esoteric_charts_css():
         position: absolute;
         inset: 0;
         background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 15%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+                    radial-gradient(circle at 90% 15%, rgba(148, 163, 184, 0.06) 0%, transparent 45%),
                     radial-gradient(circle at 50% 85%, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
         pointer-events: none;
     }
@@ -47,7 +47,7 @@ def get_esoteric_charts_css():
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(254, 240, 138, 0.25));
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(254, 240, 138, 0.25));
         border: 1px solid var(--border-gold);
         border-radius: 24px;
         padding: 5px 20px;
@@ -55,7 +55,7 @@ def get_esoteric_charts_css():
         font-family: 'Amiri', serif;
         font-size: 0.95rem;
         margin-bottom: 12px;
-        box-shadow: 0 2px 10px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 2px 10px rgba(100, 116, 139, 0.15);
     }
 
     .observatory-title {
@@ -108,15 +108,15 @@ def get_esoteric_charts_css():
         border-color: var(--gold);
         color: #0f172a;
         transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 6px 18px rgba(100, 116, 139, 0.15);
     }
 
     .obs-tab-btn.active {
-        background: linear-gradient(135deg, var(--gold), #d4af37);
+        background: linear-gradient(135deg, var(--gold), #64748b);
         border-color: var(--gold);
         color: #ffffff;
         font-weight: 800;
-        box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+        box-shadow: 0 2px 12px rgba(100, 116, 139, 0.3);
     }
 
     /* CHARTS CONTAINER */
@@ -155,11 +155,11 @@ def get_esoteric_charts_css():
     }
 
     .obs-visual-card {
-        background: #ffffff;
-        border: 1.5px solid #cbd5e1;
+        background: radial-gradient(circle at 50% 50%, #0d1527 0%, #090d16 65%, #030712 100%);
+        border: 2px solid #475569;
         border-radius: 22px;
         padding: 24px;
-        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+        box-shadow: 0 16px 45px rgba(15, 23, 42, 0.25), 0 0 30px rgba(56, 189, 248, 0.15);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -217,7 +217,7 @@ def get_esoteric_charts_css():
 
     .obs-metric-label {
         font-size: 0.9rem;
-        color: #cbd5e1;
+        color: #475569;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -261,9 +261,9 @@ def get_esoteric_charts_css():
 
     .freq-bar-item:hover, .freq-bar-item.playing {
         border-color: var(--gold-bright);
-        background: rgba(212, 175, 55, 0.12);
+        background: rgba(148, 163, 184, 0.12);
         transform: scale(1.02);
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+        box-shadow: 0 4px 20px rgba(148, 163, 184, 0.25);
     }
 
     .freq-hz-badge {
@@ -273,8 +273,8 @@ def get_esoteric_charts_css():
         min-width: 80px;
         color: var(--gold-bright);
         text-align: center;
-        background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.3);
         padding: 4px 10px;
         border-radius: 8px;
     }
@@ -416,7 +416,7 @@ def get_esoteric_charts_css():
 
     .elem-zodiacs {
         font-size: 0.85rem;
-        color: #cbd5e1;
+        color: #475569;
         line-height: 1.5;
     }
 
@@ -593,7 +593,7 @@ def get_esoteric_charts_html():
                         <canvas id="obsRadarCanvas" width="440" height="440"></canvas>
                         <div style="font-size:0.8rem; color:#94a3b8; margin-top:12px; display:flex; gap:16px;">
                             <span><i class="fa-solid fa-circle" style="color:#10b981; font-size:0.6rem;"></i> الثقل المعرفي الموثق</span>
-                            <span><i class="fa-solid fa-circle" style="color:#ffd700; font-size:0.6rem;"></i> شبكة التوافق والتناظر</span>
+                            <span><i class="fa-solid fa-circle" style="color:#38bdf8; font-size:0.6rem;"></i> شبكة التوافق والتناظر</span>
                         </div>
                     </div>
                     <div class="obs-info-card">
@@ -601,13 +601,13 @@ def get_esoteric_charts_html():
                             <i class="fa-solid fa-shield-cat" style="color:var(--emerald-accent);"></i>
                             <span>توزيع الثقل الباطني عبر الأركان الخمسة</span>
                         </h3>
-                        <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                        <p style="font-size:0.88rem; color:#475569; line-height:1.6; margin:0;">
                             رادار إحصائي تحليلي يقيس تكامل الأركان المعرفية بالموسوعة؛ يبرهن أن كل رمز فلكي أو حرفي له جذر كوزمولوجي ونواة نقدية تحميه من الشعوذة.
                         </p>
                         <div class="obs-metrics-list">
                             <div class="obs-metric-item" onclick="highlightRadarAxis(0)" style="cursor:pointer;">
                                 <span class="obs-metric-label">📜 1. كوزمولوجيا التنزيل وعوالم الملكوت</span>
-                                <span class="obs-metric-value" style="color:#ffd700;">98% يقين</span>
+                                <span class="obs-metric-value" style="color:#38bdf8;">98% يقين</span>
                             </div>
                             <div class="obs-metric-item" onclick="highlightRadarAxis(1)" style="cursor:pointer;">
                                 <span class="obs-metric-label">🪐 2. الفلك المداري والمنازل الـ 28</span>
@@ -689,7 +689,7 @@ def get_esoteric_charts_html():
                                         <span class="freq-planet" style="color:var(--gold-light);">الشمس / الذهب الأثيري</span>
                                     </div>
                                     <div class="freq-progress-track">
-                                        <div class="freq-progress-fill" style="width: 72%; background: linear-gradient(90deg, #ffd700, #10b981);"></div>
+                                        <div class="freq-progress-fill" style="width: 72%; background: linear-gradient(90deg, #38bdf8, #10b981);"></div>
                                     </div>
                                 </div>
                                 <button class="freq-play-btn" title="استمع للنغمة" style="background:var(--gold); color:#070a14;"><i class="fa-solid fa-play"></i></button>
@@ -747,14 +747,14 @@ def get_esoteric_charts_html():
                             <i class="fa-solid fa-music" style="color:var(--gold-bright);"></i>
                             <span id="solfeggio-detail-title">تردد الذهب والتحول (528 Hz)</span>
                         </h3>
-                        <div id="solfeggio-detail-box" style="display:flex; flex-direction:column; gap:12px; font-size:0.88rem; color:#cbd5e1; line-height:1.7;">
+                        <div id="solfeggio-detail-box" style="display:flex; flex-direction:column; gap:12px; font-size:0.88rem; color:#475569; line-height:1.7;">
                             <p>
                                 <strong>الرنين الفيزيائي:</strong> 528 هرتز يُعرف في علم الصوتيات الكونية بتردد الميراكل (تردد المعجزة)، وهو الطنين الرياضي المتطابق مع هندسة الكلوروفيل في النباتات وشبكة بلورات الماء المزدوج.
                             </p>
                             <p>
                                 <strong>التناظر الباطني:</strong> يرتبط بكوكب الشمس، ومعدن الذهب الخالص، ومقام القلب النوراني، ويقابله في منظومة المقامات الروحية حالة "السكينة والطمأنينة".
                             </p>
-                            <div style="background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:12px;">
+                            <div style="background:rgba(148, 163, 184,0.1); border:1px solid rgba(148, 163, 184,0.3); border-radius:12px; padding:12px;">
                                 💡 <strong>تجربة تفاعلية:</strong> اضغط على أي نغمة لسماع ذبذبتها النقية المولدة مباشرة عبر Web Audio API في متصفحك!
                             </div>
                         </div>
@@ -823,10 +823,10 @@ def get_esoteric_charts_html():
 
                     <div class="obs-info-card">
                         <h3 class="obs-info-title">
-                            <i class="fa-solid fa-circle-nodes" style="color:#ffd700;"></i>
+                            <i class="fa-solid fa-circle-nodes" style="color:#38bdf8;"></i>
                             <span id="elem-detail-title">هندسة الطبائع الأربعة والامتزاج الكوني</span>
                         </h3>
-                        <div id="elem-detail-body" style="font-size:0.88rem; color:#cbd5e1; line-height:1.7; display:flex; flex-direction:column; gap:10px;">
+                        <div id="elem-detail-body" style="font-size:0.88rem; color:#475569; line-height:1.7; display:flex; flex-direction:column; gap:10px;">
                             <p>
                                 يمثل التناظر الرباعي (نار، تراب، هواء، ماء) الأساس الرياضي للكيمياء القديمة والطب الأبقراطي والميلوثيسيا الهرمسية؛ حيث تتولد المواليد الثلاثة (جماد، نبات، حيوان) من تصارع وتكامل هذه الطبائع تحت إشراف الأفلاك السبعة.
                             </p>
@@ -900,7 +900,7 @@ def get_esoteric_charts_html():
                             <i class="fa-solid fa-person-rays" style="color:var(--emerald-accent);"></i>
                             <span id="lataif-detail-title">التشريح الروحي والمراكز النورانية السبعة</span>
                         </h3>
-                        <div id="lataif-detail-body" style="font-size:0.88rem; color:#cbd5e1; line-height:1.7; display:flex; flex-direction:column; gap:10px;">
+                        <div id="lataif-detail-body" style="font-size:0.88rem; color:#475569; line-height:1.7; display:flex; flex-direction:column; gap:10px;">
                             <p>
                                 يجمع التصوف الإشراقي والتحقيق الهرمسي على أن الإنسان "عالم صغير" (Microcosm) تنطوي فيه العوالم الكبرى السبعة؛ فكل مركز طاقي يقابل فلكاً سماوياً، وتردداً صوتياً، ومعدناً أرضياً.
                             </p>
@@ -921,10 +921,10 @@ def get_esoteric_charts_html():
                             <div class="epistemic-gauge-card">
                                 <div class="epistemic-header">
                                     <span class="epistemic-name">📖 محكم الوحي والتنزيل (القرآن والسنة الثابتة)</span>
-                                    <span class="epistemic-pct" style="color:#ffd700;">100% قطعي اليقين</span>
+                                    <span class="epistemic-pct" style="color:#38bdf8;">100% قطعي اليقين</span>
                                 </div>
                                 <div class="epistemic-bar-track">
-                                    <div class="epistemic-bar-fill" style="width: 100%; background: linear-gradient(90deg, #ffd700, #10b981);"></div>
+                                    <div class="epistemic-bar-fill" style="width: 100%; background: linear-gradient(90deg, #38bdf8, #10b981);"></div>
                                 </div>
                                 <span class="epistemic-desc">الأصل الحاكم والمهيمن؛ كل ما عارضه من تنجيم أو أساطير فهو باطل مدحوض.</span>
                             </div>
@@ -981,10 +981,10 @@ def get_esoteric_charts_html():
 
                     <div class="obs-info-card">
                         <h3 class="obs-info-title">
-                            <i class="fa-solid fa-scale-unbalanced-flip" style="color:#ffd700;"></i>
+                            <i class="fa-solid fa-scale-unbalanced-flip" style="color:#38bdf8;"></i>
                             <span>معيار الحصانة المعرفية ونفي الدجل</span>
                         </h3>
-                        <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                        <p style="font-size:0.88rem; color:#475569; line-height:1.7; margin:0;">
                             تعتمد الموسوعة ميزاناً معرفياً لا يساوم: الوحي هو القطب الثابت، والعلوم الطبيعية هي سنن التسخير، والرموز الباطنية ليست إلا مرايا لفهم النفس، مما يضمن للقارئ إبحاراً آمناً لا تشوبه خرافة.
                         </p>
                         <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:12px; font-size:0.84rem; color:#a7f3d0;">
@@ -1075,7 +1075,7 @@ def get_esoteric_charts_js():
                 else ctx.lineTo(x, y);
             }
             ctx.closePath();
-            ctx.strokeStyle = level === 5 ? 'rgba(212, 175, 55, 0.4)' : 'rgba(255, 255, 255, 0.08)';
+            ctx.strokeStyle = level === 5 ? 'rgba(148, 163, 184, 0.4)' : 'rgba(255, 255, 255, 0.08)';
             ctx.lineWidth = 1;
             ctx.stroke();
         }
@@ -1088,7 +1088,7 @@ def get_esoteric_charts_js():
             ctx.beginPath();
             ctx.moveTo(centerX, centerY);
             ctx.lineTo(x, y);
-            ctx.strokeStyle = (i === highlightIdx) ? '#ffd700' : 'rgba(212, 175, 55, 0.25)';
+            ctx.strokeStyle = (i === highlightIdx) ? '#38bdf8' : 'rgba(148, 163, 184, 0.25)';
             ctx.lineWidth = (i === highlightIdx) ? 2 : 1;
             ctx.stroke();
 
@@ -1096,7 +1096,7 @@ def get_esoteric_charts_js():
             const lx = centerX + Math.cos(angle) * (radius + 24);
             const ly = centerY + Math.sin(angle) * (radius + 24);
             ctx.font = (i === highlightIdx) ? 'bold 13px Tajawal, sans-serif' : '11px Tajawal, sans-serif';
-            ctx.fillStyle = (i === highlightIdx) ? '#ffd700' : '#cbd5e1';
+            ctx.fillStyle = (i === highlightIdx) ? '#38bdf8' : '#ffffff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillText(labels[i], lx, ly);
@@ -1115,11 +1115,11 @@ def get_esoteric_charts_js():
         ctx.closePath();
         const grad = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, radius);
         grad.addColorStop(0, 'rgba(16, 185, 129, 0.45)');
-        grad.addColorStop(0.7, 'rgba(212, 175, 55, 0.35)');
+        grad.addColorStop(0.7, 'rgba(148, 163, 184, 0.35)');
         grad.addColorStop(1, 'rgba(168, 85, 247, 0.25)');
         ctx.fillStyle = grad;
         ctx.fill();
-        ctx.strokeStyle = '#ffd700';
+        ctx.strokeStyle = '#38bdf8';
         ctx.lineWidth = 2.5;
         ctx.stroke();
 
@@ -1132,7 +1132,7 @@ def get_esoteric_charts_js():
 
             ctx.beginPath();
             ctx.arc(x, y, (i === highlightIdx) ? 7 : 4.5, 0, Math.PI * 2);
-            ctx.fillStyle = (i === highlightIdx) ? '#ffd700' : '#10b981';
+            ctx.fillStyle = (i === highlightIdx) ? '#38bdf8' : '#10b981';
             ctx.fill();
             ctx.strokeStyle = '#fff';
             ctx.lineWidth = 1.5;

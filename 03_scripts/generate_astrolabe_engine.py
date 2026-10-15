@@ -22,7 +22,7 @@ def get_astrolabe_css():
         background: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #edf2f7 100%);
         border: 2px solid var(--border-gold-strong);
         border-radius: 28px;
-        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(184, 134, 11, 0.12);
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(100, 116, 139, 0.12);
         margin: 28px auto 40px auto;
         max-width: 1300px;
         position: relative;
@@ -43,9 +43,9 @@ def get_astrolabe_css():
     .astrolabe-outer-limb {
         position: absolute;
         inset: 0;
-        border: 3px solid #b8860b;
+        border: 3px solid #64748b;
         border-radius: 50%;
-        box-shadow: 0 4px 20px rgba(184, 134, 11, 0.25), inset 0 0 20px rgba(184, 134, 11, 0.15);
+        box-shadow: 0 4px 20px rgba(100, 116, 139, 0.25), inset 0 0 20px rgba(100, 116, 139, 0.15);
         background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);
         animation: astrolabeRotateSlow 160s linear infinite;
         cursor: grab;
@@ -58,7 +58,7 @@ def get_astrolabe_css():
     .astrolabe-rete-ring {
         position: absolute;
         inset: 28px;
-        border: 1.5px dashed rgba(212, 175, 55, 0.5);
+        border: 1.5px dashed rgba(148, 163, 184, 0.5);
         border-radius: 50%;
         animation: astrolabeRotateReverse 100s linear infinite;
         pointer-events: none;
@@ -77,8 +77,8 @@ def get_astrolabe_css():
         position: absolute;
         width: 4px;
         height: 340px;
-        background: linear-gradient(180deg, transparent 0%, #ffd700 20%, #d4af37 50%, #ffd700 80%, transparent 100%);
-        box-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+        background: linear-gradient(180deg, transparent 0%, #64748b 20%, #94a3b8 50%, #64748b 80%, transparent 100%);
+        box-shadow: 0 0 12px rgba(148, 163, 184, 0.6);
         border-radius: 4px;
         pointer-events: none;
         transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -90,9 +90,9 @@ def get_astrolabe_css():
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: radial-gradient(circle, #fef08a 0%, #d4af37 60%, #937322 100%);
-        border: 2px solid #ffd700;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        background: radial-gradient(circle, #f1f5f9 0%, #94a3b8 60%, #475569 100%);
+        border: 2px solid #94a3b8;
+        box-shadow: 0 0 20px rgba(148, 163, 184, 0.6);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -128,7 +128,7 @@ def get_astrolabe_css():
         content: '';
         position: absolute;
         top: 6px; right: 6px; bottom: 6px; left: 6px;
-        border: 1px dashed rgba(184, 134, 11, 0.35);
+        border: 1px dashed rgba(100, 116, 139, 0.35);
         border-radius: 16px;
         pointer-events: none;
     }
@@ -151,7 +151,7 @@ def get_astrolabe_css():
     }
 
     .parchment-celestial-badge {
-        background: rgba(212, 175, 55, 0.15);
+        background: rgba(148, 163, 184, 0.15);
         border: 1px solid var(--border-gold);
         border-radius: 14px;
         padding: 4px 12px;
@@ -198,11 +198,11 @@ def get_astrolabe_css():
     }
 
     .parchment-action-btn {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.08));
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.25), rgba(148, 163, 184, 0.08));
         border: 1.5px solid var(--border-gold);
         border-radius: 12px;
         padding: 10px 20px;
-        color: #fef08a;
+        color: #f1f5f9;
         font-family: 'Tajawal', sans-serif;
         font-size: 0.9rem;
         font-weight: 700;
@@ -216,7 +216,7 @@ def get_astrolabe_css():
     .parchment-action-btn:hover {
         background: var(--gold);
         color: #0f172a;
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        box-shadow: 0 0 20px rgba(148, 163, 184, 0.6);
         transform: translateY(-2px);
     }
 
@@ -243,11 +243,11 @@ def get_astrolabe_html():
         <div class="astrolabe-dial-box" id="astrolabe-dial-box" title="انقر أو اسحب لتدوير الأسطرلاب الفلكي">
             <!-- OUTER ENGRAVED LIMB -->
             <svg class="astrolabe-outer-limb" viewBox="0 0 400 400">
-                <circle cx="200" cy="200" r="192" fill="none" stroke="rgba(212,175,55,0.8)" stroke-width="3"/>
-                <circle cx="200" cy="200" r="182" fill="none" stroke="rgba(212,175,55,0.4)" stroke-width="1" stroke-dasharray="2,4"/>
-                <circle cx="200" cy="200" r="162" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="1.5"/>
+                <circle cx="200" cy="200" r="192" fill="none" stroke="rgba(148, 163, 184,0.8)" stroke-width="3"/>
+                <circle cx="200" cy="200" r="182" fill="none" stroke="rgba(148, 163, 184,0.4)" stroke-width="1" stroke-dasharray="2,4"/>
+                <circle cx="200" cy="200" r="162" fill="none" stroke="rgba(148, 163, 184,0.5)" stroke-width="1.5"/>
                 <!-- Degree graduations (360 degrees markings) -->
-                <g stroke="rgba(212,175,55,0.6)" stroke-width="1.5">
+                <g stroke="rgba(148, 163, 184,0.6)" stroke-width="1.5">
                     <line x1="200" y1="8" x2="200" y2="22"/>
                     <line x1="200" y1="378" x2="200" y2="392"/>
                     <line x1="8" y1="200" x2="22" y2="200"/>
@@ -259,22 +259,22 @@ def get_astrolabe_html():
                     <line x1="336" y1="336" x2="326" y2="326"/>
                 </g>
                 <!-- Arabic Numerals & Astrological Seals -->
-                <text x="200" y="32" fill="#ffd700" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">زحل ♄</text>
-                <text x="368" y="204" fill="#ffd700" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">الشمس ☉</text>
-                <text x="200" y="380" fill="#ffd700" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">القمر ☽</text>
-                <text x="32" y="204" fill="#ffd700" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">المشتري ♃</text>
+                <text x="200" y="32" fill="#94a3b8" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">زحل ♄</text>
+                <text x="368" y="204" fill="#94a3b8" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">الشمس ☉</text>
+                <text x="200" y="380" fill="#94a3b8" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">القمر ☽</text>
+                <text x="32" y="204" fill="#94a3b8" font-family="Amiri" font-size="12" text-anchor="middle" font-weight="bold">المشتري ♃</text>
             </svg>
 
             <!-- RETE & ALMUCANTARS (شبكة السمت والعنكبوت الفلكي) -->
             <svg class="astrolabe-rete-ring" viewBox="0 0 340 340">
                 <!-- Concentric coordinate spheres -->
-                <circle cx="170" cy="170" r="140" fill="none" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+                <circle cx="170" cy="170" r="140" fill="none" stroke="rgba(148, 163, 184,0.3)" stroke-width="1"/>
                 <circle cx="170" cy="170" r="100" fill="none" stroke="rgba(0,240,255,0.35)" stroke-width="1"/>
                 <circle cx="170" cy="170" r="60" fill="none" stroke="rgba(168,85,247,0.35)" stroke-width="1"/>
                 <!-- Eccentric Zodiac Circle (فلك البروج المائل) -->
-                <circle cx="170" cy="140" r="75" fill="none" stroke="#d4af37" stroke-width="2" stroke-dasharray="6,3"/>
+                <circle cx="170" cy="140" r="75" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3"/>
                 <!-- Star Pointers (شظايا الكواكب الثابتة) -->
-                <polygon points="170,15 174,30 166,30" fill="#ffd700"/>
+                <polygon points="170,15 174,30 166,30" fill="#94a3b8"/>
                 <polygon points="315,140 300,144 300,136" fill="#00f0ff"/>
                 <polygon points="170,290 166,275 174,275" fill="#f472b6"/>
                 <polygon points="25,140 40,136 40,144" fill="#10b981"/>
@@ -331,7 +331,7 @@ def get_astrolabe_html():
                     <i class="fa-solid fa-compass"></i>
                     <span id="parchment-btn-label">دخول سلم الأفلاك وعرش الرحمن</span>
                 </button>
-                <button class="parchment-action-btn" onclick="spinAstrolabeRandomly()" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.15); color:#cbd5e1;">
+                <button class="parchment-action-btn" onclick="spinAstrolabeRandomly()" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.15); color:#475569;">
                     <i class="fa-solid fa-arrows-rotate"></i>
                     <span>إدارة الأسطرلاب لفلك آخر</span>
                 </button>

@@ -38,7 +38,7 @@ def get_astrology_chamber_html():
             </div>
 
             <!-- MASTER INPUT INTERACTIVE PANEL -->
-            <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,209,102,0.3); border-radius:20px; padding:28px 22px; margin-bottom:35px; backdrop-filter:blur(14px); box-shadow:0 10px 35px rgba(0,0,0,0.6);">
+            <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(148, 163, 184,0.3); border-radius:20px; padding:28px 22px; margin-bottom:35px; backdrop-filter:blur(14px); box-shadow:0 10px 35px rgba(0,0,0,0.6);">
                 <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:14px; flex-wrap:wrap; gap:12px;">
                     <div style="display:flex; align-items:center; gap:10px;">
                         <span style="font-size:1.8rem;">⚙️</span>
@@ -50,10 +50,10 @@ def get_astrology_chamber_html():
                     
                     <!-- Quick Test Profiles -->
                     <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                        <span style="font-size:0.8rem; color:#cbd5e1;"><i class="fa-solid fa-bolt"></i> نماذج سريعة:</span>
-                        <button type="button" class="quick-profile-btn" onclick="loadAstroProfile('ibn_arabi')" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; border-radius:8px; padding:4px 10px; font-size:0.78rem; cursor:pointer;">ابن عربي</button>
-                        <button type="button" class="quick-profile-btn" onclick="loadAstroProfile('al_biruni')" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; border-radius:8px; padding:4px 10px; font-size:0.78rem; cursor:pointer;">البيروني</button>
-                        <button type="button" class="quick-profile-btn" onclick="loadAstroProfile('alexander')" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; border-radius:8px; padding:4px 10px; font-size:0.78rem; cursor:pointer;">الإسكندر</button>
+                        <span style="font-size:0.8rem; color:#475569;"><i class="fa-solid fa-bolt"></i> نماذج سريعة:</span>
+                        <button type="button" class="quick-profile-btn" onclick="loadAstroProfile('ibn_arabi')" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#475569; border-radius:8px; padding:4px 10px; font-size:0.78rem; cursor:pointer;">ابن عربي</button>
+                        <button type="button" class="quick-profile-btn" onclick="loadAstroProfile('al_biruni')" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#475569; border-radius:8px; padding:4px 10px; font-size:0.78rem; cursor:pointer;">البيروني</button>
+                        <button type="button" class="quick-profile-btn" onclick="loadAstroProfile('alexander')" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#475569; border-radius:8px; padding:4px 10px; font-size:0.78rem; cursor:pointer;">الإسكندر</button>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@ def get_astrology_chamber_html():
                             <span id="card-arabic-nature-badge" style="background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid #ef4444; border-radius:8px; padding:2px 8px; font-size:0.75rem;">طبع ناري</span>
                         </div>
                         <h4 id="card-arabic-sign-title" style="font-family:'Amiri', serif; font-size:1.5rem; color:#fff; margin-bottom:6px;">البرج الباطني: الحمل (حاكمه المريخ)</h4>
-                        <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;" id="card-arabic-details">
+                        <div style="font-size:0.88rem; color:#475569; line-height:1.6;" id="card-arabic-details">
                             جمل الاسم + الأم = <strong>...</strong> | المنزلة القمرية: <strong>...</strong> | الحرف الغالب: <strong>...</strong>
                         </div>
                     </div>
@@ -137,7 +137,7 @@ def get_astrology_chamber_html():
                             <span id="card-western-element-badge" style="background:rgba(244,180,26,0.2); color:var(--gold); border:1px solid var(--gold); border-radius:8px; padding:2px 8px; font-size:0.75rem;">ناري ثابت</span>
                         </div>
                         <h4 id="card-western-sign-title" style="font-family:'Amiri', serif; font-size:1.5rem; color:#fff; margin-bottom:6px;">الشمس: الأسد ♌ | الطالع: السرطان ♋</h4>
-                        <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;" id="card-western-details">
+                        <div style="font-size:0.88rem; color:#475569; line-height:1.6;" id="card-western-details">
                             القمر: <strong>...</strong> | الحاكم الغالب: <strong>...</strong> | وتد السماء (MC): <strong>...</strong>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ def get_astrology_chamber_html():
                             <span id="card-vedic-guna-badge" style="background:rgba(157,78,221,0.2); color:#d8b4fe; border:1px solid #d8b4fe; border-radius:8px; padding:2px 8px; font-size:0.75rem;">Sattva</span>
                         </div>
                         <h4 id="card-vedic-sign-title" style="font-family:'Amiri', serif; font-size:1.5rem; color:#fff; margin-bottom:6px;">النكشاترا: ماغا (Magha)</h4>
-                        <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;" id="card-vedic-details">
+                        <div style="font-size:0.88rem; color:#475569; line-height:1.6;" id="card-vedic-details">
                             برج القمر (Rashi): <strong>...</strong> | كوكب الذات (Atmakaraka): <strong>...</strong>
                         </div>
                     </div>
@@ -161,7 +161,7 @@ def get_astrology_chamber_html():
                             <span id="card-chinese-yin-badge" style="background:rgba(6,214,160,0.2); color:var(--emerald); border:1px solid var(--emerald); border-radius:8px; padding:2px 8px; font-size:0.75rem;">Yang Wood</span>
                         </div>
                         <h4 id="card-chinese-sign-title" style="font-family:'Amiri', serif; font-size:1.5rem; color:#fff; margin-bottom:6px;">عام: الخنزير الخشبي 🐗</h4>
-                        <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;" id="card-chinese-details">
+                        <div style="font-size:0.88rem; color:#475569; line-height:1.6;" id="card-chinese-details">
                             عنصر الولادة: <strong>...</strong> | القطبية: <strong>...</strong> | التناغم الطاقي: <strong>...</strong>
                         </div>
                     </div>
@@ -169,11 +169,11 @@ def get_astrology_chamber_html():
                     <!-- Quick Card 5: Chaldean Vibration -->
                     <div class="astro-identity-card" style="background:rgba(13,19,36,0.85); border:1px solid rgba(255,255,255,0.2); border-radius:18px; padding:22px;">
                         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-                            <span style="color:#cbd5e1; font-size:0.8rem; font-weight:700;">⏱️ البابلي والكلداني</span>
+                            <span style="color:#475569; font-size:0.8rem; font-weight:700;">⏱️ البابلي والكلداني</span>
                             <span id="card-chaldean-hour-badge" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:2px 8px; font-size:0.75rem;">ساعة الشمس</span>
                         </div>
                         <h4 id="card-chaldean-number-title" style="font-family:'Amiri', serif; font-size:1.5rem; color:#fff; margin-bottom:6px;">التردد الكلداني للاسم: 1 (الشمس)</h4>
-                        <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;" id="card-chaldean-details">
+                        <div style="font-size:0.88rem; color:#475569; line-height:1.6;" id="card-chaldean-details">
                             كوكب اليوم الفلكي: <strong>...</strong> | حاكم الوجه (Decan): <strong>...</strong>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ def get_astrology_chamber_html():
                             <span id="card-hermetic-sephira-badge" style="background:rgba(236,72,153,0.2); color:#f472b6; border:1px solid #f472b6; border-radius:8px; padding:2px 8px; font-size:0.75rem;">تيفئيريت (الجمال)</span>
                         </div>
                         <h4 id="card-hermetic-letter-title" style="font-family:'Amiri', serif; font-size:1.5rem; color:#fff; margin-bottom:6px;">حرف سفر يشيرة: تيت (ט)</h4>
-                        <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.6;" id="card-hermetic-details">
+                        <div style="font-size:0.88rem; color:#475569; line-height:1.6;" id="card-hermetic-details">
                             الملاك الحاكم (Shem): <strong>...</strong> | مسار الشجرة: <strong>...</strong>
                         </div>
                     </div>
@@ -199,7 +199,7 @@ def get_astrology_chamber_html():
                     <div style="overflow-x:auto;">
                         <table style="width:100%; border-collapse:collapse; font-size:0.88rem; text-align:right;">
                             <thead>
-                                <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(255,209,102,0.3);">
+                                <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(148, 163, 184,0.3);">
                                     <th style="padding:10px 14px;">المحور التحليلي</th>
                                     <th style="padding:10px 14px;">النظام العربي (الجُمّل)</th>
                                     <th style="padding:10px 14px;">الغربي الاستوائي</th>
@@ -223,7 +223,7 @@ def get_astrology_chamber_html():
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:var(--gold); margin-bottom:12px;">
                         🕌 فيزياء الحساب العربي: استخراج الطالع الباطني والأمزجة الأربعة
                     </h3>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         يعتمد النظام التراثي العربي (كما في مصنفات ابن وحشية، البيروني، البوني في <em>شمس المعارف</em>، وجابر بن حيان) 
                         على مبدأ أن اسم الإنسان واسم أمه يشكلان معاً الشفرة الاهتزازية الأثيرية للولادة الأرضية (حيث يُنسب الجسد للأم).
                     </p>
@@ -264,7 +264,7 @@ def get_astrology_chamber_html():
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:var(--cyan); margin-bottom:12px;">
                         ♈ التنجيم الاستوائي الغربي والخريطة الفلكية (Natal Chart Mechanics)
                     </h3>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         يعتمد النظام الاستوائي (Tropical Zodiac) على موضع الشمس بالنسبة لنقطة الاعتدال الربيعي (Vernal Equinox). 
                         الشمس تمثل الأنا الواعية (Ego / Soul purpose)، والقمر يمثل اللاوعي والانفعالات (Subconscious / Emotional body)، 
                         والطالع (Ascendant) يمثل قناع الشخصية وبوابتها للعالم الخارجي.
@@ -282,7 +282,7 @@ def get_astrology_chamber_html():
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:#fff; margin-bottom:12px;">
                         ⏱️ النظام البابلي والكلداني: ساعات الولادة وذبذبات الاسم
                     </h3>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         أقدم نظام فلكي عرفته البشرية في بلاد الرافدين. يقسم الكلدان اليوم إلى 24 ساعة كوكبية متعاقبة وفق الترتيب التنازلي للأفلاك 
                         (زحل، المشتري، المريخ، الشمس، الزهرة، عطارد، القمر).
                     </p>
@@ -298,7 +298,7 @@ def get_astrology_chamber_html():
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:#d8b4fe; margin-bottom:12px;">
                         🕉️ التنجيم الفيدي الهندي (Jyotish) والنكشاترا (Nakshatras)
                     </h3>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         يستخدم التنجيم الهندي دائرة البروج النجمية (Sidereal Zodiac) مع تصحيح الأيانامشا (Ayanamsa ≈ 24°). 
                         يركز الفيدا على موضع القمر في القصور النجمية الـ 27 (Nakshatras) لتحديد الكارما الفردية وتطور الروح.
                     </p>
@@ -314,7 +314,7 @@ def get_astrology_chamber_html():
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:var(--emerald); margin-bottom:12px;">
                         🐉 الأركان الصينية الأربعة (BaZi - Four Pillars of Destiny) وعناصر وو شينغ
                     </h3>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         يقوم التقويم القمري الشمسي الصيني على الدورة الستينية (Sexagenary cycle) المكونة من تفاعل الجذوع السماوية العشرة (Heavenly Stems) 
                         والفروع الأرضية الاثني عشر (Earthly Branches)، وحيوانات البروج الصينية مع العناصر الخمسة (خشب، نار، تراب، معدن، ماء).
                     </p>
@@ -330,7 +330,7 @@ def get_astrology_chamber_html():
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:#f472b6; margin-bottom:12px;">
                         ✡️ النظام القبالي والهرمسي: أحرف سفر يشيرة وملائكة الدرجات (Shem HaMephorash)
                     </h3>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         في الفلسفة الهرمسية وكتاب <em>سفر يشيرة (Sefer Yetzirah)</em>، خُلق الكون عبر 22 حرفاً تمثل مسارات شجرة الحياة. 
                         الأحرف الـ 12 البسيطة تقابل البروج الـ 12، والأحرف الـ 7 المزدوجة تقابل الكواكب السبعة، 
                         كما تنقسم درجات البروج الـ 360 إلى 72 مقطعاً يحكم كل منها اسم وملاك روحي.
@@ -343,7 +343,7 @@ def get_astrology_chamber_html():
 
             <!-- SUB-VIEW 8: ENCYCLOPEDIC LIBRARY & CRITIQUE -->
             <div id="astro-sub-library" class="astro-sub-view">
-                <div style="background:rgba(13,19,36,0.9); border:1px solid rgba(255,209,102,0.3); border-radius:20px; padding:28px 22px; margin-bottom:25px;">
+                <div style="background:rgba(13,19,36,0.9); border:1px solid rgba(148, 163, 184,0.3); border-radius:20px; padding:28px 22px; margin-bottom:25px;">
                     <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:var(--gold); margin-bottom:12px;">
                         📚 ديوان أمهات كتب الفلك والتنجيم والتحرير العلمي والشرعي
                     </h3>
@@ -351,25 +351,25 @@ def get_astrology_chamber_html():
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:25px;">
                         <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
                             <h4 style="color:var(--gold); margin-bottom:6px;"><i class="fa-solid fa-book"></i> كتاب التفهيم لأوائل صناعة التنجيم — أبو الريحان البيروني</h4>
-                            <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.7;">
+                            <p style="font-size:0.84rem; color:#475569; line-height:1.7;">
                                 العمدة في التمييز بين علم الهيئة الرياضي وأحكام النجوم. صاغه البيروني بأسلوب السؤال والجواب، ورسم فيه خرائط الدوائر والأفلاك والمطارح.
                             </p>
                         </div>
                         <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
                             <h4 style="color:var(--cyan); margin-bottom:6px;"><i class="fa-solid fa-book"></i> المدخل الكبير إلى أحكام النجوم — أبو معشر البلخي</h4>
-                            <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.7;">
+                            <p style="font-size:0.84rem; color:#475569; line-height:1.7;">
                                 المرجع الأكبر الذي تُرجم للاتينية وأثر في عصر النهضة الأوروبية. وضع أسس أدوار الكواكب والمواليد وتحاويل السنين والقرانات.
                             </p>
                         </div>
                         <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
                             <h4 style="color:#d8b4fe; margin-bottom:6px;"><i class="fa-solid fa-book"></i> التترابيبلوس (الأجزاء الأربعة) — بطليموس السكندري</h4>
-                            <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.7;">
+                            <p style="font-size:0.84rem; color:#475569; line-height:1.7;">
                                 الدستور المؤسس للتنجيم الكلاسيكي الغربي؛ فسر التأثيرات الفلكية كأشعة حرارية ورطوبية طبيعية تؤثر على البيئة والأمزجة.
                             </p>
                         </div>
                         <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
                             <h4 style="color:var(--emerald); margin-bottom:6px;"><i class="fa-solid fa-book"></i> غاية الحكيم (Picatrix) — المسلمة المجريطي</h4>
-                            <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.7;">
+                            <p style="font-size:0.84rem; color:#475569; line-height:1.7;">
                                 كتاب السحر الفلكي الأوسع شهرة في العصور الوسطى؛ يبين كيفية رصد الأوقات الكوكبية وصناعة الصور والطلاسم المتناغمة مع طبائع الكواكب.
                             </p>
                         </div>
@@ -378,7 +378,7 @@ def get_astrology_chamber_html():
                     <!-- Rigorous Sharia & Scientific Criterion -->
                     <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.3); border-radius:14px; padding:18px;">
                         <h4 style="color:#ef4444; margin-bottom:8px;"><i class="fa-solid fa-scale-balanced"></i> الضابط الشرعي والتحرير العلمي الصارم</h4>
-                        <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.8; margin:0;">
+                        <p style="font-size:0.88rem; color:#475569; line-height:1.8; margin:0;">
                             يفرق المحققون (كابن تيمية وابن خلدون والرازي) بين <strong>علم التسيير والحساب</strong> (حركة الأجرام ومواقيت الصلاة وفصول السنة والمد والجزر) 
                             وهو علم يقيني مشروع نافع، وبين <strong>ادعاء علم الغيب والتنجيم القضائي القطعي</strong> الذي يزعم أن الكواكب فاعلة بذاتها ومتحكمة في مصائر البشر. 
                             إن الكواكب والبروج ليست إلا آيات مسخرات بأمر الله، وما هذه النظم إلا قوالب سيكولوجية ورمزية تعكس تناغم الكون، والمؤمن لا يرتهن حريته لغير الله.
@@ -698,12 +698,12 @@ def get_astrology_chamber_js():
                 </tr>
                 <tr style="background:rgba(244,180,26,0.04);">
                     <td style="padding:10px 14px; font-weight:700; color:var(--gold);">نقطة القوة والرسالة</td>
-                    <td style="padding:10px 14px; color:#cbd5e1;">${arabicZodiac.desc}</td>
-                    <td style="padding:10px 14px; color:#cbd5e1;">طالع ${ascZodiac.name}: كاريزما ونفاذ حضور</td>
-                    <td style="padding:10px 14px; color:#cbd5e1;">تناغم إيقاع اليوم والساعة الكوكبية</td>
-                    <td style="padding:10px 14px; color:#cbd5e1;">${vedicNakshatra.shakti}</td>
-                    <td style="padding:10px 14px; color:#cbd5e1;">${chineseData.animal.traits}</td>
-                    <td style="padding:10px 14px; color:#cbd5e1;">التناغم مع المركز القبالي</td>
+                    <td style="padding:10px 14px; color:#475569;">${arabicZodiac.desc}</td>
+                    <td style="padding:10px 14px; color:#475569;">طالع ${ascZodiac.name}: كاريزما ونفاذ حضور</td>
+                    <td style="padding:10px 14px; color:#475569;">تناغم إيقاع اليوم والساعة الكوكبية</td>
+                    <td style="padding:10px 14px; color:#475569;">${vedicNakshatra.shakti}</td>
+                    <td style="padding:10px 14px; color:#475569;">${chineseData.animal.traits}</td>
+                    <td style="padding:10px 14px; color:#475569;">التناغم مع المركز القبالي</td>
                 </tr>
             `;
         }
@@ -715,7 +715,7 @@ def get_astrology_chamber_js():
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
                     <div style="background:rgba(0,0,0,0.5); padding:16px; border-radius:12px; border-right:3px solid var(--gold);">
                         <strong style="color:var(--gold); display:block; margin-bottom:4px;"><i class="fa-solid fa-scroll"></i> تفكيك حساب الجُمّل الكبير:</strong>
-                        <div style="font-size:0.86rem; color:#cbd5e1;">
+                        <div style="font-size:0.86rem; color:#475569;">
                             • جمل الاسم "${name}": <strong>${nameVal}</strong><br>
                             • جمل الأم "${mother}": <strong>${motherVal}</strong><br>
                             • المجموع الأثيري الإجمالي: <strong>${totalAbjad}</strong>
@@ -723,14 +723,14 @@ def get_astrology_chamber_js():
                     </div>
                     <div style="background:rgba(0,0,0,0.5); padding:16px; border-radius:12px; border-right:3px solid var(--cyan);">
                         <strong style="color:var(--cyan); display:block; margin-bottom:4px;"><i class="fa-solid fa-moon"></i> المنزلة القمرية الباطنية:</strong>
-                        <div style="font-size:0.86rem; color:#cbd5e1;">
+                        <div style="font-size:0.86rem; color:#475569;">
                             المنزلة رقم <strong>${arabicMansionMod}</strong>: <strong>${arabicMansion}</strong>.<br>
                             خاصيتها: توافق فكري وصفاء حدسي ونفاذ في الأمور الدقيقة.
                         </div>
                     </div>
                     <div style="background:rgba(0,0,0,0.5); padding:16px; border-radius:12px; border-right:3px solid #ef4444;">
                         <strong style="color:#ef4444; display:block; margin-bottom:4px;"><i class="fa-solid fa-fire"></i> الطبع والمزاج والأغذية الملائمة:</strong>
-                        <div style="font-size:0.86rem; color:#cbd5e1;">
+                        <div style="font-size:0.86rem; color:#475569;">
                             الطبع <strong>${arabicNature}</strong> والمزاج <strong>${arabicHumor}</strong>.<br>
                             يُنصح بموازنة هذا الطبع بتجنب الإفراط في المثيرات الحارة وملازمة الأماكن الرطبة والرياضات المائية.
                         </div>
@@ -746,19 +746,19 @@ def get_astrology_chamber_js():
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
                     <div style="background:rgba(0,0,0,0.4); padding:16px; border-radius:12px; border-right:3px solid var(--cyan);">
                         <strong style="color:var(--cyan); display:block; margin-bottom:6px;">☉ الشمس في ${sunZodiac.name} (${sunZodiac.symbol})</strong>
-                        <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                        <p style="font-size:0.84rem; color:#475569; line-height:1.6; margin:0;">
                             تمثل جوهر الوعي والإرادة؛ شخصية تتمتع بـ ${sunZodiac.desc}.
                         </p>
                     </div>
                     <div style="background:rgba(0,0,0,0.4); padding:16px; border-radius:12px; border-right:3px solid #60a5fa;">
                         <strong style="color:#60a5fa; display:block; margin-bottom:6px;">☽ القمر التقديري في ${moonZodiac.name} (${moonZodiac.symbol})</strong>
-                        <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                        <p style="font-size:0.84rem; color:#475569; line-height:1.6; margin:0;">
                             طبيعة المشاعر والانفعالات الباطنية؛ استجابة لاواعية تميل لـ ${moonZodiac.element} وتطلعاته.
                         </p>
                     </div>
                     <div style="background:rgba(0,0,0,0.4); padding:16px; border-radius:12px; border-right:3px solid #a855f7;">
                         <strong style="color:#a855f7; display:block; margin-bottom:6px;">↑ الطالع التقديري: ${ascZodiac.name} (${ascZodiac.symbol})</strong>
-                        <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                        <p style="font-size:0.84rem; color:#475569; line-height:1.6; margin:0;">
                             البوابة التي يراك منها الناس؛ يضفي عليك سمات ${ascZodiac.name} في اللقاءات الأولى والمظهر العام.
                         </p>
                     </div>
@@ -776,7 +776,7 @@ def get_astrology_chamber_js():
                         <span><strong style="color:var(--cyan);">كوكب اليوم:</strong> ${chaldeanTimeData.dayRuler}</span>
                         <span><strong style="color:#a855f7;">كوكب ساعة الولادة:</strong> ${chaldeanTimeData.hourRuler}</span>
                     </div>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin:0;">
                         في الحساب الكلداني البابلي، الرقم <strong>${chaldeanNameNum}</strong> يمنح هالة اهتزازية خاصة تؤثر في القرارات المهنية والعلاقات. 
                         الولادة في ساعة <strong>${chaldeanTimeData.hourRuler}</strong> تجعل الشخص يستجيب لأوقات تعاقب هذا الكوكب خلال اليوم الفلكي.
                     </p>
@@ -790,10 +790,10 @@ def get_astrology_chamber_js():
             vedDet.innerHTML = `
                 <div style="background:rgba(0,0,0,0.4); padding:18px; border-radius:14px;">
                     <h4 style="color:#d8b4fe; margin-bottom:8px;">النكشاترا الحاكمة: ${vedicNakshatra.name}</h4>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin-bottom:8px;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin-bottom:8px;">
                         <strong>الرمز الفيدي:</strong> ${vedicNakshatra.symbol} | <strong>الألوهة الموجهة:</strong> ${vedicNakshatra.deity}
                     </p>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin:0;">
                         <strong>طاقة الشاكتي (Shakti):</strong> ${vedicNakshatra.shakti}. تُعرف هذه المنزلة بتعزيز القدرات الروحية وإلهام الرؤى الواضحة والارتقاء الكارميك.
                     </p>
                 </div>
@@ -806,10 +806,10 @@ def get_astrology_chamber_js():
             chinDet.innerHTML = `
                 <div style="background:rgba(0,0,0,0.4); padding:18px; border-radius:14px;">
                     <h4 style="color:var(--emerald); margin-bottom:8px;">برج عام الولادة: ${chineseData.animal.name}</h4>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin-bottom:8px;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin-bottom:8px;">
                         <strong>العنصر والقطبية:</strong> ${chineseData.element} (${chineseData.polarity})
                     </p>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin:0;">
                         <strong>السمات العامة:</strong> ${chineseData.animal.traits}. يتناغم هذا البرج بشكل استثنائي مع مسارات الإبداع والعمل الجماعي المتزن.
                     </p>
                 </div>
@@ -822,10 +822,10 @@ def get_astrology_chamber_js():
             hermDet.innerHTML = `
                 <div style="background:rgba(0,0,0,0.4); padding:18px; border-radius:14px;">
                     <h4 style="color:#f472b6; margin-bottom:8px;">حرف المسار السرياني/العبري: ${hermeticLetter}</h4>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin-bottom:8px;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin-bottom:8px;">
                         <strong>سفيرا شجرة الحياة المقابلة:</strong> ${sephiraSphere}
                     </p>
-                    <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.7; margin:0;">
                         يمثل هذا الحرف في كتاب <em>سفر يشيرة</em> قناة النور الواصلة بين العوالم العلوية والعوالم السفلية، مما يمنح حامله قوة التركيز والتجلي المعرفي.
                     </p>
                 </div>

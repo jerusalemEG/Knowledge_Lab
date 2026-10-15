@@ -221,7 +221,7 @@ def generate_unified_html(nodes, links):
             --border-glass: rgba(148, 163, 184, 0.2);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --gold: #d4af37;
+            --gold: #64748b;
             --gold-glow: rgba(148, 163, 184, 0.35);
             --cyan: #38bdf8;
             --rose: #fb7185;
@@ -957,7 +957,7 @@ def generate_unified_html(nodes, links):
         .treatise-card-body {{
             font-size: 0.92rem;
             line-height: 1.85;
-            color: #cbd5e1;
+            color: #475569;
         }}
         .treatise-card-body p {{
             margin-bottom: 12px;
@@ -1020,7 +1020,7 @@ def generate_unified_html(nodes, links):
             margin-bottom: 20px;
             font-size: 0.92rem;
             line-height: 1.8;
-            color: #cbd5e1;
+            color: #475569;
         }}
         .orbit-box-header {{
             display: flex;
@@ -1103,7 +1103,7 @@ def generate_unified_html(nodes, links):
         .civ-card-text {{
             font-size: 0.86rem;
             line-height: 1.75;
-            color: #cbd5e1;
+            color: #475569;
         }}
 
         /* Panoramic Matrix Table Styles */
@@ -1169,7 +1169,7 @@ def generate_unified_html(nodes, links):
         .panoramic-spheres-table td {{
             padding: 12px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: #cbd5e1;
+            color: #475569;
         }}
         .panoramic-spheres-table tr:hover td {{
             background: rgba(255, 255, 255, 0.03);
@@ -1230,7 +1230,7 @@ def generate_unified_html(nodes, links):
             flex: 0 0 auto;
             background: rgba(15, 23, 42, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
+            color: #475569;
             padding: 10px 16px;
             border-radius: 14px;
             cursor: pointer;
@@ -1332,7 +1332,7 @@ def generate_unified_html(nodes, links):
         .sym-card-content {{
             font-size: 0.9rem;
             line-height: 1.8;
-            color: #cbd5e1;
+            color: #475569;
         }}
         .odyssey-epiphany-box {{
             background: radial-gradient(circle at center, rgba(0, 240, 255, 0.08) 0%, rgba(15, 23, 42, 0.4) 100%);
@@ -1435,7 +1435,7 @@ def generate_unified_html(nodes, links):
         .z-pill-btn {{
             background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #cbd5e1;
+            color: #475569;
             padding: 7px 12px;
             border-radius: 12px;
             cursor: pointer;
@@ -1638,7 +1638,7 @@ def generate_unified_html(nodes, links):
             border-color: rgba(245, 158, 11, 0.3);
             color: #fbbf24;
         }}
-        .age-desc {{ font-size: 0.9rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 16px; text-align: justify; }}
+        .age-desc {{ font-size: 0.9rem; color: #475569; line-height: 1.7; margin-bottom: 16px; text-align: justify; }}
         .age-shadow-box {{
             background: rgba(0, 0, 0, 0.35);
             border-right: 3px solid var(--rose);
@@ -1813,7 +1813,7 @@ def generate_unified_html(nodes, links):
         .m-rank-btn {{
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-glass);
-            color: #cbd5e1;
+            color: #475569;
             padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.8rem;
@@ -2013,7 +2013,7 @@ def generate_unified_html(nodes, links):
             flex: 0 0 auto;
             background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #cbd5e1;
+            color: #475569;
             padding: 7px 12px;
             border-radius: 12px;
             cursor: pointer;
@@ -3177,7 +3177,7 @@ def generate_unified_html(nodes, links):
                 <div style="font-size: 2rem; line-height: 1;">📐</div>
                 <div>
                     <h4 style="color: var(--cyan); margin: 0 0 6px 0; font-size: 1.1rem;">الحساب الفلكي الدقيق لدورات الـ 2,160 سنة ومفهوم «برزخ العصور» (The Transition Cusp)</h4>
-                    <p style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.7; margin: 0;">
+                    <p style="color: #475569; font-size: 0.88rem; line-height: 1.7; margin: 0;">
                         تتحرك نقطة الاعتدال الربيعي تراجعياً بمقدار درجة واحدة كل 72 سنة شمسية. وبما أن كل برج يشغل $30^\circ$ قوسية بالضبط، فإن مدة العصر الفلكي الواحد تساوي رياضياً: <strong>$72 \times 30 = 2,160$ سنة شمسية</strong>، والدورة الكبرى الكاملة للاثني عشر برجاً تساوي: <strong>$2,160 \times 12 = 25,920$ سنة</strong> (السنة الأفلاطونية العظمى).<br>
                         <strong>متى يبدأ العصر الجديد؟</strong> لا يحدث الانتقال فجأة في ليلة واحدة، بل توجد فترة تداخل فلكي تُسمى <strong>«برزخ العصور» (Cusp of Ages)</strong> تمتد لنحو $2^\circ$ إلى $3^\circ$ (حوالي 150 إلى 200 سنة). لذلك، بدأ مخاض عصر الدلو مع الثورة التقنية والمعلوماتية (~1980 - 2020 م)، بينما يقع المركز الرياضي الفلكي لدخول قلب عصر الدلو في عام <strong>2,160 ميلادي</strong>، مكملاً تمام الـ 2,160 سنة لعصر الحوت الذي بدأ مع مطلع ميلاد السيد المسيح (1 م).
                     </p>
@@ -5384,7 +5384,7 @@ def generate_unified_html(nodes, links):
                                 <div class="z-prop-row"><span class="z-prop-lbl">السبط الرسالي:</span><span class="z-prop-val">${{z.tribe.split('(')[0].trim()}}</span></div>
                             </div>
 
-                            <p class="zodiac-desc" style="font-size:0.88rem; line-height:1.75; color:#cbd5e1; margin-top:10px;">${{z.desc}}</p>
+                            <p class="zodiac-desc" style="font-size:0.88rem; line-height:1.75; color:#475569; margin-top:10px;">${{z.desc}}</p>
 
                             <div style="background:rgba(168,85,247,0.08); border:1px solid rgba(168,85,247,0.25); border-radius:10px; padding:10px 12px; margin-top:12px; font-size:0.82rem; line-height:1.6; color:#e2e8f0;">
                                 <div style="color:#c084fc; font-weight:700; margin-bottom:3px; display:flex; align-items:center; gap:6px;">
@@ -5493,7 +5493,7 @@ def generate_unified_html(nodes, links):
                             <span style="color:#e2e8f0;">${{z.sacred_incense}}</span>
                         </div>
                     </div>
-                    <div style="margin-top:12px; padding-top:10px; border-top:1px dashed rgba(168,85,247,0.25); font-size:0.85rem; color:#cbd5e1; line-height:1.7;">
+                    <div style="margin-top:12px; padding-top:10px; border-top:1px dashed rgba(168,85,247,0.25); font-size:0.85rem; color:#475569; line-height:1.7;">
                         <strong style="color:#94a3b8;">السر الحرفي والطلسمي في كتب الحكمة:</strong> ${{z.talisman_invocation}}
                     </div>
                 </div>
@@ -5626,7 +5626,7 @@ def generate_unified_html(nodes, links):
                         </div>
                         <div class="c-meta-item">
                             <span class="c-meta-lbl">🧪 المرحلة الخيميائية</span>
-                            <span class="c-meta-val" style="color: #cbd5e1;">${{era.alchemy}}</span>
+                            <span class="c-meta-val" style="color: #475569;">${{era.alchemy}}</span>
                         </div>
                         <div class="c-meta-item">
                             <span class="c-meta-lbl">🌟 الرموز النموذجية</span>
@@ -5747,7 +5747,7 @@ def generate_unified_html(nodes, links):
                         <td><b style="color: #34d399;">${{a.prophet}}</b></td>
                         <td><span style="color: #fbbf24;">${{a.monument}}</span></td>
                         <td><small style="color: #e2e8f0; line-height: 1.5; display: block; max-width: 240px;">${{a.desc.slice(0, 130)}}...</small></td>
-                        <td><span style="color: #00f0ff;">${{a.yuga}}</span><br><small style="color: #cbd5e1;">${{a.alchemy}}</small></td>
+                        <td><span style="color: #00f0ff;">${{a.yuga}}</span><br><small style="color: #475569;">${{a.alchemy}}</small></td>
                         <td><small style="color: #fef08a; font-family: 'Amiri', serif; line-height: 1.6; display: block; max-width: 220px;">${{a.quran.slice(0, 100)}}...</small></td>
                     </tr>
                 `).join('');
@@ -5818,7 +5818,7 @@ def generate_unified_html(nodes, links):
                         </div>
                         <div class="c-meta-item">
                             <span class="c-meta-lbl">⚖️ المبدأ الهرمسي</span>
-                            <span class="c-meta-val" style="color: #cbd5e1;">${{rank.hermetic}}</span>
+                            <span class="c-meta-val" style="color: #475569;">${{rank.hermetic}}</span>
                         </div>
                         <div class="c-meta-item">
                             <span class="c-meta-lbl">📜 البطريرك في التراث القديم</span>
@@ -5833,7 +5833,7 @@ def generate_unified_html(nodes, links):
 
                     <div class="c-box" style="margin-top: 14px; background: rgba(0,0,0,0.35); border-right: 3px solid ${{rank.color}};">
                         <span class="c-box-title" style="color: ${{rank.color}};">🏛️ الإجماع الحضاري العالمي ومطابقة الأنساق</span>
-                        <div style="font-size: 0.85rem; line-height: 1.7; color: #cbd5e1; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 8px;">
+                        <div style="font-size: 0.85rem; line-height: 1.7; color: #475569; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 8px;">
                             <div><strong style="color: #00f0ff;">🕉️ الفيدا ولوكاس:</strong> ${{rank.vedic_india}}</div>
                             <div><strong style="color: #34d399;">☯️ الطاوية والصين:</strong> ${{rank.china_tao}}</div>
                             <div><strong style="color: #fbbf24;">🏛️ بابل والرافدين:</strong> ${{rank.babylon}}</div>
@@ -5918,7 +5918,7 @@ def generate_unified_html(nodes, links):
                         <td class="col-anatomy"><span style="color: var(--cyan); font-weight: 600;">${{s.chakra}}</span></td>
                         <td class="col-anatomy"><small style="color: #e2e8f0;">${{s.gland}}</small></td>
                         <td class="col-alchemical"><b style="color: ${{s.color}};">${{s.metal}}</b></td>
-                        <td class="col-alchemical"><small style="color: #cbd5e1;">${{s.hermetic.slice(0, 45)}}</small></td>
+                        <td class="col-alchemical"><small style="color: #475569;">${{s.hermetic.slice(0, 45)}}</small></td>
                         <td class="col-anatomy"><span style="color: #a78bfa; font-weight: 600;">${{s.freqHz}}</span></td>
                         <td class="col-civilizations"><small style="color: #00f0ff;">${{s.vedic_india.slice(0, 50)}}...</small></td>
                         <td class="col-civilizations"><small style="color: #34d399;">${{s.china_tao.slice(0, 50)}}...</small></td>

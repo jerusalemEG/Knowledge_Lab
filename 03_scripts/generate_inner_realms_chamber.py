@@ -24,7 +24,7 @@ def get_inner_realms_chamber_html():
                     <span style="background:rgba(56,189,248,0.18); border:1px solid #38bdf8; color:#38bdf8; padding:5px 14px; border-radius:20px; font-size:0.85rem; font-weight:700;">
                         🪐 الركن الرابع: ديوان العوالم الخفية وسفر الوعي
                     </span>
-                    <span style="background:rgba(255,209,102,0.14); border:1px solid var(--gold); color:var(--gold); padding:5px 14px; border-radius:20px; font-size:0.85rem; font-weight:700;">
+                    <span style="background:rgba(148, 163, 184,0.14); border:1px solid var(--gold); color:var(--gold); padding:5px 14px; border-radius:20px; font-size:0.85rem; font-weight:700;">
                         الباب 20 • دراسة مقارنة ومختبر تفاعلي
                     </span>
                 </div>
@@ -72,7 +72,7 @@ def get_inner_realms_chamber_html():
                         </div>
                     </div>
 
-                    <p style="color:#cbd5e1; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
+                    <p style="color:#475569; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
                         شغلت فكرة "العوالم المحجوبة داخل الأرض" مخيلة الحضارات الإنسانية منذ فجر التاريخ. فلم تكن الأرض في وعي القدماء مجرد كتلة صماء من الصخور والمعادن، بل كائناً حياً يحوي أروقة باطنية، وأنهاراً سفلية، وحضارات مخبأة وراء بوابات قطبية أو كهوف عميقة، حيث يلتقي الحكماء بعيداً عن اضطرابات السطح.
                     </p>
 
@@ -88,7 +88,7 @@ def get_inner_realms_chamber_html():
                             <p style="color:#94a3b8; font-size:0.92rem; line-height:1.75; margin-bottom:12px;">
                                 في المعتقدات الفيدية والبوذية التبتية، يُشار إلى <strong>شامبالا (Shambhala)</strong> كأرض مقدسة يسودها الصفاء الروحي، بينما تطورت في الأدبيات الثيوصوفية في القرنين التاسع عشر والعشرين أسطورة <strong>أغارثا (Agartha)</strong> كشبكة أنفاق تمتد في باطن الأرض يحكمها "ملك العالم" (King of the World).
                             </p>
-                            <div style="background:rgba(0,0,0,0.3); border-radius:10px; padding:12px; font-size:0.85rem; color:#cbd5e1;">
+                            <div style="background:rgba(0,0,0,0.3); border-radius:10px; padding:12px; font-size:0.85rem; color:#475569;">
                                 <strong style="color:var(--gold);">الرمزية الفلسفية:</strong> ترمز أغارثا إلى "المركز الروحي الباطن" في قلب الإنسان، حيث الحكمة النقية المحجوبة عن حواس السطح الصاخبة.
                             </div>
                         </div>
@@ -102,7 +102,7 @@ def get_inner_realms_chamber_html():
                             <p style="color:#94a3b8; font-size:0.92rem; line-height:1.75; margin-bottom:12px;">
                                 في الفلسفة الإشراقية عند شهاب الدين السهروردي وميتافيزيقا محيي الدين بن عربي، يُطرح مفهوم <strong>عالم المثال والملكوت (Mundus Archetypus)</strong> و"أرض الحقيقة" التي تقع وراء جبل قاف، وتضم مدينتي <strong>جابلقا</strong> (في أقصى المشرق) و<strong>جابرسا</strong> (في أقصى المغرب).
                             </p>
-                            <div style="background:rgba(0,0,0,0.3); border-radius:10px; padding:12px; font-size:0.85rem; color:#cbd5e1;">
+                            <div style="background:rgba(0,0,0,0.3); border-radius:10px; padding:12px; font-size:0.85rem; color:#475569;">
                                 <strong style="color:#d8b4fe;">المعنى العرفاني:</strong> هذه المدن ليست تضاريس مادية قابلة للحفر والمسح الجغرافي، بل هي أبعاد لطيفة تتجسد فيها المعاني والأرواح بصور مثالية خيالية.
                             </div>
                         </div>
@@ -116,7 +116,7 @@ def get_inner_realms_chamber_html():
                             <p style="color:#94a3b8; font-size:0.92rem; line-height:1.75; margin-bottom:12px;">
                                 أثبتت علوم الزلازل والموجات الارتدادية الجيولوجية (Seismology) في القرن العشرين والواحد والعشرين أن الأرض مكونة من طبقات مصمتة ومضغوطة: القشرة الصخرية، الوشاح الصلب واللزج، اللب الخارجي المنصهر (حديد ونيكل عند 4000° مئوية)، واللب الداخلي الصلب فائق الكثافة.
                             </p>
-                            <div style="background:rgba(0,0,0,0.3); border-radius:10px; padding:12px; font-size:0.85rem; color:#cbd5e1;">
+                            <div style="background:rgba(0,0,0,0.3); border-radius:10px; padding:12px; font-size:0.85rem; color:#475569;">
                                 <strong style="color:#06d6a0;">الخلاصة العلمية:</strong> تنعدم أي فراغات جوفاء أو أراضٍ داخلية قادرة على إيواء حياة بيولوجية، مما يؤكد أن نصوص الأراضي الباطنية نصوص أدبية ومجازية صرفة.
                             </div>
                         </div>
@@ -133,7 +133,7 @@ def get_inner_realms_chamber_html():
                             <button onclick="inspectSubterraneanLayer('agartha')" class="layer-pill-btn" id="layer-btn-agartha">أغارثا والمدن الباطنية (المجاز الأسطوري)</button>
                             <button onclick="inspectSubterraneanLayer('core')" class="layer-pill-btn" id="layer-btn-core">اللب المنصهر والمركز المغناطيسي</button>
                         </div>
-                        <div id="subterranean-inspector-display" style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:18px; color:#cbd5e1; font-size:0.95rem; line-height:1.7;">
+                        <div id="subterranean-inspector-display" style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:18px; color:#475569; font-size:0.95rem; line-height:1.7;">
                             اختر إحدى الطبقات لاستعراض التوازي بين الحقيقة الجيولوجية والرمزية الميثولوجية القديمة.
                         </div>
                     </div>
@@ -155,7 +155,7 @@ def get_inner_realms_chamber_html():
                         </div>
                     </div>
 
-                    <p style="color:#cbd5e1; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
+                    <p style="color:#475569; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
                         تزخر الأدبيات الباطنية والمدارس الروحية الحديثة بمفاهيم مثل "القرين"، و"الطفيلات الأثيرية" (Astral Parasites)، واليرقات الفكرية (Larvae). وعند دراسة هذه المفاهيم بعين الفحص العلمي والتحليلي، يتضح أنها تمثيلات استعارية ومجازية لحالات الإرهاق العصبي، والوساوس القهرية، والضغوط النفسية المتراكمة.
                     </p>
 
@@ -167,7 +167,7 @@ def get_inner_realms_chamber_html():
                             <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.3rem; margin-top:0; margin-bottom:12px;">
                                 📜 ما قالته الأدبيات الثيوصوفية والباطنية
                             </h3>
-                            <ul style="color:#cbd5e1; font-size:0.93rem; line-height:1.85; padding-right:20px; margin:0;">
+                            <ul style="color:#475569; font-size:0.93rem; line-height:1.85; padding-right:20px; margin:0;">
                                 <li><strong>الصور الفكرية (Thought-Forms):</strong> يرى كتاب *Thought-Forms* (ليدبيتر وبيزانت 1901) أن كل فكرة مشحونة بانفعال قوي تولد شكلاً طاقياً يسبح في الهالة المحيطة بالإنسان.</li>
                                 <li><strong>اليرقات والطفيلات:</strong> تفترض كتب الماجيك القديم أن الأفكار السوداوية والإدمان يجلب كائنات غير مرئية تقتات على الطاقة الحيوية للإنسان.</li>
                                 <li><strong>القرين:</strong> وُصف تارة بأنه الكيان المصاحب المائل للوسوسة وتارة بأنه النظير الباطني غير المرئي للإنسان.</li>
@@ -179,7 +179,7 @@ def get_inner_realms_chamber_html():
                             <h3 style="color:#38bdf8; font-family:'Amiri',serif; font-size:1.3rem; margin-top:0; margin-bottom:12px;">
                                 🧠 الرؤية العلمية والنفسية المعاصرة
                             </h3>
-                            <ul style="color:#cbd5e1; font-size:0.93rem; line-height:1.85; padding-right:20px; margin:0;">
+                            <ul style="color:#475569; font-size:0.93rem; line-height:1.85; padding-right:20px; margin:0;">
                                 <li><strong>الظل النفسي (Carl Jung's Shadow):</strong> القرين هو انعكاس رمزي دقيق لـ "الظل النفسي" في التحليل النفسي؛ وهو مجموع الرغبات المكبوتة والمخاوف غير المعالجة في اللاشعور.</li>
                                 <li><strong>حلقة الاستنزاف العصبي (Cognitive Rumination):</strong> "الطفيلات" ليست كائنات خارجية، بل هي حلقة الاجترار الذهني (Rumination) وزيادة نشاط شبكة الوضع الافتراضي (DMN) في الدماغ عند القلق.</li>
                                 <li><strong>تفسير الشعور بالثقل:</strong> الإحساس بالثقل في الصدر أو الأطراف ناتج فيزيولوجياً عن ارتفاع هرمون الكورتيزول وتشنج الألياف العضلية السطحية.</li>
@@ -202,7 +202,7 @@ def get_inner_realms_chamber_html():
                                 <div style="color:#94a3b8; font-size:0.87rem; line-height:1.6;">النوم المنتظم (7-8 ساعات) يفعّل الجهاز الغليمفاوي (Glymphatic System) لغسل السموم العصبية بالدماغ.</div>
                             </div>
                             <div style="background:rgba(0,0,0,0.35); border-radius:12px; padding:16px;">
-                                <div style="color:#ffd166; font-weight:700; margin-bottom:6px;">٣. التنفس المتناغم (Coherence)</div>
+                                <div style="color:#94a3b8; font-weight:700; margin-bottom:6px;">٣. التنفس المتناغم (Coherence)</div>
                                 <div style="color:#94a3b8; font-size:0.87rem; line-height:1.6;">تنفس الصندوق (4-4-4-4) يخفض استثارة العصب الحائر ويعيد توازن ضربات القلب والجهاز العصبي السمبثاوي.</div>
                             </div>
                             <div style="background:rgba(0,0,0,0.35); border-radius:12px; padding:16px;">
@@ -229,7 +229,7 @@ def get_inner_realms_chamber_html():
                         </div>
                     </div>
 
-                    <p style="color:#cbd5e1; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
+                    <p style="color:#475569; line-height:1.85; font-size:1.02rem; margin-bottom:25px;">
                         يُعرّف <strong>الإسقاط النجمي (Astral Projection)</strong> أو ما يُصطلح عليه علمياً بـ <em>تجارب الخروج من الجسد (Out-of-Body Experiences - OBE)</em> بأنه حالة وعي يشعر فيها الفرد بانفصال إدراكه البصري والحسي عن جسده المادي. ارتبطت هذه التجربة بأساطير السفر الروحي عبر الأكوان، بينما أثبتت الدراسات العصبية المعاصرة أنها نتاج آليات دماغية مذهلة تحدث أثناء اضطراب التزامن الإدراكي.
                     </p>
 
@@ -273,7 +273,7 @@ def get_inner_realms_chamber_html():
                         <h4 style="color:#38bdf8; font-family:'Amiri',serif; font-size:1.3rem; margin-top:0; margin-bottom:12px;">
                             🔬 التفسير العلمي العصبي لتجارب الخروج من الجسد (Neurological Reality):
                         </h4>
-                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.8; margin-bottom:12px;">
+                        <p style="color:#475569; font-size:0.95rem; line-height:1.8; margin-bottom:12px;">
                             في عام 2002، قام عالم الأعصاب السويسري <strong>أولاف بلانكي (Olaf Blanke)</strong> بنشر دراسة تاريخية في مجلة <em>Nature</em>، حيث تمكن من تحفيز تجربة "الخروج من الجسد" كهربائياً لدى مريضة واعية من خلال تنشيط منطقة محددة في الدماغ تُدعى <strong>التقاطع الصدغي الجداري (Temporoparietal Junction - TPJ)</strong>.
                         </p>
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;" class="dual-grid-responsive">
@@ -305,17 +305,17 @@ def get_inner_realms_chamber_html():
                         </div>
                     </div>
 
-                    <p style="color:#cbd5e1; line-height:1.9; font-size:1.05rem; margin-bottom:30px;">
+                    <p style="color:#475569; line-height:1.9; font-size:1.05rem; margin-bottom:30px;">
                         تعتبر <strong>الأوفاق والمربعات السحرية (Magic Squares)</strong> من أعظم النماذج التي التقى فيها التفكير الرياضي الجبري بالتأويل الفلسفي والرمزية الباطنية عبر تاريخ الحضارات. يقدم هذا القسم تشريحاً علمياً وتاريخياً دقيقاً لقوانين بناء الأوفاق (من 3×3 إلى 9×9)، وتفكيكاً موضوعياً لـ "الشواهد وتجارب النجاح" التي ادعاها القدماء، مع إيضاح البرهان العقلي والعرفاني في تنزيه الحقيقة المحمدية عن أي حصر عددي أو هندسي.
                     </p>
 
                     <!-- CHAPTER 1: THE MATHEMATICAL ANATOMY OF GHAZALI 3X3 -->
                     <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(244,180,26,0.25); border-radius:18px; padding:25px; margin-bottom:28px;">
-                        <h3 style="color:#ffd166; font-family:'Amiri',serif; font-size:1.45rem; margin-top:0; margin-bottom:15px; border-bottom:1px solid rgba(244,180,26,0.2); padding-bottom:10px;">
+                        <h3 style="color:#94a3b8; font-family:'Amiri',serif; font-size:1.45rem; margin-top:0; margin-bottom:15px; border-bottom:1px solid rgba(244,180,26,0.2); padding-bottom:10px;">
                             📐 الفصل الأول: التشريح الرياضي الصارم لمثلث الغزالي (3×3) وكشف لغز ثوابته
                         </h3>
 
-                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.85;">
+                        <p style="color:#475569; font-size:0.95rem; line-height:1.85;">
                             يُطلق على المربع السحري ذي الرتبة 3 اسم "مثلث الغزالي" في التراث العربي والإسلامي، نسبة إلى الفيلسوف حجة الإسلام أبي حامد الغزالي الذي ذكره في مقدمة كتاب <em>المنقذ من الضلال</em> وفي كتاب <em>النفخ والتسوية</em> كمثال رياضي بديع على خواص الأعداد وانسجامها الطبيعي.
                         </p>
 
@@ -349,7 +349,7 @@ def get_inner_realms_chamber_html():
                                 <h4 style="color:#06d6a0; margin:0 0 8px 0; font-size:1.1rem; font-family:'Amiri',serif;">٣. خوارزمية التعمير لأي عدد مطلوب ($N$)</h4>
                                 <p style="color:#94a3b8; font-size:0.88rem; line-height:1.75; margin:0;">
                                     لإسقاط أي عدد كلي $N$ في المثلث، وُضعت المعادلة الجبرية:
-                                    <br><code style="color:#ffd166; background:rgba(0,0,0,0.5); padding:2px 6px; border-radius:4px;">(N - 12) / 3 = المفتاح (Base)</code>
+                                    <br><code style="color:#94a3b8; background:rgba(0,0,0,0.5); padding:2px 6px; border-radius:4px;">(N - 12) / 3 = المفتاح (Base)</code>
                                     <br><strong>حالات الكسر الحسابي:</strong>
                                     <br>• إذا كان الباقي $R=0$: يعمر بزيادة 1 مطردة.
                                     <br>• إذا كان الباقي $R=1$: تزاد 1 في الخانة السابعة (بيت الزاي).
@@ -362,17 +362,17 @@ def get_inner_realms_chamber_html():
                         <div style="background:#030712; border:1px solid rgba(244,180,26,0.3); border-radius:14px; padding:20px; text-align:center; margin-top:20px;">
                             <div style="color:var(--gold); font-size:1rem; font-weight:700; margin-bottom:12px;">مصفوفة مثلث الغزالي الطبيعي 3×3 (ثابت المجموع = 15)</div>
                             <div style="display:inline-grid; grid-template-columns:repeat(3, 75px); gap:6px; margin:0 auto;">
-                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">4</div>
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#94a3b8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">4</div>
                                 <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">9</div>
-                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">2</div>
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#94a3b8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">2</div>
                                 
                                 <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">3</div>
                                 <div style="background:rgba(168,85,247,0.25); border:2px solid #a855f7; color:#fff; font-size:1.6rem; font-weight:800; padding:16px 0; border-radius:8px; box-shadow:0 0 15px rgba(168,85,247,0.4);">5</div>
                                 <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">7</div>
                                 
-                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">8</div>
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#94a3b8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">8</div>
                                 <div style="background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">1</div>
-                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#ffd166; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">6</div>
+                                <div style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:#94a3b8; font-size:1.4rem; font-weight:800; padding:16px 0; border-radius:8px;">6</div>
                             </div>
                             <div style="color:#94a3b8; font-size:0.85rem; margin-top:12px;">لاحظ: كل صف وعمود وقطر يعطي 15 • الخانات الزوجية بالأركان (4, 2, 8, 6) والفردية بالصلبان (9, 3, 7, 1) والمركز (5)</div>
                         </div>
@@ -384,7 +384,7 @@ def get_inner_realms_chamber_html():
                             🔬 الفصل الثاني: تفكيك "الشواهد وتجربة النجاح" وسيكولوجيا الإيمان بفاعلية الأوفاق
                         </h3>
 
-                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.85;">
+                        <p style="color:#475569; font-size:0.95rem; line-height:1.85;">
                             كثيراً ما نقرأ في المخطوطات القديمة عبارات مثل: <em>"وهذا المثلث سر الأسرار وقد شوهد نجاحه بالتجربة القطعية"</em>، ويزعم مروجوها أن المربع كفيل بجلب الأرزاق أو كشف الكنوز أو تيسير الصعاب. فكيف نفسر هذه الشواهد وتلك المزاعم من منظور التحليل العلمي والنفسي؟
                         </p>
 
@@ -419,7 +419,7 @@ def get_inner_realms_chamber_html():
                             🏛️ الفصل الثالث: الأطلس الشامل للأوفاق الكبرى من 4×4 إلى 9×9 وقوانين تعميرها
                         </h3>
 
-                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.85;">
+                        <p style="color:#475569; font-size:0.95rem; line-height:1.85;">
                             تنقسم الأوفاق في علم الرياضيات التوافقية إلى ثلاثة أصناف أساسية لكل صنف منها خوارزمية هندسية مستقلة تماماً لحساب الثابت السحري الطبيعي:
                             <br><code style="color:var(--gold); background:rgba(0,0,0,0.5); padding:3px 8px; border-radius:4px; font-size:1rem;">M = [ n × (n² + 1) ] / 2</code>
                         </p>
@@ -485,10 +485,10 @@ def get_inner_realms_chamber_html():
                             </div>
 
                             <!-- 9x9 SQUARE -->
-                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,209,102,0.2); border-radius:14px; padding:18px;">
+                            <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(148, 163, 184,0.2); border-radius:14px; padding:18px;">
                                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                                    <strong style="color:#ffd166; font-size:1.15rem;">المربع المتسع (9×9 - كوكب القمر)</strong>
-                                    <span style="background:rgba(255,209,102,0.2); color:#ffd166; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 369</span>
+                                    <strong style="color:#94a3b8; font-size:1.15rem;">المربع المتسع (9×9 - كوكب القمر)</strong>
+                                    <span style="background:rgba(148, 163, 184,0.2); color:#94a3b8; padding:2px 8px; border-radius:8px; font-size:0.8rem;">ثابت M = 369</span>
                                 </div>
                                 <p style="color:#94a3b8; font-size:0.88rem; line-height:1.7; margin-bottom:8px;">
                                     <strong>كمال المراتب (81 خانة):</strong> أعلى الأوفاق الكلاسيكية في التراث، خانته المركزية $C = 41$، ويمثل تمام تسلسل الآحاد التسعة متكررة في تسع مجموعات متراكبة بقمة التناغم التناظري.
@@ -512,7 +512,7 @@ def get_inner_realms_chamber_html():
                                 </thead>
                                 <tbody>
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">3×3</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">3×3</td>
                                         <td style="padding:9px;">المثلث (الغزالي)</td>
                                         <td style="padding:9px;">9</td>
                                         <td style="padding:9px; color:#38bdf8;">15</td>
@@ -521,7 +521,7 @@ def get_inner_realms_chamber_html():
                                         <td style="padding:9px;">بطد زهج واح / قطري</td>
                                     </tr>
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">4×4</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">4×4</td>
                                         <td style="padding:9px;">المربع (المشتري)</td>
                                         <td style="padding:9px;">16</td>
                                         <td style="padding:9px; color:#38bdf8;">34</td>
@@ -530,7 +530,7 @@ def get_inner_realms_chamber_html():
                                         <td style="padding:9px;">عكس الأقطار المتصالبة</td>
                                     </tr>
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">5×5</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">5×5</td>
                                         <td style="padding:9px;">المخمس (المريخ)</td>
                                         <td style="padding:9px;">25</td>
                                         <td style="padding:9px; color:#38bdf8;">65</td>
@@ -539,7 +539,7 @@ def get_inner_realms_chamber_html():
                                         <td style="padding:9px;">دي لا لوبير (القفز الفردي)</td>
                                     </tr>
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">6×6</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">6×6</td>
                                         <td style="padding:9px;">المسدس (الشمس)</td>
                                         <td style="padding:9px;">36</td>
                                         <td style="padding:9px; color:#38bdf8;">111</td>
@@ -548,7 +548,7 @@ def get_inner_realms_chamber_html():
                                         <td style="padding:9px;">لوكس وستراشي (LUX)</td>
                                     </tr>
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">7×7</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">7×7</td>
                                         <td style="padding:9px;">المسبع (الزهرة)</td>
                                         <td style="padding:9px;">49</td>
                                         <td style="padding:9px; color:#38bdf8;">175</td>
@@ -557,7 +557,7 @@ def get_inner_realms_chamber_html():
                                         <td style="padding:9px;">البوزجاني التبادلي</td>
                                     </tr>
                                     <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02);">
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">8×8</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">8×8</td>
                                         <td style="padding:9px;">المثمن (عطارد)</td>
                                         <td style="padding:9px;">64</td>
                                         <td style="padding:9px; color:#38bdf8;">260</td>
@@ -566,7 +566,7 @@ def get_inner_realms_chamber_html():
                                         <td style="padding:9px;">الانعكاس المزدوج الرباعي</td>
                                     </tr>
                                     <tr>
-                                        <td style="padding:9px; color:#ffd166; font-weight:700;">9×9</td>
+                                        <td style="padding:9px; color:#94a3b8; font-weight:700;">9×9</td>
                                         <td style="padding:9px;">المتسع (القمر)</td>
                                         <td style="padding:9px;">81</td>
                                         <td style="padding:9px; color:#38bdf8;">369</td>
@@ -585,7 +585,7 @@ def get_inner_realms_chamber_html():
                             👑 الفصل الرابع: البرهان العرفاني والتنزيهي — لماذا لا يوجد وفق للحقيقة المحمدية؟
                         </h3>
 
-                        <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.9;">
+                        <p style="color:#475569; font-size:0.95rem; line-height:1.9;">
                             إذا كانت كتب المخطوطات والرموز قد وضعت أوفاقاً للمقامات الكونية والطبائع الأربعة وعزت لكل نبي من أولي العزم نسبة فلكية جزئية، فلماذا أجمعت الدوائر الفلسفية والعرفانية الرصينة على امتناع وضع وفق يمثل "الحقيقة المحمدية"؟
                         </p>
 
@@ -641,7 +641,7 @@ def get_inner_realms_chamber_html():
 
                     <!-- BRAINWAVE SIMULATOR -->
                     <div style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:24px; margin-bottom:28px;">
-                        <h3 style="color:#ffd166; font-family:'Amiri',serif; font-size:1.3rem; margin-top:0; margin-bottom:14px;">
+                        <h3 style="color:#94a3b8; font-family:'Amiri',serif; font-size:1.3rem; margin-top:0; margin-bottom:14px;">
                             🧠 محاكي الترددات الدماغية وحالات الوعي:
                         </h3>
                         
@@ -658,7 +658,7 @@ def get_inner_realms_chamber_html():
                             <canvas id="brainwave-canvas" width="800" height="120" style="width:100%; max-height:120px; display:block;"></canvas>
                         </div>
 
-                        <div id="brainwave-info-box" style="background:rgba(0,0,0,0.4); border-radius:10px; padding:16px; color:#cbd5e1; font-size:0.92rem; line-height:1.7;">
+                        <div id="brainwave-info-box" style="background:rgba(0,0,0,0.4); border-radius:10px; padding:16px; color:#475569; font-size:0.92rem; line-height:1.7;">
                             <strong>موجات ثيتا (Theta Waves):</strong> هي التردد المرتبط بحالات الرؤى الإبداعية، والحدس العميق، وفترات الانتقال بين اليقظة والنوم. في هذه الحالة يقل حاجز النقد العقلي ويصبح الوعي أكثر استجابة للهدوء والسكينة الداخلية.
                         </div>
                     </div>
@@ -674,7 +674,7 @@ def get_inner_realms_chamber_html():
 
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px;" class="dual-grid-responsive">
                             <div>
-                                <label style="display:block; color:#cbd5e1; font-size:0.88rem; margin-bottom:6px;">مستوى التوتر والإجهاد الذهني:</label>
+                                <label style="display:block; color:#475569; font-size:0.88rem; margin-bottom:6px;">مستوى التوتر والإجهاد الذهني:</label>
                                 <select id="diag-stress" style="width:100%; background:rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.2); color:#fff; padding:10px; border-radius:8px;">
                                     <option value="low">منخفض (ذهن هادئ ومستقر)</option>
                                     <option value="medium" selected>متوسط (ضغوط عمل وتفكير متقطع)</option>
@@ -682,7 +682,7 @@ def get_inner_realms_chamber_html():
                                 </select>
                             </div>
                             <div>
-                                <label style="display:block; color:#cbd5e1; font-size:0.88rem; margin-bottom:6px;">جودة النوم والاستيقاظ:</label>
+                                <label style="display:block; color:#475569; font-size:0.88rem; margin-bottom:6px;">جودة النوم والاستيقاظ:</label>
                                 <select id="diag-sleep" style="width:100%; background:rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.2); color:#fff; padding:10px; border-radius:8px;">
                                     <option value="good" selected>جيدة ومريحة (7+ ساعات متصلة)</option>
                                     <option value="broken">متقطعة مع أحلام مشوشة</option>
@@ -695,7 +695,7 @@ def get_inner_realms_chamber_html():
                             📊 فحص مؤشر النقاء والحصانة الداخلية
                         </button>
 
-                        <div id="diag-result-card" style="display:none; margin-top:18px; background:rgba(0,0,0,0.5); border:1px solid #06d6a0; border-radius:12px; padding:18px; font-size:0.92rem; line-height:1.75; color:#cbd5e1;">
+                        <div id="diag-result-card" style="display:none; margin-top:18px; background:rgba(0,0,0,0.5); border:1px solid #06d6a0; border-radius:12px; padding:18px; font-size:0.92rem; line-height:1.75; color:#475569;">
                             <!-- Output generated dynamically via JS -->
                         </div>
                     </div>
@@ -883,7 +883,7 @@ def get_inner_realms_chamber_js():
                 <span style="background:${color}22; border:1px solid ${color}; color:${color}; padding:3px 10px; border-radius:12px; font-size:0.8rem;">تشخيص فوري</span>
             </div>
             <div style="margin-top:10px;">
-                <strong style="color:#cbd5e1;">التوصيات العملية لتعزيز الحصانة وتوازن الطاقة:</strong>
+                <strong style="color:#475569;">التوصيات العملية لتعزيز الحصانة وتوازن الطاقة:</strong>
                 <div style="margin-top:6px; color:#94a3b8; font-size:0.88rem; line-height:1.7;">
                     ${advice.length > 0 ? advice.join('<br>') : '• وضعك الذهني ممتاز؛ حافظ على روتين الصفاء والرياضة والتأمل اليومي.'}
                 </div>

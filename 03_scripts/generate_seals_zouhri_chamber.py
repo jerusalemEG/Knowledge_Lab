@@ -30,7 +30,7 @@ def get_seals_zouhri_chamber_html():
                 <h1 style="font-family:'Amiri', serif; font-size:2.4rem; font-weight:700; color:#fff; margin-bottom:12px; line-height:1.3;">
                     ديوان الأختام الباطنية، علم الأسارير الكفية، والظاهرة الزوهرية
                 </h1>
-                <p style="color:#cbd5e1; font-size:1.02rem; line-height:1.8; max-width:1100px;">
+                <p style="color:#475569; font-size:1.02rem; line-height:1.8; max-width:1100px;">
                     دراسة أكاديمية استقصائية تجمع بين <strong>الهندسة الرمزية للأختام السليمانية والكوكبية</strong>، 
                     و<strong>موسوعة الأختام الكفية الثلاثين وعلم الأسارير</strong> مع خريطة تشريحية واضحة لعلامة 111 والخطوط، 
                     و<strong>أسرار مثلث الغزالي 3×3 ومحركه الحسابي التفاعلي</strong>، وتفكيك خرافات نبش الكنوز والأرصاد بميزان العقل والطب والشريعة.
@@ -59,7 +59,7 @@ def get_seals_zouhri_chamber_html():
                         <span style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:var(--gold); padding:4px 12px; border-radius:10px; font-size:0.8rem;">فردٌ جبارٌ شكورٌ ثابتٌ ظهيرٌ خبيرٌ زكي</span>
                     </div>
 
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
                         يعد <strong>الخاتم السليماني ذو الرموز السبعة</strong> أشهر الشفرات الرمزية في المخطوطات الهرمسية والإسلامية واليهودية الوسيطة. 
                         نُسب فك شفرته في التراث العربي إلى أمير المؤمنين علي بن أبي طالب في قصيدته المنظومة، كما شرحه البوني في <em>شمس المعارف الكبرى</em> 
                         وأبو حامد الغزالي في <em>المنقذ</em> و<em>الأوفاق</em>، وابن عربي في <em>الفتوحات المكية</em>.
@@ -96,7 +96,7 @@ def get_seals_zouhri_chamber_html():
                                     <circle cx="50" cy="50" r="14" fill="none" stroke="#00f0ff" stroke-width="3"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> نجمة خماسية أو مسدسة محاطة بهالة. ترمز لمركز الوعي وقطبية التوحيد والنفاذ الروحي الأكبر، وهي المفتاح الأول لدائرة الأختام.
                             </p>
                         </div>
@@ -117,7 +117,7 @@ def get_seals_zouhri_chamber_html():
                                     <polygon points="72,10 64,25 80,25" fill="#f4b41a"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> ثلاثة أعمدة متوازية برؤوس حادة كالسهام. ترمز للسيادة على العوالم الثلاثة (الملك والملكوت والجبروت) والشهب الثاقبة.
                             </p>
                         </div>
@@ -134,7 +134,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="72" y1="50" x2="88" y2="70" stroke="#f4b41a" stroke-width="6" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> ميم مغلقة الرأس (طمس) مقطوعة الذيل. ترمز للكتمان، وانطواء السر الإلهي في القلب، وجمع الوعي داخل الذات.
                             </p>
                         </div>
@@ -153,7 +153,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="30" y1="65" x2="70" y2="65" stroke="#06d6a0" stroke-width="6"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> سُلَّم مكون من قائمين وعارضتين. يرمز لمرقاة المعراج الروحي، والتدرج في المراتب الصوفية من الأرض إلى السماوات العلا.
                             </p>
                         </div>
@@ -173,7 +173,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="75" y1="30" x2="75" y2="75" stroke="#f4b41a" stroke-width="6" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> مشط أو أربعة خطوط عمودية على قاعدة واحدة بلا إبهام. ترمز للطبائع الأربعة (نار، هواء، ماء، تراب) وكتابة القدر في الألواح.
                             </p>
                         </div>
@@ -190,7 +190,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="50" y1="45" x2="50" y2="75" stroke="#d8b4fe" stroke-width="4"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> حرف هاء يشبه حافر الفرس المشقوق من وسطه. يرمز لسر الهوية الأزلية (هو) وازدواجية النفس والروح، والنور المنبثق في الصدر.
                             </p>
                         </div>
@@ -207,7 +207,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 56 35 C 75 45, 75 80, 25 80" fill="none" stroke="#f4b41a" stroke-width="6" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <p style="font-size:0.82rem; color:#cbd5e1; line-height:1.6; margin:0;">
+                            <p style="font-size:0.82rem; color:#475569; line-height:1.6; margin:0;">
                                 <strong>الوصف:</strong> واو منحنية ومقوسة الرأس كأنبوب الحجامة. ترمز لحلقة الانتهاء التي ترتد إلى البداية (الأوربوروس / الإغلاق الختامي للحصن السليماني).
                             </p>
                         </div>
@@ -227,7 +227,7 @@ def get_seals_zouhri_chamber_html():
                         <span style="background:rgba(244,180,26,0.15); border:1px solid var(--gold); color:var(--gold); padding:4px 12px; border-radius:10px; font-size:0.8rem;">سر العدد 15 — قطب التوازن 5</span>
                     </div>
 
-                    <p style="color:#cbd5e1; font-size:0.94rem; line-height:1.8; margin-bottom:24px;">
+                    <p style="color:#475569; font-size:0.94rem; line-height:1.8; margin-bottom:24px;">
                         يعد <strong>«مثلث الغزالي»</strong> (المربع السحري 3×3) أقدم الأوفاق الرياضية المكتشفة في تاريخ البشرية وأكثرها قداسة في التراث الهرمسي والإسلامي. 
                         عُرف في الصين القديمة باسم <em>لو شو (Luo Shu - 2800 ق.م)</em>، وترجمه علماء الرياضيات المسلمون (مثل ثابت بن قرة، إخوان الصفا، وأبو الوفاء البوزجاني)، 
                         ثم استشهد به حجة الإسلام <strong>أبو حامد الغزالي</strong> في مصنفاته كمثال عقلي على عجائب خواص التراكيب والأعداد.
@@ -238,7 +238,7 @@ def get_seals_zouhri_chamber_html():
                         <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--gold); margin-bottom:8px;">
                             📜 1. التوثيق التاريخي الصارم في مصنفات الإمام الغزالي
                         </h3>
-                        <div style="color:#cbd5e1; font-size:0.88rem; line-height:1.8;">
+                        <div style="color:#475569; font-size:0.88rem; line-height:1.8;">
                             • <strong>نص الغزالي في كتاب «المنقذ من الضلال»:</strong> استشهد الغزالي بالوفق المثلث صراحةً عندما كان يناقش أطباء عصره والفلاسفة حول حقيقة "خواص الأشياء"، قائلاً: 
                             <blockquote style="margin:10px 0; padding:10px 15px; background:rgba(244,180,26,0.08); border-right:3px solid var(--gold); font-family:'Amiri', serif; font-size:1.05rem; color:#f8fafc; font-style:italic;">
                                 «وكذلك لو قيل لشخص: إذا نُقش في لوح جدول فيه تسعة أعداد، مجموع كل ضلع وقطر خمسة عشر، ووضع تحت امرأة تعسر ولادها خرج الولد سريعاً... لم يصدق به العقل لو لم يشاهده، ولأنكره لو لم يره بالتجربة».
@@ -283,7 +283,7 @@ def get_seals_zouhri_chamber_html():
                         <!-- Mathematical Properties List -->
                         <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px;">
                             <strong style="color:var(--gold); font-size:1.05rem; display:block; margin-bottom:10px;">القوانين الرياضية الثمانية للوفق 3×3:</strong>
-                            <ul style="color:#cbd5e1; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
+                            <ul style="color:#475569; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
                                 <li><strong>مجموع الأضلاع الثابت:</strong> أي صف أو عمود أو قطر = 15 (4+9+2 = 15، 3+5+7 = 15، 8+1+6 = 15).</li>
                                 <li><strong>المساحة الإجمالية:</strong> مجموع الأرقام التسعة = 45، وهو بحساب الجمل مساوٍ لاسم <strong>«آدم»</strong> (أ=1 + د=4 + م=40).</li>
                                 <li><strong>تناظر المركز:</strong> كل رقمين متقابلين عبر المركز مجموعهما 10، ونصفهما المركز 5 (4+6=10، 9+1=10، 2+8=10، 3+7=10).</li>
@@ -303,7 +303,7 @@ def get_seals_zouhri_chamber_html():
                             </h3>
                         </div>
 
-                        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:18px;">
+                        <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:18px;">
                             حفلت مخطوطات السيمياء والتراث الحرفي المتأخر (مثل <em>شمس المعارف الكبرى</em>، <em>منبع أصول الحكمة</em>، ومصنفات <em>الأوفاق</em>) 
                             بنظريات مطولة تزعم أن لـ <strong>«مثلث الغزالي (وفق بطد زهج واح)»</strong> تصاريف باطنية ترتبط بكشف المغيبات وفك موانع الأرض. 
                             هنا نستعرض بدقة بالغة ما سطرته تلك المخطوطات بحرفها، مع وضع الميزان العلمي والأثري والعقلي الصارم أمامها:
@@ -317,7 +317,7 @@ def get_seals_zouhri_chamber_html():
                                 <h4 style="color:var(--gold); font-size:1.1rem; margin-top:0; margin-bottom:10px;">
                                     📜 ما زعمته المخطوطات القديمة وكتب الصنعة:
                                 </h4>
-                                <ul style="color:#cbd5e1; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
+                                <ul style="color:#475569; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
                                     <li><strong>زعم «تفعيل البصيرة وكشف الحجب»:</strong> ادعت المخطوطات أن نقش المثلث في شرف الشمس أو وقت تربيع المشتري مع الزهرة، وحمله مع رياضة حرفية وصيام، يفتح "العين الثالثة" (البصيرة الأثيرية) ويجعل حامله يستشعر الطاقات المخبوءة في الجماد.</li>
                                     <li><strong>زعم «الكشف عن مكان الكنز ودفائن الأرض»:</strong> زعمت كتب الأوفاق أن تقسيم بيوت المثلث وفق العناصر الأربعة (النار للشرق والأعلى، الهواء للجنوب، الماء للغرب والأسفل، التراب للشمال والعمق) يُستخدم عبر حساب أعداد اسم المكان لتحديد جهة ومقدار عمق الذهب المدفون.</li>
                                     <li><strong>زعم «إزالة الأرصاد وصرف عُمّار المكان»:</strong> ادعوا أن تلاوة أسماء أوتاد المثلث (بَطَدٍ زَهَجٍ وَاحٍ) تبطل "رصد الجن" الموكل بحراسة المغارات وتمنع تحول الذهب إلى فحم أو حجارة كما كان يُشاع في الفولكلور.</li>
@@ -329,7 +329,7 @@ def get_seals_zouhri_chamber_html():
                                 <h4 style="color:var(--cyan); font-size:1.1rem; margin-top:0; margin-bottom:10px;">
                                     🔬 الميزان العلمي، الأثري، والشرعي الحقيقي:
                                 </h4>
-                                <ul style="color:#cbd5e1; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
+                                <ul style="color:#475569; font-size:0.85rem; line-height:1.8; margin:0; padding-right:18px;">
                                     <li><strong>حقيقة «البصيرة» عند الإمام الغزالي:</strong> في مصنفاته الأصيلة المعتمدة (<em>مشكاة الأنوار</em> و<em>إحياء علوم الدين</em>)، يؤكد الغزالي أن البصيرة هي <strong>قوة إدراك عقلي وروحي شريف</strong>، تُنال بتطهير النفس من الرذائل، ورياضة الفكر بالبراهين الرياضية والمنطقية؛ وليست حاسة سحرية تُستجلب بالطلاسم والأشكال.</li>
                                     <li><strong>حقيقة الدفائن وعلم الآثار الحديث:</strong> الكنوز الأثرية (الفرعونية، الرومانية، الحميرية) دفنتها حضارات بشرية خضعت لدفن جنائزي أو تحصين عسكري. مفتاح الكشف عنها علمي بحت: تقنيات <strong>رادار اختراق الأرض (GPR)</strong>، و<strong>المسح الكهرومغناطيسي والمقاومية الكهربائية (ERT)</strong>، والمسح الجوي بالليزر <strong>(LiDAR)</strong>، وليس المربعات العددية.</li>
                                     <li><strong>أكذوبة «الرصد وحارس الكنز»:</strong> لا يوجد في صريح الدين ولا في التاريخ ما يثبت أن الجن يحرس ذهباً تحت الأرض، بل هي أسطورة ولدت لتبرير الوفيات الناتجة عن <strong>غازات المقابر السامة (الميثان وغاز الرادون)</strong> و<strong>الفخاخ المعمارية الميكانيكية</strong> (تساقط الصخور والرمال المتحركة).</li>
@@ -353,7 +353,7 @@ def get_seals_zouhri_chamber_html():
                         </div>
                         
                         <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
-                            <label style="color:#cbd5e1; font-size:0.85rem;">أدخل مجموع الضلع المطلوب (N يجب أن يكون 15 أو أكبر):</label>
+                            <label style="color:#475569; font-size:0.85rem;">أدخل مجموع الضلع المطلوب (N يجب أن يكون 15 أو أكبر):</label>
                             <input type="number" id="ghazali-target-sum" value="15" min="15" max="99999" style="background:rgba(15,23,42,0.9); border:1px solid var(--gold); color:#fff; padding:6px 14px; border-radius:8px; font-weight:700; width:120px; font-size:1rem;">
                             <button type="button" onclick="computeLiveGhazaliWafq()" style="background:linear-gradient(135deg, var(--gold), #b45309); border:none; color:#000; font-weight:700; padding:8px 18px; border-radius:8px; cursor:pointer; font-size:0.88rem;">حساب وتعمير الوفق</button>
                         </div>
@@ -377,7 +377,7 @@ def get_seals_zouhri_chamber_html():
                         <span style="background:rgba(0,240,255,0.15); border:1px solid var(--cyan); color:var(--cyan); padding:4px 12px; border-radius:10px; font-size:0.8rem;">30 ختماً موثقاً — خريطة 111 والتلال</span>
                     </div>
 
-                    <p style="color:#cbd5e1; font-size:0.94rem; line-height:1.8; margin-bottom:24px;">
+                    <p style="color:#475569; font-size:0.94rem; line-height:1.8; margin-bottom:24px;">
                         يُعد <strong>«علم الأسارير» (قراءة خطوط الكف - Chiromancy / Cheiromancy)</strong> من أقدم الفنون الفراسية التراثية. 
                         اعتبرت المدارس الفلسفية القديمة (من أبقراط وأرسطو إلى فخر الدين الرازي وابن عربي) أن راحة كف الإنسان هي 
                         <em>«لوح محفوظ مصغر» (Microcosmic Tablet)</em> طُبعت عليه انعكاسات قوى الأفلاك وأمزجة الأعضاء الداخلية.
@@ -388,34 +388,34 @@ def get_seals_zouhri_chamber_html():
                         <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--cyan); margin-bottom:10px;">
                             🌌 1. التناظر الميلوثيسي: تلال الكواكب السبعة على راحة اليد
                         </h3>
-                        <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.8; margin-bottom:12px;">
+                        <p style="color:#475569; font-size:0.88rem; line-height:1.8; margin-bottom:12px;">
                             في الفراسة الميلوثيسية (Melothesia)، لا تُقرأ خطوط الكف بمعزل عن تضاريس اليد، بل تقسم راحة اليد إلى سبع مناطق تسمى "تلال الكواكب" تحكم الطاقات الحيوية:
                         </p>
                         
                         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
                             <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--gold);">
                                 <strong style="color:var(--gold); font-size:0.9rem;">♃ تل المشتري (Mount of Jupiter):</strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة السبابة؛ يرمز للهيبة، القيادة، الطموح الروحي، وعزة النفس.</span>
+                                <span style="font-size:0.82rem; color:#475569; display:block;">يقع عند قاعدة السبابة؛ يرمز للهيبة، القيادة، الطموح الروحي، وعزة النفس.</span>
                             </div>
                             <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid #94a3b8;">
                                 <strong style="color:#94a3b8; font-size:0.9rem;">♄ تل زحل (Mount of Saturn):</strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة الإصبع الأوسط؛ يرمز للحكمة العميقة، الصبر، الميل للعزلة، والتأمل الباطني.</span>
+                                <span style="font-size:0.82rem; color:#475569; display:block;">يقع عند قاعدة الإصبع الأوسط؛ يرمز للحكمة العميقة، الصبر، الميل للعزلة، والتأمل الباطني.</span>
                             </div>
                             <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--gold);">
                                 <strong style="color:var(--gold); font-size:0.9rem;">☉ تل الشمس (Mount of Apollo / Sun):</strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة البنصر؛ يرمز للإشراق، الشهرة، الإبداع الفني، والبريق الوجداني.</span>
+                                <span style="font-size:0.82rem; color:#475569; display:block;">يقع عند قاعدة البنصر؛ يرمز للإشراق، الشهرة، الإبداع الفني، والبريق الوجداني.</span>
                             </div>
                             <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--cyan);">
                                 <strong style="color:var(--cyan); font-size:0.9rem;">☿ تل عطارد (Mount of Mercury):</strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع عند قاعدة الخنصر؛ يرمز للذكاء اللماح، الفصاحة والبلاغة، والحساب والمعاملات.</span>
+                                <span style="font-size:0.82rem; color:#475569; display:block;">يقع عند قاعدة الخنصر؛ يرمز للذكاء اللماح، الفصاحة والبلاغة، والحساب والمعاملات.</span>
                             </div>
                             <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid var(--emerald);">
                                 <strong style="color:var(--emerald); font-size:0.9rem;">♀ تل الزهرة (Mount of Venus):</strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يشمل قاعدة الإبهام المنتفخة؛ يرمز للحيوية الجسدية، قوة العاطفة، والحرارة الفطرية.</span>
+                                <span style="font-size:0.82rem; color:#475569; display:block;">يشمل قاعدة الإبهام المنتفخة؛ يرمز للحيوية الجسدية، قوة العاطفة، والحرارة الفطرية.</span>
                             </div>
                             <div style="background:rgba(0,0,0,0.5); padding:12px; border-radius:10px; border-left:3px solid #60a5fa;">
                                 <strong style="color:#60a5fa; font-size:0.9rem;">☽ تل القمر (Mount of Moon):</strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block;">يقع في أسفل الحافة الخارجية للكف؛ يرمز للحدس الباطني، الخيال، والأحلام الكاشفة.</span>
+                                <span style="font-size:0.82rem; color:#475569; display:block;">يقع في أسفل الحافة الخارجية للكف؛ يرمز للحدس الباطني، الخيال، والأحلام الكاشفة.</span>
                             </div>
                         </div>
                     </div>
@@ -579,7 +579,7 @@ def get_seals_zouhri_chamber_html():
                                     🔑 مفتاح قراءة الخريطة وتمييز العلامات والأختام:
                                 </h4>
                                 
-                                <div style="display:flex; flex-direction:column; gap:10px; font-size:0.86rem; color:#cbd5e1;">
+                                <div style="display:flex; flex-direction:column; gap:10px; font-size:0.86rem; color:#475569;">
                                     <div style="background:rgba(244,180,26,0.1); border-right:3px solid var(--gold); padding:8px 12px; border-radius:6px;">
                                         <strong style="color:var(--gold);">⚡ ختم 111 (الثلاثة عصي والسهام):</strong>
                                         <span style="display:block; font-size:0.8rem; margin-top:2px;">يقع تحت تل الشمس أو المشتري؛ وهو شفرة عددية تعادل اسم الشمس الروحاني (ناخيئيل = 111) وترمز في المخطوطات لنفاذ الإرادة كالسهم الحارق.</span>
@@ -617,7 +617,7 @@ def get_seals_zouhri_chamber_html():
                         <h3 style="font-family:'Amiri', serif; font-size:1.6rem; color:#fff; margin:4px 0 14px 0;">
                             الأختام الكفية الثلاثون (30) وعلامات الفراسة واليد الزوهرية في المخطوطات القديمة
                         </h3>
-                        <p style="color:#cbd5e1; font-size:0.9rem; line-height:1.8;">
+                        <p style="color:#475569; font-size:0.9rem; line-height:1.8;">
                             هنا نستعرض تفصيلاً دقيقاً لكل ختم وعلامة كما وردت في أمهات كتب الفراسة والأسارير القديمة (الرازي، سامودريكا شاسترا، مخطوطات الأندلس، وكتابات السيمياء)، مقرونة بالتشريح الطبي الحقيقي:
                         </p>
                     </div>
@@ -636,7 +636,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="26" y1="48" x2="114" y2="48" stroke="#f4b41a" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="48" r="4" fill="#00f0ff"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط عرضي وحيد متصل ومستقيم يقطع راحة الكف أفقياً من حافة إلى حافة دون انقطاع نتيجة اندماج خط القلب مع خط الرأس. سمي في كتب الصنعة 'السيف القاطع' واعتبر دليلاً على إرادة حديدية لا تتشتت ومفتاحاً لفتح المغلقات.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> طفرة جنينية تشريحية حميدة (Single Palmar Crease) تصيب 1.5% إلى 2% من عموم البشر الأصحاء ناتجة عن انثناء كف الجنين في الرحم، ولا علاقة لها بأي بعد غيبي.</p>
                             </div>
@@ -654,7 +654,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="50" y1="20" x2="50" y2="70" stroke="#f4b41a" stroke-width="3"/><polygon points="50,15 46,24 54,24" fill="#f4b41a"/><line x1="70" y1="20" x2="70" y2="70" stroke="#f4b41a" stroke-width="3"/><polygon points="70,15 66,24 74,24" fill="#f4b41a"/><line x1="90" y1="20" x2="90" y2="70" stroke="#f4b41a" stroke-width="3"/><polygon points="90,15 86,24 94,24" fill="#f4b41a"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">ثلاثة خطوط عمودية متوازية يعلو كلاً منها رأس سهم، وهي المنظومة في البيت: 'ثَلاثُ عِصِيٍّ صُفِّفَتْ بَعْدَ خَاتَمٍ ❊ عَلَى رَأْسِهَا مِثْلُ السِّهَامِ تَقَوَّمُ'. تمثل القوة الثلاثية للروح والنفوذ، وقيمتها العددية بحساب الجمل (111) تطابق قطب الشمس 'ناخيئيل' وسر إشراق البصيرة.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> حزمة خطوط عمودية شائعة تحت تل الشمس أو المشتري تنشأ عن مرونة الأنسجة الضامة للأوتار الباسطة.</p>
                             </div>
@@ -672,7 +672,7 @@ def get_seals_zouhri_chamber_html():
                                     <polygon points="70,25 82,46 58,46" fill="none" stroke="#f4b41a" stroke-width="2.5"/><polygon points="70,53 82,32 58,32" fill="none" stroke="#00f0ff" stroke-width="2.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">تقاطع مثلثين متطابقين متداخلين يشكلان نجمة سداسية متقنة في سهل المريخ أو تل المشتري. ترمز لأعلى درجات الحصانة الروحية والاتصال المزدوج بين العوالم العلوية والسفلية (As Above, So Below).</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تقاطع تشريحي نادر لخطوط ثانوية سطحية على أدمة الكف ناتج عن تشابك الأوتار العضلية السطحية.</p>
                             </div>
@@ -690,7 +690,7 @@ def get_seals_zouhri_chamber_html():
                                     <polygon points="70,20 76,38 95,38 80,50 86,68 70,56 54,68 60,50 45,38 64,38" fill="none" stroke="#f4b41a" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">نجمة خماسية تتشكل من خمسة خطوط دقيقة متقاطعة على تل المشتري أو زحل. ترمز في الفراسة لسيادة العقل والروح على العناصر الأربعة (النار، الهواء، الماء، التراب) وحضور الحكمة القيادية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تقاطع خطوط الشد في طبقة الأدمة عند التقاء الحركات الدورانية لإصبع السبابة.</p>
                             </div>
@@ -708,7 +708,7 @@ def get_seals_zouhri_chamber_html():
                                     <polygon points="45,45 85,38 65,70" fill="rgba(0,240,255,0.2)" stroke="#00f0ff" stroke-width="2.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">مثلث مغلق الأضلاع تماماً في وسط راحة اليد يتشكل من تقاطع خط الرأس (الفكر) وخط الحياة (الجسد) وخط الحدس/الكبد. سمي في المخطوطات 'عين الحكمة' ودل على الفطنة الحادة والبديهة الحاضرة.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> التقاء تشريحي طبيعي لثلاث طيات حركية رئيسية للكف تعكس عمق الحركات اليدوية المنسقة وتطور الأوتار.</p>
                             </div>
@@ -726,7 +726,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 35 35 Q 70 42 105 32" fill="none" stroke="#64748b" stroke-width="1.5"/><path d="M 35 55 Q 70 52 105 60" fill="none" stroke="#64748b" stroke-width="1.5"/><line x1="65" y1="42" x2="75" y2="52" stroke="#d8b4fe" stroke-width="3" stroke-linecap="round"/><line x1="75" y1="42" x2="65" y2="52" stroke="#d8b4fe" stroke-width="3" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">علامة تقاطع مستقلة (+ أو ×) تتوسط الفراغ الموجود بين خط القلب وخط الرأس دون أن تمس أياً منهما. تعتبر أشهر علامة في قراءة الكف تدل على الموهبة الاستشعارية والإلهام الميتافيزيقي وحب الغوامض.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تقاطع ألياف نسيجية سطحية نتيجة حركات طي أصابع اليد المستمرة.</p>
                             </div>
@@ -744,7 +744,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="85" y1="50" x2="85" y2="75" stroke="#f4b41a" stroke-width="2"/><line x1="95" y1="50" x2="95" y2="75" stroke="#f4b41a" stroke-width="2"/><line x1="78" y1="58" x2="102" y2="58" stroke="#f4b41a" stroke-width="2"/><line x1="78" y1="68" x2="102" y2="68" stroke="#f4b41a" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">شبكة خطوط متقاطعة أفقياً وعمودياً تشبه المربعات في تل القمر أو تل الزهرة. نسبت لها كتب الفولكلور استشعار المياه الجوفية والمعادن في باطن الأرض وخبايا التيارات الأثيرية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> مرونة طبيعية في النسيج الضام لأدمة الجلد وانقباض راحة اليد عند الإمساك بالأشياء.</p>
                             </div>
@@ -762,7 +762,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 33 30 C 40 38, 50 38, 55 28" fill="none" stroke="#06d6a0" stroke-width="3"/><circle cx="44" cy="33" r="3" fill="#f4b41a"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">قوس نصف دائري يحيط بقاعدة السبابة على تل المشتري. دل في كتب الفراسة على الحكمة الفطرية، والقدرة على التدريس والوعظ والتأثير الروحي على الناس بهدوء واقتدار.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية جلدية ناتجة عن حركة المفصل السنعي السلامي لإصبع السبابة.</p>
                             </div>
@@ -780,7 +780,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="45" y1="65" x2="60" y2="80" stroke="#10b981" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="65" x2="45" y2="80" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">تقاطع مائل على شكل حرف (X) يقع بمحاذاة خط الحياة قرب المعصم. اعتبر في الفراسة القديمة علامة 'الحصانة من المهالك والحوادث الخطيرة'، والنجاة المتكررة من الشدائد بألطاف خفية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تقاطع طيات الشد الجلدية عند قاعدة الإبهام والراحة الرسغية.</p>
                             </div>
@@ -798,7 +798,7 @@ def get_seals_zouhri_chamber_html():
                                     <rect x="52" y="45" width="26" height="26" fill="rgba(244,180,26,0.15)" stroke="#f4b41a" stroke-width="2"/><line x1="65" y1="35" x2="65" y2="80" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">مربع مغلق يتشكل حول انقطاع أو كسر في خط الحياة أو خط الرأس. يرمز في التراث للحماية الإلهية الفائقة التي تمنع وقوع أثر الصدمات أو الأمراض، ويدل على الحصانة وتجدد العافية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تراكب طيتين جلديتين فوق بعضهما أثناء التئام حركة نمو الأنسجة اليدوية.</p>
                             </div>
@@ -816,7 +816,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 22 55 Q 32 45 42 55 Q 32 65 22 55 Z" fill="none" stroke="#00f0ff" stroke-width="2.5"/><circle cx="32" cy="55" r="3" fill="#f4b41a"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خطان مقوسان يلتقيان عند الطرفين مشكلين حبة قمح أو عيناً بشرية مغلقة عند مفصل الإبهام الأول. تُسمى 'عين البصيرة'؛ تدل على صدق الرؤى والمنامات، والحاسة السادسة الفطرية التي تلتقط الأمور قبل وقوعها.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية جلدية حلقية بيضاوية حول المفصل السنعي لإبهام اليد ناتجة عن حركة الثني المحورية للإبهام.</p>
                             </div>
@@ -834,7 +834,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 45 68 Q 55 62 65 72 Q 55 82 45 76 Z" fill="none" stroke="#06d6a0" stroke-width="2.5"/><line x1="65" y1="72" x2="75" y2="65" stroke="#06d6a0" stroke-width="2"/><line x1="65" y1="72" x2="75" y2="79" stroke="#06d6a0" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خطان منحنيان يتقاطعان مشكلين جسماً وذيلاً يشبهان السمكة عند قاعدة خط الحياة قرب الرسغ. ترمز للبركة الأزلية، النجاة من المهالك المائية، والغنى المعرفي والروحي المفاجئ بعد تعب.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تشعب انقسامي في الثنية الرسغية السفلية عند تلاقيها مع خط الحياة.</p>
                             </div>
@@ -852,7 +852,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="68" y1="45" x2="68" y2="20" stroke="#d8b4fe" stroke-width="3"/><path d="M 56 26 Q 68 36 68 36 Q 68 36 80 26" fill="none" stroke="#d8b4fe" stroke-width="2.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">تشعب خط المصير أو خط الشمس في نهايته إلى ثلاثة فروع رمحية تصعد نحو تلال المشتري وزحل والشمس. ترمز للمجد والسيادة واجتماع الحكمة (زحل) مع الهيبة (المشتري) والتألق الإبداعي (الشمس).</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تشعب طبيعي في تفرعات الألياف العصبية عند قاعدة الأصابع.</p>
                             </div>
@@ -870,7 +870,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="45" y1="75" x2="45" y2="25" stroke="#10b981" stroke-width="3"/><line x1="45" y1="60" x2="60" y2="48" stroke="#10b981" stroke-width="2"/><line x1="45" y1="50" x2="30" y2="38" stroke="#10b981" stroke-width="2"/><line x1="45" y1="40" x2="60" y2="28" stroke="#10b981" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط عمودي صاعد تتفرع منه خطوط دقيقة مائلة إلى الأعلى كأغصان الشجرة. ترمز للنمو الروحي المتصاعد، البركة في العمر والذرية، والقدرة على التجدد بعد كل انتكاسة.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تفرعات شريانية وحركية دقيقة في مسار خط الحياة والأوتار الراحية.</p>
                             </div>
@@ -888,7 +888,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 90 50 A 18 18 0 0 0 90 75 A 12 12 0 0 1 90 50 Z" fill="#60a5fa"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">قوس هلالي مقوس على تل القمر عند الحافة السفلية للكف. يرمز لصفاء الإدراك الحدسي، الخيال الخصب، وجاذبية الحضور الروحي وقوة التأثير النفسي في النفوس.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية جلدية منحنية ناتجة عن استدارة حافة الكف الجانبية (Hypothenar eminence).</p>
                             </div>
@@ -906,7 +906,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="55" y1="65" x2="40" y2="30" stroke="#f4b41a" stroke-width="3"/><polygon points="40,25 35,36 47,32" fill="#f4b41a"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط مستقيم حاد ينطلق من سهل المريخ وينتهي برأس سهم نحو تل المشتري. يدل في الفراسة على شدة العزيمة، القدرة على اقتناص الفرص الكبرى، والإصرار الذي لا يقهر أمام العقبات.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> خط شدي سطحي يربط حركة عضلة الإبهام المقربة مع إصبع السبابة.</p>
                             </div>
@@ -924,7 +924,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="75" y1="65" x2="75" y2="28" stroke="#f4b41a" stroke-width="3"/><circle cx="75" cy="24" r="6" fill="#f4b41a"/><circle cx="75" cy="24" r="3" fill="#000"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط مستقيم يعلوه قرص دائري أو حلقة كاملة على تل الشمس (أبولو). دل في المخطوطات القديمة على نيل الجاه والشهرة والرياسة، وأن صاحب هذا الختم تتبعه القلوب بطاعة واحترام.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> اندماج خط الشمس (Apollo line) مع حليمة جلدية دائرية طبيعية.</p>
                             </div>
@@ -942,7 +942,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 58 45 C 58 32, 78 32, 78 45 L 78 52 C 78 55, 74 55, 74 52 L 74 45 C 74 38, 62 38, 62 45 L 62 52 C 62 55, 58 55, 58 52 Z" fill="#94a3b8"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">قوس مقلوب متقن عند قاعدة تل زحل أو وسط الكف. يرمز لتثبيت الأرزاق، طرد النحوسات والعوارض الطاقية، واستقرار الأحوال المادية والمعنوية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية دائرية تتشكل من انحناء خط الرأس حول سهل المريخ.</p>
                             </div>
@@ -960,7 +960,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 68 55 C 60 45, 60 35, 68 25 C 76 35, 76 45, 68 55 Z" fill="rgba(216,180,254,0.3)" stroke="#d8b4fe" stroke-width="2"/><path d="M 68 55 C 55 48, 50 40, 55 30 C 62 38, 65 48, 68 55 Z" fill="none" stroke="#d8b4fe" stroke-width="1.5"/><path d="M 68 55 C 81 48, 86 40, 81 30 C 74 38, 71 48, 68 55 Z" fill="none" stroke="#d8b4fe" stroke-width="1.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">ثلاث بتلات ملتقية عند قاعدة الكف تشبه زهرة اللوتس. ترمز للطهارة الروحية، سلامة القلب من الغل والحسد، والارتقاء في المقامات الصوفية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تلاقي ثلاث طيات رسغية وعضلية عند مركز الراحة.</p>
                             </div>
@@ -978,7 +978,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="68" y1="30" x2="68" y2="65" stroke="#00f0ff" stroke-width="3"/><circle cx="68" cy="26" r="4" fill="none" stroke="#00f0ff" stroke-width="2"/><path d="M 52 55 Q 68 75 84 55" fill="none" stroke="#00f0ff" stroke-width="3"/><polygon points="52,53 50,60 56,58" fill="#00f0ff"/><polygon points="84,53 82,58 88,60" fill="#00f0ff"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط عمودي ينتهي بقوس سفلي وسهمين يشبه مرساة السفينة عند الرسغ. دل على الرسوخ والأمان في الأسفار والنجاة من العواصف المادية والتقلبات النفسية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تشعب خط المصير عند ارتكازه على الثنية الرسغية الأولى.</p>
                             </div>
@@ -996,7 +996,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 45 28 Q 75 48 105 30" fill="none" stroke="#f4b41a" stroke-width="3.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">قوس هلالي نصف دائري يمتد أعلى خط القلب، معلقاً بين ما بين السبابة والوسطى إلى ما بين البنصر والخنصر. علامة فرط الإحساس الوجداني، الذائقة الفنية العالية، والتقاط مشاعر ونوايا الآخرين بدقة مذهلة.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية جلدية ثانوية ناتجة عن حركة ضم الأصابع الوسطى والبنصر.</p>
                             </div>
@@ -1014,7 +1014,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 90 70 C 110 50, 110 35, 95 25" fill="none" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6,3"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط نصف دائري مستقل ينطلق من تل القمر في أسفل الكف وينحني صاعداً نحو تل عطارد دون أن يمس خط المصير. يرمز للحدس التلقائي، التخاطر الروحي، واستشعار الوقائع قبل إعلانها.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية أدمية ناتجة عن مرونة عضلات الخنصر وحافة اليد الخارجية.</p>
                             </div>
@@ -1032,7 +1032,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 58 24 C 64 32, 72 32, 78 24" fill="none" stroke="#94a3b8" stroke-width="3"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">قوس نصف دائري يطوق قاعدة الإصبع الأوسط (الوسطى). يرمز في التراث للتأمل الفلسفي العميق، الزهد في بهارج الدنيا، والميل الفطري للبحث في أسرار الوجود والكون.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية انقباضية حول المفصل السنعي للإصبع الأوسط.</p>
                             </div>
@@ -1050,7 +1050,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 75 24 C 81 32, 89 32, 95 24" fill="none" stroke="#f4b41a" stroke-width="3"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">قوس مقوس ناعم يطوق قاعدة إصبع البنصر على تل الشمس. يدل على الذائقة الجمالية الرفيعة، الكاريزما الجذابة، وحب الضياء والنور في الفكر والعمل.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> ثنية جلدية طبيعية عند قاعدة إصبع البنصر.</p>
                             </div>
@@ -1068,7 +1068,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="88" y1="26" x2="88" y2="44" stroke="#10b981" stroke-width="2.5"/><line x1="93" y1="25" x2="93" y2="45" stroke="#10b981" stroke-width="2.5"/><line x1="98" y1="26" x2="98" y2="44" stroke="#10b981" stroke-width="2.5"/><line x1="103" y1="28" x2="103" y2="42" stroke="#10b981" stroke-width="2.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">ثلاثة إلى أربعة خطوط عمودية دقيقة متوازية على تل عطارد تحت الخنصر. تسمى 'علامات الشفاء'؛ وتدل على موهبة فطرية في الطب، المواساة، والقدرة على تهدئة آلام الآخرين بحسن المنطق.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> خطوط تمدد عمودية فوق الأنسجة العصبية المغذية لإصبع الخنصر.</p>
                             </div>
@@ -1086,7 +1086,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 38 28 C 45 38, 55 45, 65 48" fill="none" stroke="#ec4899" stroke-width="2.5"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط مائل ينحدر بلطف من تل المشتري باتجاه خط الرأس والقلب. يدل على رقة القلب، التعاطف الإنساني الفطري مع الضعفاء، والقدرة على احتواء النفوس الحزينة.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> طية وصل بين العضلة بين العظمية الأولى وجلد راحة اليد.</p>
                             </div>
@@ -1104,7 +1104,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 35 78 Q 70 72 105 78" fill="none" stroke="#f4b41a" stroke-width="3"/><path d="M 38 83 Q 70 78 102 83" fill="none" stroke="#f4b41a" stroke-width="2.5"/><path d="M 42 88 Q 70 84 98 88" fill="none" stroke="#f4b41a" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">ثلاثة خطوط أفقية متوازية عميقة عند مفصل الكف مع الساعد. كل سوار منها كان يرمز في الفراسة القديمة لثلاثين عاماً من الصحة والحيوية، وتكاملها الثلاثي علامة التوازن التام بين الجسد والعقل والروح.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> طيات المعصم الانثنائية الرئيسية الناتجة عن حركة المفصل الرسغي الكعبري.</p>
                             </div>
@@ -1122,7 +1122,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 38 42 C 40 55, 48 70, 58 78" fill="none" stroke="#ef4444" stroke-width="3"/><path d="M 45 44 C 47 55, 54 68, 62 75" fill="none" stroke="#f4b41a" stroke-width="2" stroke-dasharray="4,2"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط يمتد موازياً لخط الحياة من الداخل في سهل المريخ والزهرة. يسمى 'الملاك الحارس'؛ يرمز لبطانة حيوية ومناعة قوية تحمي البدن من التلف والأخطار الخارجية.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> خط جلدي داخلي يعكس قوة عضلات الإبهام السطحية (Thenar muscles).</p>
                             </div>
@@ -1140,7 +1140,7 @@ def get_seals_zouhri_chamber_html():
                                     <path d="M 95 65 Q 85 45 70 42" fill="none" stroke="#a855f7" stroke-width="3"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">خط عميق مقوس ينطلق من عمق تل القمر متجهاً نحو سهل المريخ وخط الرأس. يدل على قوة الأحلام التحذيرية، استشعار الطاقة الكامنة في الأماكن، والصفاء الذهني التام.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> طية شمولية ثانوية بين الثنية الراحية البعيدة وحافة اليد.</p>
                             </div>
@@ -1158,7 +1158,7 @@ def get_seals_zouhri_chamber_html():
                                     <polygon points="40,22 43,30 51,30 45,35 47,43 40,38 33,43 35,35 29,30 37,30" fill="#f4b41a"/><polygon points="85,22 88,30 96,30 90,35 92,43 85,38 78,43 80,35 74,30 82,30" fill="#f4b41a"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+                            <div style="font-size:0.82rem; color:#475569; line-height:1.7;">
                                 <p style="margin:0 0 6px 0;">• <strong>المصدر والرمزية:</strong> <span style="color:#f8fafc;">نجمتان خماسيتان أو سداسيتان تتطابقان معاً: الأولى على تل المشتري (الهيبة والرياسة) والثانية على تل الشمس (المجد والبريق). اعتبرت أندر علامة فراسية تدل على الخلود المعرفي واجتماع الحكمة مع التأثير الواسع.</span></p>
                                 <p style="margin:0; color:#94a3b8;">• <strong>التشريح العلمي:</strong> تقاطع تشريحي متناظر للألياف السطحية تحت إصبعي السبابة والبنصر.</p>
                             </div>
@@ -1173,7 +1173,7 @@ def get_seals_zouhri_chamber_html():
                                 3. التفكيك الصارم: دحض خرافة "الكف الزوهري مفتاح الكنوز والمرصودات"
                             </h3>
                         </div>
-                        <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.8; margin-bottom:12px;">
+                        <p style="font-size:0.88rem; color:#475569; line-height:1.8; margin-bottom:12px;">
                             تزعم عصابات التنقيب العشوائي في الفولكلور المغاربي والمشرقي أن كف الشخص الزوهري (وخاصة صاحب الخط القاطع العرضي أو علامة 111) هو "مفتاح كهانة" يُبطل رصد الدفائن بمجرد مسح تراب الموقع، أو بطلب قطرات من دمه. هذا الزعم دجل محض وباطل من عدة أوجه قطعية:
                         </p>
                         <div style="font-size:0.85rem; color:#f8fafc; line-height:1.7;">
@@ -1192,7 +1192,7 @@ def get_seals_zouhri_chamber_html():
                     <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:var(--cyan); margin-bottom:12px;">
                         🪐 أختام الكواكب السبعة وشفراتها الهندسية في مصنفات أغريبا وبيكاتريكس
                     </h2>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
                         في الفلسفة السيمياوية الأوربية والأندلسية (كما في <em>غاية الحكيم / Picatrix</em> وكتاب <em>الفلسفة الخفية (De Occulta Philosophia)</em> لكورنيليوس أغريبا)، 
                         تُستخرج أختام الكواكب وشفرات أرواحها الذكية (Intelligences) عبر تقنية هندسية رياضية صارمة تُعرف بـ 
                         <strong>«مسار الخطوط على المربع السحري (Sigil Kamea Tracing)»</strong>، حيث تُرسم الخطوط بربط أرقام حروف اسم الروح داخل وفق الكوكب المقابل.
@@ -1217,7 +1217,7 @@ def get_seals_zouhri_chamber_html():
                                     <circle cx="70" cy="80" r="4" fill="#94a3b8"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.6;">
+                            <div style="font-size:0.83rem; color:#475569; line-height:1.6;">
                                 <strong>الروح الذكية:</strong> Agiel (أجيئيل = 45)<br>
                                 <strong>الروح الأرضية:</strong> Zazel (زازيل = 45)<br>
                                 <strong>الخواص:</strong> الثبات، البناء طويل الأمد، الحكمة، كبح الاندفاع والتأصيل.
@@ -1237,7 +1237,7 @@ def get_seals_zouhri_chamber_html():
                                     <circle cx="70" cy="80" r="5" fill="#d8b4fe"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.6;">
+                            <div style="font-size:0.83rem; color:#475569; line-height:1.6;">
                                 <strong>الروح الذكية:</strong> Iophiel (يوفائيل = 136)<br>
                                 <strong>الروح الأرضية:</strong> Hismael (هسمائيل = 136)<br>
                                 <strong>الخواص:</strong> الهيبة، السعة المالية، القبول والعدل والتوسع المعرفي.
@@ -1257,7 +1257,7 @@ def get_seals_zouhri_chamber_html():
                                     <polygon points="120,50 100,35 100,65" fill="#ef4444"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.6;">
+                            <div style="font-size:0.83rem; color:#475569; line-height:1.6;">
                                 <strong>الروح الذكية:</strong> Graphiel (غرافائيل = 325)<br>
                                 <strong>الروح الأرضية:</strong> Bartzabel (بارتزابيل = 325)<br>
                                 <strong>الخواص:</strong> الشجاعة، كسر الموانع، الحسم القاطع والدفاع الحصين.
@@ -1277,7 +1277,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="20" y1="50" x2="120" y2="50" stroke="#f4b41a" stroke-width="2" stroke-dasharray="3,3"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.6;">
+                            <div style="font-size:0.83rem; color:#475569; line-height:1.6;">
                                 <strong>الروح الذكية:</strong> Nakhiel (ناخيئيل = 111)<br>
                                 <strong>الروح الأرضية:</strong> Sorath (سورات = 666)<br>
                                 <strong>الخواص:</strong> الملك، الجاه، الشهرة، الحيوية البيولوجية والشفاء.
@@ -1297,7 +1297,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="50" y1="72" x2="90" y2="72" stroke="#06d6a0" stroke-width="4"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.6;">
+                            <div style="font-size:0.83rem; color:#475569; line-height:1.6;">
                                 <strong>الروح الذكية:</strong> Hagiel (هاجيئيل = 49)<br>
                                 <strong>الروح الأرضية:</strong> Kedemel (كدميل = 175)<br>
                                 <strong>الخواص:</strong> المحبة، الألفة، الجمال، الفنون والتوافق الزواجي.
@@ -1318,7 +1318,7 @@ def get_seals_zouhri_chamber_html():
                                     <line x1="55" y1="72" x2="85" y2="72" stroke="#00f0ff" stroke-width="4"/>
                                 </svg>
                             </div>
-                            <div style="font-size:0.83rem; color:#cbd5e1; line-height:1.6;">
+                            <div style="font-size:0.83rem; color:#475569; line-height:1.6;">
                                 <strong>الروح الذكية:</strong> Tiriel (تيريئيل = 260)<br>
                                 <strong>الروح الأرضية:</strong> Taphthartharath (تافثارثارث = 2080)<br>
                                 <strong>الخواص:</strong> الحكمة، التجارة، البلاغة، سرعة الفهم وتيسير المعاملات.
@@ -1340,7 +1340,7 @@ def get_seals_zouhri_chamber_html():
                         <span style="background:rgba(239,68,68,0.15); border:1px solid #ef4444; color:#ef4444; padding:4px 12px; border-radius:10px; font-size:0.8rem;">تحذير إنساني وتحصين شرعي</span>
                     </div>
 
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
                         تعتبر <strong>«الزوهرية»</strong> من أكثر الظواهر غموضاً وجدلاً في الثقافة المغاربية والمشرقية. 
                         يُطلق اللفظ شعبياً على أشخاص يمتلكون علامات جسدية خلقية نادرة، ويُزعم في كتب الخرافة الشعبية أنهم يملكون 
                         «دماً خاصاً» أو «اتصالاً بعالم الجن وخبايا الأرض». هنا نضع هذا الملف تحت المجهر الطبي والأنثروبولوجي والشرعي لتفكيك الأسطورة وحماية الأرواح.
@@ -1351,7 +1351,7 @@ def get_seals_zouhri_chamber_html():
                         <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--gold); margin-bottom:8px;">
                             1. الجذور اللغوية والتاريخية للفظ «الزوهري»
                         </h3>
-                        <p style="font-size:0.87rem; color:#cbd5e1; line-height:1.8; margin:0;">
+                        <p style="font-size:0.87rem; color:#475569; line-height:1.8; margin:0;">
                             • <strong>المعنى اللغوي:</strong> الزُّهْرَة هي البياض المشرق والنور الصافي، والزاهر هو الوجه المضيء المستنير.<br>
                             • <strong>الجذر القبالي (Sefer HaZohar):</strong> يرى بعض الباحثين أن الكلمة تأثرت بكتاب «الزوهار» (كتاب الإشراق / التنوير) في صوفية الأندلس والمغرب، حيث يرمز الزوهار للإنسان المستنير الذي تنكشف له حجب البصيرة.<br>
                             • <strong>العامية المغاربية:</strong> كلمة «الزّهْر» تعني الحظ والبركة، فالزوهري في الأصل هو "صاحب الحظ السعيد" أو المحظوظ قبل أن تحرّفها كتب الشعوذة إلى أهداف سحرية مظلمة.
@@ -1371,7 +1371,7 @@ def get_seals_zouhri_chamber_html():
                                 <strong style="color:var(--gold);">① خط الكف العرضي المتصل</strong>
                                 <span style="font-size:0.75rem; color:#94a3b8;">Simian Crease</span>
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 • <strong>الأسطورة الباطنية:</strong> يُسمى "قطع الكف" أو "الخط الملكي"، وتزعم كتب الشعوذة أنه مفتاح فتح أبواب الكنوز المرصودة تحت الأرض.<br>
                                 • <strong>الحقيقة الطبية والتشريحية:</strong> ظاهرة جينية طبيعية تصيب 1% إلى 2% من البشر الأصحاء حول العالم. تنتج عن اندماج خطي القلب والرأس في طية كف واحدة أثناء التكون الجنيني، ولا علاقة لها بأي بعد غيبي.
                             </p>
@@ -1383,7 +1383,7 @@ def get_seals_zouhri_chamber_html():
                                 <strong style="color:var(--gold);">② اللسان المفلوق طولياً</strong>
                                 <span style="font-size:0.75rem; color:#94a3b8;">Lingua Plicata</span>
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 • <strong>الأسطورة الباطنية:</strong> يُزعم أنه "ناطق بلغة الملائكة، ولا يتسلط على طعامه شيطان".<br>
                                 • <strong>الحقيقة الطبية والتشريحية:</strong> حالة شائعة تسمى طبياً <em>Fissured Tongue</em> تصيب حوالي 5% من سكان الأرض. هي شق حميد في الغشاء المخاطي للسان نتيجة عوامل وراثية عائلية سليمة تماماً.
                             </p>
@@ -1395,7 +1395,7 @@ def get_seals_zouhri_chamber_html():
                                 <strong style="color:var(--gold);">③ بريق العينين والحول الخفيف</strong>
                                 <span style="font-size:0.75rem; color:#94a3b8;">Heterochromia</span>
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 • <strong>الأسطورة الباطنية:</strong> نظرة ثاقبة تكشف الغيبيات، وبريق في القزحية يعكس حضور الغدة الصنوبرية المفتوحة.<br>
                                 • <strong>الحقيقة الطبية والتشريحية:</strong> تباين صبغة الميلانين في القزحية أو انعكاس الضوء على قرنية رقيقة، أو استرخاء طفيف في عضلات العين (Strabismus)، وهي صفات تشريحية نقية.
                             </p>
@@ -1407,7 +1407,7 @@ def get_seals_zouhri_chamber_html():
                                 <strong style="color:var(--gold);">④ دائرتا الشعر على الرأس</strong>
                                 <span style="font-size:0.75rem; color:#94a3b8;">Double Crown Whorl</span>
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 • <strong>الأسطورة الباطنية:</strong> وجود "قرنين طاقيين" أو بوابتين أثيريتين لاستقبال الفيض النجمي.<br>
                                 • <strong>الحقيقة الطبية والتشريحية:</strong> اتجاه نمو بصيلات فروة الرأس من نقطتين مركزيتين أثناء النمو الجنيني للبشرة، وتحدث لدى نحو 5% من المواليد.
                             </p>
@@ -1419,7 +1419,7 @@ def get_seals_zouhri_chamber_html():
                                 <strong style="color:var(--gold);">⑤ فصيلة الدم (Rh-Negative)</strong>
                                 <span style="font-size:0.75rem; color:#94a3b8;">Rhesus Negative</span>
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 • <strong>الأسطورة الباطنية:</strong> "دم نقي لا يحمل جينات القردة البدائية، ومغذٍ لأرواح الأرض".<br>
                                 • <strong>الحقيقة الطبية والتشريحية:</strong> طفرة جينية متنحية في مستضد العامل الريزوسي (D-antigen) تتركز تاريخياً في حوض الباسك وشمال إفريقيا، ولا علاقة لها بأي أصل فضائي أو سحري.
                             </p>
@@ -1431,7 +1431,7 @@ def get_seals_zouhri_chamber_html():
                                 <strong style="color:var(--gold);">⑥ الخط الطولي بأسفل القدم أو الظهر</strong>
                                 <span style="font-size:0.75rem; color:#94a3b8;">Plantar / Spinal Crease</span>
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 • <strong>الأسطورة الباطنية:</strong> خط الاتصال بالأرض واستشعار التيارات المغناطيسية السفلية.<br>
                                 • <strong>الحقيقة الطبية والتشريحية:</strong> طية جلدية ناشئة عن تركز الأربطة الأخمصية أو العصبية، طبيعية تماماً.
                             </p>
@@ -1444,7 +1444,7 @@ def get_seals_zouhri_chamber_html():
                         <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--cyan); margin-bottom:8px;">
                             3. الخصائص النفسية والحسية: فرط الإحساس (HSP) والحساسية الحيوية
                         </h3>
-                        <p style="font-size:0.87rem; color:#cbd5e1; line-height:1.8; margin:0;">
+                        <p style="font-size:0.87rem; color:#475569; line-height:1.8; margin:0;">
                             أظهرت الدراسات السيكولوجية الحديثة أن كثيراً ممن يُطلق عليهم "زهريون" هم في الواقع أفراد ينتمون لفئة 
                             <strong>«الأشخاص مفرطي الحساسية الحسية (Highly Sensitive Persons - HSP)»</strong>. يتميز هؤلاء بـ:
                             زيادة حساسية الجهاز العصبي المركزي للمحفزات، قوة الملاحظة، تعاطف وجداني عالٍ (Empathy)، 
@@ -1465,7 +1465,7 @@ def get_seals_zouhri_chamber_html():
                             تعتبر ممارسات عصابات السحر والشعوذة في استهداف الأطفال أو البالغين الزهريين (بزعم تقديم قطرات من دمهم لـ "فك رصد الكنوز") 
                             <strong>جريمة إنسانية بشعة وخرافة شيطانية باطلة</strong>. 
                         </p>
-                        <div style="font-size:0.86rem; color:#cbd5e1; line-height:1.7;">
+                        <div style="font-size:0.86rem; color:#475569; line-height:1.7;">
                             • <strong>أكذوبة «الرصد»:</strong> لا وجود في القرآن والسنة لشيء اسمه "حارس كنز من الجن" ينتظر دماً بشرياً؛ بل هي حيلة اخترعها دجالو العصور المظلمة لابتزاز الناس وتبرير فشلهم في التنقيب.<br>
                             • <strong>الحكم الشرعي:</strong> قتل أو إيذاء أي نفس إنسانية لاستخراج كنز هو <strong>كفر وردة وجريمة قتل عمد جزاؤها القصاص في الدنيا والخلود في النار</strong>، والدم المسفوك قرباناً هو شرك أكبر بالاتفاق.<br>
                             • <strong>الحصن والأمان للزوهري:</strong> الإنسان الذي خلقه الله بهذه العلامات هو عبد لله مكرم، لا يملك جن ولا إنس سبيلاً عليه ما دام معتصماً بتوحيده ومحصناً بذكر ربه، ولا أثر لهذه الخرافات إلا في عقول الموهومين.
@@ -1481,7 +1481,7 @@ def get_seals_zouhri_chamber_html():
                     <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:#d8b4fe; margin-bottom:12px;">
                         🌌 موسوعة السلالات الروحية، الاصطفاء الجيني، وبذور النجوم في الكتب المقدسة
                     </h2>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:24px;">
                         طرحت الحضارات القديمة والنصوص الدينية فكرة «الاصطفاء السلالي» و«الذرية النورانية». 
                         هنا نستعرض المفاهيم الكبرى كما وردت في القرآن الكريم، أسفار التراث القديم، والغنوصية الكونية.
                     </p>
@@ -1496,7 +1496,7 @@ def get_seals_zouhri_chamber_html():
                             <div style="font-family:'Amiri', serif; font-size:1.05rem; color:#f8fafc; line-height:1.9; margin-bottom:10px; background:rgba(244,180,26,0.06); padding:10px; border-radius:8px;">
                                 ﴿إِنَّ اللَّهَ اصْطَفَىٰ آدَمَ وَنُوحًا وَآلَ إِبْرَاهِيمَ وَآلَ عِمْرَانَ عَلَى الْعَالَمِينَ ۝ ذُرِّيَّةً بَعْضُهَا مِن بَعْضٍ وَاللَّهُ سَمِيعٌ عَلِيمٌ﴾
                             </div>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 يثبت القرآن وجود وراثة نورانية في خطوط الأنبياء (ذرية بعضها من بعض)، حيث تنتقل مؤهلات النبوة والروحانية عبر سلاسل وراثية مطهرة وصولاً إلى النبي محمد ﷺ وعترته الطاهرة (آل البيت).
                             </p>
                         </div>
@@ -1506,7 +1506,7 @@ def get_seals_zouhri_chamber_html():
                             <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:#ef4444; margin-bottom:8px;">
                                 2. المراقبون والنفيليم (سفر أخنوخ)
                             </h3>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 في سفر أخنوخ (Book of Enoch)، هبط 200 من الملائكة المراقبين (The Watchers) على جبل حرمون وعلموا البشر أسرار الفلك والسلاح والزينة، ونتج عن تزاوجهم بالبشر «النفيليم» (العماليق / الجبابرة). يقابل هذا في القرآن قصة هاروت وماروت في بابل، وقوم عاد ﴿الَّتِي لَمْ يُخْلَقْ مِثْلُهَا فِي الْبِلَادِ﴾.
                             </p>
                         </div>
@@ -1516,7 +1516,7 @@ def get_seals_zouhri_chamber_html():
                             <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:var(--cyan); margin-bottom:8px;">
                                 3. رتبة ملكي صادق والخضر (عليه السلام)
                             </h3>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 سلالة الكهنة الكبرى التي لا بداية لأيامها ولا نهاية لنسبها؛ ملك ساليم وكاهن الله العلي الذي بارك إبراهيم. 
                                 يتطابق في التراث الإسلامي مع مقام «الخضر» صاحب العلم اللدني ﴿وَعَلَّمْنَاهُ مِن لَّدُنَّا عِلْمًا﴾، 
                                 الذي يمثل تيار الوعي الباطني المستمر خارج قيود الزمان.
@@ -1528,7 +1528,7 @@ def get_seals_zouhri_chamber_html():
                             <h3 style="font-family:'Amiri', serif; font-size:1.3rem; color:#c084fc; margin-bottom:8px;">
                                 4. بذور النجوم والشعرى اليمانية (Sirius)
                             </h3>
-                            <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.7; margin:0;">
+                            <p style="font-size:0.83rem; color:#475569; line-height:1.7; margin:0;">
                                 في كوزمولوجيا قبائل الدوغون (مالي)، احتفظوا بمعرفة فلكية مستحيلة عن النجم القزم الأبيض "سيريوس ب" قبل اكتشافه بالتلسكوبات بقرون. 
                                 والقرآن يخص هذا النجم بالذكر حصراً: ﴿وَأَنَّهُ هُوَ رَبُّ الشِّعْرَىٰ﴾ لبيان أن رب الأكوان وخالقها واحد، 
                                 وأن كل وعي في المجرات خاضع للبارئ سبحانه.
@@ -1545,7 +1545,7 @@ def get_seals_zouhri_chamber_html():
                     <h2 style="font-family:'Amiri', serif; font-size:1.8rem; color:var(--emerald); margin-bottom:12px;">
                         🎨 معرض الرموز والطلاسم التفاعلي (Interactive High-Res Sigil Explorer)
                     </h2>
-                    <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
+                    <p style="color:#475569; font-size:0.92rem; line-height:1.8; margin-bottom:20px;">
                         انقر على أي رمز لاستعراضه بدقة عالية، وفك شفرته الهندسية، ومعرفة مصدره في أمهات المخطوطات.
                     </p>
 
@@ -1557,7 +1557,7 @@ def get_seals_zouhri_chamber_html():
                     <div id="seal-preview-modal" style="display:none; margin-top:25px; background:rgba(0,0,0,0.6); border:1px solid var(--emerald); border-radius:16px; padding:20px; text-align:center;">
                         <div id="modal-svg-display" style="margin-bottom:14px;"></div>
                         <h4 id="modal-title" style="color:var(--gold); font-size:1.2rem; margin-bottom:6px;"></h4>
-                        <p id="modal-desc" style="color:#cbd5e1; font-size:0.88rem; max-width:650px; margin:0 auto; line-height:1.7;"></p>
+                        <p id="modal-desc" style="color:#475569; font-size:0.88rem; max-width:650px; margin:0 auto; line-height:1.7;"></p>
                     </div>
                 </div>
             </div>
@@ -1676,7 +1676,7 @@ def get_seals_zouhri_chamber_js():
                                          'الكسر = 2 (جُبر في البيت الرابع بزيادة 1 على البيوت 4 إلى 9).';
 
         resultDiv.innerHTML = `
-            <div style="margin-bottom:12px; font-size:0.88rem; color:#cbd5e1; line-height:1.7;">
+            <div style="margin-bottom:12px; font-size:0.88rem; color:#475569; line-height:1.7;">
                 <strong>المفتاح (البيت 1):</strong> <span style="color:var(--gold); font-weight:700;">${c[1]}</span> | 
                 <strong>المغلاق (البيت 9):</strong> <span style="color:var(--gold); font-weight:700;">${c[9]}</span> | 
                 <strong>العدل (المفتاح+المغلاق):</strong> <span style="color:var(--cyan); font-weight:700;">${c[1] + c[9]}</span> | 
@@ -1710,7 +1710,7 @@ def get_seals_zouhri_chamber_js():
                 <svg width="60" height="60" viewBox="0 0 100 100" style="margin-bottom:8px;">
                     ${sig.svg}
                 </svg>
-                <span style="display:block; font-size:0.75rem; color:#cbd5e1; font-weight:700;">${sig.title}</span>
+                <span style="display:block; font-size:0.75rem; color:#475569; font-weight:700;">${sig.title}</span>
             </div>
         `).join('');
     }

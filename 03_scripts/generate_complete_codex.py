@@ -49,8 +49,8 @@ def generate_codex():
             --border-glass: rgba(148, 163, 184, 0.2);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.35);
+            --gold: #64748b;
+            --gold-glow: rgba(148, 163, 184, 0.35);
             --cyan: #38bdf8;
             --cyan-glow: rgba(56, 189, 248, 0.3);
             --rose: #fb7185;
@@ -67,7 +67,7 @@ def generate_codex():
             margin: 0;
             padding: 0;
             font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
-            scrollbar-color: rgba(212, 175, 55, 0.35) #111823 !important;
+            scrollbar-color: rgba(148, 163, 184, 0.35) #111823 !important;
         }
 
         html {
@@ -81,7 +81,7 @@ def generate_codex():
             overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 90% 85%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 85%, rgba(148, 163, 184, 0.04) 0%, transparent 40%),
                 radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.03) 0%, transparent 50%);
             min-height: 100vh;
             color-scheme: dark !important;
@@ -95,12 +95,12 @@ def generate_codex():
             background: #111823 !important;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(212, 175, 55, 0.35) !important;
+            background: rgba(148, 163, 184, 0.35) !important;
             border-radius: 6px !important;
             border: 2px solid #111823 !important;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(212, 175, 55, 0.65) !important;
+            background: rgba(148, 163, 184, 0.65) !important;
         }
 
         /* Gate */
@@ -255,14 +255,14 @@ def generate_codex():
         }
         table { width: 100%; border-collapse: collapse; text-align: right; font-size: 0.86rem; min-width: 800px; }
         th { background: rgba(0, 0, 0, 0.6); padding: 14px 16px; color: var(--gold); border-bottom: 1px solid var(--border-glass); font-weight: 700; white-space: nowrap; }
-        td { padding: 12px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #cbd5e1; line-height: 1.6; }
+        td { padding: 12px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #475569; line-height: 1.6; }
         tr:hover td { background: rgba(255, 255, 255, 0.02); }
 
         .day-select-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 16px; }
         .day-btn {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-glass);
-            color: #cbd5e1;
+            color: #475569;
             padding: 8px 16px;
             border-radius: 10px;
             cursor: pointer;
@@ -344,7 +344,7 @@ def generate_codex():
         .wafq-order-pill {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #cbd5e1;
+            color: #475569;
             padding: 8px 14px;
             border-radius: 8px;
             cursor: pointer;
@@ -380,7 +380,7 @@ def generate_codex():
         }
         .dynamic-cell {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 209, 102, 0.25);
+            border: 1px solid rgba(148, 163, 184, 0.25);
             border-radius: 8px;
             aspect-ratio: 1;
             display: flex;
@@ -463,7 +463,7 @@ def generate_codex():
         }
         .grid-cell {
             background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 209, 102, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.3);
             border-radius: 8px;
             height: 75px;
             display: flex;
@@ -472,7 +472,7 @@ def generate_codex():
             justify-content: center;
             transition: all 0.2s;
         }
-        .grid-cell:hover { background: rgba(255, 209, 102, 0.15); border-color: var(--gold); }
+        .grid-cell:hover { background: rgba(148, 163, 184, 0.15); border-color: var(--gold); }
         .cell-num { font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1; }
         .cell-letter { font-size: 0.75rem; color: var(--gold); margin-top: 4px; }
 
@@ -515,7 +515,7 @@ def generate_codex():
         }
         .ghazali-handbook-subtitle {
             font-size: 0.95rem;
-            color: #cbd5e1;
+            color: #475569;
             max-width: 860px;
             margin: 0 auto;
             line-height: 1.8;
@@ -534,7 +534,7 @@ def generate_codex():
         .ghazali-nav-pill {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(244, 180, 26, 0.2);
-            color: #cbd5e1;
+            color: #475569;
             padding: 8px 14px;
             border-radius: 8px;
             font-size: 0.82rem;
@@ -667,7 +667,7 @@ def generate_codex():
             margin-bottom: 12px;
             font-size: 0.88rem;
             line-height: 1.75;
-            color: #cbd5e1;
+            color: #475569;
         }
         .step-badge {
             background: rgba(0, 240, 255, 0.12);
@@ -751,7 +751,7 @@ def generate_codex():
         .wafq-treatise-content {
             font-size: 0.88rem;
             line-height: 1.85;
-            color: #cbd5e1;
+            color: #475569;
         }
         .wafq-treatise-content strong { color: var(--gold); }
         .wafq-treatise-content em { color: var(--cyan); font-style: normal; font-weight: 600; }
@@ -783,7 +783,7 @@ def generate_codex():
         .wave-mode-btn {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-glass);
-            color: #cbd5e1;
+            color: #475569;
             padding: 6px 14px;
             border-radius: 8px;
             cursor: pointer;
@@ -832,7 +832,7 @@ def generate_codex():
         .calc-sample-btn {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #cbd5e1;
+            color: #475569;
             padding: 4px 12px;
             border-radius: 8px;
             font-size: 0.8rem;
@@ -1007,7 +1007,7 @@ def generate_codex():
             flex: 0 0 auto;
             background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #cbd5e1;
+            color: #475569;
             padding: 7px 12px;
             border-radius: 12px;
             cursor: pointer;
@@ -1219,7 +1219,7 @@ def generate_codex():
             </div>
 
             <!-- Mathematical Mechanics Box -->
-            <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.3); border-radius:16px; padding:20px; margin-bottom:20px; line-height:1.8; font-size:0.9rem; color:#cbd5e1;">
+            <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.3); border-radius:16px; padding:20px; margin-bottom:20px; line-height:1.8; font-size:0.9rem; color:#475569;">
                 <h3 style="color:var(--cyan); margin-bottom:8px; font-family:'Amiri',serif;"><i class="fa-solid fa-square-root-variable"></i> المعادلة الرياضية لحساب الساعات الزمانية (Temporal Hours Calculation):</h3>
                 <p>
                     تختلف الساعات الفلكية الزمانية عن الساعات الميكانيكية الثابتة (60 دقيقة)؛ إذ يُقسم <strong>قوس النهار الفعلي (من الشروق إلى الغروب)</strong> على 12 جزءاً متساوياً ليعطي طول الساعة النهارية، ويُقسم <strong>قوس الليل (من الغروب إلى الشروق)</strong> على 12 ليعطي الساعة الليلية. في الصيف تطول الساعة النهارية وتصل لـ 75 دقيقة، وفي الشتاء تقصر لـ 45 دقيقة. والساعة الأولى من كل يوم يحكمها كوكب اليوم نفسه، ثم تدور وفق الترتيب الكلداني المتنازل.
@@ -1433,7 +1433,7 @@ def generate_codex():
                         </h3>
                         <div style="display:flex; gap:6px; flex-wrap:wrap;">
                             <button class="letter-filter-btn active" onclick="filterLetters('all', this)">الكل (28)</button>
-                            <button class="letter-filter-btn" onclick="filterLetters('luminous', this)" style="border-color:#ffd166; color:#ffd166;">النورانية (14)</button>
+                            <button class="letter-filter-btn" onclick="filterLetters('luminous', this)" style="border-color:#94a3b8; color:#94a3b8;">النورانية (14)</button>
                             <button class="letter-filter-btn" onclick="filterLetters('dark', this)">الظلمانية (14)</button>
                             <button class="letter-filter-btn" onclick="filterLetters('fire', this)" style="border-color:#ef4444; color:#ef4444;">🔥 النار (7)</button>
                             <button class="letter-filter-btn" onclick="filterLetters('air', this)" style="border-color:#06b6d4; color:#06b6d4;">💨 الهواء (7)</button>
@@ -1506,7 +1506,7 @@ def generate_codex():
                     <span style="font-size:1.4rem;">📊</span>
                     <h3 style="color:#fff; font-family:'Amiri',serif; margin:0; font-size:1.3rem;">جدول المقارنة البانورامي الشامل للحروف الـ 28 والطبائع ومخارج الصوت والمنازل الكونية</h3>
                 </div>
-                <table style="width:100%; border-collapse:collapse; font-size:0.84rem; color:#cbd5e1; text-align:right;">
+                <table style="width:100%; border-collapse:collapse; font-size:0.84rem; color:#475569; text-align:right;">
                     <thead>
                         <tr style="background:rgba(15,23,42,0.9); border-bottom:2px solid var(--gold); color:var(--gold);">
                             <th style="padding:10px;">الحرف</th>
@@ -1582,7 +1582,7 @@ def generate_codex():
                         <h4>🛡️ بروتوكول إعادة بناء التماسك البيوفوتوني وتطهير الهالة</h4>
                     </div>
                     <p>يؤسس الطب النبوي والشريعة الغراء نظاماً هندسياً صارماً لإعادة شحن وترميم الحقل التوريدي:</p>
-                    <ul style="padding-right:18px; margin:8px 0; font-size:0.87rem; color:#cbd5e1; line-height:1.7;">
+                    <ul style="padding-right:18px; margin:8px 0; font-size:0.87rem; color:#475569; line-height:1.7;">
                         <li><strong>الوضوء المستمر (Biophotonic Discharge):</strong> يزيل الماء الجاري الشحنات الكهروستاتيكية الزائدة ويعيد استقطاب الأيونات السالبة في الجلد، مؤكداً نبوياً: «إِنَّ أُمَّتِي يُدْعَوْنَ يَوْمَ الْقِيَامَةِ غُرًّا مُحَجَّلِينَ مِنْ آثَارِ الْوُضُوءِ».</li>
                         <li><strong>السجود للأرض (Earthing Resonance):</strong> تفريغ الترددات الكهرومغناطيسية الضارة ومزامنة الدماغ مع تردد رنين شومان (7.83 هرتز) للأرض عبر الاتصال المباشر لسبعة أعضاء.</li>
                         <li><strong>الحصن الحصين (آية الكرسي والمعوذتان):</strong> تردد صوتي بمقامات الترتيل يولد حقلاً موجياً واقفاً (Standing Scalar Wave) يغلق شقوق الهالة تماماً ويعكس الهجمات النارية كمرآة كهرومغناطيسية عاكسة.</li>
@@ -1633,7 +1633,7 @@ def generate_codex():
                                     <stop offset="100%" stop-color="#ef4444" />
                                 </linearGradient>
                                 <radialGradient id="auraGlow" cx="160" cy="95" r="90" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#ffd166" stop-opacity="0.45" />
+                                    <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.45" />
                                     <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.15" />
                                     <stop offset="100%" stop-color="#000000" stop-opacity="0" />
                                 </radialGradient>
@@ -1663,10 +1663,10 @@ def generate_codex():
                             <circle cx="160" cy="95" r="60" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1" />
                             <circle cx="160" cy="95" r="45" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
                             <!-- Radiating Rays -->
-                            <line x1="160" y1="15" x2="160" y2="35" stroke="#ffd166" stroke-width="2" />
-                            <line x1="160" y1="155" x2="160" y2="175" stroke="#ffd166" stroke-width="1.5" />
-                            <line x1="80" y1="95" x2="100" y2="95" stroke="#ffd166" stroke-width="1.5" />
-                            <line x1="220" y1="95" x2="240" y2="95" stroke="#ffd166" stroke-width="1.5" />
+                            <line x1="160" y1="15" x2="160" y2="35" stroke="#94a3b8" stroke-width="2" />
+                            <line x1="160" y1="155" x2="160" y2="175" stroke="#94a3b8" stroke-width="1.5" />
+                            <line x1="80" y1="95" x2="100" y2="95" stroke="#94a3b8" stroke-width="1.5" />
+                            <line x1="220" y1="95" x2="240" y2="95" stroke="#94a3b8" stroke-width="1.5" />
 
                             <!-- Meditating Human Silhouette Contour (Lotus Pose) -->
                             <!-- 2. Etheric Envelope (Pranic Blueprint hugging skin) -->
@@ -1693,7 +1693,7 @@ def generate_codex():
 
                             <!-- Pingala (Right Solar Channel - Gold) -->
                             <path d="M160,470 C185,435 185,415 160,395 C135,360 135,345 160,325 C185,290 185,275 160,255 C135,225 135,210 160,195 C185,165 185,155 160,140 C135,110 135,100 160,85" 
-                                  stroke="#ffd166" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
+                                  stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.75" />
                         </svg>
 
                         <!-- 7 Subtle Bodies Pulsating Interactive Nodes -->
@@ -1739,7 +1739,7 @@ def generate_codex():
                     <span style="font-size:1.4rem;">📊</span>
                     <h3 style="color:#fff; font-family:'Amiri',serif; margin:0; font-size:1.3rem;">جدول المقارنة البانورامي الشامل للأجساد السبعة ومراتب النفس ومفاتيح الإغلاق</h3>
                 </div>
-                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; color:#cbd5e1; text-align:right;">
+                <table style="width:100%; border-collapse:collapse; font-size:0.85rem; color:#475569; text-align:right;">
                     <thead>
                         <tr style="background:rgba(15,23,42,0.9); border-bottom:2px solid var(--gold); color:var(--gold);">
                             <th style="padding:12px 10px;">#</th>
@@ -1836,7 +1836,7 @@ def generate_codex():
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; align-items:center;">
                         <!-- Visual Grid Output -->
                         <div>
-                            <div style="text-align:center; font-size:0.85rem; color:#ffd166; margin-bottom:10px; background:rgba(0,0,0,0.4); padding:8px 12px; border-radius:8px;" id="wafq-math-summary">
+                            <div style="text-align:center; font-size:0.85rem; color:#94a3b8; margin-bottom:10px; background:rgba(0,0,0,0.4); padding:8px 12px; border-radius:8px;" id="wafq-math-summary">
                                 المطلوب (N) = <strong>105</strong> | المفتاح = <strong>31</strong> | الأس = 12 | الباقي = <strong>0</strong> (تام)
                             </div>
                             <div class="magic-grid-3x3" id="live-wafq-grid" style="max-width:320px; margin:0 auto;"></div>
@@ -1844,7 +1844,7 @@ def generate_codex():
                         </div>
 
                         <!-- Explanatory Guide -->
-                        <div style="font-size:0.86rem; line-height:1.8; color:#cbd5e1; background:rgba(0,0,0,0.3); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+                        <div style="font-size:0.86rem; line-height:1.8; color:#475569; background:rgba(0,0,0,0.3); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
                             <strong style="color:var(--gold); font-size:1rem; display:block; margin-bottom:6px;">قاعدة تعمير مثلث الغزالي الرياضية الصارمة:</strong>
                             <ol style="margin:0 0 10px 18px; padding:0;">
                                 <li><strong>المعادلة الأصلية:</strong> (العدد المطلوب - 12) ÷ 3 = المفتاح (حيث العدد المطلوب هو الرقم المباشر أو مجموع حروف الاسم بحساب الجُمّل).</li>
@@ -1905,7 +1905,7 @@ def generate_codex():
                             <div class="chapter-subtitle">The Anatomical Blueprint: The 9 Matrix Cells & Elemental Coordinates</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>سُمّي هذا المثلث بـ <strong>"مثلث الغزالي الشريف"</strong> أو مثلث <strong>"بطد زهج واح"</strong> لأن الإمام أبا حامد الغزالي جعله في كتابيه <em>"المنقذ من الضلال"</em> و<em>"السر المصون"</em> دليلاً عقلياً برهانياً على وجود خواص باطنية طبيعية في الأعداد والنواميس أودعها الله تعالى في خلقه كالأدوية الكيميائية. وتسمية "بطد زهج واح" ليست لفظاً طلسمياً، بل هي اختصار لأرقام الخانات التسعة بحساب الجُمّل الصغير مصفوفة في ثلاثة أسطر:</p>
 
                         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; align-items:center; margin:16px 0;">
@@ -1921,7 +1921,7 @@ def generate_codex():
                                     
                                     <div class="specimen-cell"><span class="specimen-cell-num" style="color:var(--emerald);">ح (8)</span><span class="specimen-cell-label">بيت الحاء</span></div>
                                     <div class="specimen-cell key-cell"><span class="specimen-cell-num" style="color:var(--emerald);">أ (1)</span><span class="specimen-cell-label">المفتاح 🔑</span></div>
-                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#ffd166;">و (6)</span><span class="specimen-cell-label">بيت الواو</span></div>
+                                    <div class="specimen-cell"><span class="specimen-cell-num" style="color:#94a3b8;">و (6)</span><span class="specimen-cell-label">بيت الواو</span></div>
                                 </div>
                                 <div style="text-align:center; font-size:0.78rem; color:#94a3b8;">توزيع الخانات التسعة الأصلي ومراتب الحروف الأبجدية</div>
                             </div>
@@ -1957,7 +1957,7 @@ def generate_codex():
                             <div class="chapter-subtitle">The Exact Algebraic Engine & The 3 Invariant Remainder Cases</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>يقوم تعمير مثلث الغزالي على معادلة جبرية قطعية ثابتة لا تحتمل الخطأ أو التقريب:</p>
                         
                         <div style="background:rgba(244,180,26,0.1); border:1.5px solid var(--gold); border-radius:12px; padding:16px; text-align:center; margin:14px 0;">
@@ -1965,7 +1965,7 @@ def generate_codex():
                                 القانون الكلي: $	ext{المفتاح} = \lfloor(N - 12) \div 3
 floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             </span>
-                            <div style="font-size:0.8rem; color:#ffd166; margin-top:6px;">حيث $N$ هو المجموع المطلوب، والرقم 12 هو "الأس" الثابت للمثلث</div>
+                            <div style="font-size:0.8rem; color:#94a3b8; margin-top:6px;">حيث $N$ هو المجموع المطلوب، والرقم 12 هو "الأس" الثابت للمثلث</div>
                         </div>
 
                         <p><strong>لماذا نطرح الرقم 12 بالتحديد؟</strong> لأن حاصل جمع الزيادات النسبية بين الخانات التسعة في سيرها الطبيعي (بدءاً من الصفر) يساوي: $0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36$، وحيث أن المثلث له 3 صفوف، فإن نصيب الصف الواحد من الزيادات التراكمية هو $36 \div 3 = 12$. فطرح 12 هو تفريغ للوزن الهندسي للشبكة حتى يتبقى المقدار الخالص القابل للقسمة على 3 بالتساوي.</p>
@@ -1976,7 +1976,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                 <strong style="color:var(--emerald); font-size:1rem; display:block; margin-bottom:6px;">
                                     <i class="fa-solid fa-check-double"></i> الحالة الأولى: الباقي = 0 (الوفق التام الصحاح)
                                 </strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block; margin-bottom:8px;">
+                                <span style="font-size:0.82rem; color:#475569; display:block; margin-bottom:8px;">
                                     يحدث عندما يقبل الناتج $(N - 12)$ القسمة على 3 دون باقٍ (مثل الأعداد 15، 66، 105، 786).
                                 </span>
                                 <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:8px; font-size:0.8rem;">
@@ -1992,7 +1992,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                 <strong style="color:#c026d3; font-size:1rem; display:block; margin-bottom:6px;">
                                     <i class="fa-solid fa-bolt"></i> الحالة الثانية: الباقي = 1 (كسر 1 ➔ جبر بيت 7)
                                 </strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block; margin-bottom:8px;">
+                                <span style="font-size:0.82rem; color:#475569; display:block; margin-bottom:8px;">
                                     يحدث عندما يتبقى 1 بعد القسمة (مثل الأعداد 16، 94، 106، 391).
                                 </span>
                                 <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:8px; font-size:0.8rem;">
@@ -2008,7 +2008,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                 <strong style="color:#ef4444; font-size:1rem; display:block; margin-bottom:6px;">
                                     <i class="fa-solid fa-fire"></i> الحالة الثالثة: الباقي = 2 (كسر 2 ➔ جبر بيت 4)
                                 </strong>
-                                <span style="font-size:0.82rem; color:#cbd5e1; display:block; margin-bottom:8px;">
+                                <span style="font-size:0.82rem; color:#475569; display:block; margin-bottom:8px;">
                                     يحدث عندما يتبقى 2 بعد القسمة (مثل الأعداد 17، 107، 308).
                                 </span>
                                 <div style="background:rgba(0,0,0,0.4); padding:10px; border-radius:8px; font-size:0.8rem;">
@@ -2031,7 +2031,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">3 Complete Real-World End-to-End Operational Case Studies</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>لكي لا يبقى هذا العلم نظرياً في بطون المخطوطات، إليك ثلاثة تصاريف حقيقية كاملة لكبرى مطالب الحياة الإنسانية، مشروحة بالحساب الهندسي والشبكة البصرية وبروتوكول الاستخدام الفعلي خطوة بخطوة:</p>
 
                         <!-- EXAMPLE 1: HEALING & RECOVERY -->
@@ -2068,7 +2068,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                     </div>
                                 </div>
 
-                                <div style="font-size:0.85rem; line-height:1.75; color:#cbd5e1;">
+                                <div style="font-size:0.85rem; line-height:1.75; color:#475569;">
                                     <strong style="color:var(--gold);">١. الاستخراج الحسابي الدقيق:</strong>
                                     <br>• جُمّل "شـافـي": ش (300) + ا (1) + ف (80) + ي (10) = <strong>391</strong>.
                                     <br>• طرح الأس: $391 - 12 = 379$.
@@ -2136,7 +2136,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                     </div>
                                 </div>
 
-                                <div style="font-size:0.85rem; line-height:1.75; color:#cbd5e1;">
+                                <div style="font-size:0.85rem; line-height:1.75; color:#475569;">
                                     <strong style="color:var(--gold);">١. الاستخراج الحسابي الدقيق:</strong>
                                     <br>• جُمّل "رزاق": ر (200) + ز (7) + ا (1) + ق (100) = <strong>308</strong>.
                                     <br>• طرح الأس: $308 - 12 = 296$.
@@ -2204,7 +2204,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                     </div>
                                 </div>
 
-                                <div style="font-size:0.85rem; line-height:1.75; color:#cbd5e1;">
+                                <div style="font-size:0.85rem; line-height:1.75; color:#475569;">
                                     <strong style="color:var(--gold);">١. الاستخراج الحسابي الدقيق:</strong>
                                     <br>• جُمّل "الله": ا (1) + ل (30) + ل (30) + هـ (5) = <strong>66</strong>.
                                     <br>• طرح الأس: $66 - 12 = 54$.
@@ -2250,7 +2250,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Alchemy of Substrates, Organic Inks & Biological Resonance Instruments</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>إن من أكبر أسباب فشل المشتغلين المعاصرين بالأوفاق هو استخدامهم <strong>أدوات صناعية كيميائية ميتة</strong> تعزل الشحنات الكهروستاتيكية وتمنع تشكل الحقل الرنيني الأثيري. إليك الدستور المادي الصحيح كما قعّده أئمة الصنعة:</p>
 
                         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin:16px 0;">
@@ -2291,7 +2291,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Astronomical Resonance: Planetary Hours & The Void of Course Curse</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>لا يعمل الوفق في فراغ زمني منعزل؛ بل هو <strong>موجّه موجي يلتقط الترددات الكوكبية المدارية</strong>. فإذا كُتب الوفق في ساعة كوكبية متضاربة، انعدم الرنين وحصل التداخل الهدام. إليك القواعد الزمنية الصارمة:</p>
 
                         <div style="overflow-x:auto; margin:16px 0;">
@@ -2375,7 +2375,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Acoustic Entrainment, Mantra Physics & Brainwave Synchronization</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>كتابة الأرقام على الورق هي بمثابة بناء "الدائرة الكهربائية المادية"؛ أما <strong>التفعيل الصوتي وتوجيه النية</strong> فهو تمرير "التيار الكهربائي الحي" في تلك الدائرة. وبدون هذا البروتوكول، يظل الوفق جسداً بلا روح:</p>
 
                         <div class="operational-protocol-box">
@@ -2411,7 +2411,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Reverse Engineering Historical Talismans & Safely Neutralizing Corrupted Magic</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>إذا عثرت على وفق تاريخي أو طلسم مجهول في مخطوط أو ورقة قديمة، وأردت معرفة حقيقته وكشف سره خلال دقيقتين دون تخمين، فاتبع <strong>خوارزمية الهندسة العكسية</strong> التالية:</p>
 
                         <div style="background:rgba(0,0,0,0.35); border-radius:12px; border:1px solid rgba(255,255,255,0.08); padding:18px; margin:14px 0;">
@@ -2450,7 +2450,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Hermetic Sealing, The 14 Luminous Letters & Quranic Sovereignty</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>إن ترك الوفق مفتوحاً دون إغلاق يشبه ترك سلك كهربائي عارٍ متصل بالتيار في بركة ماء؛ حيث يؤدي تسرب الطاقة إلى استنزاف هالة صاحبه واجتذاب الطفيليات واليرقات النجمية. إليك دستور الختم والحصانة الكبرى:</p>
 
                         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin:16px 0;">
@@ -2495,7 +2495,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Cognitive Blind-Spotting & Waveform Deflection: The Sadda Vector (N = 3144)</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             يعتمد سر الحجب والدفع في الكوزمولوجيا القرآنية على قوله تعالى: 
                             <strong style="color:var(--gold);">﴿وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا فَأَغْشَيْنَاهُمْ فَهُمْ لَا يُبْصِرُونَ﴾</strong> [يس: 9]. 
@@ -2584,7 +2584,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Purging the Ra'n Biomagnetic Smog & Awakening Pineal Clarity (N = 558)</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             كشف القرآن الكريم عن ماهية الحجب الداخلي بقوله تعالى: 
                             <strong style="color:var(--gold);">﴿كَلَّا بَلْ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُوا يَكْسِبُونَ﴾</strong> [المطففين: 14]. 
@@ -2676,7 +2676,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Deconstruction of Servitor Spirits & The Absolute Monotheistic Sovereignty</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             من أعظم المفاسد التي حشا بها جهلة النساخ كتب التراث هو الزعم بأن للأوفاق «أرواحاً خادمة، عماراً، أو أعواناً سفلية» 
                             تُستجلب بالتعازيم وتُستعبد للأغراض الدنيوية. يمثل هذا التصور انحداراً خرافياً يناقض العقل الصريح وصريح القرآن.
@@ -2723,21 +2723,21 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Numerical Vibrations, Gematria Expansion Methods & Recitation Harmonic Ratios</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             لا توضع الأرقام في مثلث الغزالي اعتباطاً أو على سبيل التخمين؛ بل لكل رقم شفرة ترددية هندسية تحاكي القانون الكوني. 
                             هنا نفكك سر الأعداد المستخدمة، ولماذا تم اختيارها، وكيف يُربط عدد التلاوة بأضلاع الوفق.
                         </p>
 
                         <!-- The Derivations Table -->
-                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(255,209,102,0.3); border-radius:14px; padding:18px; margin:16px 0;">
+                        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(148, 163, 184,0.3); border-radius:14px; padding:18px; margin:16px 0;">
                             <h5 style="color:var(--gold); margin:0 0 10px 0; font-family:'Amiri',serif; font-size:1.25rem;">
                                 🔢 لماذا اخترنا هذه الأعداد بالذات في النماذج التطبيقية؟
                             </h5>
                             <div style="overflow-x:auto;">
                                 <table style="width:100%; border-collapse:collapse; font-size:0.84rem; text-align:right;">
                                     <thead>
-                                        <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(255,209,102,0.3);">
+                                        <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(148, 163, 184,0.3);">
                                             <th style="padding:10px;">الغاية</th>
                                             <th style="padding:10px;">العدد (N)</th>
                                             <th style="padding:10px;">الاشتقاق والسر الترددي</th>
@@ -2827,7 +2827,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">The Seven Planetary Incense Formulas, Olfactory Neuroscience & Terpene Resonance</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             لم يكن البخور في المخطوطات القديمة طقساً سحرياً شكلياً؛ بل هو <strong>كيمياء حيوية عصبية (Neuro-Aromatherapy)</strong>. 
                             ترتبط جزيئات الروائح العطرية مباشرة بالبصلة الشمية (Olfactory Bulb) المرتبطة فورياً بالجهاز الحوفي (Limbic System) 
@@ -2843,7 +2843,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div style="overflow-x:auto;">
                                 <table style="width:100%; border-collapse:collapse; font-size:0.83rem; text-align:right;">
                                     <thead>
-                                        <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(255,209,102,0.3);">
+                                        <tr style="background:rgba(255,255,255,0.06); color:var(--gold); border-bottom:2px solid rgba(148, 163, 184,0.3);">
                                             <th style="padding:10px;">اليوم والفلك</th>
                                             <th style="padding:10px;">البخور الرئيسي النقي</th>
                                             <th style="padding:10px;">الخلطة المتوافقة التراثية</th>
@@ -2909,7 +2909,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         <!-- Practical Fumigation Protocol -->
                         <div style="background:rgba(0,0,0,0.5); border-left:4px solid var(--gold); padding:16px; border-radius:10px;">
                             <strong style="color:var(--gold); display:block; margin-bottom:6px;">⚠️ بروتوكول التبخير الصحي السليم:</strong>
-                            <p style="font-size:0.84rem; line-height:1.75; margin:0; color:#cbd5e1;">
+                            <p style="font-size:0.84rem; line-height:1.75; margin:0; color:#475569;">
                                 • يُشترط استخدام جمر نقي من خشب طبيعي (كالفحم النباتي الخالي من الإضافات الكيميائية والكبريت).<br>
                                 • لا يُرمى البخور دفعة واحدة؛ بل توضع حبيبات صغيرة تدريجياً ليتصاعد الدخان رقيقاً نقياً غير خانق.<br>
                                 • الحفاظ على تهوية لطيفة بالغرفة لتجديد الأكسجين وتجنب استنشاق أول أكسيد الكربون، فالمطلوب هو الرائحة الأثيرية وليس الاختناق بالدخان.
@@ -2927,7 +2927,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Chrono-Spatial Planetary Hours, Lunar Mansions & The Four Cosmic Directions</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             يعمل مثلث الغزالي كهوائي كهرومغناطيسي؛ ولكي يلتقط الإشارة الكونية بأعلى قدر من النقاوة، يجب ضبط 
                             <strong>«التردد الزماني (Temporal Tuning)»</strong> و<strong>«التوجيه المكاني (Spatial Alignment)»</strong>.
@@ -2988,7 +2988,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         <!-- Lunar Mansions Compatibility -->
                         <div style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px;">
                             <strong style="color:#fff; display:block; margin-bottom:6px;"><i class="fa-solid fa-moon"></i> أطوار القمر ومنازله الـ 28:</strong>
-                            <p style="font-size:0.84rem; line-height:1.75; margin:0; color:#cbd5e1;">
+                            <p style="font-size:0.84rem; line-height:1.75; margin:0; color:#475569;">
                                 • يُشترط في أعمال الشفاء والرزق والهيبة أن يكون القمر <strong>في طور الزيادة (من الهلال إلى البدر)</strong>، وتُفضل المنازل السعيدة: (الثريا، الهنعة، الذراع، الجبهة، السماك الأعزل، الغفر، وسعد السعود).<br>
                                 • يُجتنب التعمير في أوقات <em>خلو المسار (Moon Void of Course)</em> أو في أيام المحاق المظلمة (آخر ليلتين من الشهر القمري) إلا لأعمال الحجب والدفع المخصوصة.
                             </p>
@@ -3005,7 +3005,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                             <div class="chapter-subtitle">Topological Rotational Symmetry, The Hollow-Center Mystery & De-activation Protocols</div>
                         </div>
                     </div>
-                    <div style="font-size:0.88rem; line-height:1.85; color:#cbd5e1;">
+                    <div style="font-size:0.88rem; line-height:1.85; color:#475569;">
                         <p>
                             لقد أوجز الإمام الغزالي في كتبه <em>«السر المصون»</em> و<em>«المنقذ من الضلال»</em> قواعد الوفق دون أن يبين 
                             البرهان الرياضي والطوبولوجي العميق الذي يفسر لماذا يعمل هذا التشكيل تحديداً. هنا نكشف ما عجز عنه الشراح القدامى:
@@ -3049,7 +3049,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                                 إذا تحقق الغرض المرجو (تم الشفاء، حلت البركة، أو زال الخطر)، فإن ترك الوفق مشحوناً للأبد قد يؤدي إلى ركود طاقي. 
                                 إليك دستور صرف الطاقة وتفريغ الشحنة بأمان تام:
                             </p>
-                            <ol style="margin:0 0 0 18px; padding:0; font-size:0.84rem; line-height:1.75; color:#cbd5e1;">
+                            <ol style="margin:0 0 0 18px; padding:0; font-size:0.84rem; line-height:1.75; color:#475569;">
                                 <li><strong>المحو المائي:</strong> يُغسل الكاغد في ماء طاهر جارٍ أو ماء مطر مع قراءة سورة الإخلاص والمعوذتين، حتى تذوب الأرقام تماماً ويعود الماء إلى الأرض الطيبة (سقي شجرة مثمرة).</li>
                                 <li><strong>التحلل الحراري:</strong> يُحرق الكاغد في موقد نقي مع رشة لبان ذكر، ويُذر رماده في مهب ريح الصبا أو في نهر جارٍ.</li>
                                 <li><strong>إعلان الشكر والامتنان:</strong> صلاة ركعتين شكراً لله تعالى على قضاء الحاجة وتأكيد أن الفضل والمنة لله وحده لا لعدد ولا لوفق، وبذلك تُغلق الدائرة الأثيرية في سلام تام.</li>
@@ -3716,7 +3716,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
             tbody.innerHTML = DECANS_36_DATA.map(d => `
                 <tr>
                     <td><strong style="color:var(--gold); font-size:0.92rem;">${d.sign}</strong></td>
-                    <td><span style="color:#cbd5e1; font-weight:600;">${d.deg}</span></td>
+                    <td><span style="color:#475569; font-weight:600;">${d.deg}</span></td>
                     <td><span style="color:var(--cyan); font-weight:700;">${d.ruler}</span></td>
                     <td><strong style="color:#f472b6;">${d.bakyu}</strong></td>
                     <td>${d.angel}</td>
@@ -3768,7 +3768,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                     <td>${m.angel}</td>
                     <td>${m.nat}</td>
                     <td>${m.planet}</td>
-                    <td style="font-size:0.8rem; color:#cbd5e1;"><strong>البخور:</strong> ${m.inc}<br><strong>التأثير:</strong> ${m.work}</td>
+                    <td style="font-size:0.8rem; color:#475569;"><strong>البخور:</strong> ${m.inc}<br><strong>التأثير:</strong> ${m.work}</td>
                 </tr>
             `).join('');
         }
@@ -3783,7 +3783,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                     <td><span style="color:var(--cyan); font-weight:700; font-size:1rem;">${w.constant}</span></td>
                     <td><span style="color:#f472b6; font-weight:700;">${w.total}</span></td>
                     <td style="font-size:0.8rem; color:#e2e8f0;">${w.china}</td>
-                    <td style="font-size:0.8rem; color:#cbd5e1;">${w.vedic}</td>
+                    <td style="font-size:0.8rem; color:#475569;">${w.vedic}</td>
                     <td style="font-size:0.8rem; color:#fef08a;">${w.hermetic}</td>
                     <td><code style="color:var(--gold); font-weight:700;">${w.freq}</code><br><span style="font-size:0.75rem; color:#94a3b8;">${w.note}</span></td>
                     <td style="font-size:0.82rem; color:#a7f3d0;">${w.bio}</td>
@@ -3821,11 +3821,11 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         </div>
                     </div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.83rem; margin-bottom:14px; background:rgba(0,0,0,0.3); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.05);">
-                        <div><strong style="color:var(--cyan);">الشاكرا والموقع:</strong> <span style="color:#cbd5e1;">${b.chakra}</span></div>
-                        <div><strong style="color:var(--cyan);">السُمك والمدى:</strong> <span style="color:#cbd5e1;">${b.thickness}</span></div>
-                        <div style="grid-column:span 2;"><strong style="color:var(--cyan);">التردد الحاكم:</strong> <span style="color:#cbd5e1;">${b.frequency}</span></div>
+                        <div><strong style="color:var(--cyan);">الشاكرا والموقع:</strong> <span style="color:#475569;">${b.chakra}</span></div>
+                        <div><strong style="color:var(--cyan);">السُمك والمدى:</strong> <span style="color:#475569;">${b.thickness}</span></div>
+                        <div style="grid-column:span 2;"><strong style="color:var(--cyan);">التردد الحاكم:</strong> <span style="color:#475569;">${b.frequency}</span></div>
                     </div>
-                    <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.65; margin-bottom:14px;">
+                    <p style="font-size:0.88rem; color:#475569; line-height:1.65; margin-bottom:14px;">
                         <strong style="color:#fff;">الفيزياء الحيوية وميكانيكا الفوتون:</strong> ${b.physics}
                     </p>
                     <div class="attack-vulnerability-box">
@@ -4347,17 +4347,17 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                     </div>
 
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.82rem; margin-bottom:14px; background:rgba(0,0,0,0.3); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.05);">
-                        <div><strong style="color:var(--cyan);">المخرج الصوتي:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.makhraj}</span></div>
-                        <div><strong style="color:var(--cyan);">التردد المقدر:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.hz}</span></div>
-                        <div><strong style="color:var(--cyan);">الفلك والكوكب:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.celestial}</span></div>
-                        <div><strong style="color:var(--cyan);">منزلة القمر:</strong> <span style="color:#cbd5e1; display:block; margin-top:2px;">${l.mansion}</span></div>
+                        <div><strong style="color:var(--cyan);">المخرج الصوتي:</strong> <span style="color:#475569; display:block; margin-top:2px;">${l.makhraj}</span></div>
+                        <div><strong style="color:var(--cyan);">التردد المقدر:</strong> <span style="color:#475569; display:block; margin-top:2px;">${l.hz}</span></div>
+                        <div><strong style="color:var(--cyan);">الفلك والكوكب:</strong> <span style="color:#475569; display:block; margin-top:2px;">${l.celestial}</span></div>
+                        <div><strong style="color:var(--cyan);">منزلة القمر:</strong> <span style="color:#475569; display:block; margin-top:2px;">${l.mansion}</span></div>
                         <div style="grid-column:span 2;"><strong style="color:var(--gold);">ميزان جابر بن حيان:</strong> <span style="color:#fef08a;">${l.jabir}</span></div>
                         <div style="grid-column:span 2;"><strong style="color:var(--gold);">الاسم الإلهي المفتاح:</strong> <span style="color:#34d399; font-weight:700;">${l.divine_name}</span></div>
                     </div>
 
                     <div style="background:linear-gradient(135deg, rgba(244,180,26,0.08), rgba(0,240,255,0.04)); border:1px solid rgba(244,180,26,0.3); border-radius:10px; padding:12px;">
                         <strong style="color:var(--gold); display:flex; align-items:center; gap:6px; font-size:0.85rem;">📜 السر العرفاني والحقيقة الكونية:</strong>
-                        <p style="font-size:0.83rem; color:#cbd5e1; line-height:1.6; margin:6px 0 0 0;">${l.secret}</p>
+                        <p style="font-size:0.83rem; color:#475569; line-height:1.6; margin:6px 0 0 0;">${l.secret}</p>
                     </div>
                 `;
             }
@@ -4405,7 +4405,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         <td style="padding:10px; font-weight:700; color:var(--gold);">${l.val}</td>
                         <td style="padding:10px;"><span style="color:${l.color};">${l.element_ar.split(' ')[0]}</span></td>
                         <td style="padding:10px;"><span style="color:${l.nature === 'luminous' ? 'var(--gold)' : '#94a3b8'}; font-weight:600;">${l.nature === 'luminous' ? 'نوراني' : 'ظلماني'}</span></td>
-                        <td style="padding:10px; font-size:0.8rem; color:#cbd5e1;">${l.makhraj}</td>
+                        <td style="padding:10px; font-size:0.8rem; color:#475569;">${l.makhraj}</td>
                         <td style="padding:10px; font-size:0.8rem; color:var(--cyan);">${l.celestial}</td>
                         <td style="padding:10px; font-size:0.8rem; color:#a78bfa;">${l.mansion}</td>
                         <td style="padding:10px; font-size:0.8rem; color:#fef08a;">${l.jabir}</td>
@@ -4428,7 +4428,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         <td style="padding:10px; font-weight:700; color:${b.color};">${b.name}</td>
                         <td style="padding:10px; color:var(--gold); font-family:'Amiri',serif;">${b.nafs}</td>
                         <td style="padding:10px; font-size:0.8rem; color:#94a3b8;">${b.frequency}</td>
-                        <td style="padding:10px; font-size:0.8rem; color:#cbd5e1;">${b.thickness}</td>
+                        <td style="padding:10px; font-size:0.8rem; color:#475569;">${b.thickness}</td>
                         <td style="padding:10px; font-size:0.8rem; color:#fca5a5;">${b.attack.substring(0, 75)}...</td>
                         <td style="padding:10px; font-size:0.8rem; color:#a7f3d0;">${b.defense.substring(0, 75)}...</td>
                     </tr>
@@ -4447,7 +4447,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         <span><i class="fa-solid fa-book-quran"></i> ${q.surah}</span>
                         <span style="color:var(--emerald);"><i class="fa-solid fa-check-double"></i> إحكام قطعي</span>
                     </div>
-                    <p style="font-size:0.86rem; color:#cbd5e1; line-height:1.7;">${q.analysis}</p>
+                    <p style="font-size:0.86rem; color:#475569; line-height:1.7;">${q.analysis}</p>
                 </div>
             `).join('');
         }
@@ -4621,7 +4621,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
                         </div>
                     </div>
 
-                    <div style="font-size:0.86rem; line-height:1.75; color:#cbd5e1;">
+                    <div style="font-size:0.86rem; line-height:1.75; color:#475569;">
                         <div style="margin-bottom:8px;">
                             <strong style="color:var(--gold);"><i class="fa-solid fa-route"></i> مسار التنزيل الحركي (Traversal Algorithm):</strong><br>
                             <span>${pData.path_desc}</span>
