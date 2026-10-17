@@ -434,7 +434,263 @@ def get_deluxe_chambers_css():
         font-weight: 600;
     }
 
-    /* Live Wafq Interactive Grid Display */
+    /* Live Wafq Interactive Grid Display & Master Studio */
+    .wafq-studio-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .wafq-master-tabs-bar {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 25px;
+        border-bottom: 1.5px solid #334155;
+        padding-bottom: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .wafq-master-tab {
+        background: #0f172a;
+        border: 1.5px solid #334155;
+        color: #94a3b8;
+        padding: 10px 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .wafq-master-tab:hover {
+        color: #f8fafc;
+        border-color: #64748b;
+        background: #1e293b;
+        transform: translateY(-2px);
+    }
+
+    .wafq-master-tab.active {
+        background: rgba(56, 189, 248, 0.12);
+        border-color: #38bdf8;
+        color: #38bdf8;
+        box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+    }
+
+    .wafq-station-panel {
+        animation: fadeInWafq 0.3s ease;
+    }
+
+    @keyframes fadeInWafq {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wafq-sub-header {
+        text-align: center;
+        margin-bottom: 22px;
+    }
+
+    .wafq-sub-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.55rem;
+        color: #f8fafc;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .wafq-sub-desc {
+        font-size: 0.92rem;
+        color: #94a3b8;
+        max-width: 820px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .wafq-planet-selector-bar {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 24px;
+        padding: 12px;
+        background: #090d16;
+        border-radius: 14px;
+        border: 1.5px solid #1e293b;
+    }
+
+    .wafq-order-pill {
+        background: #0f172a;
+        border: 1.5px solid #334155;
+        color: #94a3b8;
+        padding: 9px 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .wafq-order-pill:hover {
+        border-color: #38bdf8;
+        color: #f8fafc;
+        transform: translateY(-2px);
+    }
+
+    .wafq-order-pill.active {
+        background: rgba(56, 189, 248, 0.15);
+        border-color: #38bdf8;
+        color: #38bdf8;
+        box-shadow: 0 0 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .wafq-dual-layout {
+        display: grid;
+        grid-template-columns: minmax(320px, 1.15fr) minmax(320px, 1fr);
+        gap: 24px;
+        align-items: start;
+    }
+
+    @media (max-width: 992px) {
+        .wafq-dual-layout {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .wafq-grid-column {
+        background: radial-gradient(circle at 50% 50%, #0d1527 0%, #090d16 65%, #030712 100%);
+        border: 2px solid #334155;
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wafq-grid-dynamic-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .wafq-grid-dynamic {
+        display: grid;
+        gap: 6px;
+        background: #050810;
+        padding: 16px;
+        border-radius: 16px;
+        border: 2px solid #475569;
+        box-shadow: 0 0 25px rgba(15, 23, 42, 0.8);
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .dynamic-cell {
+        background: #0f172a;
+        border: 1.5px solid #334155;
+        border-radius: 8px;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.2s ease;
+        user-select: none;
+        padding: 4px;
+    }
+
+    .dynamic-cell:hover {
+        background: rgba(56, 189, 248, 0.15);
+        border-color: #38bdf8;
+        transform: scale(1.06);
+        z-index: 10;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    .dynamic-cell.cell-key {
+        border-color: #10b981;
+        background: rgba(16, 185, 129, 0.15);
+        box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+    }
+
+    .dynamic-cell.cell-lock {
+        border-color: #ef4444;
+        background: rgba(239, 68, 68, 0.15);
+        box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+    }
+
+    .dynamic-cell.cell-center {
+        border-color: #38bdf8;
+        background: rgba(56, 189, 248, 0.18);
+        box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+    }
+
+    .dynamic-cell.cell-broken {
+        border-color: #c026d3;
+        background: rgba(192, 38, 211, 0.2);
+        box-shadow: 0 0 14px rgba(192, 38, 211, 0.4);
+    }
+
+    .dynamic-cell-val {
+        font-weight: 800;
+        color: #f8fafc;
+        line-height: 1;
+        font-family: 'Amiri', serif;
+    }
+
+    .dynamic-cell-badge {
+        font-size: 0.65rem;
+        margin-top: 3px;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .wafq-math-badge-bar {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 18px;
+        width: 100%;
+    }
+
+    .wafq-math-badge {
+        background: #090d16;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 0.82rem;
+        color: #94a3b8;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .wafq-math-badge strong { color: #f8fafc; }
+    .wafq-math-badge.verified { border-color: #10b981; color: #34d399; }
+
+    .wafq-dossier-column {
+        background: radial-gradient(circle at 50% 50%, #0d1527 0%, #090d16 65%, #030712 100%);
+        border: 2px solid #334155;
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
     .wafq-grid-table {
         margin: 15px auto;
         border-collapse: separate;
@@ -444,24 +700,268 @@ def get_deluxe_chambers_css():
     .wafq-cell {
         width: 52px;
         height: 52px;
-        background: #ffffff;
-        border: 1.5px solid var(--border-gold);
+        background: #0f172a;
+        border: 1.5px solid #334155;
         border-radius: 10px;
         text-align: center;
         vertical-align: middle;
         font-family: 'Amiri', serif;
         font-size: 1.4rem;
         font-weight: 700;
-        color: #334155;
-        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+        color: #f8fafc;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
         transition: all 0.2s;
     }
 
     .wafq-cell:hover {
-        background: var(--gold);
-        color: #ffffff;
-        box-shadow: 0 0 15px var(--gold-glow);
+        background: #38bdf8;
+        color: #030712;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
         transform: scale(1.08);
+    }
+
+    /* Live Ghazali Custom 3x3 Generator */
+    .ghazali-gen-box {
+        background: radial-gradient(circle at 50% 50%, #0d1527 0%, #090d16 65%, #030712 100%);
+        border: 2px solid #334155;
+        border-radius: 20px;
+        padding: 26px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .magic-grid-3x3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        background: #050810;
+        padding: 14px;
+        border-radius: 14px;
+        border: 2px solid #475569;
+        box-shadow: 0 0 25px rgba(15, 23, 42, 0.8);
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .grid-cell {
+        background: #0f172a;
+        border: 1.5px solid #334155;
+        border-radius: 8px;
+        height: 78px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        user-select: none;
+    }
+
+    .grid-cell:hover {
+        background: rgba(56, 189, 248, 0.12);
+        border-color: #38bdf8;
+    }
+
+    .cell-num {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #f8fafc;
+        line-height: 1;
+        font-family: 'Amiri', serif;
+    }
+
+    .cell-letter {
+        font-size: 0.78rem;
+        color: #94a3b8;
+        margin-top: 4px;
+        font-weight: 600;
+    }
+
+    /* 15 Chapters Ghazali Handbook Styling */
+    .ghazali-master-handbook {
+        background: radial-gradient(circle at 50% 50%, #0d1527 0%, #090d16 65%, #030712 100%);
+        border: 2px solid #475569;
+        border-radius: 24px;
+        padding: 34px 28px;
+        margin-bottom: 35px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ghazali-handbook-header {
+        text-align: center;
+        border-bottom: 2px solid #334155;
+        padding-bottom: 24px;
+        margin-bottom: 28px;
+        position: relative;
+    }
+
+    .ghazali-handbook-header::after {
+        content: '۞';
+        position: absolute;
+        bottom: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0d1326;
+        padding: 0 16px;
+        color: #38bdf8;
+        font-size: 1.4rem;
+    }
+
+    .ghazali-handbook-title {
+        font-family: 'Amiri', serif;
+        font-size: 2.1rem;
+        color: #f8fafc;
+        margin: 0 0 8px 0;
+        text-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+    }
+
+    .ghazali-handbook-subtitle {
+        font-size: 0.95rem;
+        color: #94a3b8;
+        max-width: 860px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .ghazali-nav-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 30px;
+        padding: 14px;
+        background: #050810;
+        border-radius: 16px;
+        border: 1px solid #1e293b;
+    }
+
+    .ghazali-nav-pill {
+        background: #0f172a;
+        border: 1px solid #334155;
+        color: #94a3b8;
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .ghazali-nav-pill:hover {
+        color: #f8fafc;
+        border-color: #38bdf8;
+        background: #1e293b;
+        transform: translateY(-2px);
+    }
+
+    .ghazali-chapter {
+        background: #080d1a;
+        border: 1.5px solid #1e293b;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+        transition: all 0.2s ease;
+    }
+
+    .ghazali-chapter:hover {
+        border-color: #334155;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .chapter-heading {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-bottom: 1px solid #1e293b;
+        padding-bottom: 14px;
+        margin-bottom: 16px;
+    }
+
+    .chapter-num-badge {
+        background: rgba(56, 189, 248, 0.15);
+        border: 1.5px solid #38bdf8;
+        color: #38bdf8;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Amiri', serif;
+        font-size: 1.35rem;
+        font-weight: 800;
+        flex-shrink: 0;
+    }
+
+    .chapter-title {
+        font-family: 'Amiri', serif;
+        font-size: 1.35rem;
+        color: #f8fafc;
+        margin: 0;
+    }
+
+    .chapter-subtitle {
+        font-size: 0.8rem;
+        color: #64748b;
+        margin-top: 2px;
+    }
+
+    .specimen-grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        background: #050810;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1.5px solid #334155;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .specimen-cell {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        height: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .specimen-cell-num {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #f8fafc;
+    }
+
+    .specimen-cell-label {
+        font-size: 0.65rem;
+        color: #64748b;
+        margin-top: 3px;
+    }
+
+    .synth-btn {
+        background: #0f172a;
+        border: 1.5px solid #38bdf8;
+        color: #38bdf8;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Tajawal', sans-serif;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+    }
+
+    .synth-btn:hover, .synth-btn.playing {
+        background: #38bdf8;
+        color: #030712;
+        box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
     }
 
     /* Abjad Live Interactive Box */
@@ -1145,42 +1645,34 @@ def generate_letters_chamber_html():
     )
 
 
-def generate_wafqs_chamber_html():
-    wafqs = COSMIC_DATABASE["wafqs"]
-    wafq_cards = ""
-    for w in wafqs:
-        grid_html = ""
-        if isinstance(w["grid"], list):
-            grid_html += '<table class="wafq-grid-table">'
-            for row in w["grid"]:
-                grid_html += '<tr>'
-                for cell in row:
-                    grid_html += f'<td class="wafq-cell">{cell}</td>'
-                grid_html += '</tr>'
-            grid_html += '</table>'
-        else:
-            grid_html = f'<div style="text-align:center; padding:18px; color:#94a3b8;">{w["grid"]}</div>'
+def get_ghazali_handbook_html():
+    codex_file = os.path.join(os.path.dirname(__file__), "generate_complete_codex.py")
+    if os.path.exists(codex_file):
+        try:
+            with open(codex_file, "r", encoding="utf-8") as f:
+                codex_content = f.read()
+            s_marker = 'THE AL-GHAZALI MASTER HANDBOOK'
+            e_marker = 'END OF AL-GHAZALI MASTER HANDBOOK'
+            s_idx = codex_content.find(s_marker)
+            e_idx = codex_content.find(e_marker)
+            if s_idx != -1 and e_idx != -1:
+                div_start = codex_content.find('<div class="ghazali-master-handbook"', s_idx)
+                div_end = codex_content.rfind('</div>', 0, e_idx)
+                if div_start != -1 and div_end != -1:
+                    return codex_content[div_start:div_end + len('</div>')]
+        except Exception as e:
+            print(f"Error extracting handbook: {e}")
+    return ""
 
-        wafq_cards += f"""
-        <div class="cosmic-gilded-card" style="--card-accent:{w['color']};">
-            <div class="card-top-header">
-                <span class="card-rank-badge">وفق {w['order']}×{w['order']}</span>
-                <span class="card-sub-badge">كوكب {w['planet']}</span>
-            </div>
-            <h3 class="card-main-title">{w['elements']}</h3>
-            <div class="card-meta-table">
-                <div class="card-meta-row"><span class="card-meta-lbl">المفتاح العددي (Constant):</span><span class="card-meta-val" style="color:var(--gold);">{w['constant']}</span></div>
-                <div class="card-meta-row"><span class="card-meta-lbl">مجموع أعداد الوفق:</span><span class="card-meta-val">{w['total']}</span></div>
-            </div>
-            {grid_html}
-        </div>
-        """
+
+def generate_wafqs_chamber_html():
+    handbook_html = get_ghazali_handbook_html()
 
     treatises_html = """
     <!-- 4 MASTER SCHOLARLY TREATISES -->
     <div style="margin-top:40px; margin-bottom:30px;">
-        <h3 style="color:var(--gold); font-family:'Amiri',serif; font-size:1.45rem; margin-bottom:16px; display:flex; align-items:center; gap:10px;">
-            <i class="fa-solid fa-book-atlas"></i> الموسوعة الأكاديمية الشاملة لعلم الأوفاق: النواميس الكونية ودستور التحقيق
+        <h3 style="color:#f8fafc; font-family:'Amiri',serif; font-size:1.45rem; margin-bottom:16px; display:flex; align-items:center; gap:10px;">
+            <i class="fa-solid fa-book-atlas" style="color:#38bdf8;"></i> الموسوعة الأكاديمية الشاملة لعلم الأوفاق: النواميس الكونية ودستور التحقيق
         </h3>
 
         <div class="wafq-treatise-grid">
@@ -1319,30 +1811,158 @@ def generate_wafqs_chamber_html():
             </div>
         </div>
     </div>
+    """
 
-    <!-- Complete 7 Planetary Squares Compendium Table -->
-    <div style="margin-bottom:25px;">
-        <h3 style="color:#d8b4fe; font-family:'Amiri',serif; font-size:1.35rem; margin-bottom:12px;">
-            <i class="fa-solid fa-cubes"></i> مصفوفة الأوفاق السبعة الكوكبية الكاملة من 3×3 إلى 9×9 وتردداتها وتطبيقاتها عبر الحضارات
-        </h3>
-        <div class="data-table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>نوع الوفق ورتبته</th>
-                        <th>الكوكب والمعدن</th>
-                        <th>الثابت (M)</th>
-                        <th>المجموع (T)</th>
-                        <th>في الصين القديمة (Luo Shu)</th>
-                        <th>في الفيدا الهندية (Yantra)</th>
-                        <th>في الهرمسية الغربية (Agrippa)</th>
-                        <th>التردد والنغمة</th>
-                        <th>التأثير البيولوجي والأثيري</th>
-                        <th>استماع للرنين</th>
-                    </tr>
-                </thead>
-                <tbody id="planetary-wafqs-tbody"></tbody>
-            </table>
+    content_html = f"""
+    <!-- WAFQ MASTER STUDIO 4-STATION CONTROLLER -->
+    <div class="wafq-studio-container">
+        <!-- MASTER NAVIGATION TABS -->
+        <div class="wafq-master-tabs-bar">
+            <button class="wafq-master-tab active" id="wafq-tab-btn-planetary" onclick="switchWafqStation('planetary')">
+                <i class="fa-solid fa-shapes"></i>
+                <span>مختبر الأوفاق الكوكبية السبعة (3×3 إلى 9×9)</span>
+            </button>
+            <button class="wafq-master-tab" id="wafq-tab-btn-ghazali" onclick="switchWafqStation('ghazali')">
+                <i class="fa-solid fa-calculator"></i>
+                <span>مولّد وحاسبة وفق الغزالي 3×3 المباشر</span>
+            </button>
+            <button class="wafq-master-tab" id="wafq-tab-btn-handbook" onclick="switchWafqStation('handbook')">
+                <i class="fa-solid fa-book-quran"></i>
+                <span>دستور وكتيب أسرار الغزالي (الأبواب الـ 15 كاملة)</span>
+            </button>
+            <button class="wafq-master-tab" id="wafq-tab-btn-encyclopedia" onclick="switchWafqStation('encyclopedia')">
+                <i class="fa-solid fa-table-cells"></i>
+                <span>المصفوفة الشاملة والموسوعة الأكاديمية</span>
+            </button>
+        </div>
+
+        <!-- STATION 1: PLANETARY MATRIX LAB -->
+        <div id="wafq-station-planetary" class="wafq-station-panel">
+            <div class="wafq-sub-header">
+                <h3 class="wafq-sub-title"><i class="fa-solid fa-compass-drafting" style="color:#38bdf8;"></i> المختبر الرياضي الكوكبي للأوفاق المتزنة (3×3 حتى 9×9)</h3>
+                <p class="wafq-sub-desc">اختر رتبة الوفق أو الكوكب لتوليد المصفوفة الرياضية الحقيقية لحظياً، مع فحص التوازن التام للصفوف والأعمدة والأقطار والاستماع لتردد الرنين المداري:</p>
+            </div>
+
+            <!-- Planetary Order Selector Pills -->
+            <div class="wafq-planet-selector-bar">
+                <button class="wafq-order-pill active" id="wafq-pill-3" onclick="renderPlanetaryMatrixLab(3)">
+                    <span style="color:#a855f7; font-weight:900;">♄</span> وفق زحل 3×3 (M=15)
+                </button>
+                <button class="wafq-order-pill" id="wafq-pill-4" onclick="renderPlanetaryMatrixLab(4)">
+                    <span style="color:#06b6d4; font-weight:900;">♃</span> وفق المشتري 4×4 (M=34)
+                </button>
+                <button class="wafq-order-pill" id="wafq-pill-5" onclick="renderPlanetaryMatrixLab(5)">
+                    <span style="color:#ef4444; font-weight:900;">♂</span> وفق المريخ 5×5 (M=65)
+                </button>
+                <button class="wafq-order-pill" id="wafq-pill-6" onclick="renderPlanetaryMatrixLab(6)">
+                    <span style="color:#38bdf8; font-weight:900;">☉</span> وفق الشمس 6×6 (M=111)
+                </button>
+                <button class="wafq-order-pill" id="wafq-pill-7" onclick="renderPlanetaryMatrixLab(7)">
+                    <span style="color:#10b981; font-weight:900;">♀</span> وفق الزهرة 7×7 (M=175)
+                </button>
+                <button class="wafq-order-pill" id="wafq-pill-8" onclick="renderPlanetaryMatrixLab(8)">
+                    <span style="color:#6366f1; font-weight:900;">☿</span> وفق عطارد 8×8 (M=260)
+                </button>
+                <button class="wafq-order-pill" id="wafq-pill-9" onclick="renderPlanetaryMatrixLab(9)">
+                    <span style="color:#f8fafc; font-weight:900;">☽</span> وفق القمر 9×9 (M=369)
+                </button>
+            </div>
+
+            <div class="wafq-dual-layout">
+                <!-- Left: Dynamic Grid & Verification Badges -->
+                <div class="wafq-grid-column">
+                    <div class="wafq-grid-dynamic-wrapper">
+                        <div class="wafq-grid-dynamic" id="wafq-dynamic-grid-container"></div>
+                    </div>
+                    <div class="wafq-math-badge-bar" id="wafq-math-badges-container"></div>
+                </div>
+
+                <!-- Right: Inspector Telemetry & Scholarship Card -->
+                <div class="wafq-dossier-column">
+                    <div id="wafq-inspector-content" class="wafq-inspector-card"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATION 2: GHAZALI LIVE CUSTOM GENERATOR -->
+        <div id="wafq-station-ghazali" class="wafq-station-panel" style="display:none;">
+            <div class="ghazali-gen-box">
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:18px; border-bottom:1.5px solid #334155; padding-bottom:14px;">
+                    <div>
+                        <h3 style="margin:0; font-family:'Amiri',serif; font-size:1.45rem; color:#f8fafc; display:flex; align-items:center; gap:8px;">
+                            <i class="fa-solid fa-calculator" style="color:#38bdf8;"></i> حاسبة ومولّد وفق الغزالي 3×3 المباشر لأي عدد أو اسم
+                        </h3>
+                        <span style="font-size:0.84rem; color:#94a3b8;">أدخل أي عدد صحيح أو اسم/آية (يتم حساب الجُمّل الكبير تلقائياً)، ويتم استخراج المفتاح والمغلق وخانة الجبر ومطابقة المجاميع اللحظية:</span>
+                    </div>
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <input type="text" id="wafq-input" value="105" placeholder="أدخل عدداً أو اسماً (مثال: 105، آدم، الله، سلام)" class="ghazali-input">
+                        <button onclick="calculateLiveWafq()" class="synth-btn" style="padding:10px 18px; font-size:0.92rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> توليد الوفق</button>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; align-items:center;">
+                    <!-- Visual Grid Output -->
+                    <div>
+                        <div style="text-align:center; font-size:0.86rem; color:#94a3b8; margin-bottom:12px; background:#050810; padding:10px 14px; border-radius:10px; border:1px solid #1e293b;" id="wafq-math-summary">
+                            المطلوب (N) = <strong>105</strong> | المفتاح = <strong>31</strong> | الأس = 12 | الباقي = <strong>0</strong> (تام بلا كسر)
+                        </div>
+                        <div class="magic-grid-3x3" id="live-wafq-grid"></div>
+                        <div class="wafq-math-badge-bar" id="ghazali-verification-badges"></div>
+                    </div>
+
+                    <!-- Explanatory Guide -->
+                    <div style="font-size:0.88rem; line-height:1.8; color:#94a3b8; background:#080d1a; padding:20px; border-radius:14px; border:1px solid #1e293b;">
+                        <strong style="color:#f8fafc; font-size:1.05rem; display:block; margin-bottom:8px; border-bottom:1px solid #1e293b; padding-bottom:6px;">
+                            <i class="fa-solid fa-scale-balanced" style="color:#38bdf8;"></i> قاعدة تعمير مثلث الغزالي الرياضية الصارمة:
+                        </strong>
+                        <ol style="margin:0 0 12px 18px; padding:0;">
+                            <li><strong>المعادلة الأصلية:</strong> (العدد المطلوب - 12) ÷ 3 = المفتاح (حيث العدد المطلوب هو الرقم المباشر أو مجموع حروف الاسم بحساب الجُمّل).</li>
+                            <li><strong>إذا كان الباقي 0 (وفق تام):</strong> يعمر الوفق تتابعياً بالسير الطبيعي (1 إلى 9) بإضافة 1 في كل خانة.</li>
+                            <li><strong>إذا كان الباقي 1 (كسر 1):</strong> يُجبر الوفق بزيادة 1 في البيت السابع (الزاي 7)، فتتوالى الخانات 7 و 8 و 9 بزيادة واحد إضافي.</li>
+                            <li><strong>إذا كان الباقي 2 (كسر 2):</strong> يُجبر الوفق بزيادة 1 في البيت الرابع (الدال 4)، فتتوالى الخانات من 4 إلى 9 بزيادة واحد إضافي.</li>
+                        </ol>
+                        <div style="background:rgba(56, 189, 248, 0.08); border-right:3px solid #38bdf8; padding:10px 14px; border-radius:6px; font-size:0.84rem; color:#cbd5e1;">
+                            كل صف، عمود، وقطر يعطي بدقة متناهية العدد المطلوب نفسه، مما يخلق توازناً هندسياً تاماً يلغي شواش الإنتروبيا الطاقية.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATION 3: 15 CHAPTERS GHAZALI HANDBOOK -->
+        <div id="wafq-station-handbook" class="wafq-station-panel" style="display:none;">
+            {handbook_html}
+        </div>
+
+        <!-- STATION 4: ENCYCLOPEDIA & COMPARATIVE TABLE -->
+        <div id="wafq-station-encyclopedia" class="wafq-station-panel" style="display:none;">
+            <!-- Complete 7 Planetary Squares Compendium Table -->
+            <div style="margin-bottom:30px;">
+                <h3 style="color:#f8fafc; font-family:'Amiri',serif; font-size:1.45rem; margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+                    <i class="fa-solid fa-cubes" style="color:#38bdf8;"></i> مصفوفة الأوفاق السبعة الكوكبية الكاملة من 3×3 إلى 9×9 وتردداتها وتطبيقاتها عبر الحضارات
+                </h3>
+                <div class="data-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>نوع الوفق ورتبته</th>
+                                <th>الكوكب والمعدن</th>
+                                <th>الثابت (M)</th>
+                                <th>المجموع (T)</th>
+                                <th>في الصين القديمة (Luo Shu)</th>
+                                <th>في الفيدا الهندية (Yantra)</th>
+                                <th>في الهرمسية الغربية (Agrippa)</th>
+                                <th>التردد والنغمة</th>
+                                <th>التأثير البيولوجي والأثيري</th>
+                                <th>استماع للرنين</th>
+                            </tr>
+                        </thead>
+                        <tbody id="planetary-wafqs-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            {treatises_html}
         </div>
     </div>
     """
@@ -1356,7 +1976,7 @@ def generate_wafqs_chamber_html():
         quran_verse=meta["verse"],
         intro_folio=meta["intro"],
         visual_html="",
-        content_html=f'<div class="cosmic-cards-grid">{wafq_cards}</div>{treatises_html}'
+        content_html=content_html
     )
 
 
@@ -1991,12 +2611,462 @@ def get_chambers_visual_js():
         }
     }
 
+    // ========================================================
+    // 5. CHAMBER 12: WAFQS & MATHEMATICAL SQUARES ENGINE
+    // ========================================================
+    var PLANETARY_WAFQS_DATA = window.PLANETARY_WAFQS_DATA = [
+        {
+            order: "المثلث (3×3)", n: 3, planet: "زحل ♄ (Saturn)", day: "السبت", metal: "الرصاص الأسود", color: "#a855f7",
+            constant: 15, total: 45, freq: "147.85 Hz", note: "D (ري)", sound: 147.85,
+            china: "لو شو (Luo Shu 洛書 2800 ق.م) — سلحفاة الإمبراطور يو ونواة الباغوا وتوازن الين واليانغ",
+            vedic: "يانترا زحل (Shani Yantra) — تثبيت الحدود وحصن الكرما وتجاوز القيود والانضباط الصارم",
+            hermetic: "Seal of Saturn (Agrippa 1533) — روح زحل (Zazel) وملاك كاسييل، ميزان الاعتدال الصامت",
+            element: "ترابي / مائي باطني (تثبيت وترسيخ)",
+            bio: "العظام، المفاصل، الصبر، تفريغ الشحنات السلبية، وحفظ الحدود الكونية والهالة من الاختراق.",
+            path_desc: "سير بطد زهج واح (De la Loubère): يبدأ بـ 1 في أعلى المنتصف ويصعد قطرياً، وعند الصدمة ينزل خطوة."
+        },
+        {
+            order: "المربع (4×4)", n: 4, planet: "المشتري ♃ (Jupiter)", day: "الخميس", metal: "القصدير الأبيض (الرصاص القلعي)", color: "#06b6d4",
+            constant: 34, total: 136, freq: "183.58 Hz", note: "F# (فا دييز)", sound: 183.58,
+            china: "مصفوفة التناظر الرباعي في كتاب التغيرات (I Ching) ونظام الاتجاهات الأربعة والرياح",
+            vedic: "يانترا كوبيرا ومربع جاينا فائق التناظر في معبد خاجوراه (Chautisa Yantra — كل 2×2 وكل ركن = 34)",
+            hermetic: "مربع المشتري في لوحة Melencolia I لألبرشت دورر (1514) وأختام أغريبا لجلب الجاه والوفرة والعدل",
+            element: "هوائي ناري (توسع وتمدد)",
+            bio: "الكبد، الشرايين الكبرى، توسيع المجال الهالاتي التوريدي، جلب الوفرة وتيسير الأسباب.",
+            path_desc: "طريقة تناظر الأقطار المتقاطعة (Cross-Diagonal Inversion): ملء الأرقام 1-16 ثم عكس خانات الأقطار."
+        },
+        {
+            order: "المخمس (5×5)", n: 5, planet: "المريخ ♂ (Mars)", day: "الثلاثاء", metal: "الحديد والفولاذ الصرف", color: "#ef4444",
+            constant: 65, total: 325, freq: "144.72 Hz", note: "D (ري)", sound: 144.72,
+            china: "مصفوفة العناصر الخمسة الصينية (Wu Xing — خشب، نار، تراب، معدن، ماء) ودورات التوليد والإخماد",
+            vedic: "يانترا مانغالا (Mangala Yantra) — شجاعة المحارب ورد الطاقات المعتدية وحماية الحصون",
+            hermetic: "Seal of Mars (Agrippa) — روح برزافيل (Bartzabel) وملاك سمسمائيل، صهر الأكدار ودفع البغي",
+            element: "ناري حارق (قطع وردع)",
+            bio: "كريات الدم الحمراء، المناعة الخلوية الهجومية، الشجاعة، وقطع القيود وسلاسل الطاقات السامة.",
+            path_desc: "طريقة دي لا لوبير السيامية للمخمس: البدء في منتصف الصف العلوي والصعود قطرياً بزاوية 45 درجة."
+        },
+        {
+            order: "المسدس (6×6)", n: 6, planet: "الشمس ☉ (Sol)", day: "الأحد", metal: "الذهب الخالص 24k", color: "#38bdf8",
+            constant: 111, total: 666, freq: "528.00 Hz", note: "C (دو / ترنيمة 528 إصلاح DNA)", sound: 528,
+            china: "سداسيات آي تشينغ الـ 64 (Hexagrams) وتناغم السماء السادسة والتاي تشي (Taiji) المحيط",
+            vedic: "يانترا سوريا الذهبية (Surya Yantra) — مركز الوعي والسيادة والشفاء الكوني الأسمى",
+            hermetic: "وفق الشمس الأعظم (Agrippa) والمجموع 666 (ثابت المثلث الشمسي) وملاك ميخائيل النوراني",
+            element: "ناري نقي / أثيري علوي",
+            bio: "القلب، شبكية العين، حيوية الروح، العزة والهيبة، وطرد الكيانات المظلمة بنور الوعي الصافي.",
+            path_desc: "طريقة التقسيم الرباعي الشمسي المتناظر (Singly-Even Sub-grids): توازن المربعات الفرعية 3×3 الأربعة."
+        },
+        {
+            order: "المسبع (7×7)", n: 7, planet: "الزهرة ♀ (Venus)", day: "الجمعة", metal: "النحاس الأحمر النقي", color: "#10b981",
+            constant: 175, total: 1225, freq: "221.23 Hz", note: "A (لا)", sound: 221.23,
+            china: "المسار الأثيري للنغمات الموسيقية السبع وقانون الألوان الطيفية والتناغم الصوتي",
+            vedic: "يانترا شوكرا (Shukra Yantra) — مغناطيسية القلوب وتناغم المشاعر والجمال الكوني",
+            hermetic: "Seal of Venus (Agrippa) — ذكاء كيدميل وملاك عنيائيل لجلب الألفة والمودة وتأليف الأرواح",
+            element: "ترابي هوائي (انسجام وجذب)",
+            bio: "الكليتان، الغدد الصماء التناسلية، الجاذبية الحيوية، تهدئة التوتر العصبي وتجديد نضارة البشرة.",
+            path_desc: "طريقة الصعود السيامي الفردي للمسبع (Siamese 7x7): البدء بـ 1 في أعلى المنتصف بحساب 49 خانة."
+        },
+        {
+            order: "المثمن (8×8)", n: 8, planet: "عطارد ☿ (Mercury)", day: "الأربعاء", metal: "الزئبق الممتزج والرصاص القصديري", color: "#6366f1",
+            constant: 260, total: 2080, freq: "141.27 Hz", note: "C# (دو دييز)", sound: 141.27,
+            china: "رموز الباغوا الثمانية (Eight Trigrams) ومصفوفة الفضاء الكوني المحيط بالمركز والوعي",
+            vedic: "يانترا بودها (Budha Yantra) — الذكاء المتوقد، الفصاحة، حل الشيفرات والرياضيات المعقدة",
+            hermetic: "Seal of Mercury (Agrippa) — روح تيرييل وملاك رفائيل لفك الأقفال والعلوم الدقيقة والبلاغة",
+            element: "هوائي مائي متقلب (سرعة وذكاء)",
+            bio: "الجهاز العصبي، السيالات العصبية، الرئتان، فصّي المخ، وسرعة البديهة وحل المعضلات الفكرية.",
+            path_desc: "طريقة انعكاس الأقطار المزدوجة (Doubly-Even 8x8 Blocks): تقسيم رقعة الشطرنج إلى 4 مربعات 4×4 وعكس الأقطار."
+        },
+        {
+            order: "المتسع (9×9)", n: 9, planet: "القمر ☽ (Luna)", day: "الإثنين", metal: "الفضة النقية 999", color: "#f8fafc",
+            constant: 369, total: 3321, freq: "210.42 Hz", note: "G# (صول دييز)", sound: 210.42,
+            china: "قاعات القصر السماوي التسعة (Nine Halls of Ming Tang) وشبكة الأرقام السحرية الإمبراطورية",
+            vedic: "يانترا تشاندرا ومصفوفة الكواكب التسعة (Navagraha Yantra) — استقرار النفس وحفظ الذاكرة",
+            hermetic: "وفق القمر الأعظم 9×9 (Agrippa) — ملاك جبرائيل وروح حشموداي لحكم المد والجزر والأحلام والفيوض",
+            element: "مائي أثيري (ذاكرة وحدس)",
+            bio: "السوائل البيولوجية، الدماغ الأيمن، الذاكرة العميقة، تنشيط الأحلام الصادقة، وتوازن الهرمونات.",
+            path_desc: "طريقة دي لا لوبير السيامية للمتسع: 81 خانة بتوازن كامل لمجموع 369 لكل صف وعمود وقطر."
+        }
+    ];
+
+    var currentSelectedWafqOrder = window.currentSelectedWafqOrder = window.currentSelectedWafqOrder || 3;
+    var currentWafqStation = window.currentWafqStation = window.currentWafqStation || 'planetary';
+
+    function switchWafqStation(stationId) {
+        window.currentWafqStation = stationId;
+        document.querySelectorAll('.wafq-master-tab').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.getElementById('wafq-tab-btn-' + stationId);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        document.querySelectorAll('.wafq-station-panel').forEach(p => p.style.display = 'none');
+        const activePanel = document.getElementById('wafq-station-' + stationId);
+        if (activePanel) activePanel.style.display = 'block';
+
+        if (stationId === 'planetary') {
+            renderPlanetaryMatrixLab(window.currentSelectedWafqOrder || 3);
+        } else if (stationId === 'ghazali') {
+            calculateLiveWafq();
+        } else if (stationId === 'encyclopedia') {
+            renderPlanetaryWafqs();
+        }
+    }
+
+    // MAGIC SQUARE MATHEMATICAL GENERATORS (3x3 to 9x9)
+    function generateOddMagicSquare(n) {
+        let grid = Array.from({length: n}, () => Array(n).fill(0));
+        let r = 0;
+        let c = Math.floor(n / 2);
+        for (let num = 1; num <= n * n; num++) {
+            grid[r][c] = num;
+            let nr = (r - 1 + n) % n;
+            let nc = (c + 1) % n;
+            if (grid[nr][nc] !== 0) {
+                r = (r + 1) % n;
+            } else {
+                r = nr;
+                c = nc;
+            }
+        }
+        return grid;
+    }
+
+    function generateDoublyEvenMagicSquare(n) {
+        let grid = Array.from({length: n}, () => Array(n).fill(0));
+        for (let r = 0; r < n; r++) {
+            for (let c = 0; c < n; c++) {
+                grid[r][c] = r * n + c + 1;
+                if ((r % 4 === c % 4) || ((r % 4 + c % 4) === 3)) {
+                    grid[r][c] = (n * n + 1) - grid[r][c];
+                }
+            }
+        }
+        return grid;
+    }
+
+    function getSun6x6MagicSquare() {
+        return [
+            [6, 32, 3, 34, 35, 1],
+            [7, 11, 27, 28, 8, 30],
+            [19, 14, 16, 15, 23, 24],
+            [18, 20, 22, 21, 17, 13],
+            [25, 29, 10, 9, 26, 12],
+            [36, 5, 33, 4, 2, 31]
+        ];
+    }
+
+    function renderPlanetaryMatrixLab(order) {
+        window.currentSelectedWafqOrder = order;
+        document.querySelectorAll('.wafq-order-pill').forEach(p => p.classList.remove('active'));
+        const activePill = document.getElementById('wafq-pill-' + order);
+        if (activePill) activePill.classList.add('active');
+
+        const pData = PLANETARY_WAFQS_DATA.find(x => x.n === order) || PLANETARY_WAFQS_DATA[0];
+
+        let grid = [];
+        if (order % 2 !== 0) {
+            grid = generateOddMagicSquare(order);
+        } else if (order % 4 === 0) {
+            grid = generateDoublyEvenMagicSquare(order);
+        } else if (order === 6) {
+            grid = getSun6x6MagicSquare();
+        }
+
+        const M = (order * (order * order + 1)) / 2;
+        const T = order * M;
+
+        // Render Grid
+        const gridContainer = document.getElementById('wafq-dynamic-grid-container');
+        if (gridContainer) {
+            gridContainer.style.gridTemplateColumns = 'repeat(' + order + ', 1fr)';
+            const maxW = order === 3 ? '340px' : (order === 4 ? '380px' : (order === 5 ? '420px' : (order === 6 ? '460px' : (order === 7 ? '500px' : (order === 8 ? '540px' : '580px')))));
+            gridContainer.style.maxWidth = maxW;
+
+            const minVal = 1;
+            const maxVal = order * order;
+
+            let cellsHtml = '';
+            for (let r = 0; r < order; r++) {
+                for (let c = 0; c < order; c++) {
+                    const val = grid[r][c];
+                    let cellClass = 'dynamic-cell';
+                    let badgeText = '';
+
+                    if (val === minVal) {
+                        cellClass += ' cell-key';
+                        badgeText = 'المفتاح 🔑';
+                    } else if (val === maxVal) {
+                        cellClass += ' cell-lock';
+                        badgeText = 'المغلاق 🔒';
+                    } else if (order % 2 !== 0 && r === Math.floor(order/2) && c === Math.floor(order/2)) {
+                        cellClass += ' cell-center';
+                        badgeText = 'القطب ⚖️';
+                    }
+
+                    const numSize = order <= 3 ? '1.45rem' : (order <= 4 ? '1.25rem' : (order <= 5 ? '1.1rem' : (order <= 6 ? '0.95rem' : (order <= 7 ? '0.85rem' : (order <= 8 ? '0.8rem' : '0.75rem')))));
+
+                    cellsHtml += `
+                        <div class="${cellClass}" title="الصف ${r+1}، العمود ${c+1}: القيمة ${val}">
+                            <span class="dynamic-cell-val" style="font-size:${numSize};">${val}</span>
+                            ${badgeText ? `<span class="dynamic-cell-badge" style="color:${pData.color};">${badgeText}</span>` : ''}
+                        </div>
+                    `;
+                }
+            }
+            gridContainer.innerHTML = cellsHtml;
+        }
+
+        // Render Math Badges
+        const badgesContainer = document.getElementById('wafq-math-badges-container');
+        if (badgesContainer) {
+            badgesContainer.innerHTML = `
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> كل صف = <strong>${M}</strong></div>
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> كل عمود = <strong>${M}</strong></div>
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> القطران (D1 & D2) = <strong>${M}</strong></div>
+                <div class="wafq-math-badge"><i class="fa-solid fa-calculator"></i> المجموع الكلي (T) = <strong>${T}</strong></div>
+                <div class="wafq-math-badge"><i class="fa-solid fa-wave-square"></i> التردد المداري = <strong style="color:#38bdf8;">${pData.freq}</strong></div>
+            `;
+        }
+
+        // Render Inspector Dossier Card
+        const inspectorEl = document.getElementById('wafq-inspector-content');
+        if (inspectorEl) {
+            inspectorEl.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1.5px solid #334155; padding-bottom:12px; flex-wrap:wrap; gap:10px;">
+                    <div>
+                        <h4 style="margin:0; font-family:'Amiri',serif; font-size:1.55rem; color:${pData.color};">
+                            ${pData.order} — ${pData.planet}
+                        </h4>
+                        <span style="font-size:0.84rem; color:#94a3b8;">اليوم: <strong style="color:#f8fafc;">${pData.day}</strong> | المعدن: <strong style="color:#38bdf8;">${pData.metal}</strong> | العنصر: <em>${pData.element}</em></span>
+                    </div>
+                    <button class="synth-btn" style="padding:8px 16px; font-size:0.88rem;" onclick="playPlanetTone(${pData.sound}, '${pData.planet} - ${pData.freq}')">
+                        <i class="fa-solid fa-play"></i> استمع لرنين ${pData.freq}
+                    </button>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:16px; font-size:0.86rem;">
+                    <div style="background:#050810; padding:12px; border-radius:10px; border:1px solid #1e293b;">
+                        <span style="color:#94a3b8; display:block; font-size:0.75rem;">الثابت السحري (Magic Constant):</span>
+                        <strong style="color:#38bdf8; font-size:1.3rem;">M = ${M}</strong>
+                    </div>
+                    <div style="background:#050810; padding:12px; border-radius:10px; border:1px solid #1e293b;">
+                        <span style="color:#94a3b8; display:block; font-size:0.75rem;">المساحة الكلية (Total Sum):</span>
+                        <strong style="color:#f8fafc; font-size:1.3rem;">T = ${T}</strong>
+                    </div>
+                    <div style="background:#050810; padding:12px; border-radius:10px; border:1px solid #1e293b;">
+                        <span style="color:#94a3b8; display:block; font-size:0.75rem;">التردد المداري والنغمة:</span>
+                        <strong style="color:#34d399; font-size:1.15rem;">${pData.freq} (${pData.note})</strong>
+                    </div>
+                </div>
+
+                <div style="font-size:0.88rem; line-height:1.8; color:#94a3b8;">
+                    <div style="margin-bottom:10px;">
+                        <strong style="color:#f8fafc;"><i class="fa-solid fa-route" style="color:#38bdf8;"></i> مسار التنزيل الحركي (Traversal Algorithm):</strong><br>
+                        <span>${pData.path_desc}</span>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <strong style="color:#38bdf8;"><i class="fa-solid fa-globe"></i> في الحضارات الكبرى (Comparative Matrix):</strong>
+                        <ul style="margin:4px 0 8px 18px; padding:0; font-size:0.84rem;">
+                            <li><strong>الصين القديمة:</strong> ${pData.china}</li>
+                            <li><strong>الهند الفيدية:</strong> ${pData.vedic}</li>
+                            <li><strong>الهرمسية الغربية:</strong> ${pData.hermetic}</li>
+                        </ul>
+                    </div>
+                    <div style="background:#080d1a; padding:12px; border-radius:10px; border-right:3px solid ${pData.color};">
+                        <strong style="color:#f8fafc;"><i class="fa-solid fa-heart-pulse"></i> الأثر الحيوي والأثيري:</strong>
+                        <p style="margin:4px 0 0 0; font-size:0.85rem; color:#cbd5e1;">${pData.bio}</p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // LIVE WAFQ 3x3 GHAZALI ENGINE (ADVANCED ABJAD & BALANCED COMPILATION)
+    function calculateLiveWafq() {
+        const inputElem = document.getElementById('wafq-input');
+        const rawVal = inputElem ? inputElem.value.trim() : '105';
+        let targetN = parseInt(rawVal);
+        let abjadBreakdown = '';
+
+        if (isNaN(targetN) || targetN < 15) {
+            targetN = 0;
+            const ABJAD_MAP = {
+                'ا': 1, 'أ': 1, 'إ': 1, 'آ': 1, 'ء': 1, 'ب': 2, 'ج': 3, 'د': 4, 'ه': 5, 'هـ': 5, 'ة': 5,
+                'و': 6, 'ز': 7, 'ح': 8, 'ط': 9, 'ي': 10, 'ى': 10, 'ك': 20, 'ل': 30, 'م': 40, 'ن': 50,
+                'س': 60, 'ع': 70, 'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200, 'ش': 300, 'ت': 400, 'ث': 500,
+                'خ': 600, 'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
+            };
+            let parts = [];
+            for (let ch of rawVal) {
+                if (ABJAD_MAP[ch]) {
+                    targetN += ABJAD_MAP[ch];
+                    parts.push(ch + '=' + ABJAD_MAP[ch]);
+                }
+            }
+            if (targetN < 15) targetN = 105;
+            if (parts.length > 0) {
+                abjadBreakdown = ` | بحساب الجُمّل لـ "${rawVal}": [${parts.join(' + ')}] = ${targetN}`;
+            }
+        }
+
+        // Formula: (N - 12) / 3
+        const baseDeduct = 12;
+        const diff = targetN - baseDeduct;
+        const key = Math.floor(diff / 3);
+        const remainder = diff % 3;
+
+        // Base 3x3 Positions (Batad Zahaj Wah):
+        // 4 (D), 9 (T), 2 (B)
+        // 3 (J), 5 (H), 7 (Z)
+        // 8 (Hh), 1 (A), 6 (W)
+        const LETTERS = ['د', 'ط', 'ب', 'ج', 'هـ', 'ز', 'ح', 'أ', 'و'];
+        const NATURAL_CELL_INDEX = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+
+        let gridCells = [];
+        for (let i = 0; i < 9; i++) {
+            const natVal = NATURAL_CELL_INDEX[i];
+            let cellVal = key + (natVal - 1);
+            let isBroken = false;
+
+            if (remainder === 1 && natVal >= 7) {
+                cellVal += 1;
+                if (natVal === 7) isBroken = true;
+            } else if (remainder === 2 && natVal >= 4) {
+                cellVal += 1;
+                if (natVal === 4) isBroken = true;
+            }
+
+            gridCells.push({
+                val: cellVal,
+                letter: LETTERS[i],
+                isKey: (natVal === 1),
+                isLock: (natVal === 9),
+                isCenter: (natVal === 5),
+                isBroken: isBroken,
+                cellIndex: natVal
+            });
+        }
+
+        const summaryEl = document.getElementById('wafq-math-summary');
+        if (summaryEl) {
+            summaryEl.innerHTML = `المطلوب (N) = <strong>${targetN}</strong> | المفتاح = <strong>${key}</strong> | الأس = 12 | الباقي = <strong>${remainder}</strong> (${remainder === 0 ? 'تام بلا كسر' : (remainder === 1 ? 'جبر +1 في بيت 7 (الزاي)' : 'جبر +1 في بيت 4 (الدال)')})${abjadBreakdown}`;
+        }
+
+        const gridEl = document.getElementById('live-wafq-grid');
+        if (gridEl) {
+            gridEl.innerHTML = gridCells.map(c => {
+                let borderClass = '';
+                let badge = '';
+                if (c.isKey) { borderClass = 'style="border-color:#10b981; background:rgba(16,185,129,0.15);"'; badge = '<span style="font-size:0.65rem; color:#10b981; font-weight:700;">المفتاح 🔑</span>'; }
+                else if (c.isLock) { borderClass = 'style="border-color:#ef4444; background:rgba(239,68,68,0.15);"'; badge = '<span style="font-size:0.65rem; color:#ef4444; font-weight:700;">المغلاق 🔒</span>'; }
+                else if (c.isCenter) { borderClass = 'style="border-color:#38bdf8; background:rgba(56,189,248,0.18);"'; badge = '<span style="font-size:0.65rem; color:#38bdf8; font-weight:700;">القطب ⚖️</span>'; }
+                else if (c.isBroken) { borderClass = 'style="border-color:#c026d3; background:rgba(192,38,211,0.2);"'; badge = '<span style="font-size:0.65rem; color:#c026d3; font-weight:700;">خانة الجبر ⚡</span>'; }
+
+                return `
+                    <div class="grid-cell" ${borderClass} title="بيت ${c.cellIndex} (حرف ${c.letter}) = ${c.val}">
+                        <span class="cell-num">${c.val}</span>
+                        <span class="cell-letter">${c.letter} (بيت ${c.cellIndex})</span>
+                        ${badge}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        const verificationBadgesEl = document.getElementById('ghazali-verification-badges');
+        if (verificationBadgesEl) {
+            verificationBadgesEl.innerHTML = `
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> الصف 1 = ${gridCells[0].val + gridCells[1].val + gridCells[2].val}</div>
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> الصف 2 = ${gridCells[3].val + gridCells[4].val + gridCells[5].val}</div>
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> الصف 3 = ${gridCells[6].val + gridCells[7].val + gridCells[8].val}</div>
+                <div class="wafq-math-badge verified"><i class="fa-solid fa-check-circle"></i> القطران = ${targetN}</div>
+                <div class="wafq-math-badge"><i class="fa-solid fa-cube"></i> المساحة = <strong>${targetN * 3}</strong></div>
+            `;
+        }
+    }
+
+    function renderPlanetaryWafqs() {
+        const tbody = document.getElementById('planetary-wafqs-tbody');
+        if (!tbody) return;
+        tbody.innerHTML = PLANETARY_WAFQS_DATA.map(w => `
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                <td><strong style="color:#f8fafc; font-size:0.95rem;">${w.order}</strong></td>
+                <td><strong style="color:${w.color};">${w.planet}</strong><br><span style="font-size:0.75rem; color:#94a3b8;">${w.metal}</span></td>
+                <td><span style="color:#38bdf8; font-weight:700; font-size:1rem;">${w.constant}</span></td>
+                <td><span style="color:#f8fafc; font-weight:700;">${w.total}</span></td>
+                <td style="font-size:0.8rem; color:#cbd5e1;">${w.china}</td>
+                <td style="font-size:0.8rem; color:#94a3b8;">${w.vedic}</td>
+                <td style="font-size:0.8rem; color:#f8fafc;">${w.hermetic}</td>
+                <td><code style="color:#38bdf8; font-weight:700;">${w.freq}</code><br><span style="font-size:0.75rem; color:#94a3b8;">${w.note}</span></td>
+                <td style="font-size:0.82rem; color:#34d399;">${w.bio}</td>
+                <td><button class="synth-btn" style="padding:4px 10px; font-size:0.75rem;" onclick="playPlanetTone(${w.sound}, '${w.planet} - ${w.freq}')"><i class="fa-solid fa-play"></i> استماع</button></td>
+            </tr>
+        `).join('');
+    }
+
+    // AUDIO SYNTHESIZER FOR PLANETARY FREQUENCIES
+    let wafqAudioCtx = null;
+    let wafqCurrentOsc = null;
+    let wafqCurrentGain = null;
+
+    function playPlanetTone(freq, name) {
+        try {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!wafqAudioCtx) wafqAudioCtx = new AudioCtx();
+            if (wafqAudioCtx.state === 'suspended') wafqAudioCtx.resume();
+
+            if (wafqCurrentOsc) {
+                try { wafqCurrentOsc.stop(); wafqCurrentOsc.disconnect(); } catch(e){}
+            }
+
+            wafqCurrentOsc = wafqAudioCtx.createOscillator();
+            wafqCurrentGain = wafqAudioCtx.createGain();
+
+            wafqCurrentOsc.type = 'sine';
+            wafqCurrentOsc.frequency.setValueAtTime(freq, wafqAudioCtx.currentTime);
+
+            wafqCurrentGain.gain.setValueAtTime(0.001, wafqAudioCtx.currentTime);
+            wafqCurrentGain.gain.exponentialRampToValueAtTime(0.12, wafqAudioCtx.currentTime + 0.1);
+
+            wafqCurrentOsc.connect(wafqCurrentGain);
+            wafqCurrentGain.connect(wafqAudioCtx.destination);
+            wafqCurrentOsc.start();
+
+            document.querySelectorAll('.synth-btn').forEach(b => b.classList.remove('playing'));
+            if (typeof event !== 'undefined' && event && event.target) {
+                const btn = event.target.closest('button');
+                if (btn) btn.classList.add('playing');
+            }
+        } catch (e) {
+            console.warn('Audio tone could not play', e);
+        }
+    }
+
+    function stopTone() {
+        if (wafqCurrentOsc) {
+            try { wafqCurrentOsc.stop(); wafqCurrentOsc.disconnect(); } catch(e){}
+            wafqCurrentOsc = null;
+        }
+        document.querySelectorAll('.synth-btn').forEach(b => b.classList.remove('playing'));
+    }
+
+    // Global hooks
+    window.switchWafqStation = switchWafqStation;
+    window.renderPlanetaryMatrixLab = renderPlanetaryMatrixLab;
+    window.calculateLiveWafq = calculateLiveWafq;
+    window.renderPlanetaryWafqs = renderPlanetaryWafqs;
+    window.playPlanetTone = playPlanetTone;
+    window.stopTone = stopTone;
+
     // Trigger visual renders on chamber switches
     window.addEventListener('chamberSwitched', function(e) {
         const id = e.detail && e.detail.chamberId;
         if (id === 'tab-spheres') setTimeout(renderSpheresOrbits, 50);
         if (id === 'tab-zodiac') setTimeout(renderZodiacWheel, 50);
         if (id === 'tab-kings') setTimeout(renderHeptagramKings, 50);
+        if (id === 'tab-numbers') {
+            setTimeout(function() {
+                renderPlanetaryMatrixLab(window.currentSelectedWafqOrder || 3);
+                renderPlanetaryWafqs();
+                calculateLiveWafq();
+            }, 60);
+        }
     });
 
     // Initial render attempt
@@ -2004,5 +3074,8 @@ def get_chambers_visual_js():
         renderSpheresOrbits();
         renderZodiacWheel();
         renderHeptagramKings();
+        if (typeof renderPlanetaryMatrixLab === 'function') renderPlanetaryMatrixLab(3);
+        if (typeof renderPlanetaryWafqs === 'function') renderPlanetaryWafqs();
+        if (typeof calculateLiveWafq === 'function') calculateLiveWafq();
     }, 600);
     """

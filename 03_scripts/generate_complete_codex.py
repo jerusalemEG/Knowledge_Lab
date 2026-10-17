@@ -3429,7 +3429,7 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
         ];
 
                 // DATA: 7 Planetary Wafqs Compendium across Civilizations
-        const PLANETARY_WAFQS_DATA = [
+        var PLANETARY_WAFQS_DATA = window.PLANETARY_WAFQS_DATA = window.PLANETARY_WAFQS_DATA || [
             {
                 order: "المثلث (3×3)", n: 3, planet: "زحل ♄ (Saturn)", day: "السبت", metal: "الرصاص الأسود", color: "#6b7280",
                 constant: 15, total: 45, freq: "147.85 Hz", note: "D (ري)", sound: 147.85,
@@ -4495,8 +4495,8 @@ floor$ | $	ext{الباقي (الكسر)} = (N - 12) \pmod 3$
             ];
         }
 
-        let currentSelectedWafqOrder = 3;
-        let currentWafqStudioMode = 'planetary';
+        var currentSelectedWafqOrder = window.currentSelectedWafqOrder = window.currentSelectedWafqOrder || 3;
+        var currentWafqStudioMode = window.currentWafqStudioMode = window.currentWafqStudioMode || 'planetary';
 
         function switchWafqStudioMode(mode) {
             currentWafqStudioMode = mode;
