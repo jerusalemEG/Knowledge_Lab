@@ -93,7 +93,9 @@ connections:
 ---
 
 ## 🔗 الروابط المتصلة:
+- [[Master_Encyclopedia_of_Grand_Unified_Magic_Squares_and_Wafq]]
 - [[Magic_Squares_Wafq_Al_Buni]]
 - [[Palm_Seals_and_Chiromancy_Zouhri]]
 - [[Melothesia_Body_Cosmos_Mapping]]
 - [[The_Four_Elements_and_Quintessence]]
+

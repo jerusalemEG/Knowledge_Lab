@@ -45,6 +45,8 @@ connections:
 | **القمر (Moon)** | $9 \times 9$ | المتسع | 369 |
 
 ## الروابط المتصلة:
+- [[Master_Encyclopedia_of_Grand_Unified_Magic_Squares_and_Wafq]]
 - [[Shams_al_Maarif_al_Kubra_Al_Buni]]
 - [[Ghayat_al_Hakim_Picatrix]]
 - [[Seven_Planetary_Metals_and_Organs]]
+

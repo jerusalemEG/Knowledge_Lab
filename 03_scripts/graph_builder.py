@@ -1848,30 +1848,61 @@ def generate_unified_html(nodes, links):
         tr:hover {{ background: rgba(255, 255, 255, 0.03); cursor: pointer; }}
 
         /* 6. Books Grid */
+        .manuscripts-controls-bar {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 25px;
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 14px 20px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }}
+        .m-cat-btn {{
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }}
+        .m-cat-btn:hover, .m-cat-btn.active {{
+            background: #0284c7;
+            border-color: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+        }}
         .books-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 25px;
+            gap: 24px;
         }}
         .book-card {{
-            background: var(--panel-bg);
-            border: 1px solid var(--border-glass);
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
             border-radius: 16px;
-            padding: 26px;
-            transition: all 0.3s;
+            padding: 24px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
         }}
         .book-card:hover {{
-            border-color: var(--gold);
+            border-color: #0284c7;
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(244, 180, 26, 0.12);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 0 15px rgba(2, 132, 199, 0.15);
         }}
-        .book-author {{ color: var(--cyan); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }}
-        .book-name {{ font-size: 1.25rem; color: #fff; margin-bottom: 12px; }}
-        .book-summary {{ font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }}
-        .book-chapters {{ background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-glass); border-radius: 8px; padding: 12px; font-size: 0.8rem; color: var(--gold); }}
+        .book-author {{ color: #0284c7; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }}
+        .book-name {{ font-size: 1.22rem; color: #0f172a; margin-bottom: 12px; font-weight: 700; line-height: 1.4; }}
+        .book-summary {{ font-size: 0.88rem; color: #475569; line-height: 1.65; margin-bottom: 18px; }}
+        .book-chapters {{ background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px; font-size: 0.82rem; color: #334155; line-height: 1.5; }}
 
         /* 7. Critique & Discrepancies Grid */
         .critique-grid {{
@@ -3355,6 +3386,23 @@ def generate_unified_html(nodes, links):
                 <h1>أمهات المخطوطات والوثائق النادرة الكبرى (الحكمة الخالدة — 28 مرجعاً عالمياً)</h1>
                 <p>المتون الأصلية والآثار العالمية (مصر القديمة، بابل، الهند الفيدية، الصين الطاوية، اليونان الأفلاطونية، وذروة العرفان الإشراقي الإسلامي) لشحن الطاقة الحيوية، تشريح الأجساد السبعة، الخروج النجمي الواعي، ومراتب الكشف المعصوم.</p>
             </div>
+
+            <!-- Manuscripts Controls Bar -->
+            <div class="manuscripts-controls-bar">
+                <div style="display:flex; gap:8px; flex-wrap:wrap;" id="manuscripts-filter-pills">
+                    <button class="m-cat-btn active" onclick="filterManuscripts('all', this)">🏛️ الكل (28)</button>
+                    <button class="m-cat-btn" onclick="filterManuscripts('egypt_hermetic', this)">🏛️ المصرية والهرمسية</button>
+                    <button class="m-cat-btn" onclick="filterManuscripts('islamic_sufi', this)">📜 الإسلامية والعرفانية</button>
+                    <button class="m-cat-btn" onclick="filterManuscripts('vedic_tantric', this)">🕉️ الفيدية والتانترية</button>
+                    <button class="m-cat-btn" onclick="filterManuscripts('taoist_tibetan', this)">☯️ الطاوية والتبتية</button>
+                    <button class="m-cat-btn" onclick="filterManuscripts('meso_hellenic', this)">🏺 الرافدينية واليونانية والغربية</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; min-width:260px;">
+                    <i class="fa-solid fa-magnifying-glass" style="color:#64748b;"></i>
+                    <input type="text" id="manuscripts-search" oninput="searchManuscripts()" placeholder="ابحث في المتون والمؤلفين والأبواب..." style="padding:8px 14px; font-size:0.85rem; width:100%; border:1.5px solid #cbd5e1; border-radius:10px;">
+                </div>
+            </div>
+
             <div class="books-grid" id="books-grid"></div>
         </section>
 
@@ -4332,10 +4380,10 @@ def generate_unified_html(nodes, links):
                 chapters: "Libellus I (Poimandres: عقل السيادة وعروج الأفلاك) و Libellus XIII (التجدد والولادة الثانية)"
             }},
             {{
-                name: "بردية آني — «كتاب الخروج إلى النهار» (The Papyrus of Ani)",
-                author: "كهنة طيبة والأسرة التاسعة عشرة (المتحف البريطاني EA 10470)",
-                summary: "التشريح المصري القديم المفصل للأجساد السبعة: الخات (المادي)، الكا (المزدوج والقرين الأثيري)، البا (الجسد النجمي المجنح)، الخيبت (الهالة التوريدية الواقية)، الآخ (النور الشمسي الخالد)، والسخم، والرين.",
-                chapters: "التعاويذ 89 (جمع البا بالخات)، التعويذة 92 (انطلاق الظل في النهار)، والتعويذة 125 (ميزان الماعت وتطهير الهالة)"
+                name: "بردية آني — «كتاب الخروج إلى النهار» (The Papyrus of Ani - Budge Edition)",
+                author: "السير إرنست ألفريد واليس بدج (1913) / الكاتب الملكي آني بطيبة (1450 ق.م - المتحف البريطاني EA 10470)",
+                summary: "التحقيق الأكاديمي الأعظم لكتاب الموتى الفرعوني؛ يتضمن الكوزمولوجيا النجمية الكاملة ومصفوفة العشريات الـ 36 (الباكيو Bakyu) ودورة سوتيس النجمية للشعرى (1460 سنة) وبدارية الاعتدالين (25920 سنة). يفكك التشريح الطاقي للأبعاد التسعة للإنسان: الخات (الجسد الطيني)، الكا (القرين الأثيري)، البا (الروح النجمية المجنحة)، الإيب (القلب ووعاء النوايا)، الخيبت (الظل الواقي)، الخو (النوراني الصاعد)، السخم (القدرة الحيوية)، الرن (الاسم التكويني)، والساحو (جسد القيامة النوراني). ويوثق محكمة الماعت والاعتراف الإنكاري الـ 42 وفصول التحولات النجمية لمطابقة عروج الروح مع بابل وهرمس وأخنوخ والفتوحات المكية.",
+                chapters: "التعويذة 30B (جعران القلب ولغز إسكات الشهادة)، التعويذة 89 (اتحاد البا بالكا)، التعويذة 110 (هندسة حقول سخت-إيارو الفردوسية)، التعويذة 125 (محاكمة الماعت والـ 42 قاضياً)، والتعاويذ 144 - 147 (بوابات وعتبات الدوات السبع)"
             }},
             {{
                 name: "شات-تشاكرا-نيروبانا (Ṣaṭ-Cakra-Nirūpaṇa - تشريح الشاكرات الست)",
@@ -4480,6 +4528,14 @@ def generate_unified_html(nodes, links):
                 quran: "<strong>بيان القرآن الكريم المحكم:</strong> «الَّذِينَ يَتَّبِعُونَ الرَّسُولَ النَّبِيَّ الْأُمِّيَّ الَّذِي يَجِدُونَهُ مَكْتُوبًا عِندَهُمْ فِي التَّوْرَاةِ وَالْإِنجِيلِ» • «وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ».",
                 manuscript: "<strong>المخطوطات الفارسية والهندية القديمة:</strong><br>• <em>كتاب الدساتير (زند أوستا - الزرادشتية):</em> نص صريح بنبوءة ظهور رجل في جزيرة العرب يكسر أصنام النار ويوجه أمته لبيت إبراهيم ويسقط دولة ساسان.<br>• <em>مخطوطات ديغا نيكايا (البوذية القديمة):</em> نبوءة بوذا بظهور المعلم الختامي المبارك «مايتريا Maitreya» (رحمة للعالمين / المحمود).",
                 murshid: "<strong>ملاحظة وتحقيق للعرض على المرشد:</strong> نرفع للمرشد هذه البشارات العالمية المودعة في نصوص الهند وفارس التي لم تخضع لتحريفات أحبار أهل الكتاب، والتي تشهد بأن النور المحمدي كان مرتقباً ومبشراً به في كافة تقاليد الوعي الإنساني."
+            }},
+            {{
+                title: "11. بردية آني وكتاب الموتى: ميزان الماعت الأخلاقي مقابل حيل التمائم السحرية (جعران القلب 30B)",
+                tag: "مصر القديمة • ميزان الآخرة والتوحيد",
+                isUrgent: true,
+                quran: "<strong>بيان القرآن الكريم المحكم:</strong> «وَنَضَعُ الْمَوَازِينَ الْقِسْطَ لِيَوْمِ الْقِيَامَةِ فَلَا تُظْلَمُ نَفْسٌ شَيْئًا وَإِن كَانَ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ أَتَيْنَا بِهَا وَكَفَىٰ بِنَا حَاسِبِينَ» [الأنبياء: 47] • «يَوْمَ تَشْهَدُ عَلَيْهِمْ أَلْسِنَتُهُمْ وَأَيْدِيهِمْ وَأَرْجُلُهُم بِمَا كَانُوا يَعْمَلُونَ» [النور: 24] • ونسف ألوهية النجوم والأجرام: «وَأَنَّهُ هُوَ رَبُّ الشِّعْرَىٰ» [النجم: 49].",
+                manuscript: "<strong>التناقض الكهنوتي السحري في بردية آني:</strong><br>• <em>الحقيقة النبوية الأولى:</em> مشهد وزن القلب في ميزان الماعت والاعتراف بالبراءة من الظلم والسرقة والقتل والربا هو صدى نقي لرسالات الأنبياء الأولى (إدريس ونوح).<br>• <em>الانحراف الكهنوتي السحري:</em> اخترع الكهنة تميمة جعران القلب (الفصل 30B) وعليها تعويذة سحرية تأمر القلب بأن يسكت ويكتم شهادته أمام القضاة («يا قلبي لا تقف ضدي كشاهد ولا تخبر القضاة بإثمي!»)؛ ظناً أن السحر (Heka) يخدع الميزان الإلهي!<br>• <em>عبادة النجوم:</em> تأليه نجم الشعرى اليمانية (سبدت) وجعلها ربة الفيضان والبعث.",
+                murshid: "<strong>ملاحظة وتحقيق للعرض على المرشد:</strong> بردية آني تقدم أوضح نموذج تاريخي لكيفية تحريف الكهانة الوثنية لبقايا رسالات التوحيد الأولى: فالأصل كان ميزاناً أخلاقياً وقسطاً إلهياً حقيقياً، لكن الكهنة حوّلوه إلى تجارة صكوك تمائم سحرية توضع في القبر للالتفاف على العدالة الإلهية، وهو ما ينسفه القرآن العظيم بالحساب المطلق الذي لا يقبل رشوة ولا كتماناً ولا شفاعة ساحر."
             }}
         ];
 
@@ -6009,12 +6065,63 @@ def generate_unified_html(nodes, links):
         }}
 
         // 7. Manuscripts Renderer
+        let currentManuscriptsCategory = 'all';
+
+        function filterManuscripts(cat, btn) {{
+            currentManuscriptsCategory = cat;
+            document.querySelectorAll('.m-cat-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderManuscripts();
+        }}
+
+        function searchManuscripts() {{
+            renderManuscripts();
+        }}
+
+        function getManuscriptCat(b) {{
+            if (b.cat) return b.cat;
+            const t = (b.name + ' ' + b.author + ' ' + b.summary).toLowerCase();
+            if (t.includes('هرمس') || t.includes('آني') || t.includes('إيبوير') || t.includes('كيباليون') || t.includes('مصر')) return 'egypt_hermetic';
+            if (t.includes('فيدا') || t.includes('شاكرا') || t.includes('شيفا') || t.includes('باتانجالي') || t.includes('يافانا') || t.includes('بورانا')) return 'vedic_tantric';
+            if (t.includes('الزهرة الذهبية') || t.includes('ناروبا') || t.includes('طاو') || t.includes('باردو') || t.includes('لو دونغبين')) return 'taoist_tibetan';
+            if (t.includes('ابن عربي') || t.includes('سهروردي') || t.includes('ملا صدرا') || t.includes('البيروني') || t.includes('إخوان الصفا') || t.includes('البلخي') || t.includes('جابر بن حيان')) return 'islamic_sufi';
+            return 'meso_hellenic';
+        }}
+
+        function getManuscriptBadge(b) {{
+            const cat = getManuscriptCat(b);
+            if (cat === 'egypt_hermetic') return '🏛️ مصر وهرمسية';
+            if (cat === 'islamic_sufi') return '📜 عرفان وحكمة إسلامية';
+            if (cat === 'vedic_tantric') return '🕉️ فيدا وتانترا هندية';
+            if (cat === 'taoist_tibetan') return '☯️ كيمياء طاوية وتبتية';
+            return '🏺 رافديني وهيلينستي';
+        }}
+
         function renderManuscripts() {{
             const container = document.getElementById('books-grid');
-            container.innerHTML = MANUSCRIPTS_DATA.map(b => `
+            if (!container) return;
+            const query = (document.getElementById('manuscripts-search')?.value || '').trim().toLowerCase();
+
+            const filtered = MANUSCRIPTS_DATA.filter(b => {{
+                const cat = getManuscriptCat(b);
+                const matchCat = (currentManuscriptsCategory === 'all') || (cat === currentManuscriptsCategory);
+                const text = (b.name + ' ' + b.author + ' ' + b.summary + ' ' + b.chapters).toLowerCase();
+                const matchQuery = !query || text.includes(query);
+                return matchCat && matchQuery;
+            }});
+
+            if (filtered.length === 0) {{
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #64748b; font-size: 1rem;">لا توجد مخطوطات مطابقة للبحث أو التصنيف المختار.</div>';
+                return;
+            }}
+
+            container.innerHTML = filtered.map(b => `
                 <div class="book-card">
                     <div>
-                        <div class="book-author">${{b.author}}</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap;">
+                            <span class="book-author">${{b.author}}</span>
+                            <span style="background: rgba(2, 132, 199, 0.1); color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.25); font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 700;">${{getManuscriptBadge(b)}}</span>
+                        </div>
                         <h3 class="book-name">📜 ${{b.name}}</h3>
                         <p class="book-summary">${{b.summary}}</p>
                     </div>
